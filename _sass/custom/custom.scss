@@ -1,9 +1,15 @@
 // Theme mods (just-the-docs)
 
-@media (min-width: 100rem) {
+@media (min-width: 80rem) {
     .side-bar {
-        width:calc((100% - 100rem) / 2 + 16.5rem);
+        width:calc((100% - 80rem) / 2 + 16.5rem);
         min-width: 16.5rem
+    }
+}
+
+@media (min-width: 80rem) {
+    .side-bar+.main {
+        margin-left:Max(16.5rem, calc((100% - 80rem) / 2 + 16.5rem))
     }
 }
 
