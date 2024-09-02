@@ -13,6 +13,13 @@
     }
 }
 
+@media (min-width: 50rem) {
+    .main {
+        position:relative;
+        max-width: 0.6vh;
+    }
+}
+
 // FIGURES
 
 figure {
