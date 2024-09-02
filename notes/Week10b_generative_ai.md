@@ -1,3 +1,10 @@
+---
+title: AI
+parent: Notes
+has_children: false
+nav_order: 17
+---
+
 # Generative AI tools
 
 <hr class="splash">
@@ -21,10 +28,8 @@
 
 ## ChatGPT example
 
-## Using Copilot 
+## Using Copilot
 
 ## Further reading
 
 * Generative AI for Software Practitioners [Ebert & Louridas (2023)](https://doi.org/10.1109/MS.2023.3265877)
-
-

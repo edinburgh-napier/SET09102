@@ -1,3 +1,10 @@
+---
+title: Interview preparation
+parent: Notes
+has_children: false
+nav_order: 21
+---
+
 # Interview preparation
 
 <hr class="splash">
@@ -21,7 +28,7 @@
 
 ## Know the requirements
 
-The requirements for the interview are described on the 
+The requirements for the interview are described on the
 [assessment page](../assessment/interview.md).
 Make sure that you have read that material thoroughly.
 
@@ -32,11 +39,11 @@ You need to demonstrate your abilities under the four module learning outcomes w
 3. Evaluate software quality
 4. Critique software development processes
 
-For each one, you should be prepared to 
+For each one, you should be prepared to
 
 * Explain any important concepts providing definitions if appropriate
 * Demonstrate your theoretical knowledge - e.g. relating to standards or established techniques
-* Demonstrate your practical ability - e.g. by describing events during the project work 
+* Demonstrate your practical ability - e.g. by describing events during the project work
   or by illustrating your explanations with material from your portfolio
 * Show a capacity for reflection and critical analysis
 
@@ -54,12 +61,12 @@ In addition to reviewing your portfolio, you should also review the module notes
 a good understanding of that material, you should be able to answer questions *reasonably*
 well. To give better responses, though, you will need to provide evidence of wider reading.
 That may include following up on some of the links provided in the notes, but it can also
-include other reading that you have done independently. 
+include other reading that you have done independently.
 
 A third activity under this heading is to make sure that have a good knowledge of the
 meaning of technical terms. You should aim to make accurate use of recognised terminology
-where appropriate. If you have to resort to vague, everyday language to describe a technical 
-concept, it suggests that you are not as familiar with it as you should be. 
+where appropriate. If you have to resort to vague, everyday language to describe a technical
+concept, it suggests that you are not as familiar with it as you should be.
 
 A possible strategy that you could use in revising technical terms is to go through the notes
 and to compile a list of the technical terms. You could then extend your list to include
@@ -69,14 +76,14 @@ appropriate definitions and references if appropriate.
 
 There are four learning outcomes and you can assume that the interview will give equal weight
 to each one. The time available is 15 minutes which suggests about three minutes per learning
-outcome with a further three minutes contingency time. It is important that you try to keep 
-your responses to around three minutes each; otherwise, you will eat into the time available 
-for the other learning outcomes. The tutor conducting the interview will help with this, but 
+outcome with a further three minutes contingency time. It is important that you try to keep
+your responses to around three minutes each; otherwise, you will eat into the time available
+for the other learning outcomes. The tutor conducting the interview will help with this, but
 that could mean cutting you off before you have made the most important points in your answer.
 
-Several strategies can be used to help with the timing of your answers. One is to spend a few 
+Several strategies can be used to help with the timing of your answers. One is to spend a few
 seconds at the start writing a quick set of bullet points for yourself. This will help you to
-include all the points you want to make within the time. Do not spend more than about 30 
+include all the points you want to make within the time. Do not spend more than about 30
 seconds on this though; otherwise, it will again cut down on the overall answer time.
 
 Another strategy is to adopt a consistent structure to you answers. One well-known example
@@ -84,28 +91,28 @@ of this is the [STAR](https://resources.biginterview.com/behavioral-interviews/s
 approach where the letters stand for:
 
 > **S**: Situation
-> 
+>
 > **T**: Task
-> 
+>
 > **A**: Action
-> 
+>
 > **R**: Result
 
-This structure is commonly used in job interview practice and would be appropriate for 
-questions relating to your own practice such as one specifically related to your last 
+This structure is commonly used in job interview practice and would be appropriate for
+questions relating to your own practice such as one specifically related to your last
 portfolio entry.
 
-For questions that are more related to theoretical concepts, the STAR method is not 
-appropriate. Although there are no widely-used methods for this type of question, you 
+For questions that are more related to theoretical concepts, the STAR method is not
+appropriate. Although there are no widely-used methods for this type of question, you
 could still come up with something that would give you a starting point. For example,
 you might settle on something like CEDS:
 
 > **C**: Concept
-> 
+>
 > **E**: Example
-> 
+>
 > **D**: Discussion
-> 
+>
 > **S**: Summary
 
 Here, the *concept* section would set demonstrate that you know about the topic of the
@@ -117,12 +124,12 @@ as closely as possible the main focus of the question that was orginally asked.
 
 The *discussion* section is an opportunity to demonstrate the depth of your understanding
 by covering limitations of the concept, alternative ideas or practical difficulties with
-its use or implementation. The *summary* section brings your discussion to a close by 
-highlighting the main points. 
+its use or implementation. The *summary* section brings your discussion to a close by
+highlighting the main points.
 
-> **NB.** Please note that if your learning profile includes agreed modifications to 
+> **NB.** Please note that if your learning profile includes agreed modifications to
 > standard assessment requirements, your interview slot will be 30 minutes rather than
-> 15, and you will have the opportunity for a practice interview in advance of the 
+> 15, and you will have the opportunity for a practice interview in advance of the
 > marked one. If your learning profile includes the presence of a reader, scribe or
 > other third person, please make sue that you have made appropriate arrangements fro
-> both the actual interview and the practice run. 
+> both the actual interview and the practice run.
