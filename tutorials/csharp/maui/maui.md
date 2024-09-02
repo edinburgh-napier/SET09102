@@ -111,8 +111,7 @@ author, version, and perhaps a link for more information.
 1. In the **Solution Explorer** pane of VSCode, right-click the _Notes_
 project and select _Add New File..._
 
-![Add an About... page](images/ms_notes_add_about.png#figure)
-<figcaption>Fig. 3. Adding an About... page.</figcaption>
+![Fig. 3. Adding an About... page.](images/ms_notes_add_about.png){: standalone #fig3}
 
 Select _.NET MAUI ContentPage (XAML)_ and call the new page _AboutPage.xaml._
 You do not have to type the extension - it will be added automatically.
