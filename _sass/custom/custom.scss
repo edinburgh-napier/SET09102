@@ -1,0 +1,129 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+// Theme mods (Slate)
+body {
+  --pale-red: #fcf1f1;
+  --dark-red: #900401;
+  --pale-blue: #f1f2fc;
+  --dark-blue: #011390;
+  --pale-green: #f2fcf1;
+  --dark-green: #209001;
+  --pale-orange: #fcf6f1;
+  --dark-orange: #903e01;
+  --pale-yellow: #fcfbf1;
+  --dark-yellow: #908801;
+  --pale-purple: #f8f1fc;
+  --dark-purple: #5a0190;
+  --pale-teal: #f1fafc;
+  --dark-teal: #017696;
+  --light-grey: #f0f0f0;
+  --code-background: #f8f9fa;
+  font-size: 1.3rem;
+}
+
+.inner {
+  max-width: 80%;
+}
+
+#main_content_wrap {
+  background: white;
+}
+
+pre,
+img {
+  box-shadow: none;
+}
+
+pre, code {
+  background-color: var(--code-background);
+}
+
+code {
+  color: black;
+}
+
+.highlight {
+  background-color: var(--code-background);
+}
+
+// Custom
+
+// Layouts
+
+#three-column-page {
+  display: flex;
+}
+
+#side-nav {
+  width: 20rem;
+  background-color: #faf2cc;
+}
+
+#main_content_wrap {
+  flex-grow: 2;
+}
+
+#page-toc {
+  width: 20rem;
+  background-color: #0e90d2;
+}
+
+// SPLASH
+
+hr.splash {
+  color: #f2f2f2;
+  clear: both;
+  background: none;
+}
+hr.splash+p {
+  float: left;
+  padding-right: 2rem;
+}
+hr.splash+p>img {
+  max-width: 16rem;
+  max-height: 16rem;
+}
+
+// TOURS
+
+div.tour+h6 {
+  float: right;
+  clear: both;
+}
+
+// FIGURES
+
+figure,
+.figure,
+img[src*="#figure"] {
+  margin: 2rem 0 0 8rem;
+}
+figcaption,
+.figure + p,
+img[src*="#figure"] + em,
+img[src*="#figure"] + a {
+  display: block;
+  margin: 0 0 2rem 8rem;
+  font-style: italic;
+  font-size: 0.9rem;
+}
+
+// DETAILS
+
+details[open] {
+  margin-bottom: 2rem;
+}
+details[open] summary {
+  margin-bottom: 1rem;
+}
+
+// LINKS
+// To style links, add #stylename to the end of the href value
+
+a[href*="#please-read"] {
+  color: var(--dark-red);
+  font-weight: bold;
+}
