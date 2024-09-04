@@ -1,5 +1,5 @@
 ---
-title: maui-tutorial
+title: Getting started with MAUI
 parent: C# practice
 grand_parent: Tutorials
 nav_order: 1
@@ -29,11 +29,7 @@ modified to use Visual Studio Code (VSCode) but the result should be the same.
 In the first stage, your app will allow users to enter a note and save it to
 device storage.  
 
-![Notes app screenshots](images/final-notelist-small.png#figure)
-
-![Microsoft notes app screenshots](images/final-note-small.png#figure)
-
-<figcaption>Fig. 1. Notes app screenshots.</figcaption>
+![Fig. 1. Notes app screenshots.](images/target.png){: standalone #fig1}
 
 ## 1. Create a project
 
@@ -60,12 +56,6 @@ When VSCode creates a .NET MAUI project four important code files are generated.
 These can be seen in the **Solution Explorer** pane:
 
 ![Fig. 2. Elements of a MAUI project.](images/ms_notes_1.png){: standalone #fig2}
-
-[//]: # ({: #figure-id .figure-class figure-attr="value"})
-
-[//]: # (![Elements of MAUI project]&#40;images/ms_notes_1.png#figure&#41;)
-
-[//]: # (<figcaption>Fig. 2. Elements of a MAUI project.</figcaption>)
 
 These files help get the .NET MAUI app configured and running. Each file serves
 a different purpose as described below:
