@@ -1,5 +1,5 @@
 ---
-title: vscode
+title: Using VSCode
 parent: Tools
 grand_parent: Tutorials
 nav_order: 1

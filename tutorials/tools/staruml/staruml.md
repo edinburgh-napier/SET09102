@@ -1,5 +1,5 @@
 ---
-title: staruml
+title: Using StarUML
 parent: Tools
 grand_parent: Tutorials
 nav_order: 2
