@@ -18,8 +18,10 @@ and on Windows it means using a command prompt. Please avoid using the Windows P
 unless you are confident with it.
 
 Where the format of a command is operating system specific, it will be labelled with either
-![Windows](/remote_test/images/material/microsoft-windows.svg){: .icon}
-or ![Mac](/remote_test/images/material/apple.svg){: .icon}
+<i class="fa-brands fa-windows"></i>
+or 
+<i class="fa-brands fa-apple"></i>
+
 You can click the relevant icon for more information. For links relevant to either operating
 system, you can click ![Info](common_img/icons/info.svg#icon)
 for more information.
