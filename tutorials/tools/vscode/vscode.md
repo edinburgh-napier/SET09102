@@ -119,15 +119,10 @@ The best approach is to create a folder in your home directory and let .NET inst
 
 **Create the new directory**
 
-[<i class="fa-brands fa-windows icon"></i>](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/mkdir){:target="_blank"}
-```shell
-mkdir C:\Users\**USERNAME**\MAUI
-```
+[<i class="fa-brands fa-windows icon"></i>](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/mkdir){:target="_blank"} `mkdir C:\Users\**USERNAME**\MAUI
 
 [<i class="fa-brands fa-apple icon"></i>](https://ss64.com/mac/mkdir.html){:target="_blank"}
-``` shell
-mkdir ~/MAUI
-```
+`mkdir ~/MAUI`
 
 
 ??? info "Create the variables on Windows"
