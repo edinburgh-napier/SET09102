@@ -18,9 +18,9 @@ and on Windows it means using a command prompt. Please avoid using the Windows P
 unless you are confident with it.
 
 Where the format of a command is operating system specific, it will be labelled with either
-<i class="fa-brands fa-windows"></i>
+<i class="fa-brands fa-windows icon"></i>
 or 
-<i class="fa-brands fa-apple"></i>
+<i class="fa-brands fa-apple icon"></i>
 
 You can click the relevant icon for more information. For links relevant to either operating
 system, you can click ![Info](common_img/icons/info.svg#icon)
