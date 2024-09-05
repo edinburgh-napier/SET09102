@@ -37,8 +37,7 @@ which depict the flow of control or activities within the system. Together, thes
 diagrams provide a comprehensive view of both the structure and behaviour of the
 software system.  
 
-![The 14 UML diagrams](images/UML.png#figure)
-<figcaption>Fig. 1: The 14 UML diagrams.</figcaption>
+![Fig. 1. The 14 UML diagrams.](images/UML.png){: standalone #fig1}
 
 In an Agile project, UML fits seamlessly into the iterative and incremental
 development lifecycle by providing a visual framework for planning, designing,
@@ -156,9 +155,7 @@ the containing item in the navigator first. For this reason, it is a good idea
 to get used to right-clicking the appropriate item and using the popup menu to
 create the diagram as shown in Fig. 2.
 
-
-![Creating a use case diagram in StarUML](images/use_case.png#figure)
-<figcaption>Fig. 2. Creating a use case diagram in StarUML.</figcaption>
+![Fig. 2. Creating a use case diagram in StarUML.](images/use_case.png){: standalone #fig2}
 
 Your diagram should contain the following elements:
 
@@ -254,9 +251,7 @@ navigator and right-click on it. This will display a context menu as shown in
 Fig. 3. where you have options to add attributes (properties) and operations
 (methods).
 
-![Adding attributes (properties) to classes inStarUML](images/attribute.png#figure)
-<figcaption>Fig. 3. Adding attributes (properties) and operations (methods)
-in StarUML.</figcaption>
+![Fig. 3. Adding attributes (properties) to classes inStarUML.](images/attribute.png){: standalone #fig3}
 
 Add the following properties to your classes:
 
@@ -300,9 +295,7 @@ properties of the parameter is _type_ which should be set to the name of the
 enumeration as shown in Fig. 4. You can use the magnifying glass icon to search
 for the enumeration in the model.
 
-![Creating a parameter whose value is an enumeration in StarUML](images/parameter.png#figure)
-<figcaption>Fig. 4. Creating a method parameter based on an enumeration in
-StarUML.</figcaption>
+![Fig. 4. Creating a parameter whose value is an enumeration in StarUML.](images/parameter.png){: standalone #fig4}
 
 Now open the class diagram - you will see that the new information is included
 even though the diagram has not been edited. You may need to tidy up the layout
@@ -324,14 +317,12 @@ to add an extension to StarUML.
 Open the extension manager from the **Tools** menu. Fin the extension called _C#_
 by Dongjoon Lee as shown in Fig. 5 and click _Install_.
 
-![The C# extension](images/adding_cs_extension.png#figure)
-<figcaption>Fig. 5. Adding the C# extension to StarUML.</figcaption>
+![Fig. 5. The C# extension.](images/adding_cs_extension.png){: standalone #fig5}
 
 The extension adds some new options to the **Tools** menu as shown in Fig. 6.
 Select the **Generate code...** option.
 
-![C# options on the StarUML menu](images/cs_options.png#figure)
-<figcaption>Fig. 6. C# options on the StarUML menu.</figcaption>
+![Fig. 6. C# options on the StarUML menu.](images/cs_options.png){: standalone #fig6}
 
 Follow the prompts to generate your code and examine the results with a text
 editor. You will see that there is still a lot of detail to fill in, but the
