@@ -91,15 +91,11 @@ to executable or configuration files.
 You can see the environment variables you currently have set with the command:
 
 [<i class="fa-brands fa-windows icon"></i>](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/set_1){:target="_blank"}
-``` shell
-set
-```
+`set
 
 
 [<i class="fa-brands fa-apple icon"></i>](https://support.apple.com/en-gb/guide/terminal/apd382cc5fa-4f58-4449-b20a-41c53c006f8f/mac){:target="_blank"}
-``` shell
-env
-```
+`env`
 
 The following variables are required for building and testing Android versions of your app.
 
@@ -119,7 +115,8 @@ The best approach is to create a folder in your home directory and let .NET inst
 
 **Create the new directory**
 
-[<i class="fa-brands fa-windows icon"></i>](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/mkdir){:target="_blank"} `mkdir C:\Users\**USERNAME**\MAUI
+[<i class="fa-brands fa-windows icon"></i>](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/mkdir){:target="_blank"} 
+`mkdir C:\Users\**USERNAME**\MAUI`
 
 [<i class="fa-brands fa-apple icon"></i>](https://ss64.com/mac/mkdir.html){:target="_blank"}
 `mkdir ~/MAUI`
@@ -188,24 +185,18 @@ When you are done, you should have at least the extensions shown below.
 Run the following command to configure your machine:
 
 <i class="fa-brands fa-windows icon"></i>
-``` shell
-dotnet build -t:InstallAndroidDependencies -f:net8.0-android -p:AndroidSdkDirectory="%ANDROID_HOME%" -p:JavaSdkDirectory="%JAVA_HOME%" -p:AcceptAndroidSDKLicenses=True
-```
+`dotnet build -t:InstallAndroidDependencies -f:net8.0-android -p:AndroidSdkDirectory="%ANDROID_HOME%" -p:JavaSdkDirectory="%JAVA_HOME%" -p:AcceptAndroidSDKLicenses=True`
 
 
 <i class="fa-brands fa-apple icon"></i>
-``` shell
-dotnet build -t:InstallAndroidDependencies -f:net8.0-android -p:AndroidSdkDirectory="${ANDROID_HOME}" -p:JavaSdkDirectory="${JAVA_HOME}" -p:AcceptAndroidSDKLicenses=True
-```
+`dotnet build -t:InstallAndroidDependencies -f:net8.0-android -p:AndroidSdkDirectory="${ANDROID_HOME}" -p:JavaSdkDirectory="${JAVA_HOME}" -p:AcceptAndroidSDKLicenses=True`
 
 ## 9. Update Android SDK
 
 The Android SDK installed in the previous step may not be completely up to date. Update the contents with
 
-[![Info](common_img/icons/info.svg#icon-prefix) ](https://developer.android.com/tools/sdkmanager){:target="_blank"}
-``` shell
-sdkmanager --update
-```
+[<i class="fa-solid fa-circle-info icon"></i> ](https://developer.android.com/tools/sdkmanager){:target="_blank"}
+`sdkmanager --update`
 
 ## 10. Build project
 
@@ -235,10 +226,8 @@ To build and test your apps for the Android platform, you need either an Android
 
 The emulator can be installed using one of the following commands:
 
-[![Info](common_img/icons/info.svg#icon-prefix)](https://developer.android.com/tools/sdkmanager){:target="_blank"}
-``` shell
-sdkmanager --install emulator
-```
+[<i class="fa-solid fa-circle-info icon"></i>](https://developer.android.com/tools/sdkmanager){:target="_blank"}
+`sdkmanager --install emulator`
 
 !!! warning "Warning!"
 
@@ -265,6 +254,7 @@ By default, we will be using Android 34; however, Apple Silicon Macs require a d
 For Windows machines and Intel Macs, use the command
 
 ``` shell
+<i class="fa-solid fa-circle-info icon"></i>
 sdkmanager --install "system-images;android-34;google_apis;x86_64"
 ```
 
