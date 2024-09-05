@@ -91,7 +91,9 @@ to executable or configuration files.
 You can see the environment variables you currently have set with the command:
 
 [<i class="fa-brands fa-windows icon"></i>](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/set_1){:target="_blank"}
-`set
+``` shell
+set
+```
 
 
 [<i class="fa-brands fa-apple icon"></i>](https://support.apple.com/en-gb/guide/terminal/apd382cc5fa-4f58-4449-b20a-41c53c006f8f/mac){:target="_blank"}
@@ -254,7 +256,6 @@ By default, we will be using Android 34; however, Apple Silicon Macs require a d
 For Windows machines and Intel Macs, use the command
 
 ``` shell
-<i class="fa-solid fa-circle-info icon"></i>
 sdkmanager --install "system-images;android-34;google_apis;x86_64"
 ```
 
