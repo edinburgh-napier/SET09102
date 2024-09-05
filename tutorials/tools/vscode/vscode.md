@@ -18,8 +18,8 @@ and on Windows it means using a command prompt. Please avoid using the Windows P
 unless you are confident with it.
 
 Where the format of a command is operating system specific, it will be labelled with either
-![Windows](/images/material/microsoft-windows.svg){.icon}
-or ![Mac](/images/material/apple.svg){.icon}
+![Windows](/images/material/microsoft-windows.svg){: .icon}
+or ![Mac](/images/material/apple.svg){: .icon}
 You can click the relevant icon for more information. For links relevant to either operating
 system, you can click ![Info](common_img/icons/info.svg#icon)
 for more information.
