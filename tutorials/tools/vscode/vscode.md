@@ -18,21 +18,19 @@ and on Windows it means using a command prompt. Please avoid using the Windows P
 unless you are confident with it.
 
 Where the format of a command is operating system specific, it will be labelled with either
-<i class="fa-brands fa-windows icon"></i>
-or 
-<i class="fa-brands fa-apple icon"></i>
+<i class="fa-brands fa-windows icon"></i> or <i class="fa-brands fa-apple icon"></i>
 
 You can click the relevant icon for more information. For links relevant to either operating
-system, you can click ![Info](common_img/icons/info.svg#icon)
+system, you can click <i class="fa-solid fa-circle-info icon"></i>
 for more information.
 
 When you see **USERNAME** in a variable value, replace it with your username on your computer.
 
 ## 1. Install git
 
-![Windows](common_img/icons/windows.png#icon) [Windows git installer](https://gitforwindows.org/){:target="_blank"}
+<i class="fa-brands fa-windows icon"></i> [Windows git installer](https://gitforwindows.org/){:target="_blank"}
 
-![Mac](common_img/icons/mac.png#icon) git is already installed on Macs :-)
+<i class="fa-brands fa-apple icon"></i> git is already installed on Macs <i class="fa-regular fa-face-smile icon"></i>
 
 ## 2. Create a repository
 
@@ -49,12 +47,7 @@ than the usual *Code* button.
 
 Find and copy the github link for your repo (not the template!) as shown.
 
-<figure markdown>
-
-  ![Finding your repository's github link](images/vscode/github_link.png)
-  <figcaption>Fig. 1. Finding your repository's github link.</figcaption>
-
-</figure>
+![Fig. 1. Finding your repository's github link](images/github_link.png){: standalone #fig1}
 
 Create a folder on your laptop where project workspaces will be created.
 
@@ -97,13 +90,13 @@ to executable or configuration files.
 
 You can see the environment variables you currently have set with the command:
 
-[![Windows](common_img/icons/windows.png#icon-prefix)](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/set_1){:target="_blank"}
+[<i class="fa-brands fa-windows icon"></i>](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/set_1){:target="_blank"}
 ``` shell
 set
 ```
 
 
-[![Windows](common_img/icons/mac.png#icon-prefix)](https://support.apple.com/en-gb/guide/terminal/apd382cc5fa-4f58-4449-b20a-41c53c006f8f/mac){:target="_blank"}
+[<i class="fa-brands fa-apple icon"></i>](https://support.apple.com/en-gb/guide/terminal/apd382cc5fa-4f58-4449-b20a-41c53c006f8f/mac){:target="_blank"}
 ``` shell
 env
 ```
@@ -126,12 +119,12 @@ The best approach is to create a folder in your home directory and let .NET inst
 
 **Create the new directory**
 
-[![Windows](common_img/icons/windows.png#icon-prefix)](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/mkdir){:target="_blank"}
+[<i class="fa-brands fa-windows icon"></i>](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/mkdir){:target="_blank"}
 ```shell
 mkdir C:\Users\**USERNAME**\MAUI
 ```
 
-[![Windows](common_img/icons/mac.png#icon-prefix)](https://ss64.com/mac/mkdir.html){:target="_blank"}
+[<i class="fa-brands fa-apple icon"></i>](https://ss64.com/mac/mkdir.html){:target="_blank"}
 ``` shell
 mkdir ~/MAUI
 ```
@@ -190,10 +183,7 @@ Note that you will need to sign in with your University username and password to
 
 When you are done, you should have at least the extensions shown below.
 
-<figure markdown>
-  ![VSCode extensions](images/vscode/vscode_extensions.png#centred)
-  <figcaption>Fig. 2. VSCode extensions.</figcaption>
-</figure>
+![Fig. 2. VSCode extensions.](images/vscode_extensions.png){: standalone #fig2}
 
 ## 8. Install Android dependencies
 
@@ -202,13 +192,13 @@ When you are done, you should have at least the extensions shown below.
 
 Run the following command to configure your machine:
 
-![Windows](common_img/icons/windows.png#icon-prefix)
+<i class="fa-brands fa-windows icon"></i>
 ``` shell
 dotnet build -t:InstallAndroidDependencies -f:net8.0-android -p:AndroidSdkDirectory="%ANDROID_HOME%" -p:JavaSdkDirectory="%JAVA_HOME%" -p:AcceptAndroidSDKLicenses=True
 ```
 
 
-![Mac](common_img/icons/mac.png#icon-prefix)
+<i class="fa-brands fa-apple icon"></i>
 ``` shell
 dotnet build -t:InstallAndroidDependencies -f:net8.0-android -p:AndroidSdkDirectory="${ANDROID_HOME}" -p:JavaSdkDirectory="${JAVA_HOME}" -p:AcceptAndroidSDKLicenses=True
 ```
@@ -232,10 +222,7 @@ Next, open the project root folder using the *File -&gt; Open Folder... *option 
 
 To build the project, right-click the project name in the *Solution Explorer *section of the files panel as shown.
 
-<figure markdown>
-  ![Building project](images/vscode/vscode_build.png#centred)
-  <figcaption>Fig. 3. Building the project.</figcaption>
-</figure>
+![Fig. 3. Building the project.](images/vscode_build.png){: standalone #fig3}
 
 !!! warning "Warning!"
 
@@ -305,10 +292,7 @@ You may see some prompts appear in the bottom right-hand corner of the window as
 
      If the prompts do not appear, you may need to update the values manually. Call up the VSCode command palette by pressing Shift+Ctrl+P on Windows or Shift+Cmd+P on Mac. Then type *AVD* into the search box. There are four settings that need to be updated as shown below. When prompted, make each setting global.
 
-<figure markdown>
-  ![Updating AVD Manager paths](images/vscode/avd_update_paths.png#centred)
-  <figcaption>Fig. 4. Updating AVD Manager paths.</figcaption>
-</figure>
+![Fig. 4. Updating AVD Manager paths.](images/avd_update_paths.png){: standalone #fig4}
 
 The values you need are shown below
 
@@ -321,10 +305,7 @@ The values you need are shown below
 
 Once the AVD Manager is correctly configured, information about the installed and available SDK components will be displayed as shown below. The image shows the Android SDK Platform 34 installed, but no AVDs yet.
 
-<figure markdown>
-  ![SDK details](images/vscode/sdk_details.png#centred)
-  <figcaption>Fig. 5. SDK details.</figcaption>
-</figure>
+![Fig. 5. SDK details.](images/sdk_details.png){: standalone #fig5}
 
 ## 14. Create AVD
 
@@ -351,23 +332,14 @@ While the Android emulator is running, it can be used as a debug target so that 
 
 To select the debug target for a project, click the curly brackets in the lower tray of the VSCode window as shown below. Click *Debug Target* and some options will appear at the top of the window. Choose the emulator from the ist.
 
-<figure markdown>
-  ![Selecting a debug target in VSCode](images/vscode/vscode_debug_target.png#centred)
-  <figcaption>Fig. 6. Selecting a debug target in VSCode..</figcaption>
-</figure>
+![Fig. 6. Selecting a debug target in VSCode.](images/vscode_debug_target.png){: standalone #fig6}
 
 With the target selected, click the *Run* icon in the control panel on the left. Then, follow through the prompts to select the debugger and the run configuration.
 
-<figure markdown>
-  ![Debugging in VSCode](images/vscode/vscode_debug.png#centred)
-  <figcaption>Fig. 7. Debugging in VSCode.</figcaption>
-</figure>
+![Fig. 7. Debugging in VSCode.](images/vscode_debug.png){: standalone #fig7}
 
 After a few moments, a .NET icon should appear on the screen of the virtual phone.
 
 Clicking it should launch the default app:
 
-<figure markdown>
-  ![Default MAUI app running on the Android emulator](images/vscode/default_app.png#centred)
-  <figcaption>Fig. 8. Default MAUI app running on the Android emulator.</figcaption>
-</figure>
+![Fig. 8. Default MAUI app running on the Android emulator.](images/default_app.png){: standalone #fig8}
