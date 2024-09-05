@@ -90,6 +90,7 @@ to executable or configuration files.
 
 You can see the environment variables you currently have set with the command:
 
+<span class="icon-prefix"></span>
 [<i class="fa-brands fa-windows icon"></i>](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/set_1){:target="_blank"}
 ``` shell
 set
