@@ -127,8 +127,6 @@ The best approach is to create a folder in your home directory and let .NET inst
 
 {% highlight shell %}mkdir ~/MAUI {% endhighlight %}
 
-<button class="btn js-toggle-dark-mode">Preview dark color scheme</button>
-
 <details class="blue-bar">
 <summary>Create the variables on Windows</summary>
 
