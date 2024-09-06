@@ -20,10 +20,6 @@
     }
 }
 
-figure.highlight {
-  margin: inherit;
-}
-
 // IMAGES
 
 .icon {
@@ -33,9 +29,9 @@ figure.highlight {
 .icon-prefix {
   display: none;
 }
-.icon-prefix ~ .language-shell {
-  margin-left: 2rem;
-  margin-top: -3rem;
+.icon-prefix ~ .language-shell,
+.icon-prefix ~ figure.highlight {
+  margin: -3rem 0 0 2rem;
 }
 
 // FIGURES
