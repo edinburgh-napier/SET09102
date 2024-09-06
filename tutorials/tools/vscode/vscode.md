@@ -119,7 +119,7 @@ The following variables are required for building and testing Android versions o
 The best approach is to create a folder in your home directory and let .NET install the appropriate versions there specifically for use with .NET. Instructions for this are given later. For now, it is enough to create the relevant directories and set the environment variables.
 
 {: .warning-title }
-> Warning
+> <i class="fa-solid fa-triangle-exclamation"></i> Warning
 > 
 > Please check whether you already have these environment variables defined. If so, changing them may affect other applications that you use.
 
