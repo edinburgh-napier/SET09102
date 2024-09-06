@@ -1,5 +1,6 @@
 title: "SET09102 Software Engineering"
 remote_theme: just-the-docs/just-the-docs
+color_scheme: napier
 compress_html:
   ignore:
     envs: all
