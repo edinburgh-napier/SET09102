@@ -115,50 +115,47 @@ The best approach is to create a folder in your home directory and let .NET inst
 > 
 > Please check whether you already have these environment variables defined. If so, changing them may affect other applications that you use.
 
-**Create the new directory**
+### Create the new directory
 
 [<i class="fa-brands fa-windows icon"></i>](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/mkdir){:target="_blank"} 
 <hr class="icon-prefix">
 
-{% highlight shell %}mkdir C:\Users\**USERNAME**\MAUI {% endhighlight %}
+{% highlight shell %}mkdir C:\Users\USERNAME\MAUI {% endhighlight %}
 
 [<i class="fa-brands fa-apple icon"></i>](https://ss64.com/mac/mkdir.html){:target="_blank"}
 <hr class="icon-prefix">
 
 {% highlight shell %}mkdir ~/MAUI {% endhighlight %}
 
-<details class="blue-bar">
-<summary>Create the variables on Windows</summary>
+### Create the variables on Windows
 
 In the Start menu panel, start typing *Environment variables* and choose the option to edit them when it
 appears. You will be taken to the system control panel as shown below where you should click the
 *Environment Variables* button.
 
-<img alt="Creating environment variables on Windows" src="images/env_var_win_1.png"/>
+![Creating environment variables on Windows](images/env_var_win_1.png)
 
 In the next dialog, there are two panels. Click *New...* in the top panel for a new user variable and
 fill in the details.
 
-<img alt="New variable" src="images/env_var_win_2.png"/>
+![New variable](images/env_var_win_2.png)
 
 To make the Android SDK command-line tools available from any directory, you also need to update the
 *PATH* environment variable. Specifically, you need to add the directory
 *%ANDROID_HOME%\cmdline-tools\11.0\bin* to the PATH - follow the steps indicated in the image below.
 
-<img alt="Updating the PATH on Windows" src="images/env_var_win_3.png"/>
+![Updating the PATH on Windows](images/env_var_win_3.png)
 
-The changes will not be visible in any CMD or PowerShell windows that are currently open. You will need
-to close and re-open them to pick up the new variables.
+The changes will not be visible in any CMD or PowerShell windows that are currently open. 
+You will need to close and re-open them to pick up the new variables.
 
-</details>
+### Create the variables on Mac
 
-<details class="blue-bar">
-<summary>Create the variables on Mac</summary>
+The simplest way to define environment variables is in the .zshrc file in your home 
+directory. This file is run automatically whenever a new terminal is opened and when an 
+application starts. Edit the file and add the following lines at the end.
 
-The simplest way to define environment variables is in the .zshrc file in your home directory. This file is run automatically whenever a new terminal is opened and when an application starts. Edit the file and add the following lines at the end.
-
-
-``` sh
+``` shell
     # Environment variables for .NET MAUI development <br>
     export JAVA_HOME=${HOME}/MAUI/java <br>
     export ANDROID_HOME=${HOME}/MAUI/android <br>
@@ -167,7 +164,6 @@ The simplest way to define environment variables is in the .zshrc file in your h
 ```
 
 The new settings will not affect any currently running terminal windows. You will need to restart them or alternatively type the same commands at the prompt.
-</details>
 
 ## 7. Install VSCode
 
@@ -187,7 +183,6 @@ When you are done, you should have at least the extensions shown below.
 ![Fig. 2. VSCode extensions.](images/vscode_extensions.png){: standalone #fig2}
 
 ## 8. Install Android dependencies
-
 
 .NET 8 has a build target that installs the Android dependencies using the environment variables that you defined earlier. However, the command must be run from the root directory of a .NET project. Change into the root directory of your cloned repo (created in step 3 above) - that is the one containing the *.sln* file.
 
@@ -224,15 +219,16 @@ To build the project, right-click the project name in the *Solution Explorer *se
 
 ![Fig. 3. Building the project.](images/vscode_build.png){: standalone #fig3}
 
-!!! warning "Warning!"
+{: .warning-title }
+> <i class="fa-solid fa-triangle-exclamation"></i> Warning
+> 
+> If you see the error message **error XA5300: The Android SDK directory could not be found** with a recommendation to set the **AndroidSdkDirectory** MSBuild property, add the following line to the *Haulage.cproj* file replacing ANDROID_HOME with the value of the environment variable you set earlier.
+> 
+> ``` shell
+> <AndroidSdkDirectory>ANDROID_HOME</AndroidSdkDirectory>
+> ```
 
-    If you see the error message **error XA5300: The Android SDK directory could not be found** with a recommendation to set the **AndroidSdkDirectory** MSBuild property, add the following line to the *Haulage.cproj* file replacing ANDROID_HOME with the value of the environment variable you set earlier.
-
-    ``` shell
-    <AndroidSdkDirectory>ANDROID_HOME</AndroidSdkDirectory>
-    ```
-
-    If there are any other error messages in the output, they will need to be investigated and resolved before moving on.
+If there are any other error messages in the output, they will need to be investigated and resolved before moving on.
 
 ## 11. Install Android emulator
 
@@ -245,15 +241,16 @@ The emulator can be installed using one of the following commands:
 
 {% highlight shell %}sdkmanager --install emulator {% endhighlight %}
 
-!!! warning "Warning!"
-
-    If the command above fails with the message *Failed to find package 'emulator'*, you can
-    install an emulator manually. [Download the latest version](https://developer.android.com/studio/emulator_archive),
-    unzip it and copy the *emulator* directory into the *ANDROID_HOME* directory.
-
-    Copy the file *package.xml* from the *setup* directory in your cloned repo into the
-    *emulator* directory. Edit the last line of the file so that the revision number
-    corresponds to the version of the emulator that you downloaded
+{: .warning-title }
+> <i class="fa-solid fa-triangle-exclamation"></i> Warning
+> 
+> If the command above fails with the message *Failed to find package 'emulator'*, you can
+> install an emulator manually. [Download the latest version](https://developer.android.com/studio/emulator_archive),
+> unzip it and copy the *emulator* directory into the *ANDROID_HOME* directory.
+>
+> Copy the file *package.xml* from the *setup* directory in your cloned repo into the
+> *emulator* directory. Edit the last line of the file so that the revision number
+> corresponds to the version of the emulator that you downloaded
 
 
 ## 12. Install AVD image
@@ -282,9 +279,10 @@ Activate the AVD Manager panel by clicking the Android icon in the left-hand men
 
 You may see some prompts appear in the bottom right-hand corner of the window asking you to configure the required paths. If so, click the button to update the value and navigate to the appropriate executable if needed.
 
-!!! warning "Warning!"
-
-     If the prompts do not appear, you may need to update the values manually. Call up the VSCode command palette by pressing Shift+Ctrl+P on Windows or Shift+Cmd+P on Mac. Then type *AVD* into the search box. There are four settings that need to be updated as shown below. When prompted, make each setting global.
+{: .warning-title }
+> <i class="fa-solid fa-triangle-exclamation"></i> Warning
+> 
+>  If the prompts do not appear, you may need to update the values manually. Call up the VSCode command palette by pressing Shift+Ctrl+P on Windows or Shift+Cmd+P on Mac. Then type *AVD* into the search box. There are four settings that need to be updated as shown below. When prompted, make each setting global.
 
 ![Fig. 4. Updating AVD Manager paths.](images/avd_update_paths.png){: standalone #fig4}
 
