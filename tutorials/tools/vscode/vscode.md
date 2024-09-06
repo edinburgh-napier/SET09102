@@ -140,28 +140,30 @@ mkdir ~/MAUI
 ```
 
 
-??? info "Create the variables on Windows"
+<details class="blue-bar">
+<summary>Create the variables on Windows</summary>
 
-    In the Start menu panel, start typing *Environment variables* and choose the option to edit them when it
-    appears. You will be taken to the system control panel as shown below where you should click the
-    *Environment Variables* button.
+In the Start menu panel, start typing *Environment variables* and choose the option to edit them when it
+appears. You will be taken to the system control panel as shown below where you should click the
+*Environment Variables* button.
 
-    ![Creating environment variables on Windows](images/vscode/env_var_win_1.png#centred)
+![Creating environment variables on Windows](images/vscode/env_var_win_1.png#centred)
 
-    In the next dialog, there are two panels. Click *New...* in the top panel for a new user variable and
-    fill in the details.
+In the next dialog, there are two panels. Click *New...* in the top panel for a new user variable and
+fill in the details.
 
-    ![New variable](images/vscode/env_var_win_2.png#centred)
+![New variable](images/vscode/env_var_win_2.png#centred)
 
-    To make the Android SDK command-line tools available from any directory, you also need to update the
-    *PATH* environment variable. Specifically, you need to add the directory
-    *%ANDROID_HOME%\cmdline-tools\11.0\bin* to the PATH - follow the steps indicated in the image below.
+To make the Android SDK command-line tools available from any directory, you also need to update the
+*PATH* environment variable. Specifically, you need to add the directory
+*%ANDROID_HOME%\cmdline-tools\11.0\bin* to the PATH - follow the steps indicated in the image below.
 
-    ![Updating the PATH on Windows](images/vscode/env_var_win_3.png#centred)
+![Updating the PATH on Windows](images/vscode/env_var_win_3.png#centred)
 
-    The changes will not be visible in any CMD or PowerShell windows that are currently open. You will need
-    to close and re-open them to pick up the new variables.
+The changes will not be visible in any CMD or PowerShell windows that are currently open. You will need
+to close and re-open them to pick up the new variables.
 
+</details>
 
 ??? info "Create the variables on Mac"
 

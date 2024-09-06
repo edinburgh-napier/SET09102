@@ -89,3 +89,37 @@ a[href*="#please-read"] {
   font-weight: bold;
 }
 
+// DETAILS
+
+details summary img {
+    vertical-align: middle !important;
+}
+details p {
+    margin: 1em 0 1em 1em;
+}
+details.blue-bar,
+details.green-bar {
+    margin: 0.6em;
+}
+details.blue-bar summary {
+    background-color: var(--pale-blue);
+    font-size: large;
+    font-weight: bold;
+}
+details.green-bar summary {
+    background-color: var(--pale-green);
+    font-size: large;
+    font-weight: bold;
+}
+details.marker-after summary {
+  list-style: none;
+}
+details.marker-after summary::-webkit-details-marker {
+  display: none
+}
+details.marker-after summary::after {
+  content: '▶';
+}
+details.marker-after[open] summary:after {
+  content: "▼";
+}

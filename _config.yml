@@ -1,5 +1,12 @@
 title: "SET09102 Software Engineering"
 remote_theme: just-the-docs/just-the-docs
+compress_html:
+  ignore:
+    envs: all
+kramdown:
+  syntax_highlighter_opts:
+    block:
+      line_numbers: true
 callouts:
   warning:
     title: Warning
