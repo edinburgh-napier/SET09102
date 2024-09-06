@@ -61,9 +61,7 @@ Follow the instructions for your operating system on the [Microsoft website](htt
 
 Check that .NET is installed correctly by executing the command:
 
-{% highlight shell %} 
-dotnet --version
-{% endhighlight %}
+{% highlight shell %}dotnet --version {% endhighlight %}
 
 You should see that your .NET version is 8.0.300
 
@@ -93,17 +91,13 @@ You can see the environment variables you currently have set with the command:
 [<i class="fa-brands fa-windows icon"></i>](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/set_1){:target="_blank"}
 <hr class="icon-prefix">
 
-{% highlight shell %} 
-set
-{% endhighlight %}
+{% highlight shell %}set {% endhighlight %}
 
 
 [<i class="fa-brands fa-apple icon"></i>](https://support.apple.com/en-gb/guide/terminal/apd382cc5fa-4f58-4449-b20a-41c53c006f8f/mac){:target="_blank"}
 <hr class="icon-prefix">
 
-{% highlight shell %} 
-env
-{% endhighlight %}
+{% highlight shell %}env {% endhighlight %}
 
 The following variables are required for building and testing Android versions of your app.
 
@@ -126,16 +120,12 @@ The best approach is to create a folder in your home directory and let .NET inst
 [<i class="fa-brands fa-windows icon"></i>](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/mkdir){:target="_blank"} 
 <hr class="icon-prefix">
 
-{% highlight shell %} 
-mkdir C:\Users\**USERNAME**\MAUI
-{% endhighlight %}
+{% highlight shell %}mkdir C:\Users\**USERNAME**\MAUI {% endhighlight %}
 
 [<i class="fa-brands fa-apple icon"></i>](https://ss64.com/mac/mkdir.html){:target="_blank"}
 <hr class="icon-prefix">
 
-{% highlight shell %} 
-mkdir ~/MAUI
-{% endhighlight %}
+{% highlight shell %}mkdir ~/MAUI {% endhighlight %}
 
 <button class="btn js-toggle-dark-mode">Preview dark color scheme</button>
 
@@ -146,38 +136,40 @@ In the Start menu panel, start typing *Environment variables* and choose the opt
 appears. You will be taken to the system control panel as shown below where you should click the
 *Environment Variables* button.
 
-<img alt="Creating environment variables on Windows" src="images/vscode/env_var_win_1.png#centred"/>
+<img alt="Creating environment variables on Windows" src="images/env_var_win_1.png"/>
 
 In the next dialog, there are two panels. Click *New...* in the top panel for a new user variable and
 fill in the details.
 
-<img alt="New variable" src="images/vscode/env_var_win_2.png#centred"/>
+<img alt="New variable" src="images/env_var_win_2.png"/>
 
 To make the Android SDK command-line tools available from any directory, you also need to update the
 *PATH* environment variable. Specifically, you need to add the directory
 *%ANDROID_HOME%\cmdline-tools\11.0\bin* to the PATH - follow the steps indicated in the image below.
 
-<img alt="Updating the PATH on Windows" src="images/vscode/env_var_win_3.png#centred"/>
+<img alt="Updating the PATH on Windows" src="images/env_var_win_3.png"/>
 
 The changes will not be visible in any CMD or PowerShell windows that are currently open. You will need
 to close and re-open them to pick up the new variables.
 
 </details>
 
-??? info "Create the variables on Mac"
+<details class="blue-bar">
+<summary>Create the variables on Mac</summary>
 
-    The simplest way to define environment variables is in the .zshrc file in your home directory. This file is run automatically whenever a new terminal is opened and when an application starts. Edit the file and add the following lines at the end.
+The simplest way to define environment variables is in the .zshrc file in your home directory. This file is run automatically whenever a new terminal is opened and when an application starts. Edit the file and add the following lines at the end.
 
 
-    ``` sh
-        # Environment variables for .NET MAUI development <br>
-        export JAVA_HOME=${HOME}/MAUI/java <br>
-        export ANDROID_HOME=${HOME}/MAUI/android <br>
-        export ANDROID_SDK_HOME=${HOME}/MAUI <br>
-        export PATH=${PATH}:${ANDROID_HOME}/cmdline-tools/11.0/bin <br>
-    ```
+``` sh
+    # Environment variables for .NET MAUI development <br>
+    export JAVA_HOME=${HOME}/MAUI/java <br>
+    export ANDROID_HOME=${HOME}/MAUI/android <br>
+    export ANDROID_SDK_HOME=${HOME}/MAUI <br>
+    export PATH=${PATH}:${ANDROID_HOME}/cmdline-tools/11.0/bin <br>
+```
 
-    The new settings will not affect any currently running terminal windows. You will need to restart them or alternatively type the same commands at the prompt.
+The new settings will not affect any currently running terminal windows. You will need to restart them or alternatively type the same commands at the prompt.
+</details>
 
 ## 7. Install VSCode
 
@@ -206,16 +198,12 @@ Run the following command to configure your machine:
 <i class="fa-brands fa-windows icon"></i>
 <hr class="icon-prefix">
 
-``` shell
-dotnet build -t:InstallAndroidDependencies -f:net8.0-android -p:AndroidSdkDirectory="%ANDROID_HOME%" -p:JavaSdkDirectory="%JAVA_HOME%" -p:AcceptAndroidSDKLicenses=True
-```
+{% highlight shell %}dotnet build -t:InstallAndroidDependencies -f:net8.0-android -p:AndroidSdkDirectory="%ANDROID_HOME%" -p:JavaSdkDirectory="%JAVA_HOME%" -p:AcceptAndroidSDKLicenses=True {% endhighlight %}
 
 <i class="fa-brands fa-apple icon"></i>
 <hr class="icon-prefix">
 
-``` shell
-dotnet build -t:InstallAndroidDependencies -f:net8.0-android -p:AndroidSdkDirectory="${ANDROID_HOME}" -p:JavaSdkDirectory="${JAVA_HOME}" -p:AcceptAndroidSDKLicenses=True
-```
+{% highlight shell %}dotnet build -t:InstallAndroidDependencies -f:net8.0-android -p:AndroidSdkDirectory="${ANDROID_HOME}" -p:JavaSdkDirectory="${JAVA_HOME}" -p:AcceptAndroidSDKLicenses=True {% endhighlight %}
 
 ## 9. Update Android SDK
 
@@ -224,9 +212,7 @@ The Android SDK installed in the previous step may not be completely up to date.
 [<i class="fa-solid fa-circle-info icon"></i> ](https://developer.android.com/tools/sdkmanager){:target="_blank"}
 <hr class="icon-prefix">
 
-``` shell
-sdkmanager --update
-```
+{% highlight shell %}sdkmanager --update {% endhighlight %}
 
 ## 10. Build project
 
@@ -259,9 +245,7 @@ The emulator can be installed using one of the following commands:
 [<i class="fa-solid fa-circle-info icon"></i>](https://developer.android.com/tools/sdkmanager){:target="_blank"}
 <hr class="icon-prefix">
 
-``` shell
-sdkmanager --install emulator
-```
+{% highlight shell %}sdkmanager --install emulator {% endhighlight %}
 
 !!! warning "Warning!"
 
@@ -279,23 +263,17 @@ sdkmanager --install emulator
 
 The emulator is an application for playing virtual machines that represent different types of phone with different software configurations. On its own, it does nothing, so we need to create a virtual device for it to host. The first step is to choose which image to use. You can get a list of all available system images by using the command
 
-``` shell
-sdkmanager --list
-```
+{% highlight shell %}sdkmanager --list {% endhighlight %}
 
 By default, we will be using Android 34; however, Apple Silicon Macs require a different image because of their architecture.
 
 For Windows machines and Intel Macs, use the command
 
-``` shell
-sdkmanager --install "system-images;android-34;google_apis;x86_64"
-```
+{% highlight shell %}sdkmanager --install "system-images;android-34;google_apis;x86_64" {% endhighlight %}
 
 For Apple Silicon Macs, use
 
-``` shell
-sdkmanager --install "system-images;android-34;google_apis;arm64-v8a"
-```
+{% highlight shell %}sdkmanager --install "system-images;android-34;google_apis;arm64-v8a" {% endhighlight %}
 
 
 ## 13. Configure AVD manager
@@ -331,15 +309,11 @@ Creating an API is simply a question of pairing an Android platform with a devic
 
 For Windows and Intel Macs use
 
-``` shell
-avdmanager create avd -d 30 --name Pixel_7_Pro -k "system-images;android-34;google_apis;x86_64"
-```
+{% highlight shell %}avdmanager create avd -d 30 --name Pixel_7_Pro -k "system-images;android-34;google_apis;x86_64" {% endhighlight %}
 
 For Apple silicon Macs use
 
-``` shell
-avdmanager create avd -d 30 --name Pixel_7_Pro -k "system-images;android-34;google_apis;arm64-v8a"
-```
+{% highlight shell %}avdmanager create avd -d 30 --name Pixel_7_Pro -k "system-images;android-34;google_apis;arm64-v8a" {% endhighlight %}
 
 Clicking the refresh icon in the *Android Virtual Device* panel will reveal the newly-created AVD. Start it by clicking the *Run* icon next to its name. If everything is set up correctly, you should see a virtual Android device appear on your screen.
 
