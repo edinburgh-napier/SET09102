@@ -53,9 +53,9 @@ Create a folder on your laptop where project workspaces will be created.
 
 Change into that folder and use the command below to clone your repository, replacing <code>URL</code> with the one you copied in the previous step.
 
-``` shell
+{% highlight shell %} 
 git clone URL
-```
+{% endhighlight %}
 
 ## 4. Install the .NET SDK
 
@@ -63,9 +63,9 @@ Follow the instructions for your operating system on the [Microsoft website](htt
 
 Check that .NET is installed correctly by executing the command:
 
-``` shell
+{% highlight shell %} 
 dotnet --version
-```
+{% endhighlight %}
 
 You should see that your .NET version is 8.0.300
 
@@ -78,9 +78,9 @@ development.
 
 Install the MAUI workloads by executing the command:
 
-``` shell
+{% highlight shell %} 
 dotnet workload install maui
-```
+{% endhighlight %}
 
 The command is the same for both Mac and Windows
 
@@ -95,17 +95,17 @@ You can see the environment variables you currently have set with the command:
 [<i class="fa-brands fa-windows icon"></i>](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/set_1){:target="_blank"}
 <hr class="icon-prefix">
 
-``` shell
+{% highlight shell %} 
 set
-```
+{% endhighlight %}
 
 
 [<i class="fa-brands fa-apple icon"></i>](https://support.apple.com/en-gb/guide/terminal/apd382cc5fa-4f58-4449-b20a-41c53c006f8f/mac){:target="_blank"}
 <hr class="icon-prefix">
 
-``` shell
+{% highlight shell %} 
 env
-```
+{% endhighlight %}
 
 The following variables are required for building and testing Android versions of your app.
 
@@ -128,17 +128,18 @@ The best approach is to create a folder in your home directory and let .NET inst
 [<i class="fa-brands fa-windows icon"></i>](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/mkdir){:target="_blank"} 
 <hr class="icon-prefix">
 
-``` shell
+{% highlight shell %} 
 mkdir C:\Users\**USERNAME**\MAUI
-```
+{% endhighlight %}
 
 [<i class="fa-brands fa-apple icon"></i>](https://ss64.com/mac/mkdir.html){:target="_blank"}
 <hr class="icon-prefix">
 
-``` shell
+{% highlight shell %} 
 mkdir ~/MAUI
-```
+{% endhighlight %}
 
+<button class="btn js-toggle-dark-mode">Preview dark color scheme</button>
 
 <details class="blue-bar">
 <summary>Create the variables on Windows</summary>
@@ -147,18 +148,18 @@ In the Start menu panel, start typing *Environment variables* and choose the opt
 appears. You will be taken to the system control panel as shown below where you should click the
 *Environment Variables* button.
 
-![Creating environment variables on Windows](images/vscode/env_var_win_1.png#centred)
+<img alt="Creating environment variables on Windows" src="images/vscode/env_var_win_1.png#centred"/>
 
 In the next dialog, there are two panels. Click *New...* in the top panel for a new user variable and
 fill in the details.
 
-![New variable](images/vscode/env_var_win_2.png#centred)
+<img alt="New variable" src="images/vscode/env_var_win_2.png#centred"/>
 
 To make the Android SDK command-line tools available from any directory, you also need to update the
 *PATH* environment variable. Specifically, you need to add the directory
 *%ANDROID_HOME%\cmdline-tools\11.0\bin* to the PATH - follow the steps indicated in the image below.
 
-![Updating the PATH on Windows](images/vscode/env_var_win_3.png#centred)
+<img alt="Updating the PATH on Windows" src="images/vscode/env_var_win_3.png#centred"/>
 
 The changes will not be visible in any CMD or PowerShell windows that are currently open. You will need
 to close and re-open them to pick up the new variables.
