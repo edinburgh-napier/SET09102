@@ -53,9 +53,7 @@ Create a folder on your laptop where project workspaces will be created.
 
 Change into that folder and use the command below to clone your repository, replacing <code>URL</code> with the one you copied in the previous step.
 
-{% highlight shell %} 
-git clone URL
-{% endhighlight %}
+{% highlight shell %}git clone URL{% endhighlight %}
 
 ## 4. Install the .NET SDK
 
