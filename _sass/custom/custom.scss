@@ -26,6 +26,9 @@
   font-size: large;
   color: $grey-dk-100;
 }
+.icon-prefix {
+  display: none;
+}
 .icon-prefix ~ .language-shell {
   margin-left: 2rem;
   margin-top: -3rem;
