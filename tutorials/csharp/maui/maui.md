@@ -167,8 +167,7 @@ In the **Solution Explorer** pane of VSCode, expand the _AboutPage.xaml_ file
 to reveal its code-behind file _AboutPage.xaml.cs_. Then click on the
 _AboutPage.xaml.cs_ file to open it in the code editor.
 
-![Code-behind structure](images/code_behind.png#figure)
-<figcaption>Fig. 4. Code-behind structure.</figcaption>
+![Fig. 4. Code-behind structure.](images/code_behind.png){: standalone #fig4}
 
 Change the `namespace` to _Notes_ instead of the default _MauiApp1_.
 
@@ -278,8 +277,7 @@ You'll see that there are two tabs: **Notes** and **About**. Press the
 **About** tab and the app navigates to the `AboutPage` you created. Press
 on the **Learn More...** button to open the web browser.
 
-![MS Notes app](images/final.png#figure)
-<figcaption>Fig. 5. Notes app first run.</figcaption>
+![Fig. 5. Notes app first run.](images/final.png){: standalone #fig5}
 
 ## 3. Create a page for a note
 
@@ -498,8 +496,7 @@ Save the file and run the app. Try typing into the entry box and press the
 Save button. Close the app, and reopen it. The note you entered should be
 loaded from the device's storage.
 
-![Note page](images/note_page.png#figure)
-<figcaption>Fig. 6. Note page.</figcaption>
+![Fig. 6. Note page.](images/note_page.png){: standalone #fig6}
 
 ## 4\. Bind data to the UI and navigate pages
 
@@ -560,8 +557,7 @@ is set to `Notes`. This needs to be updated to `Notes.Views`.
 1.  In the Solution Explorer pane, expand both _NotePage.xaml_ and _AboutPage.xaml_ to
     reveal the code-behind files:
 
-    ![View files in VSCode](images/view_files.png#figure)
-    <figcaption>Fig. 7. View files in VSCode.</figcaption>
+    ![Fig. 7. View files in VSCode.](images/view_files.png){: standalone #fig7}
 
 4.  Double-click on the _NotePage.xaml.cs_ item to open the code editor. Change the
     namespace to `Notes.Views`:
@@ -665,8 +661,7 @@ data:
 1.  In the **Solution Explorer** pane, right-click on the **Models** folder and select
     **Add New File....**  
 
-    ![Creating a new class in VSCode](images/new_class.png#figure)
-    <figcaption>Fig. 8. Creating a new class in VSCode.</figcaption>
+    ![Fig. 8. Creating a new class in VSCode.](images/new_class.png){: standalone #fig8}
 
 2.  Name the class `Note` and press RETURN. Notice that VSCode will automatically add
     the _.cs_ extension to the filename.
@@ -1244,5 +1239,4 @@ The Routing.RegisterRoute method takes two parameters:
 Now you can run your app. Try adding new notes, navigating back and forth between notes,
 and deleting notes.
 
-![Notes app version 1](images/notes_app_version_1.png#figure)
-<figcaption>Fig. 9. Notes app version 1.</figcaption>
+![Fig. 9. Notes app version 1.](images/notes_app_version_1.png){: standalone #fig9}
