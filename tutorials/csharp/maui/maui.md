@@ -680,7 +680,7 @@ data:
     ```
 
 {: .information-title }
-> <i class="fa-regular fa-circle-info"></i> Information
+> <i class="fa-solid fa-circle-info"></i> Information
 >
 > The question marks after the datatypes in the code above indicate that these properties are 
 > all nullable. This is not necessarily what we want in the long run, but for now, this will 
