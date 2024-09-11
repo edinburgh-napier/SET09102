@@ -66,8 +66,7 @@ This is a code file that bootstraps your app. The code in this file serves as
 the cross-platform entry point of the app, which configures and starts the app.
 The template startup code points to the `App` class defined by the _App.xaml_ file.
 
-_App.xaml_ and _App.xaml.cs  
-_
+_App.xaml_ and _App.xaml.cs
 
 Just to keep things simple, both of these files are referred to as a single file.
 There are generally two files with any XAML file, the _.xaml_ file itself, and a
@@ -79,14 +78,12 @@ The _App.xaml_ file contains app-wide XAML resources, such as colours, styles,
 or templates. The _App.xaml.cs_ file generally contains code that instantiates
 the Shell application. In this project, it points to the `AppShell` class.
 
-_AppShell.xaml_ and _AppShell.xaml.cs  
-_
+_AppShell.xaml_ and _AppShell.xaml.cs
 
 This file defines the `AppShell` class, which is used to define visual hierarchy
 of the app.
 
-_MainPage.xaml_ and _MainPage.xaml.cs  
-_
+_MainPage.xaml_ and _MainPage.xaml.cs
 
 This is the startup page displayed by the app. The _MainPage.xaml_ file defines
 the UI (user interface) of the page. _MainPage.xaml.cs_ contains the
@@ -142,13 +139,14 @@ except its children are arranged horizontally.
 * `<Image>` displays an image, in this case it's using the `dotnet_bot.png`
 image that comes with every .NET MAUI project.
 
-    > [!IMPORTANT]
-    >
-    > The file added to the project is actually `dotnet_bot.svg`. .NET MAUI converts
-    > Scalable Vector Graphics (SVG) files to Portable Network Graphic (PNG) files
-    > based on the target device. Therefore, when adding an SVG file to your .NET MAUI
-    > app project, it should be referenced from XAML or C# with a `.png` extension.
-    > The only reference to the SVG file should be in your project file.
+{: .note-title }
+> <i class="fa-solid fa-triangle-exclamation"></i> Note
+> 
+> The file added to the project is actually `dotnet_bot.svg`. .NET MAUI converts
+> Scalable Vector Graphics (SVG) files to Portable Network Graphic (PNG) files
+> based on the target device. Therefore, when adding an SVG file to your .NET MAUI
+> app project, it should be referenced from XAML or C# with a `.png` extension.
+> The only reference to the SVG file should be in your project file.
 
 * `<Label>` controls display text.
 * `<Button>` controls can be pressed by the user, which raise the `Clicked` event.
@@ -322,7 +320,7 @@ Let's break down the key parts of the XAML controls placed on the page:
 * `<VerticalStackLayout>` arranges its children controls vertically, one
 below the other.
 * `<Editor>` is a multi-line text editor control, and is the first control
-inside of [VerticalStackLayout](https://learn.microsoft.com/en-us/dotnet/api/microsoft.maui.controls.verticalstacklayout){:target="_blank"}
+inside [VerticalStackLayout](https://learn.microsoft.com/en-us/dotnet/api/microsoft.maui.controls.verticalstacklayout){:target="_blank"}
 * `<Grid>` is a layout control, and is the second control inside of
 [VerticalStackLayout](https://learn.microsoft.com/en-us/dotnet/api/microsoft.maui.controls.verticalstacklayout){:target="_blank"}
 
@@ -498,7 +496,7 @@ loaded from the device's storage.
 
 ![Fig. 6. Note page.](images/note_page.png){: standalone #fig6}
 
-## 4\. Bind data to the UI and navigate pages
+## 4. Bind data to the UI and navigate pages
 
 This portion of the tutorial introduces the concepts of views, models, and
 in-app navigation.
@@ -525,10 +523,11 @@ separately from each other.
 1.  Delete _MainPage.xaml_ and _MainPage.xaml.cs_ from your project, they're no longer
     needed.
 
-    > [!TIP]
-    >
-    > Deleting the _MainPage.xaml_ item should also delete the _MainPage.xaml.cs_ item
-    > too. If _MainPage.xaml.cs_ wasn't deleted, right-click on it and select **Delete**.
+{: .tip-title }
+> <i class="fa-regular fa-lightbulb"></i> Tip
+>
+> Deleting the _MainPage.xaml_ item should also delete the _MainPage.xaml.cs_ item
+> too. If _MainPage.xaml.cs_ wasn't deleted, right-click on it and select **Delete**.
 
 2.  Right-click on the **Notes** project and select **Add > New Folder**. Name the folder
     _Models_.
@@ -537,12 +536,13 @@ separately from each other.
 4.  Find the _NotePage.xaml_ item and drag it to the **Views** folder. The
     _NotePage.xaml.cs_ should move with it.
 
-    > [!TIP]
-    >
-    > VSCode may not allow you to move items in the **Solution Explorer** by dragging
-    > and dropping. Instead, use the file browser pane at the top of the explorer panel.
-    > Here, you will have to move both the _.xaml_ file and the _.xaml.cs_ files
-    > separately.
+{: .tip-title }
+> <i class="fa-regular fa-lightbulb"></i> Tip
+>
+> VSCode may not allow you to move items in the **Solution Explorer** by dragging
+> and dropping. Instead, use the file browser pane at the top of the explorer panel.
+> Here, you will have to move both the _.xaml_ file and the _.xaml.cs_ files
+> separately.
 
 5.  Find the _AboutPage.xaml_ item and drag it to the **Views** folder. The
     _AboutPage.xaml.cs_ should move with it.  
@@ -679,9 +679,12 @@ data:
     }
     ```
 
-    Important
-
-    The question marks after the datatypes in the code above indicate that these properties are all nullable. This is not necessarily what we want in the long run, but for now, this will allow us to run the app with no errors.
+{: .information-title }
+> <i class="fa-light fa-circle-info"></i> Information
+>
+> The question marks after the datatypes in the code above indicate that these properties are 
+> all nullable. This is not necessarily what we want in the long run, but for now, this will 
+> allow us to run the app with no errors.
 
 
 Next, create the about page's model:
@@ -746,26 +749,27 @@ Let's look at the changes in the new snippet:
     an instance of the `Note.Models.About` class, using the XML namespace and object of
     `models:About`. This was set using property element syntax instead of an XML attribute.
 
-    > [!IMPORTANT]
-    >
-    > Until now, properties have been set using an XML attribute. This works great for
-    > simple values, such as a `Label.FontSize` property. But if the property value is more
-    > complex, you must use property element syntax to create the object. Consider the
-    > following example of a creating a label with its `FontSize` property set:
-    >
-    > ```xml
-    > <Label FontSize="22" />
-    > ```
-    >     
-    > The same FontSize property can be set using property element syntax:
-    >
-    > ```xml
-    > <Label>
-    >     <Label.FontSize>
-    >         22
-    >     </Label.FontSize>
-    > </Label>
-    > ```
+{: .note-title }
+> <i class="fa-solid fa-triangle-exclamation"></i> Important!
+> 
+> Until now, properties have been set using an XML attribute. This works great for
+> simple values, such as a `Label.FontSize` property. But if the property value is more
+> complex, you must use property element syntax to create the object. Consider the
+> following example of a creating a label with its `FontSize` property set:
+>
+> ```xml
+> <Label FontSize="22" />
+> ```
+>     
+> The same FontSize property can be set using property element syntax:
+>
+> ```xml
+> <Label>
+>     <Label.FontSize>
+>         22
+>     </Label.FontSize>
+> </Label>
+> ```
 
 *   Three `<Label>` controls had their `Text` property value changed from a hardcoded
     string to binding syntax: `{Binding PATH}`.
