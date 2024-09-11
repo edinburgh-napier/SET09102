@@ -21,8 +21,16 @@
 }
 
 p.warning-title>p:first-child,
-blockquote.warning-title>p:first-child {
+blockquote.warning-title>p:first-child,
+p.note-title>p:first-child,
+blockquote.note-title>p:first-child,
+p.information-title>p:first-child,
+blockquote.information-title>p:first-child,
+p.tip-title>p:first-child,
+blockquote.tip-title>p:first-child,
+{
   font-size: inherit;
+  font-weight: inherit;
 }
 
 // IMAGES
