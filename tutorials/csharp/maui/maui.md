@@ -117,7 +117,7 @@ with the following markup:
              x:Class="Notes.AboutPage">
     <VerticalStackLayout Spacing="10" Margin="10">
         <HorizontalStackLayout Spacing="10">
-            <Image Source="dotnet\_bot.png"
+            <Image Source="dotnet_bot.png"
                    SemanticProperties.Description="The dot net bot waving hello!"
                    HeightRequest="64" />
             <Label FontSize="22" FontAttributes="Bold" Text="Notes" VerticalOptions="End" />
@@ -125,7 +125,7 @@ with the following markup:
         </HorizontalStackLayout>
 
         <Label Text="This app is written in XAML and C# with .NET MAUI." />
-        <Button Text="Learn more..." Clicked="LearnMore\_Clicked" />
+        <Button Text="Learn more..." Clicked="LearnMore_Clicked" />
     </VerticalStackLayout>
 </ContentPage>
 ```
@@ -236,12 +236,12 @@ XAML editor. Replace the XAML markup with the following code:
         <ShellContent
             Title="Notes"
             ContentTemplate="{DataTemplate local:MainPage}"
-            Icon="{OnPlatform 'icon\_notes.png', iOS='icon\_notes\_ios.png', MacCatalyst='icon\_notes\_ios.png'}" />
+            Icon="{OnPlatform 'icon_notes.png', iOS='icon_notes_ios.png', MacCatalyst='icon_notes_ios.png'}" />
 
         <ShellContent
             Title="About"
             ContentTemplate="{DataTemplate local:AboutPage}"
-            Icon="{OnPlatform 'icon\_about.png', iOS='icon\_about\_ios.png', MacCatalyst='icon\_about\_ios.png'}" />
+            Icon="{OnPlatform 'icon_about.png', iOS='icon_about_ios.png', MacCatalyst='icon_about_ios.png'}" />
     </TabBar>
 
 </Shell>
@@ -307,11 +307,11 @@ markup the following markup:
 
         <Grid ColumnDefinitions="\*,\*" ColumnSpacing="4">
             <Button Text="Save"
-                    Clicked="SaveButton\_Clicked" />
+                    Clicked="SaveButton_Clicked" />
 
             <Button Grid.Column="1"
                     Text="Delete"
-                    Clicked="DeleteButton\_Clicked" />
+                    Clicked="DeleteButton_Clicked" />
         </Grid>
     </VerticalStackLayout>
 </ContentPage>
@@ -384,7 +384,7 @@ and saving notes.
 
     public partial class NotePage : ContentPage
     {
-        string \_fileName = Path.Combine(FileSystem.AppDataDirectory, "notes.txt");
+        string _fileName = Path.Combine(FileSystem.AppDataDirectory, "notes.txt");
 
     The code above constructs a path to the file, storing it in the app's local data directory. The file name is notes.txt.
 
@@ -397,25 +397,25 @@ and saving notes.
     {
         InitializeComponent();
 
-        if (File.Exists(\_fileName))
-            TextEditor.Text = File.ReadAllText(\_fileName);
+        if (File.Exists(_fileName))
+            TextEditor.Text = File.ReadAllText(_fileName);
     }
     ```
 
 3.  Next, add the code to handle the `Clicked` events defined in the XAML:
 
     ```c#
-    private void SaveButton\_Clicked(object sender, EventArgs e)
+    private void SaveButton_Clicked(object sender, EventArgs e)
     {
         // Save the file.
-        File.WriteAllText(\_fileName, TextEditor.Text);
+        File.WriteAllText(_fileName, TextEditor.Text);
     }
 
-    private void DeleteButton\_Clicked(object sender, EventArgs e)
+    private void DeleteButton_Clicked(object sender, EventArgs e)
     {
         // Delete the file.
-        if (File.Exists(\_fileName))
-            File.Delete(\_fileName);
+        if (File.Exists(_fileName))
+            File.Delete(_fileName);
 
         TextEditor.Text = string.Empty;
     }
@@ -435,27 +435,27 @@ namespace Notes;
 
 public partial class NotePage : ContentPage
 {
-    string \_fileName = Path.Combine(FileSystem.AppDataDirectory, "notes.txt");
+    string _fileName = Path.Combine(FileSystem.AppDataDirectory, "notes.txt");
 
     public NotePage()
     {
         InitializeComponent();
 
-        if (File.Exists(\_fileName))
-            TextEditor.Text = File.ReadAllText(\_fileName);
+        if (File.Exists(_fileName))
+            TextEditor.Text = File.ReadAllText(_fileName);
     }
 
-    private void SaveButton\_Clicked(object sender, EventArgs e)
+    private void SaveButton_Clicked(object sender, EventArgs e)
     {
         // Save the file.
-        File.WriteAllText(\_fileName, TextEditor.Text);
+        File.WriteAllText(_fileName, TextEditor.Text);
     }
 
-    private void DeleteButton\_Clicked(object sender, EventArgs e)
+    private void DeleteButton_Clicked(object sender, EventArgs e)
     {
         // Delete the file.
-        if (File.Exists(\_fileName))
-            File.Delete(\_fileName);
+        if (File.Exists(_fileName))
+            File.Delete(_fileName);
 
         TextEditor.Text = string.Empty;
     }
@@ -481,12 +481,12 @@ entry to point to the `NotePage` instead of `MainPage`:
         <ShellContent
             Title="Notes"
             ContentTemplate="{DataTemplate local:NotePage}"
-            Icon="{OnPlatform 'icon\_notes.png', iOS='icon\_notes\_ios.png', MacCatalyst='icon\_notes\_ios.png'}" />
+            Icon="{OnPlatform 'icon_notes.png', iOS='icon_notes_ios.png', MacCatalyst='icon_notes_ios.png'}" />
 
         <ShellContent
             Title="About"
             ContentTemplate="{DataTemplate local:AboutPage}"
-            Icon="{OnPlatform 'icon\_about.png', iOS='icon\_about\_ios.png', MacCatalyst='icon\_about\_ios.png'}" />
+            Icon="{OnPlatform 'icon_about.png', iOS='icon_about_ios.png', MacCatalyst='icon_about_ios.png'}" />
     </TabBar>
 
 </Shell>
@@ -597,12 +597,12 @@ entry to open it in the XAML editor. It should look like the following snippet:
         <ShellContent
             Title="Notes"
             ContentTemplate="{DataTemplate local:NotePage}"
-            Icon="{OnPlatform 'icon\_notes.png', iOS='icon\_notes\_ios.png', MacCatalyst='icon\_notes\_ios.png'}" />
+            Icon="{OnPlatform 'icon_notes.png', iOS='icon_notes_ios.png', MacCatalyst='icon_notes_ios.png'}" />
 
         <ShellContent
             Title="About"
             ContentTemplate="{DataTemplate local:AboutPage}"
-            Icon="{OnPlatform 'icon\_about.png', iOS='icon\_about\_ios.png', MacCatalyst='icon\_about\_ios.png'}" />
+            Icon="{OnPlatform 'icon_about.png', iOS='icon_about_ios.png', MacCatalyst='icon_about_ios.png'}" />
     </TabBar>
 
 </Shell>
@@ -638,12 +638,12 @@ change them to `views`. Your XAML should now look like the following snippet:
         <ShellContent
             Title="Notes"
             ContentTemplate="{DataTemplate views:NotePage}"
-            Icon="{OnPlatform 'icon\_notes.png', iOS='icon\_notes\_ios.png', MacCatalyst='icon\_notes\_ios.png'}" />
+            Icon="{OnPlatform 'icon_notes.png', iOS='icon_notes_ios.png', MacCatalyst='icon_notes_ios.png'}" />
 
         <ShellContent
             Title="About"
             ContentTemplate="{DataTemplate views:AboutPage}"
-            Icon="{OnPlatform 'icon\_about.png', iOS='icon\_about\_ios.png', MacCatalyst='icon\_about\_ios.png'}" />
+            Icon="{OnPlatform 'icon_about.png', iOS='icon_about_ios.png', MacCatalyst='icon_about_ios.png'}" />
     </TabBar>
 
 </Shell>
@@ -722,7 +722,7 @@ and see how it loads data from the model.
         </ContentPage.BindingContext>
         <VerticalStackLayout Spacing="10" Margin="10">
             <HorizontalStackLayout Spacing="10">
-                <Image Source="dotnet\_bot.png"
+                <Image Source="dotnet_bot.png"
                        SemanticProperties.Description="The dot net bot waving hello!"
                        HeightRequest="64" />
                 <Label FontSize="22" FontAttributes="Bold" Text="{Binding Title}" VerticalOptions="End" />
@@ -730,7 +730,7 @@ and see how it loads data from the model.
             </HorizontalStackLayout>
 
             <Label Text="{Binding Message}" />
-            <Button Text="Learn more..." Clicked="LearnMore\_Clicked" />
+            <Button Text="Learn more..." Clicked="LearnMore_Clicked" />
         </VerticalStackLayout>
 
     </ContentPage>
@@ -788,7 +788,7 @@ The final change to the about page is updating the button click that opens a web
 2.  Replace the `LearnMore_Clicked` method with the following code:
 
     ```c#
-    private async void LearnMore\_Clicked(object sender, EventArgs e)
+    private async void LearnMore_Clicked(object sender, EventArgs e)
     {
         if (BindingContext is Models.About about)
         {
@@ -830,11 +830,11 @@ the next few steps.
 
             <Grid ColumnDefinitions="\*,\*" ColumnSpacing="4">
                 <Button Text="Save"
-                        Clicked="SaveButton\_Clicked" />
+                        Clicked="SaveButton_Clicked" />
 
                 <Button Grid.Column="1"
                         Text="Delete"
-                        Clicked="DeleteButton\_Clicked" />
+                        Clicked="DeleteButton_Clicked" />
             </Grid>
         </VerticalStackLayout>
     </ContentPage>
@@ -849,8 +849,8 @@ public NotePage()
 {
     InitializeComponent();
 
-    if (File.Exists(\_fileName))
-        TextEditor.Text = File.ReadAllText(\_fileName);
+    if (File.Exists(_fileName))
+        TextEditor.Text = File.ReadAllText(_fileName);
 }
 ```
 
@@ -990,7 +990,7 @@ Next, the view needs to be designed to support the `AllNotes` model.
                  Title="Your Notes">
         <!-- Add an item to the toolbar -->
         <ContentPage.ToolbarItems>
-            <ToolbarItem Text="Add" Clicked="Add\_Clicked" IconImageSource="{FontImage Glyph='+', Color=Black, Size=22}" />
+            <ToolbarItem Text="Add" Clicked="Add_Clicked" IconImageSource="{FontImage Glyph='+', Color=Black, Size=22}" />
         </ContentPage.ToolbarItems>
 
         <!-- Display notes in a list -->
@@ -998,7 +998,7 @@ Next, the view needs to be designed to support the `AllNotes` model.
                             ItemsSource="{Binding Notes}"
                             Margin="20"
                             SelectionMode="Single"
-                            SelectionChanged="notesCollection\_SelectionChanged">
+                            SelectionChanged="notesCollection_SelectionChanged">
 
             <!-- Designate how the collection of items are laid out -->
             <CollectionView.ItemsLayout>
@@ -1064,12 +1064,12 @@ The code-behind for the view needs to be written to load the notes and handle th
             ((Models.AllNotes)BindingContext).LoadNotes();
         }
 
-        private async void Add\_Clicked(object sender, EventArgs e)
+        private async void Add_Clicked(object sender, EventArgs e)
         {
             await Shell.Current.GoToAsync(nameof(NotePage));
         }
 
-        private async void notesCollection\_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private async void notesCollection_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (e.CurrentSelection.Count != 0)
             {
@@ -1146,7 +1146,7 @@ The `Note` view needs to support the query string parameter, `ItemId`. Create it
     following code:
 
     ```c#
-    private async void SaveButton\_Clicked(object sender, EventArgs e)
+    private async void SaveButton_Clicked(object sender, EventArgs e)
     {
         if (BindingContext is Models.Note note)
             File.WriteAllText(note.Filename, TextEditor.Text);
@@ -1154,7 +1154,7 @@ The `Note` view needs to support the query string parameter, `ItemId`. Create it
         await Shell.Current.GoToAsync("..");
     }
 
-    private async void DeleteButton\_Clicked(object sender, EventArgs e)
+    private async void DeleteButton_Clicked(object sender, EventArgs e)
     {
         if (BindingContext is Models.Note note)
         {
@@ -1192,12 +1192,12 @@ entry to point to the `AllNotesPage` instead of `NotePage`:
         <ShellContent
             Title="Notes"
             ContentTemplate="{DataTemplate views:AllNotesPage}"
-            Icon="{OnPlatform 'icon\_notes.png', iOS='icon\_notes\_ios.png', MacCatalyst='icon\_notes\_ios.png'}" />
+            Icon="{OnPlatform 'icon_notes.png', iOS='icon_notes_ios.png', MacCatalyst='icon_notes_ios.png'}" />
 
         <ShellContent
             Title="About"
             ContentTemplate="{DataTemplate views:AboutPage}"
-            Icon="{OnPlatform 'icon\_about.png', iOS='icon\_about\_ios.png', MacCatalyst='icon\_about\_ios.png'}" />
+            Icon="{OnPlatform 'icon_about.png', iOS='icon_about_ios.png', MacCatalyst='icon_about_ios.png'}" />
     </TabBar>
 
 </Shell>
