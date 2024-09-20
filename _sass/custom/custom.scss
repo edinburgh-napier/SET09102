@@ -1,28 +1,22 @@
 // Theme mods (just-the-docs)
 
 @media (min-width: 66.5rem) {
-    .side-bar {
-        width:calc(10% + 16.5rem);
-        min-width: 16.5rem
-    }
+  .main {
+      position:relative;
+      max-width: 60vw;
+  }
+  .side-bar {
+      width:calc(10% + 16.5rem);
+      min-width: 16.5rem
+  }
+  .side-bar+.main {
+    margin-left: Max(16.5rem, calc(20% + 16.5rem))
+  }
+  .site-nav, .site-header, .site-footer {
+    width: 20rem;
+  }
 }
 
-@media (min-width: 66.5rem) {
-    .side-bar+.main {
-        margin-left:Max(16.5rem, calc(20% + 16.5rem))
-    }
-}
-
-@media (min-width: 66.5rem) {
-    .main {
-        position:relative;
-        max-width: 60vw;
-    }
-}
-
-.site-nav, .site-header, .site-footer {
-  width: 20rem;
-}
 
 p.warning-title>p:first-child,
 blockquote.warning-title>p:first-child,
