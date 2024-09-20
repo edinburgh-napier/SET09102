@@ -3,15 +3,17 @@
 @media (min-width: 66.5rem) {
   .main {
       position:relative;
-      max-width: 60vw;
+      //max-width: 60vw;
+      width:calc(100% - 22rem);
   }
   .side-bar {
-      width:calc(10% + 16.5rem);
-      min-width: 16.5rem
+      //width:calc(10% + 16.5rem);
+      //min-width: 16.5rem
+    width: 22rem;
   }
-  .side-bar+.main {
-    margin-left: Max(16.5rem, calc(20% + 16.5rem))
-  }
+  //.side-bar+.main {
+  //  margin-left: Max(16.5rem, calc(20% + 16.5rem))
+  //}
   .site-nav, .site-header, .site-footer {
     width: 20rem;
   }
