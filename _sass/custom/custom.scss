@@ -11,9 +11,9 @@
       //min-width: 16.5rem
     width: 22rem;
   }
-  //.side-bar+.main {
-  //  margin-left: Max(16.5rem, calc(20% + 16.5rem))
-  //}
+  .side-bar+.main {
+    margin-left: Max(22rem, calc(20% + 22rem))
+  }
   .site-nav, .site-header, .site-footer {
     width: 20rem;
   }
