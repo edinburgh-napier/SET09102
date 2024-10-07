@@ -4,7 +4,7 @@
   .main {
       position:relative;
       //max-width: 60vw;
-      width:calc(100% - 22rem);
+      max-width:calc(100% - 22rem);
   }
   .side-bar {
       //width:calc(10% + 16.5rem);
@@ -12,7 +12,7 @@
     width: 22rem;
   }
   .side-bar+.main {
-    margin-left: Max(22rem, calc(20% + 22rem))
+    margin-left: Max(22rem, calc(5% + 22rem))
   }
   .site-nav, .site-header, .site-footer {
     width: 20rem;
