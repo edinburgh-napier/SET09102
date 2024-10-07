@@ -1,3 +1,10 @@
+---
+title: Migrating the notes application to MVVM
+parent: C# practice
+grand_parent: Tutorials
+nav_order: 2
+---
+
 # Migrating the notes application to MVVM
 
 In the previous tutorial, you created a note-taking app. Here, you'll continue to develop the app and learn how to:
