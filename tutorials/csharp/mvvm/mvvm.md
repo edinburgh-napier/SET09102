@@ -344,9 +344,10 @@ The `ShowMoreInfo` button isn't using the event handler, so the `LearnMore_Click
 
 1.  In the **Solution Explorer**, click on _Views/AboutPage.xaml.cs_.
     
-    Tip
-    
-    You may need to expand _Views/AboutPage.xaml_ to show the file.
+    {: .tip-title }
+    > <i class="fa-regular fa-lightbulb"></i> Tip
+    >
+    > You may need to expand _Views/AboutPage.xaml_ to show the file.
     
 2.  Replace the code with the following snippet:
 
