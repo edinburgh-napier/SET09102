@@ -949,7 +949,7 @@ First, fix the reordering problem with the notes list. In the _ViewModels/NotesV
 3.  When the `matchedNote` isn't null, the note is being updated. Use the `AllNotes.Move` method to move the `matchedNote` to index 0, which is the top of the list.
 
     ``` c#
-    string noteId = query\["saved"\].ToString();
+    string noteId = query["saved"].ToString();
     NoteViewModel matchedNote = AllNotes.Where((n) => n.Identifier == noteId).FirstOrDefault();
     
     // If note is found, update it
