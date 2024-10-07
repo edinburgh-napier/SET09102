@@ -59,7 +59,7 @@ Thinking about the app itself, there is only one piece of data that is used by t
 
 The only model file remaining is the _Models/Note.cs_ file.
 
-### 2\. Update the model
+### 2. Update the model
 
 The `Note` model contains:
 
@@ -206,13 +206,13 @@ internal class Note
 
 Now that the `Note` model is complete the viewmodels can be created.
 
-### 3\. Create the About viewmodel
+### 3. Create the About viewmodel
 
 Before adding viewmodels to the project, install the [.NET Community Toolkit](https://devblogs.microsoft.com/dotnet/announcing-the-dotnet-community-toolkit-820/) package which provides types and systems that help implement the MVVM pattern:
 
 In the **Solution Explorer**, right-click on the **Notes** project and select **Add NuGet Package...**. When the next dialog appears, type in "CommunityToolkit" and press ENTER. Then select the **CommunityToolkit.Mvvm** package as shown below.
 
-![Adding a NuGet package in VSCode](https://moodle.napier.ac.uk/draftfile.php/346/user/draft/63548596/nuget_package%20.png)
+![Adding a NuGet package in VSCode](images/nuget_package.png)
 
 Fig. 2. Adding a NuGet package in VSCode.
 
@@ -234,7 +234,7 @@ The viewmodels are stored in a _ViewModels_ folder.
 
 Your project structure should look like the following image:
 
-![Adding viewmodels in VSCode](https://moodle.napier.ac.uk/draftfile.php/346/user/draft/63548596/adding_viewmodels.png)
+![Adding viewmodels in VSCode](images/adding_viewmodels.png)
 
 Fig. 3. Adding viewmodels in VSCode.
 
@@ -989,6 +989,6 @@ Don't overengineer a solution for this problem, and just use the `NavigatedTo` e
 
 Now, run your app. Try to navigate to a note, press the back button, and select the same note a second time. The app behaviour is fixed!
 
-![Notes app version 2](https://moodle.napier.ac.uk/draftfile.php/346/user/draft/63548596/notes_app_version_2.png)
+![Notes app version 2](images/notes_app_version_2.png)
 
 Fig. 4. Notes app version 2.
