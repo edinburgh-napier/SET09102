@@ -10,6 +10,21 @@ nav_order: 1
 Software Engineering Methods module (SET08103). You can review that material
 on the [SET08103 GitHub site](https://github.com/edinburgh-napier/SET08103).
 
+| Unit | Topic                      | Presentations | Tutorial                 | Practical                 | Self-test |
+|------|----------------------------|---------------|--------------------------|---------------------------|-----------|
+| 1    | Human factors              |               | Development tools        | Getting started with MAUI |           |
+| 2    | Requirements engineering   |               | Using StarUML            | Migrating to MVVM         |           |
+| 3    | Processes and workflow     |               | Using GitHub             | Adding a database         |           |
+| 4    | Code quality               |               | Code review              | Unit testing              |           |
+| 5    | Software testing           |               | Static analysis          | Database migrations       |           |
+| 6    | Process quality            |               | Data-driven applications | Continuous integration    |           |
+| 7    | CASE                       |               | Generative AI 1          | Coursework                |           |
+| 8    | Security                   |               | Generative AI 2          | Coursework                |           |
+| 9    | Software evolution         |               | Troubleshooting          | Coursework                |           |
+| 10   | Ethics and professionalism |               | Troubleshooting          | Coursework                |           |
+
+## OLD structure
+
 | Week | Topic                                                                                                                                                                             | Practical                                                                 | Assessment                                                                                                                                |
 |------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------|
 | 2    | [Introduction to the module](notes/Week02a_introduction.md)<br/>[Human factors in software engineering](notes/Week02b_human_factors.md)                                           | [Setup: Visual Studio and GitHub](practicals/Week02_setup.md)                 | [Coursework brief](assessment)<br/>Portfolio 1: [Setup](https://github.com/edinburgh-napier/SET09102_portfolio/blob/main/week02_setup.md) |
