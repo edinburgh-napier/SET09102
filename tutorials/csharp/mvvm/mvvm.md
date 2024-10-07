@@ -1,5 +1,5 @@
 ---
-title: Migrating the notes application to MVVM
+title: Migrating to MVVM
 parent: C# practice
 grand_parent: Tutorials
 nav_order: 2
@@ -14,29 +14,27 @@ In the previous tutorial, you created a note-taking app. Here, you'll continue t
 
 The content of the tutorial is heavily based on the standard [Microsoft tutorial](https://learn.microsoft.com/en-us/dotnet/maui/tutorials/notes-mvvm/?view=net-maui-8.0) which uses Visual Studio IDE as the development tool. This version has been modified to use Visual Studio Code (VSCode) but the result should be the same.
 
-### 1. Understanding MVVM
+## 1. Understanding MVVM
 
 The .NET MAUI developer experience typically involves creating a user interface in XAML, and then adding code-behind that operates on the user interface. Complex maintenance issues can arise as apps are modified and grow in size and scope. These issues include the tight coupling between the UI controls and the business logic, which increases the cost of making UI modifications, and the difficulty of unit testing such code.
 
 The model-view-viewmodel (MVVM) pattern helps cleanly separate an app's business and presentation logic from its user interface (UI). Maintaining a clean separation between app logic and the UI helps address numerous development issues and makes an app easier to test, maintain, and evolve. It can also significantly improve code reuse opportunities and allows developers and UI designers to collaborate more easily when developing their respective parts of an app.
 
-#### The pattern
+### The pattern
 
 There are three core components in the MVVM pattern: the model, the view, and the viewmodel. Each serves a distinct purpose. The following diagram shows the relationships between the three components.
 
-![MVVM pattern](images/mvvm-pattern.png){: standalone #fig1}
-
-Fig. 1. The MVVM pattern
+![Fig. 1. The MVVM pattern](images/mvvm-pattern.png){: standalone #fig1}
 
 In addition to understanding the responsibilities of each component, it's also important to understand how they interact. At a high level, the view "knows about" the viewmodel, and the viewmodel "knows about" the model, but the model is unaware of the viewmodel, and the viewmodel is unaware of the view. Therefore, the viewmodel isolates the view from the model, and allows the model to evolve independently of the view.
 
 The key to using MVVM effectively lies in understanding how to factor app code into the correct classes and how the classes interact.
 
-#### View
+### View
 
 The view is responsible for defining the structure, layout, and appearance of what the user sees on screen. Ideally, each view is defined in XAML, with a limited code-behind that doesn't contain business logic. However, in some cases, the code-behind might contain UI logic that implements visual behaviour that is difficult to express in XAML, such as animations.
 
-#### Viewmodel
+### Viewmodel
 
 The viewmodel implements properties and commands to which the view can data bind to, and notifies the view of any state changes through change notification events. The properties and commands that the viewmodel provides define the functionality to be offered by the UI, but the view determines how that functionality is to be displayed.
 
@@ -44,11 +42,11 @@ The viewmodel is also responsible for coordinating the view's interactions with 
 
 Each viewmodel provides data from a model in a form that the view can easily consume. To accomplish this, the viewmodel sometimes performs data conversion. Placing this data conversion in the viewmodel is a good idea because it provides properties that the view can bind to. For example, the viewmodel might combine the values of two properties to make it easier to display by the view.
 
-#### Model
+### Model
 
 Model classes are non-visual classes that encapsulate the app's data. Therefore, the model can be thought of as representing the app's domain model, which usually includes a data model along with business and validation logic.
 
-### 2. Clean up the model
+## 2. Clean up the model
 
 In the previous tutorial, the model types were acting both as the model (data) and as a viewmodel (data preparation), which was mapped directly to a view. The following table describes the model:
 
@@ -66,7 +64,7 @@ Thinking about the app itself, there is only one piece of data that is used by t
 
 The only model file remaining is the _Models/Note.cs_ file.
 
-### 3. Update the model
+## 3. Update the model
 
 The `Note` model contains:
 
@@ -76,7 +74,7 @@ The `Note` model contains:
 
 Currently, loading and saving the model was done through the views, and in some cases, by the other model types that you just removed. The code you have for the `Note` type should be the following:
 
-``` C
+``` c#
 namespace Notes.Models;
 
 internal class Note
@@ -93,7 +91,7 @@ The `Note` model is going to be expanded to handle loading, saving, and deleting
 2.  Remove the question marks from the datatypes in the property declarations. This was a temporary measure to allow the previous version of the code to run without error. From here on, we will not accept null values.
 3.  In the code editor, add the following two methods to the `Note` class. These methods are instance-based and handle saving or deleting the current note to or from the device, respectively:
 
-    ``` C
+    ``` c#
     public void Save() =>
     File.WriteAllText(System.IO.Path.Combine(FileSystem.AppDataDirectory, Filename), Text);
     
@@ -105,7 +103,7 @@ The `Note` model is going to be expanded to handle loading, saving, and deleting
     
     Add the following code to the class to load a note by file name:
 
-    ``` C
+    ``` c#
     public static Note Load(string filename)
     {
         filename = System.IO.Path.Combine(FileSystem.AppDataDirectory, filename);
@@ -129,7 +127,7 @@ The `Note` model is going to be expanded to handle loading, saving, and deleting
     
     Add the following code to the class:
 
-    ``` C
+    ``` c#
     public static IEnumerable<Note> LoadAll()
     {
         // Get the folder where the notes are stored.
@@ -153,7 +151,7 @@ The `Note` model is going to be expanded to handle loading, saving, and deleting
     
 6.  Lastly, add a constructor to the class which sets the default values for the properties, including a random file name:
 
-    ``` C
+    ``` c#
     public Note()
     {
         Filename = $"{Path.GetRandomFileName()}.notes.txt";
@@ -164,7 +162,7 @@ The `Note` model is going to be expanded to handle loading, saving, and deleting
 
 The `Note` class code should look like the following:
 
-``` C
+``` c#
 namespace Notes.Models;
 
 internal class Note
@@ -224,17 +222,15 @@ internal class Note
 
 Now that the `Note` model is complete the viewmodels can be created.
 
-### 4. Create the About viewmodel
+## 4. Create the About viewmodel
 
 Before adding viewmodels to the project, install the [.NET Community Toolkit](https://devblogs.microsoft.com/dotnet/announcing-the-dotnet-community-toolkit-820/) package which provides types and systems that help implement the MVVM pattern:
 
 In the **Solution Explorer**, right-click on the **Notes** project and select **Add NuGet Package...**. When the next dialog appears, type in "CommunityToolkit" and press ENTER. Then select the **CommunityToolkit.Mvvm** package as shown below.
 
-![Adding a NuGet package in VSCode](images/nuget_package.png){: standalone #fig2}
+![Fig. 2. Adding a NuGet package in VSCode](images/nuget_package.png){: standalone #fig2}
 
-Fig. 2. Adding a NuGet package in VSCode.
-
-#### Decouple with viewmodels
+### Decouple with viewmodels
 
 The view-to-viewmodel relationship relies heavily on the binding system provided by .NET Multi-platform App UI (.NET MAUI). The app is already using binding in the views to display a list of notes and to present the text and date of a single note. The app logic is currently provided by the view's code-behind and is directly tied to the view. For example, when a user is editing a note and presses the **Save** button, the `Clicked` event for the button is raised. Then, the code-behind for the event handler saves the note text to a file and navigates to the previous screen.
 
@@ -252,13 +248,11 @@ The viewmodels are stored in a _ViewModels_ folder.
 
 Your project structure should look like the following image:
 
-![Adding viewmodels in VSCode](images/adding_viewmodels.png){: standalone #fig3}
-
-Fig. 3. Adding viewmodels in VSCode.
+![Fig. 3. Adding viewmodels in VSCode](images/adding_viewmodels.png){: standalone #fig3}
 
 Note that VSCode shows that there is an error in _AboutPage.xaml_. That is because it contains a reference to the `About` model which we have just deleted. We will resolve the invalid reference in the next section.
 
-#### About viewmodel and About view
+### About viewmodel and About view
 
 The **About view** displays some data on the screen and optionally navigates to a website with more information. Since this view doesn't have any data to change, like with a text entry control or selecting items from a list, it's a good candidate to demonstrate adding a viewmodel. For the **About ViewModel**, there isn't a backing model.
 
@@ -267,7 +261,7 @@ Create the **About ViewModel**:
 1.  In the **Solution Explorer**, click on _ViewModels/AboutViewModel.cs_.
 2.  Paste in the following code:
 
-    ``` C
+    ``` c#
     using CommunityToolkit.Mvvm.Input;
     using System.Windows.Input;
     
@@ -296,7 +290,7 @@ The previous code snippet contains some properties that represent information ab
 
 Commands are bindable actions that invoke code, and are a great place to put app logic. In this example, the `ShowMoreInfoCommand` points to the `ShowMoreInfo` method, which opens the web browser to a specific page. You'll learn more about the command system in the next section.
 
-#### About view
+### About view
 
 The **About view** needs to be changed slightly to hook it up to the viewmodel that was created in the previous section. In the _Views/AboutPage.xaml_ file, apply the following changes:
 
@@ -338,7 +332,7 @@ Notice that the button is using the `Command` property. Many controls have a `Co
 
 In this view, when the user presses the button, the `Command` is invoked. The `Command` is bound to the `ShowMoreInfoCommand` property in the viewmodel, and when invoked, runs the code in the `ShowMoreInfo` method, which opens the web browser to a specific page.
 
-#### Clean up the About code-behind
+### Clean up the About code-behind
 
 The `ShowMoreInfo` button isn't using the event handler, so the `LearnMore_Clicked` code should be removed from the _Views/AboutPage.xaml.cs_ file. Delete that code, the class should only contain the constructor:
 
@@ -351,7 +345,7 @@ The `ShowMoreInfo` button isn't using the event handler, so the `LearnMore_Click
     
 2.  Replace the code with the following snippet:
 
-    ``` C
+    ``` c#
     namespace Notes.Views;
     
     public partial class AboutPage : ContentPage
@@ -363,11 +357,11 @@ The `ShowMoreInfo` button isn't using the event handler, so the `LearnMore_Click
     }
     ```
 
-### 5. Create the Note viewmodel
+## 5. Create the Note viewmodel
 
 The goal of updating the **Note view** is to move as much functionality as possible out of the XAML code-behind and put it in the **Note viewmodel**.
 
-#### Note viewmodel
+### Note viewmodel
 
 Based on what the **Note view** requires, the **Note viewmodel** needs to provide the following items:
 
@@ -381,7 +375,7 @@ Create the **Note viewmodel**:
 1.  In the **Solution Explorer**, click on _ViewModels/NoteViewModel.cs_.
 2.  Replace the code in this file with the following snippet:
 
-    ``` C
+    ``` c#
     using CommunityToolkit.Mvvm.Input;
     using CommunityToolkit.Mvvm.ComponentModel;
     using System.Windows.Input;
@@ -401,7 +395,7 @@ Create the **Note viewmodel**:
     
 3.  Add the following properties to the class:
 
-    ``` C
+    ``` c#
     public string Text
     {
         get => _note.Text;
@@ -422,9 +416,10 @@ Create the **Note viewmodel**:
     
     The `Date` and `Identifier` properties are simple properties that just retrieve the corresponding values from the model.
     
-    Tip
-    
-    For properties, the => syntax creates a get-only property where the statement to the right of => must evaluate to a value to return.
+    {: .tip-title }
+    > <i class="fa-regular fa-lightbulb"></i> Tip
+    >
+    > For properties, the => syntax creates a get-only property where the statement to the right of => must evaluate to a value to return.
     
     The `Text` property first checks if the value being set is a different value. If the value is different, that value is passed on to the model's property, and the `OnPropertyChanged` method is called.
     
@@ -432,14 +427,14 @@ Create the **Note viewmodel**:
     
 4.  Add the following command-properties to the class, which are the commands that the view can bind to:
 
-    ``` C
+    ``` c#
     public ICommand SaveCommand { get; private set; }
     public ICommand DeleteCommand { get; private set; }
     ```
     
 5.  Add the following constructors to the class:
 
-    ``` C
+    ``` c#
     public NoteViewModel()
     {
         _note = new Models.Note();
@@ -461,7 +456,7 @@ Create the **Note viewmodel**:
     
 6.  Add the `Save` and `Delete` methods:
 
-    ``` C
+    ``` c#
     private async Task Save()
     {
         _note.Date = DateTime.Now;
@@ -480,7 +475,7 @@ Create the **Note viewmodel**:
     
 7.  Next, add the `ApplyQueryAttributes` method to the class, which satisfies the requirements of the `IQueryAttributable` interface:
 
-    ``` C
+    ``` c#
     void IQueryAttributable.ApplyQueryAttributes(IDictionary<string, object> query)
     {
         if (query.ContainsKey("load"))
@@ -497,7 +492,7 @@ Create the **Note viewmodel**:
     
 8.  Finally, add these two helper methods to the class:
 
-    ``` C
+    ``` c#
     public void Reload()
     {
         _note = Models.Note.Load(_note.Filename);
@@ -518,7 +513,7 @@ Create the **Note viewmodel**:
 
 The code for the class should look like the following snippet:
 
-``` C
+``` c#
 using CommunityToolkit.Mvvm.Input;
 using CommunityToolkit.Mvvm.ComponentModel;
 using System.Windows.Input;
@@ -599,7 +594,7 @@ internal class NoteViewModel : ObservableObject, IQueryAttributable
 }
 ```
 
-#### Note view
+### Note view
 
 Now that the viewmodel has been created, update the **Note view**. In the _Views/NotePage.xaml_ file, apply the following changes:
 
@@ -649,14 +644,14 @@ Previously, this view didn't declare a binding context, as it was supplied by th
     If you changed the `SaveCommand` to a different value, restore it now.
     
 
-#### Clean up the Note code-behind
+### Clean up the Note code-behind
 
 Now that the interaction with the view has changed from event handlers to commands, open the Views\\NotePage.xaml.cs file and replace all the code with a class that only contains the constructor:
 
 1.  In the **Solution Explorer**, click on _Views/NotePage.xaml.cs_.
 2.  Replace the code with the following snippet:
 
-    ``` C
+    ``` c#
     namespace Notes.Views;
     
     public partial class NotePage : ContentPage
@@ -668,11 +663,11 @@ Now that the interaction with the view has changed from event handlers to comman
     }
     ```
 
-### 6. Create the Notes ViewModel
+## 6. Create the Notes ViewModel
 
 The final viewmodel-view pair is the **Notes viewmodel** and **AllNotes view**. Currently though, the view is binding directly to the model, which was deleted at the start of this tutorial. The goal in updating the **AllNotes view** is to move as much functionality as possible out of the XAML code-behind and put it in the viewmodel. Again, the benefit being that the view can change its design with little effect to your code.
 
-#### Notes viewmodel
+### Notes viewmodel
 
 Based on what the **AllNotes view** is going to display and what interactions the user will do, the **Notes viewmodel** must provide the following items:
 
@@ -686,7 +681,7 @@ Create the **Notes ViewModel**:
 1.  In the **Solution Explorer**, click on _ViewModels/NotesViewModel.cs_.
 2.  Replace the code in this file with the following code:
 
-    ``` C
+    ``` c#
     using CommunityToolkit.Mvvm.Input;
     using System.Collections.ObjectModel;
     using System.Windows.Input;
@@ -703,7 +698,7 @@ Create the **Notes ViewModel**:
     
 3.  In the `NotesViewModel` class code, add the following properties:
 
-    ``` C
+    ``` c#
     public ObservableCollection<ViewModels.NoteViewModel> AllNotes { get; }
     public ICommand NewCommand { get; }
     public ICommand SelectNoteCommand { get; }
@@ -713,7 +708,7 @@ Create the **Notes ViewModel**:
     
 4.  Add a parameterless constructor to the class, which initializes the commands and loads the notes from the model:
 
-    ``` C
+    ``` c#
     public NotesViewModel()
     {
         AllNotes = new ObservableCollection<ViewModels.NoteViewModel>(Models.Note.LoadAll().Select(n => new NoteViewModel(n)));
@@ -726,7 +721,7 @@ Create the **Notes ViewModel**:
     
 5.  Create the methods targeted by the commands:
 
-    ``` C
+    ``` c#
     private async Task NewNoteAsync()
     {
         await Shell.Current.GoToAsync(nameof(Views.NotePage));
@@ -743,7 +738,7 @@ Create the **Notes ViewModel**:
     
 6.  Finally, implement the `IQueryAttributable.ApplyQueryAttributes` method:
 
-    ``` C
+    ``` c#
     void IQueryAttributable.ApplyQueryAttributes(IDictionary<string, object> query)
     {
         if (query.ContainsKey("deleted"))
@@ -780,7 +775,7 @@ Create the **Notes ViewModel**:
 
 The code for the class should look like the following snippet:
 
-``` C
+``` c#
 using CommunityToolkit.Mvvm.Input;
 using Notes.Models;
 using System.Collections.ObjectModel;
@@ -840,7 +835,7 @@ internal class NotesViewModel : IQueryAttributable
 }
 ```
 
-#### AllNotes view
+### AllNotes view
 
 Now that the viewmodel has been created, update the **AllNotes view** to point to the viewmodel properties. In the _Views/AllNotesPage.xaml_ file, apply the following changes:
 
@@ -912,14 +907,14 @@ Look at the binding used for the `CollectionView`:
 
 The `SelectionChangedCommandParameter` property uses `Source={RelativeSource Self}` binding. The `Self` references the current object, which is the `CollectionView`. Notice that the binding path is the `SelectedItem` property. When the command is invoked by changing the selected item, the `SelectNoteCommand` command is invoked and the selected item is passed to the command as a parameter.
 
-#### Clean up the AllNotes code-behind
+### Clean up the AllNotes code-behind
 
 Now that the interaction with the view has changed from event handlers to commands, open the Views\\AllNotesPage.xaml.cs file and replace all the code with a class that only contains the constructor:
 
 1.  In the **Solution Explorer**, click on _Views/AllNotesPage.xaml.cs_.
 2.  Replace the code with the following snippet:
 
-    ``` C
+    ``` c#
     namespace Notes.Views;
     
     public partial class AllNotesPage : ContentPage
@@ -932,7 +927,7 @@ Now that the interaction with the view has changed from event handlers to comman
     ```
     
 
-#### Run the app
+### Run the app
 
 You can now run the app, and everything is working. However, there are two problems with how the app behaves:
 
@@ -941,11 +936,11 @@ You can now run the app, and everything is working. However, there are two probl
 
 These two problems are fixed in the next tutorial step.
 
-### 7. Fix the app behaviour
+## 7. Fix the app behaviour
 
 Now that the app code can compile and run, you'll likely have noticed that there are two flaws with how the app behaves. The app doesn't let you reselect a note that's already selected, and the list of notes isn't reordered after a note is created or changed.
 
-#### Get notes to the top of the list
+### Get notes to the top of the list
 
 First, fix the reordering problem with the notes list. In the _ViewModels/NotesViewModel.cs_ file, the `AllNotes` collection contains all of the notes to be presented to the user. Unfortunately, the downside to using an `ObservableCollection` is that it must be manually sorted. To get the new or updated items to the top of the list, perform the following steps:
 
@@ -953,7 +948,7 @@ First, fix the reordering problem with the notes list. In the _ViewModels/NotesV
 2.  In the `ApplyQueryAttributes` method, look at the logic for the saved query string key.
 3.  When the `matchedNote` isn't null, the note is being updated. Use the `AllNotes.Move` method to move the `matchedNote` to index 0, which is the top of the list.
 
-    ``` C
+    ``` c#
     string noteId = query\["saved"\].ToString();
     NoteViewModel matchedNote = AllNotes.Where((n) => n.Identifier == noteId).FirstOrDefault();
     
@@ -969,7 +964,7 @@ First, fix the reordering problem with the notes list. In the _ViewModels/NotesV
     
 4.  When the `matchedNote` is null, the note is new and is being added to the list. Instead of adding it, which appends the note to the end of the list, insert the note at index 0, which is the top of the list. Change the `AllNotes.Add` method to `AllNotes.Insert`.
 
-    ``` C
+    ``` c#
     string noteId = query["saved"].ToString();
     NoteViewModel matchedNote = AllNotes.Where((n) => n.Identifier == noteId).FirstOrDefault();
     
@@ -986,7 +981,7 @@ First, fix the reordering problem with the notes list. In the _ViewModels/NotesV
 
 The ApplyQueryAttributes method should look like the following code snippet:
 
-``` C
+``` c#
 void IQueryAttributable.ApplyQueryAttributes(IDictionary<string, object> query)
 {
     if (query.ContainsKey("deleted"))
@@ -1016,7 +1011,7 @@ void IQueryAttributable.ApplyQueryAttributes(IDictionary<string, object> query)
 }
 ```
 
-#### Allow selecting a note twice
+### Allow selecting a note twice
 
 In the **AllNotes view**, the `CollectionView` lists all of the notes, but doesn't allow you to select the same note twice. There are two ways the item remains selected: when the user changes an existing note, and when the user forcibly navigates backwards. The case where the user saves a note is fixed with the code change in previous section that uses `AllNotes.Move`, so you don't have to worry about that case.
 
@@ -1044,7 +1039,7 @@ Don't overengineer a solution for this problem, and just use the `NavigatedTo` e
 3.  Open the _Views/AllNotesPage.xaml.cs_ in the code editor.
 4.  Add the `ContentPage_NavigatedTo` handler function to the class:
 
-    ``` C
+    ``` c#
     private void ContentPage_NavigatedTo(object sender, NavigatedToEventArgs e)
     {
         notesCollection.SelectedItem = null;
@@ -1056,6 +1051,4 @@ Don't overengineer a solution for this problem, and just use the `NavigatedTo` e
 
 Now, run your app. Try to navigate to a note, press the back button, and select the same note a second time. The app behaviour is fixed!
 
-![Notes app version 2](images/notes_app_version_2.png){: standalone #fig4}
-
-Fig. 4. Notes app version 2.
+![Fig. 4. Notes app version 2](images/notes_app_version_2.png){: standalone #fig4}
