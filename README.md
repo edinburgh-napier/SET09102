@@ -19,8 +19,8 @@ on the [SET08103 GitHub site](https://github.com/edinburgh-napier/SET08103).
 | 4    | Test-Driven Development (TDD) and Unit Testing       | Dependency mocking       | Unit testing              | Y         |
 | 5    | Software Metrics and Code Analysis Tools             | Data-driven applications | Database migrations       |           |
 | 6    | Continuous integration/continuous deployment (CI/CD) | Static analysis          | Continuous integration    | Y         |
-| 7    | Ethical Considerations in Software Development       | Generative AI 1          | Coursework                |           |
-| 8    | Integrating Generative AI in Software Development    | Generative AI 2          | Coursework                |           |
+| 7    | Ethical Considerations in Software Development       | Generative AI            | Coursework                |           |
+| 8    | Integrating Generative AI in Software Development    | Code review practice     | Coursework                |           |
 | 9    | Ethical Use of AI in Software Systems                | Troubleshooting          | Coursework                |           |
 | 10   | Advanced Software Testing and Quality Assurance      | Troubleshooting          | Coursework                |           |
 
