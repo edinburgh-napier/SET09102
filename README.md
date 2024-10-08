@@ -10,18 +10,18 @@ nav_order: 1
 Software Engineering Methods module (SET08103). You can review that material
 on the [SET08103 GitHub site](https://github.com/edinburgh-napier/SET08103).
 
-| Unit | Topic                      | Presentations | Tutorial                 | Practical                 | Self-test |
-|------|----------------------------|---------------|--------------------------|---------------------------|-----------|
-| 1    | Human factors              |               | Development tools        | Getting started with MAUI |           |
-| 2    | Requirements engineering   |               | Using StarUML            | Migrating to MVVM         |           |
-| 3    | Processes and workflow     |               | Using GitHub             | Adding a database         |           |
-| 4    | Code quality               |               | Code review              | Unit testing              |           |
-| 5    | Software testing           |               | Static analysis          | Database migrations       |           |
-| 6    | Process quality            |               | Data-driven applications | Continuous integration    |           |
-| 7    | CASE                       |               | Generative AI 1          | Coursework                |           |
-| 8    | Security                   |               | Generative AI 2          | Coursework                |           |
-| 9    | Software evolution         |               | Troubleshooting          | Coursework                |           |
-| 10   | Ethics and professionalism |               | Troubleshooting          | Coursework                |           |
+| Unit | Topic                      | Tutorial                 | Practical                 | Self-test |
+|------|----------------------------|--------------------------|---------------------------|-----------|
+| 1    | Human factors              | Development tools        | Getting started with MAUI |           |
+| 2    | Requirements engineering   | Using StarUML            | Migrating to MVVM         |           |
+| 3    | Processes and workflow     | Using GitHub             | Adding a database         |           |
+| 4    | Software testing           | Static analysis          | Unit testing              |           |
+| 5    | Code quality               | Code review              | Database migrations       |           |
+| 6    | Process quality            | Data-driven applications | Continuous integration    |           |
+| 7    | CASE                       | Generative AI 1          | Coursework                |           |
+| 8    | Security                   | Generative AI 2          | Coursework                |           |
+| 9    | Software evolution         | Troubleshooting          | Coursework                |           |
+| 10   | Ethics and professionalism | Troubleshooting          | Coursework                |           |
 
 ## OLD structure
 
