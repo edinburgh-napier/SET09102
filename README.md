@@ -10,18 +10,19 @@ nav_order: 1
 Software Engineering Methods module (SET08103). You can review that material
 on the [SET08103 GitHub site](https://github.com/edinburgh-napier/SET08103).
 
-| Unit | Topic                      | Tutorial                 | Practical                 | Self-test |
-|------|----------------------------|--------------------------|---------------------------|-----------|
-| 1    | Human factors              | Development tools        | Getting started with MAUI |           |
-| 2    | Requirements engineering   | Using StarUML            | Migrating to MVVM         |           |
-| 3    | Processes and workflow     | Using GitHub             | Adding a database         |           |
-| 4    | Software testing           | Static analysis          | Unit testing              |           |
-| 5    | Code quality               | Code review              | Database migrations       |           |
-| 6    | Process quality            | Data-driven applications | Continuous integration    |           |
-| 7    | CASE                       | Generative AI 1          | Coursework                |           |
-| 8    | Security                   | Generative AI 2          | Coursework                |           |
-| 9    | Software evolution         | Troubleshooting          | Coursework                |           |
-| 10   | Ethics and professionalism | Troubleshooting          | Coursework                |           |
+| Unit | Topic                                                | Tutorial                 | Practical                 | Self-test |
+|:----:|------------------------------------------------------|--------------------------|---------------------------|:---------:|
+| 0    | Introduction to the module                           |                          |                           |           |
+| 1    | Code Quality and Maintainability                     | Development tools        | Getting started with MAUI |           |
+| 2    | Version Control and Collaboration Tools              | Using GitHub             | Migrating to MVVM         | Y         |
+| 3    | Agile Methodologies and Scrum                        | Scrum                    | Adding a database         |           |
+| 4    | Test-Driven Development (TDD) and Unit Testing       | Dependency mocking       | Unit testing              | Y         |
+| 5    | Software Metrics and Code Analysis Tools             | Data-driven applications | Database migrations       |           |
+| 6    | Continuous integration/continuous deployment (CI/CD) | Static analysis          | Continuous integration    | Y         |
+| 7    | Ethical Considerations in Software Development       | Generative AI 1          | Coursework                |           |
+| 8    | Integrating Generative AI in Software Development    | Generative AI 2          | Coursework                |           |
+| 9    | Ethical Use of AI in Software Systems                | Troubleshooting          | Coursework                |           |
+| 10   | Advanced Software Testing and Quality Assurance      | Troubleshooting          | Coursework                |           |
 
 ## OLD structure
 
