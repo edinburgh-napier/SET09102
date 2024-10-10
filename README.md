@@ -13,7 +13,7 @@ on the [SET08103 GitHub site](https://github.com/edinburgh-napier/SET08103).
 | Unit | Topic                                                                        | Tutorial                 | Practical                 | Self-test |
 |:----:|------------------------------------------------------------------------------|--------------------------|---------------------------|:---------:|
 | 0    | Introduction to the module                                                   |                          |                           |           |
-| 1    | [Code Quality and Maintainability](notes/unit1_code_quality/code_quality.md) | Development tools        | Getting started with MAUI |           |
+| 1    | [Code Quality and Maintainability](notes/unit1_code_quality/index) | Development tools        | Getting started with MAUI |           |
 | 2    | Version Control and Collaboration Tools                                      | Using GitHub             | Migrating to MVVM         | Y         |
 | 3    | Agile Methodologies and Scrum                                                | Scrum                    | Adding a database         |           |
 | 4    | Test-Driven Development (TDD) and Unit Testing                               | Dependency mocking       | Unit testing              | Y         |
