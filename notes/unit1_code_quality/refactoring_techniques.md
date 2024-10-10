@@ -1,3 +1,11 @@
+---
+title: Refactoring techniques
+parent: Code quality
+has_children: true
+has_toc: false
+nav_order: 4
+---
+
 # Refactoring techniques
 
 Refactoring is the process of improving the internal structure of existing code without altering 
