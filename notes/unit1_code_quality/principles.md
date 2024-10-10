@@ -1227,6 +1227,9 @@ software that is well-structured, scalable, and maintainable. They help in manag
 complexity, improving collaboration, and ensuring that the software can adapt to change 
 while remaining reliable and efficient over time.
 
+To find out about other common principles, please visit the 
+[DevIQ](https://deviq.com/principles/principles-overview) website.
+
 {: .tip-title }
 > [<i class="fa-regular fa-lightbulb"></i> General tips for applying software engineering principles](principles_guidelines.md)
 
