@@ -1,3 +1,11 @@
+---
+title: Principles guidelines
+parent: Software Engineering Principles
+has_children: false
+nav_exclude: true
+nav_order: 1
+---
+
 # General Tips for Applying Software Engineering Principles
 
 * Learn the principles
