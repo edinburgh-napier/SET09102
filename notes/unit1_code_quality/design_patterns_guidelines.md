@@ -6,7 +6,7 @@ has_toc: false
 nav_order: 1
 ---
 
-# Tips for leartning and applying design patterns
+# Tips for learning and applying design patterns
 
 * **Start with Understanding the Problem**
 
