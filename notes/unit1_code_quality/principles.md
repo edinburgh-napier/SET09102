@@ -1,3 +1,10 @@
+---
+title: Software Engineering Priciples
+parent: Code quality
+has_children: true
+nav_order: 1
+---
+
 # Software Engineering Priciples
 
 In software engineering, principles serve as foundational guidelines that help engineers 
@@ -347,3 +354,139 @@ Key Takeaways:
 > Following OCP not only improves the modularity and scalability of your system but 
 > also reduces the chances of introducing errors when adding new features. It ensures 
 > that your codebase remains stable as it evolves.
+
+### Liskov Substitution Principle
+
+The Liskov Substitution Principle (LSP) states that objects of a superclass should be 
+replaceable with objects of a subclass without affecting the correctness of the program. 
+In simpler terms, if class B is a subclass of class A, you should be able to replace 
+A with B without changing the expected behavior of the program.
+
+This principle helps maintain polymorphism while ensuring that inheritance is used 
+correctly, preserving the expected functionality of the base class when extending it. 
+Violating LSP leads to unexpected behavior and breaks the substitutability of objects, 
+reducing the flexibility and reliability of the system.
+
+Key Concepts:
+
+* **Substitutability**: Subclasses should be able to stand in for their base classes 
+  without affecting the correctness of the application.
+* **Behavioral Integrity**: Subclasses should not override or alter base class methods 
+  in a way that violates the expected behavior.
+* **Avoid Breaking Contracts**: Subclasses must honor the "contract" established by the 
+  base class, meaning they should not weaken postconditions or strengthen preconditions 
+  of the base class methods.
+
+LSP is crucial because it ensures that a program remains correct and reliable when 
+subclasses are used in place of their base classes. Adhering to LSP allows developers to 
+extend functionality through inheritance without breaking the existing behavior of the 
+system. It maintains the integrity of polymorphism by ensuring that objects of a 
+subclass can seamlessly replace those of the superclass, without causing unexpected 
+outcomes or requiring additional checks. This principle promotes flexibility, enabling 
+code reuse while reducing the risk of introducing bugs. By following LSP, you create 
+more maintainable, modular, and robust systems that can evolve over time without 
+compromising reliability or correctness.
+
+### Example: Problem and Solution Using LSP
+
+**Problem: A Class that Violates LSP**
+
+Let’s say we have a base class Bird with a method Fly(). We then create a subclass 
+Penguin, but penguins can’t fly. This introduces a violation of the Liskov Substitution 
+Principle because substituting a Penguin for a Bird breaks the expected behavior defined 
+by the base class.
+
+``` c#
+public class Bird
+{
+    public virtual void Fly()
+    {
+        Console.WriteLine("Flying...");
+    }
+}
+
+public class Penguin : Bird
+{
+    public override void Fly()
+    {
+        throw new InvalidOperationException("Penguins can't fly!");
+    }
+}
+```
+
+**Issues with this Design:**
+
+* **Violation of LSP**: The Penguin class cannot fulfill the expectations set by the 
+  Bird class because Penguin.Fly() throws an exception, which breaks the contract that 
+  all birds should be able to fly.
+* **Unreliable Substitution**: Any code that expects a Bird object to fly will fail when 
+  it encounters a Penguin. This violates the expectation of substitutability.
+* **Fragile Code**: Developers who use the Bird class must now include checks to handle 
+  the case where a bird cannot fly, making the code more complex and error-prone.
+
+**Solution: Refactor Using LSP**
+
+To adhere to LSP, we need to avoid forcing all birds to implement the Fly() method. 
+Instead, we can refactor the design by introducing a more appropriate abstraction. We 
+can create a separate IFlyable interface that is implemented by birds that can fly, and 
+remove the Fly() method from the base Bird class. This way, we separate the flying 
+behavior from the general bird behavior, ensuring that subclasses only implement behaviors 
+that apply to them.
+
+``` c#
+public class Bird
+{
+    public string Name { get; set; }
+
+    public void Eat()
+    {
+        Console.WriteLine($"{Name} is eating.");
+    }
+}
+
+public interface IFlyable
+{
+    void Fly();
+}
+
+public class Sparrow : Bird, IFlyable
+{
+    public void Fly()
+    {
+        Console.WriteLine($"{Name} is flying.");
+    }
+}
+
+public class Penguin : Bird
+{
+    // Penguins don't implement IFlyable because they can't fly
+}
+```
+
+**Benefits of the Refactored Code:**
+
+* **Substitutability Preserved**: Now, both Sparrow and Penguin can be substituted for 
+  Bird without violating LSP, since there is no assumption that all birds can fly.
+* **Clear Separation of Concerns**: The ability to fly is now handled by the IFlyable 
+  interface, meaning only birds that can fly will implement it. This ensures that 
+  Penguin is not forced to provide an invalid implementation for flying.
+* **More Flexible Design**: Other animals that can fly (like bats or insects) can also 
+  implement the IFlyable interface, increasing the flexibility of the design without 
+  changing the core behavior of the Bird class.
+* **Simplified Code**: The code now makes it clear which animals can fly and which 
+  cannot, reducing the need for conditionals or error-prone workarounds.
+
+#### Key Takeaways:
+
+> LSP ensures that subclasses can replace their base classes without introducing unexpected 
+> behavior, maintaining the correctness of the program.
+> 
+> When using inheritance, avoid overriding or altering methods in a way that violates the 
+> expectations set by the base class. If a subclass cannot properly implement a method, 
+> it should not inherit that method.
+> 
+> Adhering to LSP promotes modular, reliable, and flexible code that leverages 
+> inheritance and polymorphism correctly. It helps prevent fragile code that requires 
+> constant checking or handling of special cases, leading to a cleaner and more robust 
+> design.
+
