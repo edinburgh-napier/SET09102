@@ -1,3 +1,11 @@
+---
+title: Design pattern guidelines
+parent: Design patterns
+has_children: false
+has_toc: false
+nav_order: 1
+---
+
 # Tips for leartning and applying design patterns
 
 * **Start with Understanding the Problem**
