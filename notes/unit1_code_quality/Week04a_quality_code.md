@@ -9,7 +9,7 @@ nav_order: 7
 
 <hr class="splash">
 
-![Martin Fowler](../images/martin_fowler.png)
+![Martin Fowler](../../images/martin_fowler.png)
 
 ### Any fool can write code that a computer can understand. Good programmers write code that humans can understand.
 
@@ -76,7 +76,7 @@ customer. In that sense, quality can only be evaluated with reference to the
 External properties describe the operation of the whole system and therefore need
 to be evaluated at the system level. That is, the system has to be tested in use.
 This system-level testing is explicitly captured in the
-[V life cycle model](Week03a_lifecycle.md#the-v-model) where it is paired with the
+[V life cycle model](../unit3_agile/Week03a_lifecycle.md#the-v-model) where it is paired with the
 analysis phase of the waterfall. This type of quality testing is relevant for any
 software development project including those that use an agile approach. The
 derivation of external quality criteria and their evaluation is discussed in more

@@ -285,8 +285,8 @@ communication across diverse teams and audiences. By adhering to these principle
 software engineering becomes not only more efficient but also more equitable and 
 collaborative.
 
-    {: .tip-title }
-    > <a href="guidelines.md"><i class="fa-regular fa-lightbulb"></i> Guidelines for coding standards</a>
+{: .tip-title }
+> <a href="guidelines.md"><i class="fa-regular fa-lightbulb"></i> Guidelines for coding standards</a>
 
 ## Design patterns
 

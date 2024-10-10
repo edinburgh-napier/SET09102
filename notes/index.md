@@ -5,5 +5,3 @@ nav_order: 2
 ---
 
 # Notes
-
-Add list here

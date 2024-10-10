@@ -17,7 +17,7 @@ nav_order: 6
 
 <hr class="splash">
 
-![Merlin Mann](../images/merlin_mann.png)<br/>*Photo by [Thomas Hawk](https://www.flickr.com/photos/thomashawk/2298694177)*
+![Merlin Mann](../../images/merlin_mann.png)<br/>*Photo by [Thomas Hawk](https://www.flickr.com/photos/thomashawk/2298694177)*
 
 ### Workflow is understanding your job, understanding your tools, and then not thinking about it any more.
 
@@ -75,7 +75,7 @@ each one will have their own development environment. This is an important detai
 environment is not shared - each member of the team has their own copy which includes the last known
 good configuration of the codebase, plus the changes they are currently working on.
 
-![Environments](../images/environments.png#figure)
+![Environments](../../images/environments.png#figure)
 *Fig 1: System environments*
 
 Code repositories such as GitHub are excellent tools for managing the synchronisation of the
@@ -242,7 +242,7 @@ manage the work. For example, a swimlane for stalled tasks could be added, or fo
 The task board can be as complicated as required, but in general, the simpler the structure, the
 more intuitive it is to use.
 
-![Default GitHub task board](../images/github_task_board.png#figure)
+![Default GitHub task board](../../images/github_task_board.png#figure)
 *Fig 5: Default GitHub task board*
 
 Tasks in GitHub are represented by [issues](https://docs.github.com/en/issues). They can be added
@@ -253,7 +253,7 @@ issues using the issues tab on the repository page. If you take that option, you
 explicitly which project the issue should be added to. This is done using the controls on the right of
 the issue creation page as shown in Fig. 6.
 
-![New issue page](../images/new_issue.png#figure)
+![New issue page](../../images/new_issue.png#figure)
 *Fig. 6: GitHub new issue page*
 
 When using a task board, an item gradually accumulates detail and moves through the swimlanes from left
@@ -327,7 +327,7 @@ In light of the previous sections, two main phases of activity can be identified
 any piece of development work as shown in Fig.7. The time required for each stage depends on the
 complexity of the original issue.
 
-![Development process](../images/dev_process.png#figure)
+![Development process](../../images/dev_process.png#figure)
 *Fig. 7: Two-phase development process*
 
 The rules that a team sets for itself in defining a standard workflow are intended to help

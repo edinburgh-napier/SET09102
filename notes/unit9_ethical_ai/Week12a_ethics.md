@@ -9,7 +9,7 @@ nav_order: 20
 
 <hr class="splash">
 
-![Alistair Cooke](../images/alistair_cooke.png)
+![Alistair Cooke](../../images/alistair_cooke.png)
 
 ### A professional is someone who can do his best work when he doesn't feel like it.
 
@@ -57,7 +57,7 @@ of software engineering. These are summarised in the tour below.
 <h6 align="center"> Here's you, engineering your software...
 
 <a href="https://bdavison.napier.ac.uk/set09102/ethics.html" target="_blank" alt="Ethics">
-    <img src="../images/you_small.png">
+    <img src="../../images/you_small.png">
 </a>
 </h6>
 
@@ -88,7 +88,7 @@ invited to choose the course of action that an autonomous vehicle should take wh
 faced with a life-and-death decision. Overall, 40 million decisions were captured from
 people in 233 countries. Fig. 1 shows an example of one of the questions.
 
-![A question in the Moral Machine](../images/moral_machine.png)
+![A question in the Moral Machine](../../images/moral_machine.png)
 
 *Fig. 1: A question in the Moral Machine*
 
@@ -99,7 +99,7 @@ opposite view. This difference is visualised in Fig. 2 where a score closer to 1
 indicates that respondents placed a greater emphasis on sparing pedestrians. If the score
 is closer to -1, they preferred to save passengers while 0 is the global average.
 
-![Pedestrians versus passengers](../images/passengers_pedestrians.png)
+![Pedestrians versus passengers](../../images/passengers_pedestrians.png)
 
 *Fig. 2. Choosing to save pedestrians or passengers
 ([Hao, 2018](https://www.technologyreview.com/2018/10/24/139313/a-global-ethics-study-aims-to-help-ai-solve-the-self-driving-trolley-problem/)).*
@@ -111,7 +111,7 @@ choose between a baby and an elderly grandmother. The results are shown in Fig. 
 a score closer to 1 indicates that respondents preferred to save the young and a score
 closer to -1 showed they preferred to save the old. Again, 0 represents the global average.
 
-![Young or old](../images/young_old.png)
+![Young or old](../../images/young_old.png)
 
 *Fig. 3: Choosing to save the young or the old.
 ([Hao, 2018](https://www.technologyreview.com/2018/10/24/139313/a-global-ethics-study-aims-to-help-ai-solve-the-self-driving-trolley-problem/)).*
@@ -318,7 +318,7 @@ in 2014. Although the event was some time ago, it is interesting to consider wha
 since and what has not. It is clear that some of the issues he discusses are still relevant
 in 2023.
 
-[![Martin Fowler at GOTO2014](../images/goto2014.png)](https://youtu.be/4E3xfR6IBII?si=SJsLmmmVl9Dbgxqb)
+[![Martin Fowler at GOTO2014](../../images/goto2014.png)](https://youtu.be/4E3xfR6IBII?si=SJsLmmmVl9Dbgxqb)
 
 *Fig. 4: Martin Fowler at GOTO2014*
 

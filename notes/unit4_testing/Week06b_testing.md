@@ -9,7 +9,7 @@ nav_order: 11
 
 <hr class="splash">
 
-![Michael Feathers](../images/michael_feathers.png)
+![Michael Feathers](../../images/michael_feathers.png)
 
 ### Code without tests is bad code. <br/>It doesn't matter how well written it is; it doesn't matter how pretty or object-oriented or well-encapsulated it is. <br/>With tests, we can change the behavior of our code quickly and verifiably. <br/>Without them, we really don't know if our code is getting better or worse.
 
@@ -35,7 +35,7 @@ The tour below illustrates a few of the major types.
 <h6 align="center"> Here's you, engineering your software...
 
 <a href="https://bdavison.napier.ac.uk/set09102/testing.html" target="_blank" alt="Software testing">
-    <img src="../images/you_small.png">
+    <img src="../../images/you_small.png">
 </a>
 </h6>
 
@@ -80,7 +80,7 @@ carried out by security professionals. Although this type
 of test is not carried out by software engineers, they are again the ones who will be
 required to fix any issues. In general, it is better to avoid security issues by adopting
 secure development practices from the outset as discussed in the
-[secure software developmentsection](Week11b_secure_software_development.md).
+[secure software developmentsection](../unit7_ethics/Week11b_secure_software_development.md).
 
 ### Usability testing
 

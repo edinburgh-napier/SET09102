@@ -9,7 +9,7 @@ nav_order: 15
 
 <hr class="splash">
 
-![Grady Booch](../images/grady_booch.png)
+![Grady Booch](../../images/grady_booch.png)
 
 ### A fool with a tool is still a fool.
 
@@ -37,7 +37,7 @@ since the 1980s and the tour below takes a quick run through its history.
 <h6 align="center"> Here's you in 2023...
 
 <a href="https://bdavison.napier.ac.uk/set09102/case.html" target="_blank" alt="Computer-aided software engineering">
-    <img src="../images/you_small.png">
+    <img src="../../images/you_small.png">
 </a>
 </h6>
 
@@ -68,7 +68,7 @@ attributes, and each individual entity is represented by a row in the table. Thu
 is equivalent to an object instantiated from a class definition where each such object has
 the same set of properties.
 
-![ORM](../images/orm.png)
+![ORM](../../images/orm.png)
 
 *Fig. 1: Object-relational mapping*
 
@@ -94,7 +94,7 @@ automated. For example, GitHub actions could be used to apply database migration
 point that the corresponding code changes are deployed to a server. Fig. 2 illustrates
 a typical migration process.
 
-![Database migration process](../images/migration.png)
+![Database migration process](../../images/migration.png)
 
 *Fig. 2: Database migration process*
 

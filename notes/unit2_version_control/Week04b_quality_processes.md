@@ -9,7 +9,7 @@ nav_order: 8
 
 <hr class="splash">
 
-![Norman Bates](../images/norman_bates.png)
+![Norman Bates](../../images/norman_bates.png)
 
 ### Always code as if the guy who ends up maintaining your code will be a violent psychopath who knows where you live.
 
@@ -42,7 +42,7 @@ contribute to the final quality of the product are carried out correctly.
 standards related to the quality of software products which summarise the relationships
 between different quality aspects and their measurements as shown in Fig. 1.
 
-![ISO25000](../images/iso25023_quality.png)
+![ISO25000](../../images/iso25023_quality.png)
 
 *Fig. 1: Relationship between types of quality measures [ISO 25023](https://napier.primo.exlibrisgroup.com/permalink/44NAP_INST/19n0mho/cdi_bsi_primary_000000000030280200)*
 
@@ -104,7 +104,7 @@ The checks in Fig. 2 can be summarised as follows:
 > **Unit testing**
 >
 > The creation of code by the developer for the automatic testing of application code
-> (covered in the [Test-driven development](Week06a_test_driven_development.md) section)
+> (covered in the [Test-driven development](../unit4_testing/Week06a_test_driven_development.md) section)
 >
 > **Static code analysis**
 >
@@ -181,7 +181,7 @@ repositories such as GitHub, more lightweight review processes are typically pre
 Alls ([2020](https://napier.primo.exlibrisgroup.com/permalink/44NAP_INST/n96pef/alma9923706264502111))
 provides a very clear description of a typical code review which is the basis of the following notes.
 
-![Please read](../images/material/outline_menu_book_black_48dp.png)
+![Please read](../../images/material/outline_menu_book_black_48dp.png)
 Please read the section entitled *Code Review - Process and Importance* in the first chapter of
 Alls ([2020](https://napier.primo.exlibrisgroup.com/permalink/44NAP_INST/n96pef/alma9923706264502111))
 
@@ -222,9 +222,9 @@ required.
 * Have you checked the wider impact of your code changes?
 * Have you applied [coding conventions](https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/coding-style/coding-conventions)
   for the language you are working in?
-* Have you applied generic software engineering principles such as [SOLID](Week04a_quality_code.md#solid)?
-* Have you checked for [code smells](Week04a_quality_code.md#code-smells)?
-* Have you applied the principles of [Clean Code](Week04a_quality_code.md#clean-code)?
+* Have you applied generic software engineering principles such as [SOLID](../unit1_code_quality/Week04a_quality_code.md#solid)?
+* Have you checked for [code smells](../unit1_code_quality/Week04a_quality_code.md#code-smells)?
+* Have you applied the principles of [Clean Code](../unit1_code_quality/Week04a_quality_code.md#clean-code)?
 * Have you created and run sufficient unit tests?
 * Have you checked the hints provided by the static analysis tools in the IDE?
 * Have you used the feedback available to sanity check your code?

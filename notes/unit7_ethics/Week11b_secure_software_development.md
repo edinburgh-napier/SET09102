@@ -9,7 +9,7 @@ nav_order: 19
 
 <hr class="splash">
 
-![Steve McConnell](../images/steve_mcconnell.png)
+![Steve McConnell](../../images/steve_mcconnell.png)
 
 ### It's hard enough to find an error in your code when you're looking for it;<br/>it's even harder when you've assumed your code is error-free.
 
@@ -45,7 +45,7 @@ Taking the usual left-to-right flow of diagrams such as the one in Fig. 1 that i
 usual series of DevOps stages, shifting left implies that security issues are pushed back from
 their usual home in the test stage to the earlier build, code and plan stages.
 
-![Typical DevOps stages](../images/devops.png)
+![Typical DevOps stages](../../images/devops.png)
 
 *Fig. 1: Typical DevOps stages*
 
@@ -216,7 +216,7 @@ vulnerabilities in the codebase, and panel **③** highlights the actual code. T
 provides an explanation of the issues found and recommendations for resolving them. The other tools
 listed above provide similar functionality.
 
-![Fortify results page](../images/fortify.png)
+![Fortify results page](../../images/fortify.png)
 
 *Fig.2: Fortify results page*
 
@@ -243,7 +243,7 @@ results of the survey for security-related activities carried out during coding.
 
 | a                                                             | b                                                                |
 |---------------------------------------------------------------|------------------------------------------------------------------|
-| ![Security activity use](../images/security_activity_use.png) | ![Security activity use](../images/security_activity_impact.png) |
+| ![Security activity use](../../images/security_activity_use.png) | ![Security activity use](../../images/security_activity_impact.png) |
 
 *Fig. 3: Security activity use (a), and impact (b) during the implementation phase of an agile project
 ([Rindell et al., 2021](https://doi.org/10.1016/j.infsof.2020.106488))*

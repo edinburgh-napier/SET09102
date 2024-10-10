@@ -9,7 +9,7 @@ nav_order: 16
 
 <hr class="splash">
 
-![Grady Booch](../images/grady_booch.png)
+![Grady Booch](../../images/grady_booch.png)
 
 ### The amateur software engineer is always in search of magic.
 
@@ -147,7 +147,7 @@ an object name. Microsoft coined the term *Intellisense* to describe the various
 coding and structural hints provided by their tools. The term has now been adopted
 in other environments as well.
 
-![Intellisense suggestions](../images/intellisense.png)
+![Intellisense suggestions](../../images/intellisense.png)
 
 *Fig. 1: Context-sensitive suggestions generated from introspection in Visual Studio*
 
@@ -196,7 +196,7 @@ avoid any accusations of academic misconduct.
    their own merits. It will not be long, however, before project methodologies catch
    up with technological developments.
 
-![Generative development process](../images/generative_development.png)
+![Generative development process](../../images/generative_development.png)
 
 *Fig. 2. An outline generative development process*
 

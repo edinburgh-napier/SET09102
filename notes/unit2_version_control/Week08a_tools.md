@@ -9,7 +9,7 @@ nav_order: 13
 
 <hr class="splash">
 
-![Kent Beck](../images/kent_beck.png)
+![Kent Beck](../../images/kent_beck.png)
 
 ### I've known people who have not mastered their tools who are good programmers, but not a tool master who remained a mediocre programmer.
 
@@ -37,7 +37,7 @@ and effectively.
 <h6 align="center"> Here's you, engineering your software...
 
 <a href="https://bdavison.napier.ac.uk/set09102/tools.html" target="_blank" alt="A software engineer and their tools">
-    <img src="../images/you_small.png">
+    <img src="../../images/you_small.png">
 </a>
 </h6>
 
@@ -91,7 +91,7 @@ settings. A rule could be disabled, for example, so that the highlights and warn
 longer appear. Alternatively, the severity of the rule might be increased so that the
 IDE treats it as an error rather than a warning as illustrated in Fig. 1.
 
-![Visual Studio code analysis options](../images/vs_code_analysis_options.png)
+![Visual Studio code analysis options](../../images/vs_code_analysis_options.png)
 
 *Fig. 1: Visual Studio code analysis options*
 

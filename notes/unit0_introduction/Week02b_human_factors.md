@@ -36,7 +36,7 @@ are creating. The tour below illustrates some of the most important ones.
 
 <div class="tour"></div>
 
-###### [![Here's you engineering your software...](../images/you_small.png)](https://bdavison.napier.ac.uk/set09102/other_people.html){:target="_blank"}
+###### [![Here's you engineering your software...](../../images/you_small.png)](https://bdavison.napier.ac.uk/set09102/other_people.html){:target="_blank"}
 
 <br/>
 <br/>
@@ -82,7 +82,7 @@ provides a clear explanation of how to conduct a thorough stakeholder analysis.
    are the key stakeholders for your project.
    <br/><br/>
 
-   ![Importance vs Influence](../images/stakeholder_map.png)
+   ![Importance vs Influence](../../images/stakeholder_map.png)
 
    *Fig. 1: Stakeholders mapped by importance and influence*
 

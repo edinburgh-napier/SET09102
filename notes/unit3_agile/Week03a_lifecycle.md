@@ -17,7 +17,7 @@ nav_order: 5
 
 <hr class="splash">
 
-![Martin Fowler](../images/martin_fowler.png)
+![Martin Fowler](../../images/martin_fowler.png)
 
 ### When to use iterative development? You should use iterative development only on projects that you want to succeed.
 
@@ -47,7 +47,7 @@ related to the development and use of systems by providing clear thresholds, som
 
 ISO24748-1 defines six standard lifecycle stages as shown in Fig. 1.
 
-![Lifecycle stages](../images/lifecycle_stages.png#figure)
+![Lifecycle stages](../../images/lifecycle_stages.png#figure)
 *Fig. 1: Lifecycle stages ([ISO24748-1](https://doi-org.napier.idm.oclc.org/10.1109/IEEESTD.2018.8526560))*
 
 The progression from one lifecycle stage to another is not linear or predetermined. ISO24748-1 provides
@@ -121,7 +121,7 @@ in Fig. 3. The waterfall approach is an extreme expression of what Stephens call
 The idea is that when the requirements are clearly and comprehensively defined in advance, these models
 will work well.
 
-![Waterfall model](../images/waterfall.png#figure)
+![Waterfall model](../../images/waterfall.png#figure)
 *Fig. 3: Simplified waterfall project lifecycle*
 
 Strictly adhering to the sequential nature of the stages in the waterfall approach leads to a number
@@ -141,7 +141,7 @@ The main innovation in the V model was to identify different types of testing th
 different stages of the project. This went some way to resolving the problem with postponed testing,
 but other issues still remained.
 
-![V model](../images/v-model.png#figure)
+![V model](../../images/v-model.png#figure)
 *Fig 4: V model ([Rook, 1986](https://doi.org/10.1049/sej.1986.0003))*
 
 ### The waterfall model with feedback
@@ -153,7 +153,7 @@ In fact, this version of the waterfall model incorporates ideas from Royce's ori
 idea is that events during the project can trigger the return to an earlier stage as illustrated in
 Fig. 5.
 
-![Waterfall model with feedback](../images/feedback_waterfall.png#figure)
+![Waterfall model with feedback](../../images/feedback_waterfall.png#figure)
 *Fig. 5: The waterfall model with feedback*
 
 ### The iterative waterfall model
@@ -162,7 +162,7 @@ The number of variations on the waterfall model are evidence that something was 
 fixing. A further version proposed the idea of a single project being decomposed into a series of
 waterfalls, one feeding into the next as shown in Fig. 6.
 
-![Iterative waterfall model](../images/iterative_waterfall.png#figure)
+![Iterative waterfall model](../../images/iterative_waterfall.png#figure)
 *Fig 6: The iterative waterfall model*
 
 ### The spiral model
@@ -181,7 +181,7 @@ iterative prototyping by following a repeating pattern of four stages:
 However, it also inherited extensive testing towards the end of the project
 from the traditional waterfall approach.
 
-![Spiral model](../images/spiral.png#figure)
+![Spiral model](../../images/spiral.png#figure)
 *Fig. 7: The spiral model ([Boehm, 1986](https://doi.org/10.1109/2.59))*
 
 ## Agile
@@ -229,7 +229,7 @@ working software in the shortest possible timeframe. The
 principles in a way that splits a project into short periods of time called *sprints*. Each sprint
 has a managed life cycle as illustrated in Fig. 8.
 
-![Scrum framework](../images/scrum.png#figure)
+![Scrum framework](../../images/scrum.png#figure)
 *Fig. 8: The Scrum framework ([Scrum.org](https://www.scrum.org/learning-series/what-is-scrum)*)
 
 Although Scrum is the most widely-used agile methodology, there are other such as

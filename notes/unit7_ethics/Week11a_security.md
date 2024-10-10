@@ -9,7 +9,7 @@ nav_order: 18
 
 <hr class="splash">
 
-![Ross Haleliuk](../images/ross_haleliuk.png)
+![Ross Haleliuk](../../images/ross_haleliuk.png)
 
 ### Cybersecurity of the future is going to look a lot like software engineering.
 
@@ -32,7 +32,7 @@ nav_order: 18
 The CIA triad of Confidentiality, Integrity and Availability illustrated in Fig. 1 is a broad,
 commonly-used framework for describing system and data security.
 
-![CIA triad](../images/cia.png)
+![CIA triad](../../images/cia.png)
 
 *Fig. 1: The CIA triad*
 
@@ -63,7 +63,7 @@ software specialists.
 <h6 align="center"> Here's you, engineering your software...
 
 <a href="https://bdavison.napier.ac.uk/set09102/security.html" target="_blank" alt="Security">
-    <img src="../images/you_small.png">
+    <img src="../../images/you_small.png">
 </a>
 </h6>
 
@@ -154,7 +154,7 @@ iterative process as illustrated in Fig. 2 in which the threat actor attempts to
 of a known system weakness. If the exploit is not 100% successful in achieving the intended goal,
 the process is repeated.
 
-![Security exploit lifecycle](../images/exploit.png)
+![Security exploit lifecycle](../../images/exploit.png)
 
 *Fig. 2: Security exploit lifecycle*
 

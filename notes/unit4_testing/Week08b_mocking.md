@@ -9,7 +9,7 @@ nav_order: 14
 
 <hr class="splash">
 
-![Ian Cooper](../images/ian_cooper.png)
+![Ian Cooper](../../images/ian_cooper.png)
 
 ### Avoid heavy mocking. This allows you to meet the promise to refactoring. You will refactor your code and your tests won’t break.
 
@@ -204,7 +204,7 @@ Leaving aside maintainability for the time being, the ideal test should be ine t
 maximises the other three pillars simultaneously - that would be the three-way
 intersection in Fig. 3.
 
-![Unit test value](../images/unit_test_value.png)
+![Unit test value](../../images/unit_test_value.png)
 
 *Fig.3: Unit test value ([Khorikov, 2020](https://napier.primo.exlibrisgroup.com/permalink/44NAP_INST/13v8mut/alma9923667243102111))*
 

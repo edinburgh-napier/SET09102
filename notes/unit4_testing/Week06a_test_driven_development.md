@@ -9,7 +9,7 @@ nav_order: 11
 
 <hr class="splash">
 
-![Boris Beizer](../images/boris_beizer.png)
+![Boris Beizer](../../images/boris_beizer.png)
 
 ### More than the act of testing, the act of designing tests is one of the best bug preventers known.
 
@@ -262,7 +262,7 @@ flowchart LR
 ```
 *Fig. 3: Test-driven development*
 
-![Please read](../images/material/outline_menu_book_black_48dp.png)
+![Please read](../../images/material/outline_menu_book_black_48dp.png)
 TDD is explained very well in the context of C# development in chapter 6 of
 Alls ([2020](https://napier.primo.exlibrisgroup.com/permalink/44NAP_INST/n96pef/alma9923706264502111)).
 Please read the chapter this week.
