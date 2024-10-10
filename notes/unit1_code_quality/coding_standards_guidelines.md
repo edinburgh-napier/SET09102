@@ -1,3 +1,11 @@
+---
+title: Coding standards guidelines
+parent: Coding standards
+has_children: false
+nav_exclude: true
+nav_order: 1
+---
+
 # Practical guidelines for implementing coding standards
 
 To ensure that a team defines and uses coding standards effectively, several practical 

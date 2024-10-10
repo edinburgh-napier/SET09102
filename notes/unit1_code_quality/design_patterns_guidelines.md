@@ -2,6 +2,7 @@
 title: Design pattern guidelines
 parent: Design patterns
 has_children: false
+nav_exclude: true
 nav_order: 1
 ---
 

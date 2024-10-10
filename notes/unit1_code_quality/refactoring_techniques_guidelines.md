@@ -1,3 +1,11 @@
+---
+title: Refactoring guidelines
+parent: Design patterns
+has_children: false
+nav_exclude: true
+nav_order: 1
+---
+
 # Tips for improving your refactoring practice
 
 By incorporating these tips into your daily workflow, you’ll not only develop a habit of 
