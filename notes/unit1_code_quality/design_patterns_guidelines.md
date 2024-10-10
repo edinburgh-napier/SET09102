@@ -2,7 +2,6 @@
 title: Design pattern guidelines
 parent: Design patterns
 has_children: false
-has_toc: false
 nav_order: 1
 ---
 

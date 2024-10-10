@@ -2,6 +2,7 @@
 title: Design patterns
 parent: Code quality
 has_children: true
+has_toc: false
 nav_order: 3
 ---
 
@@ -450,4 +451,3 @@ your software solutions.
 {: .tip-title }
 > [<i class="fa-regular fa-lightbulb"></i> General tips for applying design patterns](design_patterns_guidelines.md)
 
-[tips](design_patterns_guidelines.md)
