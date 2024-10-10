@@ -2,6 +2,7 @@
 title: Coding standards
 parent: Code quality
 has_children: true
+has_toc: false
 nav_order: 2
 ---
 
@@ -289,4 +290,4 @@ software engineering becomes not only more efficient but also more equitable and
 collaborative.
 
 {: .tip-title }
-> [<i class="fa-regular fa-lightbulb"></i> Guidelines for coding standards](/notes/unit1_code_quality/coding_standards_guidelines.md)
+> [<i class="fa-regular fa-lightbulb"></i> Guidelines for coding standards](coding_standards_guidelines.md)

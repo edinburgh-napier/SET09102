@@ -2,6 +2,7 @@
 title: Software Engineering Principles
 parent: Code quality
 has_children: true
+has_toc: false
 nav_order: 1
 ---
 
@@ -1227,5 +1228,5 @@ complexity, improving collaboration, and ensuring that the software can adapt to
 while remaining reliable and efficient over time.
 
 {: .tip-title }
-> [<i class="fa-regular fa-lightbulb"></i> General tips for applying software engineering principles](/notes/unit1_code_quality/principles_guidelines.md)
+> [<i class="fa-regular fa-lightbulb"></i> General tips for applying software engineering principles](principles_guidelines.md)
 
