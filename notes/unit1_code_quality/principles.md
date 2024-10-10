@@ -1,11 +1,11 @@
 ---
-title: Software Engineering Priciples
+title: Software Engineering Principles
 parent: Code quality
 has_children: true
 nav_order: 1
 ---
 
-# Software Engineering Priciples
+# Software Engineering Principles
 
 In software engineering, principles serve as foundational guidelines that help engineers 
 make informed decisions throughout the software development lifecycle. These principles 
@@ -57,14 +57,14 @@ to understand, extend, and modify, while also minimizing the risk of introducing
 when making changes. These principles are widely recognized as foundational concepts in 
 object-oriented software design and are key to building robust software architectures.
 
-### Single Responsibility Principle
+## Single Responsibility Principle
 
 The Single Responsibility Principle (SRP) states that a class should have only one 
 reason to change, meaning that a class should have only one job or responsibility. 
 Adhering to SRP helps to keep code more maintainable, readable, and easier to modify 
 without introducing errors.
 
-Key Concepts:
+**Key Concepts:**
 
 * **One Responsibility**: A class should focus on only one functionality or concern.
 * **Reason to Change**: If a class is responsible for multiple things, a change in one 
@@ -83,11 +83,11 @@ are often more self-contained and can be reused in different contexts without
 modification. As a result, your code becomes more modular, flexible, and easier 
 to extend.
 
-### Example: Problem and Solution Using SRP
+## Example: Problem and Solution Using SRP
 
 **Problem: A Class with Multiple Responsibilities**
 
-Let's take an example of an Invoice class that handles both invoice generation and 
+Let's take an example of an `Invoice` class that handles both invoice generation and 
 sending emails. This class violates SRP because it is responsible for two things: 
 generating the invoice and emailing it.
 
@@ -108,13 +108,13 @@ public class Invoice
 }
 ```
 
-Issues with this Design:
+**Issues with this Design:**
 
-* **Multiple Responsibilities**: The Invoice class is doing two things: generating 
+* **Multiple Responsibilities**: The `Invoice` class is doing two things: generating 
   invoices and sending emails. These are separate concerns and should be handled 
   independently.
 * **Maintenance Problem**: If you need to change the way emails are sent (e.g., adding 
-  logging or changing the email provider), you need to modify the Invoice class, even 
+  logging or changing the email provider), you need to modify the `Invoice` class, even 
   though the invoice generation logic hasn’t changed. This makes the code fragile.
 * **Testing Complication**: Testing this class would involve setting up both invoice 
   generation and email sending, even if you're only interested in testing one of those 
@@ -170,10 +170,10 @@ public class InvoiceService
 }
 ```
 
-Benefits of the Refactored Code:
+**Benefits of the Refactored Code:**
 
-* **Separation of Concerns**: The InvoiceGenerator class is responsible only for invoice 
-  generation, and the EmailSender class is responsible only for sending emails. Each 
+* **Separation of Concerns**: The `InvoiceGenerator` class is responsible only for invoice 
+  generation, and the `EmailSender` class is responsible only for sending emails. Each 
   class has a single responsibility.
 * **Easier Maintenance**: Changes to how invoices are generated or how emails are sent 
   will only affect their respective classes. You can modify one without risking changes 
@@ -192,7 +192,7 @@ Benefits of the Refactored Code:
 > 
 > Adhering to SRP leads to cleaner, more maintainable, and testable code.
 
-### The Open/Closed Principle
+## The Open/Closed Principle
 
 The Open/Closed Principle (OCP) states that software entities (classes, modules, 
 functions, etc.) should be **open for extension but closed for modification**. In other 
@@ -201,7 +201,7 @@ changing its existing code. This principle encourages writing code that can adap
 to new requirements or features without altering the already tested and functional 
 parts of the system.
 
-Key Concepts:
+**Key Concepts:**
 
 * **Open for Extension**: You should be able to extend the behavior of a class or 
   module to add new functionality.
@@ -225,9 +225,9 @@ time while maintaining stability and reducing development risks.
 
 **Problem: A Class that Violates OCP**
 
-Let’s say you have a InvoicePrinter class that prints invoices for customers in plain 
+Let’s say you have a `InvoicePrinter` class that prints invoices for customers in plain 
 text. Later, a new requirement comes in to add support for printing invoices in PDF 
-format. Without following OCP, you might be tempted to modify the InvoicePrinter class 
+format. Without following OCP, you might be tempted to modify the `InvoicePrinter` class 
 directly to accommodate the new format, which would violate OCP because the class 
 would now need to be modified every time a new format is added.
 
@@ -250,10 +250,10 @@ public class InvoicePrinter
 }
 ```
 
-Issues with this Design:
+**Issues with this Design:**
 
-* **Violation of OCP**: The InvoicePrinter class is not closed for modification because 
-  every time a new format (e.g., HTML, XML) is added, you have to modify the PrintInvoice 
+* **Violation of OCP**: The `InvoicePrinter` class is not closed for modification because 
+  every time a new format (e.g., HTML, XML) is added, you have to modify the `PrintInvoice` 
   method.
 * **Fragility**: Modifying the existing method increases the risk of introducing bugs or 
   breaking functionality for previously supported formats.
@@ -330,9 +330,9 @@ public class InvoiceService
 **Benefits of the Refactored Code:**
 
 * **Open for Extension**: New formats can be added by creating new classes (e.g., 
-  HtmlInvoicePrinter) that implement the IInvoicePrinter interface. This allows you 
+  `HtmlInvoicePrinter`) that implement the `IInvoicePrinter` interface. This allows you 
   to extend functionality without modifying the existing code.
-* **Closed for Modification**: The InvoicePrinter class itself is never modified. 
+* **Closed for Modification**: The `InvoicePrinter` class itself is never modified. 
   Existing functionality remains stable, reducing the risk of introducing bugs or 
   regressions.
 * **Better Scalability**: The system can easily accommodate future requirements (e.g., 
@@ -340,7 +340,7 @@ public class InvoiceService
 * **Cleaner Code**: The code is more modular, easier to test, and more aligned with 
   good design practices.
 
-Key Takeaways:
+### Key Takeaways:
 
 > OCP encourages you to write code that can be easily extended but not modified. This 
 > leads to better maintainability and stability in software projects.
@@ -355,7 +355,7 @@ Key Takeaways:
 > also reduces the chances of introducing errors when adding new features. It ensures 
 > that your codebase remains stable as it evolves.
 
-### Liskov Substitution Principle
+## Liskov Substitution Principle
 
 The Liskov Substitution Principle (LSP) states that objects of a superclass should be 
 replaceable with objects of a subclass without affecting the correctness of the program. 
@@ -367,7 +367,7 @@ correctly, preserving the expected functionality of the base class when extendin
 Violating LSP leads to unexpected behavior and breaks the substitutability of objects, 
 reducing the flexibility and reliability of the system.
 
-Key Concepts:
+**Key Concepts:**
 
 * **Substitutability**: Subclasses should be able to stand in for their base classes 
   without affecting the correctness of the application.
@@ -391,9 +391,9 @@ compromising reliability or correctness.
 
 **Problem: A Class that Violates LSP**
 
-Let’s say we have a base class Bird with a method Fly(). We then create a subclass 
-Penguin, but penguins can’t fly. This introduces a violation of the Liskov Substitution 
-Principle because substituting a Penguin for a Bird breaks the expected behavior defined 
+Let’s say we have a base class `Bird` with a method `Fly()`. We then create a subclass 
+`Penguin`, but penguins can’t fly. This introduces a violation of the Liskov Substitution 
+Principle because substituting a `Penguin` for a `Bird` breaks the expected behavior defined 
 by the base class.
 
 ``` c#
@@ -416,20 +416,20 @@ public class Penguin : Bird
 
 **Issues with this Design:**
 
-* **Violation of LSP**: The Penguin class cannot fulfill the expectations set by the 
-  Bird class because Penguin.Fly() throws an exception, which breaks the contract that 
+* **Violation of LSP**: The `Penguin` class cannot fulfill the expectations set by the 
+  `Bird` class because `Penguin.Fly()` throws an exception, which breaks the contract that 
   all birds should be able to fly.
 * **Unreliable Substitution**: Any code that expects a Bird object to fly will fail when 
-  it encounters a Penguin. This violates the expectation of substitutability.
+  it encounters a `Penguin`. This violates the expectation of substitutability.
 * **Fragile Code**: Developers who use the Bird class must now include checks to handle 
   the case where a bird cannot fly, making the code more complex and error-prone.
 
 **Solution: Refactor Using LSP**
 
-To adhere to LSP, we need to avoid forcing all birds to implement the Fly() method. 
+To adhere to LSP, we need to avoid forcing all birds to implement the `Fly()` method. 
 Instead, we can refactor the design by introducing a more appropriate abstraction. We 
-can create a separate IFlyable interface that is implemented by birds that can fly, and 
-remove the Fly() method from the base Bird class. This way, we separate the flying 
+can create a separate `IFlyable` interface that is implemented by birds that can fly, and 
+remove the `Fly()` method from the base `Bird` class. This way, we separate the flying 
 behavior from the general bird behavior, ensuring that subclasses only implement behaviors 
 that apply to them.
 
@@ -465,18 +465,18 @@ public class Penguin : Bird
 
 **Benefits of the Refactored Code:**
 
-* **Substitutability Preserved**: Now, both Sparrow and Penguin can be substituted for 
-  Bird without violating LSP, since there is no assumption that all birds can fly.
-* **Clear Separation of Concerns**: The ability to fly is now handled by the IFlyable 
+* **Substitutability Preserved**: Now, both `Sparrow` and `Penguin` can be substituted for 
+  `Bird` without violating LSP, since there is no assumption that all birds can fly.
+* **Clear Separation of Concerns**: The ability to fly is now handled by the ``IFlyable`` 
   interface, meaning only birds that can fly will implement it. This ensures that 
-  Penguin is not forced to provide an invalid implementation for flying.
+  `Penguin` is not forced to provide an invalid implementation for flying.
 * **More Flexible Design**: Other animals that can fly (like bats or insects) can also 
-  implement the IFlyable interface, increasing the flexibility of the design without 
-  changing the core behavior of the Bird class.
+  implement the `IFlyable` interface, increasing the flexibility of the design without 
+  changing the core behavior of the `Bird` class.
 * **Simplified Code**: The code now makes it clear which animals can fly and which 
   cannot, reducing the need for conditionals or error-prone workarounds.
 
-#### Key Takeaways:
+### Key Takeaways:
 
 > LSP ensures that subclasses can replace their base classes without introducing unexpected 
 > behavior, maintaining the correctness of the program.
