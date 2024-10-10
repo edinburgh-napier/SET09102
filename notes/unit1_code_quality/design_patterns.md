@@ -449,3 +449,5 @@ your software solutions.
 
 {: .tip-title }
 > [<i class="fa-regular fa-lightbulb"></i> General tips for applying design patterns](/notes/unit1_code_quality/design_patterns_guidelines.md)
+
+[tips](/notes/unit1_code_quality/design_patterns_guidelines.md)
