@@ -490,3 +490,742 @@ public class Penguin : Bird
 > constant checking or handling of special cases, leading to a cleaner and more robust 
 > design.
 
+## Interface Segregation Principle
+
+The Interface Segregation Principle (ISP) states that clients should not be forced to 
+depend on interfaces they do not use. In other words, an interface should provide only 
+the methods that are relevant to the specific functionality required by the client. If 
+an interface is too large or has methods that are irrelevant to certain clients, it 
+violates ISP and leads to a less flexible design.
+
+The goal of ISP is to create more modular and focused interfaces, allowing clients to 
+only implement the functionality they need, which improves maintainability and reduces 
+unnecessary dependencies.
+
+### Key Concepts:
+
+* **Cohesive Interfaces**: Interfaces should be small and focused, containing only the 
+  methods that are relevant to the specific tasks of the client.
+* **Avoid "Fat" Interfaces**: Large, multipurpose interfaces that require clients to 
+  implement methods they don't need should be avoided.
+* **Decoupling**: By separating interfaces based on functionality, clients are decoupled 
+  from unnecessary methods and dependencies, leading to more maintainable and adaptable code.
+
+ISP is important because it enhances flexibility, maintainability, and modularity in 
+software design. By ensuring that clients only depend on interfaces that provide the 
+functionality they actually need, ISP helps avoid the problems caused by large, "fat" 
+interfaces that bundle together unrelated methods. When an interface includes unnecessary 
+methods, clients are forced to implement or account for functionality they don't use, 
+leading to increased complexity and tighter coupling. ISP ensures that interfaces are 
+more cohesive and focused, making it easier to modify and extend the system without 
+affecting unrelated components. This results in cleaner, more adaptable code, where 
+changes to one part of the system don't unnecessarily ripple through other areas. 
+Ultimately, ISP promotes better decoupling, enabling systems to evolve more smoothly 
+while maintaining their stability and reliability.
+
+### Example: Problem and Solution Using ISP
+
+**Problem: A "Fat" Interface that Violates ISP**
+
+Let’s consider an example where we have a `Worker` interface that defines several methods 
+related to both manual and automated workers. This interface violates ISP because not 
+all workers (such as robots) will perform tasks like taking breaks, and manual workers 
+may not need automation methods.
+
+``` c#
+public interface IWorker
+{
+    void Work();
+    void TakeBreak();
+    void StartMaintenance();
+    void PerformAutomationTask();
+}
+```
+
+We have two classes, `HumanWorker` and `RobotWorker`, both of which implement the 
+`IWorker` interface:
+
+``` c#
+public class HumanWorker : IWorker
+{
+    public void Work() { Console.WriteLine("Human is working."); }
+    public void TakeBreak() { Console.WriteLine("Human is taking a break."); }
+    public void StartMaintenance() { Console.WriteLine("Human does not need maintenance."); }
+    public void PerformAutomationTask() { Console.WriteLine("Human cannot perform automation tasks."); }
+}
+
+public class RobotWorker : IWorker
+{
+    public void Work() { Console.WriteLine("Robot is working."); }
+    public void TakeBreak() { throw new NotImplementedException(); }
+    public void StartMaintenance() { Console.WriteLine("Robot is undergoing maintenance."); }
+    public void PerformAutomationTask() { Console.WriteLine("Robot is performing automation tasks."); }
+}
+```
+
+**Issues with this Design:**
+
+* **Violation of ISP**: Both `HumanWorker` and `RobotWorker` are forced to implement 
+  methods they don’t need, like `PerformAutomationTask` for `HumanWorker` and `TakeBreak` 
+  for `RobotWorker`. This leads to methods that throw exceptions or are irrelevant.
+* **Unnecessary Coupling**: This interface couples unrelated functionality into a single 
+  "fat" interface, making it harder to extend or modify without affecting all clients.
+* **Reduced Flexibility**: Any changes to the interface (like adding new methods) will 
+  affect both types of workers, even if the changes are only relevant to one.
+
+**Solution: Refactor Using ISP**
+
+To fix this, we can refactor the code by splitting the `IWorker` interface into smaller, 
+more focused interfaces that each represent a specific set of responsibilities. Each 
+worker will implement only the interfaces that are relevant to its functionality.
+
+``` c#
+// Interface for general work-related tasks
+public interface IWorker
+{
+    void Work();
+}
+
+// Interface for workers that take breaks
+public interface IRestable
+{
+    void TakeBreak();
+}
+
+// Interface for workers that require maintenance
+public interface IMaintainable
+{
+    void StartMaintenance();
+}
+
+// Interface for workers that perform automation tasks
+public interface IAutomationWorker
+{
+    void PerformAutomationTask();
+}
+```
+
+Now, we can implement these smaller interfaces in the appropriate classes:
+
+``` c#
+public class HumanWorker : IWorker, IRestable
+{
+    public void Work() { Console.WriteLine("Human is working."); }
+    public void TakeBreak() { Console.WriteLine("Human is taking a break."); }
+}
+
+public class RobotWorker : IWorker, IMaintainable, IAutomationWorker
+{
+    public void Work() { Console.WriteLine("Robot is working."); }
+    public void StartMaintenance() { Console.WriteLine("Robot is undergoing maintenance."); }
+    public void PerformAutomationTask() { Console.WriteLine("Robot is performing automation tasks."); }
+}
+```
+
+**Benefits of the Refactored Code:**
+
+* **Interfaces are Focused**: Each interface now only defines methods that are relevant 
+  to the specific functionality. `HumanWorker` doesn’t need to worry about automation, 
+  and `RobotWorker` no longer needs to implement `TakeBreak()`.
+* **Decoupling**: The responsibilities are now properly separated. Each worker type 
+  implements only the interfaces that are relevant to them, decoupling unrelated 
+  functionality.
+* **Improved Flexibility**: Changes to one interface (e.g., adding more automation-related 
+  methods) will not affect unrelated workers, like human workers who don’t deal with 
+  automation.
+
+### Key Takeaways
+
+> ISP ensures that clients are not forced to depend on interfaces they don’t use, reducing 
+> unnecessary coupling and dependencies.
+> 
+> By splitting large, "fat" interfaces into smaller, more focused ones, you allow each 
+> client to implement only what they need, making the code more flexible and easier to 
+> maintain.
+> 
+> ISP promotes modularity and decoupling, allowing the system to evolve more easily 
+> without impacting unrelated parts of the codebase.
+
+## Dependency Inversion Principle
+
+The Dependency Inversion Principle (DIP) states that high-level modules should not 
+depend on low-level modules; both should depend on abstractions. Additionally, 
+abstractions should not depend on details; details should depend on abstractions.
+
+The goal of DIP is to reduce the coupling between high-level and low-level components 
+in a system, making the software more flexible, maintainable, and testable. By depending 
+on abstractions (interfaces or abstract classes) rather than concrete implementations, 
+the system becomes easier to extend and modify without breaking existing functionality.
+
+### Key Concepts:
+
+* **Decoupling**: High-level modules should depend on abstract interfaces, not concrete 
+  implementations, so they are not tightly coupled to low-level details.
+* **Abstractions First**: The overall design should prioritize abstractions (such as 
+  interfaces) that allow for the flexible swapping of implementations without changing 
+  the high-level logic.
+* **Maintainability**: By inverting dependencies, you make the system more maintainable 
+  and scalable, as you can change implementations or details without impacting the 
+  higher-level business logic.
+
+DIP is crucial because it reduces the tight coupling between high-level modules and 
+low-level implementations, making the system more flexible, maintainable, and adaptable 
+to change. By depending on abstractions instead of concrete classes, high-level modules 
+can function independently of specific details, allowing low-level components to be 
+swapped or modified without affecting the core business logic. This decoupling promotes 
+better scalability and simplifies testing, as mock or alternative implementations can 
+be easily introduced. Ultimately, DIP enhances the overall structure of the software, 
+ensuring that it remains stable and easier to manage as the system evolves over time.
+
+### Example: Problem and Solution Using DIP
+
+**Problem: Tight Coupling Violates DIP**
+
+Consider a scenario where a `UserService` class directly depends on a `MySQLDatabase` 
+class to store user data. This design violates DIP because the high-level `UserService` 
+is directly dependent on the low-level `MySQLDatabase` implementation. This tight 
+coupling makes it difficult to switch to a different database (e.g., MongoDB) or test 
+the `UserService` in isolation.
+
+``` c#
+public class MySQLDatabase
+{
+    public void SaveUser(string username)
+    {
+        Console.WriteLine("Saving user to MySQL database");
+    }
+}
+
+public class UserService
+{
+    private MySQLDatabase database;
+
+    public UserService()
+    {
+        database = new MySQLDatabase();  // High-level module depends on low-level implementation
+    }
+
+    public void RegisterUser(string username)
+    {
+        database.SaveUser(username);
+        Console.WriteLine("User registered successfully");
+    }
+}
+```
+
+**Issues with this Design:**
+
+* **Tight Coupling**: `UserService` is tightly coupled to `MySQLDatabase`. Any changes in 
+  how data is stored (e.g., switching to MongoDB or a file-based system) would require 
+  modifying `UserService`, violating DIP.
+* **Poor Testability**: Testing `UserService` in isolation is difficult because you 
+  cannot easily replace `MySQLDatabase` with a mock or stub.
+* **Lack of Flexibility**: The system is inflexible, as changing the storage mechanism 
+  requires changes to both the `UserService` and the `MySQLDatabase`.
+
+**Solution: Refactor Using DIP**
+
+To adhere to the Dependency Inversion Principle, we can introduce an abstraction in the 
+form of an `IDatabase` interface. Both `MySQLDatabase` and other storage mechanisms, 
+such as `MongoDBDatabase`, can implement this interface. The `UserService` will depend 
+on the `IDatabase` abstraction rather than any concrete implementation. This allows us 
+to switch between different databases or mock the database in tests without modifying 
+the `UserService`.
+
+``` c#
+// Define an abstraction for database operations
+public interface IDatabase
+{
+    void SaveUser(string username);
+}
+
+// Concrete implementation for MySQL database
+public class MySQLDatabase : IDatabase
+{
+    public void SaveUser(string username)
+    {
+        Console.WriteLine("Saving user to MySQL database");
+    }
+}
+
+// Concrete implementation for MongoDB database
+public class MongoDBDatabase : IDatabase
+{
+    public void SaveUser(string username)
+    {
+        Console.WriteLine("Saving user to MongoDB database");
+    }
+}
+
+// High-level UserService depends on abstraction (IDatabase)
+public class UserService
+{
+    private IDatabase database;
+
+    // Dependency is injected through the constructor
+    public UserService(IDatabase database)
+    {
+        this.database = database;
+    }
+
+    public void RegisterUser(string username)
+    {
+        database.SaveUser(username);
+        Console.WriteLine("User registered successfully");
+    }
+}
+```
+
+Now, the `UserService` can depend on any database implementation that adheres to the 
+`IDatabase` interface. If you want to switch to MongoDB, you just pass a 
+`MongoDBDatabase` instance when creating the `UserService`:
+
+``` c#
+public class Program
+{
+    public static void Main(string[] args)
+    {
+        // Use MySQLDatabase
+        IDatabase mySqlDatabase = new MySQLDatabase();
+        UserService userService1 = new UserService(mySqlDatabase);
+        userService1.RegisterUser("John Doe");
+
+        // Use MongoDBDatabase
+        IDatabase mongoDbDatabase = new MongoDBDatabase();
+        UserService userService2 = new UserService(mongoDbDatabase);
+        userService2.RegisterUser("Jane Smith");
+    }
+}
+```
+
+**Benefits of the Refactored Code:**
+
+* **Loosely Coupled**: The `UserService` now depends on the `IDatabase` abstraction 
+  rather than a concrete implementation, making it more flexible and maintainable.
+* **Increased Flexibility**: You can easily switch between different database 
+  implementations (e.g., MySQL, MongoDB) without modifying the `UserService` code.
+* **Better Testability**: Testing becomes simpler because you can create mock 
+  implementations of `IDatabase` for unit testing without relying on actual database 
+  connections.
+* **Scalability**: The system is more scalable, allowing for new storage mechanisms to 
+  be added with minimal impact on the higher-level `UserService`.
+
+### Key Takeaways
+
+> The Dependency Inversion Principle (DIP) helps reduce tight coupling between high-level 
+> modules and low-level implementations by encouraging dependencies on abstractions 
+> rather than concrete classes.
+> 
+> By adhering to DIP, systems become more flexible, maintainable, and testable, as 
+> high-level components are insulated from changes to low-level details.
+> 
+> DIP is closely related to Dependency Injection, where abstractions (interfaces) are 
+> passed to high-level modules, allowing the concrete implementation to be determined 
+> outside the module itself.
+
+## Other Principles
+
+Beyond the SOLID principles, other well-known rules provide foundational guidelines that 
+help developers create high-quality, reliable, and scalable software systems. These 
+principles aim to address common challenges such as managing complexity, ensuring 
+maintainability, and improving collaboration in development teams. Examples include DRY 
+(Don't Repeat Yourself), which encourages the elimination of redundant code, and KISS 
+(Keep It Simple, Stupid), which advocates for simple and straightforward solutions to 
+problems. Additionally, the YAGNI (You Aren’t Gonna Need It) principle emphasizes 
+building only what is necessary, avoiding over-engineering. These principles 
+collectively guide software engineers in making better design decisions, improving code 
+readability, and maintaining software that can adapt to future needs.
+
+## DRY
+
+The DRY (Don't Repeat Yourself) principle is one of the most important guidelines in 
+software engineering. It states that every piece of knowledge or logic should be 
+represented in a system only once. Duplication of code or logic across a system leads 
+to increased complexity, makes maintenance difficult, and introduces the risk of 
+inconsistencies. DRY encourages developers to avoid repetition by centralizing logic, 
+reducing redundancy, and promoting code reuse.
+
+**Key Concepts of DRY:**
+
+* **Avoid Code Duplication**: Repeated logic or code should be abstracted or refactored 
+  into reusable components (such as methods, functions, or modules).
+* **Maintainability**: Centralizing repeated logic makes the system easier to maintain. 
+  When changes are necessary, you only need to update the code in one place.
+* **Consistency**: DRY reduces the risk of errors that can occur when maintaining 
+  multiple, inconsistent copies of the same logic.
+
+The DRY principle is important because it promotes efficiency, maintainability, and 
+consistency in software development. By avoiding code duplication, developers can 
+centralize logic, making it easier to update and maintain. When the same logic is 
+repeated in multiple places, any necessary change requires updating each instance, 
+increasing the risk of errors and inconsistencies. DRY ensures that changes only need 
+to be made in one place, which reduces maintenance efforts and the likelihood of bugs. 
+Additionally, DRY leads to cleaner, more readable code, as developers don’t have to 
+sift through repeated blocks of code to understand the system. Ultimately, DRY helps 
+create scalable, efficient, and reliable software.
+
+### Example: Problem and Solution Using DRY
+
+**Problem: Repetitive Code Violates DRY**
+
+Let's say you have a program that calculates discounts for different types of 
+customers, and the same logic is being duplicated for different methods. In this 
+case, the discount calculation logic is repeated for both regular customers and 
+premium customers.
+
+``` c#
+public class DiscountService
+{
+    public double CalculateDiscountForRegularCustomer(double price)
+    {
+        // Repeated logic for discount calculation
+        double discount = price * 0.1;
+        double discountedPrice = price - discount;
+        return discountedPrice;
+    }
+
+    public double CalculateDiscountForPremiumCustomer(double price)
+    {
+        // Same logic repeated for premium customers
+        double discount = price * 0.2;
+        double discountedPrice = price - discount;
+        return discountedPrice;
+    }
+}
+```
+
+**Issues with this Design:**
+
+* **Code Duplication**: The discount calculation logic is repeated, violating the DRY 
+  principle. Any future change in the way discounts are calculated would need to be 
+  updated in both methods.
+* **Increased Maintenance**: If the discounting rule changes, developers have to update 
+  multiple parts of the code, increasing the risk of missing one or making mistakes.
+* **Harder to Scale**: Adding new types of customers with different discount rates 
+  would lead to even more duplication, compounding the maintenance problem.
+
+**Solution: Refactor Using DRY**
+
+To adhere to the DRY principle, we can refactor the code by extracting the common 
+discount calculation logic into a single method. The customer type-specific logic 
+can be passed as a parameter, making the code reusable and reducing duplication.
+
+``` c#
+public class DiscountService
+{
+    // Centralized logic for calculating the discount
+    public double CalculateDiscount(double price, double discountRate)
+    {
+        double discount = price * discountRate;
+        double discountedPrice = price - discount;
+        return discountedPrice;
+    }
+
+    public double CalculateDiscountForRegularCustomer(double price)
+    {
+        return CalculateDiscount(price, 0.1);  // Regular customers get 10% discount
+    }
+
+    public double CalculateDiscountForPremiumCustomer(double price)
+    {
+        return CalculateDiscount(price, 0.2);  // Premium customers get 20% discount
+    }
+}
+```
+
+**Benefits of the Refactored Code:**
+
+* **Code Reuse**: The `CalculateDiscount` method handles the common discount logic, 
+  eliminating repetition.
+* **Easier Maintenance**: If the discount calculation method changes, you only need to 
+  update the `CalculateDiscount` method, ensuring consistency across all customer types.
+* **Scalability**: Adding new customer types or changing discount rates is now simple, 
+  as you can just pass a different discount rate without duplicating the core logic.
+
+### Key Takeaways
+
+> The DRY principle helps prevent code duplication by encouraging the centralization of 
+> repeated logic into reusable components such as methods, classes, or modules.
+> 
+> Duplication increases complexity, maintenance costs, and the likelihood of bugs, while 
+> DRY promotes more efficient development practices.
+> 
+> By refactoring code to be DRY, you make it easier to scale, maintain, and ensure that 
+> changes are reflected consistently across the codebase.
+
+## KISS
+
+The KISS (Keep It Simple, Stupid) principle encourages developers to write code that is 
+as simple and straightforward as possible. The idea behind KISS is that simplicity leads 
+to better outcomes—simple code is easier to understand, maintain, and debug. Complexity, 
+on the other hand, introduces unnecessary risks, makes code harder to maintain, and 
+increases the likelihood of errors. The goal of KISS is to avoid over-complicating 
+solutions, particularly when a simpler approach would suffice.
+
+### Key Concepts of KISS
+
+* **Simplicity**: Aim to write the simplest possible solution that meets the requirements.
+* **Avoid Over-Engineering**: Resist the temptation to add complexity, features, or 
+  abstractions that aren't needed.
+* **Ease of Understanding**: Code should be easy for others (and your future self) to 
+  read and understand.
+* **Maintainability**: Simpler code is easier to maintain, troubleshoot, and extend 
+  over time.
+
+The KISS principle is important because it emphasizes the value of simplicity in 
+software development. Simple code is easier to read, understand, and maintain, making 
+it more accessible to other developers and your future self. When code is kept simple, 
+it becomes easier to troubleshoot, debug, and extend, reducing the likelihood of 
+introducing errors or breaking existing functionality. By avoiding unnecessary 
+complexity and over-engineering, the KISS principle helps streamline development 
+processes, saving time and resources. Ultimately, following KISS leads to more 
+efficient development and results in software that is more flexible, maintainable, 
+and stable.
+
+### Example: Problem and Solution Using KISS
+
+**Problem: Over-Engineered Code**
+
+Imagine you are tasked with calculating the sum of numbers in a list. A developer might 
+over-engineer the solution by introducing unnecessary layers of abstraction, complicating 
+a simple task.
+
+``` c#
+// Over-complicated solution with unnecessary abstraction
+public interface ISumCalculator
+{
+    int CalculateSum(List<int> numbers);
+}
+
+public class SumCalculator : ISumCalculator
+{
+    public int CalculateSum(List<int> numbers)
+    {
+        int sum = 0;
+        foreach (int number in numbers)
+        {
+            sum += number;
+        }
+        return sum;
+    }
+}
+
+public class MainApp
+{
+    public static void Main(string[] args)
+    {
+        ISumCalculator calculator = new SumCalculator();
+        List<int> numbers = new List<int> { 1, 2, 3, 4, 5 };
+        int result = calculator.CalculateSum(numbers);
+        Console.WriteLine("Sum: " + result);
+    }
+}
+```
+
+**Issues with this Design:**
+
+* **Unnecessary Complexity**: There is no need for an interface (`ISumCalculator`) or a 
+  class (`SumCalculator`) to calculate a simple sum. These abstractions add complexity 
+  without adding real value.
+* **Over-Engineering**: The problem could be solved with a much simpler approach, yet 
+  the code introduces unnecessary layers that complicate a basic task.
+* **Harder to Maintain**: If this solution is part of a larger system, other developers 
+  (or even the same developer in the future) will need to understand unnecessary 
+  abstractions, making the code harder to maintain.
+
+**Solution: Refactor Using KISS**
+
+To adhere to the KISS principle, we can eliminate the unnecessary abstractions and 
+simplify the solution:
+
+``` c#
+// Simple, straightforward solution
+public class MainApp
+{
+    public static void Main(string[] args)
+    {
+        List<int> numbers = new List<int> { 1, 2, 3, 4, 5 };
+        int sum = CalculateSum(numbers);
+        Console.WriteLine("Sum: " + sum);
+    }
+
+    public static int CalculateSum(List<int> numbers)
+    {
+        int sum = 0;
+        foreach (int number in numbers)
+        {
+            sum += number;
+        }
+        return sum;
+    }
+}
+```
+
+**Benefits of the Refactored Code:**
+
+* **Simplicity**: The code now directly solves the problem without unnecessary 
+  abstraction. It is clear and easy to understand.
+* **Ease of Maintenance**: Since the solution is straightforward, it will be much 
+  easier to maintain and modify in the future.
+* **Reduced Overhead**: There is no need for interfaces or extra classes to calculate 
+  the sum, reducing both the cognitive and resource overhead.
+
+**Usage Example:**
+
+``` c#
+// Simplified usage and easier to maintain
+public static void Main(string[] args)
+{
+    List<int> numbers = new List<int> { 1, 2, 3, 4, 5 };
+    int sum = CalculateSum(numbers);
+    Console.WriteLine("Sum: " + sum);
+}
+```
+
+This approach directly solves the problem with minimal code, following the KISS principle.
+
+### Key Takeaways
+
+> KISS encourages developers to keep solutions as simple as possible, avoiding 
+> unnecessary abstractions, complexity, or features that aren't required.
+> 
+> Simpler code is more maintainable, easier to understand, and less prone to bugs.
+> 
+> Over-engineering wastes time, resources, and can make future modifications harder.
+> 
+> Always strive for the simplest solution that fully meets the requirements, but avoid 
+> oversimplification that compromises functionality or flexibility.
+
+## YAGNI
+
+The YAGNI (You Aren’t Gonna Need It) suggests developers should only implement features 
+when they are actually required, not in anticipation of future needs. The idea behind 
+YAGNI is to avoid over-engineering or adding unnecessary complexity to the system by 
+building features that may never be used. This principle encourages a minimalist 
+approach, where the focus is on building only what is needed for the task at hand, 
+leading to more efficient, maintainable, and understandable code.
+
+### Key Concepts of YAGNI
+
+* **Avoid Premature Development**: Don't implement features, logic, or functionality 
+  until they are explicitly needed.
+* **Simplicity**: Build only what is required to meet current needs, keeping the system 
+  as simple as possible.
+* **Avoid Over-Engineering**: Creating features "just in case" adds complexity and 
+  technical debt without providing immediate value.
+* **Iterative Development**: Focus on incremental development, where features are 
+  added as needed, ensuring the system evolves based on real requirements.
+
+The YAGNI principle is important because it helps developers avoid unnecessary complexity 
+and over-engineering by focusing only on the features that are immediately required. By 
+not building features in anticipation of future needs, developers can save time and 
+resources, ensuring that the codebase remains simple and maintainable. Implementing 
+features that may never be used adds complexity and technical debt, making the system 
+harder to manage and increasing the potential for bugs. YAGNI encourages a more iterative 
+development process, where features are added only when they are truly necessary, leading 
+to more efficient and focused development. This results in a cleaner, more maintainable 
+codebase that can evolve naturally as new requirements arise.
+
+### Example: Problem and Solution Using YAGNI
+
+**Problem: Over-Engineering Violates YAGNI**
+
+Consider a scenario where a developer is tasked with creating a system to handle user 
+authentication for an application. The immediate requirement is to allow users to log 
+in using a username and password. However, anticipating future requirements, the 
+developer decides to implement support for OAuth (Google, Facebook login), multi-factor 
+authentication, and even a potential feature for biometric login.
+
+``` c#
+public class AuthService
+{
+    // Over-engineered: trying to support multiple authentication mechanisms before they are needed
+    public void Authenticate(string username, string password)
+    {
+        // Simple username/password authentication
+        Console.WriteLine("Authenticating with username and password.");
+    }
+
+    public void AuthenticateWithGoogle(string googleToken)
+    {
+        // Authentication using Google OAuth
+        Console.WriteLine("Authenticating with Google.");
+    }
+
+    public void AuthenticateWithFacebook(string facebookToken)
+    {
+        // Authentication using Facebook OAuth
+        Console.WriteLine("Authenticating with Facebook.");
+    }
+
+    public void AuthenticateWithBiometrics(string biometricData)
+    {
+        // Future feature for biometric login
+        Console.WriteLine("Authenticating with biometrics.");
+    }
+}
+```
+
+**Issues with this Design:**
+
+* **Premature Development**: The only requirement is for username and password 
+  authentication, but the developer has added support for other methods that are not 
+  currently needed.
+* **Unnecessary Complexity**: The codebase becomes more complex with each additional 
+  feature, even though the extra functionality may never be used or could be implemented 
+  differently in the future.
+* **Wasted Resources**: Time and effort are spent on developing and maintaining features 
+  that are not part of the immediate requirements.
+* **Maintenance Burden**: Future developers will need to maintain and understand 
+  unnecessary code, which increases technical debt.
+
+**Solution: Refactor Using YAGNI**
+
+To follow the YAGNI principle, the developer should implement only the features that 
+are needed right now: in this case, basic username and password authentication. Other 
+authentication methods can be added later when (and if) they become necessary.
+
+``` c#
+public class AuthService
+{
+    // Only implement the required authentication logic for now
+    public void Authenticate(string username, string password)
+    {
+        // Simple username/password authentication
+        Console.WriteLine("Authenticating with username and password.");
+    }
+}
+```
+
+**Benefits of the Refactored Code:**
+
+* **Simplicity**: The code is now focused solely on the current requirement, making it 
+  easy to understand and maintain.
+* **Saves Time and Resources**: By avoiding unnecessary features, the developer saves 
+  time and can focus on delivering the required functionality.
+* **Easier to Extend**: When the need arises for OAuth or other authentication methods, 
+  those features can be added incrementally, based on the real requirements at that time.
+* **Improved Maintainability**: Less code means fewer bugs, fewer dependencies, and a 
+  smaller maintenance burden.
+
+### Key Takeaways
+> The YAGNI principle encourages developers to avoid building features that are not 
+> immediately required, focusing on simplicity and preventing over-engineering.
+> 
+> Writing only what is needed minimizes complexity, improves maintainability, and 
+> reduces the risk of technical debt.
+> 
+> Developers should focus on the current requirements and defer additional features 
+> until they are truly necessary, using an iterative development approach to extend 
+> the system as needed.
+
+## Conclusion
+
+Principles in software engineering are essential for guiding engineers toward creating 
+software that is well-structured, scalable, and maintainable. They help in managing 
+complexity, improving collaboration, and ensuring that the software can adapt to change 
+while remaining reliable and efficient over time.
+
+{: .tip-title }
+> [<i class="fa-regular fa-lightbulb"></i> General tips for applying software engineering principles](notes/unit1_code_quality/coding_standards/principles_guidelines.md)
+
