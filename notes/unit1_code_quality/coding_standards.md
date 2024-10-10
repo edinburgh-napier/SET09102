@@ -289,4 +289,4 @@ software engineering becomes not only more efficient but also more equitable and
 collaborative.
 
 {: .tip-title }
-> <a href="guidelines.md"><i class="fa-regular fa-lightbulb"></i> Guidelines for coding standards</a>
+> <a href="notes/unit1_code_quality/coding_standards/guidelines.md"><i class="fa-regular fa-lightbulb"></i> Guidelines for coding standards</a>
