@@ -11,12 +11,11 @@ nav_order: 3
 
 ![Merlin Mann](../../images/merlin_mann.png)
 
-<p class="credit">Photo by <a href="https://www.flickr.com/photos/thomashawk/2298694177">Thomas Hawk</a></p>
-
 <blockquote class="pretty"><span>
 Workflow is understanding your job, understanding your tools, and then not thinking about it any more.
 </span></blockquote>
 <p class="attribution">Merlin Mann</p>
+<p class="credit">Photo by <a href="https://www.flickr.com/photos/thomashawk/2298694177">Thomas Hawk</a></p>
 
 <hr class="splash">
 
