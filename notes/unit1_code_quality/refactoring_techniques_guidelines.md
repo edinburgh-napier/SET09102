@@ -1,6 +1,6 @@
 ---
 title: Refactoring guidelines
-parent: Design patterns
+parent: Refactoring techniques
 has_children: false
 nav_exclude: true
 nav_order: 1
