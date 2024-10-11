@@ -7,16 +7,17 @@ nav_order: 3
 
 # Processes and Workflow
 
-<div class="splash">
+<hr class="splash">
 
 ![Merlin Mann](../../images/merlin_mann.png)
-<span class="credit">Photo: <a href="https://www.flickr.com/photos/thomashawk/2298694177">Thomas Hawk</a></span>
+
+<p class="credit">Photo by <a href="https://www.flickr.com/photos/thomashawk/2298694177">Thomas Hawk</a></p>
 
 <blockquote class="pretty"><span>
 Workflow is understanding your job, understanding your tools, and then not thinking about it any more.
 </span></blockquote>
-
 <p class="attribution">Merlin Mann</p>
-</div>
+
+<hr class="splash">
 
 ## Introduction
