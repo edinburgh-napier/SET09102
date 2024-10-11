@@ -1,10 +1,3 @@
----
-title: Human factors
-parent: Notes
-has_children: false
-nav_order: 4
----
-
 # Human factors in software engineering
 
 <hr class="splash">
