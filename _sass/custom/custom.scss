@@ -149,23 +149,15 @@ blockquote.pretty {
 }
 blockquote.pretty::before {
   content: url("../../images/open_quotes.png");
-  //float:left;
-  //margin-bottom: -26px;
   margin-right: 1rem;
   margin-top: -26px;
 }
 blockquote.pretty::after {
     content: url("../../images/close_quotes.png");
-    //float:right;
-    //margin-top: -48px;
   margin-left: 1rem;
   vertical-align: top;
 }
-blockquote.pretty span {
-    //display: inline-block;
-    //margin: 0 86px;
-  //margin-left: 1rem;
-}
+
 .attribution {
     font-style: italic;
     font-size: 0.9em;
