@@ -1,10 +1,3 @@
----
-title: Secure software
-parent: Notes
-has_children: false
-nav_order: 19
----
-
 # Secure software development
 
 <hr class="splash">

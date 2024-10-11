@@ -1,10 +1,3 @@
----
-title: CASE
-parent: Notes
-has_children: false
-nav_order: 15
----
-
 # Computer-aided software engineering
 
 <hr class="splash">

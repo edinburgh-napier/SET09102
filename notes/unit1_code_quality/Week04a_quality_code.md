@@ -1,10 +1,3 @@
----
-title: Quality code
-parent: Notes
-has_children: false
-nav_order: 7
----
-
 # Quality: code
 
 <hr class="splash">

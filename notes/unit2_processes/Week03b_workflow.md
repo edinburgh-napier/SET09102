@@ -1,10 +1,3 @@
----
-title: Workflow
-parent: Notes
-has_children: false
-nav_order: 6
----
-
 # Team workflows
 
 <script type="module">

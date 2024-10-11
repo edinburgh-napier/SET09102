@@ -1,10 +1,3 @@
----
-title: Quality processes
-parent: Notes
-has_children: false
-nav_order: 8
----
-
 # Quality: processes
 
 <hr class="splash">

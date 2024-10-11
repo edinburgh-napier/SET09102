@@ -1,10 +1,3 @@
----
-title: Security
-parent: Notes
-has_children: false
-nav_order: 18
----
-
 # Security
 
 <hr class="splash">

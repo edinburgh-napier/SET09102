@@ -1,10 +1,3 @@
----
-title: Software design
-parent: Notes
-has_children: false
-nav_order: 9
----
-
 # Software design
 
 <hr class="splash">

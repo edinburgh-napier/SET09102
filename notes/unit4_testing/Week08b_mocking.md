@@ -1,10 +1,3 @@
----
-title: Testing
-parent: Notes
-has_children: false
-nav_order: 14
----
-
 # Mocking and testing
 
 <hr class="splash">

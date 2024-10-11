@@ -1,10 +1,3 @@
----
-title: Documentation
-parent: Notes
-has_children: false
-nav_order: 10
----
-
 # Documentation
 
 <hr class="splash">

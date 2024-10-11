@@ -1,10 +1,3 @@
----
-title: Interview preparation
-parent: Notes
-has_children: false
-nav_order: 21
----
-
 # Interview preparation
 
 <hr class="splash">

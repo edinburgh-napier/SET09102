@@ -1,10 +1,3 @@
----
-title: AI
-parent: Notes
-has_children: false
-nav_order: 17
----
-
 # Generative AI tools
 
 <hr class="splash">

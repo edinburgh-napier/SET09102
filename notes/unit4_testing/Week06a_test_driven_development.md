@@ -1,10 +1,3 @@
----
-title: TDD
-parent: Notes
-has_children: false
-nav_order: 11
----
-
 # Test-driven development
 
 <hr class="splash">

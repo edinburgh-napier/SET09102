@@ -1,10 +1,3 @@
----
-title: Testing
-parent: Notes
-has_children: false
-nav_order: 11
----
-
 # Software testing
 
 <hr class="splash">

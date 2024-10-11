@@ -1,10 +1,3 @@
----
-title: Tools
-parent: Notes
-has_children: false
-nav_order: 13
----
-
 # Know your tools
 
 <hr class="splash">

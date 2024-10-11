@@ -1,10 +1,3 @@
----
-title: Lifecycle models
-parent: Notes
-has_children: false
-nav_order: 5
----
-
 # Lifecycle and development models
 
 <script type="module">

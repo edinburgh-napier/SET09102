@@ -1,10 +1,3 @@
----
-title: Metrics
-parent: Notes
-has_children: false
-nav_order: 12
----
-
 # Evaluating code quality
 
 GQM

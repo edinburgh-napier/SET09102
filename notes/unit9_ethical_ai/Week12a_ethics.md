@@ -1,10 +1,3 @@
----
-title: Ethics
-parent: Notes
-has_children: false
-nav_order: 20
----
-
 # Ethics and professionalism
 
 <hr class="splash">

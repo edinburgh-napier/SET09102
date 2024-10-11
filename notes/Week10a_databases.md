@@ -1,10 +1,3 @@
----
-title: Databases
-parent: Notes
-has_children: false
-nav_order: 17
----
-
 # Working with databases
 
 <hr class="splash">
