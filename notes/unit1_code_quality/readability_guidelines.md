@@ -53,11 +53,11 @@ your coding style and commenting practice.
 
 6. Refactor Often
 
-> Regularly refactor your code to improve clarity, structure, and readability. Don’t wait 
-> for the code to become unmanageable.
-> 
-> Refactor complex or messy code as part of your normal development process. Break down 
-> large methods, eliminate duplication, and clean up unnecessary logic.
+    > Regularly refactor your code to improve clarity, structure, and readability. Don’t wait 
+    > for the code to become unmanageable.
+    > 
+    > Refactor complex or messy code as part of your normal development process. Break down 
+    > large methods, eliminate duplication, and clean up unnecessary logic.
 
 7. Group Related Code Together
 
