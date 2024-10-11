@@ -142,23 +142,29 @@ details.marker-after[open] summary:after {
 //Big blockquote
 
 blockquote.pretty {
-    font-size: 120%;
-    margin: 2em 5em;
-    border-left: none;
+  font-size: 140%;
+  margin: 2em 5em;
+  border-left: none;
+  color: darkslategrey;
 }
 blockquote.pretty::before {
-    content: url("../../images/open_quotes.png");
-    float:left;
-    margin-bottom: -48px;
+  content: url("../../images/open_quotes.png");
+  //float:left;
+  //margin-bottom: -26px;
+  margin-right: 1rem;
+  margin-top: -26px;
 }
 blockquote.pretty::after {
     content: url("../../images/close_quotes.png");
-    float:right;
-    margin-top: -48px;
+    //float:right;
+    //margin-top: -48px;
+  margin-left: 1rem;
+  vertical-align: top;
 }
 blockquote.pretty span {
-    display: inline-block;
-    margin: 0 86px;
+    //display: inline-block;
+    //margin: 0 86px;
+  //margin-left: 1rem;
 }
 .attribution {
     font-style: italic;
