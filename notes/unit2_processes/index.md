@@ -15,7 +15,7 @@ nav_order: 3
 Workflow is understanding your job, understanding your tools, and then not thinking about it any more.
 </span></blockquote>
 <p class="attribution">Merlin Mann</p>
-<p class="credit">Photo by <a href="https://www.flickr.com/photos/thomashawk/2298694177">Thomas Hawk</a></p>
+<p class="credit">Photo: <a href="https://www.flickr.com/photos/thomashawk/2298694177">Thomas Hawk</a></p>
 
 <hr class="splash">
 
