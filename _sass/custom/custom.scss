@@ -138,3 +138,31 @@ details.marker-after summary::after {
 details.marker-after[open] summary:after {
   content: "▼";
 }
+
+//Big blockquote
+
+blockquote.pretty {
+    font-size: 120%;
+    margin: 2em 5em;
+    border-left: none;
+}
+blockquote.pretty::before {
+    content: url("../../images/open_quotes.png");
+    float:left;
+    margin-bottom: -48px;
+}
+blockquote.pretty::after {
+    content: url("../../images/close_quotes.png");
+    float:right;
+    margin-top: -48px;
+}
+blockquote.pretty span {
+    display: inline-block;
+    margin: 0 86px;
+}
+.attribution {
+    font-style: italic;
+    font-size: 0.9em;
+    margin-right: 10em;
+    text-align: right;
+}
