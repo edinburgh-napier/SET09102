@@ -76,8 +76,8 @@ This is not to suggest these are the most important ones to know about - you sho
 it your business to learn to recognise, avoid and resolve as many as possible. Resolving
 code smells should be a high priority during code reviews.
 
-
-## Alternative Classes with Different Interfaces
+<details class="blue-bar">
+<summary>Alternative Classes with Different Interfaces</summary>
 
 This code smell occurs when two or more classes perform similar functions or represent 
 similar concepts but have different method names or interfaces. This makes it harder to 
@@ -188,6 +188,7 @@ public class Notification
 * **Easier Maintenance**: If a new notification type (e.g., push notifications) is added, 
   it only needs to implement the `INotificationService` interface, and the existing 
   `Notification` class can use it without any changes.
+</details>
 
 ## Feature Envy
 
