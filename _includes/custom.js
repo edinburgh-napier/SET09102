@@ -33,58 +33,71 @@
         }
     }
 
+    function getTargetClass(element) {
+        var classList = element.className.split(" ");
+        for (var i=0; i < classList.length; i++) {
+            if (classList[i].startsWith("slide-")) {
+                return classList[i].substr(6);
+            }
+        }
+        return null;
+    }
+
+    function next(element, tagName) {
+        while (element.nextSibling) {
+            // console.log(element.nextSibling);
+            if (element.nextSibling.tagName == tagName.toUpperCase()) {
+                return element.nextSibling;
+            }
+            element = element.nextSibling;
+        }
+        return null;
+    }
+
     var elements = document.getElementsByClassName('slide');
     for(var i = 0; i < elements.length; i++) {
-        alert(elements[i].tagName);
         var el = elements[i];
         el.onclick = function() {
-            var content = document.querySelector('#' + this.id + ' + blockquote');
-            if (content == null)
-                var content = document.querySelector('#' + this.id + ' + ul');
-            if (content == null)
-                var content = document.querySelector('#' + this.id + ' + ol');
-            if (content == null)
-                var content = document.querySelector('#' + this.id + ' + table');
-            if (content == null)
-                content = document.querySelector('#' + this.id + ' + div');
+            var targetClass = getTargetClass(el);
+            var targetElement = next(el, targetClass);
+            console.log(targetElement);
 
-            console.log('#' + this.id + ' + blockquote, #' + this.id + ' + ul, #' + this.id + ' + ol, #' + this.id + ' + div');
-            console.log(content);
-            var titleText = document.querySelector('#' + this.id + ' > .slide-title-text');
-            if (titleText == null)
-                titleText = document.querySelector('#' + this.id + '-caption');
+            var titleText = el.dataset.title;
+            // if (titleText == null)
+            //     titleText = document.querySelector('#' + this.id + '-caption');
             console.log(titleText);
+
             var slideOverlay = document.getElementById("slide-overlay");
             var slideTitle = document.getElementById("slide-title");
             var slideContent = document.getElementById("slide-content");
-            slideContent.innerHTML = content.outerHTML;
+            slideContent.innerHTML = targetElement.outerHTML;
             if (titleText)
-                slideTitle.innerHTML = titleText.innerHTML;
+                slideTitle.innerHTML = titleText;
             slideOverlay.classList.toggle("show");
         }
     }
 
-    var elements = document.getElementsByTagName('figure');
-    for(var i = 0; i < elements.length; i++) {
-        var el = elements[i];
-        el.onclick = function() {
-            var slideOverlay = document.getElementById("slide-overlay");
-            var slideContent = document.getElementById("slide-content");
-            var img = null;
-            var caption = null;
-            var descendents = this.getElementsByTagName('*')
-            for(var i=0; i<descendents.length;i++) {
-                if(descendents[i].tagName === 'IMG') {
-                    img = descendents[i];
-                }
-                if(descendents[i].tagName === 'FIGCAPTION') {
-                    caption = descendents[i];
-                    break;
-                }
-            }
-            slideContent.innerHTML = img.outerHTML;
-            slideTitle.innerHTML = caption.innerHTML;
-            slideOverlay.classList.toggle("show");
-        }
-    }
+    // var elements = document.getElementsByTagName('figure');
+    // for(var i = 0; i < elements.length; i++) {
+    //     var el = elements[i];
+    //     el.onclick = function() {
+    //         var slideOverlay = document.getElementById("slide-overlay");
+    //         var slideContent = document.getElementById("slide-content");
+    //         var img = null;
+    //         var caption = null;
+    //         var descendents = this.getElementsByTagName('*')
+    //         for(var i=0; i<descendents.length;i++) {
+    //             if(descendents[i].tagName === 'IMG') {
+    //                 img = descendents[i];
+    //             }
+    //             if(descendents[i].tagName === 'FIGCAPTION') {
+    //                 caption = descendents[i];
+    //                 break;
+    //             }
+    //         }
+    //         slideContent.innerHTML = img.outerHTML;
+    //         slideTitle.innerHTML = caption.innerHTML;
+    //         slideOverlay.classList.toggle("show");
+    //     }
+    // }
 })();
