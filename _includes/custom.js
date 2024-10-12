@@ -34,6 +34,7 @@ window.onload = function() {
 
     var elements = document.getElementsByClassName('slide');
     for(var i = 0; i < elements.length; i++) {
+        alert(elements[i].tagName);
         var el = elements[i];
         el.onclick = function() {
             var content = document.querySelector('#' + this.id + ' + blockquote');
