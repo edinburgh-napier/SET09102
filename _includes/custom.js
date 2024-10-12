@@ -1,10 +1,11 @@
+
 // Add this to the page before the content to be presented:
 //
 // ##### <span class="material-symbols-rounded">present_to_all</span> {#slide1 .slide}
 //
 // The id (#slide1) must be unique on the page. It is used to find the next element which supplies the content for the slide
 
-window.onload = function() {
+(function() {
     const slideOverlay = document.createElement("div");
     slideOverlay.id = "slide-overlay";
     slideOverlay.className = "slide-outer";
@@ -86,5 +87,4 @@ window.onload = function() {
             slideOverlay.classList.toggle("show");
         }
     }
-
-}
+})();
