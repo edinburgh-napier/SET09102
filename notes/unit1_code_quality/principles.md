@@ -24,6 +24,8 @@ referred to many times in these notes.
 
 ## Why Principles Matter
 
+##### <span class="material-symbols-rounded">present_to_all</span> {#slide1 .slide}
+
 * **Guiding Decision-Making**: Principles help engineers navigate the complexity of software 
 systems by offering strategies to make trade-offs between conflicting requirements, 
 such as performance versus scalability or flexibility versus simplicity.
