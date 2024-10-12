@@ -76,8 +76,7 @@ This is not to suggest these are the most important ones to know about - you sho
 it your business to learn to recognise, avoid and resolve as many as possible. Resolving
 code smells should be a high priority during code reviews.
 
-<details class="blue-bar">
-<summary>Alternative Classes with Different Interfaces</summary>
+## Alternative Classes with Different Interfaces
 
 This code smell occurs when two or more classes perform similar functions or represent 
 similar concepts but have different method names or interfaces. This makes it harder to 
@@ -188,7 +187,6 @@ public class Notification
 * **Easier Maintenance**: If a new notification type (e.g., push notifications) is added, 
   it only needs to implement the `INotificationService` interface, and the existing 
   `Notification` class can use it without any changes.
-</details>
 
 ## Feature Envy
 
@@ -732,3 +730,150 @@ public class Order
 * **Single Responsibility Principle (SRP)**: Each class now has a clear responsibility. 
   The `PhoneNumber` class handles phone number validation, and the `Address` class handles 
   address-related logic, reducing the complexity in the `Order` class.
+
+
+## Shotgun Surgery
+
+This code smell occurs when a small change in the system requires making multiple, 
+scattered changes across several classes or modules. This indicates poor cohesion and 
+high coupling, where behavior related to a single concern is spread across different parts 
+of the codebase.
+
+When Shotgun Surgery is present, a change in one piece of functionality necessitates making 
+changes in several places, increasing the risk of errors and making maintenance more 
+difficult. This also leads to code fragility, where modifying the system becomes 
+time-consuming and prone to introducing bugs, because each small change touches many 
+parts of the code.
+
+**How to Fix It**
+
+To fix Shotgun Surgery, you can refactor the code by centralizing related behavior into a 
+single class or a smaller number of cohesive classes. This reduces the need for scattered 
+changes across the codebase. Encapsulating behavior and adhering to the Single 
+Responsibility Principle (SRP) can help reduce the risk of this code smell by keeping 
+related logic together.
+
+**Example Before Refactoring**
+
+In this example, imagine a system where the process of applying a discount involves 
+making changes in multiple classes:
+
+``` c#
+public class Order
+{
+    public double TotalAmount { get; set; }
+
+    public void ApplyDiscount(double discountRate)
+    {
+        TotalAmount -= TotalAmount * discountRate;
+    }
+}
+
+public class Invoice
+{
+    public double AmountDue { get; set; }
+
+    public void ApplyDiscount(double discountRate)
+    {
+        AmountDue -= AmountDue * discountRate;
+    }
+}
+
+public class Receipt
+{
+    public double PaymentAmount { get; set; }
+
+    public void ApplyDiscount(double discountRate)
+    {
+        PaymentAmount -= PaymentAmount * discountRate;
+    }
+}
+```
+
+**Problem with the Example**
+
+If you need to modify the way the discount is applied (for example, by adding a minimum 
+order amount for discounts), you would have to make changes to multiple classes (`Order`, 
+`Invoice`, and `Receipt`). This is a typical example of Shotgun Surgery because a single 
+change requires modifications in multiple places. This increases the complexity of the 
+system, the risk of missing changes, and the possibility of introducing bugs.
+
+**After Refactoring**
+
+To resolve Shotgun Surgery, we can centralize the discount logic into a single class, 
+creating a cohesive and reusable solution. Instead of spreading the logic across multiple 
+classes, we encapsulate it in a `DiscountService` class.
+
+``` c#
+public class DiscountService
+{
+    public double ApplyDiscount(double amount, double discountRate)
+    {
+        return amount - (amount * discountRate);
+    }
+}
+
+public class Order
+{
+    public double TotalAmount { get; set; }
+    private DiscountService discountService;
+
+    public Order(DiscountService discountService)
+    {
+        this.discountService = discountService;
+    }
+
+    public void ApplyDiscount(double discountRate)
+    {
+        TotalAmount = discountService.ApplyDiscount(TotalAmount, discountRate);
+    }
+}
+
+public class Invoice
+{
+    public double AmountDue { get; set; }
+    private DiscountService discountService;
+
+    public Invoice(DiscountService discountService)
+    {
+        this.discountService = discountService;
+    }
+
+    public void ApplyDiscount(double discountRate)
+    {
+        AmountDue = discountService.ApplyDiscount(AmountDue, discountRate);
+    }
+}
+
+public class Receipt
+{
+    public double PaymentAmount { get; set; }
+    private DiscountService discountService;
+
+    public Receipt(DiscountService discountService)
+    {
+        this.discountService = discountService;
+    }
+
+    public void ApplyDiscount(double discountRate)
+    {
+        PaymentAmount = discountService.ApplyDiscount(PaymentAmount, discountRate);
+    }
+}
+```
+
+**What's Improved?**
+
+* **Centralized Logic**: The discount logic is now centralized in the `DiscountService` 
+  class, eliminating the need to duplicate discount calculations across multiple classes.
+* **Reduced Coupling**: Classes like `Order`, `Invoice`, and `Receipt` no longer need to 
+  implement their own discount logic. Instead, they delegate this responsibility to 
+  `DiscountService`, which improves cohesion and reduces coupling.
+* **Ease of Maintenance**: If the discount logic needs to be changed in the future (e.g., 
+  adding special discount conditions), the change only needs to be made in 
+  `DiscountService`, not in multiple places. This reduces the risk of missing something or 
+  introducing bugs.
+* **Adheres to SRP**: Each class now has a single responsibility — `Order`, `Invoice`, 
+  and `Receipt` deal with their own data, while `DiscountService` handles discount logic. 
+  This follows the Single Responsibility Principle (SRP) and makes the system more modular.
+
