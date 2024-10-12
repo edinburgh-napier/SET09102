@@ -18,7 +18,9 @@ collaboration in software projects.
 The purpose of software engineering principles is to ensure that software is developed 
 in a way that is predictable, reliable, and adaptable to evolving requirements. Adhering 
 to these principles helps to reduce the likelihood of errors, improve team productivity, 
-and create software that is easier to maintain and extend over time.
+and create software that is easier to maintain and extend over time. They underpin many 
+other rules and approaches to engineering high-quality code, and you will see them
+referred to many times in these notes.
 
 ## Why Principles Matter
 
@@ -833,7 +835,8 @@ maintainability, and improving collaboration in development teams. Examples incl
 (Don't Repeat Yourself), which encourages the elimination of redundant code, and KISS 
 (Keep It Simple, Stupid), which advocates for simple and straightforward solutions to 
 problems. Additionally, the YAGNI (You Aren’t Gonna Need It) principle emphasizes 
-building only what is necessary, avoiding over-engineering. These principles 
+building only what is necessary, avoiding over-engineering and the Law of Demeter (LoD)
+which encourages loose coupling of classes. These principles 
 collectively guide software engineers in making better design decisions, improving code 
 readability, and maintaining software that can adapt to future needs.
 
@@ -1219,6 +1222,155 @@ public class AuthService
 > Developers should focus on the current requirements and defer additional features 
 > until they are truly necessary, using an iterative development approach to extend 
 > the system as needed.
+
+## Law of Demeter
+
+The Law of Demeter (LoD), also known as the "principle of least knowledge,"  encourages 
+minimising dependencies between different parts of a system. The primary objective of the 
+Law of Demeter is to reduce coupling and improve the modularity of the code, making it more 
+maintainable, flexible, and less prone to errors.
+
+### Key Concept of the Law of Demeter
+
+An object should only interact with:
+
+* **Itself**: its own methods and fields.
+* **Directly associated objects**: objects passed in as parameters or objects it directly 
+  holds.
+* **Objects it creates**: instances of objects it creates internally.
+* **Components of its direct association**: objects returned by its own methods.
+
+A violation of the Law of Demeter often leads to message chains (where one object calls 
+a method on another, and that object calls a method on yet another object, etc.). This 
+creates tight coupling between multiple classes, making the code fragile and hard to 
+maintain.
+
+### Example Problem and Solution using the Law of Demeter
+
+**Problem: Accessing the internal structure of another object**
+
+Consider a scenario in which an online retailer needs to send goods to customers. The 
+classes that represent customers, their addresses and orders are quite simple and very
+commonly used. Part of the process requires the printing of a shipping label which might
+mistakenly be imagined as part of the `Order` class:
+
+``` c#
+public class Address
+{
+    public string Street { get; set; }
+    public string City { get; set; }
+}
+
+public class Customer
+{
+    public Address Address { get; set; }
+
+    public Customer(Address address)
+    {
+        Address = address;
+    }
+}
+
+public class Order
+{
+    public Customer Customer { get; set; }
+
+    public Order(Customer customer)
+    {
+        Customer = customer;
+    }
+
+    public void PrintShippingLabel()
+    {
+        // Violates the Law of Demeter: Long method chain accessing internal objects
+        Console.WriteLine("Shipping to: " + Customer.Address.Street + ", " + Customer.Address.City);
+    }
+}
+```
+
+**Issues with this design**
+
+In the `PrintShippingLabel` method, the `Order` class directly accesses the `Address` 
+object through the `Customer` object, creating a message chain (`Customer.Address.Street`). 
+This violates the Law of Demeter because the `Order` class should not "know" the internal 
+structure of the `Customer` and `Address` classes. This makes the code tightly coupled—any 
+changes in the structure of `Customer` or `Address` would force changes in `Order`, 
+reducing maintainability and flexibility.
+
+**Solution Using the Law of Demeter**
+
+To adhere to the Law of Demeter, the `Order` class should only interact directly with the 
+`Customer` class. Instead of accessing the `Address` through the `Customer`, we can move 
+the logic for retrieving the shipping address into the `Customer` class, thus reducing 
+the dependency on its internal structure.
+
+``` c#
+public class Address
+{
+    public string Street { get; set; }
+    public string City { get; set; }
+}
+
+public class Customer
+{
+    public Address Address { get; set; }
+
+    public Customer(Address address)
+    {
+        Address = address;
+    }
+
+    // Introduce a method that provides the necessary information directly
+    public string GetShippingAddress()
+    {
+        return Address.Street + ", " + Address.City;
+    }
+}
+
+public class Order
+{
+    public Customer Customer { get; set; }
+
+    public Order(Customer customer)
+    {
+        Customer = customer;
+    }
+
+    public void PrintShippingLabel()
+    {
+        // Now the Order class only interacts with the Customer class directly
+        Console.WriteLine("Shipping to: " + Customer.GetShippingAddress());
+    }
+}
+```
+
+**Benefits of the Refactored Code**
+
+* **Reduced Coupling**: Now, the `Order` class interacts directly with the `Customer` 
+  class through a clear, well-defined interface (`GetShippingAddress`). The `Order` 
+  class no longer depends on the internal structure of `Customer` or `Address`, making it 
+  easier to change these classes without breaking the code.
+* **Encapsulation**: The details of the `Address` class are encapsulated within `Customer`. 
+  The `Order` class doesn't need to know about the internal structure of `Address`; it just 
+  asks `Customer` for the shipping address.
+* **Maintainability**: If the way the address is formatted changes (e.g., adding a country 
+  or postal code), the change is localised within the `Customer` class. The `Order` class 
+  remains unaffected.
+
+### Key Takeaways
+
+> By following the Law of Demeter, objects remain more modular, reducing their reliance on 
+> the internal structure of other objects.
+> 
+> Code that adheres to the Law of Demeter is easier to maintain 
+> because fewer parts of the system are tightly coupled. Changes can be made in one class 
+> without affecting unrelated parts of the system.
+> 
+> The fewer assumptions one class makes about another's internal structure, the more 
+> resilient the system is to change.
+> 
+> It reinforces encapsulation by ensuring that objects do not expose their internal details 
+> unnecessarily to other objects.
 
 ## Conclusion
 
