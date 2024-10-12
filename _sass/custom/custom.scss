@@ -189,10 +189,10 @@ div.toc-container summary {
   color: grey;
 }
 
-div.toc-container > ul {
+div.toc-container details > ul {
   list-style: none;
 }
 
-div.toc-container > ul > ul {
+div.toc-container details > ul > ul {
   list-style: disc;
 }
