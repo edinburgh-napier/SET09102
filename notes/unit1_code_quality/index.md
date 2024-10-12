@@ -20,15 +20,3 @@ Any fool can write code that a computer can understand. Good programmers write c
 
 ## Introduction
 
-Text before
-
-<details open markdown="block">
-  <summary>
-    Table of contents
-  </summary>
-  {: .text-delta }
-1. TOC
-{:toc}
-</details>
-
-Text after
