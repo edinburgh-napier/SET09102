@@ -5,14 +5,7 @@ has_children: true
 has_toc: false
 nav_order: 1
 ---
-<details open markdown="block">
-  <summary>
-    Table of contents
-  </summary>
-  {: .text-delta }
-1. TOC
-{:toc}
-</details>
+{% include toc.html html=content %}
 
 # Software Engineering Principles
 
@@ -94,7 +87,7 @@ are often more self-contained and can be reused in different contexts without
 modification. As a result, your code becomes more modular, flexible, and easier 
 to extend.
 
-## Example: Problem and Solution Using SRP
+### Example: Problem and Solution Using SRP
 
 **Problem: A Class with Multiple Responsibilities**
 
