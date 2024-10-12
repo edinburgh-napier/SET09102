@@ -20,7 +20,12 @@ layout: table_wrappers
     {% include components/header.html %}
     <div class="main-content-wrap">
       {% include components/breadcrumbs.html %}
-      {% include toc.html html=content %}
+      <div class="toc-container">
+        <details>
+          <summary>Table of Contents</summary>
+          {% include toc.html html=content h-max=2%}
+        </details>
+      </div>
       <div id="main-content" class="main-content">
         <main>
           {% if site.heading_anchors != false %}
