@@ -169,3 +169,30 @@ blockquote.pretty::after {
     font-size: 0.6rem;
     clear: both;
 }
+
+// Table of contents
+// Requires the jekyll-toc plugin: https://github.com/allejo/jekyll-toc
+// Placeholder in the default.html layout file
+
+div.toc-container {
+    position: sticky;
+    top: 0;
+    float: right;
+    background-color: white;
+    z-index: 99;
+    width: fit-content;
+    padding: 0.75rem;
+    margin-top: -2.75rem
+}
+
+div.toc-container summary {
+  color: grey;
+}
+
+div.toc-container > ul {
+  list-style: none;
+}
+
+div.toc-container > ul > ul {
+  list-style: disc;
+}
