@@ -196,3 +196,126 @@ div.toc-container details > ul {
 div.toc-container details > ul > ul {
   list-style: disc;
 }
+
+// SLIDES
+
+    /* Slide trigger */
+.slide {
+  cursor: pointer;
+  width: 2em;
+  height: 2em;
+  margin: 0 5px;
+  float: right;
+}
+
+/* Slide background - covers other page contents */
+.slide-outer {
+  visibility: hidden;
+  width: 100vw;
+  height: 100vh;
+  background-color: #FFF;
+  /*text-align: center;*/
+  position: fixed;
+  z-index: 99;
+  top: 0;
+  left: 0;
+}
+
+/* Appears at the top of the slide */
+#slide-title {
+  width: 100%;
+  font-size: 2.5vw;
+  font-weight: bold;
+  text-align: center;
+  position: fixed;
+  top: 1em;
+  z-index: 100;
+  margin: 0 !important;
+}
+
+.slide-title-text {
+  visibility: hidden;
+}
+
+/* Slide content container - innerHTML is set on click */
+.slide-inner {
+  width: 90%;
+  max-height: 80vh;
+  text-align: center;
+  font-size: 2.5vw;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+.slide-inner img {
+  max-width: 90%;
+  max-height: 80vh;
+}
+
+.slide-inner img[src*="#centred"] {
+  margin: 0 auto;
+}
+
+.slide-inner table {
+  font-size: 2.5vw;
+}
+
+.slide-inner .linenos  {
+  font-size: 2.5vw;
+  padding-top: 0;
+}
+
+.slide-inner table,
+.slide-inner ul,
+.slide-inner ol,
+.slide-inner blockquote,
+.slide-inner blockquote ul,
+.slide-inner blockquote ol {
+  text-align: left;
+  display: block;
+}
+
+.slide-inner table tbody tr:nth-child(even) {
+  background-color: whitesmoke;
+}
+
+.slide-inner table th,
+.slide-inner table td {
+  padding: 0.3em;
+}
+
+.slide-inner table th {
+  font-weight: bold;
+  background-color: steelblue;
+  color: white;
+}
+
+.slide-inner table td {
+  font-weight: normal;
+  border: 1px solid lightgrey;
+}
+
+.slide-inner li {
+  margin-bottom: 0.5em;
+}
+
+/* Toggle this class when clicking on the popup container (hide and show the popup) */
+.show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}
