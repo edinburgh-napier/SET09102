@@ -109,21 +109,21 @@ non-technical stakeholders.
         ``` c#
         // Calculate the total price after applying discounts
         decimal totalPrice = order.Subtotal - discount;
-    ```
+        ```
 
-  * XML Documentation Comments: Use for documenting public methods, properties, and classes.
+    * XML Documentation Comments: Use for documenting public methods, properties, and classes.
 
-      ``` c#
-      /// <summary>
-      /// Calculates the total price of the order.
-      /// </summary>
-      /// <param name="order">The order for which to calculate the price.</param>
-      /// <returns>The total price.</returns>
-      public decimal CalculateTotalPrice(Order order)
-      {
-          // Calculation logic here
-      }
-      ```
+       ``` c#
+       /// <summary>
+       /// Calculates the total price of the order.
+       /// </summary>
+       /// <param name="order">The order for which to calculate the price.</param>
+       /// <returns>The total price.</returns>
+       public decimal CalculateTotalPrice(Order order)
+       {
+           // Calculation logic here
+       }
+       ```
 
     Good comments facilitate effective communication between team members and stakeholders. 
     They ensure that non-technical team members, or those with less experience, can 
@@ -152,9 +152,8 @@ non-technical stakeholders.
         }
         ```
     
-      * Null Checking: Always check for null values to avoid runtime errors.
-    
-    
+    * Null Checking: Always check for null values to avoid runtime errors.
+
         ``` c#
         if (order == null)
         {

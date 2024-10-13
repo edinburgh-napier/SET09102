@@ -206,6 +206,7 @@ div.toc-container details > ul > ul {
   height: 2em;
   margin: 0 5px;
   float: right;
+  font-weight: lighter;
 }
 
 /* Slide background - covers other page contents */
@@ -239,7 +240,7 @@ div.toc-container details > ul > ul {
 
 /* Slide content container - innerHTML is set on click */
 .slide-inner {
-  width: 90%;
+  max-width: 90%;
   max-height: 80vh;
   text-align: center;
   font-size: 2.5vw;
@@ -319,3 +320,4 @@ div.toc-container details > ul > ul {
   from {opacity: 0;}
   to {opacity:1 ;}
 }
+

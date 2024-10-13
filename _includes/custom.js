@@ -45,13 +45,37 @@
 
     function next(element, tagName) {
         while (element.nextSibling) {
-            // console.log(element.nextSibling);
             if (element.nextSibling.tagName == tagName.toUpperCase()) {
                 return element.nextSibling;
             }
             element = element.nextSibling;
         }
         return null;
+    }
+
+    function wrap(text, tag) {
+        var openTag = "<" + tag + ">";
+        var closeTag = "</" + tag + ">";
+        return openTag + text + closeTag;
+    }
+
+    function prepare_ul(element) {
+        console.log(element);
+        var processed_content = "";
+        for (var j=0; j<element.children.length; j++) {
+            var content = element.children[j].children[0].innerText;
+            processed_content += wrap(content.split(":")[0], "li");
+            console.log(j, content.split(":")[0]);
+        }
+        // console.log(element.innerHTML);
+        return wrap(processed_content, "ul");
+    }
+
+    function slide_content(element, tagName) {
+        switch(tagName) {
+            case "ul": return prepare_ul(element); break;
+            default: return element.innerHTML;
+        }
     }
 
     var elements = document.getElementsByClassName('slide');
@@ -70,7 +94,8 @@
             var slideOverlay = document.getElementById("slide-overlay");
             var slideTitle = document.getElementById("slide-title");
             var slideContent = document.getElementById("slide-content");
-            slideContent.innerHTML = targetElement.outerHTML;
+
+            slideContent.innerHTML = slide_content(targetElement, targetClass);
             if (titleText)
                 slideTitle.innerHTML = titleText;
             slideOverlay.classList.toggle("show");
