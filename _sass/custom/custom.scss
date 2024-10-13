@@ -321,3 +321,8 @@ div.toc-container details > ul > ul {
   to {opacity:1 ;}
 }
 
+@media (min-width: 31.25rem) {
+  .slide .highlight .table-wrapper td, .highlight .table-wrapper pre {
+    font-size: 1.2rem !important;
+  }
+}

@@ -71,9 +71,24 @@
         return wrap(processed_content, "ul");
     }
 
+    function removeChildByType(element, tagName) {
+        for (var i=0; i<element.children.length; i++) {
+            console.log(i, element.children[i].tagName);
+            if (element.children[i].tagName == tagName.toUpperCase()) {
+                element.removeChild(element.children[i])
+            }
+        }
+        return element;
+    }
+
+    function prepare_div(element) {
+        return removeChildByType(element, "button").innerHTML;
+    }
+
     function slide_content(element, tagName) {
         switch(tagName) {
             case "ul": return prepare_ul(element); break;
+            case "div": return prepare_div(element); break;
             default: return element.innerHTML;
         }
     }
