@@ -98,6 +98,11 @@ Let's take an example of an `Invoice` class that handles both invoice generation
 sending emails. This class violates SRP because it is responsible for two things: 
 generating the invoice and emailing it.
 
+{::nomarkdown}  
+<span class="material-symbols-rounded slide slide-div" data-title="A Class with Multiple Responsibilities">present_to_all</span>
+{:/}
+
+
 ``` c#
 public class Invoice
 {
