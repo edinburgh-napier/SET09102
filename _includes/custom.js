@@ -36,13 +36,16 @@
     }
 
     function getTargetClass(element) {
-        var classList = element.className.split(" ");
-        for (var i=0; i < classList.length; i++) {
-            if (classList[i].startsWith("slide-")) {
-                return classList[i].substr(6);
+        if (element.tagName == "FIGURE") {
+            return "figure";
+        }
+        else {
+            for (var i=0; i < element.classList.length; i++) {
+                if (element.classList[i].startsWith("slide-")) {
+                    return element.classList[i].substr(6);
+                }
             }
         }
-        return null;
     }
 
     function next(element, tagName) {
@@ -133,57 +136,48 @@
         }
     }
 
+    function enableSlide() {
+        var targetClass = getTargetClass(this);
+        var targetElement = null;
+        var titleText = null;
+
+        if (targetClass == "figure") {
+            targetElement = this;
+            titleText = extractChildByType(this, "img").dataset.title;
+        }
+        else {
+            targetElement = next(this, targetClass);
+            titleText = this.dataset.title;
+        }
+
+        var slideOverlay = document.getElementById("slide-overlay");
+        var slideTitle = document.getElementById("slide-title");
+        var slideContent = document.getElementById("slide-content");
+
+        slideContent.innerHTML = CreateSlideContent(targetElement, targetClass);
+        if (titleText) {
+            slideTitle.innerHTML = titleText;
+        }
+        else {
+            slideTitle.innerHTML = extractChildByType(this, "figCaption").innerHTML;
+        }
+        slideOverlay.classList.toggle("show");
+        document.onkeydown = function (e) {
+            e = e || window.event;
+            var slideOverlay = document.getElementById("slide-overlay");
+            slideOverlay.classList.toggle("show");
+            document.onkeydown = null;
+        };
+    }
+
     var elements = document.getElementsByClassName('slide');
     for(var i = 0; i < elements.length; i++) {
         var el = elements[i];
-        el.onclick = function() {
-            var targetClass = getTargetClass(this);
-            var targetElement = next(this, targetClass);
-            console.log(targetElement);
-
-            var titleText = el.dataset.title;
-            // if (titleText == null)
-            //     titleText = document.querySelector('#' + this.id + '-caption');
-            console.log(titleText);
-
-            var slideOverlay = document.getElementById("slide-overlay");
-            var slideTitle = document.getElementById("slide-title");
-            var slideContent = document.getElementById("slide-content");
-
-            slideContent.innerHTML = CreateSlideContent(targetElement, targetClass);
-            if (titleText)
-                slideTitle.innerHTML = titleText;
-            slideOverlay.classList.toggle("show");
-            document.onkeydown = function (e) {
-                e = e || window.event;
-                var slideOverlay = document.getElementById("slide-overlay");
-                slideOverlay.classList.toggle("show");
-                document.onkeydown = null;
-            };
-        }
+        el.onclick = enableSlide;
     }
 
-    // var elements = document.getElementsByTagName('figure');
-    // for(var i = 0; i < elements.length; i++) {
-    //     var el = elements[i];
-    //     el.onclick = function() {
-    //         var slideOverlay = document.getElementById("slide-overlay");
-    //         var slideContent = document.getElementById("slide-content");
-    //         var img = null;
-    //         var caption = null;
-    //         var descendents = this.getElementsByTagName('*')
-    //         for(var i=0; i<descendents.length;i++) {
-    //             if(descendents[i].tagName === 'IMG') {
-    //                 img = descendents[i];
-    //             }
-    //             if(descendents[i].tagName === 'FIGCAPTION') {
-    //                 caption = descendents[i];
-    //                 break;
-    //             }
-    //         }
-    //         slideContent.innerHTML = img.outerHTML;
-    //         slideTitle.innerHTML = caption.innerHTML;
-    //         slideOverlay.classList.toggle("show");
-    //     }
-    // }
-})();
+    var elements = document.getElementsByTagName('figure');
+    for(var i = 0; i < elements.length; i++) {
+        var el = elements[i];
+        el.onclick = enableSlide;
+    }})();
