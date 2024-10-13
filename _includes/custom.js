@@ -14,9 +14,6 @@
     const slideOverlay = document.createElement("div");
     slideOverlay.id = "slide-overlay";
     slideOverlay.className = "slide-outer";
-    slideOverlay.onclick = function() {
-        this.classList.toggle("show");
-    }
 
     const slideTitle = document.createElement("div");
     slideTitle.id = "slide-title";
@@ -64,21 +61,20 @@
         return openTag + text + closeTag;
     }
 
-    function prepare_ul(element) {
-        console.log(element);
+    function prepareUl(element) {
+        slideContent.style.width = "auto";
+        slideContent.style.height = "auto";
         var processed_content = "";
         for (var j=0; j<element.children.length; j++) {
             var content = element.children[j].children[0].innerText;
             processed_content += wrap(content.split(":")[0], "li");
-            console.log(j, content.split(":")[0]);
         }
-        // console.log(element.innerHTML);
         return wrap(processed_content, "ul");
     }
 
     function removeChildByType(element, tagName) {
         for (var i=0; i<element.children.length; i++) {
-            console.log(i, element.children[i].tagName);
+            console.log(element.children[i].tagName, tagName.toUpperCase());
             if (element.children[i].tagName == tagName.toUpperCase()) {
                 element.removeChild(element.children[i])
             }
@@ -86,14 +82,53 @@
         return element;
     }
 
-    function prepare_div(element) {
-        return removeChildByType(element, "button").innerHTML;
+    function extractChildByType(element, tagName) {
+        for (var i=0; i<element.children.length; i++) {
+            if (element.children[i].tagName == tagName.toUpperCase()) {
+                return element.children[i];
+            }
+        }
+        return element;
     }
 
-    function slide_content(element, tagName) {
+    function prepareDiv(element) {
+        return removeChildByType(element, "button").outerHTML;
+    }
+
+    function prepareFigure(element) {
+        var extractedImage = extractChildByType(element, "img");
+        var imageWidth = extractedImage.style.width;
+        var imageHeight = extractedImage.style.height;
+        if((imageWidth / window.innerWidth) > (imageHeight / (window.innerHeight * 0.8))) {
+            slideContent.style.height = imageWidth / window.innerHeight * 0.8;
+            extractedImage.classList.add("slide-img-high");
+        }
+        else {
+            slideContent.style.width = window.innerWidth;
+            extractedImage.classList.add("slide-img-wide");
+        }
+        return extractChildByType(element, "img").outerHTML;
+    }
+
+    function fitImg(element) {
+        var imageWidth = element.style.width;
+        var imageHeight = element.style.height;
+        if((imageWidth / window.innerWidth) > (imageHeight / (window.innerHeight * 0.8))) {
+            element.style.height = imageWidth / window.innerHeight * 0.8;
+        }
+        else {
+            element.style.width = window.innerWidth;
+        }
+        return element;
+    }
+
+    function CreateSlideContent(element, tagName) {
+        slideContent.style.width = "auto";
+        slideContent.style.height = "auto";
         switch(tagName) {
-            case "ul": return prepare_ul(element); break;
-            case "div": return prepare_div(element); break;
+            case "ul": return prepareUl(element); break;
+            case "div": return prepareDiv(element); break;
+            case "figure": return prepareFigure(element); break;
             default: return element.innerHTML;
         }
     }
@@ -102,8 +137,8 @@
     for(var i = 0; i < elements.length; i++) {
         var el = elements[i];
         el.onclick = function() {
-            var targetClass = getTargetClass(el);
-            var targetElement = next(el, targetClass);
+            var targetClass = getTargetClass(this);
+            var targetElement = next(this, targetClass);
             console.log(targetElement);
 
             var titleText = el.dataset.title;
@@ -115,10 +150,16 @@
             var slideTitle = document.getElementById("slide-title");
             var slideContent = document.getElementById("slide-content");
 
-            slideContent.innerHTML = slide_content(targetElement, targetClass);
+            slideContent.innerHTML = CreateSlideContent(targetElement, targetClass);
             if (titleText)
                 slideTitle.innerHTML = titleText;
             slideOverlay.classList.toggle("show");
+            document.onkeydown = function (e) {
+                e = e || window.event;
+                var slideOverlay = document.getElementById("slide-overlay");
+                slideOverlay.classList.toggle("show");
+                document.onkeydown = null;
+            };
         }
     }
 

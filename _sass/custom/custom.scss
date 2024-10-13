@@ -254,10 +254,17 @@ div.toc-container details > ul > ul {
 .slide-inner img {
   max-width: 90%;
   max-height: 80vh;
+  margin: 0 auto;
 }
 
-.slide-inner img[src*="#centred"] {
-  margin: 0 auto;
+.slide-inner .slide-img-wide {
+    width: 100%;
+    height: auto;
+}
+
+.slide-inner .slide-img-high {
+    height: 100%;
+    width: auto;
 }
 
 .slide-inner table {
