@@ -99,6 +99,7 @@
     }
 
     function prepareFigure(element) {
+        const slideContent = document.getElementById("slide-content");
         var extractedImage = extractChildByType(element, "img");
         var imageWidth = extractedImage.width;
         var imageHeight = extractedImage.height;

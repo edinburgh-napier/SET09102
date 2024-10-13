@@ -228,7 +228,7 @@ Before adding viewmodels to the project, install the [.NET Community Toolkit](ht
 
 In the **Solution Explorer**, right-click on the **Notes** project and select **Add NuGet Package...**. When the next dialog appears, type in "CommunityToolkit" and press ENTER. Then select the **CommunityToolkit.Mvvm** package as shown below.
 
-![Fig. 2. Adding a NuGet package in VSCode](images/nuget_package.png){: standalone #fig2}
+![Fig. 2. Adding a NuGet package in VSCode](images/nuget_package.png){: standalone #fig2 data-title="Adding a NuGet package in VSCode"}
 
 ### Decouple with viewmodels
 
@@ -248,7 +248,7 @@ The viewmodels are stored in a _ViewModels_ folder.
 
 Your project structure should look like the following image:
 
-![Fig. 3. Adding viewmodels in VSCode](images/adding_viewmodels.png){: standalone #fig3}
+![Fig. 3. Adding viewmodels in VSCode](images/adding_viewmodels.png){: standalone #fig3 data-title="Adding viewmodels in VSCode"}
 
 Note that VSCode shows that there is an error in _AboutPage.xaml_. That is because it contains a reference to the `About` model which we have just deleted. We will resolve the invalid reference in the next section.
 
@@ -1051,4 +1051,4 @@ Don't overengineer a solution for this problem, and just use the `NavigatedTo` e
 
 Now, run your app. Try to navigate to a note, press the back button, and select the same note a second time. The app behaviour is fixed!
 
-![Fig. 4. Notes app version 2](images/notes_app_version_2.png){: standalone #fig4}
+![Fig. 4. Notes app version 2](images/notes_app_version_2.png){: standalone #fig4 data-title="Notes app version 2"}
