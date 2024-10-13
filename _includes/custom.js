@@ -1,9 +1,14 @@
 
 // Add this to the page before the content to be presented:
 //
-// ##### <span class="material-symbols-rounded">present_to_all</span> {#slide1 .slide}
+// {::nomarkdown}
+// <span class="material-symbols-rounded slide slide-XXX" data-title="TITLE">present_to_all</span>
+// {:/}
 //
-// The id (#slide1) must be unique on the page. It is used to find the next element which supplies the content for the slide
+// Replace XXX with the tagName to be turned into a slide. The script selects the next tag of this type which must
+// be a sibling of the sapn element.
+//
+// Replace TITLE with the required slide title
 
 (function() {
     const slideOverlay = document.createElement("div");

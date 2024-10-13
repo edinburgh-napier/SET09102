@@ -322,7 +322,8 @@ div.toc-container details > ul > ul {
 }
 
 @media (min-width: 31.25rem) {
-  .slide .highlight .table-wrapper td, .slide .highlight .table-wrapper pre {
+  .slide .highlight .table-wrapper td,
+  .slide .highlight .table-wrapper pre {
     font-size: 1.2rem !important;
   }
 }
