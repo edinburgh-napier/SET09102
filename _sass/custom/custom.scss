@@ -204,9 +204,9 @@ div.toc-container details > ul > ul {
   cursor: pointer;
   width: 2em;
   height: 2em;
-  margin: 0 5px;
+  margin-right: -5rem;
   float: right;
-  font-weight: lighter;
+  font-weight: lighter !important;
 }
 
 /* Slide background - covers other page contents */
