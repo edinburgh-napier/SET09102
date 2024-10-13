@@ -100,29 +100,17 @@
 
     function prepareFigure(element) {
         var extractedImage = extractChildByType(element, "img");
-        var imageWidth = extractedImage.style.width;
-        var imageHeight = extractedImage.style.height;
+        var imageWidth = extractedImage.width;
+        var imageHeight = extractedImage.height;
         if((imageWidth / window.innerWidth) > (imageHeight / (window.innerHeight * 0.8))) {
-            slideContent.style.height = imageWidth / window.innerHeight * 0.8;
-            extractedImage.classList.add("slide-img-high");
-        }
-        else {
             slideContent.style.width = window.innerWidth;
             extractedImage.classList.add("slide-img-wide");
         }
-        return extractChildByType(element, "img").outerHTML;
-    }
-
-    function fitImg(element) {
-        var imageWidth = element.style.width;
-        var imageHeight = element.style.height;
-        if((imageWidth / window.innerWidth) > (imageHeight / (window.innerHeight * 0.8))) {
-            element.style.height = imageWidth / window.innerHeight * 0.8;
-        }
         else {
-            element.style.width = window.innerWidth;
+            slideContent.style.height = window.innerHeight * 0.8;
+            extractedImage.classList.add("slide-img-high");
         }
-        return element;
+        return extractedImage.outerHTML;
     }
 
     function CreateSlideContent(element, tagName) {
@@ -170,6 +158,7 @@
         };
     }
 
+
     var elements = document.getElementsByClassName('slide');
     for(var i = 0; i < elements.length; i++) {
         var el = elements[i];
@@ -180,4 +169,5 @@
     for(var i = 0; i < elements.length; i++) {
         var el = elements[i];
         el.onclick = enableSlide;
-    }})();
+    }
+})();
