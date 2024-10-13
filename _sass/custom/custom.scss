@@ -303,6 +303,11 @@ div.toc-container details > ul > ul {
   margin-bottom: 0.5em;
 }
 
+.slide .highlight .table-wrapper td,
+.slide .highlight .table-wrapper pre {
+  font-size: 1.2rem !important;
+}
+
 /* Toggle this class when clicking on the popup container (hide and show the popup) */
 .show {
   visibility: visible;
@@ -319,11 +324,4 @@ div.toc-container details > ul > ul {
 @keyframes fadeIn {
   from {opacity: 0;}
   to {opacity:1 ;}
-}
-
-@media (min-width: 31.25rem) {
-  .slide .highlight .table-wrapper td,
-  .slide .highlight .table-wrapper pre {
-    font-size: 1.2rem !important;
-  }
 }
