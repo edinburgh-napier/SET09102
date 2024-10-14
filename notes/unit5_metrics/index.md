@@ -109,54 +109,6 @@ evolve among the user community.
 
 ## Code weaknesses
 
-Although coding style is important because of its impact on characteristics such
-as maintainability, code may also contain structural weaknesses. These impact
-some of the other external quaity characteristics such as reliability and
-security. While some programming languages may make certain weaknesses impossible,
-they are essentially generic across all programming environments.
-[MITRE](https://www.mitre.org) is an American corporation set up to advise
-various arms of the US government on national security. It maintains a database
-of system weaknesses that is useful beyond it main security focus including 445 items
-related to software development in 40 categories. The
-[Common Weakness Enumeration (CWE)](https://cwe.mitre.org/data/definitions/699.html)
-is developed by the user community and provides descriptions of identified
-weaknesses along with observed occurrences and possible solutions. Some examples from
-the *Bad Coding Practice* category are
-
-<details>
-<summary>CWE-478: Missing Default Case in Multiple Condition Expression</summary>
-If a multiple-condition expression (such as a switch in C) omits the default
-case but does not consider or handle all possible values that could occur, then
-this might lead to complex logical errors and resultant weaknesses. Because of this,
-further decisions are made based on poor information, and cascading failure results.
-This cascading failure may result in any number of security issues, and constitutes a
-significant failure in the system.
-</details>
-
-<details>
-<summary>CWE-1079: Parent Class without Virtual Destructor Method</summary>
-A parent class contains one or more child classes, but the parent class does not have a
-virtual destructor method. This issue can prevent the product from running reliably due
-to undefined or unexpected behaviors. If the relevant code is reachable by an attacker,
-then this reliability problem might introduce a vulnerability.
-</details>
-
-<details>
-<summary>CWE-1092: Use of Same Invokable Control Element in Multiple Architectural Layers</summary>
-The product uses the same control element across multiple architectural layers. This
-issue makes it more difficult to understand and maintain the product, which indirectly
-affects security by making it more difficult or time-consuming to find and/or fix
-vulnerabilities. It also might make it easier to introduce vulnerabilities.
-</details>
-
-<details>
-<summary>CWE-1103: Use of Platform-Dependent Third Party Components</summary>
-The product relies on third-party components that do not provide equivalent functionality
-across all desirable platforms. This issue makes it more difficult to maintain the
-product, which indirectly affects security by making it more difficult or time-consuming
-to find and/or fix vulnerabilities. It also might make it easier to introduce
-vulnerabilities.
-</details>
 
 Building on the CWE database, the [Object Management Group (OMG)](https://www.omg.org/)
 has created a standard for automatic identification of code weaknesses based on
@@ -195,3 +147,7 @@ reordering abbreviates to MORSE):
 >
 > [Stephens, 2022, Ch. 15](https://learning.oreilly.com/library/view/beginning-software-engineering/9781119901709/c15.xhtml)
 
+## Further reading
+
+* Trends and Findings in Measuring Software Quality Metrics in the Industry
+  [Falco & Rabiolo, 2022](https://doi.org/10.1109/ARGENCON55245.2022.9939935)

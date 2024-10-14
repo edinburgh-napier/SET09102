@@ -30,6 +30,8 @@ of writing code that is not just functional but also intuitive for other develop
 your future self) to read and work with. Martin argues that the true test of clean code 
 is whether someone else can easily read, understand, and modify it.
 
+![Fig. 1. Code Quality ([xkcd](https://xkcd.com/1695))](https://xkcd.com/1695) {: standalone #fig1 data-title="Code Quality" }
+
 Clean code is not only about making the software work but also about creating systems that 
 are elegant, efficient, and adaptable to change. It advocates for simplicity, avoiding 
 duplication, proper naming conventions, and adherence to fundamental design principles 
@@ -391,4 +393,7 @@ please refer to the [documentation](https://www.doxygen.nl/manual/index.html).
 {: .tip-title }
 > [<i class="fa-regular fa-lightbulb"></i> Practical strategies for improving readability](readability_guidelines.md)
 
+## Further reading (and viewing)
 
+* [Clean Code with Uncle Bob](https://www.youtube.com/playlist?list=PLmmYSbUCWJ4x1GO839azG_BBw8rkh-zOj) (video lectures)
+* Clean Code in C# ([Alls, 2020](https://napier.primo.exlibrisgroup.com/permalink/44NAP_INST/n96pef/alma9923706264502111))
