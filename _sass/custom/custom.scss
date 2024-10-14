@@ -258,12 +258,9 @@ div.toc-container details > ul > ul {
 }
 
 .slide-inner .slide-img-wide {
-    width: 100%;
-    height: auto;
-}
-
-.slide-inner .slide-img-wide svg {
   max-width: none !important;
+  width: 100%;
+  height: auto;
 }
 
 .slide-inner .slide-img-high {
