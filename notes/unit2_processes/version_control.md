@@ -28,7 +28,7 @@ Whether working alone or in a large team, version control is an essential tool f
 maintaining the integrity of a codebase, managing collaboration, and ensuring that 
 software can evolve efficiently over time.
 
-![Fig. 1. Don't be ignorant([xkcd](https://xkcd.com/1597))](https://imgs.xkcd.com/comics/git.png) {: standalone #fig1 data-title="Don't be ignorant" }
+![Fig. 1. Don't be ignorant([xkcd](https://xkcd.com/1597))](https://imgs.xkcd.com/comics/git.png){: standalone #fig1 data-title="Don't be ignorant" }
 
 ## Repositories
 
