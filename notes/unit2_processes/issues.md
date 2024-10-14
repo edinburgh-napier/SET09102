@@ -354,42 +354,21 @@ shared agreement among a development team on the specific criteria that must be 
 story to be considered complete. It ensures that the work meets the necessary quality standards and is ready for 
 release or the next stage of development. An example of a simple DoD might be:
 
-1. Code Complete:
-
-  > All code for the task/feature has been written, and no functionality is left unfinished.
-
-2. Code Reviewed:
-
-  > The code has been reviewed by at least one other team member and any feedback or suggested changes have 
-  > been addressed.
-
-3. Tests Written and Passing:
-
-  > Unit tests and/or integration tests have been written for the new functionality.
-  >
-  > All tests pass, and there are no failing or skipped tests.
-
-4. No Critical Bugs:
-
-  > The feature has been tested, and no critical bugs or major issues remain.
-  > Any existing bugs have been logged and are being tracked for future fixes if not critical.
-
-5. Meets Acceptance Criteria:
-
-  > The task or feature meets the original acceptance criteria as defined in the user story or issue.
-
-6. Documentation Updated:
-
-  > Any necessary documentation (such as API docs, user guides, or inline comments) has been updated to reflect the 
-  > new functionality.
-
-7. Deployed to Test Environment:
-
-  > The feature has been deployed to the test environment, and QA testing is complete.
-
-8. Performance Verified:
-
-  > The feature performs as expected, and there are no significant performance regressions or bottlenecks.
+1. **Code Complete**: All code for the task/feature has been written, and no functionality is left unfinished.
+2. **Code Reviewed**: The code has been reviewed by at least one other team member and any feedback or suggested 
+   changes have been addressed.
+3. **Tests Written and Passing**: Unit tests and/or integration tests have been written for the new functionality. 
+   All tests pass, and there are no failing or skipped tests.
+4. **No Critical Bugs**: The feature has been tested, and no critical bugs or major issues remain. Any existing 
+   bugs have been logged and are being tracked for future fixes if not critical.
+5. **Meets Acceptance Criteria**: The task or feature meets the original acceptance criteria as defined in the 
+   user story or issue.
+6. **Documentation Updated**: Any necessary documentation (such as API docs, user guides, or inline comments) has 
+   been updated to reflect the new functionality.
+7. **Deployed to Test Environment**: The feature has been deployed to the test environment, and QA testing is 
+   complete.
+8. **Performance Verified**: The feature performs as expected, and there are no significant performance regressions 
+   or bottlenecks.
 
 ## Review
 
