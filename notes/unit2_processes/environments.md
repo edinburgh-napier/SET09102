@@ -8,8 +8,10 @@ nav_order: 2
 
 # Environments
 
-Before getting into the topic of team work flows, it is important to have a clear idea of the typical
-context in which a software development team works.
+We have already discussed distributed version control where each developer has their own clone
+of the shared repository. Here, we introduce a related concept that also involves multiple
+copies of the codebase.
+
 An *environment* is the working context of a software system. The term is widely used and it
 is important to understand its full implications. The major distinction is between the *live*
 environment (also referred to as the *production* environment) where a system is in actual use,
@@ -37,10 +39,4 @@ a regular basis. Typically, this is done just before starting a new development 
 work on a task, it is important that developer's working environment remains stable. Changes
 from other developers are only introduced between one task and the next.
 
-As well as being used for synchonising code across different environments, GitHub has
-many other useful features that can be used to manage projects. In a team situation,
-the risks and problems quickly balloon compared to working on an individual project,
-and it is a good investment of time to establish robust working routines. Using GitHub
-is not the only way to do this - there are other tools and platforms such as
-[Jira](https://www.atlassian.com/software/jira). However, as one of the most popular
-services, GitHub has reliability and recognition value in its favour.
+
