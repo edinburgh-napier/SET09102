@@ -15,12 +15,14 @@ coordinate the efforts of multiple developers. By maintaining a history of chang
 control helps developers understand who made modifications, when they were made, and why, 
 making it easier to debug, refactor, or revert to previous versions if necessary.
 
-The most widely used version control systems today, such as Git, Subversion (SVN), and 
-Mercurial, allow for distributed collaboration, where each developer works independently 
-on their own copy of the project. With tools like [GitHub](https://github.com), 
-[GitLab](https://about.gitlab.com/), and [Bitbucket](https://bitbucket.org/product/), 
-teams can easily manage branches, pull requests, and code reviews, ensuring that changes are 
-properly reviewed and integrated into the main codebase.
+The most widely used version control systems today, such as [Git](https://git-scm.com/), 
+[Subversion](https://subversion.apache.org/) (SVN), and 
+[Mercurial](https://www.mercurial-scm.org/), allow for distributed collaboration, where 
+each developer works independently on their own copy of the project. With tools like 
+[GitHub](https://github.com),[GitLab](https://about.gitlab.com/), and 
+[Bitbucket](https://bitbucket.org/product/), teams can easily manage branches, pull 
+requests, and code reviews, ensuring that changes are properly reviewed and integrated 
+into the main codebase.
 
 Version control also plays a critical role in supporting continuous integration/continuous 
 deployment (CI/CD) workflows by enabling automated testing and deployment pipelines. 
@@ -28,7 +30,7 @@ Whether working alone or in a large team, version control is an essential tool f
 maintaining the integrity of a codebase, managing collaboration, and ensuring that 
 software can evolve efficiently over time.
 
-![Fig. 1. Don't be ignorant([xkcd](https://xkcd.com/1597))](https://imgs.xkcd.com/comics/git.png){: standalone #fig1 data-title="Don't be ignorant" }
+![Fig. 1. Don't be ignorant(<a href="https://xkcd.com/1597">xkcd</a>)](https://imgs.xkcd.com/comics/git.png){: standalone #fig1 data-title="Don't be ignorant" }
 
 ## Repositories
 

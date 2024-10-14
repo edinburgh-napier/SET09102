@@ -30,7 +30,7 @@ of writing code that is not just functional but also intuitive for other develop
 your future self) to read and work with. Martin argues that the true test of clean code 
 is whether someone else can easily read, understand, and modify it.
 
-![Fig. 1. Code Quality ([xkcd](https://xkcd.com/1695))](https://xkcd.com/1695) {: standalone #fig1 data-title="Code Quality" }
+![Fig. 1. Code Quality (<a href="https://xkcd.com/1695">xkcd</a>)](https://imgs.xkcd.com/comics/code_quality_2.png){: standalone #fig1 data-title="Code Quality" }
 
 Clean code is not only about making the software work but also about creating systems that 
 are elegant, efficient, and adaptable to change. It advocates for simplicity, avoiding 
