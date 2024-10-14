@@ -6,19 +6,133 @@ has_toc: false
 nav_order: 3
 ---
 
-# Issues and issue-related workflow
+# Issues
+
+Issues are a powerful tool for managing tasks, bugs, and feature requests in a software 
+project. Mastering the basics of creating, labeling, assigning, and collaborating on issues will 
+help you stay organized and contribute effectively to your team. Understanding how to track progress, 
+link work, and participate in discussions about issues is essential for any developer working in 
+a collaborative environment.
+
+The lifecycle of an issue tends to follow the pattern shown in Fig. 1. 
+
+![Fig. 1. Issue lifecycle](images/issue_lifecycle.png){: standalone #fig1 data-title="Issue lifecycle"}
+
+## Issue creation
+
+Issues are created for various reasons, each helping to track different aspects of the development 
+process. During an initial development project to build a software product from scratch, the main 
+source of new issues is the initial analysis work that produces a set of user stories. Even in a
+development project, though, issues are created in a variety of situations:
+
+<details class="blue-bar">
+<summary>Bug reporting</summary>
+<p>This occurs when a problem or defect is found in the software, such as when the application doesn’t 
+behave as expected. For example, a user might report being unable to log in after a password reset 
+or a page might crash when submitting a form.</p>
+</details>
+
+<details class="blue-bar">
+<summary>Feature requests or enhancements</summary>
+
+Here, developers or stakeholders propose new functionality or improvements to existing features. 
+Examples include requests to add a dark mode to the user interface or to improve the performance of 
+the search function.
+</details>
+
+<details class="bue-bar">
+<summary>Technical debt</summary>
+
+This refers to areas of the code that need refactoring or cleanup to improve maintainability. For 
+instance, developers might need to refactor the authentication module to improve readability or reduce 
+duplicate code in the payment processing system.
+</details>
+
+<details class="blue-bar">
+<summary>Task management</summary>
+
+These tasks might not involve code changes but are still critical to the project, such as setting up 
+a continuous integration/continuous deployment (CI/CD) pipeline or writing documentation for an API.
+</details>
+
+<details class="blue-bar">
+<summary>Performance issues</summary>
+
+Performance issues track areas where the software may be performing inefficiently and needs 
+optimization, such as improving database query performance for large datasets or optimizing image 
+loading times on a webpage.
+</details>
+
+<details class="blue-bar">
+<summary>Security vulnerabilities</summary>
+
+Potential or known flaws that could compromise the system lead to the creation of issues. For 
+example, a SQL injection vulnerability might need to be fixed, or stronger password encryption 
+might need to be implemented.
+</details>
+
+<details class="blue-bar">
+<summary>User feedback</summary>
+
+When end users provide suggestions or report problems, developers create issues to track and 
+address this feedback. Examples include users requesting the ability to export data as CSV or 
+reporting that the interface is not intuitive on mobile devices.
+</details>
+
+<details class="blue-bar">
+<summary>Testing requirements</summary>
+
+Requirements for unit tests, integration tests, or the performance of user acceptance testing (UAT)
+are documented as issues. For example, a developer might create an issue to write unit tests for the 
+payment processing module or to perform cross-browser testing on a new feature.
+</details>
+
+<details class="blue-bar">
+<summary>Infrastructure issues</summary>
+
+These are created when there are problems with the project's infrastructure, such as server downtime, 
+configuration errors, or deployment failures. An example might be a server crashing during high 
+traffic or a misconfiguration in the database connection string.
+</details>
+
+<details class="blue-bar">
+<summary>Compliance and legal requirements</summary>
+
+Issues are often used to capture compliance and regulatory requirements, especially when ensuring 
+that the software meets regulatory or industry standards. Examples include making sure the system 
+complies with GDPR regulations or implementing accessibility features in line with WCAG 2.1 
+standards.
+</details>
+
+<details class="blue-bar">
+<summary>Dependencies</summary>
+
+Projects that depend on third-party libraries or services often track dependency-related issues. 
+For example, issues might be created to update a third-party library to its latest version or to 
+fix an integration problem with a payment gateway API.
+</details>
+
+<details class="blue-bar">
+<summary>Version releases</summary>
+
+Issues can be used to track specific tasks that must be completed before a new version is deployed. 
+This might include preparing release notes for version 2.0 or fixing critical bugs before version 
+1.5 is rolled out.
+</details>
+
+## Issue-related workflow
 
 Most code management platforms provide features to help manage projects. In GitHub, a project can be
 represented in a tabular format, as a roadmap or in the form of a Kanban-style task board. The choice
 of format is up to the team, but for the purposes of these notes, we will assume the use of a task board.
 
 By default, a task board in GitHub contains the three swimlanes, `Todo`, `In Progress` and `Done` as
-shown in Fig. 5. Further columns can be added if needed - this depends on how the team decides to
+shown in Fig. 2. Further columns can be added if needed - this depends on how the team decides to
 manage the work. For example, a swimlane for stalled tasks could be added, or for tasks in review.
 The task board can be as complicated as required, but in general, the simpler the structure, the
 more intuitive it is to use.
 
-![Fig. 1. Default GitHub task board](images/github_task_board.png){: standalone #fig1 data-title="Default GitHub task board"}
+![Fig. 2. Default GitHub task board](images/github_task_board.png){: standalone #fig2 data-title="Default GitHub task board"}
 
 Tasks in GitHub are represented by [issues](https://docs.github.com/en/issues). They can be added
 directly on the task board using the button at the bottom of each swimlane. If you take that option,
@@ -26,9 +140,9 @@ you will need to explicitly attach the new issue to the relevant code repository
 the relationship between projects and repositories doesnot have to be one-to-one. You can also create
 issues using the issues tab on the repository page. If you take that option, you will need to say
 explicitly which project the issue should be added to. This is done using the controls on the right of
-the issue creation page as shown in Fig. 6.
+the issue creation page as shown in Fig. 3.
 
-![Fig. 2. New issue page](images/new_issue.png){: standalone #fig2 data-title="GitHub new issue page"}
+![Fig. 3. New issue page](images/new_issue.png){: standalone #fig3 data-title="GitHub new issue page"}
 
 When using a task board, an item gradually accumulates detail and moves through the swimlanes from left
 to right as the work progresses. Exactly *when* an item is moved from one swimlane to the next needs to
@@ -98,10 +212,10 @@ of hidden problems.
 ## Summary
 
 In light of the previous sections, two main phases of activity can be identified around
-any piece of development work as shown in Fig.7. The time required for each stage depends on the
+any piece of development work as shown in Fig.4. The time required for each stage depends on the
 complexity of the original issue.
 
-![Fig. 3. Development process](images/dev_process.png){: standalone #fig3 data-title="Two-phase development process"}
+![Fig. 4. Development process](images/dev_process.png){: standalone #fig4 data-title="Two-phase development process"}
 
 The rules that a team sets for itself in defining a standard workflow are intended to help
 with communication and to avoid errors and conflicts. Although there are examples of good
