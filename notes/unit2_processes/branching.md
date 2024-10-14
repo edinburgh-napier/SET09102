@@ -64,6 +64,9 @@ to be merged manually to create a third composite version that preserves the cha
 branches.
 
 ``` mermaid
+---
+title: Merging branches
+---
 gitGraph
    commit id: " "
    commit id: "Release 1"
@@ -94,6 +97,9 @@ feature 2. Once both pieces of work are complete they are merged into the new re
 same procedure would be done for the bug fixes in the main branch.
 
 ``` mermaid
+---
+title: Parallel feature branches
+---
 gitGraph
    commit id: " "
    commit id: "Release 1"
