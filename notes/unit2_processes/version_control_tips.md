@@ -1,5 +1,5 @@
 ---
-title: Version Control Guidelines
+title: Version Control Tips
 parent: Version Control
 has_children: false
 nav_exclude: true
