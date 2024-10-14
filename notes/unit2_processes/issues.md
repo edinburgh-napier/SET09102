@@ -18,8 +18,7 @@ manage the work. For example, a swimlane for stalled tasks could be added, or fo
 The task board can be as complicated as required, but in general, the simpler the structure, the
 more intuitive it is to use.
 
-![Default GitHub task board](../../images/github_task_board.png#figure)
-*Fig 5: Default GitHub task board*
+![Fig. 1. Default GitHub task board](images/github_task_board.png){: standalone #fig1 data-title="Default GitHub task board"}
 
 Tasks in GitHub are represented by [issues](https://docs.github.com/en/issues). They can be added
 directly on the task board using the button at the bottom of each swimlane. If you take that option,
@@ -29,8 +28,7 @@ issues using the issues tab on the repository page. If you take that option, you
 explicitly which project the issue should be added to. This is done using the controls on the right of
 the issue creation page as shown in Fig. 6.
 
-![New issue page](../../images/new_issue.png#figure)
-*Fig. 6: GitHub new issue page*
+![Fig. 2. New issue page](images/new_issue.png){: standalone #fig2 data-title="GitHub new issue page"}
 
 When using a task board, an item gradually accumulates detail and moves through the swimlanes from left
 to right as the work progresses. Exactly *when* an item is moved from one swimlane to the next needs to
@@ -103,8 +101,7 @@ In light of the previous sections, two main phases of activity can be identified
 any piece of development work as shown in Fig.7. The time required for each stage depends on the
 complexity of the original issue.
 
-![Development process](../../images/dev_process.png)
-*Fig. 7: Two-phase development process*
+![Fig. 3. Development process](images/dev_process.png){: standalone #fig3 data-title="Two-phase development process"}
 
 The rules that a team sets for itself in defining a standard workflow are intended to help
 with communication and to avoid errors and conflicts. Although there are examples of good
