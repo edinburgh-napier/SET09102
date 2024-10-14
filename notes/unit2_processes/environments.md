@@ -22,8 +22,7 @@ each one will have their own development environment. This is an important detai
 environment is not shared - each member of the team has their own copy which includes the last known
 good configuration of the codebase, plus the changes they are currently working on.
 
-![Environments](../../images/environments.png#figure)
-*Fig 1: System environments*
+![Environments](images/environments.png){: standalone #fig1 data-title="System environments"}
 
 Code repositories such as GitHub are excellent tools for managing the synchronisation of the
 various environments in use. Once developers have completed the changes they are working on,

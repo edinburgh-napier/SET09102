@@ -152,7 +152,7 @@
         }
         else if (targetClass == 'mermaid') {
             targetElement = this;
-            titleText = extractChildByTagName("text").innerHTML;
+            titleText = extractChildByTagName(this, "text").innerHTML;
         }
         else {
             targetElement = next(this, targetClass);

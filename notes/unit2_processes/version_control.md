@@ -34,7 +34,7 @@ software can evolve efficiently over time.
 
 ## Repositories
 
-A code repository, or repo, is a centralized location where software project files and 
+A code repository, or repo, is a centralised location where software project files and 
 their version history are stored and managed. It serves as the backbone of version control 
 systems, allowing multiple developers to collaborate on a project while keeping track of 
 every change made over time. Developers save files to the repo through the _commit_ action.
@@ -57,7 +57,7 @@ therefore a good practice to develop.
 
 ## Distributed version control
 
-In distributed version control systems such as git, every developer has a full copy of 
+In distributed version control systems such as Git, every developer has a full copy of 
 the entire project history stored locally on their machine, rather than relying on a 
 single, central server to manage the codebase. This means that all commits, branches and 
 tags are available offline, and developers can work independently without needing 
@@ -71,7 +71,7 @@ collaborative project with mutiple developers, for example, each team member wil
 the shared central repository so that their work does not interfere with anyone else's.
 
 While cloned repositories provide flexibility and independence, this strategy introduces 
-certain logical challenges related to synchronization and collaboration. Since multiple 
+certain logical challenges related to synchronisation and collaboration. Since multiple 
 developers can work on the same project simultaneously, their local repositories may 
 diverge over time, resulting in different sets of changes or conflicting modifications to 
 the same files. For example, Fig. 3 shows three developers working on cloned copies of
@@ -82,18 +82,18 @@ outdated code.
 
 ![Fig. 3. Distributed version control](images/distributed.png){: standalone #fig3 data-title="Distributed Version Control" }
 
-One major challenge is the need to synchronize the local clone with the remote repository 
+One major challenge is the need to synchronise the local clone with the remote repository 
 to ensure that a developer's work remains in sync with the broader team's progress. If a 
 developer doesn't regularly pull updates from the remote repository, their local clone 
 can become outdated, leading to potential conflicts when trying to merge changes. These 
 conflicts occur when two or more developers modify the same section of code in different 
 ways, requiring manual intervention to reconcile the differences.
 
-Regular synchronization through **pulling** and **pushing** updates helps avoid these 
+Regular synchronisation through **pulling** and **pushing** updates helps avoid these 
 issues. By frequently pulling changes from the remote repository, developers ensure that 
 their local clone stays up to date with the latest work from other team members. This 
 allows them to address conflicts earlier and maintain compatibility between their changes 
-and the shared project. Without regular synchronization, merging changes later can become 
+and the shared project. Without regular synchronisation, merging changes later can become 
 more complicated, resulting in a more time-consuming and error-prone process.
 
 ## Sensitive files
