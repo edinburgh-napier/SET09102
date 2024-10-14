@@ -83,11 +83,9 @@ complexity in integrating those features with the existing codebase.
 Working in a codebase riddled with technical debt can lead to frustration and **decreased 
 morale** among developers. Constantly dealing with poor-quality code and 
 difficult-to-understand workarounds can demotivate teams, as they spend more time 
-firefighting than building new, valuable features. New developers joining a team may 
-struggle to understand a codebase burdened with technical debt. The lack of clarity, 
-poor structure, and incomplete documentation can make the onboarding process longer and 
-more challenging, delaying the new team member’s productivity.
-
+firefighting than building new, valuable features. The lack of clarity, poor structure, 
+and incomplete documentation can make the **onboarding new developers** 
+longer and more challenging, delaying the new team member’s productivity.
 
 ## Code Weaknesses
 
