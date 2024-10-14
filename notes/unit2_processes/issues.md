@@ -14,11 +14,11 @@ help you stay organized and contribute effectively to your team. Understanding h
 link work, and participate in discussions about issues is essential for any developer working in 
 a collaborative environment.
 
+## Issue creation
+
 The lifecycle of an issue tends to follow the pattern shown in Fig. 1. 
 
-![Fig. 1. Issue lifecycle](images/issue_lifecycle.png){: standalone #fig1 data-title="Issue lifecycle"}
-
-## Issue creation
+![Fig. 1. Issue lifecycle](images/lifecycle_creation.png){: standalone #fig1 data-title="Issue lifecycle"}
 
 Issues are created for various reasons, each helping to track different aspects of the development 
 process. During an initial development project to build a software product from scratch, the main 
@@ -108,6 +108,168 @@ fix an integration problem with a payment gateway API.</p>
 This might include preparing release notes for version 2.0 or fixing critical bugs before version 
 1.5 is rolled out.</p>
 </details>
+
+## Issue selection
+
+![Fig. 2. Issue selection](images/lifecycle_selection.png){: standalone #fig2 data-title="Issue selection"}
+
+The set of open issues associated with a repository is commonly referred to as the _issue backlog_. 
+This term is used to describe all the open issues that need to be addressed, including bugs, feature 
+requests, tasks, and other tracked work. The backlog helps teams organize and prioritize the issues 
+that are pending resolution. In Agile or Scrum projects, this backlog may be further refined into 
+sprints or milestones. Issue selection refers to the process of choosing which issues from the 
+backlog will be included in a particular sprint.
+
+## Issue assignment
+
+![Fig. 3. Issue assignment](images/lifecycle_assignment.png){: standalone #fig3 data-title="Issue assignment"}
+
+Issue assignment is the process of designating a specific person or team to be responsible for 
+resolving or working on an issue in a software development project. By assigning an issue, the 
+project team ensures that someone is accountable for addressing it, which helps organize the 
+workload, distribute tasks efficiently, and track progress within the project.
+
+Once an issue is assigned there are some key points to be aware of:
+
+* **Ownership**: When an issue is assigned to a developer or team, it becomes their responsibility 
+  to work on resolving the issue, whether it's fixing a bug, developing a new feature, or 
+  completing a task.
+* **Accountability**: Assignment helps project managers or team leads hold developers accountable 
+  for specific tasks, making it easier to track who is responsible for each part of the project.
+* **Collaboration**: Issue assignment is often part of collaborative workflows in software 
+  development projects, ensuring that tasks are distributed appropriately and no work is overlooked.
+* **Tracking**: On platforms like GitHub, GitLab, or Jira, an assignee can be tagged within the 
+  issue, making it easier to follow up on progress and review updates.
+
+Issues are typically assigned manually by a project maintainer, team lead, or even by developers 
+who assign themselves to an issue. Some tools and systems allow for automated issue assignment based 
+on predefined rules, like distributing issues evenly among developers or assigning specific types of 
+issues to specialized team members. Once an issue is assigned, the responsible developer will usually 
+update the issue's status as they work on it, and provide feedback through comments or commits 
+linked to the issue.
+
+## Issue elaboration
+
+![Fig. 4. Issue elaboration](images/lifecycle_elaboration.png){: standalone #fig4 data-title="Issue elaboration"}
+
+Issue elaboration refers to the process of expanding and clarifying the details of an issue in a 
+software development project to ensure it is well-defined and actionable. This typically involves 
+providing a thorough description, context, and specific requirements related to the issue, such as 
+the problem it addresses, steps to reproduce a bug, expected behaviour, or technical details for a 
+feature request.
+
+The goal of issue elaboration is to ensure that developers, testers, and other stakeholders fully 
+understand the scope, requirements, and priority of the issue before any work begins. Well-elaborated 
+issues help streamline development by minimizing confusion and the need for back-and-forth 
+clarifications.
+
+### Issue decomposition
+
+If it becomes clear during issue elaboration that the issue is too large to address in one go,
+the developer should break the issue down into smaller, manageable tasks. This process, known as 
+_issue decomposition_, helps ensure that each task can be handled independently, improving focus, 
+efficiency, and clarity. In such a situation, the developer needs to:
+
+<details class="blue-bar">
+<summary>1. Identify the Subtasks</summary>
+<p>Break the larger issue into smaller, more manageable subtasks or issues. Each subtask should 
+represent a specific, actionable piece of work that can be completed independently.
+For example, if the original issue is about building a complex feature, subtasks could be related 
+to backend logic, frontend design, database setup, or testing.
+</p>
+</details>
+
+<details class="blue-bar">
+<summary>2. Create New Issues for Each Subtask</summary>
+<p>If possible, create separate issues for each subtask. This ensures that each piece of work is 
+tracked individually and can be assigned or completed independently.
+Clearly label these issues and link them to the original, larger issue to maintain context and 
+traceability.
+</p>
+</details>
+
+<details class="blue-bar">
+<summary>3. Update the Original Issue</summary>
+<p>Refine the original issue to reflect its new purpose as a "parent" issue or epic that tracks 
+the progress of the subtasks.
+Include links or references to the newly created subtasks. This helps everyone involved in the 
+project understand how the smaller tasks relate to the original, larger goal.
+</p>
+</details>
+
+<details class="blue-bar">
+<summary>4. Prioritize and Estimate the Subtasks</summary>
+<p>Once the issue is broken down, each subtask should be prioritized and estimated. Determine 
+which tasks are essential or high priority and address them first.
+Estimating the time or effort needed for each subtask ensures realistic expectations for completion.
+</p>
+</details>
+
+<details class="blue-bar">
+<summary>5. Collaborate with the Team</summary>
+<p>Discuss the decomposition with your team, project manager, or stakeholders. Ensure that everyone 
+is aligned on the plan and that subtasks are distributed effectively.
+Make sure the scope of each subtask is clear and doesn't overlap unnecessarily with other parts of 
+the project.
+</p>
+</details>
+
+<details class="blue-bar">
+<summary>6. Consider Dependencies</summary>
+<p>Identify any dependencies between the subtasks. Some tasks may need to be completed before 
+others, so establishing a logical order of execution is important.
+Document these dependencies in the issue tracker or in the task descriptions.
+</p>
+</details>
+
+<details class="blue-bar">
+<summary>7. Monitor and Track Progress</summary>
+<p>As the subtasks are addressed, track the progress of each one individually. The completion of 
+all subtasks should lead to the resolution of the original, larger issue.
+Use tools like GitHub Milestones, Jira Epics, or Kanban boards to visualize the breakdown and 
+progress of the subtasks.
+</p>
+</details>
+
+As an example, consider an original issue is "Build a User Authentication System". The developer 
+might break it down into subtasks like:
+
+* Implement User Registration API
+* Implement User Login and Logout
+* Set Up Password Recovery
+* Integrate Frontend with Authentication API
+* Write Unit Tests for User Authentication
+
+Each of these subtasks can be tackled individually, making the overall task more manageable.
+
+Key Elements of Issue Elaboration:
+Description:
+
+A clear, concise explanation of the issue, including what needs to be done or what problem is being addressed. For bug reports, this might include the error encountered, while for feature requests, it might describe the desired functionality.
+Steps to Reproduce (for Bugs):
+
+A detailed list of steps that can reliably reproduce a bug, ensuring developers can replicate the issue before fixing it.
+Expected vs. Actual Behavior:
+
+A description of the behavior that is expected compared to what is currently happening, especially for bug reports.
+Technical Specifications:
+
+Any technical details required to address the issue, such as dependencies, relevant code snippets, database structures, or integration points.
+Acceptance Criteria:
+
+Specific conditions that must be met for the issue to be considered resolved or completed. These criteria help developers know when their work is done and allow testers to verify the outcome.
+Priority and Severity:
+
+Information on how critical the issue is to the project. For example, high-priority issues may require immediate attention, while low-priority ones can be handled later.
+Screenshots or Error Logs:
+
+Visual aids, error logs, or other supporting materials that provide additional context to help diagnose or explain the issue.
+Why Issue Elaboration is Important:
+Clarity: Well-elaborated issues provide developers with a clear understanding of the problem or feature, reducing misunderstandings and the need for follow-up questions.
+Efficiency: By having all the necessary information upfront, developers can begin working on the issue more quickly and effectively.
+Collaboration: Elaboration helps ensure that all stakeholders—developers, testers, product owners, and project managers—are aligned on the scope and requirements of the issue.
+Quality: Proper elaboration can reduce the risk of incomplete solutions or misaligned expectations, leading to higher-quality deliverables.
+In summary, issue elaboration ensures that an issue is thoroughly defined and understood, allowing developers and teams to work more efficiently and produce higher-quality outcomes. It is an essential part of managing issues in software development.
 
 ## Issue-related workflow
 
