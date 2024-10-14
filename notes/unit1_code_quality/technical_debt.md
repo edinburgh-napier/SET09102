@@ -152,3 +152,7 @@ this is slow, however, and CISQ expect that it will take another few years for t
 management of technical debt to become standardised. In the meantime, some tools
 such as [SonarQube](https://docs.sonarsource.com/sonarqube/latest/user-guide/metric-definitions/#maintainability)
 include a calculation, but not necessarily one based on agreed standards.
+
+{: .tip-title }
+> [<i class="fa-regular fa-lightbulb"></i> Strategies for Managing Technical Debt](technical_debt_guidelines.md)
+
