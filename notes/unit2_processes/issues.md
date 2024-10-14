@@ -246,39 +246,39 @@ Each of these subtasks can be tackled individually, making the overall task more
 
 Description:
 
-> A clear, concise explanation of the issue, including what needs to be done or what problem is 
-> being addressed. For bug reports, this might include the error encountered, while for feature 
-> requests, it might describe the desired functionality.
+  > A clear, concise explanation of the issue, including what needs to be done or what problem is 
+  > being addressed. For bug reports, this might include the error encountered, while for feature 
+  > requests, it might describe the desired functionality.
 
 Steps to Reproduce (for Bugs):
 
-> A detailed list of steps that can reliably reproduce a bug, ensuring developers can replicate 
-> the issue before fixing it.
+  > A detailed list of steps that can reliably reproduce a bug, ensuring developers can replicate 
+  > the issue before fixing it.
 
 Expected vs. Actual Behaviour:
 
-> A description of the behaviour that is expected compared to what is currently happening, 
-> especially for bug reports.
+  > A description of the behaviour that is expected compared to what is currently happening, 
+  > especially for bug reports.
 
 Technical Specifications:
 
-> Any technical details required to address the issue, such as dependencies, relevant code 
-> snippets, database structures, or integration points.
+  > Any technical details required to address the issue, such as dependencies, relevant code 
+  > snippets, database structures, or integration points.
 
 Acceptance Criteria:
 
-> Specific conditions that must be met for the issue to be considered resolved or completed. 
-> These criteria help developers know when their work is done and allow testers to verify the outcome.
+  > Specific conditions that must be met for the issue to be considered resolved or completed. 
+  > These criteria help developers know when their work is done and allow testers to verify the outcome.
 
 Priority and Severity:
 
-> Information on how critical the issue is to the project. For example, high-priority issues may 
-> require immediate attention, while low-priority ones can be handled later.
+    > Information on how critical the issue is to the project. For example, high-priority issues may 
+    > require immediate attention, while low-priority ones can be handled later.
 
 Screenshots or Error Logs:
 
-> Visual aids, error logs, or other supporting materials that provide additional context to help 
-> diagnose or explain the issue.
+  > Visual aids, error logs, or other supporting materials that provide additional context to help 
+  > diagnose or explain the issue.
 
 ### Definition of Ready
 
@@ -356,40 +356,40 @@ release or the next stage of development. An example of a simple DoD might be:
 
 1. Code Complete:
 
-> All code for the task/feature has been written, and no functionality is left unfinished.
+  > All code for the task/feature has been written, and no functionality is left unfinished.
 
 2. Code Reviewed:
 
-> The code has been reviewed by at least one other team member and any feedback or suggested changes have 
-> been addressed.
+  > The code has been reviewed by at least one other team member and any feedback or suggested changes have 
+  > been addressed.
 
 3. Tests Written and Passing:
 
-> Unit tests and/or integration tests have been written for the new functionality.
->
-> All tests pass, and there are no failing or skipped tests.
+  > Unit tests and/or integration tests have been written for the new functionality.
+  >
+  > All tests pass, and there are no failing or skipped tests.
 
 4. No Critical Bugs:
 
-> The feature has been tested, and no critical bugs or major issues remain.
-> Any existing bugs have been logged and are being tracked for future fixes if not critical.
+  > The feature has been tested, and no critical bugs or major issues remain.
+  > Any existing bugs have been logged and are being tracked for future fixes if not critical.
 
 5. Meets Acceptance Criteria:
 
-> The task or feature meets the original acceptance criteria as defined in the user story or issue.
+  > The task or feature meets the original acceptance criteria as defined in the user story or issue.
 
 6. Documentation Updated:
 
-> Any necessary documentation (such as API docs, user guides, or inline comments) has been updated to reflect the 
-> new functionality.
+  > Any necessary documentation (such as API docs, user guides, or inline comments) has been updated to reflect the 
+  > new functionality.
 
 7. Deployed to Test Environment:
 
-> The feature has been deployed to the test environment, and QA testing is complete.
+  > The feature has been deployed to the test environment, and QA testing is complete.
 
 8. Performance Verified:
 
-> The feature performs as expected, and there are no significant performance regressions or bottlenecks.
+  > The feature performs as expected, and there are no significant performance regressions or bottlenecks.
 
 ## Review
 
@@ -434,7 +434,7 @@ often to set up a relatively simple workflow using default or standard options,a
 introduce changes when it becomes clear that the workflow can be improved.
 
 {: .tip-title }
-> [<i class="fa-regular fa-lightbulb"></i> General tips for getting started with issue](issues_tips.md)
+> [<i class="fa-regular fa-lightbulb"></i> General tips for getting started with issues](issues_tips.md)
 
 
 ## Further reading
