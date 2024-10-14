@@ -37,13 +37,15 @@ software can evolve efficiently over time.
 A code repository, or repo, is a centralized location where software project files and 
 their version history are stored and managed. It serves as the backbone of version control 
 systems, allowing multiple developers to collaborate on a project while keeping track of 
-every change made over time. 
+every change made over time. Developers save files to the repo through the _commit_ action.
 
 A file version history is a detailed record of all the changes made to each file in a 
 project over time. Every time a developer makes modifications and commits them, the system 
 saves a snapshot of those changes, including the author of the change, the timestamp, and 
 a message describing what was done. This history allows developers to track the evolution 
 of the codebase, see who made specific changes, and understand why those changes were made.
+
+
 
 The main actions a repository supports include committing 
 (saving snapshots of changes to the codebase), branching (creating parallel versions of the 
