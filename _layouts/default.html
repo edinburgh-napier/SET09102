@@ -1,5 +1,6 @@
 ---
 layout: table_wrappers
+mermaid: true
 ---
 
 <!DOCTYPE html>
@@ -47,7 +48,7 @@ layout: table_wrappers
   </div>
 
   {% if site.mermaid %}
-    {% include components/mermaid.html %}
+    {% include mermaid.html %}
   {% endif %}
   <script>
     {% include custom.js %}
