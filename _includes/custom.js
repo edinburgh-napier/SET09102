@@ -80,7 +80,6 @@
 
     function removeChildByType(element, tagName) {
         for (var i=0; i<element.children.length; i++) {
-            console.log(element.children[i].tagName, tagName.toUpperCase());
             if (element.children[i].tagName == tagName.toUpperCase()) {
                 element.removeChild(element.children[i])
             }
@@ -101,28 +100,25 @@
         return removeChildByType(element, "button").outerHTML;
     }
 
-    function prepareFigure(element) {
-        const slideContent = document.getElementById("slide-content");
-        var extractedImage = extractChildByType(element, "img");
-        var imageWidth = extractedImage.width;
-        var imageHeight = extractedImage.height;
-        if((imageWidth / window.innerWidth) > (imageHeight / (window.innerHeight * 0.75))) {
-            slideContent.style.width = (window.innerWidth * 0.9).toString() + "vw";
-            extractedImage.classList.add("slide-img-wide");
+    function wide(width, height) {
+        if (width / (window.innerWidth * 0.9) > height / (window.innerHeight * 0.75)) {
+            return true;
         }
-        else {
-            slideContent.style.height = (window.innerHeight * 0.75).toString() + "vh";
-            extractedImage.classList.add("slide-img-high");
-        }
-        return extractedImage.outerHTML;
+        return false;
     }
 
-    function prepareMermaid(element) {
+    function prepareFigure(element, imageType) {
         const slideContent = document.getElementById("slide-content");
-        var extractedImage = extractChildByType(element, "svg");
-        var imageWidth = extractedImage.width;
-        var imageHeight = extractedImage.height;
-        if((imageWidth / window.innerWidth) > (imageHeight / (window.innerHeight * 0.75))) {
+        var extractedImage = extractChildByType(element, imageType);
+        var scaleWidth = false;
+        if (imageType == "img") {
+            scaleWidth = wide(extractedImage.width, extractedImage.height);
+        }
+        else if (imageType == "svg") {
+            var viewBox = extractedImage.getAttribute("viewBox").split(" ");
+            scaleWidth = wide(viewBox[2], viewBox[3]);
+        }
+        if(scaleWidth) {
             slideContent.style.width = (window.innerWidth * 0.9).toString() + "vw";
             extractedImage.classList.add("slide-img-wide");
         }
@@ -132,6 +128,22 @@
         }
         return extractedImage.outerHTML;
     }
+    //
+    // function prepareMermaid(element) {
+    //     const slideContent = document.getElementById("slide-content");
+    //     var extractedImage = extractChildByType(element, "svg");
+    //     var imageWidth = extractedImage.width;
+    //     var imageHeight = extractedImage.height;
+    //     if((imageWidth / window.innerWidth) > (imageHeight / (window.innerHeight * 0.75))) {
+    //         slideContent.style.width = (window.innerWidth * 0.9).toString() + "vw";
+    //         extractedImage.classList.add("slide-img-wide");
+    //     }
+    //     else {
+    //         slideContent.style.height = (window.innerHeight * 0.75).toString() + "vh";
+    //         extractedImage.classList.add("slide-img-high");
+    //     }
+    //     return extractedImage.outerHTML;
+    // }
 
     function CreateSlideContent(element, tagName) {
         slideContent.style.width = "auto";
@@ -139,8 +151,8 @@
         switch(tagName) {
             case "ul": return prepareUl(element); break;
             case "div": return prepareDiv(element); break;
-            case "figure": return prepareFigure(element); break;
-            case "mermaid": return prepareMermaid(element); break;
+            case "figure": return prepareFigure(element, "img"); break;
+            case "mermaid": return prepareFigure(element, "svg"); break;
             default: return element.innerHTML;
         }
     }
@@ -156,7 +168,6 @@
         }
         else if (targetClass == 'mermaid') {
             targetElement = this;
-            alert(this.innerHTML);
             titleText = "Placeholder";
         }
         else {
