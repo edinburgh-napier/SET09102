@@ -117,14 +117,12 @@ details.green-bar {
 details.blue-bar summary,
 details.green-bar summary {
     padding-left: 1rem;
-    font-size: large;
-    font-weight: bold;
 }
 details.blue-bar summary {
-    background-color: $blue-lt-000;
+    background-color: $blue-vlt-000;
 }
 details.green-bar summary {
-    background-color: $green-lt-000;
+    background-color: $green-vlt-000;
 }
 details.marker-after summary {
   list-style: none;
