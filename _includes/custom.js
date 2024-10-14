@@ -87,7 +87,7 @@
         return element;
     }
 
-    function extractChildByType(element, tagName) {
+    function extractChildByTagName(element, tagName) {
         for (var i=0; i<element.children.length; i++) {
             if (element.children[i].tagName.toUpperCase() == tagName.toUpperCase()) {
                 return element.children[i];
@@ -109,7 +109,7 @@
 
     function prepareFigure(element, imageType) {
         const slideContent = document.getElementById("slide-content");
-        var extractedImage = extractChildByType(element, imageType);
+        var extractedImage = extractChildByTagName(element, imageType);
         var scaleWidth = false;
         if (imageType == "img") {
             scaleWidth = wide(extractedImage.width, extractedImage.height);
@@ -148,11 +148,11 @@
 
         if (targetClass == "figure") {
             targetElement = this;
-            titleText = extractChildByType(this, "img").dataset.title;
+            titleText = extractChildByTagName(this, "img").dataset.title;
         }
         else if (targetClass == 'mermaid') {
             targetElement = this;
-            titleText = "Placeholder";
+            titleText = extractChildByTagName("text").innerHTML;
         }
         else {
             targetElement = next(this, targetClass);
@@ -168,7 +168,7 @@
             slideTitle.innerHTML = titleText;
         }
         else {
-            slideTitle.innerHTML = extractChildByType(this, "figCaption").innerHTML;
+            slideTitle.innerHTML = extractChildByTagName(this, "figCaption").innerHTML;
         }
         slideOverlay.classList.toggle("show");
         document.onkeydown = function (e) {
