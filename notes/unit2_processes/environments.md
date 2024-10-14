@@ -26,8 +26,39 @@ good configuration of the codebase, plus the changes they are currently working 
 
 ![Environments](images/environments.png){: standalone #fig1 data-title="System environments"}
 
-Code repositories such as GitHub are excellent tools for managing the synchronisation of the
-various environments in use. Once developers have completed the changes they are working on,
+Fig. 1 shows the three main types of environment:
+
+1. Development Environment
+
+    The development environment is where developers write and test code locally. It's a sandbox 
+    for building new features, fixing bugs, and experimenting with changes. This environment 
+    mirrors the structure of the production environment, but it often includes developer tools, 
+    debuggers, and local configurations. Changes in this environment are frequent, and the code is 
+    not yet stable.
+
+    Purpose: Code creation, local testing, and debugging.
+
+2. Testing Environment (QA/Staging)
+
+    The testing environment (sometimes referred to as QA or staging) is used for more rigorous, 
+    controlled testing before deployment. This environment closely resembles the production 
+    environment but is not customer-facing. It is where integration tests, unit tests, and user 
+    acceptance tests (UAT) are performed to ensure that the software functions as expected. The 
+    testing environment allows teams to catch bugs or inconsistencies without affecting users.
+
+    Purpose: Quality assurance and verifying software performance, functionality, and stability.
+
+3. Live (Production) Environment
+
+    The live environment where the final, stable version of the software is deployed for end users. 
+    This is the environment that users interact with, and it needs to be highly reliable, secure, and 
+    optimized for performance. Code deployed to production has passed all necessary testing stages, 
+    and any issues here could impact users directly.
+
+    Purpose: Deliver the final product to end users in a stable and secure environment.
+
+Repository management tools such as GitHub are excellent tools for managing the synchronisation of 
+the various environments in use. Once developers have completed the changes they are working on,
 they *push* the code to the repository. Once any quality assurance procedures have been
 completed, the code can then be *deployed* to the live environment. Fig. 1 illustrates this
 and also includes a test environment where integrated code can be tested before deployment.

@@ -264,8 +264,9 @@ div.toc-container details > ul > ul {
 }
 
 .slide-inner .slide-img-high {
-    height: 100%;
-    width: auto;
+  max-width: none !important;
+  height: 100%;
+  width: auto;
 }
 
 .slide-inner table {
