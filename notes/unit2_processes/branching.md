@@ -59,7 +59,7 @@ conflicts can be handled in an automated way, but others will require the two ve
 to be merged manually to create a third composite version that preserves the changes from both
 branches.
 
-<pre class="mermaid figure">
+``` mermaid
 gitGraph
    commit id: " "
    commit id: "Release 1"
@@ -77,7 +77,8 @@ gitGraph
    checkout main
    merge next_release id: "Release 2"
    commit id: " "
-</pre>
+```
+
 *Fig. 3: Merging branches*
 
 A further complication that needs to be managed is that several pieces of development work will be
@@ -88,7 +89,7 @@ creates a branch to work on feature 1 and a second developer creates a parallel 
 feature 2. Once both pieces of work are complete they are merged into the new release branch. The
 same procedure would be done for the bug fixes in the main branch.
 
-<pre class="mermaid figure">
+``` mermaid
 gitGraph
    commit id: " "
    commit id: "Release 1"
@@ -115,7 +116,8 @@ gitGraph
    checkout main
    merge next_release id: "Release 2"
    commit id: " "
-</pre>
+```
+
 *Fig 4: Parallel feature branches*
 
 A merge operation is triggered by a *pull request* (PR). With a PR, the developer is indicating that the

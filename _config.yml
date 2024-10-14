@@ -21,3 +21,4 @@ callouts:
   tip:
     title: Tip
     color: green
+mermaid: true
