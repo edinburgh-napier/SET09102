@@ -25,7 +25,7 @@ because the two configurations are independent. In GitHib and other similar syst
 is referred to as a *branch* in the code as illustrated in Fig. 2. Note that the branch
 representing the current release is called `main` - this is a common convention.
 
-<pre class="mermaid figure">
+``` language-mermaid
 gitGraph
    commit id: " "
    commit id: "release"
@@ -38,7 +38,7 @@ gitGraph
    commit id: "change 2"
    checkout main
    commit id: "bug fix 2"
-</pre>
+```
 *Fig. 2: Release branch*
 
 Once the code configuration for the new release is stable, the parallel code branch can be
