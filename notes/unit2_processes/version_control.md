@@ -180,4 +180,6 @@ environment variables to load these values dynamically during runtime. This way,
 credentials stay outside the source code and can vary depending on the environment 
 (development, testing, production).
 
+{: .tip-title }
+> [<i class="fa-regular fa-lightbulb"></i> General tips for getting started with Git and GitHub](version_control_tips.md)
 

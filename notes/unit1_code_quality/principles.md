@@ -1395,5 +1395,5 @@ To find out about other common principles, please visit the
 [DevIQ](https://deviq.com/principles/principles-overview) website.
 
 {: .tip-title }
-> [<i class="fa-regular fa-lightbulb"></i> General tips for applying software engineering principles](principles_guidelines.md)
+> [<i class="fa-regular fa-lightbulb"></i> General tips for applying software engineering principles](principles_tips)
 

@@ -877,5 +877,5 @@ public class Receipt
   This follows the Single Responsibility Principle (SRP) and makes the system more modular.
 
 {: .tip-title }
-> [<i class="fa-regular fa-lightbulb"></i> Practical tips for learning how to stop and correct code smells](code_smells_guidelines.md)
+> [<i class="fa-regular fa-lightbulb"></i> Practical tips for learning how to stop and correct code smells](code_smells_tips)
 

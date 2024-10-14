@@ -449,5 +449,5 @@ design patterns thoughtfully, you'll improve the quality, maintainability, and f
 your software solutions.
 
 {: .tip-title }
-> [<i class="fa-regular fa-lightbulb"></i> General tips for applying design patterns](design_patterns_guidelines.md)
+> [<i class="fa-regular fa-lightbulb"></i> General tips for applying design patterns](design_patterns_tips)
 

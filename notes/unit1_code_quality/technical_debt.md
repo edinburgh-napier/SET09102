@@ -152,5 +152,5 @@ such as [SonarQube](https://docs.sonarsource.com/sonarqube/latest/user-guide/met
 include a calculation, but not necessarily one based on agreed standards.
 
 {: .tip-title }
-> [<i class="fa-regular fa-lightbulb"></i> Strategies for Managing Technical Debt](technical_debt_guidelines.md)
+> [<i class="fa-regular fa-lightbulb"></i> Strategies for Managing Technical Debt](technical_debt_tips)
 
