@@ -20,7 +20,7 @@ that has been put together with little care and attention. A code smell does not
 always indicate that there is a problem. For example, long methods are best avoided
 but occasionally a method with more that a dozen lines or so is actually needed.
 
-![Fig. 1. Smelly Code ([xkcd](https://xkcd.com/1513/))](https://imgs.xkcd.com/comics/code_quality.png#figure) {: standalone #fig1 data-title="Smelly Code" }
+![Fig. 1. Smelly Code ([xkcd](https://xkcd.com/1513/))](https://imgs.xkcd.com/comics/code_quality.png#figure){: standalone #fig1 data-title="Smelly Code" }
 
 Beck and Fowler describe 24 smells which they tabulate for reference at the end of the
 book. The table is reproduced below - the various refactoring strategies are described

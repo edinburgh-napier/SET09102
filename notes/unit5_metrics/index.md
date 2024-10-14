@@ -19,6 +19,33 @@ The problem with quick and dirty...is that dirty remains long after quick has be
 <hr class="splash">
 
 
+## ISO 25000 Systems and software Quality Requirements and Evaluation (SQuaRE)
+
+To produce a high-quality output requires two complementary elements. The obvious one is
+that the product itself must conform to certain agreed standards. However, that can only
+be guaranteed if the processes by which the product is produced are clearly defined and
+carefully followed. That is the second element. With a carefully designed process, the
+quality characteristics of the product can be checked at various important stages in its
+life cycle. In addition, sticking to a specified process ensures that those activities that
+contribute to the final quality of the product are carried out correctly.
+
+[ISO 25000](https://iso25000.com/index.php/en/iso-25000-standards) is a coordinated set of
+standards related to the quality of software products which summarise the relationships
+between different quality aspects and their measurements as shown in Fig. 1.
+
+![ISO25000](../../images/iso25023_quality.png)
+
+*Fig. 1: Relationship between types of quality measures [ISO 25023](https://napier.primo.exlibrisgroup.com/permalink/44NAP_INST/19n0mho/cdi_bsi_primary_000000000030280200)*
+
+In the last section, we discussed internal and external properties of code and related
+quality criteria and standards. The next logical question is when and how the appropriate
+checks need to be performed. As illustrated in Fig. 1, both internal and external properties
+depend on the processes that were used to create them. That includes project-level processes
+for the allocation and completion of work, life cycle processes and how they are implemented in
+an organisation, operational processes represented by standard workflows as well as the
+personal processes used by a skilled developer. In these notes, we will be focussing on the
+workflow aspects as the interface between the software engineer and the project context.
+
 ## External quality criteria
 
 Quality is a very difficult concept to pin down with a definition.
