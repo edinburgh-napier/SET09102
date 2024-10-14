@@ -34,90 +34,79 @@ or a page might crash when submitting a form.</p>
 
 <details class="blue-bar">
 <summary>Feature requests or enhancements</summary>
-
-Here, developers or stakeholders propose new functionality or improvements to existing features. 
+<p>Here, developers or stakeholders propose new functionality or improvements to existing features. 
 Examples include requests to add a dark mode to the user interface or to improve the performance of 
-the search function.
+the search function.</p>
 </details>
 
-<details class="bue-bar">
+<details class="blue-bar">
 <summary>Technical debt</summary>
-
-This refers to areas of the code that need refactoring or cleanup to improve maintainability. For 
+<p>This refers to areas of the code that need refactoring or cleanup to improve maintainability. For 
 instance, developers might need to refactor the authentication module to improve readability or reduce 
-duplicate code in the payment processing system.
+duplicate code in the payment processing system.</p>
 </details>
 
 <details class="blue-bar">
 <summary>Task management</summary>
-
-These tasks might not involve code changes but are still critical to the project, such as setting up 
-a continuous integration/continuous deployment (CI/CD) pipeline or writing documentation for an API.
+<p>These tasks might not involve code changes but are still critical to the project, such as setting up 
+a continuous integration/continuous deployment (CI/CD) pipeline or writing documentation for an API.</p>
 </details>
 
 <details class="blue-bar">
 <summary>Performance issues</summary>
-
-Performance issues track areas where the software may be performing inefficiently and needs 
+<p>Performance issues track areas where the software may be performing inefficiently and needs 
 optimization, such as improving database query performance for large datasets or optimizing image 
-loading times on a webpage.
+loading times on a webpage.</p>
 </details>
 
 <details class="blue-bar">
 <summary>Security vulnerabilities</summary>
-
-Potential or known flaws that could compromise the system lead to the creation of issues. For 
+<p>Potential or known flaws that could compromise the system lead to the creation of issues. For 
 example, a SQL injection vulnerability might need to be fixed, or stronger password encryption 
-might need to be implemented.
+might need to be implemented.</p>
 </details>
 
 <details class="blue-bar">
 <summary>User feedback</summary>
-
-When end users provide suggestions or report problems, developers create issues to track and 
+<p>When end users provide suggestions or report problems, developers create issues to track and 
 address this feedback. Examples include users requesting the ability to export data as CSV or 
-reporting that the interface is not intuitive on mobile devices.
+reporting that the interface is not intuitive on mobile devices.</p>
 </details>
 
 <details class="blue-bar">
 <summary>Testing requirements</summary>
-
-Requirements for unit tests, integration tests, or the performance of user acceptance testing (UAT)
+<p>Requirements for unit tests, integration tests, or the performance of user acceptance testing (UAT)
 are documented as issues. For example, a developer might create an issue to write unit tests for the 
-payment processing module or to perform cross-browser testing on a new feature.
+payment processing module or to perform cross-browser testing on a new feature.</p>
 </details>
 
 <details class="blue-bar">
 <summary>Infrastructure issues</summary>
-
-These are created when there are problems with the project's infrastructure, such as server downtime, 
+<p>These are created when there are problems with the project's infrastructure, such as server downtime, 
 configuration errors, or deployment failures. An example might be a server crashing during high 
-traffic or a misconfiguration in the database connection string.
+traffic or a misconfiguration in the database connection string.</p>
 </details>
 
 <details class="blue-bar">
 <summary>Compliance and legal requirements</summary>
-
-Issues are often used to capture compliance and regulatory requirements, especially when ensuring 
+<p>Issues are often used to capture compliance and regulatory requirements, especially when ensuring 
 that the software meets regulatory or industry standards. Examples include making sure the system 
 complies with GDPR regulations or implementing accessibility features in line with WCAG 2.1 
-standards.
+standards.</p>
 </details>
 
 <details class="blue-bar">
 <summary>Dependencies</summary>
-
-Projects that depend on third-party libraries or services often track dependency-related issues. 
+<p>Projects that depend on third-party libraries or services often track dependency-related issues. 
 For example, issues might be created to update a third-party library to its latest version or to 
-fix an integration problem with a payment gateway API.
+fix an integration problem with a payment gateway API.</p>
 </details>
 
 <details class="blue-bar">
 <summary>Version releases</summary>
-
-Issues can be used to track specific tasks that must be completed before a new version is deployed. 
+<p>Issues can be used to track specific tasks that must be completed before a new version is deployed. 
 This might include preparing release notes for version 2.0 or fixing critical bugs before version 
-1.5 is rolled out.
+1.5 is rolled out.</p>
 </details>
 
 ## Issue-related workflow
