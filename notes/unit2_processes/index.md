@@ -23,8 +23,8 @@ In software engineering, understanding and following structured processes and wo
 essential for creating high-quality, maintainable software. Software development processes 
 provide a systematic approach to managing the complexity of software projects, from 
 planning and coding to testing and deployment. These processes are often supported by 
-collaborative tools like [GitHub](https://github.com/, [GitLab](https://about.gitlab.com/, 
-and [Jira](https://www.atlassian.com/jira, which facilitate team coordination, 
+collaborative tools like [GitHub](https://github.com/), [GitLab](https://about.gitlab.com/), 
+and [Jira](https://www.atlassian.com/jira), which facilitate team coordination, 
 version control, code review, and issue tracking. By using these tools, teams can follow 
 standard methodologies such as Agile, Scrum, or Kanban to ensure that projects are 
 completed efficiently, with clear communication and proper tracking of tasks.
