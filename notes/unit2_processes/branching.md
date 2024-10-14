@@ -8,6 +8,16 @@ nav_order: 4
 
 # Branching and merging
 
+A _branch_ in a code repository is a separate version of the project that allows developers 
+to work on new features, bug fixes, or experiments independently of the main codebase. 
+By creating a branch, developers can isolate their changes without affecting the stable 
+version of the software, enabling parallel development workflows. Each branch starts as a 
+copy of the code at a specific point in time, and any changes made to that branch are 
+tracked separately. Once the work on a branch is complete and reviewed, it can be merged 
+back into the main branch, typically through a pull request. Branching is an essential 
+practice in modern software development, allowing teams to collaborate efficiently and 
+manage multiple streams of work within the same project.
+
 A software application can be thought of as a consistent set of files including code,
 settings, images, documentation, etc. Typically, each file will have its  own revision
 number, and the term for the set of versioned files that work together is a *configuration*.
