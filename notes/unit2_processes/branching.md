@@ -38,17 +38,18 @@ representing the current release is called `main` - this is a common convention.
 
 ``` mermaid
 gitGraph
-   commit id: " "
-   commit id: "release"
-   branch next_release
-   checkout next_release
-   commit id: "change 1"
-   checkout main
-   commit id: "bug fix 1"
-   checkout next_release
-   commit id: "change 2"
-   checkout main
-   commit id: "bug fix 2"
+    %% Release branch
+    commit id: " "
+    commit id: "release"
+    branch next_release
+    checkout next_release
+    commit id: "change 1"
+    checkout main
+    commit id: "bug fix 1"
+    checkout next_release
+    commit id: "change 2"
+    checkout main
+commit id: "bug fix 2"
 ```
 *Fig. 2: Release branch*
 

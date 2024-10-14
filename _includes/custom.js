@@ -39,6 +39,9 @@
         if (element.tagName == "FIGURE") {
             return "figure";
         }
+        else if (element.tagName == "CODE") {
+            return "mermaid";
+        }
         else {
             for (var i=0; i < element.classList.length; i++) {
                 if (element.classList[i].startsWith("slide-")) {
@@ -134,6 +137,10 @@
             targetElement = this;
             titleText = extractChildByType(this, "img").dataset.title;
         }
+        else if (targetClass == 'mermaid') {
+            targetElement = this;
+            titleText = "Placeholder";
+        }
         else {
             targetElement = next(this, targetClass);
             titleText = this.dataset.title;
@@ -161,7 +168,7 @@
 
 
     var elements = document.getElementsByClassName('slide');
-    element = element.concat(document.getElementsByClassName('language-mermaid'));
+    elements = element.concat(document.getElementsByClassName('language-mermaid'));
     elements = elements.concat(document.getElementsByTagName('figure'));
 
     for(var i = 0; i < elements.length; i++) {
