@@ -45,7 +45,7 @@ saves a snapshot of those changes, including the author of the change, the times
 a message describing what was done. This history allows developers to track the evolution 
 of the codebase, see who made specific changes, and understand why those changes were made.
 
-
+![Fig. 2. File histories](images/file_histories.png){: standalone #fig1 data-title="File histories" }
 
 The main actions a repository supports include committing 
 (saving snapshots of changes to the codebase), branching (creating parallel versions of the 
