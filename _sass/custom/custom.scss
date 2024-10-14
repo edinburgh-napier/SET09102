@@ -262,6 +262,10 @@ div.toc-container details > ul > ul {
     height: auto;
 }
 
+.slide-inner .slide-img-wide svg {
+  max-width: none !important;
+}
+
 .slide-inner .slide-img-high {
     height: 100%;
     width: auto;
@@ -318,10 +322,6 @@ div.toc-container details > ul > ul {
 .slide-inner img {
     max-width: 90vw;
     max-height: 75vh;
-}
-
-svg {
-  max-width: none !important;
 }
 
 /* Toggle this class when clicking on the popup container (hide and show the popup) */
