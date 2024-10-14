@@ -168,23 +168,20 @@
 
 
     var elements = document.getElementsByClassName('slide');
-    elements = elements.concat(document.getElementsByClassName('language-mermaid'));
-    elements = elements.concat(document.getElementsByTagName('figure'));
-
     for(var i = 0; i < elements.length; i++) {
         var el = elements[i];
         el.onclick = enableSlide;
     }
 
-    // var elements = document.getElementsByTagName('figure');
-    // for(var i = 0; i < elements.length; i++) {
-    //     var el = elements[i];
-    //     el.onclick = enableSlide;
-    // }
-    //
-    // var elements = document.getElementsByClassName('language-mermaid');
-    // for(var i = 0; i < elements.length; i++) {
-    //     var el = elements[i];
-    //     el.onclick = enableSlide;
-    // }
+    var elements = document.getElementsByTagName('figure');
+    for(var i = 0; i < elements.length; i++) {
+        var el = elements[i];
+        el.onclick = enableSlide;
+    }
+
+    var elements = document.getElementsByClassName('language-mermaid');
+    for(var i = 0; i < elements.length; i++) {
+        var el = elements[i];
+        el.onclick = enableSlide;
+    }
 })();
