@@ -320,6 +320,10 @@ div.toc-container details > ul > ul {
     max-height: 75vh;
 }
 
+svg {
+  max-width: none !important;
+}
+
 /* Toggle this class when clicking on the popup container (hide and show the popup) */
 .show {
   visibility: visible;

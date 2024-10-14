@@ -47,11 +47,6 @@ of the codebase, see who made specific changes, and understand why those changes
 
 ![Fig. 2. File histories](images/file_histories.png){: standalone #fig1 data-title="File histories" }
 
-The main actions a repository supports include committing 
-(saving snapshots of changes to the codebase), branching (creating parallel versions of the 
-code for new features or experiments), merging (integrating changes from different branches), 
-and pulling and pushing (synchronizing local changes with the remote repository). 
-Repositories also support pull requests or merge requests, enabling collaborative code 
-review and approval before merging changes into the main branch. By maintaining a detailed 
-history of changes, a repository helps ensure the integrity of the codebase, facilitates 
-collaboration, and provides a mechanism for rolling back to previous versions when necessary.
+A major advantage of maintaining a full file history is that changes can always be undone.
+However, that is only possible for committed version of the file. Committing often is 
+therefore a good practice to develop. 
