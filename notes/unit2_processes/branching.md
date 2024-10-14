@@ -36,9 +36,11 @@ because the two configurations are independent. In GitHib and other similar syst
 is referred to as a *branch* in the code as illustrated in Fig. 2. Note that the branch
 representing the current release is called `main` - this is a common convention.
 
+---
+title: Release branch
+---
 ``` mermaid
 gitGraph
-    %% Release branch
     commit id: " "
     commit id: "release"
     branch next_release
