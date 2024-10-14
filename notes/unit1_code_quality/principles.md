@@ -102,7 +102,6 @@ generating the invoice and emailing it.
 <span class="material-symbols-rounded slide slide-div" data-title="A Class with Multiple Responsibilities">present_to_all</span>
 {:/}
 
-
 ``` c#
 public class Invoice
 {
@@ -136,6 +135,10 @@ public class Invoice
 
 By applying the SRP, we can separate the concerns. We will create two separate classes: 
 one for generating the invoice and another for sending the email.
+
+{::nomarkdown}  
+<span class="material-symbols-rounded slide slide-div" data-title="Refactored code">present_to_all</span>
+{:/}
 
 ``` c#
 // Class responsible for generating the invoice
