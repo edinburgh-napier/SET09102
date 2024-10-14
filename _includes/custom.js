@@ -89,7 +89,7 @@
 
     function extractChildByType(element, tagName) {
         for (var i=0; i<element.children.length; i++) {
-            if (element.children[i].tagName == tagName.toUpperCase()) {
+            if (element.children[i].tagName.toUpperCase() == tagName.toUpperCase()) {
                 return element.children[i];
             }
         }
