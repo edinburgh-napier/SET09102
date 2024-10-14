@@ -117,6 +117,22 @@
         return extractedImage.outerHTML;
     }
 
+    function prepareMermaid(element) {
+        const slideContent = document.getElementById("slide-content");
+        var extractedImage = extractChildByType(element, "svg");
+        var imageWidth = extractedImage.width;
+        var imageHeight = extractedImage.height;
+        if((imageWidth / window.innerWidth) > (imageHeight / (window.innerHeight * 0.75))) {
+            slideContent.style.width = (window.innerWidth * 0.9).toString() + "vw";
+            extractedImage.classList.add("slide-img-wide");
+        }
+        else {
+            slideContent.style.height = (window.innerHeight * 0.75).toString() + "vh";
+            extractedImage.classList.add("slide-img-high");
+        }
+        return extractedImage.outerHTML;
+    }
+
     function CreateSlideContent(element, tagName) {
         slideContent.style.width = "auto";
         slideContent.style.height = "auto";
@@ -124,6 +140,7 @@
             case "ul": return prepareUl(element); break;
             case "div": return prepareDiv(element); break;
             case "figure": return prepareFigure(element); break;
+            case "mermaid": return prepareMermaid(element); break;
             default: return element.innerHTML;
         }
     }
@@ -139,6 +156,7 @@
         }
         else if (targetClass == 'mermaid') {
             targetElement = this;
+            alert(this.innerHTML);
             titleText = "Placeholder";
         }
         else {
