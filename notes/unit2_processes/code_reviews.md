@@ -61,7 +61,9 @@ illustrated in Fig. 3.
 ``` mermaid
 flowchart TD
   node1(Code submitted) --> node2(Pull request issued)
-  node2 --> decision1{Does \ncode meet \ncompany \nguidelines?}
+  node2 --> decision1{Does code 
+  meet company 
+  guidelines?}
   decision1 --> |yes| node3(Accept PR)
   decision1 --> |no| node4(Reject PR)
   subgraph box1["Things checked
