@@ -8,10 +8,6 @@ nav_order: 6
 
 # Code reviews
 
-![Code quality](https://imgs.xkcd.com/comics/code_quality_3.png)
-
-[*Source: xkcd* ](https://xkcd.com/1833)
-
 The code review is a crucial part of the software development process for several reasons.
 
 * It directly checks the quality of code being produces and enhances its quality
@@ -31,6 +27,8 @@ The second and third points in the list above emphasise the community aspect of 
 reviews. As a member of the organisation's professional community of software engineers,
 the individual developer needs to take an active role in enhancing the quality of the
 output of the whole team.
+
+![Fig. 1. Code quality (<a href="https://xkcd.com/1833">xkcd</a>)](https://imgs.xkcd.com/comics/code_quality_3.png){: standalone #fig1 data-title="Code quality" }
 
 A formal approach to code inspections was defined in the 1970s by Michael Fagan for
 IBM. Some variations exist, but in general a Fagan inspection is quite a cumbersome
