@@ -4,6 +4,7 @@ parent: Processes and Workflow
 has_children: true
 has_toc: false
 nav_order: 6
+mermaid: true
 ---
 
 # Code reviews
@@ -46,7 +47,7 @@ provides a very clear description of a typical code review which is the basis of
 Please read the section entitled *Code Review - Process and Importance* in the first chapter of
 Alls ([2020](https://napier.primo.exlibrisgroup.com/permalink/44NAP_INST/n96pef/alma9923706264502111))
 
-### Code review process overview
+## Code review process overview
 
 A code review happens between the completion a set of code changes and the merging of
 those changes into the main codebase. Before development starts, the developer will
@@ -74,7 +75,7 @@ flowchart TD
 
 *Fig. 3: Code review process ([Alls, 2020, Ch. 1](https://napier.primo.exlibrisgroup.com/permalink/44NAP_INST/n96pef/alma9923706264502111))*
 
-### Preparing for a code review
+## Preparing for a code review
 
 In advance of issuing a PR, the developer should make sure that they have applied all the expected
 guidance and carried out the checks shown in Fig. 2. The checklist below summarises the actions
@@ -83,14 +84,14 @@ required.
 * Have you checked the wider impact of your code changes?
 * Have you applied [coding conventions](https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/coding-style/coding-conventions)
   for the language you are working in?
-* Have you applied generic software engineering principles such as [SOLID](../unit1_code_quality/Week04a_quality_code.md#solid)?
-* Have you checked for [code smells](../unit1_code_quality/Week04a_quality_code.md#code-smells)?
-* Have you applied the principles of [Clean Code](../unit1_code_quality/Week04a_quality_code.md#clean-code)?
+* Have you applied generic software engineering principles such as [SOLID](../unit1_code_quality/principles.md#solid)?
+* Have you checked for [code smells](../unit1_code_quality/code_smells.md#code-smells)?
+* Have you applied the principles of [Clean Code](../unit1_code_quality/readability.md#clean-code)?
 * Have you created and run sufficient unit tests?
 * Have you checked the hints provided by the static analysis tools in the IDE?
 * Have you used the feedback available to sanity check your code?
 
-### Leading a code review
+## Leading a code review
 
 As the reviewer, you are acting as a technical authority. You need to exercise your own knowledge of
 good coding practices and agreed conventions, and you need to be prepared to complement your existing
