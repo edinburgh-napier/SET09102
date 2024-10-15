@@ -18,6 +18,23 @@ Agile is an attitude, not a technique with boundaries. An attitude has no bounda
 
 <hr class="splash">
 
+# Agile Methodologies and Scrum
+
+## Introduction
+
+## Agile principles
+
+## Scrum overview
+
+## Scrum roles
+
+## Scrum ceremonies
+
+## Sprint planning
+
+## Task management
+
+
 ## Issue-related workflow
 
 Most code management platforms provide features to help manage projects. In GitHub, a project can be

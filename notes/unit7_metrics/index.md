@@ -18,6 +18,20 @@ The problem with quick and dirty...is that dirty remains long after quick has be
 
 <hr class="splash">
 
+# Software Metrics and Code Analysis Tools
+
+## Introduction
+
+## Internal code metrics
+
+## Automated code analysis tools
+
+## Improving code quality with metrics
+
+## External code metrics
+
+## Acceptance criteria
+
 
 ## ISO 25000 Systems and software Quality Requirements and Evaluation (SQuaRE)
 

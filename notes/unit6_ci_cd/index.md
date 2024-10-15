@@ -17,3 +17,15 @@ Deployment celebrations should be about the value of the new features, not joyfu
 <p class="attribution">Rebecca Parsons</p>
 
 <hr class="splash">
+
+# Continuous Integration/Continuous Deployment
+
+## Introduction
+
+## Setting up CI/CD pipelines
+
+## Automated testing
+
+## Code analysis
+
+## Deployment strategies

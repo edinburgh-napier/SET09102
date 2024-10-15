@@ -1,5 +1,5 @@
 ---
-title: Ethical AI
+title: Ethics
 parent: Notes
 has_children: true
 nav_order: 10
@@ -17,3 +17,31 @@ Maybe we want to constrain the computation, the AI, to only do things we conside
 <p class="attribution">Stephen Wolfram</p>
 
 <hr class="splash">
+
+# Ethical Considerations in Software Development
+
+## Introduction
+
+## Ethical decision-making
+
+## GDPR
+
+## Bias in algorithms
+
+## Security
+
+## Social responsibility
+
+## Professional bodies
+
+# Ethical Use of AI in Software Systems
+
+## Introduction
+
+## AI ethics
+
+## Bias mitigation
+
+## Intellectual property
+
+## Responsible AI usage

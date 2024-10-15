@@ -17,3 +17,15 @@ Be a yardstick of quality. Some people aren’t used to an environment where exc
 <p class="attribution">Steve Jobs</p>
 
 <hr class="splash">
+
+# Advanced Software Testing and Quality Assurance
+
+## Introduction
+
+## Test automation
+
+## Integration testing
+
+## Performance testing
+
+## Stress testing

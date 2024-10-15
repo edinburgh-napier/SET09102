@@ -1,5 +1,5 @@
 ---
-title: AI
+title: AI in Software Development
 parent: Notes
 has_children: true
 nav_order: 9
@@ -17,3 +17,17 @@ In a world where ChatGPT and other AI apps can do many things <br/>humans once n
 <p class="attribution">Hendrith Vanlon Smith Jr.</p>
 
 <hr class="splash">
+
+# Integrating Generative AI in Software Development
+
+## Introduction
+
+## Large language models (LLMs)
+
+## Generative AI tools (e.g., GitHub Copilot)
+
+## AI-driven development
+
+## Code generation
+
+## Limitations
