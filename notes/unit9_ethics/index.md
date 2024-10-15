@@ -5,7 +5,7 @@ has_children: true
 nav_order: 10
 ---
 
-# Ethical Use of AI in Software Systems
+# Ethics in Software Systems
 
 <hr class="splash">
 
