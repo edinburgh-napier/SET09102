@@ -1,6 +1,7 @@
 title: "SET09102 Software Engineering"
 remote_theme: just-the-docs/just-the-docs
 color_scheme: napier
+favicon_ico: "/images/Napier.png"
 compress_html:
   ignore:
     envs: all
