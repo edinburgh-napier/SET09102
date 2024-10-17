@@ -1,6 +1,6 @@
 ---
-title: Coding standards
-parent: Code quality
+title: Coding Standards
+parent: Code Quality
 has_children: true
 has_toc: false
 nav_order: 2

@@ -1,5 +1,5 @@
 ---
-title: Code quality
+title: Code Quality
 parent: Notes
 has_children: true
 nav_order: 2

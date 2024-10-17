@@ -1,5 +1,5 @@
 ---
-title: Readability guidelines
+title: Readability Tips
 parent: Readability
 has_children: false
 nav_exclude: true

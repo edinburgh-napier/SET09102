@@ -1,6 +1,6 @@
 ---
-title: Design pattern guidelines
-parent: Design patterns
+title: Design Pattern Tips
+parent: Design Patterns
 has_children: false
 nav_exclude: true
 nav_order: 1

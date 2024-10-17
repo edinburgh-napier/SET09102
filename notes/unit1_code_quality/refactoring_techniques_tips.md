@@ -1,6 +1,6 @@
 ---
-title: Refactoring guidelines
-parent: Refactoring techniques
+title: Refactoring Tips
+parent: Refactoring Techniques
 has_children: false
 nav_exclude: true
 nav_order: 1

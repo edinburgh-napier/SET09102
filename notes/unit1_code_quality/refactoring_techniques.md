@@ -1,6 +1,6 @@
 ---
-title: Refactoring techniques
-parent: Code quality
+title: Refactoring Techniques
+parent: Code Quality
 has_children: true
 has_toc: false
 nav_order: 4

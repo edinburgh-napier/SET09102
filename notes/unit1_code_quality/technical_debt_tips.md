@@ -1,5 +1,5 @@
 ---
-title: Technical Debt Guidelines
+title: Technical Debt Tips
 parent: Technical Debt
 has_children: false
 nav_exclude: true

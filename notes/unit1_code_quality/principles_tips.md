@@ -1,5 +1,5 @@
 ---
-title: Principles guidelines
+title: Principles Tips
 parent: Software Engineering Principles
 has_children: false
 nav_exclude: true

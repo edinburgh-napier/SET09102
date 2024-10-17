@@ -1,6 +1,6 @@
 ---
-title: Coding standards guidelines
-parent: Coding standards
+title: Coding Standards Tips
+parent: Coding Standards
 has_children: false
 nav_exclude: true
 nav_order: 1

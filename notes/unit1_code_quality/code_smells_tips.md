@@ -1,5 +1,5 @@
 ---
-title: Code Smells Guidelines
+title: Code Smells Tips
 parent: Code Smells
 has_children: false
 nav_exclude: true
