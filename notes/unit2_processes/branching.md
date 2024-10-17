@@ -157,6 +157,9 @@ The process defined above only takes care of problems that are directly related 
 however, it can form the basis of a more complete procedure that also includes the management of
 tasks on a task board and any other procedural requirements that the team agrees on.
 
+{: .tip-title }
+> [<i class="fa-regular fa-lightbulb"></i> Tips for working with branches](branching_tips)
+
 ## Further reading
 
 * [GitHub flow](https://docs.github.com/en/get-started/quickstart/github-flow)
