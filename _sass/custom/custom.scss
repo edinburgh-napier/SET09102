@@ -42,6 +42,10 @@ blockquote.tip-title>p:first-child,
 
 // LISTS
 
+.main-content ul.equation-symbols>li::before {
+  content: none;
+}
+
 .equation-symbols {
   list-style-type: none;
   margin-left: 5rem;
