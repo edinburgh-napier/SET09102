@@ -307,13 +307,12 @@ the following simple example that illustrates the difference between cyclomatic 
 complexity scores.
 
 
-Method A
-
-Cyclomatic complexity = 4
-
-Cognitive complexity = 7
-
 ``` c#
+// Method A
+//
+// Cyclomatic complexity = 4
+// Cognitive complexity = 7
+
 int sumOfPrimes(int max) {
   int total = 0;
   OUT: for (int i = 1; i <= max; ++i) {
@@ -330,23 +329,23 @@ int sumOfPrimes(int max) {
 {: .float-left}
 
 
-Method B
-
-Cyclomatic complexity = 4
-
-Cognitive complexity = 1
 
 ``` c#
+// Method B
+//
+// Cyclomatic complexity = 4
+// Cognitive complexity = 1
+
 String getWords(int number) {
   switch (number) {
     case 1:
-      return “one”;
+      return "one";
     case 2:
-      return “a couple”;
+      return "a couple";
     case 3:
-      return “a few”;
+      return "a few";
     default:
-      return “lots”;
+      return "lots";
   }
 }
 ```
