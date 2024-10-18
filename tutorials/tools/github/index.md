@@ -37,7 +37,7 @@ your files, and each file's revision history. Repositories can have multiple col
 can be either public or private.
 </span></blockquote>
 <p class="attribution">
-[GitHub docs](https://docs.github.com/en/repositories/creating-and-managing-repositories/about-repositories)
+<a href="https://docs.github.com/en/repositories/creating-and-managing-repositories/about-repositories">GitHub docs</a>
 </p>
 
 ### Create a repository
