@@ -5,7 +5,11 @@ has_children: true
 has_toc: false
 nav_order: 4
 mermaid: true
+katex: true
 ---
+
+<!-- KaTeX CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.css">
 
 # Using SonarQube for static code analysis
 
@@ -259,11 +263,15 @@ flow. Defined by [Thomas J. McCabe](https://doi.org/10.1109/TSE.1976.233837) in 
 the number of linearly independent paths through a program's source code. This is calculated using 
 the formula
 
-M = E - N + 2P
+$$M = E - N + 2P$$
 
-*   E = the number of edges in the control flow graph
-*   N = the number of nodes
-*   P = the number of connected components (typically 1 for a single program)
+where
+
+E = the number of edges in the control flow graph
+
+N = the number of nodes
+
+P = the number of connected components (typically 1 for a single program)
 
 A higher cyclomatic complexity indicates a more complex program, which can be harder to understand, 
 test, and maintain. This metric helps developers identify potentially problematic areas in the code 
