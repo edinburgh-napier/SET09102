@@ -262,10 +262,13 @@ All done! You can now view your changes on GitHub in your browser.
 
 ## 3 Working with branches
 
-> Use a branch to isolate development work without affecting other branches in the repository. 
-> Each repository has one default branch, and can have multiple other branches.
-
-[GitHub docs](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-branches)
+<blockquote class="pretty"><span>
+Use a branch to isolate development work without affecting other branches in the repository. 
+Each repository has one default branch, and can have multiple other branches.
+</span></blockquote>
+<p class="attribution">
+<a href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-branches">GitHub docs</a>
+</p>
 
 One of the main problems that can occur in a team of developers is one person overwriting the 
 work of someone else. Git solves this problem by isolating one person's changes on a separate 
