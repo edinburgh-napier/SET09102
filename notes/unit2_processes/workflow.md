@@ -101,6 +101,8 @@ the codebase. Fig. 3 provides an illustration from Visual Studio Code where ther
 of usages in a note before the class definition and a way to find all the usages via the 
 context menu.
 
+<i class="fa-solid fa-circle-info"></i>
+
 {: .information-title }
 > <i class="fa-solid fa-circle-info"></i> Key Considerations for C# Projects
 >
