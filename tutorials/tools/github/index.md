@@ -127,7 +127,7 @@ any useful content, and deleting it will allow us to re-use the name.
     * The licence that applies to the repo
     * The comment associated with the change that last affected the relevant file
     * Icon that allows you to edit the currently displayed file directly in GitHub
-    {: figure-labels}
+    {: .figure-labels}
 
 ## 2 Working with files
 
@@ -177,7 +177,7 @@ After committing, the file is displayed in preview as shown in Fig. 6.
 * The _Blame_ button - this allows you to see a summary history of the file one commit at a time.
 * The _History_ button - this allows you to see all previous versions of the file and recover 
   them if necessary.
-{: figure-labels}
+{: .figure-labels}
 
 Experiment with the _Blame_ and _History_ functions to see what they do.
 
@@ -238,7 +238,7 @@ source control icon. Click that icon as shown in Fig. 9.
 *   Click source control icon
 *   Enter commit message
 *   Click _Commit_
-{: figure-labels}
+{: .figure-labels}
 
 Answer _Yes_ when prompted to commit the changes directly.
 
@@ -536,7 +536,7 @@ GitHub and locally in VSCode.
     
     * Incoming change from the _dev2_ branch
     * Existing line in the _main_ branch (previously merged from _dev1_)
-    {: figure-labels}
+    {: .figure-labels}
     
     To resolve the conflict, you need to decide which version of the line you want to keep and 
     remove the other one. Obviously, you also remove the delimiting lines 9, 11 and 13 leaving 
@@ -578,7 +578,7 @@ the exercise before you start:
     * The pull request icon
     * Account notification
     * Link to sign in to GitHub
-    {: figure-labels}
+    {: .figure-labels}
     
     Sign into GitHub as prompted.
     
@@ -642,7 +642,7 @@ Follow the steps below to see how the pull requests extension works.
     * Conflict resolution editor
     * Conflicting lines using the same conventions as in GitHub
     * Button to complete the merge once the conflict is resolved
-    {: figure-labels}
+    {: .figure-labels}
     
     {: .note-title}
     > <i class="fa-solid fa-circle-info"></i> Note
@@ -715,7 +715,7 @@ Follow the steps below to set up a project based on your test repo.
     * Click _Add item_
     * Type a _#_ character and select the name of your test repo from the list that appears
     * Click on _Create new issue_
-    {: figure-labels}
+    {: .figure-labels}
 
 4.  Add the item/issue details
     
