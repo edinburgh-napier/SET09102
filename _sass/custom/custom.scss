@@ -63,6 +63,28 @@ figcaption {
   font-size: 0.9rem;
 }
 
+ul.figure-labels {
+  counter-reset: section;
+  list-style: none;
+}
+ul.figure-labels li {
+  margin: 0 0 10px 0;
+  line-height: 40px;
+}
+ul.figure-labels li:before {
+  content: counter(section);
+  counter-increment: section;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  margin: 0 20px 0 0;
+  border: 1px solid #ccc;
+  border-radius: 100%;
+  text-align: center;
+}
+
+
+
 // SPLASH
 
 hr.splash {
