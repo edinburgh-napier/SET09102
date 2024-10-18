@@ -63,15 +63,15 @@ figcaption {
   font-size: 0.9rem;
 }
 
-ul.figure-labels {
+.figure-labels {
   counter-reset: section;
   list-style: none;
 }
-ul.figure-labels li {
+.figure-labels li {
   margin: 0 0 10px 0;
   line-height: 40px;
 }
-ul.figure-labels li:before {
+.figure-labels li:before {
   content: counter(section);
   counter-increment: section;
   display: inline-block;
