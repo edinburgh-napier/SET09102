@@ -71,13 +71,13 @@ figcaption {
   margin: 0 0 10px 0;
   line-height: 40px;
 }
-.figure-labels li:before {
+.main-content ul.figure-labels>li::before {
   content: counter(section);
   counter-increment: section;
   display: inline-block;
   width: 40px;
   height: 40px;
-  margin: 0 20px 0 0;
+  margin: 0 20px 0 3.5rem;
   border: 1px solid #ccc;
   border-radius: 100%;
   text-align: center;
