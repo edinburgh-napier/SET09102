@@ -102,7 +102,7 @@ of usages in a note before the class definition and a way to find all the usages
 context menu.
 
 {: .information-title }
-> <i class="fa-regular fa-lightbulb"></i> Key Considerations for C# Projects
+> <i class="fa-regular fa-circle-info"></i> Key Considerations for C# Projects
 >
 >
 > * **Type Safety**: C# is a statically-typed language, which means that some potential issues 
