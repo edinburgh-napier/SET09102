@@ -61,7 +61,7 @@ any useful content, and deleting it will allow us to re-use the name.
 
 1.  On the main page for your repo, click the _Settings_ button as shown in Fig. 1.
     
-    ![Repository settings](https://moodle.napier.ac.uk/draftfile.php/346/user/draft/656598486/settings.png?time=1718451797025)
+    ![Repository settings](images/settings.png)
     
     Fig. 1. Finding the settings button in GitHub.
     
@@ -69,7 +69,7 @@ any useful content, and deleting it will allow us to re-use the name.
     
 2.  Scroll to the bottom of the settings page where you will find the **Danger Zone**:
     
-    ![The repository danger zone](https://moodle.napier.ac.uk/draftfile.php/346/user/draft/656598486/danger_zone.png)
+    ![The repository danger zone](images/danger_zone.png)
     
     Fig. 2. The Danger Zone.
     
@@ -101,7 +101,7 @@ any useful content, and deleting it will allow us to re-use the name.
     
     This takes you to the main page of your new repo which should look like Fig. 3.
     
-    ![A repository main page](https://moodle.napier.ac.uk/draftfile.php/346/user/draft/656598486/repo_home.png)
+    ![A repository main page](images/repo_home.png)
     
     Fig. 3. Repository main page
     
@@ -117,7 +117,7 @@ any useful content, and deleting it will allow us to re-use the name.
 
 Version control is the most basic function of [git](https://github.com/git-guides) and GitHub. It eliminates most problems related to file changes by saving stable versions at known checkpoints. Say you are working on a file. You make your changes, do your tests, do a little debugging and then when you have a stable version you save it to your code repository in an action called a [commit](https://github.com/git-guides/git-commit). Thus a complete history of the file from one stable version to the next is preserved in the repo and you can always recover an earlier version if you need to.
 
-![File history](https://moodle.napier.ac.uk/draftfile.php/346/user/draft/656598486/file_history.png?time=1718534160137)
+![File history](images/file_history.png)
 
 Fig. 4. Visualising a file lifecycle
 
@@ -131,7 +131,7 @@ Follow the steps below to create a new version of the README file.
     
 2.  Edit the contents of the file to match Fig. 5. and use the _Preview_ button to see the effect.
     
-    ![Editing a file](https://moodle.napier.ac.uk/draftfile.php/346/user/draft/656598486/editing_readme.png)
+    ![Editing a file](images/editing_readme.png)
     
     Fig. 5. Editing a file
     
@@ -148,7 +148,7 @@ Follow the steps below to create a new version of the README file.
 
 After committing, the file is displayed in preview as shown in Fig. 6.
 
-![Editing a file](https://moodle.napier.ac.uk/draftfile.php/346/user/draft/656598486/editing_file.png?time=1718534314470)  
+![Editing a file](images/editing_file.png)  
 
 Fig. 6. The file after editing
 
@@ -173,7 +173,7 @@ A unit of development work typically requires changes to more than one file and 
     
 2.  Open the root folder of your project in VSCode. The view should look similar to Fig. 7.
     
-    ![Project in VSCode](https://moodle.napier.ac.uk/draftfile.php/346/user/draft/656598486/project_in_vscode.png)
+    ![Project in VSCode](images/project_in_vscode.png)
     
     Fig. 7. Test project open in VSCode
     
@@ -183,7 +183,7 @@ A unit of development work typically requires changes to more than one file and 
     
     Create the file as shown in Fig. 8. First, click on the new file icon and then enter the file name and press ENTER. The new file will automatically open in the editor pane.
     
-    ![Creating a file in VSCode](https://moodle.napier.ac.uk/draftfile.php/346/user/draft/656598486/create_new_file.png)
+    ![Creating a file in VSCode](images/create_new_file.png)
     
     Fig. 8. Creating a file in VSCode
     
@@ -200,7 +200,7 @@ Add some more detail to the README file and save it.
 
 You now have two changed files waiting to be committed as indicated by the annotation on the source control icon. Click that icon as shown in Fig. 9.
 
-![Committing changes in VSCode](https://moodle.napier.ac.uk/draftfile.php/346/user/draft/656598486/commit_local.png)
+![Committing changes in VSCode](images/commit_local.png)
 
 Fig. 9. Committing changes in VSCode
 
@@ -212,7 +212,7 @@ Answer _Yes_ when prompted to commit the changes directly.
 
 Your changes are now committed to your _local_ git repository. Because git is a distributed system, however, the remote repo on GitHub still needs to be synchronised with the local one. This is done through a _Push_ operation as visualised in Fig. 10.
 
-![Synchronising remote and local repositories](https://moodle.napier.ac.uk/draftfile.php/346/user/draft/656598486/local_remote.png)
+![Synchronising remote and local repositories](images/local_remote.png)
 
 Fig. 10. Synchronising remote and local repositories with a _Push_ operation
 
@@ -238,7 +238,7 @@ Branches can be created in many ways but they always fulfil the same function. H
 
 1.  On your repo's main page, click the branch button as shown in Fig. 11. The button is labelled with the name of the current branch which in this case is _main_.
     
-    ![Creating a branch in GitHub](https://moodle.napier.ac.uk/draftfile.php/346/user/draft/656598486/create_branch_github.png)
+    ![Creating a branch in GitHub](images/create_branch_github.png)
     
     Fig. 11. Creating a branch in GitHub
     
@@ -266,7 +266,7 @@ When working on a project, you spend most of your time in your code editor or ID
 
 1.  In VSCode, display the command palette by clicking SHIFT+CTRL+P (Windows) or SHIFT+CMD+P (Mac). Enter _branch_ into the filter field as shown in Fig. 12 and select the _Git: Create Branch..._ option.
     
-    ![Creating a branch in VSCode](https://moodle.napier.ac.uk/draftfile.php/346/user/draft/656598486/create_branch_vscode.png)
+    ![Creating a branch in VSCode](images/create_branch_vscode.png)
     
     Fig. 12. Creating a new branch in VSCode
     
@@ -287,7 +287,7 @@ Currently the dev branch only exists in your local repo - it has not been duplic
     
     The relationship between the two branches is visualised in Fig. 13.
     
-    ![Two branches](https://moodle.napier.ac.uk/draftfile.php/346/user/draft/656598486/two_branches.png)
+    ![Two branches](images/two_branches.png)
     
     Fig. 13. Two code branches
     
@@ -299,13 +299,13 @@ Currently the dev branch only exists in your local repo - it has not been duplic
     
     In GitHub, you should see an alert like the one in Fig. 14. Click the green _Compare & pull request_ button.
     
-    ![GitHub detecting a pushed branch](https://moodle.napier.ac.uk/draftfile.php/346/user/draft/656598486/pushed_branch.png)
+    ![GitHub detecting a pushed branch](images/pushed_branch.png)
     
     Fig. 14. GitHub detecting a pushed branch
     
     The next page shows that the _dev_ branch can be merged with the _main_ branch because it has no merge conflicts. We will investigate those in the next stage. For the time being, click the green button at the foot of the page labelled _Create pull request_. A pull request (PR) is exactly what it says: a _request_ from the developer to have their changes _pulled_ into a different branch. This effectively merges the branches as visualised in Fig. 15.
     
-    ![Merged branches](https://moodle.napier.ac.uk/draftfile.php/346/user/draft/656598486/merged%20branches.png)
+    ![Merged branches](images/merged%20branches.png)
     
     Fig. 15. Merging two code branches
     
@@ -313,7 +313,7 @@ Currently the dev branch only exists in your local repo - it has not been duplic
     
 5.  Finally, you see a confirmation message with the option to delete the merged branch as shown in Fig. 16.
     
-    ![Merge confirmation](https://moodle.napier.ac.uk/draftfile.php/346/user/draft/656598486/merge_confirmation.png)
+    ![Merge confirmation](images/merge_confirmation.png)
     
     Fig. 16. Merge confirmation
     
@@ -326,7 +326,7 @@ If you have been paying close attention, you will realise that the merge has onl
 
 1.  Click the code control icon in VSCode as shown in Fig. 17 and then change to the _main_ branch.
     
-    ![Synchronising the local repository in VSCode](https://moodle.napier.ac.uk/draftfile.php/346/user/draft/656598486/sync_vscode.png)
+    ![Synchronising the local repository in VSCode](images/sync_vscode.png)
     
     Fig. 17. Synchronising the local repository
     
@@ -338,7 +338,7 @@ If you have been paying close attention, you will realise that the merge has onl
     
     Make sure that your current branch is _main_ by clicking the branch selection link in VSCode as shown in Fig. 18. You are not allowed to delete the current branch. Then invoke the command palette and find the _Git: Delete Branch..._ option as shown and use it to delete the _dev_ branch.
     
-    ![Deleting a local branch](https://moodle.napier.ac.uk/draftfile.php/346/user/draft/656598486/delete_local_branch.png)
+    ![Deleting a local branch](images/delete_local_branch.png)
     
     Fig. 18. Deleting a local branch in VSCode
     
@@ -382,7 +382,7 @@ The examples below set up a merge conflict and take you through the process of r
     
     With the _dev1_ branch active, edit the file _hello.cs_ and change the word _World_ to _Galaxy_. Save the file and then click the code control icon as shown in Fig. 19.
     
-    ![Committing and pushing as a single operation](https://moodle.napier.ac.uk/draftfile.php/346/user/draft/656598486/commit_push.png)
+    ![Committing and pushing as a single operation](images/commit_push.png)
     
     Fig. 19. Committing and pushing in a single operation
     
@@ -398,7 +398,7 @@ The examples below set up a merge conflict and take you through the process of r
     
     Go to GitHub. You should see two alerts, one for each of the changes you have made as shown in Fig. 20.
     
-    ![Two alerts on GitHub](https://moodle.napier.ac.uk/draftfile.php/346/user/draft/656598486/two_alerts.png)
+    ![Two alerts on GitHub](images/two_alerts.png)
     
     Fig. 20. Two alerts in GitHub
     
@@ -412,7 +412,7 @@ The examples below set up a merge conflict and take you through the process of r
     
     This time, you will see a warning that the branch cannot be merged automatically as shown in Fig. 21. Click the button labelled _Resolve conflicts_.
     
-    ![Merge conflict warning in GitHub](https://moodle.napier.ac.uk/draftfile.php/346/user/draft/656598486/merge_conflict_warning.png)
+    ![Merge conflict warning in GitHub](images/merge_conflict_warning.png)
     
     Fig. 21. Merge conflict warning in VSCode
     
@@ -420,7 +420,7 @@ The examples below set up a merge conflict and take you through the process of r
     
     The next page presents you with a file editor showing the file containing the conflict:
     
-    ![Editing a merge conflict](https://moodle.napier.ac.uk/draftfile.php/346/user/draft/656598486/editing_merge_conflict.png)
+    ![Editing a merge conflict](images/editing_merge_conflict.png)
     
     Fig. 22. Editing a merge conflict
     
@@ -452,7 +452,7 @@ Here, we will repeat the process with the same example merge conflict but we wil
     
     You can see the new features provided by the extension by activating the code control panel as shown in Fig. 24:
     
-    ![Installing the GitHub pull requests extension](https://moodle.napier.ac.uk/draftfile.php/346/user/draft/656598486/pr_extension.png?time=1718647629559)
+    ![Installing the GitHub pull requests extension](images/pr_extension.png)
     
     Fig. 24. The GitHub Pull Requests extension
     
@@ -475,7 +475,7 @@ Follow the steps below to see how the pull requests extension works.
     
     After the push has been completed, the new extension offers the opportunity to create a pull request:
     
-    ![Pull request prompt](https://moodle.napier.ac.uk/draftfile.php/346/user/draft/656598486/pr_prompt.png)
+    ![Pull request prompt](images/pr_prompt.png)
     
     Fig. 25. Prompt to create a pull request
     
@@ -485,7 +485,7 @@ Follow the steps below to see how the pull requests extension works.
     
     Just as last time, the first change has no conflicts with the main branch and you can therefore just click once to create the PR as shown in Fig. 26 and then click to create the merge commit on the next dialog. Note that this is the end of the process - the subsequent view of the PR extension shows this in the confirmation message labelled (3) in Fig. 26. The other controls such as _Create New Pull Request..._ are there for you to start a new operation. You can, however, go ahead and delete the _dev1_ branch on both the local and remote repos by clicking the _Delete Banch..._ button labelled (4) in the figure.
     
-    ![Creating a pull request in VSCode](https://moodle.napier.ac.uk/draftfile.php/346/user/draft/656598486/pr_vscode.png)
+    ![Creating a pull request in VSCode](images/pr_vscode.png)
     
     Fig. 26. Creating a pull request in VSCode
     
@@ -495,7 +495,7 @@ Follow the steps below to see how the pull requests extension works.
     
     Activate the _dev2_ branch and modify _hello.cs_. Save the file, commit the change and push it to the remote as before. Create the pull request when prompted. After creating the PR, VSCode will warn you about the merge conflict as shown in Fig. 27.
     
-    ![Merge conflict warning in VSCode](https://moodle.napier.ac.uk/draftfile.php/346/user/draft/656598486/vscode_merge_conflict.png)
+    ![Merge conflict warning in VSCode](images/vscode_merge_conflict.png)
     
     Fig. 27. Merge conflict notification in VSCode
     
@@ -507,7 +507,7 @@ Follow the steps below to see how the pull requests extension works.
     
     Click on the _Resolve conflicts_ button to enter a file editor like the one shown in Fig. 28.
     
-    ![Conflict resolution view in VSCode](https://moodle.napier.ac.uk/draftfile.php/346/user/draft/656598486/vscode_resolve_conflict.png)
+    ![Conflict resolution view in VSCode](images/vscode_resolve_conflict.png)
     
     Fig. 28. The conflict resolution view in VSCode
     
@@ -521,7 +521,7 @@ Follow the steps below to see how the pull requests extension works.
     
     If an information message like this one obscures the editor pane, don't click _Cancel_. Instead minimise the message using the icon in its top right-hand corner.
     
-    ![Information message](https://moodle.napier.ac.uk/draftfile.php/346/user/draft/656598486/vscode_merge_message.png)
+    ![Information message](images/vscode_merge_message.png)
     
     Modify the code as required and click the _Complete Merge_ button. You can then commit the resolution change and complete the merge operation as before.
     
@@ -534,7 +534,7 @@ In this section, we will go through the two main levels of control - the project
 
 In an agile project, user stories are added to a _project backlog_ as illustrated in Fig. 29. Throughout the project, developers take items from the backlog for implementation. The figure shows a stylised Kanban board being used to track an item's progress from the backlog and through development to completion. The figure does not include the end of the project because this may be defined differently - one project might be time-limited and must stop when the time runs out regardless of whether there are still items in the backlog. Other projects might be scope-driven where the project ends when the backlog is cleared.
 
-![Top=level project process](https://moodle.napier.ac.uk/draftfile.php/346/user/draft/656598486/project.png)
+![Top=level project process](images/project.png)
 
 Fig. 29. Top-level project process
 
@@ -544,7 +544,7 @@ Follow the steps below to set up a project based on your test repo.
     
     With your test repo open in GitHub, click the _Project_ link in the horizontal menu as shown in Fig. 30. Then click the drop-down options on the green button and select _New project_
     
-    . ![Creating a project in GitHub](https://moodle.napier.ac.uk/draftfile.php/346/user/draft/656598486/new_project.png)
+    . ![Creating a project in GitHub](images/new_project.png)
     
     Fig. 30. Creating a new project in GitHub
     
@@ -566,7 +566,7 @@ Follow the steps below to set up a project based on your test repo.
     
     Each backlog item corresponds to an issue in the repository. You can add a new item/issue from the project view by clicking the _Add item_ link at the foot of the _Todo_ column as shown in Fig. 32.
     
-    ![Adding a backlog item](https://moodle.napier.ac.uk/draftfile.php/346/user/draft/656598486/new_item.png)
+    ![Adding a backlog item](images/new_item.png)
     
     Fig. 32. Adding a backlog item
     
@@ -577,11 +577,11 @@ Follow the steps below to set up a project based on your test repo.
     
     Enter the details shown in Fig. 33. Then scroll down to the bottom of the dialog as shown in Fig. 34 and click the _Assignees_ button to assign the issue to yourself. Click _Create_ when you have finished.
     
-    ![Adding details to the item](https://moodle.napier.ac.uk/draftfile.php/346/user/draft/656598486/item_details.png)
+    ![Adding details to the item](images/item_details.png)
     
     Fig. 33. Adding the item/issue details
     
-    ![Assigning the item](https://moodle.napier.ac.uk/draftfile.php/346/user/draft/656598486/asign_item.png)
+    ![Assigning the item](images/asign_item.png)
     
     Fig. 34. Assigning the issue
     
@@ -613,7 +613,7 @@ The steps below extend the basic GitHub Flow by including some additional action
     
     Click the item/issue title to open a details dialog. There are two ways that you could add more detail here. One is to edit the item description and replace "Add some interaction" with a more detailed specification. The other is to leave the original description and add a comment with the additional detail. Which one you choose should be dictated by your team's agreed workflow. Here, we will use the comment option. Add a comment as shown in Fig. 35
     
-    ![Addin detailed requirements as an item comment](https://moodle.napier.ac.uk/draftfile.php/346/user/draft/656598486/requirements%20comment.png)
+    ![Addin detailed requirements as an item comment](images/requirements%20comment.png)
     
     Fig. 35. Detailed requirements in a comment
     
@@ -625,7 +625,7 @@ The steps below extend the basic GitHub Flow by including some additional action
     
     Although you could use the GitHub web interface to create a new code branch for your issue, it can be more convenient to do this from your editor. In VSCode, activate the GitHub extension as shown in Fig. 36 and notice that the issue you just created appears in the list. That is because it is assigned to you. Click the arrow icon next to the new issue to create a new branch and start work on the issue. The new branch is automatically activated as shown at the bottom of the window in Fig. 36.
     
-    ![Starting work on an issue in VSCode](https://moodle.napier.ac.uk/draftfile.php/346/user/draft/656598486/vscode_issue.png)
+    ![Starting work on an issue in VSCode](images/vscode_issue.png)
     
     Fig. 36. Starting work on an issue in VSCode
     
@@ -668,7 +668,7 @@ The steps below extend the basic GitHub Flow by including some additional action
     
     Do not merge your branch yet - this is only done after a code review.
     
-    ![Committing a change and creating a pull request as a single operation](https://moodle.napier.ac.uk/draftfile.php/346/user/draft/656598486/commit_and_pr.png)
+    ![Committing a change and creating a pull request as a single operation](images/commit_and_pr.png)
     
     Fig. 37. Commit and create a pull request as a single operation
     
@@ -680,7 +680,7 @@ The steps below extend the basic GitHub Flow by including some additional action
     
     Another thing you should do at this stage is explicitly associate the pull request with the project. You can do this by clicking the settings icon next to _Project_ as shown. If you see the message that you need to log in with more permissions, clicking on the icon will take you through the GitHub authentication process. After that, clicking on the settings icon again will let you select the project and associate the pull request with it.
     
-    ![Assigning a reviewer to a pull request](https://moodle.napier.ac.uk/draftfile.php/346/user/draft/656598486/pr_for_review.png)
+    ![Assigning a reviewer to a pull request](images/pr_for_review.png)
     
     Fig. 38. Assigning a reviewer to a pull request
     
