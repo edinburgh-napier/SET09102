@@ -8,9 +8,6 @@ mermaid: true
 katex: true
 ---
 
-<!-- KaTeX CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.css">
-
 # Using SonarQube for static code analysis
 
 [SonarQube](https://www.sonarsource.com/products/sonarqube/) is a popular tool for static code 
