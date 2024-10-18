@@ -1,3 +1,12 @@
+---
+title: Workflow
+parent: Processes and Workflow
+has_children: true
+has_toc: false
+nav_order: 8
+mermaid: true
+---
+
 ## Workflow
 
 When you are working on a string of similar tasks using the same tools it can get a
