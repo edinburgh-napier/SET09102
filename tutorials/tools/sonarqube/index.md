@@ -264,11 +264,10 @@ $$M = E - N + 2P$$
 
 where
 
-E = the number of edges in the control flow graph
-
-N = the number of nodes
-
-P = the number of connected components (typically 1 for a single program)
+* E = the number of edges in the control flow graph
+* N = the number of nodes
+* P = the number of connected components (typically 1 for a single program)
+{: .equation-symbols}
 
 A higher cyclomatic complexity indicates a more complex program, which can be harder to understand, 
 test, and maintain. This metric helps developers identify potentially problematic areas in the code 
