@@ -306,10 +306,14 @@ it purely as a mathematical derivation. The details of how it works are presente
 the following simple example that illustrates the difference between cyclomatic and cognitive 
 complexity scores.
 
+
+Method A
+
+Cyclomatic complexity = 4
+
+Cognitive complexity = 7
+
 ``` c#
----
-title: Method A<br>Cyclomatic complexity = 4<br>Cognitive complexity = 7
----
 int sumOfPrimes(int max) {
   int total = 0;
   OUT: for (int i = 1; i <= max; ++i) {
@@ -323,12 +327,16 @@ int sumOfPrimes(int max) {
   return total;
 }
 ```
-{: .left-div}
+{: .float-left}
+
+
+Method B
+
+Cyclomatic complexity = 4
+
+Cognitive complexity = 1
 
 ``` c#
----
-title: Method B<br>Cyclomatic complexity = 4<br>Cognitive complexity = 1
----
 String getWords(int number) {
   switch (number) {
     case 1:
@@ -342,7 +350,7 @@ String getWords(int number) {
   }
 }
 ```
-{: .right-div}
+{: .float-left}
 
 While the cyclomatic complexity scores are the same, cognitive complexity is intuitively the 
 better measure in this simple case.

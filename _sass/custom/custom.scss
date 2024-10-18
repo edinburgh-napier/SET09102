@@ -34,6 +34,10 @@ blockquote.tip-title>p:first-child,
   text-transform: inherit;
 }
 
+.float-left {
+  float: left;
+}
+
 // IMAGES
 
 .icon {
@@ -109,15 +113,6 @@ div.tour+h6 {
   clear: both;
 }
 
-// DETAILS
-
-details[open] {
-  margin-bottom: 2rem;
-}
-details[open] summary {
-  margin-bottom: 1rem;
-}
-
 // LINKS
 // To style links, add #stylename to the end of the href value
 
@@ -127,6 +122,13 @@ a[href*="#please-read"] {
 }
 
 // DETAILS
+
+details[open] {
+  margin-bottom: 2rem;
+}
+details[open] summary {
+  margin-bottom: 1rem;
+}
 
 details summary img {
     vertical-align: middle !important;
@@ -221,7 +223,7 @@ div.toc-container details > ul > ul {
 
 // SLIDES
 
-    /* Slide trigger */
+/* Slide trigger */
 .slide {
   cursor: pointer;
   width: 2em;
