@@ -39,8 +39,8 @@ another developer. Once the comments are addressed, the modified code is merged 
 main codebase.
 
 After merging, further quality checks are performed which focus on the operation of the
-entire system including the new code changes. The pre- and post-merge checks are
-summarised in Fig. 2.
+entire system including the new code changes. The pre- and post-merge checks are summarised in 
+Fig. 2.
 
 ``` mermaid
 graph LR
@@ -48,8 +48,8 @@ graph LR
       id1([Impact analysis]) -->id2([Self-review])
       id2 -->id3([Unit testing])
       id3 -->id4([Static code analysis])
-      id4 -->id5([Code review])
-      id5 -->id6([Sanity check])
+      id4 -->id5([Rebase and check for conflicts])
+      id5 -->id6([Code review])
       end
     pre-merge:::phase-->id7([Merge])
       id7:::commit -->post-merge:::phase
@@ -65,37 +65,114 @@ graph LR
 
 *Fig. 2: Code quality analysis techniques (Adapted from [Cap Gemini, n.d.](https://www.capgemini.com/wp-content/uploads/2020/11/PoV-Code-Analytics.pdf))*
 
-The checks in Fig. 2 can be summarised as follows:
 
-> **Impact analysis**
+## Impact analysis
+
+Impact analysis is the process of assessing the potential consequences of changes made to a 
+software system, particularly in terms of how they will affect the rest of the system. In 
+collaborative software development impact analysis helps developers understand the scope of the 
+changes they are introducing, identify dependencies, and anticipate potential side effects that 
+could affect other parts of the system. The goal is to make informed decisions and minimize 
+unintended consequences, such as introducing bugs or breaking existing functionality. This could 
+involve, for example, understanding how changes to a method, class, or module impact related 
+classes, the broader application architecture, and other parts of the system, such as external 
+dependencies, databases, or user interfaces.
+
+Although it only appears in one place in Fig. 2, impact analysis should ideally be conducted at 
+several key points throughout the software development process to ensure that potential risks 
+and side effects of changes are identified early and mitigated effectively. Other times when
+impact analysis would be appropriate include
+
+* During design and architecture planning
+* During code reviews
+* Before merging code into main branch
+* After detecting a bug or issue in testing
+* Before deployment or release
+* After receiving feedback from production
+
+![Fig. 3. Usages information in VSCode](images/usages.png){:standalone #fig3 data-title="Usages information in VSCode" }
+
+From a practical point of view, impact analysis involves some general activities such as 
+investigating the scope of the change, its dependencies and interactions with external 
+interfaces. It is also important to remember that test code may need to be updated and that
+the security implications of the change should be actively considered. A good place to start
+is your IDE which provides a way to find the usages for classes and functions in the rest of
+the codebase. Fig. 3 provides an illustration from Visual Studio Code where there is a count
+of usages in a note before the class definition and a way to find all the usages via the 
+context menu.
+
+{: .info-title }
+> <i class="fa-regular fa-info-circle"></i> Key Considerations for C# Projects
 >
-> Investigating the impact that proposed code changes are likey to have on the rest of
-> the codebase
 >
-> **Self-review**
->
-> The application of good practices during code development
->
-> **Unit testing**
->
-> The creation of code by the developer for the automatic testing of application code
-> (covered in the [Test-driven development](../unit4_testing/Week06a_test_driven_development.md) section)
->
-> **Static code analysis**
->
-> Performed automatically by the developer's IDE and possibly also be stand-alone tools.
-> Code is examined for known weaknesses and potential solutions are suggested.
->
-> **Code review**
->
-> A process of peer review where one developer provides feedback on another's work.
->
-> **Sanity check**
->
-> Last-minute checks for artefacts that should not be committed to the repository. Some
-> of these are automated - for example, before proceeding with a commit operation, the IDE
-> will warn the developer if the code contains ToDo comments.
->
+> * **Type Safety**: C# is a statically-typed language, which means that some potential issues 
+>   (like method signature changes or type mismatches) can be caught by the compiler. Take 
+>   advantage of this by ensuring the code compiles cleanly after changes, as compilation errors 
+>   often indicate potential impacts on dependent code.
+> * **LINQ and EF Queries**: Changes to database models or queries (e.g., using Entity Framework or 
+>   LINQ) can have a wide-reaching impact on how data is retrieved and manipulated in the system. 
+>   Be sure to assess whether changes in these areas could affect performance or the correctness of 
+>   data retrieval.
+> * **Use of Interfaces**: C# projects often rely on interfaces and dependency injection (DI). When 
+>   making changes to interfaces or their implementations, consider how those changes will affect 
+>   all dependent classes, especially in systems using DI frameworks like ASP.NET Core.
+> * **Asynchronous Programming**: If you're changing asynchronous code (using async/await), 
+>   consider how those changes might impact application performance or behavior, such as handling 
+>   exceptions or concurrency issues.
+
+## Static analysis
+
+When carrying out a code review, the ideal approach is to include two steps. The first
+is to examine the code in an editor to try to identify potential improvements, and the
+second is to run the code to check that it behaves as expected. The first of these can be
+thought of as *static analysis* because you are examining the code in isolation. The second
+activity can be considered *dynamic analysis* since the code is actually in operation
+and you are evaluating its behaviour.
+
+Development tools such as Visual Studio perform static analysis on the code as you write
+with the results presented in various ways. For example, lines of code that contravene
+a style rule might be underlined or have a light bulb icon appear against them, for
+example. The IDE may offer to reformat the code automatically if the resolution is a
+simple one. Structural issues identified by the built-in code analysers may be
+indicated by a different highlight or a different icon such as a screwdriver. Again,
+the IDE may offer a range of solutions, but in the structural case, they affect the
+code itself and not just the way it is formatted. These resolutions therefore constitute
+code *refactorings*.
+
+The default rules that are built into an IDE can be configured by changing the options
+settings. A rule could be disabled, for example, so that the highlights and warnings no
+longer appear. Alternatively, the severity of the rule might be increased so that the
+IDE treats it as an error rather than a warning as illustrated in Fig. 4.
+
+![Fig. 4. Visual Studio code analysis options](images/vs_code_analysis_options.png){:standalone #fig4 data-title="Visual Studio code analysis options" }
+
+It is very common for developers to ignore any warnings generated by the IDE since
+they do not affect the operation of the code. They are therefore treated as
+insignificant. However, in a team situation where future maintainability and general
+code quality are major concerns, every software engineer should aim to resolve any
+parts of their code that produce warnings. Any rules that are not required can be disabled
+for the whole team, and the remainder can be configured so that their severity level
+reflects the team's requirements.
+
+When the default rules are not sufficient for a team's needs, other tools such as
+[StyleCop](https://github.com/DotNetAnalyzers/StyleCopAnalyzers) can be added to the
+IDE. In Visual Studio, this is done using the
+[NuGet package manager](https://code.visualstudio.com/docs/csharp/package-management).
+StyleCop provides greater control over code style with selectable rule sets. It is
+also possible to manage the rules as described above and to create custom rules as
+needed.
+
+The main point of this section is that the warnings and suggestions generated by an IDE
+need to be treated as a useful tool to help ensure code quality rather than annoying
+background noise. Once the rules are appropriately configured, they provide vital
+information to the software engineer that should not be ignored.
+
+
+## Post-merge checks
+
+These are often handled in the CI/CD pipeline and refer to system-level considerations rather
+than the details of any specific change as described below.
+
 > **Build verification test**
 >
 > Verification that the entire application builds when the code changes are included
@@ -137,27 +214,12 @@ conflict.
 Each team will have slightly different requirements, and these questions need to be answered by creating
 an explicit procedure in the team's documentation.
 
-## The developer's working environment
-
-To recap on a point made in an earlier session, a software engineer has a lot to think about
-besides just writing code. The tour below summarises the main considerations and
-visualises two different ways of managing the tools needed to do the job effeciently
-and effectively.
-
-<h6 align="center"> Here's you, engineering your software...
-
-<a href="https://bdavison.napier.ac.uk/set09102/tools.html" target="_blank" alt="A software engineer and their tools">
-    <img src="../../images/you_small.png">
-</a>
-</h6>
-
 ## Editors and IDEs
 
 Development tools have had more than half a century to mature. Current editors and
 integrated development environments (IDEs) offer many features that help the software
 engineer to keep on top of the huge range of concerns when building high quality code.
-
-The two main strategies visualised in the tour are the smart editor (such as
+The main options are the smart editor (such as
 [Visual Studio Code](https://code.visualstudio.com/)) and the IDE (such as
 [Visual Studio](https://visualstudio.microsoft.com/)).
 
@@ -176,55 +238,6 @@ than those of a smart editor, and the interface is more complicated because ther
 more options available. The main advantages of an IDE are its comparative stability, the
 lower maintenance overhead and the availability of advanced features such as package
 management.
-
-## Static analysis
-
-When carrying out a code review, the ideal approach is to include two steps. The first
-is to examine the code in an editor to try to identify potential improvements, and the
-second is to run the code to check that it behaves as expected. The first of these can be
-thought of as *static analysis* because you are examining the code in isolation. The second
-activity can be considered *dynamic analysis* since the code is actually in operation
-and you are evaluating its behaviour.
-
-Development tools such as Visual Studio perform static analysis on the code as you write
-with the results presented in various ways. For example, lines of code that contravene
-a style rule might be underlined or have a light bulb icon appear against them, for
-example. The IDE may offer to reformat the code automatically if the resolution is a
-simple one. Structural issues identified by the built-in code analysers may be
-indicated by a different highlight or a different icon such as a screwdriver. Again,
-the IDE may offer a range of solutions, but in the structural case, they affect the
-code itself and not just the way it is formatted. These resolutions therefore constitute
-code *refactorings*.
-
-The default rules that are built into an IDE can be configured by changing the options
-settings. A rule could be disabled, for example, so that the highlights and warnings no
-longer appear. Alternatively, the severity of the rule might be increased so that the
-IDE treats it as an error rather than a warning as illustrated in Fig. 1.
-
-![Visual Studio code analysis options](../../images/vs_code_analysis_options.png)
-
-*Fig. 1: Visual Studio code analysis options*
-
-It is very common for developers to ignore any warnings generated by the IDE since
-they do not affect the operation of the code. They are therefore treated as
-insignificant. However, in a team situation where future maintainability and general
-code quality are major concerns, every software engineer should ain to resolve any
-parts of their code that produce warnings. Any rules that are not required can be disabled
-for the whole team, and the remainder can be configured so that their severity level
-reflects the team's requirements.
-
-When the default rules are not sufficient for a team's needs, other tools such as
-[StyleCop](https://github.com/DotNetAnalyzers/StyleCopAnalyzers) can be added to the
-IDE. In Visual Studio, this is done using the
-[NuGet package manager](https://code.visualstudio.com/docs/csharp/package-management).
-StyleCop provides greater control over code style with selectable rule sets. It is
-also possible to manage the rules as described above and to create custom rules as
-needed.
-
-The main point of this section is that the warnings and suggestions generated by an IDE
-need to be treated as a useful tool to help ensure code quality rather than annoying
-background noise. Once the rules are appropriately configured, they provide vital
-information to the software engineer that should not be ignored.
 
 ## Further reading
 
