@@ -101,8 +101,6 @@ the codebase. Fig. 3 provides an illustration from Visual Studio Code where ther
 of usages in a note before the class definition and a way to find all the usages via the 
 context menu.
 
-<i class="fa-solid fa-circle-info"></i>
-
 {: .information-title }
 > <i class="fa-solid fa-circle-info"></i> Key Considerations for C# Projects
 >
@@ -241,15 +239,12 @@ more options available. The main advantages of an IDE are its comparative stabil
 lower maintenance overhead and the availability of advanced features such as package
 management.
 
+{: .tip-title }
+> [<i class="fa-regular fa-lightbulb"></i> Tips for workflows](workflow_tips)
+
 ## Further reading
 
 * Programming ([Stephens, 2022, Ch. 10](https://learning.oreilly.com/library/view/beginning-software-engineering/9781119901709/c10.xhtml))
 * [Common C# code conventions](https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/coding-style/coding-conventions)
 * [StyleCop: A Detailed Guide to Starting and Using It](https://blog.submain.com/stylecop-detailed-guide/)
 
-## Further reading
-
-* [GitHub pull request documentation](https://docs.github.com/pull-requests)
-* Software inspections [O'Regen, 2022, Ch. 7](https://link-springer-com.napier.idm.oclc.org/chapter/10.1007/978-3-031-07816-3_7)
-* Modern Code Reviews — Survey of Literature and Practice ([Badampudi et al., 2023](https://doi.org/10.1145/3585004))
-* A Faceted Classification Scheme for Change-Based Industrial Code Review Processes ([Baum et al., 2016]()https://doi.org/10.1109/QRS.2016.19)

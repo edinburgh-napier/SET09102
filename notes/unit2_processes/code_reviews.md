@@ -167,3 +167,9 @@ larger teams with stricter processes.
 {: .tip-title }
 > [<i class="fa-regular fa-lightbulb"></i> Tips for code review](code_reviews_tips)
 
+## Further reading
+
+* [GitHub pull request documentation](https://docs.github.com/pull-requests)
+* Software inspections [O'Regen, 2022, Ch. 7](https://link-springer-com.napier.idm.oclc.org/chapter/10.1007/978-3-031-07816-3_7)
+* Modern Code Reviews — Survey of Literature and Practice ([Badampudi et al., 2023](https://doi.org/10.1145/3585004))
+* A Faceted Classification Scheme for Change-Based Industrial Code Review Processes ([Baum et al., 2016]()https://doi.org/10.1109/QRS.2016.19)
