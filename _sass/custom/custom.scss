@@ -34,8 +34,10 @@ blockquote.tip-title>p:first-child,
   text-transform: inherit;
 }
 
-.float-left {
-  float: left;
+.side-by-side {
+  display: inline-block;
+  margin: 2rem;
+  min-width: 25vw;
 }
 
 // IMAGES

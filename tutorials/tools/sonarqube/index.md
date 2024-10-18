@@ -308,8 +308,8 @@ complexity scores.
 
 
 ``` c#
-// Method A
-//
+// METHOD A
+// 
 // Cyclomatic complexity = 4
 // Cognitive complexity = 7
 
@@ -326,12 +326,12 @@ int sumOfPrimes(int max) {
   return total;
 }
 ```
-{: .float-left}
+{: .side-by-side}
 
 
 
 ``` c#
-// Method B
+// METHOD B
 //
 // Cyclomatic complexity = 4
 // Cognitive complexity = 1
@@ -349,9 +349,10 @@ String getWords(int number) {
   }
 }
 ```
-{: .float-left}
+{: .side-by-side}
 
-While the cyclomatic complexity scores are the same, cognitive complexity is intuitively the 
+The code blocks above show two methods, A and B, with their cyclomatic and cognitive complexity
+scores. While the cyclomatic complexity scores are the same, cognitive complexity is intuitively the 
 better measure in this simple case.
 
 ## 7. Stop SonarQube
