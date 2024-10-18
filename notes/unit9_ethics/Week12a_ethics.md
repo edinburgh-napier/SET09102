@@ -2,7 +2,7 @@
 
 <hr class="splash">
 
-![Alistair Cooke](../../images/alistair_cooke.png)
+![Alistair Cooke](../../images/people/alistair_cooke.png)
 
 ### A professional is someone who can do his best work when he doesn't feel like it.
 

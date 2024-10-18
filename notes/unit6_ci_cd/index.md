@@ -9,7 +9,7 @@ nav_order: 7
 
 <hr class="splash">
 
-![Rebecca Parsons](../../images/rebecca_parsons.png)
+![Rebecca Parsons](../../images/people/rebecca_parsons.png)
 
 <blockquote class="pretty"><span>
 Deployment celebrations should be about the value of the new features, not joyful relief that nothing went horribly wrong

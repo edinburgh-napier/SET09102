@@ -9,7 +9,7 @@ nav_order: 9
 
 <hr class="splash">
 
-![Hendrith Vanlon Smith Jr.](../../images/hendrith_smith.png)
+![Hendrith Vanlon Smith Jr.](../../images/people/hendrith_smith.png)
 
 <blockquote class="pretty"><span>
 In a world where ChatGPT and other AI apps can do many things <br/>humans once needed to do themselves or needed to hire <br/>other humans to do, the question of ‘how will I add value?’ <br/>becomes more relevant than ever.

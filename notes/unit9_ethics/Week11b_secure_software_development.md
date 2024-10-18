@@ -2,7 +2,7 @@
 
 <hr class="splash">
 
-![Steve McConnell](../../images/steve_mcconnell.png)
+![Steve McConnell](../../images/people/steve_mcconnell.png)
 
 ### It's hard enough to find an error in your code when you're looking for it;<br/>it's even harder when you've assumed your code is error-free.
 

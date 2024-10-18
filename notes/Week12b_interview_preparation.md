@@ -2,7 +2,7 @@
 
 <hr class="splash">
 
-![Arthur Ashe](../images/arthur_ashe.png)
+![Arthur Ashe](../images/people/arthur_ashe.png)
 
 ### One important key to success is self-confidence.<br/>An important key to self-confidence is preparation.
 

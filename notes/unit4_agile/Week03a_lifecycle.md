@@ -10,7 +10,7 @@
 
 <hr class="splash">
 
-![Martin Fowler](../../images/martin_fowler.png)
+![Martin Fowler](../../images/people/martin_fowler.png)
 
 ### When to use iterative development? You should use iterative development only on projects that you want to succeed.
 

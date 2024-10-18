@@ -9,7 +9,7 @@ nav_order: 11
 
 <hr class="splash">
 
-![Steve Jobs](../../images/steve_jobs.png)
+![Steve Jobs](../../images/people/steve_jobs.png)
 
 <blockquote class="pretty"><span>
 Be a yardstick of quality. Some people aren’t used to an environment where excellence is expected.

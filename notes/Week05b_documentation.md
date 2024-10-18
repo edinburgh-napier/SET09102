@@ -2,7 +2,7 @@
 
 <hr class="splash">
 
-![Jeff Atwood](../images/jeff_atwood.png)
+![Jeff Atwood](../images/people/jeff_atwood.png)
 
 ### The best reaction to “this is confusing, where are the docs” is to rewrite the feature to make it less confusing, not write more docs.
 

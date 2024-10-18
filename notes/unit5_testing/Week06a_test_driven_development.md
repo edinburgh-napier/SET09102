@@ -2,7 +2,7 @@
 
 <hr class="splash">
 
-![Boris Beizer](../../images/boris_beizer.png)
+![Boris Beizer](../../images/people/boris_beizer.png)
 
 ### More than the act of testing, the act of designing tests is one of the best bug preventers known.
 

@@ -9,7 +9,7 @@ nav_order: 10
 
 <hr class="splash">
 
-![Stephen Wolfram](../../images/stephen_wolfram.png)
+![Stephen Wolfram](../../images/people/stephen_wolfram.png)
 
 <blockquote class="pretty"><span>
 Maybe we want to constrain the computation, the AI, to only do things we consider ethical. But somehow we have to find a way to describe what we mean by that.

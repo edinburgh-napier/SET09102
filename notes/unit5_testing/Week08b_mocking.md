@@ -2,7 +2,7 @@
 
 <hr class="splash">
 
-![Ian Cooper](../../images/ian_cooper.png)
+![Ian Cooper](../../images/people/ian_cooper.png)
 
 ### Avoid heavy mocking. This allows you to meet the promise to refactoring. You will refactor your code and your tests won’t break.
 

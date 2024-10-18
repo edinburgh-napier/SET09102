@@ -9,7 +9,7 @@ nav_order: 3
 
 <hr class="splash">
 
-![Merlin Mann](../../images/merlin_mann.png)
+![Merlin Mann](../../images/people/merlin_mann.png)
 
 <blockquote class="pretty"><span>
 Workflow is understanding your job, understanding your tools, and then not thinking about it any more.

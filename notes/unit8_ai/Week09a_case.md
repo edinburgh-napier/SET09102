@@ -2,7 +2,7 @@
 
 <hr class="splash">
 
-![Grady Booch](../../images/grady_booch.png)
+![Grady Booch](../../images/people/grady_booch.png)
 
 ### A fool with a tool is still a fool.
 

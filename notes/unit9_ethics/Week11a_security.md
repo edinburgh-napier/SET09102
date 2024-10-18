@@ -2,7 +2,7 @@
 
 <hr class="splash">
 
-![Ross Haleliuk](../../images/ross_haleliuk.png)
+![Ross Haleliuk](../../images/people/ross_haleliuk.png)
 
 ### Cybersecurity of the future is going to look a lot like software engineering.
 

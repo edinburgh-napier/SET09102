@@ -9,7 +9,7 @@ nav_order: 4
 
 <hr class="splash">
 
-![Bjarne Stroustrup](../../images/bjarne_stroustrup.png)
+![Bjarne Stroustrup](../../images/people/bjarne_stroustrup.png)
 
 <blockquote class="pretty"><span>
 If you think it’s simple, then you have misunderstood the problem.

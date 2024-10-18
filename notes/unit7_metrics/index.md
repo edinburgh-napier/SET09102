@@ -9,7 +9,7 @@ nav_order: 8
 
 <hr class="splash">
 
-![Steve McConnell](../../images/steve_mcconnell.png)
+![Steve McConnell](../../images/people/steve_mcconnell.png)
 
 <blockquote class="pretty"><span>
 The problem with quick and dirty...is that dirty remains long after quick has been forgotten.

@@ -9,7 +9,7 @@ nav_order: 2
 
 <hr class="splash">
 
-![Martin Fowler](../../images/martin_fowler.png)
+![Martin Fowler](../../images/people/martin_fowler.png)
 
 <blockquote class="pretty"><span>
 Any fool can write code that a computer can understand. Good programmers write code that humans can understand.
