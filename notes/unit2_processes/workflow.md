@@ -30,7 +30,7 @@ documentation or let the rest of the team know that the task is complete. The so
 to these and many other types of communication and coordination issues is to establish
 team workflows and to make sure that the whole team sticks to them.
 
-![Fig. 1. Team tools ([xkcd](https://xkcd.com/1782))](https://imgs.xkcd.com/comics/team_chat.png) {: standalone #fig1 data-title="Don't be ignorant" }
+![Fig. 1. Team tools ([xkcd](https://xkcd.com/1782))](https://imgs.xkcd.com/comics/team_chat.png){: standalone #fig1 data-title="Don't be ignorant" }
 
 A software engineer makes a personal contribution to a project through the application of
 good programming practice and the adherence to the agreed workflow of the team. Once a
@@ -102,7 +102,7 @@ of usages in a note before the class definition and a way to find all the usages
 context menu.
 
 {: .information-title }
-> <i class="fa-regular fa-info-circle"></i> Key Considerations for C# Projects
+> <i class="fa-regular fa-lightbulb"></i> Key Considerations for C# Projects
 >
 >
 > * **Type Safety**: C# is a statically-typed language, which means that some potential issues 
