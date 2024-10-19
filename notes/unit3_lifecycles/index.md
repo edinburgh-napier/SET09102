@@ -787,136 +787,232 @@ the grid below the figure to explore these dimensions in more detail.
 
 ![Fig. 17. Dimensions of impact](images/dimensions_of_impact.png){: standalone #fig17 data-title="Dimensions of impact"}
 
-Functional
+<details class="blue-bar">
+<summary>Functional</summary>
 
 *   **Requirements Gathering**: Collect detailed functional requirements for the new feature.
-*   **Change in Features**: Introduction, modification, or removal of system features and functionalities.
+*   **Change in Features**: Introduction, modification, or removal of system features and 
+    functionalities.
 *   **User Workflow**: Alteration of user processes and how they interact with the system.
 *   **System Behaviour**: Changes in how the system responds to different inputs and conditions.
 
-Technical
+</details>
 
-*   **System Architecture**: Examine how the new feature will fit into the existing system architecture. Identify any required modifications to the current architecture.
-*   **Infrastructure**: Assess the need for additional hardware or software infrastructure, such as APIs, or cloud services.
-*   **Integration**: Determine how the new feature will integrate with existing components, such as databases, message processing, and user interfaces.
-*   **Data Storage**: Analyse changes needed in the database schema to accommodate new data requirements.
+<details class="blue-bar">
+<summary>Technical</summary>
 
-Operational
+*   **System Architecture**: Examine how the new feature will fit into the existing system 
+    architecture. Identify any required modifications to the current architecture.
+*   **Infrastructure**: Assess the need for additional hardware or software infrastructure, 
+    such as APIs, or cloud services.
+*   **Integration**: Determine how the new feature will integrate with existing components, such 
+    as databases, message processing, and user interfaces.
+*   **Data Storage**: Analyse changes needed in the database schema to accommodate new data 
+    requirements.
+
+</details>
+
+<details class="blue-bar">
+<summary>Operational</summary>
 
 *   **Maintenance**: Changes in maintenance schedules, procedures, and complexity.
 *   **Support**: Impact on technical support requirements and capacity.
 *   **Backup and Recovery**: Modifications to backup procedures and disaster recovery plans.
-*   **Business Processes**: Review existing business processes and workflows to identify changes needed to incorporate telephone call processing.
-*   **Staff Training**: Determine the training requirements for staff to effectively use and support the new features.
-*   **Support and Maintenance**: Assess the impact on support and maintenance processes, including potential changes to support documentation and procedures.
+*   **Business Processes**: Review existing business processes and workflows to identify changes 
+    needed to incorporate telephone call processing.
+*   **Staff Training**: Determine the training requirements for staff to effectively use and 
+    support the new features.
+*   **Support and Maintenance**: Assess the impact on support and maintenance processes, 
+    including potential changes to support documentation and procedures.
 
-Performance
+</details>
+
+<details class="blue-bar">
+<summary>Performance</summary>
 
 *   **System Speed**: Effects on response times, processing speed, and overall system performance.
 *   **Scalability**: Ability of the system to handle increased load or growth in users and data.
 *   **Resource Utilization**: Changes in the usage of system resources like CPU, memory, and storage.
 
-Reliability/stability
+</details>
+
+<details class="blue-bar">
+<summary>Reliability/stability</summary>
 
 *   **System Downtime**: Potential increase in system downtime during and after the change.
 *   **Error Rates**: Increase or decrease in the frequency of system errors and failures.
-*   **Data Integrity**: Ensuring data remains accurate, consistent, and secure during and after the change.
+*   **Data Integrity**: Ensuring data remains accurate, consistent, and secure during and after 
+    the change.
 
-Security
+</details>
+
+<details class="blue-bar">
+<summary>Security</summary>
 
 *   **Vulnerabilities**: Introduction of new security vulnerabilities or weaknesses.
-*   **Data Privacy**: Changes in how data is handled, affecting user privacy and compliance with regulations.
+*   **Data Privacy**: Changes in how data is handled, affecting user privacy and compliance with 
+    regulations.
 *   **Access Control**: Modification of user access levels and authentication mechanisms.
 
-Usability
+</details>
+
+<details class="blue-bar">
+<summary>Usability</summary>
 
 *   **User Interface**: Changes in the look and feel of the system interface.
 *   **User Experience**: Overall impact on user satisfaction, ease of use, and accessibility.
 
-Stakeholder
+</details>
 
-*   **Stakeholder Identification**: Identify all stakeholders affected by the change, including end-users, support staff, and management.
-*   **Stakeholder Communication**: Develop a communication plan to keep stakeholders informed about the change, its benefits, and its impact on their roles.
+<details class="blue-bar">
+<summary>Stakeholder</summary>
+
+*   **Stakeholder Identification**: Identify all stakeholders affected by the change, including 
+    end-users, support staff, and management.
+*   **Stakeholder Communication**: Develop a communication plan to keep stakeholders informed 
+    about the change, its benefits, and its impact on their roles.
 *   **User Satisfaction**: How users perceive and react to the changes.
-*   **Stakeholder Relationships**: Impact on relationships with customers, partners, and other stakeholders.
+*   **Stakeholder Relationships**: Impact on relationships with customers, partners, and other 
+    stakeholders.
 *   **Communication**: Need for effective communication to manage expectations and feedback.
 
-Financial
+</details>
 
-*   **Cost Estimation**: Estimate the costs associated with implementing the new feature, including development, infrastructure, training, and ongoing maintenance.
-    
-*   **Budgeting**: Determine if the project fits within the existing budget or if additional funding is needed.
-*   **Revenue**: Potential impact on revenue, either positive or negative, due to changes in system capabilities.
-*   **Return on Investment (ROI)**: Evaluation of the financial benefits versus the costs of the change.
+<details class="blue-bar">
+<summary>Financial</summary>
 
-Risk
+*   **Cost Estimation**: Estimate the costs associated with implementing the new feature, 
+    including development, infrastructure, training, and ongoing maintenance.
+*   **Budgeting**: Determine if the project fits within the existing budget or if additional 
+    funding is needed.
+*   **Revenue**: Potential impact on revenue, either positive or negative, due to changes in 
+    system capabilities.
+*   **Return on Investment (ROI)**: Evaluation of the financial benefits versus the costs of the 
+    change.
 
-*   **Risk Identification**: Identify potential risks associated with the change, such as technical challenges, integration issues, or user resistance.
-*   **Risk Mitigation**: Develop strategies to mitigate identified risks, such as phased implementation, thorough testing, and user training.
-*   **Contingency Planning**: Prepare contingency plans to address potential issues that may arise during implementation.
+</details>
 
-Compliance and regulatory
+<details class="blue-bar">
+<summary>Risk</summary>
+
+*   **Risk Identification**: Identify potential risks associated with the change, such as 
+    technical challenges, integration issues, or user resistance.
+*   **Risk Mitigation**: Develop strategies to mitigate identified risks, such as phased 
+    implementation, thorough testing, and user training.
+*   **Contingency Planning**: Prepare contingency plans to address potential issues that may 
+    arise during implementation.
+
+</details>
+
+<details class="blue-bar">
+<summary>Compliance and regulatory</summary>
 
 *   **Regulatory Requirements**: Assess any regulatory requirements related to telephone call handling, such as data protection laws and communication regulations.
-*   **Compliance Measures**: Ensure that the new feature complies with all relevant regulations and standards, and implement necessary measures to maintain compliance.
+*   **Compliance Measures**: Ensure that the new feature complies with all relevant regulations 
+    and standards, and implement necessary measures to maintain compliance.
 *   **Licensing**: Changes in software licensing requirements and costs.
 *   **Contractual Obligations**: Impact on existing contracts and service level agreements (SLAs).
 
-Strategic
+</details>
 
-*   **Alignment with Business Goals**: How well the change supports the organization’s strategic objectives.
+<details class="blue-bar">
+<summary>Strategic</summary>
+
+*   **Alignment with Business Goals**: How well the change supports the organization’s strategic 
+    objectives.
 *   **Market Position**: Impact on the organization's competitive position in the market.
 *   **Innovation**: Potential for the change to drive innovation and future growth.
 
+</details>
+
 #### Refactoring
 
-We have already considered the use of refactoring software during the development process. During the maintenance phase, proactive use of refactoring systematically improves the internal structure of the code without altering its external behaviour. It allows the development team to clean up and optimise code to enhance readability, reduce complexity, and improve maintainability. Through refactoring, developers can address technical debt, remove redundancies, and simplify intricate code segments, making the software easier to understand and modify. As a result, refactoring helps maintain the software's health over time, supports the seamless integration of new features, and facilitates ongoing adaptation to changing requirements and technologies. By investing in regular refactoring, organizations ensure that their software systems remain robust, agile, and capable of evolving efficiently to meet future business needs.
+We have already considered the use of refactoring software during the development process. During 
+the maintenance phase, proactive use of refactoring systematically improves the internal structure 
+of the code without altering its external behaviour. It allows the development team to clean up 
+and optimise code to enhance readability, reduce complexity, and improve maintainability. Through 
+refactoring, developers can address technical debt, remove redundancies, and simplify intricate 
+code segments, making the software easier to understand and modify. As a result, refactoring helps 
+maintain the software's health over time, supports the seamless integration of new features, and 
+facilitates ongoing adaptation to changing requirements and technologies. By investing in regular 
+refactoring, organizations ensure that their software systems remain robust, agile, and capable 
+of evolving efficiently to meet future business needs.
 
-Earlier we discussed three types of change, corrective, adaptive and perfective. Given the imperative to pay down technical debt where possible, some authors have suggested a fourth category of _preventative_ change. Despite the risk of introducing new bugs when modifying code, preventative tasks use refactoring to
+Earlier we discussed three types of change, corrective, adaptive and perfective. Given the 
+imperative to pay down technical debt where possible, some authors have suggested a fourth 
+category of _preventative_ change. Despite the risk of introducing new bugs when modifying code, 
+preventative tasks use refactoring to
 
 *   Clarify confusing code by adding comments or improving class, function and variable names
 *   Consolidate duplicated code to simplify maintenance
 *   Adjust code to accommodate future changes more easily
 
-Bug-prone sections of code, often complicated or frequently modified, benefit significantly from refactoring to prevent future issues. Although refactoring requires careful consideration and testing to avoid replacing functional code with broken code, it ultimately leads to cleaner, more maintainable, and less error-prone software.
+Bug-prone sections of code, often complicated or frequently modified, benefit significantly from 
+refactoring to prevent future issues. Although refactoring requires careful consideration and 
+testing to avoid replacing functional code with broken code, it ultimately leads to cleaner, 
+more maintainable, and less error-prone software.
 
 ### Re-engineering
 
-Legacy systems pose some characteristic problems in terms of maintenance. As the definition above states, a legacy system is integral to ongoing operations. When a potential change to a legacy system is identified, several dimensions of impact take on particular importance. Changes to legacy systems are more expensive and risk-prone compared to more modern systems, for example. Retaining the system in its current form may not be compatible with the current organisational strategy and may expose the organisation to security vulnerabilities not present in current systems. When considering a change to a legacy system, therefore, the option to _re-engineer_ the entire system must be considered. If the system ceases to deliver business value, another option might be to scrap it completely and migrate users to an alternative. Fig. 6. divides legacy systems into four clusters depending on their business value and system quality.
+Legacy systems pose some characteristic problems in terms of maintenance. As the definition 
+above states, a legacy system is integral to ongoing operations. When a potential change to a 
+legacy system is identified, several dimensions of impact take on particular importance. Changes 
+to legacy systems are more expensive and risk-prone compared to more modern systems, for example. 
+Retaining the system in its current form may not be compatible with the current organisational 
+strategy and may expose the organisation to security vulnerabilities not present in current 
+systems. When considering a change to a legacy system, therefore, the option to _re-engineer_ 
+the entire system must be considered. If the system ceases to deliver business value, another 
+option might be to scrap it completely and migrate users to an alternative. Fig. 18. divides 
+legacy systems into four clusters depending on their business value and system quality.
 
-![Legacy systems classification](https://moodle.napier.ac.uk/draftfile.php/346/user/draft/795623922/legacy_system_classification.png)
-
-Fig. 6. Classifying legacy systems ([Sommerville, 2016](https://napier.primo.exlibrisgroup.com/permalink/44NAP_INST/13v8mut/alma9923404758802111))
+![Fig. 18. Classifying legacy systems ([Sommerville, 2016](https://napier.primo.exlibrisgroup.com/permalink/44NAP_INST/13v8mut/alma9923404758802111))](images/legacy_system_classification.png){: standalone #fig18 data-title="Classifying legacy systems"}
 
 Classifying systems in this way suggests four different strategies:
 
-Business value
+<table class="quadrants">
+    <tbody><tr><th rowspan="2">Business value</th><th>High</th><td>Re-engineer or replace</td><td>Maintain</td>
+    </tr><tr><th>Low</th><td>Scrap</td><td>Replace with COTS, scrap or maintain</td></tr>
+    <tr><td colspan="2"></td><th>Low</th><th>High</th></tr>
+    <tr><td colspan="2"></td><th colspan="2">System quality</th></tr>
+</tbody></table>
 
-High
+The need for software re-engineering became significant by the late 1990s, driven by the transition 
+of information systems to web-based interfaces. Re-engineering emerged to address the challenges 
+posed by legacy systems that are critical for business operations. Researchers have since developed 
+flexible and repeatable process models and road maps for re-engineering these systems. According 
+to [Sommerville](https://napier.primo.exlibrisgroup.com/permalink/44NAP_INST/13v8mut/alma9923404758802111), 
+software engineering encompasses all aspects of software production, from specification to 
+maintenance. In contrast, re-engineering focuses on making legacy systems more maintainable by 
+revisiting documentation, reorganizing system architecture, and re-implementing the system using 
+modern technologies while preserving core functionalities. Unlike forward engineering, which 
+starts with a specification and moves towards implementation, re-engineering begins with an 
+existing system and transforms it through understanding and modification. Re-engineering is 
+necessary when code structures become unclear, documentation is missing, support for current 
+hardware and software becomes obsolete, original developers are unavailable, and extensive 
+modifications render the system difficult or expensive to change.
 
-Re-engineer or replace
+A key component of the re-engineering process is an initial activity aimed at understanding the 
+existing system. When represented in process diagrams, it is the equivalent of requirements 
+analysis in the forward engineering scenario. Although the existing codebase captures the 
+structure and operation of the system, it is not necessarily easy to understand. This has led 
+[some authors](https://ceur-ws.org/Vol-3672/PT-paper2.pdf) to recommend the application of 
+standard requirements analysis techniques during the system understanding phase. The term 
+_reverse engineering_ is often used to describe the process of analyzing and understanding an 
+existing software system to extract knowledge or design information from it. This process 
+involves examining the system's components, architecture, and behaviour to create a higher-level 
+representation, such as models or documentation, which may not be available or may have become 
+outdated over time. The goal of reverse engineering is to gain a comprehensive understanding of 
+how the legacy system operates.
 
-Maintain
+Once an abstract understanding of the legacy system has been developed, the next stage of the 
+process is often referred to as _transformation_. The central concept is that the structure of 
+the existing system is based on outdated conventions and needs to be redesigned using current 
+techniques. Only after this transformation stage which may also include removing any unnecessary 
+elements is the system ready for redevelopment.
 
-Low
-
-Scrap
-
-Replace with COTS, scrap or maintain
-
-Low
-
-High
-
-System quality
-
-The need for software re-engineering became significant by the late 1990s, driven by the transition of information systems to web-based interfaces. Re-engineering emerged to address the challenges posed by legacy systems that are critical for business operations. Researchers have since developed flexible and repeatable process models and road maps for re-engineering these systems. According to [Sommerville](https://napier.primo.exlibrisgroup.com/permalink/44NAP_INST/13v8mut/alma9923404758802111), software engineering encompasses all aspects of software production, from specification to maintenance. In contrast, re-engineering focuses on making legacy systems more maintainable by revisiting documentation, reorganizing system architecture, and re-implementing the system using modern technologies while preserving core functionalities. Unlike forward engineering, which starts with a specification and moves towards implementation, re-engineering begins with an existing system and transforms it through understanding and modification. Re-engineering is necessary when code structures become unclear, documentation is missing, support for current hardware and software becomes obsolete, original developers are unavailable, and extensive modifications render the system difficult or expensive to change.
-
-A key component of the re-engineering process is an initial activity aimed at understanding the existing system. When represented in process diagrams, it is the equivalent of requirements analysis in the forward engineering scenario. Although the existing codebase captures the structure and operation of the system, it is not necessarily easy to understand. This has led [some authors](https://ceur-ws.org/Vol-3672/PT-paper2.pdf) to recommend the application of standard requirements analysis techniques during the system understanding phase. The term _reverse engineering_ is often used to describe the process of analyzing and understanding an existing software system to extract knowledge or design information from it. This process involves examining the system's components, architecture, and behaviour to create a higher-level representation, such as models or documentation, which may not be available or may have become outdated over time. The goal of reverse engineering is to gain a comprehensive understanding of how the legacy system operates.
-
-Once an abstract understanding of the legacy system has been developed, the next stage of the process is often referred to as _transformation_. The central concept is that the structure of the existing system is based on outdated conventions and needs to be redesigned using current techniques. Only after this transformation stage which may also include removing any unnecessary elements is the system ready for redevelopment.
-
-It is worth mentioning that at the time of writing, a common theme in the literature is the migration of legacy systems to a microservices architecture which is deployed on a cloud service. However, further discussion of this particular case is beyond the scope of the module.
+It is worth mentioning that at the time of writing, a common theme in the literature is the 
+migration of legacy systems to a microservices architecture which is deployed on a cloud service. 
+However, further discussion of this particular case is beyond the scope of the module.
 
 ### Further reading
 

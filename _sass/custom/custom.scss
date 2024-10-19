@@ -234,6 +234,47 @@ div.toc-container details > ul > ul {
   list-style: disc;
 }
 
+// TABLES
+
+table.quadrants {
+    margin: 1em 0 2em 2em;
+}
+table.quadrants th,
+table.quadrants td {
+    text-align: center;
+    padding: 1em;
+}
+table.quadrants tr:nth-child(1) td,
+table.quadrants tr:nth-child(2) td {
+    height: 8em;
+    border: 1px solid grey;
+}
+table.quadrants tr:nth-child(1) td:nth-child(3),
+table.quadrants tr:nth-child(2) td:nth-child(3) {
+    background-color: var(--pale-blue);
+}
+table.quadrants tr:nth-child(1) td:nth-child(4) {
+    background-color: var(--pale-green);
+}
+table.quadrants tr:nth-child(2) td:nth-child(2) {
+    background-color: var(--pale-orange);
+}
+
+table.quadrants tr:first-child th:first-child {
+    transform: rotate(-90deg);
+
+    /* Legacy vendor prefixes that you probably don't need... */
+    /* Safari */
+    -webkit-transform: rotate(-90deg);
+    /* Firefox */
+    -moz-transform: rotate(-90deg);
+    /* IE */
+    -ms-transform: rotate(-90deg);
+    /* Opera */
+    -o-transform: rotate(-90deg);
+}
+
+
 // SLIDES
 
 /* Slide trigger */
