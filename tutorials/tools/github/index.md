@@ -1,5 +1,5 @@
 ---
-title: Using GitHub
+title: GitHub
 parent: Tools
 has_children: true
 has_toc: false
