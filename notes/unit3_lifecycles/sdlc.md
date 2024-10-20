@@ -3,7 +3,7 @@ title: SDLC
 parent: Lifecycles and Stages
 has_children: true
 has_toc: false
-nav_order: 1
+nav_order: 2
 ---
 
 # The Software Development LifeCycle (SDLC)
@@ -185,3 +185,10 @@ execution.
 
 {: .tip-title }
 > [<i class="fa-regular fa-lightbulb"></i> Practical tips for when to use structured methods](sdlc_tips)
+
+## Further reading
+
+* [SWEBOK: Software Engineering Body of Knowledge](https://napier.primo.exlibrisgroup.com/permalink/44NAP_INST/19n0mho/cdi_bsi_primary_000000000030314312)
+* [SEVOCAB: System Engineering dictionary of terms](https://pascal.computer.org/sev_display/index.action)
+* [ISO/IEC/IEEE 15288:2023](https://doi-org.napier.idm.oclc.org/10.1109/IEEESTD.2023.10123367)
+* Deployment ([Stephens, 2022, Ch. 14](https://learning.oreilly.com/library/view/beginning-software-engineering/9781119901709/c14.xhtml))
