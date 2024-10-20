@@ -120,51 +120,6 @@ of practical difficulties. These include
 To address these issues, several modifications to the waterfall approach have been proposed including
 the two outlined below.
 
-### The V model
-
-The main innovation in the V model was to identify different types of testing that were used at 
-different stages of the project. This went some way to resolving the problem with postponed testing,
-but other issues still remained.
-
-![Fig 5: V model ([Rook, 1986](https://doi.org/10.1049/sej.1986.0003))](images/v-model.png){: standalone #fig5 data-title="V model"}
-
-### The waterfall model with feedback
-
-Another refinement of the waterfall model attempted to reconcile the sequential nature of the stages
-with the reality of discovering error over time by introducing feedback loops. The idea was to
-contain errors within a phase so that the transition to the next phase could still be made cleanly.
-In fact, this version of the waterfall model incorporates ideas from Royce's original paper. The main
-idea is that events during the project can trigger the return to an earlier stage as illustrated in
-Fig. 6.
-
-![Fig. 6: The waterfall model with feedback](images/feedback_waterfall.png){: standalone #fig6 data-title="The waterfall model with feedback"}
-
-### The iterative waterfall model
-
-The number of variations on the waterfall model are evidence that something was wrong and needed 
-fixing. A further version proposed the idea of a single project being decomposed into a series of
-waterfalls, one feeding into the next as shown in Fig. 7.
-
-![Fig 7: The iterative waterfall model](images/iterative_waterfall.png){: standalone #fig7 data-title="The iterative waterfall model"}
-
-### The spiral model
-
-In another step away from the strictly linear approach, Barry Boehm introduced the spiral model in 
-[1986](https://doi.org/10.1109/2.59). While visually complex, the spiral model, shown in Fig. 8, 
-was based on the idea that risk management should be the main concern in software development projects.
-Starting with simple, fundamental piece of the development, it explicitly captured the concept of
-iterative prototyping by following a repeating pattern of four stages:
-
-1. Determine objectives, alternatives and constraints
-2. Evaluate alternatives and identify and resolve risks
-3. Develop and verify next-level product
-4. Plan next phase
-
-However, it also inherited extensive testing towards the end of the project 
-from the traditional waterfall approach.
-
-![Fig. 8: The spiral model ([Boehm, 1986](https://doi.org/10.1109/2.59))](images/spiral.png){: standalone #fig8 data-title="The spiral model"}
-
 ## Agile
 
 Predictive models have two major drawbacks. The first is that they do not have a way to manage the 
