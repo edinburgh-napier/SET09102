@@ -13,7 +13,7 @@ mermaid: true
 ![Bjarne Stroustrup](../../images/people/bjarne_stroustrup.png)
 
 <blockquote class="pretty"><span>
-If you think it’s simple, then you have misunderstood the problem.
+If you think it’s simple, then you have <br>misunderstood the problem.
 </span></blockquote>
 <p class="attribution">Bjarne Stroustrup</p>
 
