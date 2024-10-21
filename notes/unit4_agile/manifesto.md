@@ -64,7 +64,7 @@ traditional methodologies toward a more flexible, people-centered approach.
 > information and changing circumstances. This flexibility allows them to deliver the most value 
 > to customers, even if it means changing course mid-project.
 
-{: warning-title }
+{: .warning-title }
 > <i class="fa-solid fa-exclamation-triangle"></i> Warning!
 > 
 > Do not misinterpret these values! They do not imply that you can forget about planning entirely

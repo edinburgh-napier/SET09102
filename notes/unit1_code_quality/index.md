@@ -14,7 +14,7 @@ nav_order: 2
 <blockquote class="pretty"><span>
 Any fool can write code that a computer can understand. Good programmers write code that humans can understand.
 </span></blockquote>
-<p class="attribution">Martin Fowler</p>
+<p class="attribution"><a href="https://www.martinfowler.com/">Martin Fowler</a></p>
 
 <hr class="splash">
 
