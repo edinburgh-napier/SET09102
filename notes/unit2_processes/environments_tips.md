@@ -13,7 +13,7 @@ nav_order: 1
     > Learn the purpose of the different environments typically used in software development: development, 
     > test (QA/Staging), and production.
     > 
-    > Familiarize yourself with how each environment serves the project. The development environment is 
+    > Familiarise yourself with how each environment serves the project. The development environment is 
     > where the code is written, the test environment is where quality assurance happens, and production 
     > is where the application is live and used by customers.
 

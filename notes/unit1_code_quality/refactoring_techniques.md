@@ -9,7 +9,7 @@ nav_order: 4
 # Refactoring techniques
 
 Refactoring is the process of improving the internal structure of existing code without altering 
-its external behavior. It involves making incremental changes to the codebase to enhance 
+its external behaviour. It involves making incremental changes to the codebase to enhance 
 readability, maintainability, and performance while ensuring that the system continues to 
 function as expected. Refactoring is a critical practice in software engineering because, 
 over time, codebases can become cluttered, difficult to manage, or suffer from technical debt 
@@ -17,7 +17,7 @@ due to rapid development, evolving requirements, or poor initial design.
 
 The primary goal of refactoring is to make the code cleaner, more efficient, and easier to 
 extend while maintaining its original functionality. This often involves simplifying complex 
-logic, removing duplication, improving the organization of classes and methods, and applying 
+logic, removing duplication, improving the organisation of classes and methods, and applying 
 design patterns where appropriate. Effective refactoring helps prevent bugs, reduces the cost 
 of future modifications, and enhances overall code quality, leading to more robust and scalable 
 software systems.
@@ -394,7 +394,7 @@ engineering principles and design patterns.
         // Address information
         public string Street { get; set; }
         public string City { get; set; }
-        public string ZipCode { get; set; }
+        public string PostCode { get; set; }
     
         public void SendEmail()
         {
@@ -422,12 +422,12 @@ engineering principles and design patterns.
     {
         public string Street { get; set; }
         public string City { get; set; }
-        public string ZipCode { get; set; }
+        public string PostCode { get; set; }
     }
     ```
     
     This refactor follows the Single Responsibility Principle (SRP), as each class is now 
-    responsible for one thing. The `Customer` class handles customer-specific data and behavior, 
+    responsible for one thing. The `Customer` class handles customer-specific data and behaviour, 
     while the `Address` class encapsulates address-related information. This separation 
     simplifies future modifications, improves code readability, and reduces the likelihood 
     of changes to one class affecting the other.
@@ -496,7 +496,7 @@ engineering principles and design patterns.
 
 3. **Replace Conditional with Polymorphism**
 
-    When you have conditionals (e.g., if-else or switch statements) that change behavior 
+    When you have conditionals (e.g., if-else or switch statements) that change behaviour 
     based on the type of an object, you can refactor by using polymorphism to simplify the 
     code. This adheres to the Open/Closed Principle (OCP), as the class can now be extended 
     without modification.
@@ -560,7 +560,7 @@ engineering principles and design patterns.
 
 4. **Replace Data Value with Object**
 
-    When primitive data is used to represent multiple attributes or behaviors, you can 
+    When primitive data is used to represent multiple attributes or behaviours, you can 
     refactor it into a class that represents that concept. This follows Encapsulation and SRP.
     
     <br>
@@ -602,9 +602,9 @@ engineering principles and design patterns.
     }
     ```
     
-    This refactor improves encapsulation by bundling product-related attributes and behaviors 
+    This refactor improves encapsulation by bundling product-related attributes and behaviours 
     within the `Product` class, keeping the logic grouped logically. It follows SRP, as `Product` 
-    now manages its own state, and the `Order` class focuses on order-specific behavior. This 
+    now manages its own state, and the `Order` class focuses on order-specific behaviour. This 
     separation of concerns makes both classes easier to maintain and extend.
     
     <br>
@@ -657,7 +657,7 @@ engineering principles and design patterns.
 6. **Introduce Null Object**
 
 Instead of returning `null` and having many `null` checks in the code, you can introduce a 
-Null Object that represents a default behavior or empty state. This improves encapsulation 
+Null Object that represents a default behaviour or empty state. This improves encapsulation 
 and reduces error-prone null checks.
 
 <br>
@@ -702,7 +702,7 @@ public string GetCustomerStreet(Customer customer)
 Using a Null Object avoids error-prone `null` checks and simplifies the code. This follows 
 the [Tell, Don’t Ask](https://deviq.com/principles/tell-dont-ask) principle, allowing 
 methods to ask objects to do things rather than query their state and act accordingly. 
-This also enhances encapsulation by allowing objects to manage their own behavior for 
+This also enhances encapsulation by allowing objects to manage their own behaviour for 
 edge cases (like `null` states).
 
 <br>
@@ -806,7 +806,7 @@ Here are key points during the development process where refactoring techniques 
     clarity, structure, and adherence to best practices. The first version of the code often 
     focuses on functionality, and as developers gain a deeper understanding of the problem, 
     it’s important to refactor the code to make it simpler, more modular, and easier to 
-    maintain. This step ensures that the initial logic is refined and optimized before it 
+    maintain. This step ensures that the initial logic is refined and optimised before it 
     becomes part of the larger codebase.
 
 3. Before Adding New Features
@@ -815,7 +815,7 @@ Here are key points during the development process where refactoring techniques 
     state of the code. If the existing codebase is burdened with technical debt or complexity, 
     refactoring it before introducing new features makes the process smoother and reduces 
     the risk of introducing bugs. By cleaning up the code first, developers ensure that the 
-    foundation is solid, allowing for easier extension and minimizing future headaches.
+    foundation is solid, allowing for easier extension and minimising future headaches.
 
 4. When Fixing Bugs
 
@@ -839,14 +839,14 @@ Here are key points during the development process where refactoring techniques 
     strategy. Over time, even well-written code can accumulate technical debt as new features 
     are added or requirements change. Regular refactoring, such as setting aside time during 
     each sprint or development cycle, ensures that the code remains clean and manageable. 
-    This approach minimizes long-term technical debt and keeps the codebase in a healthy 
+    This approach minimises long-term technical debt and keeps the codebase in a healthy 
     state, allowing the team to focus on adding value rather than constantly fixing problems.
 
 7. When Performance Becomes a Concern
 
     If you identify performance bottlenecks or inefficient code, refactoring can help you 
-    streamline operations, optimize algorithms, or reduce redundancy, all without altering 
-    the external behavior of the system. By addressing performance issues through refactoring, 
+    streamline operations, optimise algorithms, or reduce redundancy, all without altering 
+    the external behaviour of the system. By addressing performance issues through refactoring, 
     you ensure that the code remains both functional and efficient.
 
 8. When the Code Becomes Hard to Understand (Code Smells)

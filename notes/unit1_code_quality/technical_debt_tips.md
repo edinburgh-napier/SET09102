@@ -15,10 +15,10 @@ of coding standards and adhering to recognised development principles can all he
 eliminate technical debt. However, there are some additional strategies that can be used
 once the concept of technical debt has been acknowledged.
 
-1. Prioritize technical debt in backlog
+1. Prioritise technical debt in backlog
 
     > Treat technical debt like any other task and include it in the project backlog. 
-    > Prioritize addressing high-impact debt that hinders development or creates significant 
+    > Prioritise addressing high-impact debt that hinders development or creates significant 
     > risks. This ensures that technical debt is acknowledged and managed alongside feature 
     > development.
 
@@ -37,7 +37,7 @@ once the concept of technical debt has been acknowledged.
 4. Avoid Quick Fixes and Shortcuts
 
     > While it’s sometimes necessary to take shortcuts for short-term gains, avoid 
-    > consistently prioritizing speed over quality. Whenever a quick fix is applied, plan 
+    > consistently prioritising speed over quality. Whenever a quick fix is applied, plan 
     > to revisit and refactor it when time permits, ensuring the debt is temporary and doesn’t 
     > accumulate.
 

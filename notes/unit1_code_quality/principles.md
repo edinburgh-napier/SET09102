@@ -58,10 +58,10 @@ as time constraints, technical limitations, and user expectations.
 
 The SOLID principles are a set of five design guidelines that aim to make software 
 systems more maintainable, scalable, and flexible. These principles promote clean and 
-modular code by encouraging better organization and reducing dependencies between 
+modular code by encouraging better organisation and reducing dependencies between 
 components. By following SOLID principles, developers can create systems that are easier 
-to understand, extend, and modify, while also minimizing the risk of introducing bugs 
-when making changes. These principles are widely recognized as foundational concepts in 
+to understand, extend, and modify, while also minimising the risk of introducing bugs 
+when making changes. These principles are widely recognised as foundational concepts in 
 object-oriented software design and are key to building robust software architectures.
 
 ## Single Responsibility Principle
@@ -129,7 +129,7 @@ public class Invoice
   though the invoice generation logic hasn’t changed. This makes the code fragile.
 * **Testing Complication**: Testing this class would involve setting up both invoice 
   generation and email sending, even if you're only interested in testing one of those 
-  behaviors.
+  behaviours.
 
 **Solution: Refactor Using SRP**
 
@@ -218,19 +218,19 @@ parts of the system.
 
 **Key Concepts:**
 
-* **Open for Extension**: You should be able to extend the behavior of a class or 
+* **Open for Extension**: You should be able to extend the behaviour of a class or 
   module to add new functionality.
 * **Closed for Modification**: Once a class or module is implemented and tested, you 
   should not modify its existing code to prevent introducing new bugs or breaking 
   existing functionality.
-* **Avoid Breaking Changes**: By adhering to OCP, you minimize the risk of breaking 
+* **Avoid Breaking Changes**: By adhering to OCP, you minimise the risk of breaking 
   existing code when adding new features, leading to more stable and maintainable software.
 
 OCP is important because it enhances the maintainability and flexibility of a software 
 system. By ensuring that software entities are open for extension but closed for 
 modification, developers can add new features or functionality without altering the 
-existing, stable code. This approach minimizes the risk of introducing bugs or 
-breaking existing behavior, which is crucial in larger systems where changes can 
+existing, stable code. This approach minimises the risk of introducing bugs or 
+breaking existing behaviour, which is crucial in larger systems where changes can 
 have widespread impacts. OCP also promotes scalability, allowing the system to grow 
 by adding new modules or classes instead of rewriting or modifying existing ones. 
 Ultimately, OCP leads to a more modular and adaptable codebase that can evolve over 
@@ -279,7 +279,7 @@ public class InvoicePrinter
 
 To apply the OCP, we can refactor the code by introducing an interface that defines a 
 method for printing invoices, and then create separate classes for each specific format. 
-This way, when a new format is needed, you can extend the behavior by adding a new 
+This way, when a new format is needed, you can extend the behaviour by adding a new 
 class without modifying the existing ones.
 
 ``` c#
@@ -360,7 +360,7 @@ public class InvoiceService
 > OCP encourages you to write code that can be easily extended but not modified. This 
 > leads to better maintainability and stability in software projects.
 > 
-> OCP helps you add new features or behaviors (such as new formats for invoice printing) 
+> OCP helps you add new features or behaviours (such as new formats for invoice printing) 
 > without altering the tested and stable parts of your system.
 > 
 > By using abstractions (like interfaces or abstract classes), you can keep your core 
@@ -375,26 +375,26 @@ public class InvoiceService
 The Liskov Substitution Principle (LSP) states that objects of a superclass should be 
 replaceable with objects of a subclass without affecting the correctness of the program. 
 In simpler terms, if class B is a subclass of class A, you should be able to replace 
-A with B without changing the expected behavior of the program.
+A with B without changing the expected behaviour of the program.
 
 This principle helps maintain polymorphism while ensuring that inheritance is used 
 correctly, preserving the expected functionality of the base class when extending it. 
-Violating LSP leads to unexpected behavior and breaks the substitutability of objects, 
+Violating LSP leads to unexpected behaviour and breaks the substitutability of objects, 
 reducing the flexibility and reliability of the system.
 
 **Key Concepts:**
 
 * **Substitutability**: Subclasses should be able to stand in for their base classes 
   without affecting the correctness of the application.
-* **Behavioral Integrity**: Subclasses should not override or alter base class methods 
-  in a way that violates the expected behavior.
+* **behavioural Integrity**: Subclasses should not override or alter base class methods 
+  in a way that violates the expected behaviour.
 * **Avoid Breaking Contracts**: Subclasses must honor the "contract" established by the 
   base class, meaning they should not weaken postconditions or strengthen preconditions 
   of the base class methods.
 
 LSP is crucial because it ensures that a program remains correct and reliable when 
 subclasses are used in place of their base classes. Adhering to LSP allows developers to 
-extend functionality through inheritance without breaking the existing behavior of the 
+extend functionality through inheritance without breaking the existing behaviour of the 
 system. It maintains the integrity of polymorphism by ensuring that objects of a 
 subclass can seamlessly replace those of the superclass, without causing unexpected 
 outcomes or requiring additional checks. This principle promotes flexibility, enabling 
@@ -408,7 +408,7 @@ compromising reliability or correctness.
 
 Let’s say we have a base class `Bird` with a method `Fly()`. We then create a subclass 
 `Penguin`, but penguins can’t fly. This introduces a violation of the Liskov Substitution 
-Principle because substituting a `Penguin` for a `Bird` breaks the expected behavior defined 
+Principle because substituting a `Penguin` for a `Bird` breaks the expected behaviour defined 
 by the base class.
 
 ``` c#
@@ -445,7 +445,7 @@ To adhere to LSP, we need to avoid forcing all birds to implement the `Fly()` me
 Instead, we can refactor the design by introducing a more appropriate abstraction. We 
 can create a separate `IFlyable` interface that is implemented by birds that can fly, and 
 remove the `Fly()` method from the base `Bird` class. This way, we separate the flying 
-behavior from the general bird behavior, ensuring that subclasses only implement behaviors 
+behaviour from the general bird behaviour, ensuring that subclasses only implement behaviours 
 that apply to them.
 
 ``` c#
@@ -487,14 +487,14 @@ public class Penguin : Bird
   `Penguin` is not forced to provide an invalid implementation for flying.
 * **More Flexible Design**: Other animals that can fly (like bats or insects) can also 
   implement the `IFlyable` interface, increasing the flexibility of the design without 
-  changing the core behavior of the `Bird` class.
+  changing the core behaviour of the `Bird` class.
 * **Simplified Code**: The code now makes it clear which animals can fly and which 
   cannot, reducing the need for conditionals or error-prone workarounds.
 
 ### Key Takeaways:
 
 > LSP ensures that subclasses can replace their base classes without introducing unexpected 
-> behavior, maintaining the correctness of the program.
+> behaviour, maintaining the correctness of the program.
 > 
 > When using inheritance, avoid overriding or altering methods in a way that violates the 
 > expectations set by the base class. If a subclass cannot properly implement a method, 
@@ -676,7 +676,7 @@ the system becomes easier to extend and modify without breaking existing functio
 
 * **Decoupling**: High-level modules should depend on abstract interfaces, not concrete 
   implementations, so they are not tightly coupled to low-level details.
-* **Abstractions First**: The overall design should prioritize abstractions (such as 
+* **Abstractions First**: The overall design should prioritise abstractions (such as 
   interfaces) that allow for the flexible swapping of implementations without changing 
   the high-level logic.
 * **Maintainability**: By inverting dependencies, you make the system more maintainable 
@@ -846,7 +846,7 @@ principles aim to address common challenges such as managing complexity, ensurin
 maintainability, and improving collaboration in development teams. Examples include DRY 
 (Don't Repeat Yourself), which encourages the elimination of redundant code, and KISS 
 (Keep It Simple, Stupid), which advocates for simple and straightforward solutions to 
-problems. Additionally, the YAGNI (You Aren’t Gonna Need It) principle emphasizes 
+problems. Additionally, the YAGNI (You Aren’t Gonna Need It) principle emphasises 
 building only what is necessary, avoiding over-engineering and the Law of Demeter (LoD)
 which encourages loose coupling of classes. These principles 
 collectively guide software engineers in making better design decisions, improving code 
@@ -858,21 +858,21 @@ The DRY (Don't Repeat Yourself) principle is one of the most important guideline
 software engineering. It states that every piece of knowledge or logic should be 
 represented in a system only once. Duplication of code or logic across a system leads 
 to increased complexity, makes maintenance difficult, and introduces the risk of 
-inconsistencies. DRY encourages developers to avoid repetition by centralizing logic, 
+inconsistencies. DRY encourages developers to avoid repetition by centralising logic, 
 reducing redundancy, and promoting code reuse.
 
 **Key Concepts of DRY:**
 
 * **Avoid Code Duplication**: Repeated logic or code should be abstracted or refactored 
   into reusable components (such as methods, functions, or modules).
-* **Maintainability**: Centralizing repeated logic makes the system easier to maintain. 
+* **Maintainability**: Centralising repeated logic makes the system easier to maintain. 
   When changes are necessary, you only need to update the code in one place.
 * **Consistency**: DRY reduces the risk of errors that can occur when maintaining 
   multiple, inconsistent copies of the same logic.
 
 The DRY principle is important because it promotes efficiency, maintainability, and 
 consistency in software development. By avoiding code duplication, developers can 
-centralize logic, making it easier to update and maintain. When the same logic is 
+centralise logic, making it easier to update and maintain. When the same logic is 
 repeated in multiple places, any necessary change requires updating each instance, 
 increasing the risk of errors and inconsistencies. DRY ensures that changes only need 
 to be made in one place, which reduces maintenance efforts and the likelihood of bugs. 
@@ -929,7 +929,7 @@ can be passed as a parameter, making the code reusable and reducing duplication.
 ``` c#
 public class DiscountService
 {
-    // Centralized logic for calculating the discount
+    // Centralised logic for calculating the discount
     public double CalculateDiscount(double price, double discountRate)
     {
         double discount = price * discountRate;
@@ -960,7 +960,7 @@ public class DiscountService
 
 ### Key Takeaways
 
-> The DRY principle helps prevent code duplication by encouraging the centralization of 
+> The DRY principle helps prevent code duplication by encouraging the centralisation of 
 > repeated logic into reusable components such as methods, classes, or modules.
 > 
 > Duplication increases complexity, maintenance costs, and the likelihood of bugs, while 
@@ -988,7 +988,7 @@ solutions, particularly when a simpler approach would suffice.
 * **Maintainability**: Simpler code is easier to maintain, troubleshoot, and extend 
   over time.
 
-The KISS principle is important because it emphasizes the value of simplicity in 
+The KISS principle is important because it emphasises the value of simplicity in 
 software development. Simple code is easier to read, understand, and maintain, making 
 it more accessible to other developers and your future self. When code is kept simple, 
 it becomes easier to troubleshoot, debug, and extend, reducing the likelihood of 
@@ -1228,7 +1228,7 @@ public class AuthService
 > The YAGNI principle encourages developers to avoid building features that are not 
 > immediately required, focusing on simplicity and preventing over-engineering.
 > 
-> Writing only what is needed minimizes complexity, improves maintainability, and 
+> Writing only what is needed minimises complexity, improves maintainability, and 
 > reduces the risk of technical debt.
 > 
 > Developers should focus on the current requirements and defer additional features 

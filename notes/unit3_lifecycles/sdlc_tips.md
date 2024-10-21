@@ -39,12 +39,12 @@ nav_order: 1
 5. Need for Extensive Documentation
 
     > If detailed documentation is required for handover, future maintenance, or regulatory reasons, 
-    > a structured methodology is beneficial. These methods emphasize creating thorough documentation 
+    > a structured methodology is beneficial. These methods emphasise creating thorough documentation 
     > at each phase, which ensures that all aspects of the system are clearly recorded for future use.
 
 6. Team Size and Structure
 
-    > Structured methodologies can be more effective for large teams or organizations that require 
+    > Structured methodologies can be more effective for large teams or organisations that require 
     > defined roles, responsibilities, and workflows. If your team is large and dispersed, a structured 
     > methodology provides clarity and coordination across multiple stakeholders.
 

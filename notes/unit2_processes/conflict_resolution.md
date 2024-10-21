@@ -18,7 +18,7 @@ integration of changes from multiple contributors happens smoothly and does not 
 into the project.
 
 Effective conflict resolution is essential for maintaining a clean, functioning codebase and 
-minimizing disruption to the development workflow. It involves carefully reviewing conflicting 
+minimising disruption to the development workflow. It involves carefully reviewing conflicting 
 changes, understanding the intent behind each modification, and determining the best way to 
 merge them. This process requires clear communication between team members, attention to detail, 
 and familiarity with the tools used for version control.
@@ -67,7 +67,7 @@ changed which can happen in several situations:
 * Delayed pull requests where new changes have been merged into the main branch in the meantime
 
 You need to be alert to the potential for conflicts in these situations so that you can take 
-proactive steps to avoid or minimize conflicts. Preventative measures include syncing/rebasing 
+proactive steps to avoid or minimise conflicts. Preventative measures include syncing/rebasing 
 your development branch, communicating with teammates, and breaking down work into smaller, 
 independent tasks. The last strategy means that tasks will be completed more quickly which allows
 less time for parallel changes to accumulate in the main branch.
@@ -164,7 +164,7 @@ Tools like [KDiff3](https://kdiff3.sourceforge.net/), [Meld](https://meldmerge.o
 [Beyond Compare](https://www.scootersoftware.com/home), and 
 [P4Merge](https://www.perforce.com/products/helix-core-apps/merge-diff-tool-p4merge) are 
 external visual merge tools that can be integrated with Git. These tools provide side-by-side or 
-three-way comparisons to visualize conflicts, making it easier to resolve them by showing the 
+three-way comparisons to visualise conflicts, making it easier to resolve them by showing the 
 base version, current branch changes, and incoming changes.
 
 ### Integrated Development Environments (IDEs)

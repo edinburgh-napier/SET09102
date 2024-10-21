@@ -10,7 +10,7 @@ nav_order: 1
 
 1. Understand What an Issue Represents
 
-    > Familiarize yourself with the types of issues 
+    > Familiarise yourself with the types of issues 
     > (e.g., bugs, feature requests, tasks, documentation needs) and how they fit into a 
     > project’s workflow.
     > 
@@ -39,7 +39,7 @@ nav_order: 1
     > if you're working solo.
     > 
     > Create issues for bugs, new features, or improvements as you work on a project. Break down 
-    > larger tasks into smaller issues. This will help you get used to organizing your work and 
+    > larger tasks into smaller issues. This will help you get used to organising your work and 
     > understanding how issues can track the progress of a project.
 
 4. Collaborate on an Open-Source Project
@@ -64,8 +64,8 @@ nav_order: 1
     > Get familiar with the use of labels (e.g., bug, feature, priority) and milestones (grouping 
     > issues under larger goals or releases).
     > 
-    > Use labels and milestones to categorize and prioritize your issues. For example, mark bugs as 
-    > bug or feature requests as enhancement. This helps with organizing and filtering tasks.
+    > Use labels and milestones to categorise and prioritise your issues. For example, mark bugs as 
+    > bug or feature requests as enhancement. This helps with organising and filtering tasks.
 
 7. Practice Writing Clear Issues
 
@@ -73,7 +73,7 @@ nav_order: 1
     > the problem or task.
     > 
     > When creating an issue, include details such as a description of the problem, steps to reproduce 
-    > (for bugs), expected vs. actual behavior, and any technical details or references. Practice writing 
+    > (for bugs), expected vs. actual behaviour, and any technical details or references. Practice writing 
     > issues that are clear and actionable.
 
 8. Follow Issue Discussions
@@ -105,8 +105,8 @@ nav_order: 1
 
 11. Use Agile or Kanban Boards
 
-    > If your project uses Agile or Kanban, familiarize yourself with issue boards, where issues are 
+    > If your project uses Agile or Kanban, familiarise yourself with issue boards, where issues are 
     > tracked visually in different stages (e.g., To Do, In Progress, Done).
     > 
     > Set up a Kanban board for your project and move issues through different stages. This helps you 
-    > visualize the issue lifecycle and track project progress more easily.
+    > visualise the issue lifecycle and track project progress more easily.

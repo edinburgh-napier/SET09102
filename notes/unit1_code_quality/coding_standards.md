@@ -25,7 +25,7 @@ non-technical stakeholders.
   making collaboration across diverse groups more effective.
 * **Error Reduction**: By following best practices, developers can avoid common pitfalls and 
   reduce the introduction of bugs into the codebase.
-* **Inclusivity**: Standardized coding practices reduce entry barriers for team members from 
+* **Inclusivity**: Standardised coding practices reduce entry barriers for team members from 
   different backgrounds, ensuring everyone can contribute equally and confidently.
 
 ## Key areas of coding standards

@@ -27,7 +27,7 @@ nav_order: 1
 
     > Help reviewers by writing a clear and concise description of what your pull request does.
     > 
-    > Summarize the purpose of your code changes, including any relevant context (e.g., links to issues, 
+    > Summarise the purpose of your code changes, including any relevant context (e.g., links to issues, 
     > a description of the problem being solved, or any special considerations). Mention if certain 
     > parts of the code need special attention or testing instructions.
 
@@ -45,7 +45,7 @@ nav_order: 1
     > Follow coding standards and best practices from the start to avoid getting a lot of style-related 
     > comments.
     > 
-    > Familiarize yourself with the coding standards and guidelines used by your team. Tools like 
+    > Familiarise yourself with the coding standards and guidelines used by your team. Tools like 
     > linters (e.g., ESLint for JavaScript) can help you catch many formatting issues before you 
     > submit a PR.
 
@@ -78,7 +78,7 @@ nav_order: 1
     > 
     > Avoid defensive responses to feedback. Instead, thank the reviewer for their time and 
     > contributions. When giving feedback, aim for constructive and respectful comments that focus 
-    > on improving the code, not criticizing the developer.
+    > on improving the code, not criticising the developer.
 
 10. Get Familiar with Tools Like GitHub, GitLab, or Bitbucket
 
@@ -98,7 +98,7 @@ nav_order: 1
     > 
     > * Is the code clear and readable?
     > * Are there edge cases the developer may have missed?
-    > * Are there opportunities for optimization or simplification?
+    > * Are there opportunities for optimisation or simplification?
 
 12. Be Patient
 

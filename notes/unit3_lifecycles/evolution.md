@@ -14,7 +14,7 @@ essential aspect of software engineering, acknowledging that software systems mu
 remain useful and effective in dynamic business environments. The importance of software evolution 
 lies in its ability to sustain the value of software assets over time, ensuring they can adapt to 
 new technological advancements, changing user needs, and evolving business processes. By 
-systematically managing and implementing changes, organizations can extend the lifespan of 
+systematically managing and implementing changes, organisations can extend the lifespan of 
 their software, reduce the costs associated with system failures, and maintain a competitive 
 edge through enhanced functionality and performance. Without ongoing evolution, software systems 
 become obsolete, less efficient, and increasingly challenging to maintain, ultimately risking 
@@ -113,7 +113,7 @@ Table 1. Lehman's laws ([Herraiz et al. (2013))](http://dx.doi.org/10.1145/25435
 | I       | _Law of Continuing Change_ <br> A system must be continually adapted, or else it becomes progressively less satisfactory in use.                                                                               |
 | II      | _Law of Increasing Complexity_<br>As a system is changed, its complexity increases and becomes more difficult to evolve unless work is done to maintain or reduce the complexity.                              |
 | III     | _Law of Self Regulation_<br>Global system evolution is feedback regulated.                                                                                                                                     |
-| IV      | _Law of Conservation of Organizational Stability_<br>The work rate of an organization evolving a software system tends to be constant over the operational lifetime of that system or phases of that lifetime. |
+| IV      | _Law of Conservation of Organisational Stability_<br>The work rate of an organisation evolving a software system tends to be constant over the operational lifetime of that system or phases of that lifetime. |
 | V       | _Law of Conservation of Familiarity_<br>In general, the incremental growth (growth rate trend) of systems is constrained by the need to maintain familiarity.                                                  |
 | VI      | _Law of Continuing Growth_<br>The functional capability of systems must be continually enhanced to maintain user satisfaction over system lifetime.                                                            |
 | VII     | _Law of Declining Quality_<br>Unless rigorously adapted and evolved to take into account changes in the operational environment, the quality of a system will appear to be declining.                          |
@@ -200,7 +200,7 @@ evaluated, and authorised, maintaining control and reducing risk. The
 [Incident Management](https://wiki.en.it-processmaps.com/index.php/Incident_Management) process 
 complements Agile's iterative cycles by quickly addressing and resolving bugs, ensuring minimal 
 disruption to service. By incorporating ITIL’s structured approach within Agile's dynamic 
-framework, organizations can achieve a balanced blend of agility and control, enhancing 
+framework, organisations can achieve a balanced blend of agility and control, enhancing 
 responsiveness to change while maintaining service quality and stability.
 
 Note
@@ -227,7 +227,7 @@ changes to the software system. This involves identifying the components, module
 functionalities that may be affected by the change, assessing the risk of introducing new 
 defects, and estimating the resources required for implementation. The primary goal of impact 
 analysis is to understand the breadth and depth of the change's effects, ensuring informed 
-decision-making and effective planning. By thoroughly analyzing the impact, developers and 
+decision-making and effective planning. By thoroughly analysing the impact, developers and 
 project managers can anticipate potential problems, mitigate risks, and ensure that changes 
 are implemented smoothly without disrupting the overall functionality and stability of the 
 software. Several types of impact can be identified, and it is useful to split the overall 
@@ -281,7 +281,7 @@ the grid below the figure to explore these dimensions in more detail.
 
 *   **System Speed**: Effects on response times, processing speed, and overall system performance.
 *   **Scalability**: Ability of the system to handle increased load or growth in users and data.
-*   **Resource Utilization**: Changes in the usage of system resources like CPU, memory, and storage.
+*   **Resource Utilisation**: Changes in the usage of system resources like CPU, memory, and storage.
 
 </details>
 
@@ -367,9 +367,9 @@ the grid below the figure to explore these dimensions in more detail.
 <details class="blue-bar">
 <summary>Strategic</summary>
 
-*   **Alignment with Business Goals**: How well the change supports the organization’s strategic 
+*   **Alignment with Business Goals**: How well the change supports the organisation’s strategic 
     objectives.
-*   **Market Position**: Impact on the organization's competitive position in the market.
+*   **Market Position**: Impact on the organisation's competitive position in the market.
 *   **Innovation**: Potential for the change to drive innovation and future growth.
 
 </details>
@@ -384,7 +384,7 @@ refactoring, developers can address technical debt, remove redundancies, and sim
 code segments, making the software easier to understand and modify. As a result, refactoring helps 
 maintain the software's health over time, supports the seamless integration of new features, and 
 facilitates ongoing adaptation to changing requirements and technologies. By investing in regular 
-refactoring, organizations ensure that their software systems remain robust, agile, and capable 
+refactoring, organisations ensure that their software systems remain robust, agile, and capable 
 of evolving efficiently to meet future business needs.
 
 Earlier we discussed three types of change, corrective, adaptive and perfective. Given the 
@@ -432,7 +432,7 @@ flexible and repeatable process models and road maps for re-engineering these sy
 to [Sommerville](https://napier.primo.exlibrisgroup.com/permalink/44NAP_INST/13v8mut/alma9923404758802111), 
 software engineering encompasses all aspects of software production, from specification to 
 maintenance. In contrast, re-engineering focuses on making legacy systems more maintainable by 
-revisiting documentation, reorganizing system architecture, and re-implementing the system using 
+revisiting documentation, reorganising system architecture, and re-implementing the system using 
 modern technologies while preserving core functionalities. Unlike forward engineering, which 
 starts with a specification and moves towards implementation, re-engineering begins with an 
 existing system and transforms it through understanding and modification. Re-engineering is 
@@ -446,7 +446,7 @@ analysis in the forward engineering scenario. Although the existing codebase cap
 structure and operation of the system, it is not necessarily easy to understand. This has led 
 [some authors](https://ceur-ws.org/Vol-3672/PT-paper2.pdf) to recommend the application of 
 standard requirements analysis techniques during the system understanding phase. The term 
-_reverse engineering_ is often used to describe the process of analyzing and understanding an 
+_reverse engineering_ is often used to describe the process of analysing and understanding an 
 existing software system to extract knowledge or design information from it. This process 
 involves examining the system's components, architecture, and behaviour to create a higher-level 
 representation, such as models or documentation, which may not be available or may have become 

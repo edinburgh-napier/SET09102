@@ -9,13 +9,13 @@ nav_order: 1
 # Tips for improving your refactoring practice
 
 By incorporating these tips into your daily workflow, you’ll not only develop a habit of 
-refactoring but also gain the skills to recognize when and where refactoring is needed. 
+refactoring but also gain the skills to recognise when and where refactoring is needed. 
 These practices will help ensure that your code remains clean, maintainable, and adaptable 
 over time.
 
 1. **Learn to Spot Code Smells**
 
-    > Familiarize yourself with common code smells — indicators that something might be wrong 
+    > Familiarise yourself with common code smells — indicators that something might be wrong 
     > with your code. Examples include long methods, large classes, duplicate code, overly 
     > complex conditional logic, and many parameters in a method.
     > 
@@ -97,7 +97,7 @@ over time.
     > 
     > Write or run tests for your code before refactoring. Once everything works as expected, 
     > refactor to improve the code without changing its functionality. This ensures that your 
-    > refactoring maintains the intended behavior.
+    > refactoring maintains the intended behaviour.
 
 11. **Pay Attention to Method Size**
 
@@ -111,9 +111,9 @@ over time.
 
     > Refactor complex conditional logic or repetitive code using design patterns where 
     > appropriate, such as Strategy, Observer, or Factory Method. These patterns often help 
-    > simplify and standardize solutions to common design problems.
+    > simplify and standardise solutions to common design problems.
     > 
-    > When you see a pattern of behavior or logic in your code, consider whether a design pattern 
+    > When you see a pattern of behaviour or logic in your code, consider whether a design pattern 
     > could help simplify the code and make it more reusable.
 
 13. **Refactor to Improve Readability**
@@ -123,15 +123,15 @@ over time.
     > 
     > If you struggle to understand a piece of code you wrote weeks ago, or if it takes too long 
     > to explain it to a colleague, it's time to refactor for clarity. Simple actions like 
-    > renaming variables or reorganizing logic can have a big impact.
+    > renaming variables or reorganising logic can have a big impact.
 
 14. **Use Testing to Safeguard Refactoring**
 
     > Testing is a safety net for refactoring. Write comprehensive unit tests before refactoring 
-    > to ensure that the behavior remains consistent after changes.
+    > to ensure that the behaviour remains consistent after changes.
     > 
     > Once you have written tests, refactor confidently knowing that the tests will catch any 
-    > unintended changes in behavior. Always rerun tests after refactoring to ensure nothing breaks.
+    > unintended changes in behaviour. Always rerun tests after refactoring to ensure nothing breaks.
 
 15. **Refactor Legacy Code Incrementally**
 

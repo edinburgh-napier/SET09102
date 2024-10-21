@@ -34,7 +34,7 @@ nav_order: 1
 3. Use Descriptive Branch Names
 
     > Give your branches descriptive names that reflect the task or issue you’re working on.
-    > Use a naming convention that’s clear and organized. For example:
+    > Use a naming convention that’s clear and organised. For example:
     > 
     > * feature/add-user-authentication
     > * bugfix/fix-login-issue

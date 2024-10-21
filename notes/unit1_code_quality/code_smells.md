@@ -56,7 +56,7 @@ This [GitHub page](https://luzkan.github.io/smells/) summarises 56 of them.
 | Speculative Generality                        | Collapse Hierarchy, Inline Function, Inline Class, Change Function Declaration, Remove Dead Code                                                                                                                                                      |
 | Temporary Field                               | Extract Class, Move Function, Introduce Special Case                                                                                                                                                                                                  |
 
-The concept of code smells is closely tied to recognized software engineering principles 
+The concept of code smells is closely tied to recognised software engineering principles 
 because code smells indicate violations of fundamental best practices that affect code 
 quality. For example, the **Single Responsibility Principle** (SRP) is often violated when 
 you encounter code smells like **Large Class** or **Long Method**, where classes or methods 
@@ -89,9 +89,9 @@ or integrate them into a system, and often results in duplicated code.
 
 **How to Fix It**
 
-The solution is typically to standardize the interfaces by renaming methods, using 
+The solution is typically to standardise the interfaces by renaming methods, using 
 Extract Interface, or introducing a common parent class or interface that defines the 
-shared behavior. This enables polymorphism and allows classes to be used interchangeably.
+shared behaviour. This enables polymorphism and allows classes to be used interchangeably.
 
 **Example Before Refactoring**
 
@@ -318,7 +318,7 @@ other, leading to cascading changes throughout the system.
 
 Insider Trading typically occurs when classes are overly dependent on each other's inner 
 workings, instead of interacting through well-defined, public interfaces. It violates the 
-principle of encapsulation, which dictates that the internal state and behavior of an 
+principle of encapsulation, which dictates that the internal state and behaviour of an 
 object should not be exposed directly to other objects.
 
 **How to Fix It**
@@ -603,7 +603,7 @@ chance of bugs.
 **How to Fix Primitive Obsession**
 
 The solution is to replace the primitive types with custom classes that encapsulate the 
-behavior, validation, and logic of the underlying concept. This followsEncapsulation 
+behaviour, validation, and logic of the underlying concept. This followsEncapsulation 
 and the Single Responsibility Principle (SRP) by creating a focused class to 
 manage a specific type of data.
 
@@ -645,7 +645,7 @@ public class Order
 **What’s Wrong?**
 
 * The `PhoneNumber` and `Address` are represented by simple strings, even though these 
-  are complex concepts that should have their own validation and behavior encapsulated 
+  are complex concepts that should have their own validation and behaviour encapsulated 
   in dedicated classes.
 * Validation for `PhoneNumber` is scattered in the `Order` class, leading to duplicated 
   validation across the codebase if the same logic is needed elsewhere.
@@ -655,7 +655,7 @@ public class Order
 **After Refactoring**
 
 To fix this, we can introduce custom types for `PhoneNumber` and `Address`, encapsulating 
-their validation and behavior within these classes.
+their validation and behaviour within these classes.
 
 ``` c#
 public class PhoneNumber
@@ -720,8 +720,8 @@ public class Order
 **What’s Improved?**
 
 * **Encapsulation**: The `PhoneNumber` and `Address` classes encapsulate their own 
-  validation logic and behaviors, ensuring that any logic related to these concepts is 
-  centralized within their respective classes.
+  validation logic and behaviours, ensuring that any logic related to these concepts is 
+  centralised within their respective classes.
 * **Clarity and Type Safety**: The use of custom types makes the code more expressive 
   and provides better type safety. The Order class no longer has to worry about how to 
   validate phone numbers or addresses.
@@ -735,7 +735,7 @@ public class Order
 
 This code smell occurs when a small change in the system requires making multiple, 
 scattered changes across several classes or modules. This indicates poor cohesion and 
-high coupling, where behavior related to a single concern is spread across different parts 
+high coupling, where behaviour related to a single concern is spread across different parts 
 of the codebase.
 
 When Shotgun Surgery is present, a change in one piece of functionality necessitates making 
@@ -746,9 +746,9 @@ parts of the code.
 
 **How to Fix It**
 
-To fix Shotgun Surgery, you can refactor the code by centralizing related behavior into a 
+To fix Shotgun Surgery, you can refactor the code by centralising related behaviour into a 
 single class or a smaller number of cohesive classes. This reduces the need for scattered 
-changes across the codebase. Encapsulating behavior and adhering to the Single 
+changes across the codebase. Encapsulating behaviour and adhering to the Single 
 Responsibility Principle (SRP) can help reduce the risk of this code smell by keeping 
 related logic together.
 
@@ -799,7 +799,7 @@ system, the risk of missing changes, and the possibility of introducing bugs.
 
 **After Refactoring**
 
-To resolve Shotgun Surgery, we can centralize the discount logic into a single class, 
+To resolve Shotgun Surgery, we can centralise the discount logic into a single class, 
 creating a cohesive and reusable solution. Instead of spreading the logic across multiple 
 classes, we encapsulate it in a `DiscountService` class.
 
@@ -863,7 +863,7 @@ public class Receipt
 
 **What's Improved?**
 
-* **Centralized Logic**: The discount logic is now centralized in the `DiscountService` 
+* **Centralised Logic**: The discount logic is now centralised in the `DiscountService` 
   class, eliminating the need to duplicate discount calculations across multiple classes.
 * **Reduced Coupling**: Classes like `Order`, `Invoice`, and `Receipt` no longer need to 
   implement their own discount logic. Instead, they delegate this responsibility to 

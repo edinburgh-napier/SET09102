@@ -30,7 +30,7 @@ standard methodologies such as Agile, Scrum, or Kanban to ensure that projects a
 completed efficiently, with clear communication and proper tracking of tasks.
 
 In contrast, a developer’s personal workflow involves the individual habits and practices 
-that guide day-to-day development activities. This includes personal organization, regular 
+that guide day-to-day development activities. This includes personal organisation, regular 
 refactoring, writing meaningful commit messages, using meaningful code comments, and 
 maintaining a clean development environment. While the standard processes help teams stay 
 aligned, a good personal workflow fosters productivity, code quality, and self-discipline, 

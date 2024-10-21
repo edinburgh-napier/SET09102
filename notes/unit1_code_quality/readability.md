@@ -12,7 +12,7 @@ Code readability and documentation are critical aspects of
 writing maintainable and efficient code. Readable code ensures that developers can easily 
 understand and work with the codebase, facilitating collaboration, debugging, and future 
 enhancements. As code evolves and different team members contribute, clear and readable 
-code reduces the likelihood of errors, minimizes onboarding time for new developers, and 
+code reduces the likelihood of errors, minimises onboarding time for new developers, and 
 enhances the overall productivity of the team. Documentation, both in the form of comments 
 and external documentation, provides context, clarifies design decisions, and explains 
 complex logic that might not be immediately obvious from the code itself. Together, code 
@@ -22,10 +22,10 @@ software system, ensuring long-term project success and smooth handover between 
 ## Clean Code
 
 In software engineering, **_clean code_** refers to writing code that is easy to understand, 
-simple to maintain, and free of unnecessary complexity. Coined and popularized by 
+simple to maintain, and free of unnecessary complexity. Coined and popularised by 
 Robert C. (Uncle Bob) Martin in his book 
 [Clean Code: A Handbook of Agile Software Craftsmanship](https://eu.alma.exlibrisgroup.com/leganto/public/44NAP_INST/citation/6676837810002111?auth=SAML),
-clean code principles emphasize readability, clarity, and the importance 
+clean code principles emphasise readability, clarity, and the importance 
 of writing code that is not just functional but also intuitive for other developers (and 
 your future self) to read and work with. Martin argues that the true test of clean code 
 is whether someone else can easily read, understand, and modify it.
@@ -56,7 +56,7 @@ its inherent clarity. To achieve this, Uncle Bob identifies several important gu
 
 * **Meaningful Names**: The most important aspect of self-documenting code is using 
   meaningful, descriptive names for variables, functions, classes, and methods. Names 
-  should clearly convey the purpose and behavior of the entity they represent. For example, 
+  should clearly convey the purpose and behaviour of the entity they represent. For example, 
   instead of using a generic name like temp, use userInput or calculatedDiscount to 
   describe the actual intent.
 
@@ -65,7 +65,7 @@ its inherent clarity. To achieve this, Uncle Bob identifies several important gu
   glance. A function named CalculateDiscount should only handle discount calculations, 
   not additional tasks like logging or data validation.
 
-* **Code Structure and Organization**: Properly structured code, with clear separation 
+* **Code Structure and Organisation**: Properly structured code, with clear separation 
   of concerns and following principles like the Single Responsibility Principle (SRP), is 
   easier to read and reason about. Grouping related logic together and keeping the code 
   modular contributes to its readability.
@@ -105,7 +105,7 @@ is simple enough that it doesn't require comments to explain its logic. The code
 becomes the documentation.
 
 Self-documenting code is central to the clean code philosophy. By writing code that is 
-readable, clear, and expressive, you minimize the need for comments and make the code 
+readable, clear, and expressive, you minimise the need for comments and make the code 
 easier to maintain in the long run. Clean, self-documenting code is easier for developers 
 to understand, reduces technical debt, and ensures that the codebase remains agile and 
 adaptable to future changes.
@@ -113,7 +113,7 @@ adaptable to future changes.
 ## Clean Code and Software Engineering Principles
 
 In the clean code approach, standard software engineering principles are embodied through 
-a strong emphasis on simplicity and minimizing dependencies, both of which are key to 
+a strong emphasis on simplicity and minimising dependencies, both of which are key to 
 writing maintainable, scalable, and efficient code. Here's how common software engineering 
 principles align with the clean code philosophy in these two areas:
 
@@ -122,7 +122,7 @@ principles align with the clean code philosophy in these two areas:
 Simplicity is a core tenet of clean code and aligns with several important software 
 engineering principles:
 
-* **KISS (Keep It Simple, Stupid)**: The clean code approach strongly emphasizes avoiding 
+* **KISS (Keep It Simple, Stupid)**: The clean code approach strongly emphasises avoiding 
   unnecessary complexity. Simplicity is achieved by breaking down problems into smaller, 
   manageable parts and focusing on writing code that is easy to understand. For example, 
   the clean code practice of writing small, focused functions with clear names directly 
@@ -132,7 +132,7 @@ engineering principles:
 * **Single Responsibility Principle (SRP)**: Clean code strongly supports the Single 
   Responsibility Principle, which states that a class or function should only have one 
   reason to change. This principle ensures that code is simpler by limiting the scope and 
-  responsibility of each component. By following SRP, the code is organized into small, 
+  responsibility of each component. By following SRP, the code is organised into small, 
   focused units, reducing the likelihood of tangled logic and making it easier to 
   maintain and extend.
 
@@ -140,7 +140,7 @@ engineering principles:
   is enforced in clean code. Avoiding code duplication reduces complexity because any 
   logic is implemented in one place, preventing the need for repetitive updates or fixes. 
   Clean code encourages developers to abstract common functionality into reusable methods 
-  or classes, which minimizes redundancy and simplifies maintenance.
+  or classes, which minimises redundancy and simplifies maintenance.
 
 * **YAGNI (You Aren't Gonna Need It)**: Clean code also follows the principle of YAGNI, 
   which discourages implementing features or adding code that isn't immediately needed. 
@@ -151,9 +151,9 @@ In the clean code approach, simplicity is about writing code that anyone can eas
 understand without requiring deep context or additional explanation. This results in code 
 that is easier to debug, refactor, and extend over time.
 
-### Minimizing Dependencies
+### Minimising Dependencies
 
-The clean code approach also stresses the importance of minimizing dependencies, which 
+The clean code approach also stresses the importance of minimising dependencies, which 
 aligns with the following software engineering principles:
 
 * **Dependency Inversion Principle (DIP)**: In clean code, the Dependency Inversion 
@@ -166,31 +166,31 @@ aligns with the following software engineering principles:
 
 * **Law of Demeter (LoD)**: Clean code also promotes the Law of Demeter, which suggests 
   that an object should only interact with its immediate collaborators and not with the 
-  internal details of others. This principle minimizes dependencies by preventing deep, 
+  internal details of others. This principle minimises dependencies by preventing deep, 
   complex relationships between classes. By following this guideline, clean code ensures 
   that changes in one part of the system are less likely to cause a ripple effect 
   throughout the codebase, which can reduce bugs and simplify future modifications.
 
 * **Open/Closed Principle (OCP)**: The Open/Closed Principle in clean code ensures that 
   systems are open for extension but closed for modification. By adhering to this 
-  principle, developers can minimize dependencies by building modular components that 
+  principle, developers can minimise dependencies by building modular components that 
   can be extended without changing their core structure. Clean code encourages the use 
   of polymorphism, abstraction, and inheritance to achieve flexibility while reducing 
   the need to modify existing code when introducing new functionality.
 
-* **Encapsulation**: Clean code also prioritizes encapsulation, hiding the internal 
+* **Encapsulation**: Clean code also prioritises encapsulation, hiding the internal 
   workings of a class or module and exposing only what is necessary. This helps to 
-  minimize dependencies because external components are not reliant on the internal 
+  minimise dependencies because external components are not reliant on the internal 
   implementation details of a class. Changes to the internal implementation can occur 
   without affecting how other parts of the system interact with it.
 
-By minimizing dependencies, clean code ensures that systems remain modular and flexible, 
+By minimising dependencies, clean code ensures that systems remain modular and flexible, 
 which simplifies maintenance and testing. Code that is heavily dependent on other 
 components is fragile and difficult to change without introducing errors. Clean code’s 
 emphasis on reducing these dependencies leads to more stable, robust, and adaptable software.
 
 The clean code approach effectively represents standard software engineering principles 
-by emphasizing simplicity and minimizing dependencies. These two key goals are achieved 
+by emphasising simplicity and minimising dependencies. These two key goals are achieved 
 through adherence to principles like SRP, DRY, DIP, and KISS, which promote clear, 
 understandable, and maintainable code. By focusing on writing code that is simple, 
 modular, and loosely coupled, the clean code philosophy aligns with broader software 
@@ -199,7 +199,7 @@ work with over time.
 
 ## Using comments
 
-In clean code, comments should be minimized, but they are not entirely discouraged. 
+In clean code, comments should be minimised, but they are not entirely discouraged. 
 Instead, they should be used sparingly and strategically. The guiding principle is that 
 comments should not explain what the code does—because the code itself should already do 
 that — but rather why certain decisions were made, or to explain complex logic that is 
@@ -365,7 +365,7 @@ public class BankAccount
 >
 >* The class-level comment block uses `<summary>` to provide an overview of the class, 
 >  describing what the `BankAccount` class does. The `<remarks>` tag is used for more 
->  detailed information, explaining additional features or behaviors.
+>  detailed information, explaining additional features or behaviours.
 >* The `<seealso>` tag references related classes (`User` and `Transaction`) to provide 
 >  context and link related documentation.
 >

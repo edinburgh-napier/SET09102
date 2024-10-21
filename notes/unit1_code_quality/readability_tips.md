@@ -33,7 +33,7 @@ your coding style and commenting practice.
     > comments are worse than no comments because they mislead developers.
     > 
     > Whenever you update the code, check that the related comments reflect the current 
-    > logic and behavior.
+    > logic and behaviour.
 
 4. Break Long Lines of Code
 
@@ -113,5 +113,5 @@ your coding style and commenting practice.
     > is expected to behave in different scenarios.
     > 
     > Write tests that cover a range of cases and use clear naming to describe what each test 
-    > is checking. This makes the code’s purpose and behavior more transparent.
+    > is checking. This makes the code’s purpose and behaviour more transparent.
 

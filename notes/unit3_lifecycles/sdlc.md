@@ -9,8 +9,8 @@ nav_order: 2
 # The Software Development LifeCycle (SDLC)
 
 The System Development Lifecycle (SDLC) is often described as a structured process used by 
-organizations to design, develop, and implement software systems. The idea is that it should serve as 
-a framework to ensure that high-quality systems are delivered in a methodical, organized way. 
+organisations to design, develop, and implement software systems. The idea is that it should serve as 
+a framework to ensure that high-quality systems are delivered in a methodical, organised way. 
 However, the term "System Development Lifecycle" can be considered misleading in several ways due 
 to the assumptions it might create about the process.
 
@@ -20,7 +20,7 @@ cyclical, with stages revisited multiple times throughout the project. Developme
 feedback loops, where progress may revert to earlier phases for refinement. The linear approach is 
 often associated with rigid, waterfall models of development, where one stage must be completed 
 before the next begins. This can be misleading for teams that use Agile, DevOps, or other 
-methodologies that emphasize flexibility, continuous development, and the delivery of smaller, 
+methodologies that emphasise flexibility, continuous development, and the delivery of smaller, 
 incremental changes rather than a single "complete" system.
 
 The term "lifecycle" also implies that the process ends when the system is delivered or implemented, 
@@ -169,7 +169,7 @@ waterfall approach.
 Structured development methods, such as the Waterfall, V-Model, and Spiral Model, offer robust, 
 methodical frameworks for developing complex systems, particularly in environments where precision, 
 documentation, and risk management are critical. Each model has its strengths: the Waterfall 
-model’s linear approach ensures clear phases and deliverables, the V-Model emphasizes continuous 
+model’s linear approach ensures clear phases and deliverables, the V-Model emphasises continuous 
 verification and validation, and the Spiral Model incorporates iterative cycles with a focus on 
 risk assessment. While the software industry has increasingly embraced Agile methodologies for 
 flexibility and speed, structured development methods remain essential in industries like 

@@ -72,7 +72,7 @@ Impact analysis is the process of assessing the potential consequences of change
 software system, particularly in terms of how they will affect the rest of the system. In 
 collaborative software development impact analysis helps developers understand the scope of the 
 changes they are introducing, identify dependencies, and anticipate potential side effects that 
-could affect other parts of the system. The goal is to make informed decisions and minimize 
+could affect other parts of the system. The goal is to make informed decisions and minimise 
 unintended consequences, such as introducing bugs or breaking existing functionality. This could 
 involve, for example, understanding how changes to a method, class, or module impact related 
 classes, the broader application architecture, and other parts of the system, such as external 
@@ -117,7 +117,7 @@ context menu.
 >   making changes to interfaces or their implementations, consider how those changes will affect 
 >   all dependent classes, especially in systems using DI frameworks like ASP.NET Core.
 > * **Asynchronous Programming**: If you're changing asynchronous code (using async/await), 
->   consider how those changes might impact application performance or behavior, such as handling 
+>   consider how those changes might impact application performance or behaviour, such as handling 
 >   exceptions or concurrency issues.
 
 ## Static analysis

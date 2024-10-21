@@ -18,7 +18,7 @@ nav_order: 1
     > Learn and practice the basic Git commands, such as `git init`, `git add`, `git commit`, `git status`, 
     > and `git log`. These are the fundamental commands that you’ll use frequently.
     > 
-    > Set up a small project on your local machine and initialize a Git repository (`git init`). Make 
+    > Set up a small project on your local machine and initialise a Git repository (`git init`). Make 
     > some changes, track them with `git add`, commit those changes, and check the status with 
     > `git status` and the commit history with `git log`.
 
@@ -50,7 +50,7 @@ nav_order: 1
 
 6. Practice Working with Remote Repositories
 
-    > Understand how to synchronize local and remote repositories using `git push` and `git pull`. 
+    > Understand how to synchronise local and remote repositories using `git push` and `git pull`. 
     > These commands allow you to send your changes to GitHub and retrieve updates from the remote 
     > repository.
     > 
@@ -64,7 +64,7 @@ nav_order: 1
     > 
     > Search for a `.gitignore` template for your project type (e.g., Python, Node.js) on GitHub’s 
     > `.gitignore` [repository](https://github.com/github/gitignore) and use it in your project. 
-    > Customize the template as needed.
+    > Customise the template as needed.
 
 8. Understand the Difference Between `git pull` and `git fetch`
 

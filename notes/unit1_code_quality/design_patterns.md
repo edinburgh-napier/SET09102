@@ -9,12 +9,12 @@ nav_order: 3
 # Design patterns
 
 Design patterns are proven, reusable solutions to common problems encountered in software 
-development. They provide a standardized way to structure and solve recurring issues, helping 
+development. They provide a standardised way to structure and solve recurring issues, helping 
 software engineers write more efficient, maintainable, and scalable code. Rather than reinventing 
 the wheel, design patterns allow developers to apply well-established approaches to various design 
 challenges, improving code quality and collaboration within teams. Understanding and applying 
 design patterns is essential for software engineers to build robust systems, as these patterns 
-encapsulate best practices in areas like object creation, structure, and behavior. Learning 
+encapsulate best practices in areas like object creation, structure, and behaviour. Learning 
 design patterns enables engineers to write cleaner, more modular code that is easier to extend 
 and adapt to future needs.
 
@@ -23,7 +23,7 @@ Christopher Alexander in the 1970s, who introduced the idea of patterns in archi
 concept was later adapted to software development by the Gang of Four—Erich Gamma, Richard Helm, 
 Ralph Johnson, and John Vlissides—in their seminal 1994 book "Design Patterns: Elements of 
 Reusable Object-Oriented Software." The book cataloged 23 design patterns, classified into 
-creational, structural, and behavioral patterns, offering reusable solutions to common design 
+creational, structural, and behavioural patterns, offering reusable solutions to common design 
 problems. Since then, design patterns have become a cornerstone of object-oriented software 
 development, providing developers with a shared vocabulary and best practices for solving 
 recurring design challenges efficiently. Over time, these patterns have been expanded and 
@@ -37,7 +37,7 @@ Design patterns can be split into three broad categories:
 1. **Creational patterns** are concerned with the object creation mechanisms. They provide ways 
    to instantiate objects, allowing more flexibility and control over the creation process. These 
    patterns abstract the process of object creation, ensuring that objects are created in a manner 
-   that suits the situation, often involving considerations like minimizing object creation cost, 
+   that suits the situation, often involving considerations like minimising object creation cost, 
    ensuring singletons, or creating complex objects step by step.
 
    **Examples**
@@ -76,7 +76,7 @@ Design patterns can be split into three broad categories:
 
 3. **Behavioural patterns** focus on communication between objects. They define how objects 
    interact, coordinate, and manage responsibilities in a dynamic way to accomplish tasks, 
-   ensuring that communication is flexible, organized, and decoupled. They typically address 
+   ensuring that communication is flexible, organised, and decoupled. They typically address 
    responsibilities, interactions, and communication flow between objects.
 
    **Examples**
@@ -86,14 +86,14 @@ Design patterns can be split into three broad categories:
    * **Strategy**: Defines a family of algorithms and makes them interchangeable, allowing the 
      algorithm to vary independently of the client using it.
    * **Command**: Encapsulates a request or action as an object, thereby allowing 
-     parameterization of clients with queues, requests, or operations.
+     parameterisation of clients with queues, requests, or operations.
    * **Template Method**: Defines the skeleton of an algorithm in the base class but allows 
      subclasses to override specific steps of the algorithm.
-   * **State**: Allows an object to change its behavior when its internal state changes, 
+   * **State**: Allows an object to change its behaviour when its internal state changes, 
      appearing as if the object has changed its class.
    * **Chain of Responsibility**: Passes a request along a chain of handlers, allowing 
      multiple objects to handle the request or none at all.
-   * **Mediator**: Centralizes communication between objects, reducing direct dependencies and 
+   * **Mediator**: Centralises communication between objects, reducing direct dependencies and 
      simplifying interactions between classes.
    * **Visitor**: Separates algorithms from the objects on which they operate, allowing new 
      operations to be added without modifying the objects.
@@ -291,12 +291,12 @@ without modifying the `OrderSystem` class.
 
 ## Increasing Code Readability and Understandability
 
-Design patterns improve code readability by providing well-known, standardized solutions. 
+Design patterns improve code readability by providing well-known, standardised solutions. 
 Developers familiar with these patterns can quickly understand the structure and purpose of 
 code, making collaboration and onboarding easier.
 
 The [Decorator](https://refactoring.guru/design-patterns/decorator) pattern allows additional 
-behavior to be dynamically added to objects without modifying their structure.
+behaviour to be dynamically added to objects without modifying their structure.
 
 ``` c#
 public interface ICoffee
@@ -376,7 +376,7 @@ Console.WriteLine(coffee.GetDescription() + " costs $" + coffee.GetCost());
 ```
 
 The Decorator pattern increases readability by clearly separating the responsibilities of each 
-component. Developers can easily see how new behaviors (like milk or sugar in coffee) are added 
+component. Developers can easily see how new behaviours (like milk or sugar in coffee) are added 
 dynamically, making the code easy to extend and understand.
 
 ## Facilitating Testing and Debugging

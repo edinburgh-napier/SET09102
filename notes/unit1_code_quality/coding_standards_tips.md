@@ -14,7 +14,7 @@ steps should be taken:
 1. Collaboratively Define the Coding Standards
 
     > Involve the entire team in defining or adopting coding standards, ensuring buy-in from all members. This can be done by discussing best practices, industry standards, and team-specific needs.
-    > Adopt an existing, well-recognized coding standards guide (e.g., Google's style guide for C#, PEP 8 for Python) and tailor it to fit the team's needs if necessary.
+    > Adopt an existing, well-recognised coding standards guide (e.g., Google's style guide for C#, PEP 8 for Python) and tailor it to fit the team's needs if necessary.
 
 2. Document the Standards Clearly
 

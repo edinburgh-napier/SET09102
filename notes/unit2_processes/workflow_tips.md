@@ -11,12 +11,12 @@ nav_order: 1
 1. Set Up and Master Your Development Environment
 
     > Choose a development environment (IDE) that suits your language and project needs, such as 
-    > Visual Studio Code, JetBrains Rider, or Visual Studio for C#. Customize your IDE to make 
+    > Visual Studio Code, JetBrains Rider, or Visual Studio for C#. Customise your IDE to make 
     > development smoother.
     > 
     > * Install useful extensions: Use IDE extensions for linting (e.g., ESLint for JavaScript, 
-    >   Roslyn Analyzers for C#), debugging, and Git integration to streamline your workflow.
-    > * Learn shortcuts: Familiarize yourself with IDE keyboard shortcuts for navigation, searching, 
+    >   Roslyn Analysers for C#), debugging, and Git integration to streamline your workflow.
+    > * Learn shortcuts: Familiarise yourself with IDE keyboard shortcuts for navigation, searching, 
     >   and refactoring. This will speed up your work significantly.
     > * Automate tasks: Use tools like Task Runners (e.g., npm scripts, Gulp) to automate repetitive 
     >   tasks like building, testing, and deploying.
@@ -86,11 +86,11 @@ nav_order: 1
 
 6. Adopt a Branching Strategy
 
-    > Follow a branching strategy that keeps the development process organized and minimizes the 
+    > Follow a branching strategy that keeps the development process organised and minimises the 
     > risk of conflicts.
     > 
     > * Git Flow: Use Git Flow, which includes long-lived branches such as main, develop, and release, 
-    >   along with short-lived feature branches. This helps keep things organized in large projects.
+    >   along with short-lived feature branches. This helps keep things organised in large projects.
     > * Feature branches: Always create a new branch for each new feature, bug fix, or enhancement 
     >   (git checkout -b feature/feature-name).
     > * Rebase frequently: Regularly rebase your feature branch against the latest main branch 
@@ -105,8 +105,8 @@ nav_order: 1
     > 
     > * Use the Pomodoro technique: Break your work into short, focused intervals (e.g., 25 minutes of 
     >   coding followed by a 5-minute break). This can help improve focus and prevent burnout.
-    > * Prioritize tasks: Break down large tasks into smaller, more manageable steps. Use tools like 
-    >   Kanban boards to visualize your workflow and prioritize tasks.
+    > * Prioritise tasks: Break down large tasks into smaller, more manageable steps. Use tools like 
+    >   Kanban boards to visualise your workflow and prioritise tasks.
     > * Track progress: Regularly update your tasks and keep the team informed of your progress, 
     >   whether through daily stand-ups, task trackers, or GitHub issues.
 

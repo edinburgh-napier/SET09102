@@ -37,10 +37,10 @@ or with incomplete information. The table below lists the most common causes.
 
 | Cause                                     | Description                                                                                                                                                                                                                                                                                                                                                        |
 |-------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Time Pressure                             | When development teams are working under tight deadlines or trying to meet aggressive delivery dates, they may prioritize delivering features quickly over maintaining code quality. This often leads to shortcuts in design, testing, or architecture, with the understanding that these issues will be fixed later, though they often aren't addressed promptly. |
+| Time Pressure                             | When development teams are working under tight deadlines or trying to meet aggressive delivery dates, they may prioritise delivering features quickly over maintaining code quality. This often leads to shortcuts in design, testing, or architecture, with the understanding that these issues will be fixed later, though they often aren't addressed promptly. |
 | Lack of Planning or Design                | Insufficient upfront planning or poor architectural decisions can lead to a codebase that is difficult to scale and maintain. Without a clear design or roadmap, developers may implement features in ways that are convenient at the moment but are inefficient or incompatible in the long term.                                                                 |
 | Insufficient Refactoring                  | As systems evolve, code becomes more complex, and what was initially a good solution may become outdated. Failing to refactor regularly or clean up "quick fixes" results in accumulated technical debt. Without refactoring, the code becomes harder to understand, maintain, and extend.                                                                         |
-| Poorly Written or Unclear Code            | Developers who write unclear, unorganized, or poorly documented code contribute to technical debt by making the code harder for others to maintain. This often happens when coding standards aren’t enforced, or when developers are inexperienced or unfamiliar with best practices.                                                                              |
+| Poorly Written or Unclear Code            | Developers who write unclear, unorganised, or poorly documented code contribute to technical debt by making the code harder for others to maintain. This often happens when coding standards aren’t enforced, or when developers are inexperienced or unfamiliar with best practices.                                                                              |
 | Lack of Automated Testing                 | Failing to implement proper unit tests, integration tests, or automated testing frameworks can lead to fragile code that is prone to errors. Without tests, it becomes difficult to modify the code with confidence, as developers may unintentionally introduce bugs or break existing functionality.                                                             |
 | Changing Requirements                     | Technical debt often accumulates when requirements change frequently during development. Initial solutions might no longer be appropriate, but teams might delay refactoring or redesigning systems to accommodate new requirements, leading to inconsistencies and complexity.                                                                                    |
 | Inadequate Documentation                  | Poor or missing documentation contributes to technical debt by making it harder for developers to understand the system, onboard new team members, or maintain and extend existing functionality. When developers have to spend extra time deciphering how a system works, the overall velocity of the team decreases.                                             |
@@ -49,7 +49,7 @@ or with incomplete information. The table below lists the most common causes.
 | Poor Communication and Collaboration      | A lack of communication between teams—such as developers, designers, and stakeholders—can lead to misunderstandings about requirements, technical decisions, or the long-term impact of certain approaches. Misalignment often results in quick fixes that introduce technical debt.                                                                               |
 
 Understanding the causes of technical debt helps teams proactively manage it by making 
-better-informed decisions, prioritizing refactoring, improving communication, and 
+better-informed decisions, prioritising refactoring, improving communication, and 
 maintaining a balance between short-term speed and long-term maintainability.
 
 ## Consequences of Technical Debt
@@ -72,7 +72,7 @@ because they are often hidden within complex or messy code structures.
 The result is **lower overall code quality** as the codebase becomes harder to read, 
 less cohesive, and more difficult to manage. This diminishes software quality over time
 and leads to **reduced reliability**, with the software more prone to crashes, errors, 
-or unexpected behavior, **reducing customer satisfaction** and trust in the product.
+or unexpected behaviour, **reducing customer satisfaction** and trust in the product.
 
 Greater levels of technical debt make it **difficult to scale** a system. Handling 
 increased usage or incorporating new technologies and architectures becomes more
@@ -117,7 +117,7 @@ significant failure in the system.
 <summary>CWE-1079: Parent Class without Virtual Destructor Method</summary>
 A parent class contains one or more child classes, but the parent class does not have a
 virtual destructor method. This issue can prevent the product from running reliably due
-to undefined or unexpected behaviors. If the relevant code is reachable by an attacker,
+to undefined or unexpected behaviours. If the relevant code is reachable by an attacker,
 then this reliability problem might introduce a vulnerability.
 </details>
 

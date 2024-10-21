@@ -10,7 +10,7 @@ nav_order: 1
 
 * **Start with Understanding the Problem**
 
-    > Focus on recognizing design problems before learning patterns. Each design pattern solves a 
+    > Focus on recognising design problems before learning patterns. Each design pattern solves a 
     > specific problem, so understanding the context in which a pattern is applicable is critical.
     > 
     > Ask yourself: "What problem am I trying to solve?" and then look for patterns that address 
@@ -21,7 +21,7 @@ nav_order: 1
     > Start with basic patterns (e.g., Singleton, Factory Method, Strategy) and gradually move to 
     > more complex ones (e.g., Composite, Observer, Command).
     > 
-    > Don't try to memorize all design patterns at once. Focus on understanding a few well and 
+    > Don't try to memorise all design patterns at once. Focus on understanding a few well and 
     > apply them to real-world problems before moving on to others.
 
 * **Understand the Intent, Not Just the Structure**

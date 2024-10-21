@@ -49,9 +49,9 @@ Early in an agile project, for example, requirements elicitation might involve t
 conducting a series of interviews with key users to understand their needs and problems, followed 
 by a workshop with the development team to brainstorm potential solutions.
 
-**_Requirements Analysis_** is the process of refining, prioritizing, and detailing the gathered 
+**_Requirements Analysis_** is the process of refining, prioritising, and detailing the gathered 
 requirements to ensure they are clear, feasible, and aligned with the project goals. The main goal 
-of requirements analysis is to transform the raw requirements into a structured and prioritized set 
+of requirements analysis is to transform the raw requirements into a structured and prioritised set 
 of actionable items that can guide the development process. It is about defining the "how" and 
 "when" of the project. Key activities include
 
@@ -75,14 +75,14 @@ discussing how it fits into the upcoming sprint.
 | Aspect                      | Requirements Elicitation                                     | Requirements Analysis                                     |
 |-----------------------------|--------------------------------------------------------------|-----------------------------------------------------------|
 | **Focus**                   | Gathering information and identifying needs                  | Refining and detailing requirements for implementation    |
-| **Activities**              | Interviews, surveys, workshops, observation, document review | Prioritization, refinement, validation, defining criteria |
-| **Outcome**                 | Comprehensive list of requirements                           | Detailed, prioritized, and actionable user stories        |
+| **Activities**              | Interviews, surveys, workshops, observation, document review | Prioritisation, refinement, validation, defining criteria |
+| **Outcome**                 | Comprehensive list of requirements                           | Detailed, prioritised, and actionable user stories        |
 | **Stakeholder Involvement** | High involvement during information gathering                | Continuous involvement for clarification and validation   |
 | **Stage**                   | Early stages of the project                                  | Ongoing throughout the project in iterations              |
 
 While requirements elicitation and requirements analysis are closely related, they serve distinct 
 purposes in Agile software development. Elicitation focuses on discovering and gathering the needs 
-and expectations of stakeholders, whereas analysis is concerned with refining, prioritizing, and 
+and expectations of stakeholders, whereas analysis is concerned with refining, prioritising, and 
 detailing these requirements to guide the development process. Both are essential for ensuring 
 that the final product meets stakeholder needs and aligns with business goals. Their relationship, 
 especially at the outset of the project, can be visualised as shown in Fig. 11.
@@ -90,7 +90,7 @@ especially at the outset of the project, can be visualised as shown in Fig. 11.
 ![Fig. 11: Requirements engineering divided into elicitation and analysis](images/requirement_engineering.png){: standalone #fig11 data-title="The four activities of continuous deployment"}
 
 Requirements analysis in the context of agile software development is the process of refining, 
-prioritizing, and detailing the requirements gathered from stakeholders to ensure they are 
+prioritising, and detailing the requirements gathered from stakeholders to ensure they are 
 understood, feasible, and align with the project's goals. This process is continuous and 
 iterative, aligning with the Agile principles of flexibility and adaptability. It is therefore 
 a feature of most development interactions.
@@ -141,11 +141,11 @@ The table below contrasts these two types of requirement
 | Aspect                  | Functional Requirements                                    | Non-Functional Requirements                                          |
 |-------------------------|------------------------------------------------------------|----------------------------------------------------------------------|
 | **Focus**               | What the system should do                                  | How the system should perform                                        |
-| **Type**                | Specific behaviors and functionalities                     | Quality attributes and operational constraints                       |
+| **Type**                | Specific behaviours and functionalities                     | Quality attributes and operational constraints                       |
 | **Examples**            | User authentication, data processing, transaction handling | Performance, usability, security, scalability                        |
 | **Measurement**         | Directly testable through functionality tests              | Measured through performance tests, user feedback, and audits        |
 | **Documentation**       | User stories, use cases, functional specifications         | Quality attributes, service level agreements, compliance standards   |
-| **Impact**              | Affects specific functions or modules                      | Affects the overall system behavior and user experience              |
+| **Impact**              | Affects specific functions or modules                      | Affects the overall system behaviour and user experience              |
 | **Importance in Agile** | User stories with clear acceptance criteria                | Included in the definition of done and acceptance criteria           |
 | **Stakeholder Focus**   | End users, business analysts, developers                   | System architects, QA testers, IT operations                         |
 
@@ -162,7 +162,7 @@ that can help to discover the users' expectations include
   and pain points. Methods include interviews, surveys, and observation.
 * **Personas and User Stories**: Creating personas to represent different user types and user 
   stories to capture their needs and goals.
-* **Wireframing and Prototyping**: Designing wireframes and prototypes to visualize the user 
+* **Wireframing and Prototyping**: Designing wireframes and prototypes to visualise the user 
   interface and interaction flow.
 * **Usability Testing**: Testing the prototypes with real users to gather feedback and identify 
   usability issues.
@@ -179,7 +179,7 @@ that the two perspectives are complementary and that bot are needed to deliver a
 
 | Aspect                      | UX (User Experience) Analysis                                   | Functional Analysis                                             |
 |-----------------------------|-----------------------------------------------------------------|-----------------------------------------------------------------|
-| **Focus**                   | User interaction and satisfaction                               | System functionality and behavior                               |
+| **Focus**                   | User interaction and satisfaction                               | System functionality and behaviour                               |
 | **Primary Concern**         | How users feel about and interact with the product              | What the system should do and how it should do it               |
 | **Activities**              | User research, wireframing, prototyping, usability testing      | Requirement gathering, use case development, system modelling   |
 | **Outcome**                 | Improved user interface and interaction design                  | Detailed functional requirements and specifications             |
@@ -214,7 +214,7 @@ cater for. This will feed into the overall system design by underpinning role-ba
 and security.
 
 The complete set of user stories defined during the requirements analysis process is referred to 
-as the _product backlog_: Here, user stories are prioritized according to their value to the 
+as the _product backlog_: Here, user stories are prioritised according to their value to the 
 business, user needs, and the feasibility of implementation along with system features, 
 enhancements, and bug fixes. Regular sessions (often referred to as backlog grooming or refinement) 
 are held to review and update the backlog, ensuring that it accurately reflects current priorities 

@@ -13,7 +13,7 @@ nav_order: 1
 1. Commit and Push Frequently:
 
     > Regularly commit your changes and push them to the remote repository. This reduces the 
-    > chances of large, divergent code bases and minimizes the risk of conflicts when merging later.
+    > chances of large, divergent code bases and minimises the risk of conflicts when merging later.
 
 2. Pull/Fetch Changes Regularly:
 

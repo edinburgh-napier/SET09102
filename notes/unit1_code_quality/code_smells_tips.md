@@ -8,9 +8,9 @@ nav_order: 1
 
 # Practical tips for learning how to stop and correct code smells
 
-1. Learn to Recognize Common Code Smells
+1. Learn to Recognise Common Code Smells
 
-    > Familiarize yourself with the most common code smells (e.g., Long Method, Large Class, 
+    > Familiarise yourself with the most common code smells (e.g., Long Method, Large Class, 
     > Duplicated Code, Feature Envy, etc.).
     > 
     > Start by reading books like 
@@ -60,7 +60,7 @@ nav_order: 1
     > Encourage regular code reviews and ask teammates to look for potential code smells. 
     > Feedback from others can provide new perspectives on improving your code.
 
-7. Minimize Dependencies
+7. Minimise Dependencies
 
     > Avoid tight coupling between classes or modules. Excessive dependencies can create 
     > complex code smells such as Feature Envy or Shotgun Surgery.
@@ -74,7 +74,7 @@ nav_order: 1
     > Don’t let technical debt accumulate. Code smells are often the first sign of technical 
     > debt building up.
     > 
-    > Create a strategy for identifying and prioritizing technical debt. Keep a list of 
+    > Create a strategy for identifying and prioritising technical debt. Keep a list of 
     > refactoring tasks in your project backlog and address them regularly.
 
 9. Stay Consistent with Best Practices

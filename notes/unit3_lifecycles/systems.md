@@ -143,7 +143,7 @@ ensure the system adapts to changes in external conditions.
 ### Feedback Loops
 
 Feedback loops occur when the output of a system is fed back into the system as input, influencing 
-future behavior. Feedback can be positive (amplifying changes) or negative (stabilizing the system).
+future behaviour. Feedback can be positive (amplifying changes) or negative (stabilising the system).
 Continuous Integration/Continuous Deployment (CI/CD) pipelines provide a clear example of feedback 
 loops in software engineering. When developers commit code, automated tests run in the pipeline and 
 provide immediate feedback on whether the new code breaks any existing functionality. If the tests 
@@ -166,12 +166,12 @@ the overall system maintains its performance even under fluctuating load conditi
 
 ### Emergence
 
-_Emergence_ is the idea that a system exhibits properties or behaviors that are not present in its 
+_Emergence_ is the idea that a system exhibits properties or behaviours that are not present in its 
 individual components but arise from the interactions between those components. In machine learning 
-systems, the behavior of the system as a whole cannot be directly inferred from the behavior of 
+systems, the behaviour of the system as a whole cannot be directly inferred from the behaviour of 
 individual components. For instance, a deep learning neural network's ability to classify images 
 accurately emerges from the interactions between neurons across many layers. None of the individual 
-neurons "know" what an image is, but collectively they produce intelligent behavior.
+neurons "know" what an image is, but collectively they produce intelligent behaviour.
 
 ### Hierarchy
 
@@ -190,11 +190,11 @@ complexity.
 
 ### Entropy
 
-_Entropy_ refers to the tendency of a system to move toward disorder or disorganization over time. 
-Systems must continually adapt and reorganize to avoid breakdown and maintain functionality.
+_Entropy_ refers to the tendency of a system to move toward disorder or disorganisation over time. 
+Systems must continually adapt and reorganise to avoid breakdown and maintain functionality.
 Technical debt is an example of entropy in software systems. As a system grows and evolves, 
 shortcuts taken during development (e.g., lack of refactoring, poor design choices) lead to 
-increased complexity and disorganization. Over time, the system degrades, making it harder to 
+increased complexity and disorganisation. Over time, the system degrades, making it harder to 
 maintain and adding to the entropy of the software.
 
 To combat entropy, developers must actively refactor and improve the codebase to maintain order 
@@ -208,7 +208,7 @@ In an open system, adaptation is crucial for survival or continued functionality
 systems evolve through updates, patches, and feature enhancements to adapt to changing user needs, 
 technological advancements, or security requirements.
 
-Agile software development models emphasize adaptability and evolution. In agile development, 
+Agile software development models emphasise adaptability and evolution. In agile development, 
 software is built incrementally, and the team continuously adapts based on user feedback, testing, 
 and changing requirements. This adaptive cycle allows the system (software product) to evolve in 
 response to external changes such as market conditions or user demands.
