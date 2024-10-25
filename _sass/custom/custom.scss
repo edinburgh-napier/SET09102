@@ -236,19 +236,28 @@ div.toc-container details > ul > ul {
 
 // TABLES
 
-table.quadrants {
-    margin: 1em 0 2em 2em;
-}
+//table.quadrants {
+//    margin: 1em 0 2em 2em;
+//}
 table.quadrants th,
 table.quadrants td {
     text-align: center;
-    padding: 1em;
+    padding: 1rem;
+    border: none;
+    max-width: 12rem;
 }
 table.quadrants tr:nth-child(1) td,
 table.quadrants tr:nth-child(2) td {
-    height: 8em;
+    height: 8rem;
     border: 1px solid grey;
 }
+table.quadrants tr:first-child th:first-child {
+  vertical-align: bottom;
+}
+table.quadrants tr th:nth-child(2) {
+  text-align: right;
+}
+
 table.quadrants tr:nth-child(1) td:nth-child(3),
 table.quadrants tr:nth-child(2) td:nth-child(3) {
     background-color: var(--pale-blue);
