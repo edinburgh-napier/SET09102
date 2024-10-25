@@ -148,7 +148,7 @@ Over time, its technology will become outdated and members of the maintenance te
 through natural staff turnover. This has led some commentators to suggest that once the saturation 
 point is reached, the system fits the description of a legacy system as shown in Fig. 14.
 
-![Fig. 14. Creation of a legacy system? ([Sabo, 2023](https://world.hey.com/itzy/technical-debt-duct-tape-rust-27bf7096))](images/legacy_system.png){: standalone #fig14 data-title="Creation of a legacy system?"}
+![Fig. 14. Creation of a legacy system? (<a href="https://world.hey.com/itzy/technical-debt-duct-tape-rust-27bf7096">Sabo, 2023</a>)](images/legacy_system.png){: standalone #fig14 data-title="Creation of a legacy system?"}
 
 To examine the interactions between the laws, 
 [Franco et al.](https://doi.org/10.1007/s11219-022-09600-6) (2023) used the systems thinking 
@@ -159,7 +159,7 @@ to represent feedback loops of systems of any domain. The diagram consists of no
 relationships, where relationships can be positive or negative as indicated by the corresponding 
 symbol at the end of a relationship arrow.
 
-![Fig. 15. Feedback loops arising from the second and sixth laws of software evolution ([Franco et al., 2023](https://doi.org/10.1007/s11219-022-09600-6) )](images/feedback_loops.png){: standalone #fig15 data-title="Feedback loops arising from the second and sixth laws of software evolution"}
+![Fig. 15. Feedback loops arising from the second and sixth laws of software evolution ( [Franco et al., 2023](https://doi.org/10.1007/s11219-022-09600-6) )](images/feedback_loops.png){: standalone #fig15 data-title="Feedback loops arising from the second and sixth laws of software evolution"}
 
 The left-hand side of Fig. 15 shows a positive feedback loop in which the more complete the 
 system, the more attractive it is. It therefore garners more change requests and attracts more 
@@ -417,6 +417,8 @@ legacy systems into four clusters depending on their business value and system q
 ![Fig. 18. Classifying legacy systems ([Sommerville, 2016](https://napier.primo.exlibrisgroup.com/permalink/44NAP_INST/13v8mut/alma9923404758802111))](images/legacy_system_classification.png){: standalone #fig18 data-title="Classifying legacy systems"}
 
 Classifying systems in this way suggests four different strategies:
+
+# Scaped
 
 {::nomarkdown}  
 <table class="quadrants">
