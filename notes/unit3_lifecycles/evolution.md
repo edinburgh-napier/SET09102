@@ -419,14 +419,13 @@ legacy systems into four clusters depending on their business value and system q
 
 Classifying systems in this way suggests four different strategies:
 
-{::nomarkdown}  
+{: .madeupclass}  
 <table class="quadrants">
     <tbody><tr><th rowspan="2">Business value</th><th>High</th><td>Re-engineer or replace</td><td>Maintain</td>
     </tr><tr><th>Low</th><td>Scrap</td><td>Replace with COTS, scrap or maintain</td></tr>
     <tr><td colspan="2"></td><th>Low</th><th>High</th></tr>
     <tr><td colspan="2"></td><th colspan="2">System quality</th></tr>
 </tbody></table>
-{:/}
 
 The need for software re-engineering became significant by the late 1990s, driven by the transition 
 of information systems to web-based interfaces. Re-engineering emerged to address the challenges 
