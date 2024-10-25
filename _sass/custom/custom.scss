@@ -260,13 +260,13 @@ table.quadrants tr th:nth-child(2) {
 
 table.quadrants tr:nth-child(1) td:nth-child(3),
 table.quadrants tr:nth-child(2) td:nth-child(3) {
-    background-color: var(--pale-blue);
+    background-color: var(--blue-lt-000);
 }
 table.quadrants tr:nth-child(1) td:nth-child(4) {
-    background-color: var(--pale-green);
+    background-color: var(--green-lt-000);
 }
 table.quadrants tr:nth-child(2) td:nth-child(2) {
-    background-color: var(--pale-orange);
+    background-color: var(--red-lt-000);
 }
 
 table.quadrants tr:first-child th:first-child {
