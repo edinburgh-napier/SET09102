@@ -5,7 +5,7 @@ has_children: true
 nav_order: 1
 ---
 
-# Overview and the Agile manifesto
+# Overview and the Agile Manifesto
 
 Structured method have been criticised for not having a way to manage the unexpected or the 
 uncertain. Additionally, from a management point of view, once the design and the timescale have 
@@ -242,7 +242,11 @@ ever static—there’s always room for growth.
 </p>
 </details>
 
+{: .tip-title }
+> [<i class="fa-regular fa-lightbulb"></i> Practical tips for getting started with Agile](manifesto_tips)
 
+## Further reading
 
-
-
+* Software Project Management ([O'Regen, 2022, Ch. 4](https://link-springer-com.napier.idm.oclc.org/chapter/10.1007/978-3-031-07816-3_4))
+* Manifesto for Agile Software Development ([Beck et al., 2001](https://agilemanifesto.org/))
+* Developing information for users in an agile environment ([ISO/IEC/IEEE 26515](https://napier.primo.exlibrisgroup.com/permalink/44NAP_INST/19n0mho/cdi_ieee_standards_0b0000648897745a))

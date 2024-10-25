@@ -32,6 +32,8 @@ The problem with quick and dirty...is that dirty remains long after quick has be
 
 ## Acceptance criteria
 
+## project-level metrics
+story completion, velocity, defect rates
 
 ## ISO 25000 Systems and software Quality Requirements and Evaluation (SQuaRE)
 

@@ -249,6 +249,9 @@ it is simply added to the backlog. Its priority is then evaluated in the context
 requirements and the time available which may imply changes in the priorities of other backlog 
 items.
 
+{: .tip-title }
+> [<i class="fa-regular fa-lightbulb"></i> Practical tips for requirements engineering](requirements_tips)
+
 ## Further reading
 
 *   Requirements engineering ([O'Regen, 2022, Ch. 5](https://link-springer-com.napier.idm.oclc.org/book/10.1007/978-3-031-07816-3))

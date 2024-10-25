@@ -463,6 +463,9 @@ It is worth mentioning that at the time of writing, a common theme in the litera
 migration of legacy systems to a microservices architecture which is deployed on a cloud service. 
 However, further discussion of this particular case is beyond the scope of the module.
 
+{: .tip-title }
+> [<i class="fa-regular fa-lightbulb"></i> Practical tips on software evolution](evolution_tips)
+
 ## Further reading
 
 *   [Herraiz et al. (2013) The Evolution of the Laws of Software Evolution: A Discussion Based on a Systematic Literature Review](http://dx.doi.org/10.1145/2543581.2543595)
