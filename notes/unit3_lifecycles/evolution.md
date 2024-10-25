@@ -415,11 +415,12 @@ the entire system must be considered. If the system ceases to deliver business v
 option might be to scrap it completely and migrate users to an alternative. Fig. 18. divides 
 legacy systems into four clusters depending on their business value and system quality.
 
-![Fig. 18. Classifying legacy systems ([Sommerville, 2016](https://napier.primo.exlibrisgroup.com/permalink/44NAP_INST/13v8mut/alma9923404758802111))](images/legacy_system_classification.png){: standalone #fig18 data-title="Classifying legacy systems"}
+![Fig. 18. Classifying legacy systems (<a href="https://napier.primo.exlibrisgroup.com/permalink/44NAP_INST/13v8mut/alma9923404758802111">Sommerville, 2016</a>)](images/legacy_system_classification.png){: standalone #fig18 data-title="Classifying legacy systems"}
 
 Classifying systems in this way suggests four different strategies:
 
-{: .madeupclass}  
+<hr class="hide-wrapper">
+
 <table class="quadrants">
     <tbody><tr><th rowspan="2">Business value</th><th>High</th><td>Re-engineer or replace</td><td>Maintain</td>
     </tr><tr><th>Low</th><td>Scrap</td><td>Replace with COTS, scrap or maintain</td></tr>
