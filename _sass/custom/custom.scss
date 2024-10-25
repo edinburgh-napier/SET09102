@@ -236,9 +236,10 @@ div.toc-container details > ul > ul {
 
 // TABLES
 
-//table.quadrants {
-//    margin: 1em 0 2em 2em;
-//}
+table.quadrants {
+    //margin: 1em 0 2em 2em;
+  min-width: inherit;
+}
 table.quadrants th,
 table.quadrants td {
     text-align: center;
