@@ -241,3 +241,4 @@ project’s success, with shared ownership over both the process and the product
 
 ## Further reading
 
+[Extreme Programming: A gentle introduction](http://www.extremeprogramming.org/)
