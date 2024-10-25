@@ -21,7 +21,7 @@ become obsolete, less efficient, and increasingly challenging to maintain, ultim
 significant disruptions to business operations.
 
 The concept of software evolution comes from the structured development tradition where the 
-software development lifecycle is usually expressed in a linear form as shown in Fig. 1. Each 
+software development lifecycle is usually expressed in terms of phases as shown in Fig. 1. Each 
 phase builds on the previous one, culminating in the maintenance phase in which the project team 
 has been disbanded and the system is in active use supported by a maintenance team.
 
