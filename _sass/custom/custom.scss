@@ -251,10 +251,12 @@ table.quadrants {
 }
 table.quadrants th,
 table.quadrants td {
-    text-align: center;
-    padding: 1rem;
-    border: none;
-    max-width: 12rem;
+  font-style: inherit !important;
+  text-align: center;
+  padding: 1rem;
+  border: none;
+  max-width: 12rem;
+
 }
 table.quadrants tr:nth-child(1) td,
 table.quadrants tr:nth-child(2) td {
