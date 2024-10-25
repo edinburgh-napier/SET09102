@@ -74,6 +74,10 @@ figure img {
   max-width: 40rem;
   max-height: 40rem;
 }
+figure img.small-fig {
+  max-width: 30rem;
+  max-height: 30rem;
+}
 figcaption {
   display: block;
   font-style: italic;

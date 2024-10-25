@@ -21,11 +21,11 @@ become obsolete, less efficient, and increasingly challenging to maintain, ultim
 significant disruptions to business operations.
 
 The concept of software evolution comes from the structured development tradition where the 
-software development lifecycle is usually expressed in a linear form as shown in Fig. 12. Each 
+software development lifecycle is usually expressed in a linear form as shown in Fig. 1. Each 
 phase builds on the previous one, culminating in the maintenance phase in which the project team 
 has been disbanded and the system is in active use supported by a maintenance team.
 
-![Fig. 12. The linear structured software development lifecycle](images/sdlc.png){: standalone #fig12 data-title="The linear structured software development lifecycle"}
+![Fig. 1. The six-phase software development lifecycle](images/sdlc.png){: standalone #fig1 .small-fig data-title="The six-phase software development lifecycle"}
 
 Although we are more used to thinking about software development in terms of an iterative Agile 
 cycle, even in Agile projects there has to be an initial development effort that leads up to the 
@@ -135,20 +135,20 @@ an example software system over time. As well as showing changes accumulating ov
 also revealed an interesting pattern in the way this occurred. The authors found that the 
 functionality growth of a software system represented by "transactions" (similar to 
 [function points](https://en.wikipedia.org/wiki/Function_point)) followed an S-shaped pattern 
-shown in Fig. 13. Once the system proves useful to early adopters, the demand for change exhibits 
+shown in Fig. 2. Once the system proves useful to early adopters, the demand for change exhibits 
 a sudden increase or "takeoff". After that, its cumulative functionality grows, following the 
 sixth law of software evolution, until it reaches an inflection point. After this point in time, 
 the growth rate of the software slows down until reaching the saturation point, where marginal 
 functionalities are incorporated into the software baseline.
 
-![Fig. 13. The accumulation of software changes over time](images/functionality_evolution.gif){: standalone #fig13 data-title="The accumulation of software changes over time"}
+![Fig. 2. The accumulation of software changes over time](images/functionality_evolution.gif){: standalone #fig2 data-title="The accumulation of software changes over time"}
 
 Once the rate of change has levelled out, the system is by definition receiving less attention. 
 Over time, its technology will become outdated and members of the maintenance team will be lost 
 through natural staff turnover. This has led some commentators to suggest that once the saturation 
-point is reached, the system fits the description of a legacy system as shown in Fig. 14.
+point is reached, the system fits the description of a legacy system as shown in Fig. 3.
 
-![Fig. 14. Creation of a legacy system? (<a href="https://world.hey.com/itzy/technical-debt-duct-tape-rust-27bf7096">Sabo, 2023</a>)](images/legacy_system.png){: standalone #fig14 data-title="Creation of a legacy system?"}
+![Fig. 3. Creation of a legacy system? (<a href="https://world.hey.com/itzy/technical-debt-duct-tape-rust-27bf7096">Sabo, 2023</a>)](images/legacy_system.png){: standalone #fig3 data-title="Creation of a legacy system?"}
 
 To examine the interactions between the laws, 
 [Franco et al.](https://doi.org/10.1007/s11219-022-09600-6) (2023) used the systems thinking 
@@ -159,9 +159,9 @@ to represent feedback loops of systems of any domain. The diagram consists of no
 relationships, where relationships can be positive or negative as indicated by the corresponding 
 symbol at the end of a relationship arrow.
 
-![Fig. 15. Feedback loops arising from the second and sixth laws of software evolution (<a href="https://doi.org/10.1007/s11219-022-09600-6">Franco et al., 2023</a>)](images/feedback_loops.png){: standalone #fig15 data-title="Feedback loops arising from the second and sixth laws of software evolution"}
+![Fig. 4. Feedback loops arising from the second and sixth laws of software evolution (<a href="https://doi.org/10.1007/s11219-022-09600-6">Franco et al., 2023</a>)](images/feedback_loops.png){: standalone #fig4 data-title="Feedback loops arising from the second and sixth laws of software evolution"}
 
-The left-hand side of Fig. 15 shows a positive feedback loop in which the more complete the 
+The left-hand side of Fig. 4 shows a positive feedback loop in which the more complete the 
 system, the more attractive it is. It therefore garners more change requests and attracts more 
 development resource. This positive feedback arises as a consequence of Lehman's sixth law. 
 The right-hand side shows a negative feedback loop arising from Lehman's second law. As the rate 
@@ -211,7 +211,7 @@ responsiveness to change while maintaining service quality and stability.
 > organisations more freedom to define processes that suit their own context.
 
 ITIL distinguishes between _incidents_, _problems_ and _requests for change_ (RFCs) which are 
-variously handled by the management practices shown in Fig. 16. Incidents are interruptions to 
+variously handled by the management practices shown in Fig. 5. Incidents are interruptions to 
 the IT service which could, for example, refer to bug reports coming through a helpdesk. It is 
 the job of frontline support to resolve incidents as quickly as possible. A problem is the 
 underlying cause of one or more incidents. Another responsibility of the support team is to 
@@ -219,7 +219,7 @@ identify and document workarounds for problems to help with the resolution of fu
 Both incidents and problems can give rise to RFCs which are the items that are passed on to 
 the development team for attention.
 
-![Fig. 16. ITIL change-related practices](images/itil_change_practices.png){: standalone #fig16 data-title="ITIL change-related practices"}
+![Fig. 5. ITIL change-related practices](images/itil_change_practices.png){: standalone #fig5 data-title="ITIL change-related practices"}
 
 ### Impact analysis
 
@@ -232,10 +232,10 @@ decision-making and effective planning. By thoroughly analysing the impact, deve
 project managers can anticipate potential problems, mitigate risks, and ensure that changes 
 are implemented smoothly without disrupting the overall functionality and stability of the 
 software. Several types of impact can be identified, and it is useful to split the overall 
-concept of impact analysis into different dimensions as illustrated in Fig. 17. You can use 
+concept of impact analysis into different dimensions as illustrated in Fig. 6. You can use 
 the grid below the figure to explore these dimensions in more detail.
 
-![Fig. 17. Dimensions of impact](images/dimensions_of_impact.png){: standalone #fig17 data-title="Dimensions of impact"}
+![Fig. 6. Dimensions of impact](images/dimensions_of_impact.png){: standalone #fig6 data-title="Dimensions of impact"}
 
 <details class="blue-bar">
 <summary>Functional</summary>
@@ -412,10 +412,10 @@ Retaining the system in its current form may not be compatible with the current 
 strategy and may expose the organisation to security vulnerabilities not present in current 
 systems. When considering a change to a legacy system, therefore, the option to _re-engineer_ 
 the entire system must be considered. If the system ceases to deliver business value, another 
-option might be to scrap it completely and migrate users to an alternative. Fig. 18. divides 
+option might be to scrap it completely and migrate users to an alternative. Fig. 7. divides 
 legacy systems into four clusters depending on their business value and system quality.
 
-![Fig. 18. Classifying legacy systems (<a href="https://napier.primo.exlibrisgroup.com/permalink/44NAP_INST/13v8mut/alma9923404758802111">Sommerville, 2016</a>)](images/legacy_system_classification.png){: standalone #fig18 data-title="Classifying legacy systems"}
+![Fig. 7. Classifying legacy systems (<a href="https://napier.primo.exlibrisgroup.com/permalink/44NAP_INST/13v8mut/alma9923404758802111">Sommerville, 2016</a>)](images/legacy_system_classification.png){: standalone #fig7 data-title="Classifying legacy systems"}
 
 Classifying systems in this way suggests four different strategies:
 
