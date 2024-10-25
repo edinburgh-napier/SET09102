@@ -236,6 +236,15 @@ div.toc-container details > ul > ul {
 
 // TABLES
 
+//Remove the table wrapper shadow by preceding the table with <hr class="hide-wrapper">
+
+hr.hide-wrapper {
+  color: white;
+}
+
+hr.hide-wrapper + div.table-wrapper {
+  box-shadow: none;
+}
 table.quadrants {
     //margin: 1em 0 2em 2em;
   min-width: inherit;
