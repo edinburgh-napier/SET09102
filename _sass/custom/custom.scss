@@ -239,7 +239,7 @@ div.toc-container details > ul > ul {
 //Remove the table wrapper shadow by preceding the table with <hr class="hide-wrapper">
 
 hr.hide-wrapper {
-  color: white;
+  border: none;
 }
 
 hr.hide-wrapper + div.table-wrapper {
