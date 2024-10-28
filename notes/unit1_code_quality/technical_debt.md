@@ -10,8 +10,8 @@ nav_order: 7
 
 According to the [2022 report](https://www.it-cisq.org/the-cost-of-poor-quality-software-in-the-us-a-2022-report/)
 by the Consortium for Information and Software Quality (CISQ), the overall annual cost to
-industry of poor quality code was \$2.41 trillion. Of this overall total, about
-\$1.52 trillion was attributed to *technical debt* (TD).
+industry of poor quality code was $2.41 trillion. Of this overall total, about
+$1.52 trillion was attributed to *technical debt* (TD).
 
 TD arises when short-term priorities are allowed to take precedence over known best
 practices which would ensure a higher quality product. The name comes from an analogy
