@@ -61,9 +61,6 @@ the workflow.
 
 ![Fig. 2. Complex Kanban board (<a href="https://commons.wikimedia.org/w/index.php?curid=55448101">Andy Carmichael - Own work, CC BY-SA 4.0</a>)](https://upload.wikimedia.org/wikipedia/commons/c/c2/Sample_Kanban_Board.png){: standalone #fig2 data-title="Complex Kanban board" }
 
-<p class="attribution"><a href="https://commons.wikimedia.org/w/index.php?curid=55448101">Image: Andy Carmichael - Own work, CC BY-SA 4.0</a></p>
-
-
 In reality, task boards can become more complex as shown in Fig. 2. Nevertheless, 
 visualising work on a Kanban board transforms the abstract idea of “progress” into a concrete, 
 easily understood process. This shared visualisation promotes accountability, aligns team efforts, 
