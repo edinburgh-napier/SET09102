@@ -59,7 +59,7 @@ may signal a need for more resources in a specific stage. With a shared visual b
 can collaborate more effectively, adjusting resources and support as needed to move tasks along 
 the workflow.
 
-![Fig. 2. Complex Kanban board](https://upload.wikimedia.org/wikipedia/commons/c/c2/Sample_Kanban_Board.png){: standalone #fig2 data-title="Complex Kanban board" }
+![Fig. 2. Complex Kanban board [Andy Carmichael - Own work, CC BY-SA 4.0](https://commons.wikimedia.org/w/index.php?curid=55448101)](https://upload.wikimedia.org/wikipedia/commons/c/c2/Sample_Kanban_Board.png){: standalone #fig2 data-title="Complex Kanban board" }
 
 <p class="attribution"><a href="https://commons.wikimedia.org/w/index.php?curid=55448101">Image: Andy Carmichael - Own work, CC BY-SA 4.0</a></p>
 
