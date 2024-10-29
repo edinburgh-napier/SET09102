@@ -59,7 +59,13 @@ may signal a need for more resources in a specific stage. With a shared visual b
 can collaborate more effectively, adjusting resources and support as needed to move tasks along 
 the workflow.
 
-Visualising work on a Kanban board transforms the abstract idea of “progress” into a concrete, 
+![Fig. 2. Complex Kanban board](https://upload.wikimedia.org/wikipedia/commons/c/c2/Sample_Kanban_Board.png){: standalone #fig2 data-title="Complex Kanban board" }
+
+<p class="attribution"><a href="https://commons.wikimedia.org/w/index.php?curid=55448101">Image: Andy Carmichael - Own work, CC BY-SA 4.0</a></p>
+
+
+In reality, task boards can become more complex as shown in Fig. 2. Nevertheless, 
+visualising work on a Kanban board transforms the abstract idea of “progress” into a concrete, 
 easily understood process. This shared visualisation promotes accountability, aligns team efforts, 
 and provides valuable insights for continuous improvement, making it a key element of Kanban’s 
 approach to optimising workflow.
