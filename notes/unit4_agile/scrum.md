@@ -307,5 +307,6 @@ adapting practices to suit their unique workflows and project demands.
 ## Further reading
 
 [Scrum Alliance](https://resources.scrumalliance.org/?tn=Articles)
+
 [Stephens, 2022, Ch. 19](https://learning.oreilly.com/library/view/beginning-software-engineering/9781119901709/c19.xhtml#please-read)
 
