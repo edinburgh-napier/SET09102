@@ -34,6 +34,14 @@ blockquote.tip-title>p:first-child,
   text-transform: inherit;
 }
 
+blockquote.note-title,
+blockquote.tip-title,
+blockquote.information-title,
+blockquote.warning-title {
+  margin: 3rem 0;
+}
+
+
 .side-by-side {
   display: inline-block;
   margin: 2rem;
