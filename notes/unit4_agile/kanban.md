@@ -65,7 +65,7 @@ In reality, task boards can become more complex as shown in Fig. 2. Nevertheless
 visualising work on a Kanban board transforms the abstract idea of “progress” into a concrete, 
 easily understood process. This shared visualisation promotes accountability, aligns team efforts, 
 and provides valuable insights for continuous improvement, making it a key element of Kanban’s 
-approach to optimising workflow.
+approach to optimising workflow. 
 
 ## Limiting work in progress
 
