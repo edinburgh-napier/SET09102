@@ -3,10 +3,111 @@ title: Control
 parent: Agile
 has_children: true
 has_toc: false
-nav_order: 3
+nav_order: 2
 ---
 
 # Controlling Agile Projects
+
+When they first hear about Agile development, many people mistakenly
+think that it is a licence to work without rules. In fact, the work in
+an Agile project needs to be coordinated just as much as it does in any
+other kind of project. The Agile approach does, however, acknowledges
+that it is difficult, time-consuming and often futile to attempt to
+answer all of the design questions in advance. Instead, it assumes that
+the requirements themselves will be clarified as the project accumulates
+knowledge during the development. This would be naively optimistic
+though without some control over the process, and one of the fundamental
+elements of the Agile approach is *iterative development* as illustrated in
+Fig. 1.
+
+![Fig. 1. Prototyping cycle](images/agile_prototyping.png){: standalone #fig1 data-title="Prototyping cycle" }
+
+A project usually runs for several months. A prototyping cycle
+structures that time to create opportunities to re-evaluate the work
+done so far and to check that the project is going in the right
+direction. The simplest approach is to choose a period of time such as
+two weeks, and to structure each period according to the illustration
+above. Each cycle would start with some planning, followed by some
+analysis and design, some implementation and eventually the evaluation
+of the work within the cycle. Using this approach, a two-month project
+would be made up of four cycles. It is also possible to divide a project
+into cycles of unequal sizes if there is some advantage to doing so.
+      
+An important element of iterative development is that a working
+prototype is produced at the end of each cycle. This is often referred
+to as the *frequent delivery of product* which is an expression
+of Agile principle 3. Delivering working software on a regular basis
+provides an opportunity to 
+    
+* identify problems
+* seek feedback from others
+* evaluate work done so far
+* refine the design
+* re-evaluate the scope of the project
+* plan the next stage of development
+     
+## Managing iterations
+
+In a project team, it is important that everyone is working in a
+coordinated fashion in order to realise the benefits of iterative
+development. The regular delivery of prototypes creates a rhythm to the
+work which contributes to a sense of progress and achievement. This in
+turn supports a good working atmosphere with natural breaks in the
+pressure to get things done.
+
+The basic requirements are to make sure that everyone knows what the
+goals of a cycle are at the start, to communicate progress during the
+cycle, and to coordinate the work of the team towards the end so that
+the prototype emerges in a controlled way at the expected time. The
+first requirement then, is for the team to know when the deadlines are.
+Fig. 2 shows how a Gantt chart for an Agile project might be
+structured at the top level.
+
+![Fig. 2. Gantt chart overview](images/gantt_1.png){: standalone #fig2 data-title="Gantt chart overview" }
+      
+There are several things that need to be done during project start-up
+and project closure. There are many sources of advice on this topic,
+including 
+    
+[![](common_img/material/web.svg#icon-indented) P3.express](http://p3.express/a00)
+
+[![](common_img/material/web.svg#icon-indented) The Disciplined Agile Framework](http://www.disciplinedagiledelivery.com/tag/project-initiation)
+
+[![](images/versionone-logo.png#icon-indented) Agile development release planning](https://www.versionone.com/agile-101/agile-management-practices/agile-development-release-planning)
+    
+In this illustration, they are simply represented as a single activity
+on the Gantt chart as shown in the next image. Expanding the *Startup*
+and *Closure* stages reveals two important features of the Gantt
+chart. First, the name of every task is displayed on the chart. This
+makes it easier to read and understand, especially as the complexity
+grows. Second, each summary task ends with a *milestone*. This is
+a task of zero duration which acts as a deadline. One way to measure the
+health of a project is to monitor the milestones in the plan to make
+sure that they do not slip. Notice that the milestone which marks the
+end of *Startup* is linked to the beginning of the next summary
+task, *Implementation*.
+      
+![Fig. 3. Gantt chart showing startup and closure detail](images/gantt_2.png){: standalone #fig3 data-title="Gantt chart showing startup and closure detail" }
+      
+In Fig. 3 it is clear that the Implementation stage lasts
+eight weeks. In our example, we have decided to split that into four
+iterations of two weeks each. This could be represented as a series of
+further summary tasks as shown in Fig. 4.
+      
+![Fig. 4. Gantt chart showing iterations](images/gantt_3.png){: standalone #fig4 data-title="Gantt chart showing iterations" }
+      
+In some ways, each iteration is like a small project in its own right.
+They all have a similar structure with some planning at the start and
+the evaluation of the prototype at the end. This has benefits for the
+team because each iteration has a predictable structure. In addition,
+the transition from one iteration to the next provides an opportunity to
+celebrate the achievements of the one that has just finished. The image
+below illustrates how each iteration might appear on the Gantt chart. In
+some cases it is not possible to add more detail than this to the
+implementation stage of the Gantt chart because the actual tasks are
+handled in an Agile manner using techniques such as a Kanban board.
+
+![Fig. 5. Gantt chart showing internal structure of an iteration](images/gantt_4.png){: standalone #fig5 data-title="Gantt chart showing internal structure of an iteration" }
 
 ## Prioritising requirements
 
@@ -102,59 +203,47 @@ when something is moved into the ***W***on't-have category since this means
 that the team no longer expects it to be included in the final product. This is 
 called *de-scoping*, and is a natural part of a DSDM Atern project.
 
-## Task boards
+## Issue-related workflow
 
-When you are working on your own, tracking the progress of your project
-is fairly simple. You keep some sort of checklist of what needs to be
-done, keep notes about what has been completed and you adjust your
-schedule as you go along. Things start to fall apart though as soon as
-you are working as part of a team. People keep notes in different ways
-and update them at different times. These incompatible ways of working
-mean that some people on a team may not be aware of the overall state of
-the development. This is a particular problem when one team member is
-dependent on another for a task. It also means that delays may go
-unnoticed until a deadline arrives. If the team does not have a
-confident sense of what is going on, confidence and morale will suffer,
-deadlines will be missed and the project schedule will fall behind. If
-the project is a commercial one, this also means it will start to cost
-more than planned.
+Most code management platforms provide features to help manage projects. In GitHub, a project can be
+represented in a tabular format, as a roadmap or in the form of a Kanban-style task board. The choice
+of format is up to the team, but for the purposes of these notes, we will assume the use of a task board.
 
-Clearly, making sure that everyone on the team knows the current state
-of the project is important. To make that happen, the whole team needs
-to adhere to a standard process for recording the tasks that they are
-working on, and when those tasks are completed. In many agile
-methodologies, this is done using a task board which the team keeps up
-to date. The task board is central to the Kanban approach, and is often
-referred to as a Kanban board.
+By default, a task board in GitHub contains the three swimlanes, `Todo`, `In Progress` and `Done` as
+shown in Fig. 6. Further columns can be added if needed - this depends on how the team decides to
+manage the work. For example, a swimlane for stalled tasks could be added, or for tasks in review.
+The task board can be as complicated as required, but in general, the simpler the structure, the
+more intuitive it is to use.
 
-A task board is laid out as a series of columns that represent the
-different stages of completion that a task can go through - e.g.
-proposed, to do, in progress, in testing, complete. A task is
-represented as a card that starts in the leftmost column and moves into
-the next column as it reaches the new stage as illustrated in the first
-image below.In its simplest form, a task board can be implemented
-using real cards stuck onto a vertical surface like a whiteboard,
-although there are several software applications available available
-too.
+![Fig. 6. Default GitHub task board](images/github_task_board.png){: standalone #fig6 data-title="Default GitHub task board"}
 
-![Fig. 3. Task board](images/kanban1.png){: standalone #fig3 data-title="Task board" }
+Tasks in GitHub are represented by [issues](https://docs.github.com/en/issues). They can be added
+directly on the task board using the button at the bottom of each swimlane. If you take that option,
+you will need to explicitly attach the new issue to the relevant code repository. This is because
+the relationship between projects and repositories doesnot have to be one-to-one. You can also create
+issues using the issues tab on the repository page. If you take that option, you will need to say
+explicitly which project the issue should be added to. This is done using the controls on the right of
+the issue creation page as shown in Fig. 7.
 
-Using the arrangement above, the information about who is doing each
-task would have to be included in the written content of each card. The
-simplified version of the task board shown below can be useful in
-small projects. In this version, each member of the team has their own
-column, and so it is very easy to see who is working on what. A useful
-rule with this style of board is to place a limit on the number of cards
-that any one person can own at one time. This encourages team members to
-focus on a small number of things at one time.
+![Fig. 7. New issue page](images/new_issue.png){: standalone #fig7 data-title="GitHub new issue page"}
 
-![Fig. 4. Simplified Task board](images/kanban2.png){: standalone #fig4 data-title="Simplified Task board" }
+When using a task board, an item gradually accumulates detail and moves through the swimlanes from left
+to right as the work progresses. Exactly *when* an item is moved from one swimlane to the next needs to
+be defined in the team workflow so that there is no ambiguity. Once defined, these rules can be
+performed and enforced manually, but GitHub can help to automate some of the steps. Clicking on the
+three-dots icon in the top right-hand corner of the task board (see Fig. 5) allows you to select a
+`Workflows` option. Here, you can define several actions to be triggered automatically. The options
+are more or less self-explanatory and require some experimentation. The main point is that a team
+should make explicit decisions about how their task board should operate and which steps are to be
+automated. Those decisions should be clearly documented sothat they are easy for team members to
+follow.
+
+{: .tip-title }
+> [<i class="fa-regular fa-lightbulb"></i> Practical tips for effective iteration](control_tips)
 
 ## Further reading
 
 * [DSDM Atern](https://www.agilebusiness.org/page/whatisdsdm)
 * [MoSCoW prioritisation](https://www.agilebusiness.org/resource/video-mastering-moscow-prioritisation.html)
 * [A Comparison of Nine Basic Techniques for Requirements Prioritization](http://www.mvnet.fi/publications/software_development_seminar.pdf)
-* [Kanban board](https://www.agilealliance.org/glossary/kanban-board)
-* [What is a Kanban board?](https://leankit.com/learn/kanban/kanban-board)
-* [Project boards in GitHub](https://docs.github.com/en/enterprise-server@3.14/issues/planning-and-tracking-with-projects/learning-about-projects/about-projects)
+* [Iterative development](https://www.agilebusiness.org/content/iterative-development)

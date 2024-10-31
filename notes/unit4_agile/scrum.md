@@ -3,7 +3,7 @@ title: Scrum
 parent: Agile
 has_children: true
 has_toc: false
-nav_order: 6
+nav_order: 5
 ---
 
 # Scrum
@@ -306,7 +306,7 @@ adapting practices to suit their unique workflows and project demands.
 
 ## Further reading
 
-[Scrum Alliance](https://resources.scrumalliance.org/?tn=Articles)
-
-[Stephens, 2022, Ch. 19](https://learning.oreilly.com/library/view/beginning-software-engineering/9781119901709/c19.xhtml#please-read)
+* [Scrum Alliance](https://resources.scrumalliance.org/?tn=Articles)
+* [Stephens, 2022, Ch. 19](https://learning.oreilly.com/library/view/beginning-software-engineering/9781119901709/c19.xhtml#please-read)
+* [It's not just standing](https://martinfowler.com/articles/itsNotJustStandingUp.html)
 

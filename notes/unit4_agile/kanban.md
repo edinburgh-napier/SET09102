@@ -3,7 +3,7 @@ title: Kanban
 parent: Agile
 has_children: true
 has_toc: false
-nav_order: 5
+nav_order: 4
 ---
 
 # Kanban
@@ -255,4 +255,5 @@ teams that benefit from strong engineering practices and regular cycles of custo
 
 ## Further reading
 
-[The official guide to the Kanban method](https://kanban.university/kanban-guide/)
+* [The official guide to the Kanban method](https://kanban.university/kanban-guide/)
+* [Project boards in GitHub](https://docs.github.com/en/enterprise-server@3.14/issues/planning-and-tracking-with-projects/learning-about-projects/about-projects)

@@ -38,9 +38,9 @@ traditional methodologies toward a more flexible, people-centered approach.
 
 **Individuals and Interactions over Processes and Tools**
 
-> Agile prioritizes human collaboration and communication as the driving forces of success. While 
+> Agile prioritises human collaboration and communication as the driving forces of success. While 
 > processes and tools are important, it's the ability of team members to work together effectively 
-> that ultimately leads to high-quality outcomes. Emphasizing collaboration ensures teams can 
+> that ultimately leads to high-quality outcomes. Emphasising collaboration ensures teams can 
 > quickly resolve problems, adapt to change, and innovate.
 
 **Working Software over Comprehensive Documentation**
@@ -48,7 +48,7 @@ traditional methodologies toward a more flexible, people-centered approach.
 > Agile focuses on delivering functional software that meets user needs, rather than creating 
 > exhaustive documentation that may not add immediate value. While documentation has its place, 
 > the primary goal is to build software that works, and Agile ensures that the product is always 
-> prioritized over paperwork.
+> prioritised over paperwork.
 
 **Customer Collaboration over Contract Negotiation**
 
@@ -90,7 +90,7 @@ refine them even further into usable processes.
 valuable software.</summary>
 <p>
 In a collaborative software development project, customer satisfaction drives the process. This 
-principle emphasizes the importance of delivering functional pieces of software early and frequently. 
+principle emphasises the importance of delivering functional pieces of software early and frequently. 
 By doing so, teams can gather feedback from stakeholders throughout the project, ensuring that the 
 software remains aligned with customer needs and business objectives. Instead of waiting until the 
 end of the project for delivery, each iteration produces a tangible, valuable result, increasing 
@@ -103,7 +103,7 @@ product.
 <summary>2. Welcome changing requirements, even late in development. Agile processes harness 
 change for the customer’s competitive advantage.</summary>
 <p>
-Collaborative teams recognize that requirements often evolve as stakeholders gain a deeper 
+Collaborative teams recognise that requirements often evolve as stakeholders gain a deeper 
 understanding of the project’s goals or as market conditions change. This principle encourages 
 flexibility, allowing the team to adapt even during later stages of development. By welcoming 
 change rather than resisting it, the team can deliver software that provides a competitive edge. 
@@ -130,10 +130,10 @@ results and offer input early and often, reducing the risk of surprises at the e
 <p>
 In collaborative environments, close cooperation between business stakeholders and the development 
 team is crucial to ensuring that the project remains aligned with the business goals. Daily 
-interactions help resolve misunderstandings quickly, clarify requirements, and prioritize work 
+interactions help resolve misunderstandings quickly, clarify requirements, and prioritise work 
 effectively. Whether it’s through stand-up meetings, workshops, or informal discussions, these 
 frequent touchpoints help to bridge the gap between technical implementation and business objectives. 
-This principle emphasizes that collaboration between both sides leads to a more informed, responsive, 
+This principle emphasises that collaboration between both sides leads to a more informed, responsive, 
 and adaptive development process, ultimately delivering more value.
 </p>
 </details>
@@ -142,7 +142,7 @@ and adaptive development process, ultimately delivering more value.
 <summary>5. Build projects around motivated individuals. Give them the environment and support they 
 need, and trust them to get the job done.</summary>
 <p>
-Successful collaborative projects rely on teams of motivated, self-organizing individuals who are 
+Successful collaborative projects rely on teams of motivated, self-organising individuals who are 
 given the autonomy to make decisions and take ownership of their work. This principle highlights the 
 importance of trust and empowerment within the team. When developers, testers, and designers feel 
 trusted and supported, they are more engaged and productive. Providing an environment that fosters 
@@ -196,7 +196,7 @@ which ultimately improves the team’s effectiveness and the project’s outcome
 <p>
 Technical excellence and strong design practices form the foundation for an Agile project’s 
 flexibility. In a collaborative environment, team members focus on writing clean, maintainable 
-code and designing robust systems that can adapt to changes. This principle emphasizes that 
+code and designing robust systems that can adapt to changes. This principle emphasises that 
 high-quality engineering is essential for remaining responsive to new requirements or shifts 
 in direction. By focusing on technical excellence, the team ensures that the software is scalable, 
 easier to modify, and less prone to bugs, which supports the Agile goal of quick iteration and 
@@ -205,11 +205,11 @@ adaptation.
 </details>
 
 <details class="blue-bar">
-<summary>10. Simplicity — the art of maximizing the amount of work not done—is essential.</summary>
+<summary>10. Simplicity — the art of maximising the amount of work not done — is essential.</summary>
 <p>
 Agile promotes simplicity, encouraging teams to focus on doing only what is necessary to deliver 
 value. In collaborative software development, this means avoiding unnecessary complexity or 
-features that don’t directly contribute to the project’s goals. Teams must prioritize the most 
+features that don’t directly contribute to the project’s goals. Teams must prioritise the most 
 important tasks and eliminate waste. By focusing on simplicity, the team can deliver value faster, 
 reduce the risk of overengineering, and create a product that is easier to maintain and scale. 
 This principle ensures that the team remains focused and efficient.
@@ -217,10 +217,10 @@ This principle ensures that the team remains focused and efficient.
 </details>
 
 <details class="blue-bar">
-<summary>11. The best architectures, requirements, and designs emerge from self-organizing teams.
+<summary>11. The best architectures, requirements, and designs emerge from self-organising teams.
 </summary>
 <p>
-Self-organizing teams have the autonomy to decide how best to approach their work, which leads to 
+Self-organising teams have the autonomy to decide how best to approach their work, which leads to 
 better problem-solving and innovation. In collaborative projects, this principle empowers team 
 members to take ownership of architecture, design, and implementation decisions. By encouraging 
 collaboration and trust within the team, Agile creates an environment where the best ideas can 
@@ -242,6 +242,8 @@ and a more effective development process. This principle reinforces the idea tha
 ever static—there’s always room for growth.
 </p>
 </details>
+
+
 
 {: .tip-title }
 > [<i class="fa-regular fa-lightbulb"></i> Practical tips for getting started with Agile](manifesto_tips)
