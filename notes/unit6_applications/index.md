@@ -12,6 +12,7 @@ nav_order: 7
 ![Jeff Atwood](../../images/people/jeff_atwood.png)
 
 <hr class="splash">
+
 <blockquote class="pretty"><span>
 Object-relational mapping is the Vietnam of computer science.
 </span></blockquote>
