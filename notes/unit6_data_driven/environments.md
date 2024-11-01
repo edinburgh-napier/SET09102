@@ -1,23 +1,12 @@
-# Working with databases
+---
+title: Environments
+parent: Data-Driven Applications
+has_children: true
+has_toc: false
+nav_order: 1
+---
 
-<hr class="splash">
-
-![Jeff Atwood](../images/people/jeff_atwood.png)
-
-### Object-relational mapping is the Vietnam of computer science.
-
-<br/>
-
-*Jeff Atwood*
-
-<hr class="splash">
-
-
-##### Contents
-
-*Under development*
-
-## Prologue: file systems, environments and repositories
+# Environments
 
 This section recaps on some concepts that have been covered before either in this module or
 earlier in your studies. They bear repeating here though because they are fundamental to the
@@ -42,7 +31,7 @@ at the user's current working directory and includes a series of steps to get fr
 to the file of interest. That can involve moving upwards through the hierarchy until a common
 directory is reached before following a branch to the target.
 
-![File systems](../images/file_systems.png)
+![File systems](../../images/file_systems.png)
 
 *Fig. 1: File systems on Windows and Mac/Linux*
 
@@ -55,7 +44,7 @@ If an application encloses its executable binaries in additional levels of struc
 not be visible unless the relevant subdirectory is added to the `PATH`. Fig. 2 illustrates the
 dialogs provided by Windows for updating the `PATH`.
 
-![Editing the Windows PATH](../images/windows_path.png)
+![Editing the Windows PATH](../../images/windows_path.png)
 
 *Fig. 2: Updating the Windows PATH*
 
@@ -137,7 +126,7 @@ instances of the application and the database, and the fact that the route betwe
 application and the database may not be known. We often rely on standard internet
 infrastructure to resolve the route for us.
 
-![Multi-user database access](../images/database.png)
+![Multi-user database access](../../images/database.png)
 
 *Fig. 4: Multi-user database access*
 

@@ -1,4 +1,12 @@
-# Evaluating code quality
+---
+title: Evaluating Code Quality
+parent: Metrics
+has_children: true
+has_toc: false
+nav_order: 1
+---
+
+# Evaluating Code Quality
 
 GQM
 Goal Question Metric

@@ -5,8 +5,6 @@ has_children: true
 nav_order: 10
 ---
 
-# Ethics in Software Systems
-
 <hr class="splash">
 
 ![Stephen Wolfram](../../images/people/stephen_wolfram.png)
@@ -17,6 +15,8 @@ Maybe we want to constrain the computation, the AI, to only do things we conside
 <p class="attribution">Stephen Wolfram</p>
 
 <hr class="splash">
+
+# Ethics in Software Systems
 
 # Ethical Considerations in Software Development
 

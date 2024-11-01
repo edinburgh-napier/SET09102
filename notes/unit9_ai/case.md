@@ -1,26 +1,12 @@
-# Computer-aided software engineering
+---
+title: CASE
+parent: AI in Software Engineering
+has_children: true
+has_toc: false
+nav_order: 1
+---
 
-<hr class="splash">
-
-![Grady Booch](../../images/people/grady_booch.png)
-
-### A fool with a tool is still a fool.
-
-<br/>
-
-*Grady Booch*
-
-<hr class="splash">
-
-
-###### Contents
-
-1. [What is CASE?](#what-is-case)
-2. [Object-relational mapping](#object-relational-mapping)
-3. [Model-driven development](#model-driven-development)
-4. [Further reading](#further-reading)
-
-## What is CASE?
+# Computer-Aided Software Engineering
 
 Computer-aided software engineering (CASE) refers to the use of computational tools to
 simplify the job of creating software systems. That might refer to the top-down design

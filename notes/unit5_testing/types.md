@@ -1,6 +1,12 @@
+---
+title: Types of Testing
+parent: Testing
+has_children: true
+has_toc: false
+nav_order: 7
+---
 
-
-## Types of testing
+# Types of testing
 
 Although unit testing is of the most immediate concern to developers, there are other
 types of testing that it is important to be aware of. Some of the traditional categories
@@ -15,14 +21,14 @@ The tour below illustrates a few of the major types.
 </h6>
 
 
-### Integration testing
+## Integration testing
 
 Once a code change has passed its unit tests, we need to make sure that it will work well
 with other parts of the system and that it does not cause any errors. That is the job of
 *integration testing* which focuses on the new (or modified) code, and its known
 interactions with other elements of the system.
 
-### Regression testing
+## Regression testing
 
 While integration testing is limited in scope, *regression testing* is aimed at ensuring
 that the whole system behaves as it should. The concept is very similar to integration
@@ -34,7 +40,7 @@ testing is not as clear as it used to be. With the majority of our tests in the 
 code files that can be run automatically, the entire system can be regression tested on
 a daily basis.
 
-### Load testing
+## Load testing
 
 During development, software engineers work with small amounts of data, and only a handful
 of users are accessing the system at any one time. Once the system is deployed, there will
@@ -44,7 +50,7 @@ simulate realistic traffic levels. Sometimes called *soak testing*, it is not us
 out by software engineers, but if any problems are discovered with the way the software is
 built, it will be the software engineers who need to fix it.
 
-### Security testing
+## Security testing
 
 To ensure that the system is safe from attack and that the data cannot be accessed without
 authorisation, various types of security testing can be used. These can include automated
@@ -57,7 +63,7 @@ required to fix any issues. In general, it is better to avoid security issues by
 secure development practices from the outset as discussed in the
 [secure software developmentsection](../unit7_ethics/Week11b_secure_software_development.md).
 
-### Usability testing
+## Usability testing
 
 While they are working on an application, software engineers become so familiar with its
 design and structure that the style of the pages, the process flows and the data structures
@@ -67,7 +73,7 @@ weaknesses in the user interface that might make it difficult to operate for an 
 user. To be effective, this type of testing has to be carried out with the participation of
 real people.
 
-### Accessibility testing
+## Accessibility testing
 
 While usability focuses on the design choices that the software engineers have made in the
 construction of the system, *accessibility* is concerned with the support for disabled
@@ -86,7 +92,7 @@ be easily scanned. Some vendors of development tools such as
 [Microsoft](https://learn.microsoft.com/en-us/windows/win32/winauto/inspect-objects)
 provide their own inspection tools for testing the accessibility of code during development.
 
-### Acceptance testing
+## Acceptance testing
 
 Acceptance criteria are defined for each user story in a development project when it is
 elaborated prior to development. These criteria set out explicitly when the development
