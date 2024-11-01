@@ -14,7 +14,7 @@ nav_order: 8
 <blockquote class="pretty"><span>
 Deployment celebrations should be about the value of the new features, not joyful relief that nothing went horribly wrong
 </span></blockquote>
-<p class="attribution">Rebecca Parsons</p>
+<p class="attribution"><a href="https://www.thoughtworks.com/en-gb/profiles/leaders/rebecca-parsons">Rebecca Parsons</a></p>
 
 <hr class="splash">
 

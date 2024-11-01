@@ -16,32 +16,16 @@ Maybe we want to constrain the computation, the AI, to only do things we conside
 
 <hr class="splash">
 
-# Ethics in Software Systems
-
-# Ethical Considerations in Software Development
+# Integrating Generative AI in Software Development
 
 ## Introduction
 
-## Ethical decision-making
+## Large language models (LLMs)
 
-## GDPR
+## Generative AI tools (e.g., GitHub Copilot)
 
-## Bias in algorithms
+## AI-driven development
 
-## Security
+## Code generation
 
-## Social responsibility
-
-## Professional bodies
-
-# Ethical Use of AI in Software Systems
-
-## Introduction
-
-## AI ethics
-
-## Bias mitigation
-
-## Intellectual property
-
-## Responsible AI usage
+## Limitations
