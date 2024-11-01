@@ -1,5 +1,5 @@
 ---
-title: Data-Driven Applications
+title: Application Design
 parent: Notes
 has_children: true
 nav_order: 7

@@ -1,25 +1,12 @@
-# Software design
+---
+title: Design Activities
+parent: Application Design
+has_children: true
+has_toc: false
+nav_order: 1
+---
 
-<hr class="splash">
-
-![Mario Fusco](../images/people/mario_fusco.png)
-
-### The code you write makes you a programmer. The code you delete makes you a good one. The code you don’t have to write makes you a great one.
-
-<br/>
-
-*Mario Fusco*
-
-<hr class="splash">
-
-###### Contents
-
-1. [Design activities](#design-activities)
-2. [High-level design](#high-level-design)
-3. [Low-level design](#low-level-design)
-4. [Further reading](#further-reading)
-
-## Design activities
+# Design activities
 
 Although some aspects of software design are fairly routine and have simple established
 processes that the designer can follow, it is in general a creative process that requires
@@ -184,7 +171,7 @@ Relational databases can be modelled in a top-down fashion similar to the way a 
 hierarchy can be built up from the information in user interviews. The process, illustrated
 in Fig. 2, is iterative and continues until there are no further changes.
 
-![Entity relationship modelling](../images/entity_relastionship_modelling.png)
+![Entity relationship modelling](../../images/entity_relastionship_modelling.png)
 
 *Fig. 2: Entity relationship modelling*
 
@@ -193,7 +180,7 @@ database structure is the *entity-relastionship diagram* (ERD). It closely resem
 simplified UML class diagram, and an example built using
 [draw.io](https://www.drawio.com/) is shown in Fig. 3.
 
-![Example entity-relationship diagram](../images/themepark_erd.png)
+![Example entity-relationship diagram](../../images/themepark_erd.png)
 
 *Fig. 3: Example entity-relationship diagram*
 
