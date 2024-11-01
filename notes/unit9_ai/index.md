@@ -1,5 +1,5 @@
 ---
-title: Ethics
+title: AI in Software Engineering
 parent: Notes
 has_children: true
 nav_order: 10
