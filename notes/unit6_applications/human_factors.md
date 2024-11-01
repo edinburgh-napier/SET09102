@@ -1,27 +1,14 @@
-# Human factors in software engineering
+---
+title: Human Factors
+parent: Application Design
+has_children: true
+has_toc: false
+nav_order: 1
+---
 
-<hr class="splash">
+# Human Factors in Software Engineering
 
-![Jean-Paul Sartre](https://upload.wikimedia.org/wikipedia/commons/b/b7/Jean-Paul_Sartre_in_Venice_%28crop%29.jpg)
-
-### Hell is other people
-
-<br/>
-
-*Jean-Paul Sartre*
-
-<hr class="splash">
-
-###### Contents
-
-1. [Other people](#other-people)
-2. [Stakeholder analysis](#stakeholder-analysis)
-3. [The team](#the-team)
-4. [Project management](#project-management)
-5. [Other relationships](#other-relationships)
-6. [Further reading](#further-reading)
-
-## Other people
+# Other people
 
 If you think about software engineering as simply writing code, it is easy to
 overlook the other people who have an interest in the software products that you
