@@ -1,25 +1,10 @@
-# Test-driven development
-
-<hr class="splash">
-
-![Boris Beizer](../../images/people/boris_beizer.png)
-
-### More than the act of testing, the act of designing tests is one of the best bug preventers known.
-
-<br/>
-
-*Boris Beizer*
-
-<hr class="splash">
-
-
-###### Contents
-
-1. [Unit testing](#unit-testing)
-2. [How many unit tests?](#how-many-unit-tests)
-3. [Anatomy of a unit test](#anatomy-of-a-unit-test)
-4. [Test-driven development](#test-driven-development)
-5. [Further reading](#further-reading)
+---
+title: Unit testing
+parent: Testing
+has_children: true
+has_toc: false
+nav_order: 1
+---
 
 ## Unit testing
 
@@ -218,52 +203,74 @@ Unit tests should test one thing in a simple manner. That means keeping the numb
 assertions to a minimum - ideally just one - and avoiding complex control structures such
 as loops and conditionals.
 
-## Test-driven development
+## Unit test value
 
-Over time, testing has become increasingly formalised as part of the development process. In
-the past, a lot of faulty code was released because developers were under pressure to complete
-their projects by a deadline and testing seemed to be a supplementary activity that could be
-cut from the project if necessary. The waterfall development lifecycle seemed to encourage
-this way of thinking because it postponed testing until the last stage of a project. (This
-was not actually true of the waterfall approach, but that was how it was perceived).
+Units tests accumulate over time and the theory is that they can be run by the whole
+development team on a regular basis. The test suite therefore provides continuous
+protection against faulty code. It isnot beneficial to test absolutely every line of
+code in the system. Including trivial tests can be a wwaste of time. Instead, they
+should focus on delivering maximum value for the minimum overhead. The value of unit
+tests is captured in four pillars by [Khorikov, 2020](https://napier.primo.exlibrisgroup.com/permalink/44NAP_INST/13v8mut/alma9923667243102111):
 
-The ultimate turnaround came with the introduction in 1999 of *test-driven development* (TDD)
-as part of [Extreme Programming](https://en.wikipedia.org/wiki/Extreme_programming). Kent Beck,
-one of the signatories to the Agile Manifesto, published a
-[book](https://napier.primo.exlibrisgroup.com/permalink/44NAP_INST/n96pef/alma9923574478202111)
-on the topic in 2003.
+* Protection against regressions
 
-There are two main principles behind TDD. The first is that tests are written first and then
-minimally sufficient code is written to allow the test to pass. The process the continues in
-an iterative fashion until the application meets its acceptance criteria. The second principle
-is that code is continuously refactored as the development proceeds to maintain a clear and
-simple structure. The process is visualised in Fig. 3.
+  Exercising more code in a single test maximises the possibility of finding regression
+  errors.
 
-``` mermaid
-flowchart LR
-    node1([Write unit test])
-    node2([Write minimal code])
-    decision1{Does the<br/>test pass?}
-    decision2{Refactoring<br/>required?}
+* Resistance to refactoring
 
-    node1 -- run --> decision1
-    decision1 -- yes --> decision2
-    node2 -- run --> decision1
-    decision1 -- no --> node2
-    decision2 -- no --> node1
-    decision2 -- yes --> node2
-```
-*Fig. 3: Test-driven development*
+  Tests should focus on *behaviour* and not *implementation*
 
-![Please read](../../images/material/outline_menu_book_black_48dp.png)
-TDD is explained very well in the context of C# development in chapter 6 of
-Alls ([2020](https://napier.primo.exlibrisgroup.com/permalink/44NAP_INST/n96pef/alma9923706264502111)).
-Please read the chapter this week.
+* Fast feedback
 
+  Tests should run quickly - if tests run slowly, developers may avoid them
+
+* Maintainability
+
+  Tests should be simpleand easy to understand. They should also be easy to run.
+
+Leaving aside maintainability for the time being, the ideal test should be ine that
+maximises the other three pillars simultaneously - that would be the three-way
+intersection in Fig. 3.
+
+![Unit test value](../../images/unit_test_value.png)
+
+*Fig.3: Unit test value ([Khorikov, 2020](https://napier.primo.exlibrisgroup.com/permalink/44NAP_INST/13v8mut/alma9923667243102111))*
+
+End-to-end tests are designed to test the system from the user's point of view. They focus
+on high-level behaviours and exercise a lot of code at one time. For these reasons, they
+deliver high value on two counts, but because they use a lot of the system functionality,
+they can be comparatively slow.
+
+Trivial tests focus on individual operations in the code and are therefore resistant to
+refactoring and they are fast. On the other hand, because they do not exercise much code
+they are unlikely to identify regression errors. As the name suggests, this type of test
+is probably not worth the additional overhead.
+
+Brittle tests are those which are closely tied to the underlying implementation. They run
+fast and they will definitely guard against regression errors. However, because they use
+implementation detail, they are not very resistant to refactoring.
+
+Khorikov recommends maximising a test's resistance to refactoring as the priority, and
+then choosing which of regression protection and speed is the most desirable quality in
+the particular case. This comes down to eliminating brittleness wherever possible.
+
+## Testing private elements
+
+The purpose of unit testing should be to verify that the system behaves as expected.
+How that behaviour is implemented should be irrelevant. For that reason, many testing
+frameworks only allow tests to be applied to publicly exposed methods and properties.
+
+This is easy to understand from the point of view of eliminating test brittleness which
+arises from tying tests too closely to the underlying implementation detail. If a private
+element is important, then its effect should be observable in the result of calling a
+public method or in the value of a public property.
+
+While there may be exceptions (see [Khorikov (2020) Ch. 11](https://napier.primo.exlibrisgroup.com/permalink/44NAP_INST/13v8mut/alma9923667243102111)),
+the general strategy should be to avoid testing private elements.
 
 ## Further reading
 
 * Software Testing [(O'Regen, 2022, Ch. 8)](https://link-springer-com.napier.idm.oclc.org/chapter/10.1007/978-3-031-07816-3_8)
-* [TDD vs BDD vs ATDD and other Agile development techniques](https://www.techtarget.com/searchsoftwarequality/tip/TDD-vs-BDD-vs-ATDD-and-other-Agile-development-techniques)
-* Test-driven development [(Beck, 2003)](https://napier.primo.exlibrisgroup.com/permalink/44NAP_INST/n96pef/alma9923574478202111)
+* Unit testing : principles, practices, and patterns [Khorikov, 2020](https://napier.primo.exlibrisgroup.com/permalink/44NAP_INST/13v8mut/alma9923667243102111)
 * [Unit testing best practices with .NET Core and .NET Standard](https://learn.microsoft.com/en-us/dotnet/core/testing/unit-testing-best-practices)
