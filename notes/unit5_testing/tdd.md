@@ -198,6 +198,9 @@ is essential for making the most of its benefits.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/IN9lftH0cJc?si=VWR8PGcFPjSIG4p8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
+{: .tip-title }
+> [<i class="fa-regular fa-lightbulb"></i> Practical tips for getting started with TDD](tdd_tips)
+
 ## Further reading
 
 * Alls ([2020](https://napier.primo.exlibrisgroup.com/permalink/44NAP_INST/n96pef/alma9923706264502111)) Chapter 6. 
