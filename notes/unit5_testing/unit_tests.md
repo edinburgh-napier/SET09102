@@ -17,6 +17,10 @@ successfully. The best-case, optimistic route through the software is sometimes 
 [*happy path*](https://en.wikipedia.org/wiki/Happy_path). Focusing exclusively on the
 happy path in testing means that many potential errors will be overlooked.
 
+![Incorrect assumptions](https://imgs.xkcd.com/comics/random_number.png)
+
+<p class="attribution"><a href="https://xkcd.com/221">xkcd</a>)</p>
+
 The software engineer is responsible for ensuring that the code they produce is as robust as
 possible. That level of quality follows partly from a principled approach to software design.
 However, that is not enough to ensure that the code will work under all possible input conditions.
@@ -29,26 +33,6 @@ will be simple and easy to understand. Unit tests can be run manually, but a bet
 to take advantage of modern tools that allow you to automate your tests. They can then be
 managed along with the rest of the codebase and can be run repeatedly by any member of the
 development team.
-
-## How many unit tests?
-
-A typical method will have an acceptable range of inputs depending on its
-parameters, and an acceptable range of outputs. The ideal unit test would ensure that the
-code produces expected output for every possible combination of parameter values. This is not
-always possible, however, because integer parameters, for example, have a theoretically
-infinite range. In practice, it is more feasible to concentrate on *typical* and *boundary*
-cases. Typical values correspond to the happy path where everything works as planned, and the
-boundary (or *edge*) cases represent the extreme or exceptional values that parameters might
-take. A good example of an exceptional value would be where the argument has not been correctly
-set and the parameter therefore has a null value. The number of tests required therefore
-increases with the number of parameters.
-
-When the method is implementing an explicit behaviour, there may be specific
-checks that can be carried out and these checks could also be cartured in unit tests. For
-example, the method might be part of an ecommerce system which has a limit on the total cost
-of an order. One or more unit tests could be used to ensure that the value limit is never
-exceeded as items are added to the shopping basket. The general point is that a single method
-is likely to have several associated unit tests.
 
 ## Anatomy of a unit test
 
@@ -80,7 +64,7 @@ This can involve
 
 ([Wikipedia](https://en.wikipedia.org/wiki/Test_fixture))
 
-A mock object is something that is created purely for the puroses of the test to simulate
+A mock object is something that is created purely for the purposes of the test to simulate
 the existence of a real software object. For example, if the software under test was a bus
 tracker application it would receive its data from the bus company's API. Certain functions
 would only be triggered for certain combinations of API data. To avoid the need to wait for
@@ -189,7 +173,7 @@ recommends that test names should have three parts:
 
 * The name of the method being tested.
 * The scenario under which it's being tested.
-* The expected behavior when the scenario is invoked.
+* The expected behaviour when the scenario is invoked.
 
 ### Avoid using magic strings
 
@@ -255,6 +239,26 @@ Khorikov recommends maximising a test's resistance to refactoring as the priorit
 then choosing which of regression protection and speed is the most desirable quality in
 the particular case. This comes down to eliminating brittleness wherever possible.
 
+## How many unit tests?
+
+A typical method will have an acceptable range of inputs depending on its
+parameters, and an acceptable range of outputs. The ideal unit test would ensure that the
+code produces expected output for every possible combination of parameter values. This is not
+always possible, however, because integer parameters, for example, have a theoretically
+infinite range. In practice, it is more feasible to concentrate on *typical* and *boundary*
+cases. Typical values correspond to the happy path where everything works as planned, and the
+boundary (or *edge*) cases represent the extreme or exceptional values that parameters might
+take. A good example of an exceptional value would be where the argument has not been correctly
+set and the parameter therefore has a null value. The number of tests required therefore
+increases with the number of parameters.
+
+When the method is implementing an explicit behaviour, there may be specific
+checks that can be carried out and these checks could also be captured in unit tests. For
+example, the method might be part of an ecommerce system which has a limit on the total cost
+of an order. One or more unit tests could be used to ensure that the value limit is never
+exceeded as items are added to the shopping basket. The general point is that a single method
+is likely to have several associated unit tests.
+
 ## Testing private elements
 
 The purpose of unit testing should be to verify that the system behaves as expected.
@@ -268,6 +272,9 @@ public method or in the value of a public property.
 
 While there may be exceptions (see [Khorikov (2020) Ch. 11](https://napier.primo.exlibrisgroup.com/permalink/44NAP_INST/13v8mut/alma9923667243102111)),
 the general strategy should be to avoid testing private elements.
+
+{: .tip-title }
+> [<i class="fa-regular fa-lightbulb"></i> Practical tips for unit tests](unit_tests_tips)
 
 ## Further reading
 

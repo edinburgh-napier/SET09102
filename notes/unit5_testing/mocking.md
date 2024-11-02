@@ -35,7 +35,7 @@ To address these issues, _Dependency Injection_ (DI) is introduced as a design p
 decouple classes from their dependencies, improving flexibility, testability, and maintainability. 
 With DI, instead of a class creating its own dependencies, those dependencies are provided to the 
 class from an external source, typically through constructor parameters or method parameters. By 
-externalizing the creation and management of dependencies, DI allows for easy swapping, mocking, or 
+externalising the creation and management of dependencies, DI allows for easy swapping, mocking, or 
 replacing of dependencies without modifying the dependent class.
 
 In practice, dependency injection works hand in hand with Inversion of Control (IoC), a principle 
@@ -185,8 +185,188 @@ public void DisplayGamepadSettings_updates_ui_correctly()
 >
 > **Line 15**: Check that the display has been correctly updated
 
+## Mocking frameworks
 
+Mocking frameworks are libraries designed to simplify the process of creating and managing mocks 
+in unit tests, enabling developers to isolate code from its dependencies. Mocking frameworks 
+provide tools to simulate behaviours, set expectations, and verify interactions with dependencies, 
+making tests faster, more predictable, and focused on the specific functionality under test.
+
+Mocking frameworks are particularly useful for dependencies that involve external resources like 
+databases, file systems, or network services. Using a mocking framework, you can set up mock 
+objects to return controlled responses, throw exceptions, or simply verify that methods were 
+called correctly. This approach enhances code modularity, reduces coupling, and makes tests 
+faster and easier to maintain.
+
+Mocking frameworks generally offer several core features across languages:
+
+* **Mock Object Creation**: The ability to create a mock instance of a dependency (e.g., 
+  Mock<IDatabaseService>), allowing you to replace the real object with a controlled simulation.
+* **Method Stubbing**: Setting up methods on mocks to return predefined responses or to throw 
+  exceptions. For example, you can configure a database mock to return a specific user object when 
+  a lookup method is called.
+* **Verification of Interactions**: The ability to verify that specific methods were called, how 
+  many times they were called, and with what arguments. This feature allows you to confirm that 
+  your code interacts with dependencies as expected.
+* **Behavioural Control**: Configuring mocks to behave in certain ways based on context. For 
+  instance, you might set a mock to throw an exception on the second call but succeed on the 
+  first, testing how code handles intermittent failures.
+* **Flexible Return Values**: Mocking frameworks often allow return values to be calculated 
+  dynamically based on the input arguments, making it easy to create flexible and realistic 
+  test scenarios.
+
+## Examples of Mocking Frameworks in Different Languages
+
+Mocking frameworks are widely available in many programming languages, each tailored to the 
+conventions of that language. Here’s an overview of commonly used mocking frameworks in C#, Java, 
+and Python.
+
+### Moq
+
+[Moq](https://github.com/devlooped/moq) is a popular mocking framework for .NET languages like C#. 
+It is known for its intuitive syntax and integration with the .NET unit testing ecosystem, making 
+it a preferred choice for developers working with C#.
+
+**Example**
+
+```c#
+using Moq;
+using Xunit;
+
+public interface IUserRepository
+{
+    User GetUserById(int id);
+}
+
+public class UserService
+{
+    private readonly IUserRepository _repository;
+
+    public UserService(IUserRepository repository)
+    {
+        _repository = repository;
+    }
+
+    public string GetUserName(int id)
+    {
+        var user = _repository.GetUserById(id);
+        return user?.Name;
+    }
+}
+
+public class UserServiceTests
+{
+    [Fact]
+    public void GetUserName_ReturnsCorrectUserName()
+    {
+        // Arrange
+        var mockRepository = new Mock<IUserRepository>();
+        mockRepository.Setup(repo => repo.GetUserById(1)).Returns(new User { Id = 1, Name = "Alice" });
+
+        var userService = new UserService(mockRepository.Object);
+
+        // Act
+        var result = userService.GetUserName(1);
+
+        // Assert
+        Assert.Equal("Alice", result);
+        mockRepository.Verify(repo => repo.GetUserById(1), Times.Once);
+    }
+}
+```
+
+In this example, Moq is used to create a mock `IUserRepository` instance and to set up a response 
+for `GetUserById`. We verify that the method is called once and that the result is as expected. 
+Moq’s fluent API simplifies the setup, verification, and control of the mock behaviour.
+
+### Mockito (Java)
+
+In Java, [Mockito](https://site.mockito.org/) is one of the most widely used mocking frameworks. 
+It offers a fluent API, similar to Moq, and integrates well with JUnit, Java’s common unit testing 
+framework.
+
+**Example**
+
+```java
+import static org.mockito.Mockito.*;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
+
+class UserServiceTest {
+    @Test
+    void getUserName_ReturnsCorrectUserName() {
+        // Arrange
+        UserRepository mockRepository = mock(UserRepository.class);
+        User user = new User(1, "Alice");
+        when(mockRepository.getUserById(1)).thenReturn(user);
+
+        UserService userService = new UserService(mockRepository);
+
+        // Act
+        String result = userService.getUserName(1);
+
+        // Assert
+        assertEquals("Alice", result);
+        verify(mockRepository, times(1)).getUserById(1);
+    }
+}
+```
+
+In this example, Mockito is used to mock the UserRepository interface. The when method allows us 
+to specify that getUserById(1) should return a User object with the name "Alice". The verify 
+method checks that getUserById was called exactly once. Mockito’s syntax is clean and makes 
+setting up expectations and verifications straightforward.
+
+### unittest.mock (Python)
+
+Python’s [unittest.mock](https://docs.python.org/3/library/unittest.mock.html) is a built-in 
+library for mocking, making it easily accessible for Python developers. It integrates well with 
+Python’s unittest framework.
+
+**Example**
+
+```python
+from unittest import TestCase
+from unittest.mock import Mock
+
+class UserService:
+    def __init__(self, repository):
+        self.repository = repository
+
+    def get_user_name(self, user_id):
+        user = self.repository.get_user_by_id(user_id)
+        return user['name'] if user else None
+
+class TestUserService(TestCase):
+    def test_get_user_name(self):
+        # Arrange
+        mock_repository = Mock()
+        mock_repository.get_user_by_id.return_value = {'id': 1, 'name': 'Alice'}
+        
+        user_service = UserService(mock_repository)
+        
+        # Act
+        result = user_service.get_user_name(1)
+        
+        # Assert
+        self.assertEqual(result, 'Alice')
+        mock_repository.get_user_by_id.assert_called_once_with(1)
+```
+
+In this example, unittest.mock is used to create a mock repository. The return_value attribute of 
+get_user_by_id specifies the return data for this method. assert_called_once_with is used to verify 
+that get_user_by_id was called with the expected argument.
+
+Mocking frameworks are powerful tools that make unit testing more efficient and effective. By 
+isolating dependencies, simplifying configuration, and providing verification capabilities, these 
+frameworks enable developers to write robust, focused tests that improve code quality and 
+reliability. Familiarity with mocking frameworks in your language of choice is an essential 
+skill for building a solid testing foundation.
+
+{: .tip-title }
+> [<i class="fa-regular fa-lightbulb"></i> Practical tips for mocking](mocking_tips)
 
 ## Further reading
 
 * [Using Moq: A Simple Guide to Mocking for .NET](https://www.codemag.com/Article/2305041/Using-Moq-A-Simple-Guide-to-Mocking-for-.NET)
+* [Unit Testing: Moq Framework](https://learn.microsoft.com/en-us/shows/visual-studio-toolbox/unit-testing-moq-framework)
