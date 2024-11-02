@@ -3,42 +3,129 @@ title: Types of Testing
 parent: Testing
 has_children: true
 has_toc: false
-nav_order: 7
+nav_order: 5
 ---
 
 # Types of testing
 
 Although unit testing is of the most immediate concern to developers, there are other
 types of testing that it is important to be aware of. Some of the traditional categories
-are less relevant in the age of devops, but they are nevertheless stillin common use.
-The tour below illustrates a few of the major types.
+are less relevant in the age of devops, but they are nevertheless still in common use. As a 
+reference, Fig. 1 illustrates the concept of unit testing in a schematic way: green hexagons
+represent code units in an existing codebase and yellow hexagons represent code units that have 
+been introduced or modified by the developer. Unit testing is confined to the units that have
+actually been changed.
 
-<h6 align="center"> Here's you, engineering your software...
-
-<a href="https://bdavison.napier.ac.uk/set09102/testing.html" target="_blank" alt="Software testing">
-    <img src="../../images/you_small.png">
-</a>
-</h6>
-
+![Fig. 1. Codebase with modified units](images/testing1.png){: standalone #fig1 data-title="Codebase with modified units" }
 
 ## Integration testing
 
-Once a code change has passed its unit tests, we need to make sure that it will work well
-with other parts of the system and that it does not cause any errors. That is the job of
-*integration testing* which focuses on the new (or modified) code, and its known
-interactions with other elements of the system.
+integration testing focuses on verifying that different components or modules of the application 
+work together as intended. Unlike unit tests, which isolate and test individual functions or 
+classes, integration tests assess the interactions and data flow between multiple parts of the 
+system as illustrated in Fig. 2. The goal of integration testing is to identify issues that may 
+arise when components are combined, such as data mismatches, unexpected behaviors, or failures due 
+to complex dependencies.
+
+![Fig. 2. Integration testing](images/testing2.png){: standalone #fig2 data-title="Integration testing" }
+
+When developing an application, it’s common to divide code into smaller units that handle specific 
+tasks, such as managing database queries, processing user input, or handling API requests. Each of 
+these units may work correctly on its own, as verified by unit tests, but when integrated with other 
+components, unexpected behaviors can occur. Integration testing identifies these issues early by 
+verifying that components interact smoothly, produce the correct results, and handle data exchanges 
+properly. For example, an integration test might verify that the user authentication system interacts
+correctly with the database, or that a payment processing service communicates successfully with an 
+external API to complete transactions.
+
+Integration testing differs from unit testing in its scope and complexity. While unit testing 
+isolates each function or method to validate that it works as expected in a controlled environment, 
+integration testing examines how multiple units function together, often involving real or mock 
+databases, network calls, or external systems. Integration tests are generally more complex and 
+slower to execute than unit tests because they involve multiple components and sometimes require 
+setup for dependent systems. Integration tests are typically run in a controlled environment that 
+closely resembles the actual deployment setup, where dependencies—such as databases, APIs, and other 
+services—are available for components to interact with. Integration tests differ from unit tests in 
+scope, as they focus on interactions between components rather than isolated functionality.
+
+For a developer, integration testing is essential to ensure that code functions properly in the 
+larger application context, helping catch issues that unit tests cannot detect. It provides a 
+critical bridge between unit tests, which focus on isolated functionality, and end-to-end tests, 
+which verify the entire system from a user perspective. Integration testing gives developers 
+confidence that their code will perform reliably when interacting with other parts of the system, 
+reducing bugs and improving the overall stability of the application.
+
+## End-to-End Testing
+
+End-to-end (E2E) testing is a type of software testing that verifies the complete functionality of 
+an application by testing the entire workflow from start to finish, as a user would experience it. 
+Unlike unit tests, which focus on isolated pieces of functionality, and integration tests, which 
+check interactions between specific components, E2E tests examine the application as a whole. They 
+simulate real-world scenarios by interacting with the software’s user interface, databases, APIs, 
+and other services, to ensure that all parts of the system work together seamlessly to meet user 
+requirements.
+
+In an E2E test, the testing process begins with a user action, such as logging into an application 
+or adding an item to a shopping cart, and follows each step through to the expected outcome, such 
+as a successful login or an order confirmation. The purpose of these tests is to confirm that each 
+step in the workflow functions correctly and that the user experience remains smooth and error-free. 
+This approach is particularly important for catching issues that arise from dependencies across the 
+entire system, such as data flow between the frontend and backend, interactions with external 
+services, or complex multi-step processes.
+
+E2E testing is often automated to ensure consistency and efficiency. Tools like 
+[Selenium](https://www.selenium.dev/), [Cypress](https://www.cypress.io/), 
+and [Playwright](https://playwright.dev/) are commonly used to script and run these tests, as they 
+can simulate real user interactions with the application, including clicks, form submissions, and 
+navigation. Automated E2E tests are typically integrated into the CI/CD pipeline, so they run 
+whenever code changes are made, allowing developers to catch issues early in the development cycle.
+
+One of the biggest advantages of E2E testing is that it validates the full functionality of an 
+application in conditions similar to those experienced by end-users. This makes E2E testing highly 
+effective at identifying issues that may not be evident in unit or integration tests, such as UI 
+bugs, data formatting issues, or sequence-related errors. E2E tests also help ensure that any 
+changes to the codebase do not negatively impact the user journey or break critical paths in the 
+application.
+
+However, E2E testing can be more time-consuming and resource-intensive than other forms of testing. 
+Because these tests simulate real user interactions and involve multiple layers of the application 
+stack, they tend to take longer to execute. Additionally, E2E tests can be sensitive to 
+environmental factors, such as network delays or system configurations, which can lead to test 
+flakiness. For this reason, E2E testing is typically used to validate the most critical user 
+workflows rather than to cover every detail of the application.
+
+In the software development lifecycle, E2E testing is an essential final step that verifies the 
+application’s functionality, reliability, and usability from a user’s perspective. By validating 
+that the complete system works as expected, E2E tests provide a high level of confidence before 
+code is deployed to production, ensuring that users receive a seamless and fully functional 
+experience.
 
 ## Regression testing
 
-While integration testing is limited in scope, *regression testing* is aimed at ensuring
-that the whole system behaves as it should. The concept is very similar to integration
-testing except that it is not limited to just the parts of the system that we know are
-affected by a recent change.
+Regression testing focuses on ensuring that recent changes or additions to the codebase haven’t 
+inadvertently affected existing functionality. In contrast to unit testing, regression testing is 
+the process of re-running tests — often a comprehensive suite of tests as illustrated in Fig. 3, 
+including unit tests, integration tests, and end-to-end tests — to ensure that recent code changes 
+have not inadvertently affected existing functionality. In an active development environment, each 
+of changes to the codebase carries the risk of introducing unintended side effects, especially in 
+larger, interconnected systems where components rely on each other’s behavior.
 
-With modern testing tools and devops, the distinction between integration and regression
-testing is not as clear as it used to be. With the majority of our tests in the form of
-code files that can be run automatically, the entire system can be regression tested on
-a daily basis.
+![Fig. 3. Regression testing](images/testing3.png){: standalone #fig3 data-title="Regression testing" }
+
+Regression testing addresses this risk by re-running previously written tests that cover existing 
+functionality after each significant code change. These tests verify that the core functionalities 
+still work as expected, confirming that new code hasn’t broken something that was previously 
+working. For example, if a developer modifies a feature related to user login, regression testing 
+would involve running all relevant tests that verify the login process, as well as any tests that 
+indirectly depend on it, like those involving user permissions or account management.
+
+Automated testing frameworks are commonly used for regression testing, allowing tests to be run 
+quickly and consistently as part of the build or deployment process. Continuous Integration (CI) 
+tools can trigger regression tests automatically whenever changes are pushed to the codebase, 
+enabling the team to catch issues early. Running automated regression tests provides the team with 
+immediate feedback, giving developers confidence that their changes haven’t introduced new bugs. 
+In cases where issues are detected, regression testing pinpoints exactly which functionalities 
+have been affected, making it easier to identify the root cause.
 
 ## Load testing
 
@@ -115,6 +202,9 @@ principles 1, 3, 4 and 7:
 > **4**: Business people and developers must work together daily throughout the project.
 >
 > **7**: Working software is the primary measure of progress.
+
+{: .tip-title }
+> [<i class="fa-regular fa-lightbulb"></i> Pitfalls to avoid with integration, end-to-end and regression testing](types_tips)
 
 ## Further reading
 
