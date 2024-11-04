@@ -19,7 +19,7 @@ happy path in testing means that many potential errors will be overlooked.
 
 ![Incorrect assumptions](https://imgs.xkcd.com/comics/random_number.png)
 
-<p class="attribution"><a href="https://xkcd.com/221">xkcd</a>)</p>
+<p class="attribution"><a href="https://xkcd.com/221">xkcd</a></p>
 
 The software engineer is responsible for ensuring that the code they produce is as robust as
 possible. That level of quality follows partly from a principled approach to software design.

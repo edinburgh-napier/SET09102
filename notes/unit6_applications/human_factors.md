@@ -1,6 +1,6 @@
 ---
 title: Human Factors
-parent: Application Design
+parent: Building Applications
 has_children: true
 has_toc: false
 nav_order: 1
@@ -14,12 +14,8 @@ If you think about software engineering as simply writing code, it is easy to
 overlook the other people who have an interest in the software products that you
 are creating. The tour below illustrates some of the most important ones.
 
-<div class="tour"></div>
+![Fig. 1. Other people](images/other_people.gif){: standalone #fig1 data-title="Other people" }
 
-###### [![Here's you engineering your software...](../../images/you_small.png)](https://bdavison.napier.ac.uk/set09102/other_people.html){:target="_blank"}
-
-<br/>
-<br/>
 
 ## Stakeholder analysis
 
