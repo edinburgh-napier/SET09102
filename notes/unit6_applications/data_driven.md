@@ -222,7 +222,7 @@ will therefore be generated accordingly:
 
 ```sql
 ALTER TABLE users DROP COLUMN name;
-ALTER TABLE users ADD COLUMN full\_name VARCHAR(100) NOT NULL;
+ALTER TABLE users ADD COLUMN full_name VARCHAR(100) NOT NULL;
 ```
 
 The problem is that if there is already data in the table it will be lost when the original column is 
@@ -230,8 +230,8 @@ dropped. There will also be an error when the new column is created since it is 
 To rename the column and retain the data the script would have to do the following:
 
 ```sql
-ALTER TABLE users ADD COLUMN full\_name VARCHAR(100) NOT NULL;
-UPDATE users SET full\_name = name;
+ALTER TABLE users ADD COLUMN full_name VARCHAR(100) NOT NULL;
+UPDATE users SET full_name = name;
 ALTER TABLE users DROP COLUMN name;
 ```
 
@@ -305,7 +305,7 @@ developers find more familiar. As an example, consider the situation where the c
 up a user record by its primary key. The SQL statement might be
 
 ```sql
-SELECT \* FROM users WHERE id = 100;
+SELECT * FROM users WHERE id = 100;
 ```
 
 Using an ORM, this might become
@@ -423,7 +423,7 @@ structure in Fig. 6.
 To find the current rate is simply a question of finding the record with the highest (most recent) `valid_from` value that is earlier than the current date. For historical calculations, the purchase data is compared with the `valid_from` value to select the correct rate. It is important to recognise, however, that maintaining data of this type requires careful management in the application code. Rather than an update statement, a new record would have to be inserted into the VAT rate table:
 
 ```sql
-INSERT INTO vat\_rate (name, rate, valid\_from) VALUES ('standard', 0.175, '2025-1-4');
+INSERT INTO vat_rate (name, rate, valid_from) VALUES ('standard', 0.175, '2025-1-4');
 ```
 
 ## Interface design
