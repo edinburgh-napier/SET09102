@@ -76,7 +76,7 @@ a subdirectory of the git root. This is visualised in Fig. 3.
 ```mermaid
 flowchart TB
     p1["Project root"] --> p2["Front end"]
-    p1 --> p3["Back end = \ngit root"]
+    p1 --> p3["Back end = <br/>git root"]
     g1["Git repo root"] --> pp1[Project 1 root]
     g1 --> pp2[Project 2 root]
 ```
