@@ -32,9 +32,7 @@ at the user's current working directory and includes a series of steps to get fr
 to the file of interest. That can involve moving upwards through the hierarchy until a common
 directory is reached before following a branch to the target.
 
-![File systems](../../images/file_systems.png)
-
-*Fig. 1: File systems on Windows and Mac/Linux*
+![Fig. 1. Fig. 1: File systems on Windows and Mac/Linux](images/file_systems.png){: standalone #fig1 data-title="File systems on Windows and Mac/Linux" }
 
 Normally, you can run an executable file by providing a full path, but usually, you want to be
 able to call the executable by name only. In that case, the operating system checks a set of
@@ -45,9 +43,7 @@ If an application encloses its executable binaries in additional levels of struc
 not be visible unless the relevant subdirectory is added to the `PATH`. Fig. 2 illustrates the
 dialogs provided by Windows for updating the `PATH`.
 
-![Editing the Windows PATH](../../images/windows_path.png)
-
-*Fig. 2: Updating the Windows PATH*
+![Fig. 2: Updating the Windows PATH](images/windows_path.png){: standalone #fig2 data-title="Updating the Windows PATH" }
 
 ### The project root
 
@@ -127,9 +123,7 @@ instances of the application and the database, and the fact that the route betwe
 application and the database may not be known. We often rely on standard internet
 infrastructure to resolve the route for us.
 
-![Multi-user database access](../../images/database.png)
-
-*Fig. 4: Multi-user database access*
+![Fig. 4: Multi-user database access](images/database.png){: standalone #fig4 data-title="Multi-user database access" }
 
 While Fig. 4 depicts a database in use, there are two other situation that you need to be
 aware of. The first is where the database is not intended to be shared, but instead provides
