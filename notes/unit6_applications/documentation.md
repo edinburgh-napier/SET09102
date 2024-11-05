@@ -4,6 +4,7 @@ parent: Building Applications
 has_children: true
 has_toc: false
 nav_order: 4
+mermaid: true
 ---
 
 # Documentation
