@@ -8,14 +8,11 @@ nav_order: 1
 
 # Human Factors in Software Engineering
 
-# Other people
-
 If you think about software engineering as simply writing code, it is easy to
 overlook the other people who have an interest in the software products that you
-are creating. The tour below illustrates some of the most important ones.
+are creating. Fig. 1 illustrates some of the most important ones.
 
 ![Fig. 1. Other people](images/other_people.gif){: standalone #fig1 data-title="Other people" }
-
 
 ## Stakeholder analysis
 
@@ -54,13 +51,10 @@ provides a clear explanation of how to conduct a thorough stakeholder analysis.
    are dissatisfied with the outcome, the project may be considered a failure.
 
    As part of this step it can be useful to visualise stakeholders on a chart
-   divided into four quadrants as shown in Fig. 1. Those in the top right quadrant
+   divided into four quadrants as shown in Fig. 2. Those in the top right quadrant
    are the key stakeholders for your project.
-   <br/><br/>
 
-   ![Importance vs Influence](../../images/stakeholder_map.png)
-
-   *Fig. 1: Stakeholders mapped by importance and influence*
+   ![Fig. 2. Stakeholders mapped by importance and influence](images/stakeholder_map.png){: standalone #fig2 data-title="Stakeholders mapped by importance and influence" }
 
 4. **Outline assumptions and risks**
 
@@ -102,14 +96,6 @@ the project. The following important topics are covered in
 * Project quality management
 * Project processes
 * Management of agile projects
-
-## Other relationships
-
-At this stage of the module, a familiarity with the concepts and concerns
-related to team and project relationships is the priority. Later in the
-module, we will also be considering interactions between the software
-engineer and other groups of people including end users and security
-specialists.
 
 ## Further reading
 
