@@ -14,10 +14,10 @@ that you are already aware of, but with the overriding aim of maximising quality
 
 By the end of the module, you should be able to
 
-1. Explain software quality in both formal and informal terms
-2. Apply design and development practices to optimise the quality of software systems
-3. Evaluate software quality
-4. Critique software development processes
+1. Design and create high-quality, maintainable code
+2. Implement software development processes to optimise the quality of software systems
+3. Evaluate and apply software quality assurance metrics and techniques
+4. Demonstrate competent and ethical use of AI tools in software development
 
 You will be writing some software and we will be exploring methods for ensuring
 that your code meets appropriate quality criteria. That is only part of the jigsaw,
