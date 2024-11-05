@@ -5,7 +5,7 @@ has_children: true
 nav_order: 7
 ---
 
-# Application design
+# Building Applications
 
 <hr class="splash">
 

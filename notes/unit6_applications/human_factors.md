@@ -14,6 +14,8 @@ are creating. Fig. 1 illustrates some of the most important ones.
 
 ![Fig. 1. Other people](images/other_people.gif){: standalone #fig1 data-title="Other people" }
 
+
+
 ## Stakeholder analysis
 
 A *stakeholder* is any person, group of people or organisation with an interest in
