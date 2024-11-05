@@ -32,7 +32,7 @@ at the user's current working directory and includes a series of steps to get fr
 to the file of interest. That can involve moving upwards through the hierarchy until a common
 directory is reached before following a branch to the target.
 
-![Fig. 1. Fig. 1: File systems on Windows and Mac/Linux](images/file_systems.png){: standalone #fig1 data-title="File systems on Windows and Mac/Linux" }
+![Fig. 1: File systems on Windows and Mac/Linux](images/file_systems.png){: standalone #fig1 data-title="File systems on Windows and Mac/Linux" }
 
 Normally, you can run an executable file by providing a full path, but usually, you want to be
 able to call the executable by name only. In that case, the operating system checks a set of
