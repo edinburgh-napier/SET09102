@@ -142,7 +142,7 @@ classDiagram
   TeamMember : currentAccommodation()
 ```
 
-*Fig. 1. Example class hierarchy*
+Fig. 1. Example class hierarchy{: .figcaption}
 
 Classes can be split into subclasses to make handling the different types of object
 more convenient as the TeamMember class is split up in Fig. 1. This is known as

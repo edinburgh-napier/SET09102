@@ -86,10 +86,14 @@ figure.small-fig img {
   max-width: 30rem;
   max-height: 30rem;
 }
-figcaption {
+figcaption p.figcaption {
   display: block;
   font-style: italic;
   font-size: 0.9rem;
+}
+
+p.figcaption {
+  margin: 0 5rem;
 }
 
 .figure-labels {
@@ -111,6 +115,13 @@ figcaption {
   border: 1px solid #ccc;
   border-radius: 100%;
   text-align: center;
+}
+
+// Center mermaid diagrams
+
+svg[role="graphics-document document"] {
+  display: block;
+  margin: 0 auto;
 }
 
 
