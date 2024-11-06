@@ -9,7 +9,7 @@ nav_order: 4
 # Behaviour-Driven Development
 
 Behavior-Driven Development (BDD) is an agile software development technique that extends the 
-principles of Test-Driven Development (TDD) by emphasizing collaboration between developers, 
+principles of Test-Driven Development (TDD) by emphasising collaboration between developers, 
 testers, and non-technical stakeholders to define the desired behavior of an application. In BDD, 
 development begins by defining the expected behaviors of a system in a shared, human-readable 
 format that both technical and non-technical team members can understand. This approach bridges 
@@ -35,7 +35,7 @@ While BDD builds upon the principles of TDD, there are key distinctions in focus
 
 | Aspect  | TDD                                                                                                                                  | BDD                                                                                                                                                                                                                                                                |
 |---------|--------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Focus   | TDD focuses on verifying specific units of functionality through unit tests, which test the internal mechanics of a feature.         | BDD is concerned with the overall behavior of the system as it aligns with user stories and business requirements. TDD emphasizes making small units of code work correctly, whereas BDD emphasizes ensuring that the system’s behavior matches user expectations. |
+| Focus   | TDD focuses on verifying specific units of functionality through unit tests, which test the internal mechanics of a feature.         | BDD is concerned with the overall behavior of the system as it aligns with user stories and business requirements. TDD emphasises making small units of code work correctly, whereas BDD emphasises ensuring that the system’s behavior matches user expectations. |
 | Scope   | In TDD, developers write unit tests for individual methods and functions, which ensures isolated parts of the system work correctly. | BDD focuses on end-to-end scenarios that describe user interactions with the system. While TDD tests verify isolated pieces of logic, BDD scenarios test complete behaviors, making it easier to see the impact on the overall user experience.                    |
 | Process | TDD is primarily a developer-centered approach, with test cases typically written in code.                                           | BDD encourages collaboration between developers, QA, and business stakeholders by creating test cases in a common language that everyone can understand. This collaboration promotes shared ownership and ensures that development aligns with business goals.     |
 
@@ -111,7 +111,7 @@ scenarios are easy to read and understand, creating a shared language for discus
 BDD provides numerous advantages, particularly in complex or customer-focused projects. The 
 collaborative approach helps prevent misunderstandings and clarifies requirements early in the 
 development process, making it less likely that developers build the wrong functionality. BDD 
-also emphasizes the user experience, as test scenarios are written from the user’s perspective, 
+also emphasies the user experience, as test scenarios are written from the user’s perspective, 
 leading to more user-centric designs. Finally, BDD scenarios become living documentation that 
 can be easily maintained and updated, ensuring that everyone has a clear view of the system’s 
 behavior and requirements.
@@ -157,7 +157,7 @@ In summary, while BDD provides value by aligning development with business needs
 communication, it is not universally applicable or easy to adopt. BDD works best in projects with 
 clear requirements, stable goals, and a high level of stakeholder involvement. When these 
 conditions aren’t met, BDD can add complexity and maintenance overhead without delivering its 
-intended benefits. For organizations considering BDD, it’s essential to weigh the collaboration 
+intended benefits. For organisations considering BDD, it’s essential to weigh the collaboration 
 and scenario-writing costs against the value it provides to ensure that BDD is a good fit for 
 the project’s context and team structure.
 

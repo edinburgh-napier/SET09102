@@ -18,7 +18,7 @@ nav_order: 1
 
 2. Focus on Incremental Delivery Instead of Perfection
 
-    > Unlike structured environments, Agile emphasizes delivering small, functional increments of 
+    > Unlike structured environments, Agile emphasises delivering small, functional increments of 
     > the product regularly. Aim for continuous improvement rather than trying to build a "perfect" 
     > solution from the start.
     > 
@@ -35,7 +35,7 @@ nav_order: 1
     > When faced with unclear requirements, don’t wait for perfect clarity. Start by implementing 
     > what you know and use feedback from stakeholders to refine and improve as you go.
 
-4. Prioritize Collaboration and Communication
+4. Prioritise Collaboration and Communication
 
     > Agile relies heavily on cross-functional collaboration, with frequent touchpoints between 
     > developers, testers, designers, and stakeholders. Strong communication is essential to keep 
@@ -65,7 +65,7 @@ nav_order: 1
 
 7. Embrace Continuous Feedback and Improvement
 
-    > Agile emphasizes continuous improvement through frequent feedback loops. Regularly incorporate 
+    > Agile emphasises continuous improvement through frequent feedback loops. Regularly incorporate 
     > feedback from stakeholders, retrospectives, and testing to improve both the product and team 
     > processes.
     > 
@@ -97,7 +97,7 @@ nav_order: 1
     > dependencies, and bottlenecks.
     > 
     > Get familiar with task boards and regularly update your tasks throughout the sprint. Use them 
-    > as a tool to stay organized, prioritize work, and manage dependencies with other team members.
+    > as a tool to stay organised, prioritise work, and manage dependencies with other team members.
 
 11. Develop a Growth Mindset for Continuous Learning
 
@@ -111,16 +111,16 @@ nav_order: 1
 12. Understand the Importance of Backlog Grooming
 
     > The backlog is a living list of work that needs to be done. Regular backlog grooming ensures 
-    > that tasks are well-defined, prioritized, and ready for upcoming sprints, helping the team 
-    > stay organized and focused.
+    > that tasks are well-defined, prioritised, and ready for upcoming sprints, helping the team 
+    > stay organised and focused.
     > 
     > Participate in backlog grooming sessions with your team to understand upcoming tasks and clarify 
-    > any uncertainties before the sprint begins. Use this time to refine task details, prioritize 
+    > any uncertainties before the sprint begins. Use this time to refine task details, prioritise 
     > based on user value, and ensure you’re clear on each item’s purpose.
 
-13. Embrace Self-Organization and Take Ownership
+13. Embrace Self-Organisation and Take Ownership
 
-    > Agile teams are often self-organizing, meaning team members are responsible for managing 
+    > Agile teams are often self-organising, meaning team members are responsible for managing 
     > their tasks and making decisions collectively. Take ownership of your work and actively 
     > contribute to the team’s goals.
     > 

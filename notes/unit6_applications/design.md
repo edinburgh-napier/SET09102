@@ -96,7 +96,7 @@ summarised in the table below.
 | Process-oriented design | This approach models process first and then determines the data structures that are needed. It is not an alternative to OOD |
 | Data-oriented design    | This approach prioritises data structure design over processes                                                              |
 
-### Object-oriented design
+## Object-oriented design
 
 In OOD, a software system is modelled as a set of interacting software objects, each of
 which has associated data (*properties*) and behaviour (*methods*). Because there may be
@@ -108,10 +108,10 @@ Most classes correspond to some real-world object, person, place or event. They 
 identified from user interviews because they correspond to the nouns and noun phrases
 that are used. The box below shows an example.
 
-> When a need is identified, the UNDAC Deputy Team Leader will approve the creation
+> When a need is identified, the Disaster Response Team Leader will approve the creation
 > of an operational team to address it.
 
-This example includes three nouns/noun phrases, *need*, *UNDAC Deputy Team Leader* and
+This example includes three nouns/noun phrases, *need*, *Disaster Response Team Leader* and
 *operational team*, each of which would become a class in the system design. Design
 can then progress to identifying the data properties required by each class, how the class
 related to other classes, it can be storedin a database and the behaviours that need
@@ -141,7 +141,7 @@ classDiagram
   TeamMember : currentAccommodation()
 ```
 
-*Fig. 1. Example class hierarchy
+*Fig. 1. Example class hierarchy*
 
 Classes can be split into subclasses to make handling the different types of object
 more convenient as the TeamMember class is split up in Fig. 1. This is known as
@@ -155,7 +155,7 @@ class definitions in Fig. 1 are not complete, the Volunteer class coontains a me
 of relationship between volunteers and missions. One way to model that relationship
 would be for the Volunteer class to include a property which is a list of Mission objects.
 
-### Database design
+## Database design
 
 Until recently, database design implied the use of a relational database in which data
 is represented by tables with relationships between them. This century, non-relational
@@ -172,18 +172,14 @@ Relational databases can be modelled in a top-down fashion similar to the way a 
 hierarchy can be built up from the information in user interviews. The process, illustrated
 in Fig. 2, is iterative and continues until there are no further changes.
 
-![Entity relationship modelling](../../images/entity_relastionship_modelling.png)
-
-*Fig. 2: Entity relationship modelling*
+![Fig. 2: Entity relationship modelling](images/entity_relationship_modelling.png){: standalone #fig2 data-title="Entity relationship modelling" }
 
 The standard method for representing the relationships between entities in a relational
 database structure is the *entity-relastionship diagram* (ERD). It closely resembles a
 simplified UML class diagram, and an example built using
 [draw.io](https://www.drawio.com/) is shown in Fig. 3.
 
-![Example entity-relationship diagram](../../images/themepark_erd.png)
-
-*Fig. 3: Example entity-relationship diagram*
+![Fig. 3: Example entity-relationship diagram](images/themepark_erd.png){: standalone #fig3 data-title="Example entity-relationship diagram" }
 
 Relational structures are defined by mathematical rules and can be checked for validity
 by using the process of [normalisation](https://bdavison.napier.ac.uk/db/Notes/Normalisation/intro/).

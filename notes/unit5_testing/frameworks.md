@@ -10,10 +10,10 @@ nav_order: 6
 
 Software testing frameworks are structured tools and environments designed to support, simplify, 
 and automate the testing process for software applications. These frameworks provide a standard way 
-to define, organize, execute, and report tests, making it easier for development teams to maintain 
+to define, organise, execute, and report tests, making it easier for development teams to maintain 
 high-quality code and ensure that applications meet functional and performance requirements. By 
 using a testing framework, developers and testers can create efficient, reusable test cases and 
-automate repetitive testing tasks, significantly reducing manual effort and minimizing human error.
+automate repetitive testing tasks, significantly reducing manual effort and minimising human error.
 
 Testing frameworks are essential for implementing different types of tests, such as unit, 
 integration, end-to-end, and regression tests. They offer features like test case management, 
@@ -35,7 +35,7 @@ teams to tailor the framework to their specific needs.
 
 Software testing frameworks revolve around providing a structured, efficient approach to 
 creating, managing, and executing tests in software development. These frameworks define a 
-standard format for writing test cases and include tools to organize, execute, and report results. 
+standard format for writing test cases and include tools to organise, execute, and report results. 
 Core concepts include:
 
 * **Test Case Definition**: Frameworks provide structured ways to define test cases, including 
@@ -44,8 +44,8 @@ Core concepts include:
 * **Automation Support**: Testing frameworks enable the automation of tests, which reduces manual 
   effort, increases test reliability, and supports continuous testing through integration with 
   CI/CD pipelines.
-* **Test Suite Organization**: They help organize tests into groups or suites, allowing developers 
-  to categorize tests based on function, scope (unit, integration, end-to-end), or feature area, 
+* **Test Suite Organisation**: They help organise tests into groups or suites, allowing developers 
+  to categorise tests based on function, scope (unit, integration, end-to-end), or feature area, 
   making it easier to manage and maintain tests over time.
 * **Assertions and Verification**: Frameworks include assertion libraries that check whether test 
   outputs match expected results, ensuring that code behaves as intended under different conditions.
@@ -175,7 +175,7 @@ the code behaves as intended. Here are some common assertions in xUnit, a common
 4. **`Assert.Null` / `Assert.NotNull`**
 
     These assertions verify whether an object is null or not null. They’re useful for testing 
-    methods that return optional values, objects that may not be initialized, or error handling 
+    methods that return optional values, objects that may not be initialised, or error handling 
     scenarios.
     
     ```c#

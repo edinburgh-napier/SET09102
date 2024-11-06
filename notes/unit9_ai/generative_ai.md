@@ -112,7 +112,7 @@ code rather than natural language text. They include
 
 * [DeepCode](https://snyk.io/platform/deepcode-ai/):
 
-  Uses deep learning to analyze and learn from code repositories. While not exclusively
+  Uses deep learning to analyse and learn from code repositories. While not exclusively
   for code generation, it assists in code reviews by pointing out potential issues.
 
 At the time of writing, these are not the only software engineering tools and services to
@@ -208,7 +208,7 @@ Will Change Software Engineering Education*:
 > resource for developers, it cannot replace human expertise and comprehension. The
 > developer will still need to understand the problem and the requirements and validate
 > the code generated. They will also need to maintain, debug and adapt the code to
-> changing requirements. Thus, future engineers will need to prioritize software design
+> changing requirements. Thus, future engineers will need to prioritise software design
 > competencies over manual code writing skills.
 >
 > As AI-generated code becomes more
