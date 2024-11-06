@@ -9,18 +9,50 @@ mermaid: true
 
 # Environments
 
-This section recaps on some concepts that have been covered before either in this module or
-earlier in your studies. They bear repeating here though because they are fundamental to the
-way software systems are developed and managed, and having a clear picture of what is going on
-behind the scenes helps to understand processes more clearly and goves you greater control over
-them.
+An *environment* is the working context of a software system. The term is widely used and it
+is important to understand its full implications. The major distinction is between the *production*
+environment (also referred to as the *live* environment) where a system is in actual use, 
+and the *development* environment where software developers are making changes. As the software 
+system evolves over time, code changes will be introduced into the production environment, but this has 
+to be done very carefully to avoid any disruption to the users. The development environment 
+replicates the production environment including code and supporting infrastructure such as databases. 
+Because each member of the development team will be working on different changes to the codebase, 
+each one will have their own development environment. This is an important detail: the development 
+environment is not shared - each member of the team has their own copy which includes the last known 
+good configuration of the codebase, plus the changes they are currently working on.
 
-Although the majority of our interactions with computers now take place via a graphical user
-interface (GUI), the files that make up an application are still arranged in a hierarchical tree
-structure. This has been a constant feature of operating system design since the introduction of
-[Multics](https://en.wikipedia.org/wiki/Hierarchical_file_system) in 1967.
-The GUI manages the communications between the application and the underlying file system to a
-large extent. However, there are some things that every software engineer should know about.
+![Fig. 1: System environments](images/environments.png){: standalone #fig1 data-title="System environments" }
+
+Code repositories such as GitHub are excellent tools for managing the synchronisation of the
+various environments in use. Once developers have completed the changes they are working on, 
+they *push* the code to the repository. Once any quality assurance procedures have been 
+completed, the code can then be *deployed* to the production environment. Fig. 1 illustrates this
+and also includes a test environment where integrated code can be tested before deployment.
+Like the live environment, the test environment is a shared instance of the code that is
+hosted on a server or on the cloud. Development environments, in contrast, are located on 
+the workstation belonging to the individual developer. In order for their personal development
+environment to be kept up to date, developers need to *fetch* changes from the repository on
+a regular basis. Typically, this is done just before starting a new development task. During
+work on a task, it is important that developer's working environment remains stable. Changes
+from other developers are only introduced between one task and the next.
+
+Having a clear understanding of the way environments are used within a project is vital to
+ensure that things continue to run smoothly. Many steps in the process of code deployment 
+and synchronisation of environments can be automated and in the majority of cases there will
+be no problems. However, no system is perfect and when things go wrong, it is up to the team
+to sort them out. Some steps such as the synchronisation of the development environment remain
+the responsibility of the individual developer. A good familiarity with some basic concepts is
+therefore required. The remained of this section recaps on some concepts that have almost certainly
+come across before. They bear repeating here though because they are fundamental to the
+way software systems are developed and managed, and having a clear picture of what is going on
+behind the scenes helps to understand processes more clearly and gives you greater control over
+them. If you are comfortable working at the command line, you will have no difficulty with the
+ideas summarised here. Although the majority of our interactions with computers now take place 
+via a graphical user interface (GUI), the files that make up an application are still arranged 
+in a hierarchical tree structure. This has been a constant feature of operating system design since 
+the introduction of [Multics](https://en.wikipedia.org/wiki/Hierarchical_file_system) in 1967.
+While a GUI is convenient, it is much less efficient that using the command line, provides
+limited control and has its own learning curve.
 
 ### The path
 
@@ -32,18 +64,18 @@ at the user's current working directory and includes a series of steps to get fr
 to the file of interest. That can involve moving upwards through the hierarchy until a common
 directory is reached before following a branch to the target.
 
-![Fig. 1: File systems on Windows and Mac/Linux](images/file_systems.png){: standalone #fig1 data-title="File systems on Windows and Mac/Linux" }
+![Fig. 2: File systems on Windows and Mac/Linux](images/file_systems.png){: standalone #fig2 data-title="File systems on Windows and Mac/Linux" }
 
 Normally, you can run an executable file by providing a full path, but usually, you want to be
 able to call the executable by name only. In that case, the operating system checks a set of
-common locations that are listed in an *environment variable* usually called `PATH`. Fig. 1
+common locations that are listed in an *environment variable* usually called `PATH`. Fig. 2
 illustrates some of the usual locations for installed applications in Windows and Mac/Linux. The
 problem is that there are several possible locations each of which may have further subdirectories.
 If an application encloses its executable binaries in additional levels of structure, they will
-not be visible unless the relevant subdirectory is added to the `PATH`. Fig. 2 illustrates the
+not be visible unless the relevant subdirectory is added to the `PATH`. Fig. 3 illustrates the
 dialogs provided by Windows for updating the `PATH`.
 
-![Fig. 2: Updating the Windows PATH](images/windows_path.png){: standalone #fig2 data-title="Updating the Windows PATH" }
+![Fig. 3: Updating the Windows PATH](images/windows_path.png){: standalone #fig3 data-title="Updating the Windows PATH" }
 
 ### The project root
 
@@ -67,7 +99,7 @@ root folder, there is no intrinsic link between them. It would be perfectly poss
 to create a git repository that includes only part of a Visual Studio project. In that case, the
 git root would be located in a subdirectory below the project root. Similarly, it is possible to
 include more than on project in the same git repository. In that case, each project would occupy
-a subdirectory of the git root. This is visualised in Fig. 3.
+a subdirectory of the git root. This is visualised in Fig. 4.
 
 ```mermaid
 flowchart TB
@@ -77,7 +109,7 @@ flowchart TB
     g1 --> pp2[Project 2 root]
 ```
 
-*Fig. 3: Cases where the project root and git root are different*
+*Fig. 4: Cases where the project root and git root are different*
 
 ### Hidden files
 
@@ -118,14 +150,14 @@ running on a different host machine from the application code. Some major advant
 model are that the database can be shared between different applications, it can be scaled
 separately as the amount of data grows, and it can have specific security measures applied
 that are perhaps not relevant to the application as a whole. This typical arrangement is
-visualised in Fig. 4. The cloud is included to emphasise the separation between the different
+visualised in Fig. 5. The cloud is included to emphasise the separation between the different
 instances of the application and the database, and the fact that the route between the
 application and the database may not be known. We often rely on standard internet
 infrastructure to resolve the route for us.
 
-![Fig. 4: Multi-user database access](images/database.png){: standalone #fig4 data-title="Multi-user database access" }
+![Fig. 5: Multi-user database access](images/database.png){: standalone #fig5 data-title="Multi-user database access" }
 
-While Fig. 4 depicts a database in use, there are two other situation that you need to be
+While Fig. 5 depicts a database in use, there are two other situation that you need to be
 aware of. The first is where the database is not intended to be shared, but instead provides
 storage exclusively for a single application user, or is used as a local data cache which is
 periodically synchronised with a remote shared database. In that case,
@@ -153,12 +185,6 @@ other member of the development team to use to implement the same changes on the
 of the database. Typically, database changes are defined in code using an object-relational
 mapper (ORM) tool. Running the change scripts on an instance of the database in order to make
 the required changes is known as *migration*.
-
-## Microsoft Entity Framework
-
-## Database migrations
-
-## Epilogue: file systems, environments and repositories
 
 ## Further reading
 
