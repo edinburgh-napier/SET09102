@@ -33,7 +33,7 @@ next release where a lot of development work is going on. Because the next relea
 the current one, we can imagine taking a copy of the codebase at the point of release. That
 way, we can fix emergencies with the live code in parallel with the new development work
 because the two configurations are independent. In GitHib and other similar systems, this
-is referred to as a *branch* in the code as illustrated in Fig. 2. Note that the branch
+is referred to as a *branch* in the code as illustrated in Fig. 1. Note that the branch
 representing the current release is called `main` - this is a common convention.
 
 ``` mermaid
@@ -53,11 +53,12 @@ gitGraph
     checkout main
 commit id: "bug fix 2"
 ```
+
 {: .figcaption}
-Fig. 2: Release branch
+Fig. 1: Release branch
 
 Once the code configuration for the new release is stable, the parallel code branch can be
-*merged* with the main branch as illustrated in Fig. 3. During this process, it is possible
+*merged* with the main branch as illustrated in Fig. 2. During this process, it is possible
 for code conflicts to arise. This is where changes have occurred to the same file in
 both branches and keeping one version would mean losing the changes in the other. Some such
 conflicts can be handled in an automated way, but others will require the two versions of the file
@@ -88,12 +89,12 @@ gitGraph
 ```
 
 {: .figcaption}
-Fig. 3: Merging branches
+Fig. 2: Merging branches
 
 A further complication that needs to be managed is that several pieces of development work will be
 going on simultaneously, each being worked on by a different developer. It is essential that these
 changes do not conflict with each other. A good way to manage this extra complication is to create
-a separate branch for each piece of work as illustrated in Fig. 4. In the example, one developer
+a separate branch for each piece of work as illustrated in Fig. 3. In the example, one developer
 creates a branch to work on feature 1 and a second developer creates a parallel branch to work on
 feature 2. Once both pieces of work are complete they are merged into the new release branch. The
 same procedure would be done for the bug fixes in the main branch.
@@ -131,7 +132,7 @@ gitGraph
 ```
 
 {: .figcaption}
-Fig 4: Parallel feature branches
+Fig 3: Parallel feature branches
 
 A merge operation is triggered by a *pull request* (PR). With a PR, the developer is indicating that the
 code changes and testing are complete,and that the modified code is ready to be pulled into the parent
