@@ -12,7 +12,7 @@ If you think about software engineering as simply writing code, it is easy to
 overlook the other people who have an interest in the software products that you
 are creating. Fig. 1 illustrates some of the most important ones.
 
-![Fig. 1. Other people](images/other_people.gif){: standalone #fig1 data-title="Other people" }
+![Fig. 1. Other people with an interest in the software engineer's work](images/other_people.gif){: standalone #fig1 data-title="Other people with an interest in the software engineer's work" }
 
 Communication and collaboration are fundamental to modern software development, shaping productivity, 
 morale, and overall success. Teams must effectively share information to avoid misunderstandings, 
@@ -202,6 +202,9 @@ collaborate openly and consider diverse ideas often reach better solutions faste
 a team brainstorming session that includes developers, testers, and product managers can result 
 in a more robust feature design. However, if decision-making is overly centralized with just a 
 few individuals, it can delay progress and reduce team engagement.
+
+{: .tip-title }
+> [<i class="fa-regular fa-lightbulb"></i> Tips for working with external stakeholders](human_factors_tips)
 
 ## Further reading
 

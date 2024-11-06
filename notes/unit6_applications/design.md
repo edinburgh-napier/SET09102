@@ -32,46 +32,16 @@ One way to think about high-level design is as the part of the process that does
 require any software to be built. Everything at the high level can be described in
 abstract terms, typically using appropriate diagrams.
 
-In general, design activities can be split into the following categories
+In general, design activities can be split into the categories shown in the following table ([O'Regen, 2022, Ch. 6](https://link-springer-com.napier.idm.oclc.org/chapter/10.1007/978-3-031-07816-3_6)).
 
-> **Architecture design of system (with all sub-systems)**
->
-> Definition of all the major components of a system and how they communicate.
-> [Block diagrams](https://en.wikipedia.org/wiki/Block_diagram) are often used to
-> capture system structure at this level.
->
-> **Abstract specification of each sub-system**
->
-> Decomposition of each major component and its description using appropriate methods
-> such as [user stories](https://www.agilealliance.org/glossary/user-stories/),
-> [design patterns](https://napier.primo.exlibrisgroup.com/permalink/44NAP_INST/n96pef/alma9923811554702111),
-> etc.
->
-> **Interface design (for each subsystem)**
->
-> Specification of how data is exchanged across component boundaries. This includes the
-> *user interface* (UI) as well as software interfaces such as method signatures and APIs.
-> UI design techniques such as [wireframes](https://designerrs.com/what-is-wireframing-in-ui-ux-design/)
-> are often used during the [requirements modelling process](Week11a_requirements_modelling.md)
-> using tools such as [Figma](https://www.figma.com/). API designs can be described with
-> toolssuch as [Swagger](https://swagger.io/).
->
-> **Component design**
->
-> Detailed design of major components using appropriate methods such as
-> [UML diagrams](https://napier.primo.exlibrisgroup.com/permalink/44NAP_INST/n96pef/alma9923410250502111)
->
-> **Data structure design**
->
-> Data modelling including relational or non-relational database design and the design of
-> structures used for transferring data from one component or system to another.
->
-> **Algorithm design**
->
-> The design of optimised deterministic routines for a specified purpose. UML sequence
-> diagrams, state charts and activity diagrams are often useful here.
->
-> ([O'Regen, 2022, Ch. 6](https://link-springer-com.napier.idm.oclc.org/chapter/10.1007/978-3-031-07816-3_6))
+| Category | Description |
+|----------|-------------|
+| Architecture design of system (with all sub-systems) | Definition of all the major components of a system and how they communicate. [Block diagrams](https://en.wikipedia.org/wiki/Block_diagram) are often used to capture system structure at this level. |
+| Abstract specification of each sub-system | Decomposition of each major component and its description using appropriate methods such as [user stories](https://www.agilealliance.org/glossary/user-stories/), [design patterns](https://napier.primo.exlibrisgroup.com/permalink/44NAP_INST/n96pef/alma9923811554702111), etc. |
+| Interface design (for each subsystem) | Specification of how data is exchanged across component boundaries. This includes the *user interface* (UI) as well as software interfaces such as method signatures and APIs. UI design techniques such as [wireframes](https://designerrs.com/what-is-wireframing-in-ui-ux-design/) are often used during the [requirements modelling process](Week11a_requirements_modelling.md) using tools such as [Figma](https://www.figma.com/). API designs can be described with tools such as [Swagger](https://swagger.io/). |
+| Component design | Detailed design of major components using appropriate methods such as [UML diagrams](https://napier.primo.exlibrisgroup.com/permalink/44NAP_INST/n96pef/alma9923410250502111) |
+| Data structure design | Data modelling including relational or non-relational database design and the design of structures used for transferring data from one component or system to another. |
+| Algorithm design | The design of optimised deterministic routines for a specified purpose. UML sequence diagrams, state charts and activity diagrams are often useful here. |
 
 In addition to the items above, in his [chapter 6](https://eu.alma.exlibrisgroup.com/leganto/public/44NAP_INST/citation/6676830220002111?auth=SAML),
 Stephens suggests that the following topics should also be covered in high-level design:
@@ -195,6 +165,102 @@ structures can create many problems it is not properly controlled. Because moder
 non-relational databases such as [MongoDB](https://www.mongodb.com/) use
 [JSON](https://www.json.org/json-en.html) syntax, structures can be defined, controlled
 and validated by using [JSON schemas](https://json-schema.org/understanding-json-schema/index.html).
+
+## User Experience Design
+
+User Experience (UX) Design is a critical aspect of software development, focusing on how users 
+interact with and feel about a product. For software engineers, understanding UX principles helps 
+ensure that the software is not only functional but also intuitive, accessible, and enjoyable to use.
+UX design is more than just aesthetics; it encompasses the entire user journey, including usability, 
+efficiency, accessibility, and satisfaction. By applying UX principles, software engineers can 
+enhance the usability and effectiveness of the software they create, leading to higher user 
+engagement and satisfaction.
+
+### Core Principles of UX Design
+
+A full exploration of UX design is beyond the scope of this module. The list below summarises some
+main aspects and provides links to additional material.
+
+> **User-Centered Design**
+> 
+> UX design starts with the user. Engineers should consider the needs, goals, and challenges of the 
+> end-users throughout the development process. This involves understanding the context in which the 
+> software will be used and aiming to create a solution that meets user needs in a straightforward, 
+> effective way. Techniques such as 
+> [user personas](https://www.interaction-design.org/literature/topics/personas?srsltid=AfmBOop1lWX0vVCRPyuGfu25Hs4r6D-q7PHyDV9irJrTHESns1Jz-3rK), 
+> [user stories](https://www.interaction-design.org/literature/topics/user-stories), and 
+> [empathy mapping](https://www.interaction-design.org/literature/topics/empathy-mapping) 
+> can help engineers keep the focus on real user needs.
+> 
+> **Usability and Simplicity**
+> 
+> Usability is about making software easy to use, even for first-time users. Engineers should aim for 
+> simplicity, minimising the cognitive load on users by designing intuitive navigation, clear 
+> workflows, and logical content structures. For instance, common actions should be easy to find, 
+> interfaces should be uncluttered, and complex functions should be broken down into clear steps. 
+> Usability testing, even with a few users, can reveal valuable insights into how to make a product 
+> more intuitive. A good starting reference for usability is Jakob Neilsen's 
+> [usability heuristics](https://www.nngroup.com/articles/ten-usability-heuristics/).
+> 
+> **Consistency and Familiarity**
+> 
+> [Consistency in design](https://www.interaction-design.org/literature/article/principle-of-consistency-and-standards-in-user-interface-design?srsltid=AfmBOopRwYCF2KdEdsf-nMpjtl9825UtTN9NBG0nbZBqpNAJZGP7Viu6) 
+> — across layouts, navigation, buttons, colors, and terminology — helps users feel 
+> comfortable and reduces their learning curve. Reusing familiar design patterns and conventions 
+> (e.g., using a magnifying glass icon for search, a gear for settings) helps users recognise features 
+> and functionality quickly, improving the overall experience. Engineers can work closely with UX 
+> designers to ensure that code reflects consistent design standards throughout the application.
+> 
+> **Feedback and Responsiveness**
+> 
+> Good UX design gives users clear 
+> [feedback on their actions](https://www.interaction-design.org/literature/article/talk-to-me-feedback-and-notifications-in-mobile-design), 
+> confirming that their input has been 
+> received. For instance, loading animations, progress bars, or success messages let users know that 
+> the system is processing their request. Engineers can add responsive elements like hover states, 
+> error messages, and validation prompts to provide users with real-time feedback, making interactions 
+> smooth and predictable.
+> 
+> **Accessibility**
+> 
+> Accessible design ensures that the software is usable by people with varying abilities. Engineers 
+> should follow [accessibility guidelines](https://www.wcag.com/resource/what-is-wcag/), such as 
+> providing alternative text for images, supporting 
+> keyboard navigation, and ensuring color contrast is adequate. Accessibility improves inclusivity, 
+> allowing a wider audience to use and benefit from the software and is not to be confused with 
+> *availability* which is a measure of how consistently a system is available to be accessed when 
+> needed. The accessibility of web applications can be tested automatically using a range of [cloud
+> services](https://testguild.com/accessibility-testing-tools-automation/).
+> 
+> **Performance and Efficiency**
+> 
+> UX design also involves creating software that performs efficiently and minimises wait times, as 
+> performance issues directly impact user satisfaction. Engineers can contribute to a positive UX 
+> by optimising loading times, reducing response times, and ensuring smooth transitions between 
+> actions. For example, lazy loading, efficient data management, and optimised asset loading are 
+> technical strategies that enhance UX by improving performance.
+> 
+> **Iterative Improvement and User Testing**
+> 
+> UX design is an iterative process that evolves based on user feedback. Engineers should be 
+> prepared to refine and improve features based on usability testing, user feedback, and data 
+> analysis. Small, regular updates based on user insights help improve the product over time and 
+> keep the UX aligned with real-world needs.
+
+### Collaboration with UX Designers
+
+In many projects, engineers work closely with UX designers to ensure the final product reflects 
+both functional and design considerations. Effective collaboration between UX designers and 
+engineers involves open communication, feedback loops, and mutual respect for each other’s 
+expertise. Engineers can provide valuable input on the feasibility of design ideas, while UX 
+designers can ensure that technical implementations align with user needs. By integrating UX 
+considerations into the development process, engineers help build software that is not only 
+technically sound but also user-friendly and aligned with the expectations of real users.
+
+Understanding UX principles empowers software engineers to contribute to a user-centered 
+development process, resulting in software that is accessible, efficient, and enjoyable to use. 
+Whether working independently or in collaboration with designers, an engineer’s commitment to 
+UX ensures that users experience maximum value from the software they create.
 
 ## Further reading
 
