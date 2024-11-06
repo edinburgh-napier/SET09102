@@ -3,7 +3,6 @@ title: Lifecycles and Stages
 parent: Notes
 has_children: true
 nav_order: 4
-mermaid: true
 ---
 
 # Lifecycles and stages

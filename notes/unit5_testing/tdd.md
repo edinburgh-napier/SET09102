@@ -42,7 +42,9 @@ flowchart LR
     decision2 -- no --> node1
     decision2 -- yes --> node2
 ```
-*Fig. 3: Test-driven development*
+
+{: .figcaption}
+Fig. 3: Test-driven development
 
 In TDD, tests act as a safety net, alerting developers if changes break existing functionality. 
 This makes TDD ideal for complex or evolving projects, as it ensures each feature or function is 

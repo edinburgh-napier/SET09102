@@ -49,7 +49,8 @@ gitGraph
    commit id: " "
 ```
 
-*Fig 1: Concurrent development*
+{: .figcaption}
+Fig 1: Concurrent development
 
 Even when two developers make changes to the same file, merge conflicts are not certain. For 
 instance, if Developer A adds a function at the top of the file while Developer B modifies a 

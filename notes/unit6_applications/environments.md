@@ -109,7 +109,8 @@ flowchart TB
     g1 --> pp2[Project 2 root]
 ```
 
-*Fig. 4: Cases where the project root and git root are different*
+{: .figcaption}
+Fig. 4: Cases where the project root and git root are different
 
 ### Hidden files
 

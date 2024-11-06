@@ -64,7 +64,8 @@ flowchart LR
     class id2d subStep
 ```
 
-*Fig. 1: PQEM process*
+{: .figcaption}
+Fig. 1: PQEM process
 
 ## Code quality metrics
 

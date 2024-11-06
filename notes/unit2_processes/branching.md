@@ -53,7 +53,8 @@ gitGraph
     checkout main
 commit id: "bug fix 2"
 ```
-*Fig. 2: Release branch*
+{: .figcaption}
+Fig. 2: Release branch
 
 Once the code configuration for the new release is stable, the parallel code branch can be
 *merged* with the main branch as illustrated in Fig. 3. During this process, it is possible
@@ -86,7 +87,8 @@ gitGraph
    commit id: " "
 ```
 
-*Fig. 3: Merging branches*
+{: .figcaption}
+Fig. 3: Merging branches
 
 A further complication that needs to be managed is that several pieces of development work will be
 going on simultaneously, each being worked on by a different developer. It is essential that these
@@ -128,7 +130,8 @@ gitGraph
    commit id: " "
 ```
 
-*Fig 4: Parallel feature branches*
+{: .figcaption}
+Fig 4: Parallel feature branches
 
 A merge operation is triggered by a *pull request* (PR). With a PR, the developer is indicating that the
 code changes and testing are complete,and that the modified code is ready to be pulled into the parent

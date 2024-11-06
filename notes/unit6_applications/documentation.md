@@ -96,7 +96,8 @@ generate the sequence diagram in Fig. 3 ([mermaid.js.org](https://mermaid.js.org
     John->>Bob: How about you?
     Bob-->>John: Jolly good!
 
-*Fig. 2: Mermaid code for generating a sequence diagram*
+{: .figcaption}
+Fig. 2: Mermaid code for generating a sequence diagram
 
 ``` mermaid
 sequenceDiagram
@@ -111,7 +112,8 @@ sequenceDiagram
     Bob-->>John: Jolly good!
 ```
 
-*Fig. 3: Resulting sequence diagram*
+{: .figcaption}
+Fig. 3: Resulting sequence diagram
 
 After an initial period of familiarisation, the syntax of Mermaid diagrams starts to
 become quite intuitive. To embed the diagram description into a Markdown page, it

@@ -112,7 +112,9 @@ gitGraph
    checkout main
    merge feature id: "Merge"
 ```
-*Fig 3: Rebasing*
+
+{: .figcaption}
+Fig 3: Rebasing
 
 
 ## Being the reviewer
