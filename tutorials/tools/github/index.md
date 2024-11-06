@@ -356,7 +356,8 @@ it to the remote repo. As an example, we will add an image subdirectory to our p
         checkout main
         commit id: " "
     ```
-    *Fig. 13. Two code branches*
+    {: .figcaption}
+    Fig. 13. Two code branches
     
 3.  Commit the change to the _dev_ branch in VSCode.
     

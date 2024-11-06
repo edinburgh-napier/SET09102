@@ -63,7 +63,8 @@ graph LR
     classDef phase fill:#fafafa,stroke:#333366
 ```
 
-*Fig. 2: Code quality analysis techniques (Adapted from [Cap Gemini, n.d.](https://www.capgemini.com/wp-content/uploads/2020/11/PoV-Code-Analytics.pdf))*
+{: .figcaption}
+Fig. 2: Code quality analysis techniques (Adapted from [Cap Gemini, n.d.](https://www.capgemini.com/wp-content/uploads/2020/11/PoV-Code-Analytics.pdf))
 
 
 ## Impact analysis

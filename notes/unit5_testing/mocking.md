@@ -171,7 +171,8 @@ public void DisplayGamepadSettings_updates_ui_correctly()
 }
 ```
 
-*Fig. 2: A unit test using dependency injection*
+{: .figcaption
+Fig. 2: A unit test using dependency injection
 
 > **Notes**
 >

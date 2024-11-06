@@ -48,7 +48,8 @@ flowchart LR
   Test --> node5([3. Teardown testing context])
 ```
 
-*Fig. 1: Unit test structure*
+{: .figcaption}
+Fig. 1: Unit test structure
 
 ### 1. Setup
 
@@ -128,7 +129,8 @@ namespace HelloWorldTests
 }
 ```
 
-*Fig. 2: Example unit test in C#*
+{: .figcaption}
+Fig. 2: Example unit test in C#
 
 > #### Notes
 >
@@ -217,9 +219,7 @@ Leaving aside maintainability for the time being, the ideal test should be ine t
 maximises the other three pillars simultaneously - that would be the three-way
 intersection in Fig. 3.
 
-![Unit test value](../../images/unit_test_value.png)
-
-*Fig.3: Unit test value ([Khorikov, 2020](https://napier.primo.exlibrisgroup.com/permalink/44NAP_INST/13v8mut/alma9923667243102111))*
+![Fig. 3: Unit test value (<a href="https://napier.primo.exlibrisgroup.com/permalink/44NAP_INST/13v8mut/alma9923667243102111">Khorikov, 2020</a>)](images/unit_test_value.png){: standalone #fig1 data-title="System environments" }
 
 End-to-end tests are designed to test the system from the user's point of view. They focus
 on high-level behaviours and exercise a lot of code at one time. For these reasons, they
