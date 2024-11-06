@@ -118,12 +118,13 @@ related to other classes, it can be storedin a database and the behaviours that 
 to be implemented as class methods.
 
 A major benefit of OOD is the ability to represent classes as special cases of other classes
-in the form of a hierarchy. In the example above, the UNDAC Deputy Team Leader is just one
-of the roles in an UNDAC team. Others include the Team Leader, the Team Support and Logistics
-Manager and the Disaster Management Coordinator. Common features of all roles such as
-names, privilege level, appointment dates, etc. could be part of the parent class, Team
-Member. At a higher level of abstraction, a Team Member is a Person. The class hierarchy
-could therefore be represented in a diagram like the one in Fig. 1.
+in the form of a hierarchy. In the example above, the Disaster Response Team Leader is just one
+of the roles in a disaster response team. Others could include the Team Support Manager, 
+Logistics Manager and the Disaster Management Coordinator (all defined roles for
+[UN Disaster Assessment and Coordination teams](https://reliefweb.int/report/world/un-disaster-assessment-and-coordination-undac-field-handbook-7th-edition-2018)). 
+Common features of all roles such as names, privilege level, appointment dates, etc. could be part 
+of the parent class, Team Member. At a higher level of abstraction, a Team Member is a Person. The 
+class hierarchy could therefore be represented in a diagram like the one in Fig. 1.
 
 ``` mermaid
 classDiagram
