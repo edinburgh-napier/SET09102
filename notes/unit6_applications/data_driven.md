@@ -110,7 +110,7 @@ uses the [crow's foot](https://vertabelo.com/blog/crow-s-foot-notation/) convent
 symbols at the end of the relationship lines define how many entities of each type participate in 
 the relationship. For example, the diagram shows that a guest may stay at the hotel during a booking. 
 The labels indicate that one guest may have multiple bookings but may not yet have made any bookings, 
-and one booking is related to one and only one guest. The crow's foot style of diagram is used 
+and one booking is related to one and only one guest. The crow's foot style of diagram is used 
 by [StarUML](https://docs.staruml.io/working-with-additional-diagrams/entity-relationship-diagram) 
 and in the [Mermaid](https://mermaid.js.org/syntax/entityRelationshipDiagram.html) markup language, 
 but the [official UML notation](https://vertabelo.com/blog/uml-notation/) is slightly different.
@@ -119,7 +119,7 @@ but the [official UML notation](https://vertabelo.com/blog/uml-notation/) is sli
 
 Every table in a relational database should have a defined primary key which uniquely identifies a 
 row. The key may be a real piece of data (such as national insurance number) or a meaningless integer 
-known as a _surrogate_ or _synthetic_ key. Using integers as identifiers is so common that 
+known as a _surrogate_ or _synthetic_ key. Using integers as identifiers is so common that 
 all relational database platforms provide a means of automatically generating a new primary key 
 value when a row is inserted into a table. In MySQL, for example, the primary key column can be 
 defined with the [AUTO-INCREMENT](https://dev.mysql.com/doc/refman/8.0/en/example-auto-increment.html) 
@@ -132,7 +132,7 @@ the primary key value is supplied by the database engine.
 
 In the example database shown in Fig. 3, one room may be occupied during many bookings. In this case, 
 the room is the _parent_ record because it appears at the 'one' end of the relationship and the 
-booking is the _child_ record because it appears at the 'many' end. The relationship between a 
+booking is the _child_ record because it appears at the 'many' end. The relationship between a 
 booking and a room is represented by the foreign key attribute `booking.room_no` whose value matches 
 the primary key of the relevant row in the `room` table.
 
@@ -178,6 +178,12 @@ the figure in which the database changes are applied.
 
 ![Fig. 4: Visualising the database migration problem](images/migrations.png){: standalone #fig4 data-title="Visualising the database migration problem" }
 
+* Original change
+* Change committed to the repository
+* Synchronisation
+* Migration 
+{: .figure-labels}
+
 ### Controlled migrations
 
 The solution adopted on many different technical platforms is to introduce the concept of 
@@ -189,7 +195,7 @@ features are always the same:
 * Generate downgrade scripts at the same time so that a migration can be reverted if necessary.
 * Provide a controlled way of running the generated scripts.
 * Maintain a record of all changes in sequence from a known baseline version of the database.
-* Record the current migration level in the database itself so that its status can be queried 
+* Record the current migration level in the database itself so that its status can be queried 
   for validation purposes.
 
 To solve the immediate problem, generating and applying migration scripts must be incorporated into 

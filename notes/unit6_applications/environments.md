@@ -54,7 +54,7 @@ the introduction of [Multics](https://en.wikipedia.org/wiki/Hierarchical_file_sy
 While a GUI is convenient, it is much less efficient that using the command line, provides
 limited control and has its own learning curve.
 
-### The path
+## The path
 
 Applications and other executable files exist in specific locations in the file system. To run
 an application, the operating system needs to know where to find it. The location is known as
@@ -68,22 +68,69 @@ directory is reached before following a branch to the target.
 
 Normally, you can run an executable file by providing a full path, but usually, you want to be
 able to call the executable by name only. In that case, the operating system checks a set of
-common locations that are listed in an *environment variable* usually called `PATH`. Fig. 2
-illustrates some of the usual locations for installed applications in Windows and Mac/Linux. The
-problem is that there are several possible locations each of which may have further subdirectories.
-If an application encloses its executable binaries in additional levels of structure, they will
-not be visible unless the relevant subdirectory is added to the `PATH`. Fig. 3 illustrates the
-dialogs provided by Windows for updating the `PATH`.
+common locations that are listed in an *environment variable* usually called `PATH`. By adding 
+directories to `PATH`, you can make it easier to run scripts and programs without needing to 
+specify their full path. Fig. 2 illustrates some of the usual locations for installed 
+applications in Windows and Mac/Linux. The problem is that there are several possible locations 
+each of which may have further subdirectories. If an application encloses its executable 
+binaries in additional levels of structure, they will not be visible unless the relevant 
+subdirectory is added to the `PATH`. Fig. 3 illustrates the dialogs provided by Windows for 
+updating the `PATH`.
 
 ![Fig. 3: Updating the Windows PATH](images/windows_path.png){: standalone #fig3 data-title="Updating the Windows PATH" }
 
-### The project root
+Setting the PATH Environment Variable in Mac/Linux is a little more complicated but gives 
+greater control. Environment variables control the way the current command shell behaves. 
+To make a temporary change to `PATH` (only for the current session), you can modify `PATH` in 
+the terminal. This change will last only until you close the terminal.
+
+To add a new directory to PATH, use the following command:
+
+```bash
+export PATH="$PATH:/path/to/your/directory"
+Replace /path/to/your/directory with the directory you want to add.
+```
+
+Verify the change by echoing PATH:
+
+```bash
+echo $PATH
+```
+
+You should see your directory appended to the existing PATH. For example:
+
+``` bash
+export PATH="$PATH:/home/user/scripts"
+```
+
+This temporarily adds `/home/user/scripts` to `PATH` in the current shell session.
+
+To make a permanent change to `PATH`, you can add the export command to your `.bashrc` file on
+Linux or your `.zsh` file on a Mac. Both files are found in your home directory. This change 
+will persist across terminal sessions and reboots. To make a permanent change, edit the 
+relevant configuration file an add the following line to the end of the file:
+
+```bash
+export PATH="$PATH:/path/to/your/directory"
+```
+
+Replace `/path/to/your/directory` with the directory you want to add. Save and close the file.
+
+To apply the changes immediately, source the .bashrc file:
+
+```bash
+source ~/.bashrc
+```
+
+Your changes will be applied automatically to any new shell sessions.
+
+## The project root
 
 We already mentioned the root of the file system. That is the top-level directory which acts as
 the ancestor of all other directories. It is often useful, however, to identify a specific
 directory to act as the root for an individual project. A development project in Visual Studio
 uses this concept, and by default, project root directories are created in the
-_**C:\Users\<username>\source\repos**_ directory on Windows. There are two major benefits to
+`C:\Users\<username>\source\repos` directory on Windows. There are two major benefits to
 this approach. The first is that all project root directories are kept together which makes
 them easy to lcate if necessary. The second benefit is that it keeps each project independent
 and self-contained. While Visual Studio project share some features, they will also all be
@@ -112,7 +159,7 @@ flowchart TB
 {: .figcaption}
 Fig. 4: Cases where the project root and git root are different
 
-### Hidden files
+## Hidden files
 
 Many applications require configuration and state information to be saved so that the setting
 persist from one use of the application to the next. Visual Studio does this, as does git and
@@ -129,13 +176,13 @@ they would cause errors.
 
 The implication of the last point is that hidden files _**must not**_ be committed to a
 shared code repository. If they are, a developer's environment will become corrupted when
-they synchronise their repository becuase their own setting will be overwritten by someone
+they synchronise their repository because their own settings will be overwritten by someone
 else's.
 
-One of the hidden files that is maintained at the git root is the _**.gitignore**_. This file
+One of the hidden files that is maintained at the git root is the `.gitignore`. This file
 maintains a list of the files and subdirectories below the git root will *not* be included in
 any git operations. That is, they will not be committed locally or pushed to the remote repo.
-All hidden files should be excluded from the repo by adding them to the _**.gitignore**_ file -
+All hidden files should be excluded from the repo by adding them to the `.gitignore` file -
 this is easy to do via the IDE interface.
 
 If any hidden files are committed to the repo by accident, they need to be removed. In addition,

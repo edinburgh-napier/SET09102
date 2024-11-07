@@ -165,11 +165,12 @@ and meaningful project, with clear goals and recognition from leadership, is mor
 engaged. On the other hand, a lack of engagement can result in minimal effort, higher error rates, 
 and decreased output quality.
 
-Leadership and management style have a profound effect on team performance. Leaders who empower 
-their teams, encourage autonomy, and provide guidance contribute to a positive, high-functioning 
-environment. For instance, a supportive project manager who listens to concerns and facilitates 
-solutions can maintain team morale and productivity. On the contrary, micromanagement or an absence 
-of leadership can lead to frustration and demotivation.
+[Leadership](https://hbr.org/2024/04/6-common-leadership-styles-and-how-to-decide-which-to-use-when) 
+and [management](https://asana.com/resources/management-styles) style have a profound effect on team 
+performance. Leaders who empower their teams, encourage autonomy, and provide guidance contribute to 
+a positive, high-functioning environment. For instance, a supportive project manager who listens to 
+concerns and facilitates solutions can maintain team morale and productivity. On the contrary, 
+micromanagement or an absence of leadership can lead to frustration and demotivation.
 
 Maintaining a healthy work-life balance is essential to prevent burnout and ensure long-term 
 productivity. When developers consistently face high stress and long hours, their output and 

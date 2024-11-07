@@ -119,13 +119,13 @@ needs to be entered as a [fenced code block](https://docs.github.com/en/get-star
 That is, it needs to be enclosed in three back-ticks and annotated as Mermaid code as
 illustrated in Fig. 4.
 
-````
-``` mermaid
-sequenceDiagram
-    ...
-
-```
-````
+  ````
+  ``` mermaid
+  sequenceDiagram
+      ...
+  
+  ```
+  ````
 
 {: .figcaption}
 Fig. 4: Mermaid fenced code block
