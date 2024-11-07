@@ -3,7 +3,7 @@ title: Evaluating Code Quality
 parent: Metrics
 has_children: true
 has_toc: false
-nav_order: 1
+nav_order: 4
 ---
 
 # Evaluating Code Quality
@@ -129,29 +129,7 @@ mind this quote from Bill Gates:
 > Measuring programming progress by lines of code is like measuring aircraft building
 > progress by weight.
 
-## Application of human judgement
 
-It is important ot remember that quantitative metrics either have to be quite simple
-for them to be calculated reliably, or they become difficult to understand. For example,
-the maintainability index used in Visual Studio is calculated as shown below.
-
-```
-Maintainability Index =
-    Max(0, (171 - 5.2 * ln(Halstead Volume) -
-            0.23 * (Cyclomatic Complexity) -
-            16.2 * ln(Lines of Code)
-           ) * 100 / 171)
-```
-
-It includes some hard-coded coefficients, references to two measures of complexity,
-cyclomatic complexity and the
-[Halsead volume](https://www.verifysoft.com/en_halstead_metrics.html) as well as the
-logarithm of the lines of code metric. While the results may be useful as a rough guide,
-the formula does not lend itself to easy interpretation.
-
-Along with numerical metrics, therefore, it is important to include human judgement.
-The main method for doing that is the code review process which in turn relies on the
-knowledge and experience of the development team.
 
 ## Further reading
 
