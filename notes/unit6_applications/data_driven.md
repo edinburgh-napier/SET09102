@@ -461,8 +461,8 @@ want. Once there, they should be able to view the details of that record, and th
 accomplished in several different ways. The first is the 
 [one-window drilldown](https://learning.oreilly.com/library/view/designing-interfaces/0596008031/ch02s03.html#idx-CHP-2-0154) 
 pattern in which the user clicks on the record and the list view is replaced by a single record 
-view (see below). Most data maintenance operations can be performed in the single record view with 
-the exception of record creation. Another essential feature of a list view presentation is therefore 
+view (see below). Most data maintenance operations can be performed in the single record view  
+except for record creation. Another essential feature of a list view presentation is therefore 
 the ability to add a new record to the list. Fig. 7 shows a simple notes application where existing 
 notes are shown in a list and a new note is added using the icon in the top right-hand corner of 
 the display.
@@ -534,6 +534,9 @@ display and is probably not a suitable approach for mobile applications. In the
 the single record view is synchronised with the current record in the list view. Apart from that, 
 the operation of the two views is very similar to the list view and single record view when used in 
 isolation.
+
+{: .tip-title }
+> [<i class="fa-regular fa-lightbulb"></i> Tips for working with databases](data_driven_tips)
 
 ## Further reading
 

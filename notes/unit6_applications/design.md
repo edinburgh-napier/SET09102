@@ -258,6 +258,9 @@ development process, resulting in software that is accessible, efficient, and en
 Whether working independently or in collaboration with designers, an engineer’s commitment to 
 UX ensures that users experience maximum value from the software they create.
 
+{: .tip-title }
+> [<i class="fa-regular fa-lightbulb"></i> Tips for application design](design_tips)
+
 ## Further reading
 
 * User experience design [Stephens, 2022, Ch. 9](https://eu.alma.exlibrisgroup.com/leganto/public/44NAP_INST/citation/6676830220002111?auth=SAML)

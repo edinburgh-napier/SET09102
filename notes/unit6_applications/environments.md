@@ -234,6 +234,9 @@ of the database. Typically, database changes are defined in code using an object
 mapper (ORM) tool. Running the change scripts on an instance of the database in order to make
 the required changes is known as *migration*.
 
+{: .tip-title }
+> [<i class="fa-regular fa-lightbulb"></i> Tips for working with multiple environments](environments_tips)
+
 ## Further reading
 
 * [Linux directory structure explained](https://linuxhandbook.com/linux-directory-structure/)

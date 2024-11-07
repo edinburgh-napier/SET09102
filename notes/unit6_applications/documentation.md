@@ -119,13 +119,13 @@ needs to be entered as a [fenced code block](https://docs.github.com/en/get-star
 That is, it needs to be enclosed in three back-ticks and annotated as Mermaid code as
 illustrated in Fig. 4.
 
-  ````
-  ``` mermaid
-  sequenceDiagram
-      ...
-  
-  ```
-  ````
+````
+``` mermaid
+sequenceDiagram
+    ...
+
+```
+````
 
 {: .figcaption}
 Fig. 4: Mermaid fenced code block
@@ -269,3 +269,6 @@ might prefer to save the generated pages in the repository to simplify the insta
 That might be appropriate, for example, if you expect end users to download the code
 directly from GitHub. Saving the generated documentation means that they do not need to
 have Doxygen installed. The storage strategy is therefore a decision for the project team.
+
+{: .tip-title }
+> [<i class="fa-regular fa-lightbulb"></i> Tips for effective documentation](documentation_tips)
