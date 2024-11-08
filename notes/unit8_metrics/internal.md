@@ -28,7 +28,9 @@ functions with excessive complexity for refactoring to improve simplicity and re
 Cyclomatic complexity was defined by [Thomas J. McCabe](https://doi.org/10.1109/TSE.1976.233837) in 1976, 
 and calculates the number of independent paths using the formula
 
-$M = E - N + 2P$
+$$
+M = E - N + 2P
+$$
 
 where
 
@@ -451,3 +453,8 @@ tool support and community best practices.
 ## Further reading
 
 * OOCQM: Object Oriented Code Quality Meter ([Shaheen et al., 2019](https://doi.org/10.1007/978-3-030-25225-0_11))
+
+<!-- Mathjax Support -->
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
