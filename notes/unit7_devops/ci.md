@@ -1,10 +1,9 @@
 ---
 title: Continuous Integration
-parent: devops
+parent: DevOps
 has_children: true
 has_toc: false
-nav_order: 4
-mermaid: true
+nav_order: 1
 ---
 
 # Continuous Integration
@@ -28,3 +27,4 @@ integration risk, allowing development teams to move faster without sacrificing 
 CI effectively requires a combination of technical tools, such as version control and automated testing 
 frameworks, and a culture of frequent, small code commits, making it a powerful methodology for delivering 
 reliable software in today’s fast-paced development environments.
+
