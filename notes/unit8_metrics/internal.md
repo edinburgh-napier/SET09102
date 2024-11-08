@@ -14,7 +14,7 @@ complexity or test coverage. These metrics are often obtained through automated 
 objective insights into the structure and maintainability of the code. Qualitative criteria, on the 
 other hand, focus on subjective aspects of code quality, such as readability, modularity, and adherence 
 to coding standards. These are best assessed through code reviews and developer judgment, focusing on 
-how intuitive and well-organized the code appears to be for others on the team. Combining quantitative 
+how intuitive and well-organised the code appears to be for others on the team. Combining quantitative 
 and qualitative assessments provides a well-rounded view of internal code quality. 
 
 ## Cyclomatic complexity
@@ -46,7 +46,7 @@ good starting point:
 > been used successfully as well. Limits over 10 should be reserved for projects that have several 
 > operational advantages over typical projects, for example experienced staff, formal design, a 
 > modern programming language, structured programming, code walkthroughs, and a comprehensive test 
-> plan. In other words, an organization can pick a complexity limit greater than 10, but only if 
+> plan. In other words, an organisation can pick a complexity limit greater than 10, but only if 
 > it is sure it knows what it is doing and is willing to devote the additional testing effort 
 > required by more complex modules.
 > 
@@ -136,14 +136,14 @@ where:
 * CC = Cyclomatic Complexity, a metric for the number of linearly independent paths through the code.
 * LOC = Lines of Code, the count of lines in the codebase, which reflects code size and readability.
 
-The MI score is typically normalized to a range of 0 to 100, where higher values (around 85–100) indicate 
+The MI score is typically normalised to a range of 0 to 100, where higher values (around 85–100) indicate 
 better maintainability and lower values (below 50) suggest that the code is harder to maintain and may 
 benefit from refactoring. In some tools, the formula also includes a factor for code comments, which can slightly improve the 
 MI if the code is well-documented.
 
 ## Test Coverage
 
-Another quantitative metric, test coverage measures the percentage of code covered by automated tests. 
+Also a quantitative metric, test coverage measures the percentage of code covered by automated tests. 
 High test coverage means that a larger portion of code is verified to work as intended, reducing the 
 likelihood of bugs. Tools like [JaCoCo](https://github.com/jacoco/jacoco?tab=readme-ov-file) (Java), 
 [Istanbul](https://istanbul.js.org/) (JavaScript), and 
@@ -164,7 +164,7 @@ some key critiques of using test coverage as a code quality metric:
 
 2. **Encourages Focus on Quantity Over Quality**
 
-    When teams focus too heavily on coverage goals, they may prioritize hitting coverage targets rather 
+    When teams focus too heavily on coverage goals, they may prioritise hitting coverage targets rather 
     than writing meaningful, high-quality tests. Developers may write superficial or redundant tests just 
     to increase coverage metrics, without thoroughly examining edge cases, error handling, or unusual 
     inputs. This can lead to inflated coverage without genuine code quality improvement.
@@ -193,7 +193,7 @@ some key critiques of using test coverage as a code quality metric:
 6. **Can Encourage Poor Testing Practices**
 
     Focusing on coverage targets can encourage poor practices like testing implementation details rather 
-    than behavior. Tests that are tightly coupled to internal implementation details can be fragile, 
+    than behaviour. Tests that are tightly coupled to internal implementation details can be fragile, 
     requiring updates with every minor code change, even if functionality hasn’t changed. This can make 
     testing cumbersome and reduce the productivity of developers.
 
@@ -214,7 +214,7 @@ some key critiques of using test coverage as a code quality metric:
 To get the most from test coverage as a metric, it’s important to combine it with other quality 
 indicators, such as cyclomatic complexity, code reviews, code maintainability, and functional testing 
 metrics. Aiming for meaningful coverage that addresses critical paths, edge cases, and core functionality 
-is more beneficial than striving for a high percentage alone. Additionally, teams can emphasize branch 
+is more beneficial than striving for a high percentage alone. Additionally, teams can emphasise branch 
 and path coverage over simple line coverage for areas of complex logic, helping to ensure thorough testing.
 
 ## Depth of Inheritance
@@ -239,7 +239,7 @@ Shallow hierarchies (DOI ≤ 2) are often preferred, as they strike a balance be
 
 Many design guidelines recommend composition over inheritance, especially in cases where a deep inheritance 
 hierarchy would be required. Using composition, where objects contain instances of other classes instead of 
-inheriting from them, can reduce DOI and improve flexibility, allowing behavior to be easily modified or 
+inheriting from them, can reduce DOI and improve flexibility, allowing behaviour to be easily modified or 
 extended without changing a class’s inheritance chain.
 
 While DOI is a useful indicator of inheritance complexity, it should be evaluated alongside other metrics, 
@@ -310,6 +310,39 @@ conjunction with other metrics to get a complete picture of code quality. A low 
 doesn’t guarantee good design; some classes naturally require more dependencies due to their role in the 
 system, and a certain level of coupling is often necessary in complex applications.
 
+## Lines of Code
+
+Lines of Code (LOC) and Lines of Executable Code (LEC) are internal code quality metrics that measure the 
+size of a codebase by counting the number of lines in a program. LOC counts all lines, including comments, 
+blank lines, and non-executable statements, while LEC specifically measures lines that can be executed, 
+excluding comments and formatting.
+
+As a metric, LOC provides a basic understanding of a project's scale and can indicate potential maintenance 
+needs — larger codebases often require more effort to manage. However, LOC lacks nuance and can be misleading: 
+a high LOC count doesn’t necessarily mean high functionality, nor does a low count ensure simplicity. LOC 
+also doesn’t account for code quality; for instance, well-designed, modular code may have fewer lines than 
+complex or redundant code that accomplishes the same task.
+
+LEC offers a slightly refined view by focusing on actual logic in the code, potentially providing more 
+insight into the code’s functional complexity. LEC can be helpful for understanding testing needs, as it 
+reflects the count of lines that must be covered by tests. However, LEC still has limitations — it doesn’t 
+reveal code complexity, readability, or maintainability and can incentivise developers to write less code 
+without regard to clarity or best practices.
+
+Overall, while LOC and LEC can provide high-level indicators of project scope, they should be used in 
+conjunction with more comprehensive metrics, such as cyclomatic complexity or maintainability index, to 
+accurately assess code quality. Relying solely on LOC or LEC may lead to inaccurate conclusions about the 
+quality and manageability of a codebase. For example, LOC includes blank lines and comments and is
+therefore highly dependent on coding style and standards. LEC on the other hand is just an indication of 
+the size of the application. It could be argued that applying the Clean Code approach of maximum extraction 
+would tend to increase the overall number of executable lines of code but would at the same time improve
+maintainability and reduce cyclomatic complexity. In this instance it is worth bearing in
+mind this quote attributed to Bill Gates:
+
+<blockquote class="pretty"><span>
+Measuring programming progress by lines of code is like measuring aircraft building progress by weight.
+</span></blockquote>
+
 ## Qualitative metrics
 
 While quantitative metrics can be calculated through static code analysis, quantitative metrics require
@@ -326,23 +359,95 @@ nature of code conventions: an authority such as Microsoft may set out their exp
 them over time as the language itself develops, and in parallel with that, a further set of preferences 
 will evolve among the user community.
 
-The main examples of qualitative metrics are summarised in the following table.
+Some examples of qualitative metrics are summarised in the following table.
 
 | Criterion                     | Description                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 |-------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Readability                   | A measure of how easily other developers can understand the code’s purpose and functionality. Code should use descriptive variable, function, and class names, consistent formatting, and concise inline comments where necessary.                                                                                                                                                                                                                        |
-| Modularity                    | Measures how well code is divided into discrete, reusable components such as classes, functions, or modules. Modular code is easier to test, maintain, and extend. This can be assessed by reviewing the structure of the code, checking for components that adhere to principles like the Single Responsibility Principle (SRP). Static analysis tools can also analyze dependencies to highlight areas for potential refactoring to improve modularity. |
-| Adherence to Coding Standards | Coding standards ensure consistency in style, naming conventions, and organization. Following standards makes code more predictable and easier for others to navigate. Adherence to standards can be assessed by using linters (e.g., ESLint for JavaScript, Checkstyle for Java) that automatically flag deviations, while code reviews ensure standards are understood and consistently applied.                                                        |
+| Modularity                    | Measures how well code is divided into discrete, reusable components such as classes, functions, or modules. Modular code is easier to test, maintain, and extend. This can be assessed by reviewing the structure of the code, checking for components that adhere to principles like the Single Responsibility Principle (SRP). Static analysis tools can also analyse dependencies to highlight areas for potential refactoring to improve modularity. |
+| Adherence to Coding Standards | Coding standards ensure consistency in style, naming conventions, and organisation. Following standards makes code more predictable and easier for others to navigate. Adherence to standards can be assessed by using linters (e.g., ESLint for JavaScript, Checkstyle for Java) that automatically flag deviations, while code reviews ensure standards are understood and consistently applied.                                                        |
 | Code Documentation            | Well-documented code makes it easier for others to understand the purpose and context of each component. Documentation completeness can be assessed by checking that public methods, classes, and modules have clear descriptions. Documentation tools like Javadoc (Java) or Doxygen (C++) enforce consistency by generating documentation directly from comments.                                                                                       |
 | Error Handling and Resilience | Code should anticipate and handle potential issues gracefully, ensuring that exceptions are managed effectively and the system fails safely. Error handling can be assessed by reviewing the code to confirm that critical operations include appropriate error management. Static analysis and code reviews help ensure that the code is robust and resilient to unexpected inputs or conditions.                                                        |
 
-Dependency Management is a metric that can be considered both quantitative an qualitative. Minimizing 
+Dependency Management is a metric that can be considered both quantitative an qualitative. Minimising 
 dependencies between unrelated modules or components reduces code coupling, making the code easier to 
 modify or extend. Excessive dependencies are usually flagged by dependency analysis tools (like SonarQube 
 or npm’s [depcheck](https://www.npmjs.com/package/depcheck)), which identify unused or redundant 
 dependencies. Reviewing dependencies manually is also important for checking that dependencies are 
 kept to the essentials, reducing complexity.
 
+## Product Quality Evaluation Method
 
+The Product Quality Evaluation Method (PQEM) [(Falco & Robolio, 2020)](https://doi.org/10.1109/ARGENCON49523.2020.9505405)
+is a systematic framework based on [ISO/IEC 25010](https://napier.primo.exlibrisgroup.com/permalink/44NAP_INST/19n0mho/cdi_bsi_primary_000000000030215101).
+It breaks the task of assessing the quality of a software product into five steps as illustrated in Fig. 1.
+The approach examins various attributes relevant to a system's performance, reliability, usability, 
+maintainability, and other quality criteria using the goal-question-metric (GQM) approach
+([Basili, Caldiera & Rombach, 1994](https://www.ecs.csun.edu/~rlingard/COMP587/gqm.pdf)).
+The result is a single value between 0 and 1 that represents the overall product quality synthesised
+from measurements of selected quality attribute requirements (QARs).
 
+``` mermaid
+flowchart LR
+    classDef invisible stroke:none,fill:none
+    classDef mainStep fill:#fbc69f,stroke:#ef9f65
+    classDef subStep fill:#d3ebfc,stroke:#ef9f65
 
+    subgraph id2["&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1. Elicitation of Quality<br/>Attributes Requirements (QARs)"]
+        subgraph spacer [ ]
+            direction TB
+            id2a --> id2b
+            id2b --> id2c
+            id2c --> id2d
+        end
+    end
+
+    id1([1. Product<br/>setup])
+    id2a(["a. Select quality characteristics<br/>and sub-characteristics"])
+    id2b(["b. Specify quality attributes<br/>requirements"])
+    id2c(["c. Define metrics of each<br/>quality attribute requirement"])
+    id2d(["2. Define the<br/>acceptance criteria for the<br/>expected quality level"])
+    id3(["3. Measure and test<br/>each quality attribute<br/>requirement"])
+    id4(["4. Collect and<br/>synthesise<br/>results"])
+    id5(["5. Assessment of<br/>the product<br/>quality level"])
+
+    id1 --> id2
+    id2 --> id3
+    id3 --> id4
+    id4 --> id5
+
+    class spacer invisible
+    class id1 mainStep
+    class id2 mainStep
+    class id3 mainStep
+    class id4 mainStep
+    class id5 mainStep
+    class id2a subStep
+    class id2b subStep
+    class id2c subStep
+    class id2d subStep
+```
+
+{: .figcaption}
+Fig. 1: PQEM process
+
+PQEM is not widely standardised or universally adopted across the software industry at the moment. While PQEM 
+principles — evaluating software quality based on defined quality attributes — are integral to various software 
+quality assessment frameworks, PQEM itself does not have the same recognition or formalised use as other 
+models like ISO/IEC 25010 (the international standard for software product quality) or 
+[Six Sigma](https://www.geeksforgeeks.org/six-sigma-in-software-engineering/) in quality management.
+
+In practice, many organisations adopt custom quality evaluation frameworks inspired by PQEM’s approach, 
+tailored to fit their specific needs, industry standards, or project goals. These customised approaches 
+often draw from broader industry models, incorporating best practices for measuring maintainability, 
+performance, usability, and security, which are central to PQEM. Larger organisations with complex 
+software projects may adopt structured evaluation methods similar to PQEM, though they are more likely 
+to use ISO standards or popular methodologies like Agile quality metrics, which offer more widespread 
+tool support and community best practices.
+
+{: .tip-title }
+> [<i class="fa-regular fa-lightbulb"></i> Tips for applying internal quality criteria](internal_tips)
+
+## Further reading
+
+* OOCQM: Object Oriented Code Quality Meter ([Shaheen et al., 2019](https://doi.org/10.1007/978-3-030-25225-0_11))
