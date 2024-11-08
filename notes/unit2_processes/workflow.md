@@ -56,7 +56,7 @@ graph LR
       subgraph post-merge
       id8([Build verification test]) -->id9([Integration test])
       id9 -->id10([Dynamic code analysis])
-      id10 -->id12([New feature & \nregression testing])
+      id10 -->id12([New feature & <br/>regression testing])
       end
     classDef default fill:#299ef3,stroke:#333366,stroke-width:2px,color:#fff
     classDef commit fill:#f37e29,stroke:#333,stroke-width:2px,color:#fff
