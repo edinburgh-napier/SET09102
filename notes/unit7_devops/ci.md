@@ -36,55 +36,7 @@ code changes go through to ensure quality, functionality, and readiness for depl
 When developers commit new code, it triggers the CI pipeline, which takes the code through 
 each stage in a controlled, consistent environment. 
 
-```mermaid
-flowchart TB
-    classDef mainStep fill:#dae8fa,stroke:#e6e1e8,font-size:18px
-    p1(["Source code checkout"])
-    p1 --> p2(["Dependency installation"])
-    p2 --> p3(["Build"])
-    p3 --> p4(["Static code analysis"])
-    p4 --> p5(["Automated testing"])
-    p5 --> p6(["Code coverage analysis"])
-    p6 --> p7(["Build artefact creation"])
-    p7 --> p8(["Deployment to staging"])
-    p8 --> p9(["Notification"])
-    p9 --> p10(["Approval and merging"])
-    class p1 mainStep
-    class p2 mainStep
-    class p3 mainStep
-    class p4 mainStep
-    class p5 mainStep
-    class p6 mainStep
-    class p7 mainStep
-    class p8 mainStep
-    class p9 mainStep
-    class p10 mainStep
-```
-{: .side-by-side data-title="Typical steps in a CI pipeline"}
-
-``` c#
-// METHOD B
-//
-// Cyclomatic complexity = 4
-// Cognitive complexity = 1
-
-String getWords(int number) {
-  switch (number) {
-    case 1:
-      return "one";
-    case 2:
-      return "a couple";
-    case 3:
-      return "a few";
-    default:
-      return "lots";
-  }
-}
-```
-{: .side-by-side}
-
-{: .figcaption}
-Fig. 2: Typical steps in a CI pipeline
+![Fig. 2. Typical CI pipeline](images/pipeline.png){: standalone #fig2 data-title="Typical CI pipeline" }
 
 
 ## Automated builds
