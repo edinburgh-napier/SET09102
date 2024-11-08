@@ -342,7 +342,7 @@ maintainability and reduce cyclomatic complexity. In this instance it is worth b
 mind this quote attributed to Bill Gates:
 
 <blockquote class="pretty"><span>
-Measuring programming progress by lines of code is like measuring aircraft building progress by weight.
+Measuring programming progress by lines of code is like <br/>measuring aircraft building progress by weight.
 </span></blockquote>
 
 ## Qualitative metrics
