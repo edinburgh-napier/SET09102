@@ -40,16 +40,7 @@ The process is often visualised as a series of steps known as a *pipeline*. Goin
 and automatically releasing and deploying software increments is known as *Continuous deployment* (CD).
 CD is obviously a more risky proposition that CI and a complete CI/CD pipeline includes rigorous
 verification and monitoring steps before software is actually released to users as illustrated in
-Fig. 10.
+Fig. 1.
 
-![Fig 10: The four activities of continuous deployment ([Scaled Agile, 2023](https://scaledagileframework.com/continuous-deployment/))](https://scaledagileframework.com/wp-content/uploads/2023/01/Continuous_Deployment_F02-2.svg#figure){: standalone #fig10 data-title="The four activities of continuous deployment"}
+![Fig 1: The four activities of continuous deployment (<a href="https://scaledagileframework.com/continuous-deployment/">Scaled Agile, 2023</a>)](https://scaledagileframework.com/wp-content/uploads/2023/01/Continuous_Deployment_F02-2.svg#figure){: standalone #fig10 data-title="The four activities of continuous deployment"}
 
-
-
-## Setting up CI/CD pipelines
-
-## Automated testing
-
-## Code analysis
-
-## Deployment strategies

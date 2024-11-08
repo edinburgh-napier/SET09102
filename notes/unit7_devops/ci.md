@@ -38,7 +38,7 @@ each stage in a controlled, consistent environment.
 
 ```mermaid
 flowchart TB
-    classDef mainStep fill:#dae8fa,stroke:#e6e1e8,font-size:20px
+    classDef mainStep fill:#dae8fa,stroke:#e6e1e8,font-size:18px
     p1(["Source code checkout"])
     p1 --> p2(["Dependency installation"])
     p2 --> p3(["Build"])
@@ -60,7 +60,28 @@ flowchart TB
     class p9 mainStep
     class p10 mainStep
 ```
-{: data-title="Typical steps in a CI pipeline"}
+{: .side-by-side data-title="Typical steps in a CI pipeline"}
+
+``` c#
+// METHOD B
+//
+// Cyclomatic complexity = 4
+// Cognitive complexity = 1
+
+String getWords(int number) {
+  switch (number) {
+    case 1:
+      return "one";
+    case 2:
+      return "a couple";
+    case 3:
+      return "a few";
+    default:
+      return "lots";
+  }
+}
+```
+{: .side-by-side}
 
 {: .figcaption}
 Fig. 2: Typical steps in a CI pipeline
