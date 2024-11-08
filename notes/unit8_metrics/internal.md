@@ -393,8 +393,8 @@ from measurements of selected quality attribute requirements (QARs).
 ``` mermaid
 flowchart LR
     classDef invisible stroke:none,fill:none
-    classDef mainStep fill:#dae8fa,stroke:#e6e1e8
-    classDef subStep fill:#e4fada,stroke:#e6e1e8
+    classDef mainStep fill:#dae8fa,stroke:#e6e1e8,fontSize:18px
+    classDef subStep fill:#e4fada,stroke:#e6e1e8,fontSize:18px
 
     subgraph id2["&nbsp;2. Elicitation of Quality<br/>Attributes Requirements (QARs)"]
         subgraph spacer [ ]
@@ -409,7 +409,7 @@ flowchart LR
     id2a(["a. Select quality characteristics<br/>and sub-characteristics"])
     id2b(["b. Specify quality attributes<br/>requirements"])
     id2c(["c. Define metrics of each<br/>quality attribute requirement"])
-    id2d(["&nbsp;2. Define the<br/>acceptance criteria for the<br/>expected quality level"])
+    id2d(["d. Define the<br/>acceptance criteria for the<br/>expected quality level"])
     id3(["&nbsp;3. Measure and test<br/>each quality attribute<br/>requirement"])
     id4(["&nbsp;4. Collect and<br/>synthesise<br/>results"])
     id5(["&nbsp;5. Assessment of<br/>the product<br/>quality level"])
