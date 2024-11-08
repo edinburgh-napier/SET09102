@@ -396,7 +396,7 @@ flowchart LR
     classDef mainStep fill:#dae8fa,stroke:#2c84fa
     classDef subStep fill:#fafada,stroke:#f7d12e
 
-    subgraph id2["1. Elicitation of Quality<br/>Attributes Requirements (QARs)"]
+    subgraph id2["&nbsp;2. Elicitation of Quality<br/>Attributes Requirements (QARs)"]
         subgraph spacer [ ]
             direction TB
             id2a --> id2b
@@ -405,7 +405,7 @@ flowchart LR
         end
     end
 
-    id1(["1. Product<br/>setup"])
+    id1(["&nbsp;1. Product<br/>setup"])
     id2a(["a. Select quality characteristics<br/>and sub-characteristics"])
     id2b(["b. Specify quality attributes<br/>requirements"])
     id2c(["c. Define metrics of each<br/>quality attribute requirement"])
