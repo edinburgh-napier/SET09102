@@ -62,6 +62,7 @@ graph LR
     classDef commit fill:#f37e29,stroke:#333,stroke-width:2px,color:#fff
     classDef phase fill:#fafafa,stroke:#333366
 ```
+{: data-title="Code quality analysis techniques"}
 
 {: .figcaption}
 Fig. 2: Code quality analysis techniques (Adapted from [Cap Gemini, n.d.](https://www.capgemini.com/wp-content/uploads/2020/11/PoV-Code-Analytics.pdf))
