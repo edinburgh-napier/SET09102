@@ -28,7 +28,7 @@ functions with excessive complexity for refactoring to improve simplicity and re
 Cyclomatic complexity was defined by [Thomas J. McCabe](https://doi.org/10.1109/TSE.1976.233837) in 1976, 
 and calculates the number of independent paths using the formula
 
-$$M = E - N + 2P$$
+$M = E - N + 2P$
 
 where
 
