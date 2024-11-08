@@ -394,7 +394,7 @@ from measurements of selected quality attribute requirements (QARs).
 flowchart LR
     classDef invisible stroke:none,fill:none
     classDef mainStep fill:#dae8fa,stroke:#e6e1e8,fontSize:18px
-    classDef subStep fill:#e4fada,stroke:#e6e1e8,fontSize:18px
+    classDef subStep fill:#e4fada,stroke:#e6e1e8
 
     subgraph id2["&nbsp;2. Elicitation of Quality<br/>Attributes Requirements (QARs)"]
         subgraph spacer [ ]
