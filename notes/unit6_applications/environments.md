@@ -155,6 +155,7 @@ flowchart TB
     g1["Git repo root"] --> pp1[Project 1 root]
     g1 --> pp2[Project 2 root]
 ```
+{: data-title="Cases where the project root and git root are different"}
 
 {: .figcaption}
 Fig. 4: Cases where the project root and git root are different

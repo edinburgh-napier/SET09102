@@ -109,6 +109,7 @@ sequenceDiagram
     John->>Bob: How about you?
     Bob-->>John: Jolly good!
 ```
+{: data-title="Resulting sequence diagram"}
 
 {: .figcaption}
 Fig. 3: Resulting sequence diagram

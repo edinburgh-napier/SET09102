@@ -53,6 +53,7 @@ gitGraph
     checkout main
 commit id: "bug fix 2"
 ```
+{: data-title="Release branch"}
 
 {: .figcaption}
 Fig. 1: Release branch
@@ -87,6 +88,7 @@ gitGraph
    merge next_release id: "Release 2"
    commit id: " "
 ```
+{: data-title="Merging branches"}
 
 {: .figcaption}
 Fig. 2: Merging branches
@@ -130,6 +132,7 @@ gitGraph
    merge next_release id: "Release 2"
    commit id: " "
 ```
+{: data-title="Parallel feature branches"}
 
 {: .figcaption}
 Fig 3: Parallel feature branches

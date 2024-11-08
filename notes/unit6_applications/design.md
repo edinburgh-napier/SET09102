@@ -107,6 +107,7 @@ classDiagram
   TeamMember : int payrollNumber
   TeamMember : currentAccommodation()
 ```
+{" data-title="Example class hierarchy"}
 
 {: .figcaption}
 Fig. 1. Example class hierarchy

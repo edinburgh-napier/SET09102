@@ -48,6 +48,7 @@ gitGraph
    checkout main
    commit id: " "
 ```
+{: data-title="Concurrent development"}
 
 {: .figcaption}
 Fig 1: Concurrent development

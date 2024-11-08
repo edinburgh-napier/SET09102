@@ -112,6 +112,7 @@ gitGraph
    checkout main
    merge feature id: "Merge"
 ```
+{: data-title="Rebasing"}
 
 {: .figcaption}
 Fig 3: Rebasing
