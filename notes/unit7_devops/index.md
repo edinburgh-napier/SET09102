@@ -18,8 +18,6 @@ Deployment celebrations should be about the value of the new features, not joyfu
 
 <hr class="splash">
 
-# DevOps
-
 Because an agile project is delivering working software in a continuous series of increments, it then
 becomes possible to automate some of the essential steps in the process. The current term for this
 is *DevOps*, a compound of *Development* and  *Operations*.  DevOps is a transformative approach in software 
