@@ -430,6 +430,7 @@ flowchart LR
     class id2c subStep
     class id2d subStep
 ```
+{: data-title="PQEM process"}
 
 {: .figcaption}
 Fig. 1: PQEM process
