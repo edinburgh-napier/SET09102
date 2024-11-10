@@ -31,16 +31,3 @@ DevOps include continuous integration, continuous delivery, automated testing, a
 aim to streamline the software lifecycle and ensure high-quality releases. By prioritising collaboration, 
 DevOps not only accelerates time-to-market but also enhances product stability and responsiveness to user 
 needs, making it an invaluable framework for modern software organisations.
-
-The main goal is to eliminate delays and
-human error involved in some of the routine aspects of software quality assurance including,
-for example, building, testing and even deployment. *Continuous integration* (CI) is the terms used
-to indicate that changes to a software application are automatically assembled, compiled and tested.
-The process is often visualised as a series of steps known as a *pipeline*. Going one step further
-and automatically releasing and deploying software increments is known as *Continuous deployment* (CD).
-CD is obviously a more risky proposition that CI and a complete CI/CD pipeline includes rigorous
-verification and monitoring steps before software is actually released to users as illustrated in
-Fig. 1.
-
-![Fig 1: The four activities of continuous deployment (<a href="https://scaledagileframework.com/continuous-deployment/">Scaled Agile, 2023</a>)](https://scaledagileframework.com/wp-content/uploads/2023/01/Continuous_Deployment_F02-2.svg#figure){: standalone #fig10 data-title="The four activities of continuous deployment"}
-

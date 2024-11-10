@@ -54,6 +54,32 @@ the introduction of [Multics](https://en.wikipedia.org/wiki/Hierarchical_file_sy
 While a GUI is convenient, it is much less efficient that using the command line, provides
 limited control and has its own learning curve.
 
+In a complex or sensitive context, it may be advantageous to differentiate between a test
+environment and a _staging_ environment. A staging environment is a controlled, production-like 
+environment used to test software just before it is released to production. It closely mimics 
+the configuration, data, dependencies, and infrastructure of the live production environment, 
+providing a space to validate that the application will function correctly for end users. In 
+staging, teams can conduct final tests, such as end-to-end testing, performance testing, and 
+user acceptance testing (UAT), to confirm the software’s stability, functionality, and 
+readiness for release. The purpose of the staging environment is to simulate real-world 
+conditions as closely as possible, allowing teams to catch and address any last-minute issues 
+that might arise when the software is deployed to actual users.
+
+An integration testing environment, in cointrast, is used earlier in the development process 
+to test how different components of an application work together. It allows developers to 
+verify that various modules, services, and external dependencies (like databases or APIs) 
+integrate properly. Integration testing environments may not always match the full 
+configuration of production; they may lack certain data, security settings, or infrastructure 
+setups that are present in staging. The goal of integration testing is to ensure that each 
+part of the application communicates and functions correctly within the system as a whole.
+
+While both staging and integration testing environments are used to validate the application, 
+they serve different purposes and occur at different stages in the pipeline. The integration 
+testing environment is used to verify that components work together correctly, often as a step 
+within a continuous integration pipeline, whereas the staging environment is typically the last 
+testing environment before production, providing a final check under conditions that closely 
+replicate those in production.
+
 ## The path
 
 Applications and other executable files exist in specific locations in the file system. To run

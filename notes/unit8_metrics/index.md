@@ -14,28 +14,9 @@ nav_order: 9
 <blockquote class="pretty"><span>
 The problem with quick and dirty...is that dirty remains long after quick has been forgotten.
 </span></blockquote>
-<p class="attribution">Steve McConnell</p>
+<p class="attribution"><a href="https://stevemcconnell.com/">"Steve McConnell</a></p>
 
 <hr class="splash">
-
-# Software Metrics and Code Analysis Tools
-
-## Introduction
-
-## Internal code metrics
-
-## Automated code analysis tools
-
-## Improving code quality with metrics
-
-## External code metrics
-
-## Acceptance criteria
-
-## project-level metrics
-story completion, velocity, defect rates
-
-# Quality criteria
 
 Code quality is a vital aspect of software development, but it is impossible to measure without 
 some kind of definition. That also turns out to be difficult because *quality* is such a generic term.
