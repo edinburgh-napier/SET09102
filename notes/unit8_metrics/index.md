@@ -14,7 +14,7 @@ nav_order: 9
 <blockquote class="pretty"><span>
 The problem with quick and dirty...is that dirty remains long after quick has been forgotten.
 </span></blockquote>
-<p class="attribution"><a href="https://stevemcconnell.com/">"Steve McConnell</a></p>
+<p class="attribution"><a href="https://stevemcconnell.com/">Steve McConnell</a></p>
 
 <hr class="splash">
 

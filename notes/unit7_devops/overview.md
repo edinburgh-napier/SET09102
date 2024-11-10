@@ -18,10 +18,10 @@ teams and enabling them to work as a unified unit. Fig. 1 illustrates this combi
 activities such as the creation and verification of software with the operational concerns of configuration
 release and monitoring.
 
-![Fig. 1. DevOps](https://upload.wikimedia.org/wikipedia/commons/0/05/Devops-toolchain.svg){: standalone #fig1 data-title="DevOps" }
+![Fig. 1. DevOps (<a href="https://creativecommons.org/licenses/by-sa/4.0">Kharnagy</a>)](https://upload.wikimedia.org/wikipedia/commons/0/05/Devops-toolchain.svg){: standalone #fig1 data-title="DevOps" }
 
 {: .attribution}
-[Kharnagy, CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons
+
 
 At its core, DevOps focuses on practices and tools that facilitate a seamless workflow from development 
 to production. Key DevOps practices include Continuous Integration (CI) and Continuous Delivery (CD), 
