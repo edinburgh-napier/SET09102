@@ -105,3 +105,5 @@ testing and monitoring system, and significant cultural adjustments to decentral
 Both Facebook and OANDA observed that continuous deployment requires cohesive, small teams, modular code 
 design, and customised internal tools for effective deployment and monitoring.
 
+{: .tip-title }
+> [<i class="fa-regular fa-lightbulb"></i> Tips for continuous deployment](cd_tips)

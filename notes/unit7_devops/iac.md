@@ -215,3 +215,5 @@ example, the ASG can automatically add more EC2 instances, ensuring that the C# 
 available and responsive. This example illustrates how CloudFormation can help automate infrastructure 
 provisioning, scaling, and deployment to support agile, DevOps-driven development.
 
+{: .tip-title }
+> [<i class="fa-regular fa-lightbulb"></i> Tips for getting started with Infrastructure as Code](iac_tips)

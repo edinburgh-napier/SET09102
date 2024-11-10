@@ -149,4 +149,6 @@ applications. Some examples are
   infrastructure visibility, and end-user monitoring. It is widely used for real-time application 
   monitoring, enabling teams to detect and address performance issues before they impact users.
 
+{: .tip-title }
+> [<i class="fa-regular fa-lightbulb"></i> Tips for getting started with DevOps](overview_tips)
 
