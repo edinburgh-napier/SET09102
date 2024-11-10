@@ -8,7 +8,7 @@ nav_order: 1
 
 Implementing successful continuous deployment is a strategic undertaking that requires careful planning, 
 robust automation, and a proactive approach to handling potential issues. The tips below are aimed more at 
-organisations that individual developers.
+organisations than individual developers.
 
 1. Invest in Comprehensive Automated Testing
 

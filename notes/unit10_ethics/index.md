@@ -10,12 +10,12 @@ nav_order: 11
 <hr class="splash">
 
 ![Alistair Cooke](../../images/people/alistair_cooke.png)
+<blockquote class="pretty"><span>
+A professional is someone who can do his best work when he doesn't feel like it.
+</span></blockquote>
 
-### A professional is someone who can do his best work when he doesn't feel like it.
-
-<br/>
-
-*Alistair Cooke*
+{: .attribution}
+[Alistair Cooke](https://en.wikipedia.org/wiki/Alistair_Cooke)
 
 <hr class="splash">
 
