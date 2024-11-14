@@ -13,13 +13,10 @@ that is safe and resilient, protecting users from risks such as data breaches, i
 malicious attacks. Security involves proactive measures to identify and mitigate vulnerabilities, regular 
 updates, and secure coding practices that help protect both user data and the broader digital ecosystem.
 
-
 The CIA triad of Confidentiality, Integrity and Availability illustrated in Fig. 1 is a broad,
 commonly-used framework for describing system and data security.
 
-![CIA triad](../../images/cia.png)
-
-*Fig. 1: The CIA triad*
+![Fig. 1. The CIA triad](images/cia.png){: standalone #fig1 data-title="The CIA triad" }
 
 > **Confidentiality**: Access to data and systems is restricted to authorised users
 >
@@ -41,16 +38,11 @@ below contrasts accidental and deliberate threats in relation to their general s
 | Environment | Terrorist attack                                            | Natural disaster            |
 
 Some aspects of security - while important - are the responsibility of systems administrators and
-network teams rather than software engineers. The tour below illustrates some of the vulnerabilities
+network teams rather than software engineers. Fig. 2 illustrates some of the vulnerabilities
 of a typical software system with a view to highlighting the areas of specific concern for
 software specialists.
 
-<h6 align="center"> Here's you, engineering your software...
-
-<a href="https://bdavison.napier.ac.uk/set09102/security.html" target="_blank" alt="Security">
-    <img src="../../images/you_small.png">
-</a>
-</h6>
+![Fig. 2. Typical security concerns](images/security.gif){: standalone #fig2 data-title="Typical security concerns" }
 
 ## Seven pernicious kingdoms
 
@@ -135,13 +127,11 @@ issues related to compiled object-oriented languages as well as web-related thre
 ## Thinking like a threat actor
 
 Planning an exploit has a lot in common with agile software development. It is an essentially
-iterative process as illustrated in Fig. 2 in which the threat actor attempts to take advantage
+iterative process as illustrated in Fig. 3 in which the threat actor attempts to take advantage
 of a known system weakness. If the exploit is not 100% successful in achieving the intended goal,
 the process is repeated.
 
-![Security exploit lifecycle](../../images/exploit.png)
-
-*Fig. 2: Security exploit lifecycle*
+![Fig. 3. Security exploit lifecycle](images/exploit.png){: standalone #fig3 data-title="Security exploit lifecycle" }
 
 Any of the vulnerabilities listed in the CWE could be the starting point for an attempted exploit.
 Any system that captures user input, for example, might be vulnerable to injection attacks or
@@ -164,7 +154,7 @@ Like any other framework of this type, STRIDE provides a checklist for the secur
 work through. However, these models typically treat the system under test as a black box and are
 therefore of limited use to the software engineer.
 
-## Introduction
+## security testing
 
 In the past, security testing has been something that happens after an application has been built.
 That is an inefficient and unreliable approach for the same reasons that including a final testing
@@ -176,13 +166,11 @@ of security concerns throughout the software development process. This has given
 Another common term used to describe the migration of security issues to earlier points in the
 development process is
 [*shift left*](https://www.fortinet.com/resources/cyberglossary/shift-left-security).
-Taking the usual left-to-right flow of diagrams such as the one in Fig. 1 that illustrates the
+Taking the usual left-to-right flow of diagrams such as the one in Fig. 4 that illustrates the
 usual series of DevOps stages, shifting left implies that security issues are pushed back from
 their usual home in the test stage to the earlier build, code and plan stages.
 
-![Typical DevOps stages](../../images/devops.png)
-
-*Fig. 1: Typical DevOps stages*
+![Fig. 4. Typical DevOps stages](images/devops.png){: standalone #fig4 data-title="Typical DevOps stages" }
 
 For the software engineer, there are two main strategies for resolving security issues during
 design and coding activities. The first is to avoid the introduction of security flaws in the first
@@ -345,15 +333,13 @@ subscription is still required.
 * [Checkmarx](https://checkmarx.com/)
 * [Microsoft Security Code Analysis](https://learn.microsoft.com/en-us/previous-versions/azure/security/develop/security-code-analysis-overview)
 
-The screenshot below shows the main diagnostic page from Fortify. Panel **①** lists the vulnerabilities
+Fig. 5 shows the main diagnostic page from Fortify. Panel **①** lists the vulnerabilities
 discovered by a scan and the number of occurrences. Panel **②** lists the locations of the
 vulnerabilities in the codebase, and panel **③** highlights the actual code. The application also
 provides an explanation of the issues found and recommendations for resolving them. The other tools
 listed above provide similar functionality.
 
-![Fortify results page](../../images/fortify.png)
-
-*Fig.2: Fortify results page*
+![Fig. 5. Fortify results page](images/fortify.png){: standalone #fig5 data-title="Fortify results page" }
 
 ## Integrating security engineering into Agile
 

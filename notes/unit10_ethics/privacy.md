@@ -9,7 +9,7 @@ nav_order: 3
 
 # Privacy 
 
-Privacy is a key area of concern for software engineers. In the UK, the 
+Privacy is a key area of ethical concern in software design. In the UK, the 
 [Data Protection Act 2018](https://www.gov.uk/data-protection) (DPA) 
 is the legislation that governs the protection of personal data. It is the UK's implementation of the 
 General Data Protection Regulation (GDPR). The UK GDPR is the UK's version of the EU GDPR after Brexit. 
