@@ -1,3 +1,10 @@
+---
+title: Privacy
+parent: Ethics
+has_children: true
+has_toc: false
+nav_order: 3
+---
 
 
 # Privacy 

@@ -3,7 +3,7 @@ title: Security
 parent: Ethics
 has_children: true
 has_toc: false
-nav_order: 2
+nav_order: 4
 ---
 
 # Security

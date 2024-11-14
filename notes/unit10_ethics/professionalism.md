@@ -3,7 +3,7 @@ title: Professional Codes of Ethics
 parent: Ethics
 has_children: true
 has_toc: false
-nav_order: 3
+nav_order: 5
 ---
 
 # Professional Codes of Ethics
