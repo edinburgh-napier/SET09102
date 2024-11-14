@@ -23,101 +23,77 @@ into four main parts as shown below.
 <details>
 <summary>1. General ethical principles</summary>
 
-&nbsp;&nbsp;&nbsp;&nbsp;
-[1.1 Contribute to society and to human well-being, acknowledging that all people are stakeholders
+> [1.1 Contribute to society and to human well-being, acknowledging that all people are stakeholders
 in computing](https://www.acm.org/code-of-ethics#h-1.1-contribute-to-society-and-to-human-well-being,-acknowledging-that-all-people-are-stakeholders-in-computing.).
-
-&nbsp;&nbsp;&nbsp;&nbsp;
-[1.2 Avoid harm](https://www.acm.org/code-of-ethics#h-1.2-avoid-harm.).
-
-&nbsp;&nbsp;&nbsp;&nbsp;
-[1.3 Be honest and trustworthy](https://www.acm.org/code-of-ethics#h-1.3-be-honest-and-trustworthy.).
-
-&nbsp;&nbsp;&nbsp;&nbsp;
-[1.4 Be fair and take action not to discriminate](https://www.acm.org/code-of-ethics#h-1.4-be-fair-and-take-action-not-to-discriminate.).
-
-&nbsp;&nbsp;&nbsp;&nbsp;
-[1.5 Respect the work required to produce new ideas, inventions, creative works, and
-computing artifacts](https://www.acm.org/code-of-ethics#h-1.5-respect-the-work-required-to-produce-new-ideas,-inventions,-creative-works,-and-computing-artifacts.).
-
-&nbsp;&nbsp;&nbsp;&nbsp;
-[1.6 Respect privacy](https://www.acm.org/code-of-ethics#h-1.6-respect-privacy.).
-
-&nbsp;&nbsp;&nbsp;&nbsp;
-[1.7 Honor confidentiality](https://www.acm.org/code-of-ethics#h-1.7-honor-confidentiality.).
+>
+> [1.2 Avoid harm](https://www.acm.org/code-of-ethics#h-1.2-avoid-harm.).
+>
+> [1.3 Be honest and trustworthy](https://www.acm.org/code-of-ethics#h-1.3-be-honest-and-trustworthy.).
+>
+> [1.4 Be fair and take action not to discriminate](https://www.acm.org/code-of-ethics#h-1.4-be-fair-and-take-action-not-to-discriminate.).
+>
+> [1.5 Respect the work required to produce new ideas, inventions, creative works, and
+> computing artifacts](https://www.acm.org/code-of-ethics#h-1.5-respect-the-work-required-to-produce-new-ideas,-inventions,-creative-works,-and-computing-artifacts.).
+>
+> [1.6 Respect privacy](https://www.acm.org/code-of-ethics#h-1.6-respect-privacy.).
+>
+> [1.7 Honor confidentiality](https://www.acm.org/code-of-ethics#h-1.7-honor-confidentiality.).
 </details>
 
 <details>
 <summary>2. Professional responsibilities</summary>
 
-&nbsp;&nbsp;&nbsp;&nbsp;
-[2.1 Strive to achieve high quality in both the processes and products of professional work](https://www.acm.org/code-of-ethics#h-2.1-strive-to-achieve-high-quality-in-both-the-processes-and-products-of-professional-work.).
-
-&nbsp;&nbsp;&nbsp;&nbsp;
-[2.2 Maintain high standards of professional competence, conduct, and ethical practice](https://www.acm.org/code-of-ethics#h-2.2-maintain-high-standards-of-professional-competence,-conduct,-and-ethical-practice.).
-
-&nbsp;&nbsp;&nbsp;&nbsp;
-[2.3 Know and respect existing rules pertaining to professional work](https://www.acm.org/code-of-ethics#h-2.3-know-and-respect-existing-rules-pertaining-to-professional-work.).
-
-&nbsp;&nbsp;&nbsp;&nbsp;
-[2.4 Accept and provide appropriate professional review](https://www.acm.org/code-of-ethics#h-2.4-accept-and-provide-appropriate-professional-review.).
-
-&nbsp;&nbsp;&nbsp;&nbsp;
-[2.5 Give comprehensive and thorough evaluations of computer systems and their impacts,
+> [2.1 Strive to achieve high quality in both the processes and products of professional work](https://www.acm.org/code-of-ethics#h-2.1-strive-to-achieve-high-quality-in-both-the-processes-and-products-of-professional-work.).
+> 
+> &nbsp;&nbsp;&nbsp;&nbsp;
+> [2.2 Maintain high standards of professional competence, conduct, and ethical practice](https://www.acm.org/code-of-ethics#h-2.2-maintain-high-standards-of-professional-competence,-conduct,-and-ethical-practice.).
+> 
+> [2.3 Know and respect existing rules pertaining to professional work](https://www.acm.org/code-of-ethics#h-2.3-know-and-respect-existing-rules-pertaining-to-professional-work.).
+> 
+> [2.4 Accept and provide appropriate professional review](https://www.acm.org/code-of-ethics#h-2.4-accept-and-provide-appropriate-professional-review.).
+> 
+> [2.5 Give comprehensive and thorough evaluations of computer systems and their impacts,
 including analysis of possible risks](https://www.acm.org/code-of-ethics#h-2.5-give-comprehensive-and-thorough-evaluations-of-computer-systems-and-their-impacts,-including-analysis-of-possible-risks.).
-
-&nbsp;&nbsp;&nbsp;&nbsp;
-[2.6 Perform work only in areas of competence](https://www.acm.org/code-of-ethics#h-2.6-perform-work-only-in-areas-of-competence.).
-
-&nbsp;&nbsp;&nbsp;&nbsp;
-[2.7 Foster public awareness and understanding of computing, related technologies, and their
+> 
+> [2.6 Perform work only in areas of competence](https://www.acm.org/code-of-ethics#h-2.6-perform-work-only-in-areas-of-competence.).
+> 
+> [2.7 Foster public awareness and understanding of computing, related technologies, and their
 consequences](https://www.acm.org/code-of-ethics#h-2.7-foster-public-awareness-and-understanding-of-computing,-related-technologies,-and-their-consequences.).
-
-&nbsp;&nbsp;&nbsp;&nbsp;
-[2.8 Access computing and communication resources only when authorized or when compelled by
-the public good](https://www.acm.org/code-of-ethics#h-2.8-access-computing-and-communication-resources-only-when-authorized-or-when-compelled-by-the-public-good.).
-
-&nbsp;&nbsp;&nbsp;&nbsp;
-[2.9 Design and implement systems that are robustly and usably secure](https://www.acm.org/code-of-ethics#h-2.9-design-and-implement-systems-that-are-robustly-and-usably-secure.).
+> 
+> [2.8 Access computing and communication resources only when authorized or when compelled by
+> the public good](https://www.acm.org/code-of-ethics#h-2.8-access-computing-and-communication-resources-only-when-authorized-or-when-compelled-by-the-public-good.).
+> 
+> [2.9 Design and implement systems that are robustly and usably secure](https://www.acm.org/code-of-ethics#h-2.9-design-and-implement-systems-that-are-robustly-and-usably-secure.).
 
 </details>
 
 <details>
 <summary>3. Professional leadership principles</summary>
 
-&nbsp;&nbsp;&nbsp;&nbsp;
-[3.1 Ensure that the public good is the central concern during all professional computing work](https://www.acm.org/code-of-ethics#h-3.1-ensure-that-the-public-good-is-the-central-concern-during-all-professional-computing-work.).
-
-&nbsp;&nbsp;&nbsp;&nbsp;
-[3.2 Articulate, encourage acceptance of, and evaluate fulfillment of social responsibilities by
-members of the organization or group](https://www.acm.org/code-of-ethics#h-3.2-articulate,-encourage-acceptance-of,-and-evaluate-fulfillment-of-social-responsibilities-by-members-of-the-organization-or-group.).
-
-&nbsp;&nbsp;&nbsp;&nbsp;
-[3.3 Manage personnel and resources to enhance the quality of working life](https://www.acm.org/code-of-ethics#h-3.3-manage-personnel-and-resources-to-enhance-the-quality-of-working-life.).
-
-&nbsp;&nbsp;&nbsp;&nbsp;
-[3.4 Articulate, apply, and support policies and processes that reflect the principles of the
-Code](https://www.acm.org/code-of-ethics#h-3.4-articulate,-apply,-and-support-policies-and-processes-that-reflect-the-principles-of-the-code.).
-
-&nbsp;&nbsp;&nbsp;&nbsp;
-[3.5 Create opportunities for members of the organization or group to grow as professionals](https://www.acm.org/code-of-ethics#h-3.5-create-opportunities-for-members-of-the-organization-or-group-to-grow-as-professionals.).
-
-&nbsp;&nbsp;&nbsp;&nbsp;
-[3.6 Use care when modifying or retiring systems](https://www.acm.org/code-of-ethics#h-3.6-use-care-when-modifying-or-retiring-systems.).
-
-&nbsp;&nbsp;&nbsp;&nbsp;
-[3.7 Recognize and take special care of systems that become integrated into the infrastructure
-of society](https://www.acm.org/code-of-ethics#h-3.7-recognize-and-take-special-care-of-systems-that-become-integrated-into-the-infrastructure-of-society.).
+> [3.1 Ensure that the public good is the central concern during all professional computing work](https://www.acm.org/code-of-ethics#h-3.1-ensure-that-the-public-good-is-the-central-concern-during-all-professional-computing-work.).
+> 
+> [3.2 Articulate, encourage acceptance of, and evaluate fulfillment of social responsibilities by
+> members of the organization or group](https://www.acm.org/code-of-ethics#h-3.2-articulate,-encourage-acceptance-of,-and-evaluate-fulfillment-of-social-responsibilities-by-members-of-the-organization-or-group.).
+> 
+> [3.3 Manage personnel and resources to enhance the quality of working life](https://www.acm.org/code-of-ethics#h-3.3-manage-personnel-and-resources-to-enhance-the-quality-of-working-life.).
+> 
+> [3.4 Articulate, apply, and support policies and processes that reflect the principles of the
+> Code](https://www.acm.org/code-of-ethics#h-3.4-articulate,-apply,-and-support-policies-and-processes-that-reflect-the-principles-of-the-code.).
+> 
+> [3.5 Create opportunities for members of the organization or group to grow as professionals](https://www.acm.org/code-of-ethics#h-3.5-create-opportunities-for-members-of-the-organization-or-group-to-grow-as-professionals.).
+> 
+> [3.6 Use care when modifying or retiring systems](https://www.acm.org/code-of-ethics#h-3.6-use-care-when-modifying-or-retiring-systems.).
+> 
+> [3.7 Recognize and take special care of systems that become integrated into the infrastructure
+> of society](https://www.acm.org/code-of-ethics#h-3.7-recognize-and-take-special-care-of-systems-that-become-integrated-into-the-infrastructure-of-society.).
 </details>
 
 <details>
 <summary>4. Compliance with the Code</summary>
 
-&nbsp;&nbsp;&nbsp;&nbsp;
-[4.1 Uphold, promote, and respect the principles of the Code](https://www.acm.org/code-of-ethics#h-4.1-uphold,-promote,-and-respect-the-principles-of-the-code.).
-
-&nbsp;&nbsp;&nbsp;&nbsp;
-[4.2 Treat violations of the Code as inconsistent with membership in the ACM](https://www.acm.org/code-of-ethics#h-4.2-treat-violations-of-the-code-as-inconsistent-with-membership-in-the-acm.).
+> [4.1 Uphold, promote, and respect the principles of the Code](https://www.acm.org/code-of-ethics#h-4.1-uphold,-promote,-and-respect-the-principles-of-the-code.).
+> 
+> [4.2 Treat violations of the Code as inconsistent with membership in the ACM](https://www.acm.org/code-of-ethics#h-4.2-treat-violations-of-the-code-as-inconsistent-with-membership-in-the-acm.).
 </details>
 
 The
