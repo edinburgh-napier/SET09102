@@ -451,3 +451,6 @@ your software solutions.
 {: .tip-title }
 > [<i class="fa-regular fa-lightbulb"></i> General tips for applying design patterns](design_patterns_tips)
 
+## Further reading
+
+* Design patterns : elements of reusable object-oriented software ([Gamma et al., 1995](https://napier.primo.exlibrisgroup.com/permalink/44NAP_INST/n96pef/alma9923574391402111))

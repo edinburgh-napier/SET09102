@@ -195,5 +195,5 @@ engineers anticipate and prevent unintended consequences. This collaborative app
 of accountability, ensuring that bias mitigation becomes part of a larger organisational commitment 
 to responsible technology development.
 
-
-
+{: .tip-title }
+> [<i class="fa-regular fa-lightbulb"></i> Practical tips for identifying and mitigating bias](bias_tips)

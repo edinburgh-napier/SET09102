@@ -217,6 +217,10 @@ the issues he discusses are still relevant today.
 
 ![Fig. 4. Martin Fowler at GOTO2014](images/goto2014.png){: standalone #fig4 data-title="Martin Fowler at GOTO2014" }
 
+
+{: .tip-title }
+> [<i class="fa-regular fa-lightbulb"></i> Practical tips on software ethics](judgement_tips)
+
 ## Further reading
 
 * Ethics and professional responsibility in computing [(Loui & Miller, 2007)](https://onlineethics.org/cases/ethics-and-professional-responsibility-computing)

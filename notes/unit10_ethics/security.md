@@ -362,9 +362,9 @@ such activities was rated highly, they were not used as much as they might have 
 researchers noted this as a point for further investigation. The images shown in Fig. 3 present the
 results of the survey for security-related activities carried out during coding.
 
-| a                                                             | b                                                                |
-|---------------------------------------------------------------|------------------------------------------------------------------|
-| ![Security activity use](../../images/security_activity_use.png) | ![Security activity use](../../images/security_activity_impact.png) |
+| a                                                                  | b                                                                     |
+|--------------------------------------------------------------------|-----------------------------------------------------------------------|
+| ![Security activity use](images/security_activity_use.png)   | ![Security activity use](images/security_activity_impact.png)   |
 
 *Fig. 3: Security activity use (a), and impact (b) during the implementation phase of an agile project
 ([Rindell et al., 2021](https://doi.org/10.1016/j.infsof.2020.106488))*
@@ -377,18 +377,16 @@ are not widely used. The authors also note the mismatch between the perceived va
 sprints in which the focus is on improving security and their low uptake. They suggest that hardening
 sprints might be difficult to introduce without breaking agile's flexible practices.
 
+{: .tip-title }
+> [<i class="fa-regular fa-lightbulb"></i> Practical tips for adopting strong security practices](security_tips)
+
 ## Further reading
 
-* Design patterns : elements of reusable object-oriented software ([Gamma et al., 1995](https://napier.primo.exlibrisgroup.com/permalink/44NAP_INST/n96pef/alma9923574391402111))
 * Security in agile software development: A practitioner survey ([Rindell et al., 2021](https://doi.org/10.1016/j.infsof.2020.106488))
-* [What is DevSecOps?](https://www.microsoft.com/en-us/security/business/security-101/what-is-devsecops)
-
-
-## Further reading
-
+* Seven pernicious kingdoms: a taxonomy of software security errors [(Tsipenyuk, Chess & McGraw, 2005)](https://doi.org/10.1109/MSP.2005.159)
 * [Haleliuk, 2023](https://ventureinsecurity.net/p/if-we-cant-produce-enough-security)
 * [Stephens, 2022, Ch. 8](https://learning.oreilly.com/library/view/beginning-software-engineering/9781119901709/c08.xhtml)
 * [2022 Top Routinely Exploited Vulnerabilities](https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-215a)
-* Seven pernicious kingdoms: a taxonomy of software security errors [(Tsipenyuk, Chess & McGraw, 2005)](https://doi.org/10.1109/MSP.2005.159)
 * A Taxonomy of Software Flaws Leading to Buffer Overflows ([Khoury, 2022](https://doi.org/10.1109/QRS57517.2022.00011))
 * A Taxonomy for Security Flaws in Event-Based Systems ([Lee & Kim, 2020](https://www.mdpi.com/2076-3417/10/20/7338))
+* [What is DevSecOps?](https://www.microsoft.com/en-us/security/business/security-101/what-is-devsecops)

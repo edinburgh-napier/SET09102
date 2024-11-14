@@ -199,3 +199,5 @@ these guidelines can protect engineers from ethical lapses, enhance career prosp
 reputation for integrity and professionalism. Over time, these practices become second nature, shaping 
 engineers who are respected both within their organisations and in the wider industry.
 
+{: .tip-title }
+> [<i class="fa-regular fa-lightbulb"></i> Practical tips related to professional bodies](professionalism_tips)

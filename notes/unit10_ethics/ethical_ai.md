@@ -197,4 +197,6 @@ model, providing insights into its decisions without sacrificing interpretabilit
 together form the foundation of explainable AI; however, a full discussion of the details of XAI is beyond
 the scope of this module.
 
+{: .tip-title }
+> [<i class="fa-regular fa-lightbulb"></i> Practical tips for the ethical use of AI](ethical_ai_tips)
 

@@ -169,3 +169,5 @@ user experience but also contribute to a culture of ethical software development
 treated as a core principle rather than just a legal requirement. This proactive, user-first approach to 
 privacy can foster lasting trust and set a high standard for responsible data use in technology.
 
+{: .tip-title }
+> [<i class="fa-regular fa-lightbulb"></i> Practical tips for managing privacy](privacy_tips)
