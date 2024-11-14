@@ -8,6 +8,12 @@ nav_order: 2
 
 # Security
 
+Another critical ethical responsibility is security. Engineers are responsible for developing software 
+that is safe and resilient, protecting users from risks such as data breaches, identity theft, and 
+malicious attacks. Security involves proactive measures to identify and mitigate vulnerabilities, regular 
+updates, and secure coding practices that help protect both user data and the broader digital ecosystem.
+
+
 The CIA triad of Confidentiality, Integrity and Availability illustrated in Fig. 1 is a broad,
 commonly-used framework for describing system and data security.
 

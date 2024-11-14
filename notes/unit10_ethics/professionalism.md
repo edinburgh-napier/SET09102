@@ -200,20 +200,4 @@ on four principles as shown below.
 > 5. encourage and support fellow members in their professional development.
 </details>
 
-## Final word...
 
-The final word goes to Marting Fowler inn a speech that he made to the GOTO conference
-in 2014. Although the event was some time ago, it is interesting to consider what has changed
-since and what has not. It is clear that some of the issues he discusses are still relevant
-in 2023.
-
-[![Martin Fowler at GOTO2014](../../images/goto2014.png)](https://youtu.be/4E3xfR6IBII?si=SJsLmmmVl9Dbgxqb)
-
-*Fig. 4: Martin Fowler at GOTO2014*
-
-## Further reading
-
-* Ethics and professional responsibility in computing [(Loui & Miller, 2007)](https://onlineethics.org/cases/ethics-and-professional-responsibility-computing)
-* Mapping of studies on ethical responsibilities of software engineers [(Marebane, Hans & Kgaphola, 2023)](https://doi.org/10.1109/AFRICON55910.2023.10293734)
-* [Stephens, 2022, Ch. 20](https://learning.oreilly.com/library/view/beginning-software-engineering/9781119901709/c20.xhtml)
-* [O'Regen, 2022, Ch. 2](https://link-springer-com.napier.idm.oclc.org/chapter/10.1007/978-3-031-07816-3_2)
