@@ -176,4 +176,26 @@ on four principles as shown below.
 > 5. encourage and support fellow members in their professional development.
 </details>
 
+## Benefits
+
+Becoming a member of a professional body such as the BCS is a demonstration of commitment to the 
+organisations' code of ethics which then guide decision-making in situations where technical actions 
+could have significant social or moral implications. A code of ethics promotes integrity, accountability, 
+and respect for user rights, aligning practitioners with values that prioritise the well-being of users 
+and society. This helps build trust with colleagues, clients, and the public, as adherence to a code 
+signals a commitment to ethical responsibility.
+
+For organisations, voluntary adherence to a code of ethics enhances reputation and credibility, 
+demonstrating a proactive approach to ethical concerns, even beyond legal requirements. It supports a 
+culture of ethical awareness, where employees are encouraged to consider the broader impacts of their 
+work. This can reduce the risk of ethical lapses, data misuse, or biased outcomes, which could harm users 
+and lead to reputational or financial damage. Adopting a voluntary code can also prepare an organisation 
+for future regulatory requirements by fostering practices that align with emerging standards and 
+regulations in areas such as privacy, security, and fairness in AI. Overall, a code of ethics supports 
+ethical development, transparency, and trust in technology.
+
+While codes of ethics are typically voluntary, they carry significant professional weight. Following 
+these guidelines can protect engineers from ethical lapses, enhance career prospects, and build a 
+reputation for integrity and professionalism. Over time, these practices become second nature, shaping 
+engineers who are respected both within their organisations and in the wider industry.
 
