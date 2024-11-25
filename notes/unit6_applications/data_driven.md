@@ -290,6 +290,14 @@ tables.
 
 ## ORM
 
+The relations (tables) in a relational database are conceptually very similar to classes in
+object-oriented programming (OOP). Each one defines a set of entities that have the same
+attributes, and each individual entity is represented by a row in the table. Thus, a row
+is equivalent to an object instantiated from a class definition where each such object has
+the same set of properties. Fig. 6 illustrates this equivalence.
+
+![Fig. 6: Object-relational equivalence](images/orm.png){: standalone #fig6 data-title="Object-relational equivalence" }
+
 Relational structures and object-oriented structures are superficially similar. However, the table 
 below summarises several differences between them which can make it difficult to work with both at 
 the same time.
@@ -306,7 +314,7 @@ the same time.
 
 As mentioned a couple of times in the table, a common strategy when working with relational 
 databases in an object-oriented language is to use an _object-relational mapper_ (ORM). An ORM 
-abstracts the idiosyncracies of the relational database behind an access API that object-oriented 
+abstracts the idiosyncrasies of the relational database behind an access API that object-oriented 
 developers find more familiar. As an example, consider the situation where the code needs to look 
 up a user record by its primary key. The SQL statement might be
 
@@ -422,9 +430,9 @@ rate because that would make it impossible to perform those historical calculati
 
 The solution to the problem above is to introduce an explicit reference to time into the structure 
 of the static table to show when a particular rate was valid. This is illustrated by the table 
-structure in Fig. 6.
+structure in Fig. 7.
 
-![Fig. 6: VAT rate table](images/VAT_table.png){: standalone #fig6 data-title="VAT rate table" }
+![Fig. 7: VAT rate table](images/VAT_table.png){: standalone #fig7 data-title="VAT rate table" }
 
 To find the current rate is simply a question of finding the record with the highest (most recent) `valid_from` value that is earlier than the current date. For historical calculations, the purchase data is compared with the `valid_from` value to select the correct rate. It is important to recognise, however, that maintaining data of this type requires careful management in the application code. Rather than an update statement, a new record would have to be inserted into the VAT rate table:
 
@@ -463,11 +471,11 @@ accomplished in several different ways. The first is the
 pattern in which the user clicks on the record and the list view is replaced by a single record 
 view (see below). Most data maintenance operations can be performed in the single record view  
 except for record creation. Another essential feature of a list view presentation is therefore 
-the ability to add a new record to the list. Fig. 7 shows a simple notes application where existing 
+the ability to add a new record to the list. Fig. 8 shows a simple notes application where existing 
 notes are shown in a list and a new note is added using the icon in the top right-hand corner of 
 the display.
 
-![Fig. 7: List view example](images/list_view.png){: standalone #fig7 data-title="List view example" }
+![Fig. 8: List view example](images/list_view.png){: standalone #fig8 data-title="List view example" }
 
 In the early stages of a software development project, there may only be a small number of test 
 records in the database. At that stage, it is easy to overlook the implications for the interface 

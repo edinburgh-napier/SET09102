@@ -10,17 +10,8 @@ nav_order: 1
 
 Computer-aided software engineering (CASE) refers to the use of computational tools to
 simplify the job of creating software systems. That might refer to the top-down design
-of systems, or to the bottom-up activity of actually writing code. CASE has been around
-since the 1980s and the tour below takes a quick run through its history.
-
-<h6 align="center"> Here's you in 2023...
-
-<a href="https://bdavison.napier.ac.uk/set09102/case.html" target="_blank" alt="Computer-aided software engineering">
-    <img src="../../images/you_small.png">
-</a>
-</h6>
-
-When digital computers were first invented, they had to be programmed by setting manual
+of systems, or to the bottom-up activity of actually writing code. When digital computers were 
+first invented, they had to be programmed by setting manual
 switches. Since then, the entire history of computing has been about making that task easier.
 Assembly language made it easier to write programs compared to binary code. Compilers
 relieved software engineers for the need to write assembly language. Object-orientation
@@ -31,64 +22,51 @@ functionality of older CASE tools is now available in common IDEs. However, it s
 highlight some aspects of software engineering that are aimed at a slightly higher level of
 abstraction.
 
-## Object-relational mapping
+## Early Adoption
 
-A relational database (RDBMS) is often used to provide persistent storage for data. It is a
-mature and robust solution and current versions provide good integration with development
-languages through standard interfaces such as
-[ODBC](https://learn.microsoft.com/en-us/sql/odbc/reference/what-is-odbc?view=sql-server-ver16),
-[JDBC](https://www.geeksforgeeks.org/introduction-to-jdbc/) and others. It comes with SQL,
-a powerful query language that handles the potentially complex relationships among databse
-entities and provides a convenient way of separating data from code.
+![Early CASE adoption](images/case_1980.png)
 
-The relations (tables) in a relational database are conceptually very similar to classes in
-object-oriented programming (OOP). Each one defines a set of entities that have the same
-attributes, and each individual entity is represented by a row in the table. Thus, a row
-is equivalent to an object instantiated from a class definition where each such object has
-the same set of properties.
+In the early 1980s, the increasing complexity of software and the need for more structured 
+methodologies gave rise to the CASE concept which initially focused on automating manual tasks 
+like drawing flowcharts or data flow diagrams. During this period, a notable distinction emerged 
+between Upper CASE and Lower CASE tools. Upper CASE tools helped with initial system design and 
+analysis, while Lower CASE tools aided in the actual construction and maintenance of systems. As the 
+field evolved, some advanced CASE tools, like the Information Engineering Facility (IEF), introduced 
+repository-based systems to manage the vast amount of information associated with large software 
+projects. However, as different CASE tools emerged, a significant challenge arose around integrating 
+their functionality and sharing data among them. For more details on this period, please see the
+[Butler Cox Foundation Research Report 57](https://archivesit.org.uk/wp-content/uploads/2021/09/BCF-RRBT-12-1988-Iss1.pdf) 
+from 1988. 
 
-![Fig. 1: Object-relational mapping](images/orm.png){: standalone #fig1 data-title="Object-relational mapping" }
+## Growth, Integration and Standardisation
 
-As illustrated in Fig. 1, n object-relational mapper (ORM) is a tool that translates
-between the database view and the OOP view to simplify the job of interacting with an
-RDBMS with OO code. Previously, the strategy for triggering database operations from code
-was to embed SQL statements into code written in another language. Using an ORM removes
-this complication by providing an interface to database structures in the native
-programming language. ORMs have been around for many years and their capabilities have
-steadily improved over time. However, even the best ORMs still require tradeoffs to work.
-A major limitation, for example, is the complexity of handling foreign key relationships
-in the OO domain.
+![Growth, Integration and Standardisation](images/case_1990.png)
 
-A full discussion of ORMs is not possible here - they are included in these notes for their
-ability to simplify an additional aspect of the software development process. Because
-they can translate from one domain to the other, they can be used to update one
-environment based on changes in the other. The team needs to decide whether it will be
-the database that is the *source of truth* or the class definitions. If the database is
-selected, the code can be *reverse engineered* from teh database, while if it is the code
-the is selected as the source of truth, code changes need to be *migrated* to the database.
-Both migration and reverse engineering have defined procedures and can potentially be
-automated. For example, GitHub actions could be used to apply database migrations at the
-point that the corresponding code changes are deployed to a server. Fig. 2 illustrates
-a typical migration process.
+In the 1990s, integrated CASE (I-CASE) tools emerged as a comprehensive solution to integration 
+challenges, providing both upper and lower CASE functionalities within a unified system. 
+Concurrently, the rise of object-oriented programming (OOP) spurred the popularity of object-oriented 
+CASE (OO-CASE) tools. To improve how CASE tools managed and exchanged data, initiatives such as the 
+CASE Data Interchange Format (CDIF) were launched, aiming for standardization. However, as the 
+market became saturated with numerous tools, a period of consolidation ensued, during which larger 
+software vendors acquired specialized CASE tool providers. For more details on this period, please
+refer to the 
+[Proceedings of the 7th International Workshop on CASE](https://ieeexplore-ieee-org.napier.idm.oclc.org/servlet/opac?punumber=3235) 
+(1995).
 
-![Fig. 2: Database migration process](images/migration.png){: standalone #fig2 data-title="Database migration process" }
+## Transition & Evolution
 
-The upgrade and downgrade scripts generated by the migration process are stored in the
-code repository so that they can be used to maintain the database structures. However,
-downgrading a database can risk losing data and is therefore only performed on a live
-database in exceptional circumstances.
+![Transition & Evolution](images/case_2000.png)
 
-> **NB**: It should be noted that in a team environment, database changes made by one
-> developer are _**not**_ automatically applied when other team members synchronise their
-> code repository with new changes. The synchronisation process only updates the files in
-> the file system. To effect the changes to the database structure, each developer will
-> need to run the migrations scripts themselves. Usually, this is a simple process but
-> if overlooked can lead to runtime errors.
->
-> Likewise, migration scripts are not necessarily applied when code is deployed to a server
-> unless this has been set up as a devops automation.
-
-## Model-driven development
+With the rising popularity of Agile methodologies and Extreme Programming (XP), the software 
+development industry began shifting away from heavyweight, repository-based CASE tools towards more 
+flexible and lightweight methods. Concurrently, the Unified Modeling Language (UML) emerged as the 
+de facto standard for software modelling. This shift catalyzed a surge in the development and 
+adoption of UML-based CASE tools, facilitating more dynamic and iterative design processes. 
+Additionally, the [Object Management Group](https://www.omg.org/) (OMG) introduced the 
+[Model-Driven Architecture](https://www.omg.org/mda/) (MDA), 
+which further advanced the concept of software development driven by models. This approach enabled 
+the creation of tools capable of generating code directly from UML diagrams, streamlining the software 
+development lifecycle. 
 
 Model-driven development (MDD) is a formalisation of the idea that given a precise enough
 model of a software system, the software itself can be generated through a deterministic
@@ -102,7 +80,7 @@ working directly with code. The approach was criticised in several ways
   capture the full picture leading to complexity and duplication.
 * **Round-trip problems**: Given the complex set of documents required for the realistic
   representation of a software system, keeping them all consistent becomes a major overhead.
-* **Moving complexity rather thn reducing it**: To represent the full complexity of a
+* **Moving complexity rather than reducing it**: To represent the full complexity of a
   software system would require an equally complex model. This point recalls the [short
   story](https://www.sccs.swarthmore.edu/users/08/bblonder/phys120/docs/borges.pdf)
   by Jorge Luis Borges which imagine a 1:1 scale map.
@@ -127,8 +105,56 @@ responsibility of the software engineer. Some examples are:
 * [UModel](https://www.altova.com/umodel)
 * [NClass](https://github.com/gbaychev/NClass)
 
+For more information about this period, please refer to the overview by
+[Sharon, (2003)](https://dl.acm.org/doi/abs/10.5555/1074100.1074241).
+
+## Modern Tools & DevOps Integration
+
+![Modern Tools & DevOps Integration](images/case_2010.png)
+
+The evolution of DevOps practices brought about significant advancements in Continuous Integration 
+and Continuous Deployment (CI/CD), resulting in tools that seamlessly integrate with modern 
+development, testing, and deployment pipelines. Concurrently, CASE tools adapted to the changing 
+technological landscape by transitioning to cloud-based platforms, which enhanced collaboration 
+among distributed teams. Moreover, modern Integrated Development Environments (IDEs) began to 
+natively incorporate many CASE capabilities, often blurring the distinctions between CASE tools and 
+IDEs, thereby streamlining the software development process. This integration and evolution paved 
+the way for the rise of the low-code approach, an extension of model-driven development that allows 
+developers to create applications with minimal hand-coding and lower technical complexity. Low-code 
+platforms utilize visual programming interfaces enriched by the powerful capabilities of model-driven 
+environments, significantly accelerating development cycles and democratizing application development.
+For a further discussion of low-code, please refer to [Cabot (2020)](https://doi.org/10.1145/3417990.3420210).
+
+## Generative AI
+
+![Generative AI](images/case_2020.png)
+
+Generative AI is revolutionizing software engineering by enhancing various aspects of CASE tools. 
+In the realm of code writing and assistance, generative AI contributes through automatic code 
+generation, intelligent code completion, and efficient bug detection, streamlining the development 
+process. It also plays a crucial role in improving documentation by automatically generating detailed 
+documentation, enhancing inline comments, and translating complex technical jargon into more 
+understandable language.
+
+For code reviews, AI-driven tools automate the review process, offering explanations for code logic 
+and improving code quality. These tools address requirements analysis by interpreting requirements 
+and performing gap analysis, thus ensuring that the software developed meets the intended 
+specifications. In software design and modeling, AI capabilities extend to generating UML diagrams 
+and suggesting design patterns that optimize the architectural setup of software systems.
+
+Testing and Quality Assurance (QA) benefit immensely from generative AI through the automatic 
+generation of test cases and the interpretation of error messages, which enhances the efficiency of 
+testing processes. The educational aspects of software development are also enriched by AI through 
+interactive learning platforms and tools that respond to technical queries, facilitating a deeper 
+understanding for developers.
+
+Finally, in software maintenance, generative AI aids in understanding legacy code and suggesting 
+code refactoring, ensuring that older systems stay up to date with modern standards and practices. 
+Collectively, these advancements demonstrate how generative AI, as a CASE tool, is integral in 
+modernizing the software engineering landscape, making it more efficient, understandable, and 
+maintainable.
+
+
 ## Further reading
 
-* [Relationships in Microsoft Entity Framework](https://learn.microsoft.com/en-us/ef/ef6/fundamentals/relationships)
-* [Managing database schemas (migrations and reverse engineering) with Microsoft Entity Framework](https://learn.microsoft.com/en-us/ef/core/managing-schemas/)
 * Model-driven development: The good, the bad, and the ugly [(Hailpern & Tarr, 2006)](https://doi.org/10.1147/sj.453.0451)
