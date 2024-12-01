@@ -154,6 +154,8 @@ Collectively, these advancements demonstrate how generative AI, as a CASE tool, 
 modernizing the software engineering landscape, making it more efficient, understandable, and 
 maintainable.
 
+{: .tip-title }
+> [<i class="fa-regular fa-lightbulb"></i> Practical tips on using CASE](case_tips)
 
 ## Further reading
 
