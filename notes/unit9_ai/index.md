@@ -5,6 +5,8 @@ has_children: true
 nav_order: 10
 ---
 
+# AI in Software Development
+
 <hr class="splash">
 
 ![Stephen Wolfram](../../images/people/stephen_wolfram.png)
@@ -16,16 +18,22 @@ Maybe we want to constrain the computation, the AI, to only do things we conside
 
 <hr class="splash">
 
-# Integrating Generative AI in Software Development
+According to a recent
+[magazine article](https://www.businessinsider.com/chatgpt-jobs-at-risk-replacement-artificial-intelligence-ai-labor-trends-2023-02?r=US&IR=T#tech-jobs-coders-computer-programmers-software-engineers-data-analysts-1),
+the top 10 careers most at risk from generative AI are
 
-## Introduction
+1. Tech jobs (Coders, computer programmers, software engineers, data analysts)
+2. Media jobs (advertising, content creation, technical writing, journalism)
+3. Legal industry jobs (paralegals, legal assistants)
+4. Market research analysts
+5. Teachers
+6. Finance jobs (Financial analysts, personal financial advisors)
+7. Traders
+8. Graphic designers
+9. Accountants
+10. Customer service agents
 
-## Large language models (LLMs)
-
-## Generative AI tools (e.g., GitHub Copilot)
-
-## AI-driven development
-
-## Code generation
-
-## Limitations
+Is it significant that software engineering appears at the top of the list above? Well,
+the article did not claim that it was an ordered list, but the main implication is that
+those going into a career in software engineering at this moment need to know about the
+available tools and how to use them effectively.
