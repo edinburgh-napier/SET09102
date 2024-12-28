@@ -318,3 +318,5 @@ resulting in what is known as "hallucination." The novelty of the problem signif
 the likelihood of hallucinations, highlighting a critical limitation in the current capabilities of 
 LLMs and ANNs.
 
+{: .tip-title }
+> [<i class="fa-regular fa-lightbulb"></i> Practical tips on using LLMs](llm_tips)
