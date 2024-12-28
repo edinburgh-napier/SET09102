@@ -288,12 +288,12 @@ than natural language. Notable examples include:
   Aroma is a tool by Facebook that leverages neural networks for code-to-code search and
   recommendation, helping developers find and use code snippets from a large-scale codebase.
 
-* [TabNine](https://www.tabnine.com/):
+* **[TabNine](https://www.tabnine.com/)**
 
   Powered by GPT-3 and Codex, TabNine is an AI-powered code completion tool. Though it's
   not exclusively a language model, the underlying AI aids in predictive code completion.
 
-* [DeepCode](https://snyk.io/platform/deepcode-ai/):
+* **[DeepCode](https://snyk.io/platform/deepcode-ai/)**
 
   Uses deep learning to analyse and learn from code repositories. While not exclusively
   for code generation, it assists in code reviews by pointing out potential issues.
