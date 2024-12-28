@@ -221,6 +221,44 @@ representations. Multi-layered attention helps the model to represent complex la
 and relationships within the text more effectively, improving its ability to process intricate 
 patterns and dependencies without the implication of human-like understanding.
 
+### Training
+
+Preparing an LLM typically involves several methodical steps, starting with generalised pre-training, 
+followed by fine-tuning, and concluding with prompt processing. These stages are designed to equip 
+the model with a broad capability to process language and to specialise it for specific tasks.
+
+The initial stage in preparing an LLM is **generalised pre-training**, where the model is trained on 
+a vast and diverse corpus of text. This corpus might include books, articles, websites, and other 
+forms of written content, covering a wide range of topics, styles, and structures. During 
+pre-training, the model engages in tasks such as predicting the next word in sentences or filling 
+in blanks within texts (masked language modelling). This phase is crucial as it helps the model 
+develop a base layer of linguistic patterns and data relationships, which are essential for 
+generating and processing text in a human-like manner.
+
+After pre-training, the model undergoes **fine-tuning**, which adjusts its parameters to enhance 
+performance on specific tasks or within particular domains. This involves training the model on a 
+smaller, task-specific dataset that reflects the challenges the model will address in practice. For 
+instance, if the LLM is intended for use in medical diagnostics, it would be fine-tuned on medical 
+journals, patient records, and other relevant texts. Fine-tuning allows the model to align more 
+closely with the specific vocabulary and data patterns of the target field, improving its output 
+relevance and accuracy.
+
+The final preparation stage is **prompt processing**, which involves crafting and refining prompts 
+that guide the model to generate desired outputs. A prompt is essentially a query or an instruction 
+that directs the model's response generation process. Creating effective prompts is crucial, 
+requiring a strategic approach to determine how the model responds to various inputs. This stage 
+may involve experimenting with different prompt formulations to identify which elicit the most 
+accurate and contextually appropriate outputs. Techniques such as 
+[few-shot learning](https://www.analyticsvidhya.com/blog/2021/05/an-introduction-to-few-shot-learning/) 
+can also be incorporated, where the model is provided with a few examples within the prompt itself, 
+aiding in adjusting its response mechanisms for the task without extensive additional training.
+
+The preparation of an LLM involves comprehensive steps that ensure the model is equipped with a 
+broad capability to generate and process language and is specifically tailored to perform a wide 
+range of linguistic tasks. Through careful pre-training, precise fine-tuning, and strategic prompt 
+processing, an LLM can be effectively prepared to tackle everything from simple text generation to 
+complex problem-solving across various domains.
+
 ## Examples
 
 Since the release of the first version of OpenAI's GPT there has been a great deal of development
@@ -265,16 +303,18 @@ make use of generative AI, and there will be many others in the near future.
 
 ## Limitations
 
-A general limitation of ANNs is that they cannot create new information or ideas;
-instead, they are limited to the contents of their training data. They sythesise
-responses based on the statistical frequency with which patterns appear in that data.
-This also implies that the generated solutions will reflect the most common methods
-and stles used in the training data. If the user prompts the LLM to generate a
-solution for a well-known problem where there are many examples in the training data
-it is likely to do a good job. If the solution requested is obscure or uncommon,
-the solution may not be so accurate. At the extreme, the LLM tries to fill in gaps
-in its training data with best-guess elements which can sometimes be plain wrong.
-When the LLM appears to be making things up with no basis in fact, it is called a
-*hallucination*. The greater the novelty of the problem, the more likely the LLM
-is to produce hallucinations.
+The transformer architecture faces several drawbacks, including a high computational cost. This 
+cost escalates quadratically with sequence length due to the attention mechanism, which needs to 
+consider the entire input sequence, complicating the model's interpretation and debugging. 
+Additionally, transformers and other ANNs are prone to overfitting when fine-tuned with limited 
+task-specific data. A general limitation across ANNs is their inability to create new information 
+or ideas; they can only synthesise responses based on patterns learned from their training data. 
+This reliance on training data means that solutions generated by LLMs often reflect the most common 
+methods and styles present in that data. While LLMs typically perform well when generating solutions 
+for well-documented problems with ample examples in the training set, they struggle with obscure or 
+uncommon issues, sometimes leading to inaccurate outputs. In extreme cases, where training data is 
+sparse or non-existent, LLMs may resort to making best-guess assumptions — often inaccurately — 
+resulting in what is known as "hallucination." The novelty of the problem significantly increases 
+the likelihood of hallucinations, highlighting a critical limitation in the current capabilities of 
+LLMs and ANNs.
 
