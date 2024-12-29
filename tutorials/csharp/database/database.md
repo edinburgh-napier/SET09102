@@ -18,6 +18,13 @@ The code that you end up with after the MVVM tutorial provides the starting poin
 Here, we will take advantage of the dependency injection framework built into .NET MAUI to manage 
 access to the database.
 
+{: .warning-title}
+> <i class="fa-solid fa-triangle-exclamation"></i> Warning
+>
+> This tutorial has not been fully tested. If you find anything that is unclear or does not work as 
+> expected, please try to work around the problem. If you find a solution, please let me know. 
+
+
 ## 1. Preparation
 
 Open the solution in Visual Studio and check that you have the following viewmodels:  
@@ -370,14 +377,14 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Notes.Models;
 
-\[Table("note")\]
-\[PrimaryKey(nameof(Id))\]
+[Table("note")]
+[PrimaryKey(nameof(Id))]
 public class Note
 {
     public int Id { get; set; }
-    \[Required\]
+    [Required]
     public string Text { get; set; }
-    \[Required\]
+    [Required]
     public DateTime Date { get; set; }
 }
 ```

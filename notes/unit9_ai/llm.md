@@ -10,8 +10,9 @@ nav_order: 2
 
 The use of large language models (LLMs) in software development is a relatively recent phenomenon 
 but represents a significant leap in how software development and programming tasks are approached. 
-They are a type of artificial neural network (ANN) that draws on developments in deep learning made
-during the 2010s. As ANNs grew more sophisticated, companies and researchers began to develop more 
+They are a type of [artificial neural network](https://www.geeksforgeeks.org/artificial-neural-networks-and-its-applications/) 
+(ANN) that draws on developments in [deep learning](https://www.geeksforgeeks.org/introduction-deep-learning/) 
+made during the 2010s. As ANNs grew more sophisticated, companies and researchers began to develop more 
 specialised tools for software development. Early examples included autocomplete features in IDEs 
 (Integrated Development Environments) which were based on simpler statistical models.
 The introduction of the transformer architecture by Google in 2017, through their paper 
