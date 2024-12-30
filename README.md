@@ -1,7 +1,7 @@
 ---
 title: README
 has_children: false
-nav_order: 2
+nav_exclude: true
 ---
 
 # SET09102 Software Engineering
