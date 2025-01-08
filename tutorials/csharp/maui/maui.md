@@ -38,26 +38,8 @@ You can also familiarise yourself with the editor with this
 
 ## 1. Create a project
 
-
-You can now run the app 
-
-
-Copy and clone the [stub repo](https://github.com/edinburgh-napier/SET09402){:target="_blank"} into your project workspaces folder.
-
-Open the new project in VSCode and delete the existing _Haulage_ project folder
-and the solution file _Haulage.sln_.
-
-Commit the changes and provide a suitable commit comment when prompted.
-
-Create a new project with the **_.NET: New project..._** option on the VSCode
-command palette. When prompted for a template, select **_.NET MAUI App_** and
-call it _Notes_.
-
-Edit the file _.gitignore_ replacing all references to _Haulage_ with _Notes_.
-
-Commit these changes as well.
-
-This essentially re-creates the original dummy project with a different name.
+Use the standard features of VSCode to create a new default .NET MAUI project and create
+a GitHub repository for it. (This is described in tutorial 1). 
 
 ## 2. Customise the app shell
 
