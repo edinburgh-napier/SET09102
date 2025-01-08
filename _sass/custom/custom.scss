@@ -354,6 +354,16 @@ table.quadrants tr:first-child th:first-child {
   left: 0;
 }
 
+#slide-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: inline;
+  width: 2rem;
+  height: 2rem;
+  background-color: #f00;
+}
+
 /* Appears at the top of the slide */
 #slide-title {
   width: 100%;

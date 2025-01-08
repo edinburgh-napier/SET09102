@@ -15,6 +15,10 @@
     slideOverlay.id = "slide-overlay";
     slideOverlay.className = "slide-outer";
 
+    const slideClose = document.createElement("div");
+    slideClose.id = "slide-close";
+    slideOverlay.appendChild(slideClose);
+
     const slideTitle = document.createElement("div");
     slideTitle.id = "slide-title";
     slideOverlay.appendChild(slideTitle);
