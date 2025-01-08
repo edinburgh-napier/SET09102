@@ -21,7 +21,9 @@ ethics is maintained by the
 into four main parts as shown below.
 
 <details>
-<summary>1. General ethical principles</summary>
+<summary>
+1. General ethical principles
+</summary>
 
 > [1.1 Contribute to society and to human well-being, acknowledging that all people are stakeholders
 in computing](https://www.acm.org/code-of-ethics#h-1.1-contribute-to-society-and-to-human-well-being,-acknowledging-that-all-people-are-stakeholders-in-computing.).
