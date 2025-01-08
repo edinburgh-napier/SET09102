@@ -103,8 +103,9 @@ is developed by the user community and provides descriptions of identified
 weaknesses along with observed occurrences and possible solutions. Some examples from
 the *Bad Coding Practice* category are
 
-<details>
+<details markdown=1>
 <summary>CWE-478: Missing Default Case in Multiple Condition Expression</summary>
+
 If a multiple-condition expression (such as a switch in C) omits the default
 case but does not consider or handle all possible values that could occur, then
 this might lead to complex logical errors and resultant weaknesses. Because of this,
@@ -113,24 +114,27 @@ This cascading failure may result in any number of security issues, and constitu
 significant failure in the system.
 </details>
 
-<details>
+<details markdown=1>
 <summary>CWE-1079: Parent Class without Virtual Destructor Method</summary>
+
 A parent class contains one or more child classes, but the parent class does not have a
 virtual destructor method. This issue can prevent the product from running reliably due
 to undefined or unexpected behaviours. If the relevant code is reachable by an attacker,
 then this reliability problem might introduce a vulnerability.
 </details>
 
-<details>
+<details markdown=1>
 <summary>CWE-1092: Use of Same Invokable Control Element in Multiple Architectural Layers</summary>
+
 The product uses the same control element across multiple architectural layers. This
 issue makes it more difficult to understand and maintain the product, which indirectly
 affects security by making it more difficult or time-consuming to find and/or fix
 vulnerabilities. It also might make it easier to introduce vulnerabilities.
 </details>
 
-<details>
+<details markdown=1>
 <summary>CWE-1103: Use of Platform-Dependent Third Party Components</summary>
+
 The product relies on third-party components that do not provide equivalent functionality
 across all desirable platforms. This issue makes it more difficult to maintain the
 product, which indirectly affects security by making it more difficult or time-consuming

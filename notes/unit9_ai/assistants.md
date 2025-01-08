@@ -196,7 +196,7 @@ When ChatGPT provides a response, it is delivered in a single panel with descrip
 and code snippets interleaved. Some work is therefore anticipated to extract the code from the
 response so that it can be used as part of a project.
 
-<details>
+<details markdown=1>
 <summary>Response</summary>
 
 
@@ -302,7 +302,7 @@ the textual part of the response by placing it into a separate panel. This makes
 extract the code; however, the code is not divided into separate files. Some additional editing
 is therefore needed.
 
-<details>
+<details markdown=1>
 <summary>Response</summary>
 
 #### Text response
@@ -537,7 +537,7 @@ code; it also creates separate files and inserts them into a default directory s
 the project root. The contents of each code file is also duplicated in the text response and so 
 only the text response is shown below.
 
-<details>
+<details markdown=1>
 <summary>Response 1</summary>
 
 I'll help you create a .NET MAUI conference attendee app. Let's break this down into key 

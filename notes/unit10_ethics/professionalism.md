@@ -41,7 +41,7 @@ in computing](https://www.acm.org/code-of-ethics#h-1.1-contribute-to-society-and
 
 </details>
 
-<details>
+<details markdown=1>
 <summary>2. Professional responsibilities</summary>
 
 > [2.1 Strive to achieve high quality in both the processes and products of professional work](https://www.acm.org/code-of-ethics#h-2.1-strive-to-achieve-high-quality-in-both-the-processes-and-products-of-professional-work.).
@@ -68,7 +68,7 @@ consequences](https://www.acm.org/code-of-ethics#h-2.7-foster-public-awareness-a
 
 </details>
 
-<details>
+<details markdown=1>
 <summary>3. Professional leadership principles</summary>
 
 > [3.1 Ensure that the public good is the central concern during all professional computing work](https://www.acm.org/code-of-ethics#h-3.1-ensure-that-the-public-good-is-the-central-concern-during-all-professional-computing-work.).
@@ -89,7 +89,7 @@ consequences](https://www.acm.org/code-of-ethics#h-2.7-foster-public-awareness-a
 > of society](https://www.acm.org/code-of-ethics#h-3.7-recognize-and-take-special-care-of-systems-that-become-integrated-into-the-infrastructure-of-society.).
 </details>
 
-<details>
+<details markdown=1>
 <summary>4. Compliance with the Code</summary>
 
 > [4.1 Uphold, promote, and respect the principles of the Code](https://www.acm.org/code-of-ethics#h-4.1-uphold,-promote,-and-respect-the-principles-of-the-code.).
@@ -104,7 +104,7 @@ code of ethics is also widely used, and in the UK the
 acts as the professional body for the computing industry. Its code of conduct is also based
 on four principles as shown below.
 
-<details>
+<details markdown=1>
 <summary>You make IT for everyone</summary>
 
 > Working together to address issues in your profession and in wider society, you want
@@ -121,7 +121,7 @@ on four principles as shown below.
 > 4. promote equal access to the benefits of IT and seek to promote the inclusion of all sectors in society wherever opportunities arise.
 </details>
 
-<details>
+<details markdown=1>
 <summary>Show what you know, learn what you don't</summary>
 
 > You have integrity and show competence, but you know you don’t know everything, that’s
@@ -141,7 +141,7 @@ on four principles as shown below.
 > 7. reject and will not make any offer of bribery or unethical inducement.
 </details>
 
-<details>
+<details markdown=1>
 <summary>Respect the organisation or individual you work for</summary>
 
 > You work with due care and diligence, acting in your client or company’s best interests
@@ -159,7 +159,7 @@ on four principles as shown below.
 > 5. NOT misrepresent or withhold information on the performance of products, systems or services (unless lawfully bound by a duty of confidentiality not to disclose such information), or take advantage of the lack of relevant knowledge or inexperience of others.
 </details>
 
-<details>
+<details markdown=1>
 <summary>Keep IT real. Keep IT professional. Pass IT on</summary>
 
 > As a BCS member, you’re an ambassador for the IT industry and use your voice to help

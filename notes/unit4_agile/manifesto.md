@@ -85,9 +85,10 @@ On their own, the four values are not detailed enough to act as a framework for 
 Manifesto develops them as the 12 principle listed below, and named methodologies such as Scrum
 refine them even further into usable processes.
 
-<details class="blue-bar">
+<details markdown=1 class="blue-bar">
 <summary>1. Our highest priority is to satisfy the customer through early and continuous delivery of 
 valuable software.</summary>
+
 <p>
 In a collaborative software development project, customer satisfaction drives the process. This 
 principle emphasises the importance of delivering functional pieces of software early and frequently. 
@@ -99,9 +100,10 @@ product.
 </p>
 </details>
 
-<details class="blue-bar">
+<details markdown=1 class="blue-bar">
 <summary>2. Welcome changing requirements, even late in development. Agile processes harness 
 change for the customer’s competitive advantage.</summary>
+
 <p>
 Collaborative teams recognise that requirements often evolve as stakeholders gain a deeper 
 understanding of the project’s goals or as market conditions change. This principle encourages 
@@ -113,8 +115,9 @@ rigidly to an outdated specification.
 </p>
 </details>
 
-<details class="blue-bar">
+<details markdown=1 class="blue-bar">
 <summary>3. Deliver working software frequently, with a preference for shorter timescales.</summary>
+
 <p>
 Collaborative software development thrives on frequent, iterative deliveries that demonstrate 
 progress to stakeholders. Short timescales, typically within a few weeks, allow the team to focus 
@@ -125,8 +128,9 @@ results and offer input early and often, reducing the risk of surprises at the e
 </p>
 </details>
 
-<details class="blue-bar">
+<details markdown=1 class="blue-bar">
 <summary>4. Business people and developers must work together daily throughout the project.</summary>
+
 <p>
 In collaborative environments, close cooperation between business stakeholders and the development 
 team is crucial to ensuring that the project remains aligned with the business goals. Daily 
@@ -138,9 +142,10 @@ and adaptive development process, ultimately delivering more value.
 </p>
 </details>
 
-<details class="blue-bar">
+<details markdown=1 class="blue-bar">
 <summary>5. Build projects around motivated individuals. Give them the environment and support they 
 need, and trust them to get the job done.</summary>
+
 <p>
 Successful collaborative projects rely on teams of motivated, self-organising individuals who are 
 given the autonomy to make decisions and take ownership of their work. This principle highlights the 
@@ -152,9 +157,10 @@ of the project.
 </p>
 </details>
 
-<details class="blue-bar">
+<details markdown=1 class="blue-bar">
 <summary>6. The most efficient and effective method of conveying information to and within a 
 development team is face-to-face conversation.</summary>
+
 <p>
 Direct, face-to-face communication fosters collaboration and quick decision-making in software 
 development projects. While tools like email or documentation have their place, in-person 
@@ -166,8 +172,9 @@ information and enables teams to stay aligned.
 </p>
 </details>
 
-<details class="blue-bar">
+<details markdown=1 class="blue-bar">
 <summary>7. Working software is the primary measure of progress.</summary>
+
 <p>
 In Agile, the focus is on delivering functional software, not on the volume of documentation or 
 the completion of tasks. In a collaborative project, this principle helps ensure that the team 
@@ -178,9 +185,10 @@ improve the product based on real feedback rather than theoretical completion ma
 </p>
 </details>
 
-<details class="blue-bar">
+<details markdown=1 class="blue-bar">
 <summary>8. Agile processes promote sustainable development. The sponsors, developers, and users 
 should be able to maintain a constant pace indefinitely.</summary>
+
 <p>
 Collaborative teams strive for a steady, manageable pace throughout the project to avoid burnout 
 and maintain productivity over the long term. Sustainable development means setting realistic goals 
@@ -191,8 +199,9 @@ which ultimately improves the team’s effectiveness and the project’s outcome
 </p>
 </details>
 
-<details class="blue-bar">
+<details markdown=1 class="blue-bar">
 <summary>9. Continuous attention to technical excellence and good design enhances agility.</summary>
+
 <p>
 Technical excellence and strong design practices form the foundation for an Agile project’s 
 flexibility. In a collaborative environment, team members focus on writing clean, maintainable 
@@ -204,8 +213,9 @@ adaptation.
 </p>
 </details>
 
-<details class="blue-bar">
+<details markdown=1 class="blue-bar">
 <summary>10. Simplicity — the art of maximising the amount of work not done — is essential.</summary>
+
 <p>
 Agile promotes simplicity, encouraging teams to focus on doing only what is necessary to deliver 
 value. In collaborative software development, this means avoiding unnecessary complexity or 
@@ -216,9 +226,10 @@ This principle ensures that the team remains focused and efficient.
 </p>
 </details>
 
-<details class="blue-bar">
+<details markdown=1 class="blue-bar">
 <summary>11. The best architectures, requirements, and designs emerge from self-organising teams.
 </summary>
+
 <p>
 Self-organising teams have the autonomy to decide how best to approach their work, which leads to 
 better problem-solving and innovation. In collaborative projects, this principle empowers team 
@@ -229,9 +240,10 @@ changes and find creative solutions that fit the project’s unique challenges.
 </p>
 </details>
 
-<details class="blue-bar">
+<details markdown=1 class="blue-bar">
 <summary>12. At regular intervals, the team reflects on how to become more effective, then tunes 
 and adjusts its behavior accordingly.</summary>
+
 <p>
 Agile values continuous improvement through regular reflection. In collaborative projects, teams 
 hold retrospectives at the end of each iteration to assess what worked well and what didn’t. This 

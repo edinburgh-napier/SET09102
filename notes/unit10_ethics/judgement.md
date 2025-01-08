@@ -32,8 +32,9 @@ acting in a particular role. Loui and Millar (2007) describe ethics as follows:
 [Marebane et al., 2023](https://doi.org/10.1109/AFRICON55910.2023.10293734) identify seven dimensions of 
 professional responsibility in the field of software engineering:
 
-<details class="blue-bar">
+<details markdown=1 class="blue-bar">
 <summary>Public</summary>
+
 * To ensure the safety, health, and welfare of the public
 * Contribute to public policies on computing
 * Not to cause harm
@@ -43,8 +44,9 @@ professional responsibility in the field of software engineering:
 * Create software that respects and values people
 * Have concerns about the social effects of computers on operators, users, and the public
 </details>
-<details class="blue-bar">
+<details markdown=1 class="blue-bar">
 <summary>Clients/users</summary>
+
 * Perform assigned tasks competently, according to professional standards
 * Concern for the social effects of computers on operators, users, and the public
 * Exercise due diligence in creating software, and they should be as candid as possible about both known and unknown faults in the software—particularly software for safety-critical systems
@@ -56,15 +58,17 @@ professional responsibility in the field of software engineering:
 * Protect the privacy of personal information of clients and other stakeholders of their products
 * Report all relevant findings honestly and accurately
 </details>
-<details class="blue-bar">
+<details markdown=1 class="blue-bar">
 <summary>Organisations/management/employer</summary>
+
 * Keep trade secrets information of employers confidential
 * Honour other forms of intellectual property
 * Be aware of potential conflicts of interest
 * Report and resolve security vulnerabilities
 </details>
-<details class="blue-bar">
+<details markdown=1 class="blue-bar">
 <summary>Other professionals/colleagues</summary>
+
 * Demonstrate a kind of respect called collegiality
 * Be open for peer review
 * Accept and provide appropriate professional review
@@ -73,24 +77,27 @@ professional responsibility in the field of software engineering:
 * Mentor junior professionals
 * Produce maintainable products
 </details>
-<details class="blue-bar">
+<details markdown=1 class="blue-bar">
 <summary>Self</summary>
+
 * Accepts responsibility for design decisions and must not approve inappropriate designs even if ordered to do so
 * Object openly to decisions that violate professional standards
 * Be honest about capabilities
 * Honour contracts, agreements and assigned responsibilities
 * Access computing and communication resources only when authorised to do so
 </details>
-<details class="blue-bar">
+<details markdown=1 class="blue-bar">
 <summary>Profession</summary>
+
 * Consider not only the specifications but non-technical issues as well, e.g. quality of life of users and others
 * Volunteer knowledge of the profession
 * Strive to achieve the highest quality, effectiveness and dignity in both the process and products of professional work
 * Know and respect existing laws pertaining to professional work
 * Give comprehensive and thorough evaluations of computer systems and their impacts, including analysis of possible risks
 </details>
-<details class="blue-bar">
+<details markdown=1 class="blue-bar">
 <summary>Legislators</summary>
+
 * Adhere to the law and regulatory mandates
 </details>
 

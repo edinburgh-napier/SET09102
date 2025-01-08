@@ -25,85 +25,97 @@ process. During an initial development project to build a software product from 
 source of new issues is the initial analysis work that produces a set of user stories. Even in a
 development project, though, issues are created in a variety of situations:
 
-<details class="blue-bar">
+<details markdown=1 class="blue-bar">
 <summary>Bug reporting</summary>
+
 <p>This occurs when a problem or defect is found in the software, such as when the application doesn’t 
 behave as expected. For example, a user might report being unable to log in after a password reset 
 or a page might crash when submitting a form.</p>
 </details>
 
-<details class="blue-bar">
+<details markdown=1 class="blue-bar">
 <summary>Feature requests or enhancements</summary>
+
 <p>Here, developers or stakeholders propose new functionality or improvements to existing features. 
 Examples include requests to add a dark mode to the user interface or to improve the performance of 
 the search function.</p>
 </details>
 
-<details class="blue-bar">
+<details markdown=1 class="blue-bar">
 <summary>Technical debt</summary>
+
 <p>This refers to areas of the code that need refactoring or cleanup to improve maintainability. For 
 instance, developers might need to refactor the authentication module to improve readability or reduce 
 duplicate code in the payment processing system.</p>
 </details>
 
-<details class="blue-bar">
+<details markdown=1 class="blue-bar">
 <summary>Task management</summary>
+
 <p>These tasks might not involve code changes but are still critical to the project, such as setting up 
 a continuous integration/continuous deployment (CI/CD) pipeline or writing documentation for an API.</p>
 </details>
 
-<details class="blue-bar">
+<details markdown=1 class="blue-bar">
 <summary>Performance issues</summary>
+
 <p>Performance issues track areas where the software may be performing inefficiently and needs 
 optimisation, such as improving database query performance for large datasets or optimising image 
 loading times on a webpage.</p>
 </details>
 
-<details class="blue-bar">
+<details markdown=1 class="blue-bar">
 <summary>Security vulnerabilities</summary>
+
 <p>Potential or known flaws that could compromise the system lead to the creation of issues. For 
 example, a SQL injection vulnerability might need to be fixed, or stronger password encryption 
 might need to be implemented.</p>
 </details>
 
-<details class="blue-bar">
+<details markdown=1 class="blue-bar">
 <summary>User feedback</summary>
+
 <p>When end users provide suggestions or report problems, developers create issues to track and 
 address this feedback. Examples include users requesting the ability to export data as CSV or 
 reporting that the interface is not intuitive on mobile devices.</p>
 </details>
 
-<details class="blue-bar">
+<details markdown=1 class="blue-bar">
 <summary>Testing requirements</summary>
+
 <p>Requirements for unit tests, integration tests, or the performance of user acceptance testing (UAT)
 are documented as issues. For example, a developer might create an issue to write unit tests for the 
 payment processing module or to perform cross-browser testing on a new feature.</p>
 </details>
 
-<details class="blue-bar">
+<details markdown=1 class="blue-bar">
 <summary>Infrastructure issues</summary>
+
 <p>These are created when there are problems with the project's infrastructure, such as server downtime, 
 configuration errors, or deployment failures. An example might be a server crashing during high 
 traffic or a misconfiguration in the database connection string.</p>
 </details>
 
-<details class="blue-bar">
+<details markdown=1 class="blue-bar">
 <summary>Compliance and legal requirements</summary>
+
 <p>Issues are often used to capture compliance and regulatory requirements, especially when ensuring 
 that the software meets regulatory or industry standards. Examples include making sure the system 
 complies with GDPR regulations or implementing accessibility features in line with WCAG 2.1 
 standards.</p>
 </details>
 
-<details class="blue-bar">
+<details markdown=1 class="blue-bar">
 <summary>Dependencies</summary>
+
 <p>Projects that depend on third-party libraries or services often track dependency-related issues. 
 For example, issues might be created to update a third-party library to its latest version or to 
 fix an integration problem with a payment gateway API.</p>
 </details>
 
-<details class="blue-bar">
+<details markdown=1 class="blue-bar">
 <summary>Version releases</summary>
+
 <p>Issues can be used to track specific tasks that must be completed before a new version is deployed. 
 This might include preparing release notes for version 2.0 or fixing critical bugs before version 
 1.5 is rolled out.</p>
@@ -170,8 +182,9 @@ the developer should break the issue down into smaller, manageable tasks. This p
 _issue decomposition_, helps ensure that each task can be handled independently, improving focus, 
 efficiency, and clarity. In such a situation, the developer needs to:
 
-<details class="blue-bar">
+<details markdown=1 class="blue-bar">
 <summary>1. Identify the Subtasks</summary>
+
 <p>Break the larger issue into smaller, more manageable subtasks or issues. Each subtask should 
 represent a specific, actionable piece of work that can be completed independently.
 For example, if the original issue is about building a complex feature, subtasks could be related 
@@ -179,8 +192,9 @@ to backend logic, frontend design, database setup, or testing.
 </p>
 </details>
 
-<details class="blue-bar">
+<details markdown=1 class="blue-bar">
 <summary>2. Create New Issues for Each Subtask</summary>
+
 <p>If possible, create separate issues for each subtask. This ensures that each piece of work is 
 tracked individually and can be assigned or completed independently.
 Clearly label these issues and link them to the original, larger issue to maintain context and 
@@ -188,8 +202,9 @@ traceability.
 </p>
 </details>
 
-<details class="blue-bar">
+<details markdown=1 class="blue-bar">
 <summary>3. Update the Original Issue</summary>
+
 <p>Refine the original issue to reflect its new purpose as a "parent" issue or epic that tracks 
 the progress of the subtasks.
 Include links or references to the newly created subtasks. This helps everyone involved in the 
@@ -197,16 +212,18 @@ project understand how the smaller tasks relate to the original, larger goal.
 </p>
 </details>
 
-<details class="blue-bar">
+<details markdown=1 class="blue-bar">
 <summary>4. Prioritise and Estimate the Subtasks</summary>
+
 <p>Once the issue is broken down, each subtask should be prioritised and estimated. Determine 
 which tasks are essential or high priority and address them first.
 Estimating the time or effort needed for each subtask ensures realistic expectations for completion.
 </p>
 </details>
 
-<details class="blue-bar">
+<details markdown=1 class="blue-bar">
 <summary>5. Collaborate with the Team</summary>
+
 <p>Discuss the decomposition with your team, project manager, or stakeholders. Ensure that everyone 
 is aligned on the plan and that subtasks are distributed effectively.
 Make sure the scope of each subtask is clear and doesn't overlap unnecessarily with other parts of 
@@ -214,16 +231,18 @@ the project.
 </p>
 </details>
 
-<details class="blue-bar">
+<details markdown=1 class="blue-bar">
 <summary>6. Consider Dependencies</summary>
+
 <p>Identify any dependencies between the subtasks. Some tasks may need to be completed before 
 others, so establishing a logical order of execution is important.
 Document these dependencies in the issue tracker or in the task descriptions.
 </p>
 </details>
 
-<details class="blue-bar">
+<details markdown=1 class="blue-bar">
 <summary>7. Monitor and Track Progress</summary>
+
 <p>As the subtasks are addressed, track the progress of each one individually. The completion of 
 all subtasks should lead to the resolution of the original, larger issue.
 Use tools like GitHub Milestones, Jira Epics, or Kanban boards to visualise the breakdown and 

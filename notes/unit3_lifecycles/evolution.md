@@ -237,7 +237,7 @@ the grid below the figure to explore these dimensions in more detail.
 
 ![Fig. 6. Dimensions of impact](images/dimensions_of_impact.png){: standalone #fig6 data-title="Dimensions of impact"}
 
-<details class="blue-bar">
+<details markdown=1 class="blue-bar">
 <summary>Functional</summary>
 
 *   **Requirements Gathering**: Collect detailed functional requirements for the new feature.
@@ -248,7 +248,7 @@ the grid below the figure to explore these dimensions in more detail.
 
 </details>
 
-<details class="blue-bar">
+<details markdown=1 class="blue-bar">
 <summary>Technical</summary>
 
 *   **System Architecture**: Examine how the new feature will fit into the existing system 
@@ -262,7 +262,7 @@ the grid below the figure to explore these dimensions in more detail.
 
 </details>
 
-<details class="blue-bar">
+<details markdown=1 class="blue-bar">
 <summary>Operational</summary>
 
 *   **Maintenance**: Changes in maintenance schedules, procedures, and complexity.
@@ -277,7 +277,7 @@ the grid below the figure to explore these dimensions in more detail.
 
 </details>
 
-<details class="blue-bar">
+<details markdown=1 class="blue-bar">
 <summary>Performance</summary>
 
 *   **System Speed**: Effects on response times, processing speed, and overall system performance.
@@ -286,7 +286,7 @@ the grid below the figure to explore these dimensions in more detail.
 
 </details>
 
-<details class="blue-bar">
+<details markdown=1 class="blue-bar">
 <summary>Reliability/stability</summary>
 
 *   **System Downtime**: Potential increase in system downtime during and after the change.
@@ -296,7 +296,7 @@ the grid below the figure to explore these dimensions in more detail.
 
 </details>
 
-<details class="blue-bar">
+<details markdown=1 class="blue-bar">
 <summary>Security</summary>
 
 *   **Vulnerabilities**: Introduction of new security vulnerabilities or weaknesses.
@@ -306,7 +306,7 @@ the grid below the figure to explore these dimensions in more detail.
 
 </details>
 
-<details class="blue-bar">
+<details markdown=1 class="blue-bar">
 <summary>Usability</summary>
 
 *   **User Interface**: Changes in the look and feel of the system interface.
@@ -314,7 +314,7 @@ the grid below the figure to explore these dimensions in more detail.
 
 </details>
 
-<details class="blue-bar">
+<details markdown=1 class="blue-bar">
 <summary>Stakeholder</summary>
 
 *   **Stakeholder Identification**: Identify all stakeholders affected by the change, including 
@@ -328,7 +328,7 @@ the grid below the figure to explore these dimensions in more detail.
 
 </details>
 
-<details class="blue-bar">
+<details markdown=1 class="blue-bar">
 <summary>Financial</summary>
 
 *   **Cost Estimation**: Estimate the costs associated with implementing the new feature, 
@@ -342,7 +342,7 @@ the grid below the figure to explore these dimensions in more detail.
 
 </details>
 
-<details class="blue-bar">
+<details markdown=1 class="blue-bar">
 <summary>Risk</summary>
 
 *   **Risk Identification**: Identify potential risks associated with the change, such as 
@@ -354,7 +354,7 @@ the grid below the figure to explore these dimensions in more detail.
 
 </details>
 
-<details class="blue-bar">
+<details markdown=1 class="blue-bar">
 <summary>Compliance and regulatory</summary>
 
 *   **Regulatory Requirements**: Assess any regulatory requirements related to telephone call handling, such as data protection laws and communication regulations.
@@ -365,7 +365,7 @@ the grid below the figure to explore these dimensions in more detail.
 
 </details>
 
-<details class="blue-bar">
+<details markdown=1 class="blue-bar">
 <summary>Strategic</summary>
 
 *   **Alignment with Business Goals**: How well the change supports the organisation’s strategic 
