@@ -365,6 +365,7 @@ table.quadrants tr:first-child th:first-child {
   color: white;
   font-size: 2.5rem;
   font-weight: bold;
+  cursor: pointer;
 }
 
 /* Appears at the top of the slide */
@@ -372,7 +373,7 @@ table.quadrants tr:first-child th:first-child {
   width: 100%;
   font-size: 2.5vw;
   font-weight: bold;
-  text-align: center;
+  text-align: center;;
   position: fixed;
   top: 1em;
   z-index: 100;
