@@ -150,7 +150,7 @@ Note that you will need to sign in with your University username and password to
 
 When you are done, you should have at least the extensions shown below.
 
-![Fig. 4. VSCode extensions](images/vscode_extensions.png){: standalone #fig4 .h20 data-title="VSCode extensions"}
+![Fig. 4. VSCode extensions](images/vscode_extensions.png){: standalone #fig4 .h30 data-title="VSCode extensions"}
 
 ## 5. Install Android dependencies
 
@@ -187,7 +187,7 @@ Next, open the project root folder using the *File -&gt; Open Folder... *option 
 
 To build the project, right-click the project name in the *Solution Explorer *section of the files panel as shown.
 
-![Fig. 5. Building the project](images/vscode_build.png){: standalone #fig5 data-title="Building the project"}
+![Fig. 5. Building the project](images/vscode_build.png){: standalone #fig5 .h30 data-title="Building the project"}
 
 {: .warning-title }
 > <i class="fa-solid fa-triangle-exclamation"></i> Warning

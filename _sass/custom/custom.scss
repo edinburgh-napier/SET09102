@@ -77,10 +77,6 @@ blockquote.warning-title {
 figure {
   margin: 2rem 0 2rem 8rem;
 }
-figure img {
-  max-width: 40rem;
-  max-height: 40rem;
-}
 figure.small-fig img {
   max-width: 30rem;
   max-height: 30rem;
@@ -94,6 +90,15 @@ figcaption p.figcaption {
 figure.h10 img {max-height: 10rem;}
 figure.h20 img {max-height: 20rem;}
 figure.h30 img {max-height: 30rem;}
+figure.h50 img {max-height: 50rem;}
+figure.w10 img {max-width: 10rem;}
+figure.w20 img {max-width: 20rem;}
+figure.w30 img {max-width: 30rem;}
+figure.w50 img {max-width: 50rem;}
+figure img {
+  max-width: 40rem;
+  max-height: 40rem;
+}
 
 p.figcaption {
   margin: 0 5rem;
