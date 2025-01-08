@@ -34,7 +34,7 @@ If you have never used VSCode before, go through the
 You can also familiarise yourself with the editor with this 
 [video course](https://code.visualstudio.com/docs/introvideos/basics)
 
-![Fig. 1. Notes app screenshots.](images/target.png){: standalone #fig1}
+![Fig. 1. Notes app screenshots.](images/target.png){: standalone #fig1 data-title="Notes app screenshots"}
 
 ## 1. Create a project
 
@@ -46,7 +46,7 @@ a GitHub repository for it. (This is described in tutorial 1).
 When VSCode creates a .NET MAUI project four important code files are generated.
 These can be seen in the **Solution Explorer** pane:
 
-![Fig. 2. Elements of a MAUI project.](images/ms_notes_1.png){: standalone #fig2}
+![Fig. 2. Elements of a MAUI project.](images/ms_notes_1.png){: standalone #fig2 .h20 data-title="Elements of a MAUI project"}
 
 These files help get the .NET MAUI app configured and running. Each file serves
 a different purpose as described below:
@@ -89,7 +89,7 @@ author, version, and perhaps a link for more information.
 1. In the **Solution Explorer** pane of VSCode, right-click the _Notes_
 project and select _Add New File..._
 
-![Fig. 3. Adding an About... page.](images/ms_notes_add_about.png){: standalone #fig3}
+![Fig. 3. Adding an About... page.](images/ms_notes_add_about.png){: standalone #fig3 data-title="Adding an About... page"}
 
 Select _.NET MAUI ContentPage (XAML)_ and call the new page _AboutPage.xaml._
 You do not have to type the extension - it will be added automatically.
@@ -156,7 +156,7 @@ In the **Solution Explorer** pane of VSCode, expand the _AboutPage.xaml_ file
 to reveal its code-behind file _AboutPage.xaml.cs_. Then click on the
 _AboutPage.xaml.cs_ file to open it in the code editor.
 
-![Fig. 4. Code-behind structure.](images/code_behind.png){: standalone #fig4}
+![Fig. 4. Code-behind structure.](images/code_behind.png){: standalone #fig4 .h30 data-title="Code-behind structure"}
 
 Change the `namespace` to _Notes_ instead of the default _MauiApp1_.
 
@@ -266,7 +266,7 @@ You'll see that there are two tabs: **Notes** and **About**. Press the
 **About** tab and the app navigates to the `AboutPage` you created. Press
 on the **Learn More...** button to open the web browser.
 
-![Fig. 5. Notes app first run.](images/final.png){: standalone #fig5}
+![Fig. 5. Notes app first run.](images/final.png){: standalone #fig5 'h30 data-title="Notes app first run"}
 
 ## 3. Create a page for a note
 
@@ -485,7 +485,7 @@ Save the file and run the app. Try typing into the entry box and press the
 Save button. Close the app, and reopen it. The note you entered should be
 loaded from the device's storage.
 
-![Fig. 6. Note page.](images/note_page.png){: standalone #fig6}
+![Fig. 6. Note page.](images/note_page.png){: standalone #fig6 .h30 data-title="Note page"}
 
 ## 4. Bind data to the UI and navigate pages
 
@@ -548,7 +548,7 @@ is set to `Notes`. This needs to be updated to `Notes.Views`.
 1.  In the Solution Explorer pane, expand both _NotePage.xaml_ and _AboutPage.xaml_ to
     reveal the code-behind files:
 
-    ![Fig. 7. View files in VSCode.](images/view_files.png){: standalone #fig7}
+    ![Fig. 7. View files in VSCode.](images/view_files.png){: standalone #fig7 .h20 data-title="View files in VSCode"}
 
 4.  Double-click on the _NotePage.xaml.cs_ item to open the code editor. Change the
     namespace to `Notes.Views`:
@@ -652,7 +652,7 @@ data:
 1.  In the **Solution Explorer** pane, right-click on the **Models** folder and select
     **Add New File....**  
 
-    ![Fig. 8. Creating a new class in VSCode.](images/new_class.png){: standalone #fig8}
+    ![Fig. 8. Creating a new class in VSCode.](images/new_class.png){: standalone #fig8 data-title="Creating a new class in VSCode"}
 
 2.  Name the class `Note` and press RETURN. Notice that VSCode will automatically add
     the _.cs_ extension to the filename.
@@ -1069,9 +1069,9 @@ The code-behind for the view needs to be written to load the notes and handle th
             if (e.CurrentSelection.Count != 0)
             {
                 // Get the note model
-                var note = (Models.Note)e.CurrentSelection\[0\];
+                var note = (Models.Note)e.CurrentSelection[0];
 
-                // Should navigate to "NotePage?ItemId=path\\on\\device\\XYZ.notes.txt"
+                // Should navigate to "NotePage?ItemId=path\on\\device\XYZ.notes.txt"
                 await Shell.Current.GoToAsync($"{nameof(NotePage)}?{nameof(NotePage.ItemId)}={note.Filename}");
 
                 // Unselect the UI
@@ -1133,7 +1133,7 @@ The `Note` view needs to support the query string parameter, `ItemId`. Create it
     respectively:
 
     ```c#
-    \[QueryProperty(nameof(ItemId), nameof(ItemId))\]
+    [QueryProperty(nameof(ItemId), nameof(ItemId))]
     public partial class NotePage : ContentPage
     ```
 
@@ -1234,4 +1234,4 @@ The Routing.RegisterRoute method takes two parameters:
 Now you can run your app. Try adding new notes, navigating back and forth between notes,
 and deleting notes.
 
-![Fig. 9. Notes app version 1.](images/notes_app_version_1.png){: standalone #fig9}
+![Fig. 9. Notes app version 1.](images/notes_app_version_1.png){: standalone #fig9 data-title="Notes app version 1"}

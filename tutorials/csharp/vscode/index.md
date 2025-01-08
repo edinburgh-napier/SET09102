@@ -351,7 +351,7 @@ VSCode provides git and GitHub integration so that you do not have to use git at
 Click the version control icon in the vertical menu bar as shown in Fig. 11 to reveal the 
 initialisation options.
 
-![Fig. 11. Initialising git for your project](images/vscode_git.png){: standalone #fig11 data-title="Initialising git for your project"}
+![Fig. 11. Initialising git for your project](images/vscode_git.png){: standalone #fig11 .h30 data-title="Initialising git for your project"}
 
 Click the repository initialisation button (2) but **do not click the commit button in the next 
 dialog!** The number next to the version control icon shows that you are about to commit more than 
