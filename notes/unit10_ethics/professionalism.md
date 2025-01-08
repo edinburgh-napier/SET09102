@@ -20,9 +20,8 @@ ethics is maintained by the
 [Association for Computing Machinery (ACM)](https://www.acm.org/code-of-ethics). It is divided
 into four main parts as shown below.
 
-<details>
+<details markdown=1>
 <summary>1. General ethical principles</summary>
-<div markdown=1>
 
 > [1.1 Contribute to society and to human well-being, acknowledging that all people are stakeholders
 in computing](https://www.acm.org/code-of-ethics#h-1.1-contribute-to-society-and-to-human-well-being,-acknowledging-that-all-people-are-stakeholders-in-computing.).
@@ -39,7 +38,7 @@ in computing](https://www.acm.org/code-of-ethics#h-1.1-contribute-to-society-and
 > [1.6 Respect privacy](https://www.acm.org/code-of-ethics#h-1.6-respect-privacy.).
 >
 > [1.7 Honor confidentiality](https://www.acm.org/code-of-ethics#h-1.7-honor-confidentiality.).
-</div>
+
 </details>
 
 <details>
