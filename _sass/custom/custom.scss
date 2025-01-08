@@ -67,8 +67,8 @@ blockquote.warning-title {
 .icon-prefix {
   display: none;
 }
-.icon-prefix ~ .language-shell,
-.icon-prefix ~ figure.highlight {
+.icon-prefix + .language-shell,
+.icon-prefix + figure.highlight {
   margin: -3rem 0 0 2rem;
 }
 

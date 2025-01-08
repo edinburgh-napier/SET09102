@@ -127,7 +127,7 @@ The simplest way to define environment variables is in the .zshrc file in your h
 directory. This file is run automatically whenever a new terminal is opened and when an 
 application starts. Edit the file and add the following lines at the end.
 
-``` shell
+```sh
     # Environment variables for .NET MAUI development <br>
     export JAVA_HOME=${HOME}/MAUI/java <br>
     export ANDROID_HOME=${HOME}/MAUI/android <br>
