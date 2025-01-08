@@ -46,9 +46,7 @@ development.
 
 Install the MAUI workloads by executing the command:
 
-{% highlight shell %} 
-dotnet workload install maui
-{% endhighlight %}
+{% highlight shell %}dotnet workload install maui{% endhighlight %}
 
 The command is the same for both Mac and Windows
 
