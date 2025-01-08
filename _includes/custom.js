@@ -188,7 +188,6 @@
     }
 
     function closeSlide() {
-        e = e || window.event;
         var slideOverlay = document.getElementById("slide-overlay");
         slideOverlay.classList.toggle("show");
     }

@@ -361,11 +361,15 @@ table.quadrants tr:first-child th:first-child {
   display: inline;
   width: 2rem;
   height: 2rem;
-  background-color: #aaa;
+  background-color: #ddd;
   color: white;
   font-size: 2.5rem;
   font-weight: bold;
   cursor: pointer;
+}
+
+#slide-close:hover {
+  background-color: #aaa;
 }
 
 /* Appears at the top of the slide */
