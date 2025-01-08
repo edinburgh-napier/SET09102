@@ -119,8 +119,8 @@ understanding of how AI models process and react to human language. A well-craft
 significantly enhance the accuracy and relevance of the generated code, ensuring compatibility 
 and functionality within the target codebase.
 
-{: .note-title }
-> <i class="fa-solid fa-triangle-exclamation"></i> Techniques in prompt engineering for software development
+{: .tip-title }
+> [<i class="fa-regular fa-lightbulb"></i> Techniques in prompt engineering for software development
 > 
 > * Contextual Detailing:
 >
@@ -807,6 +807,9 @@ Will Change Software Engineering Education*:
 > be able to adjust or fine-tune the generated code as needed.
 >
 > [Daun & Brings, 2023](https://doi.org/10.1145/3587102.3588815)
+
+{: .tip-title }
+> [<i class="fa-regular fa-lightbulb"></i> Practical tips on using coding assistants](assistants_tips)
 
 ## Further reading
 
