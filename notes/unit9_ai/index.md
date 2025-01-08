@@ -22,7 +22,7 @@ According to a recent
 [magazine article](https://www.businessinsider.com/chatgpt-jobs-at-risk-replacement-artificial-intelligence-ai-labor-trends-2023-02?r=US&IR=T#tech-jobs-coders-computer-programmers-software-engineers-data-analysts-1),
 the top 10 careers most at risk from generative AI are
 
-
+{: markdown}
 1. Tech jobs (Coders, computer programmers, software engineers, data analysts)
 2. Media jobs (advertising, content creation, technical writing, journalism)
 3. Legal industry jobs (paralegals, legal assistants)

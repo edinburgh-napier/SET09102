@@ -34,12 +34,3 @@ evolves. Testing in Agile isn’t just the responsibility of dedicated testers; 
 effort involving developers, testers, and sometimes even stakeholders, who contribute to defining 
 and validating requirements.
 
-## TDD cycle
-
-## Writing unit tests
-
-## Dependency injection
-
-## Mocking dependencies
-
-## Testing frameworks
