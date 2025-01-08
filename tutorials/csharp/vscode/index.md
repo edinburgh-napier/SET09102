@@ -33,9 +33,7 @@ some incompatibilities with other software tools.
 
 Check that .NET is installed correctly by executing the command:
 
-```sh
-dotnet --version
-````
+{% highlight shell %}dotnet --version {% endhighlight %}
 
 You should see that your .NET version is 8.0.300
 
@@ -48,9 +46,9 @@ development.
 
 Install the MAUI workloads by executing the command:
 
-```sh 
+{% highlight shell %} 
 dotnet workload install maui
-```
+{% endhighlight %}
 
 The command is the same for both Mac and Windows
 
@@ -65,17 +63,13 @@ You can see the environment variables you currently have set with the command:
 [<i class="fa-brands fa-windows icon"></i>](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/set_1){:target="_blank"}
 <hr class="icon-prefix">
 
-```sh
-set
-````
+{% highlight shell %}set {% endhighlight %}
 
 
 [<i class="fa-brands fa-apple icon"></i>](https://support.apple.com/en-gb/guide/terminal/apd382cc5fa-4f58-4449-b20a-41c53c006f8f/mac){:target="_blank"}
 <hr class="icon-prefix">
 
-```sh
-env
-```
+{% highlight shell %}env {% endhighlight %}
 
 The following variables are required for building and testing Android versions of your app.
 
