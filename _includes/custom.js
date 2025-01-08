@@ -43,7 +43,9 @@
 
     function closeSlide() {
         var slideOverlay = document.getElementById("slide-overlay");
-        slideOverlay.classList.toggle("show");
+        if (slideOverlay) {
+            slideOverlay.classList.toggle("show");
+        }
     }
 
     function getTargetClass(element) {
