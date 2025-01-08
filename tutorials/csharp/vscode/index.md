@@ -103,7 +103,7 @@ In the Start menu panel, start typing *Environment variables* and choose the opt
 appears. You will be taken to the system control panel as shown below where you should click the
 *Environment Variables* button.
 
-![Fig. 1. Creating environment variables on Windows](images/env_var_win_1.png){: standalone #fig1 data-title="Creating environment variables on Windows"}
+![Fig. 1. Creating environment variables on Windows](images/env_var_win_1.png){: standalone #fig1 class="h20" data-title="Creating environment variables on Windows"}
 
 In the next dialog, there are two panels. Click *New...* in the top panel for a new user variable and
 fill in the details.
