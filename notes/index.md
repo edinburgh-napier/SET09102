@@ -7,6 +7,17 @@ has_toc: false
 
 # Introduction
 
+<hr class="splash">
+
+![Grady Booch](../images/people/grady_booch.png)
+
+<blockquote class="pretty"><span>
+The function of good software is to make the complex appear to be simple.
+</span></blockquote>
+<p class="attribution"><a href="https://research.ibm.com/people/grady-booch">Grady Booch</a></p>
+
+<hr class="splash-bottom">
+
 The focus of this module is firmly on quality, and code quality in particular.
 It introduces you to some of the international quality standards that are relevant to
 software engineering, and provides practical experience with tools and techniques
