@@ -363,8 +363,8 @@ table.quadrants tr:first-child th:first-child {
   height: 2.4rem;
   padding: 0.2rem;
   background-color: #fff;
-  border: 1px solid grey;
-  color: white;
+  border: 1px solid #ddd;
+  color: #ddd;
   font-size: 1.6rem;
   font-weight: bold;
   cursor: pointer;
@@ -372,6 +372,7 @@ table.quadrants tr:first-child th:first-child {
 }
 
 #slide-close:hover {
+  color: white;
   background-color: #ddd;
 }
 
