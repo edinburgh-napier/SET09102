@@ -201,7 +201,12 @@
     var elements = document.getElementsByTagName('figure');
     for(var i = 0; i < elements.length; i++) {
         var el = elements[i];
-        el.onclick = enableSlide;
+        if (el.classList.contains('highlight')) {
+            null;
+        }
+        else {
+            el.onclick = enableSlide;
+        }
     }
 
     var elements = document.getElementsByClassName('language-mermaid');
