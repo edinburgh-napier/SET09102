@@ -16,8 +16,7 @@ Maybe we want to constrain the computation, the AI, to only do things we conside
 </span></blockquote>
 <p class="attribution">Stephen Wolfram</p>
 
-<hr class="splash">
-<br/>
+<hr class="splash-bottom">
 
 According to a recent
 [magazine article](https://www.businessinsider.com/chatgpt-jobs-at-risk-replacement-artificial-intelligence-ai-labor-trends-2023-02?r=US&IR=T#tech-jobs-coders-computer-programmers-software-engineers-data-analysts-1),
