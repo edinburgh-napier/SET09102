@@ -2,6 +2,7 @@
 title: Notes
 has_children: true
 nav_order: 2
+has_toc: false
 ---
 
 # Introduction
@@ -66,7 +67,7 @@ software engineers.
 > achieve a goal or overcome an obstacle, within a computerized system by non-standard
 > means.
 >
-> [![Wikipedia](../../images/wikipedia_link_icon.png)](https://en.wikipedia.org/wiki/Hacker)
+> [![Wikipedia](../images/wikipedia_link_icon.png)](https://en.wikipedia.org/wiki/Hacker)
 
 Now almost exclusively used in the sense of a *security hacker*, someone attempting to
 infiltrate or disable a computer system without authorisation, a hacker was simply
@@ -79,7 +80,7 @@ but not necessarily in a principled way. This meaning is the basis of the word *
 > hacking programs written by other hackers because they often lack the skills to write
 > their own.
 >
-> [![Technopedia](../../images/technopedia_link_icon.png)](https://www.techopedia.com/definition/4090/script-kiddie)
+> [![Technopedia](../images/technopedia_link_icon.png)](https://www.techopedia.com/definition/4090/script-kiddie)
 
 The name suggests an immaturity in this group of people. They have no serious interest in
 building their knowledge and expertise; instead, they are just excited by the idea of
@@ -91,7 +92,7 @@ causing mischief.
 > without much thought or creativity [...] only capable of mechanically following
 > instructions without understanding the broader implications of their work.
 >
-> [![NordVPN](../../images/NordVPN_link_icon.png)](https://nordvpn.com/cybersecurity/glossary/code-monkey/)
+> [![NordVPN](../images/NordVPN_link_icon.png)](https://nordvpn.com/cybersecurity/glossary/code-monkey/)
 
 This type of programmer is good at what they do, but have no interest in the wider context.
 They do not care about the purpose or impact of the development, and they avoid interactions
