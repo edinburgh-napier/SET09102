@@ -2,7 +2,7 @@
 title: Getting started with MAUI
 parent: C# practice
 grand_parent: Tutorials
-nav_order: 1
+nav_order: 2
 ---
 
 # Getting started with MAUI
@@ -27,11 +27,20 @@ The content of the tutorial is heavily based on the standard
 which uses Visual Studio IDE as the development tool. This version has been
 modified to use Visual Studio Code (VSCode) but the result should be the same.
 In the first stage, your app will allow users to enter a note and save it to
-device storage.  
+device storage. 
+
+If you have never used VSCode before, go through the 
+[tools tutorial](../vscode/index.md) before starting this one.
+You can also familiarise yourself with the editor with this 
+[video course](https://code.visualstudio.com/docs/introvideos/basics)
 
 ![Fig. 1. Notes app screenshots.](images/target.png){: standalone #fig1}
 
 ## 1. Create a project
+
+
+You can now run the app 
+
 
 Copy and clone the [stub repo](https://github.com/edinburgh-napier/SET09402){:target="_blank"} into your project workspaces folder.
 

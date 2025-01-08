@@ -30,7 +30,7 @@ where they are covered in more detail:
    suitability. Some tools are tuned for software develop while others are not - take the time
    to understand their capabilities.
 3. Assume that choosing a coding assistant is a one-time decision. 
-4. Worry about AI taking you job - instead, concentrate on becoming an expert in how to deploy
+4. Worry about AI taking your job - instead, concentrate on becoming an expert in how to deploy
    generative AI tools effectively.
 5. Let the AI do all the work - they will make mistakes and are no substitute for human judgement.
 
