@@ -150,7 +150,7 @@ Note that you will need to sign in with your University username and password to
 
 When you are done, you should have at least the extensions shown below.
 
-![Fig. 4. VSCode extensions](images/vscode_extensions.png){: standalone #fig4 data-title="VSCode extensions"}
+![Fig. 4. VSCode extensions](images/vscode_extensions.png){: standalone #fig4 .h20 data-title="VSCode extensions"}
 
 ## 5. Install Android dependencies
 
@@ -277,10 +277,12 @@ Creating an API is simply a question of pairing an Android platform with a devic
 be using the Google Pixel Pro 7 which can be installed using one of the commands below.
 
 For Windows and Intel Macs use
+<br/>
 
 {% highlight shell %}avdmanager create avd -d 30 --name Pixel_7_Pro -k "system-images;android-34;google_apis;x86_64" {% endhighlight %}
 
 For Apple silicon Macs use
+<br/>
 
 {% highlight shell %}avdmanager create avd -d 30 --name Pixel_7_Pro -k "system-images;android-34;google_apis;arm64-v8a" {% endhighlight %}
 

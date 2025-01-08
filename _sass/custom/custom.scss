@@ -91,7 +91,9 @@ figcaption p.figcaption {
   font-size: 0.9rem;
 }
 
+figure.h10 img {max-height: 10rem;}
 figure.h20 img {max-height: 20rem;}
+figure.h30 img {max-height: 30rem;}
 
 p.figcaption {
   margin: 0 5rem;
