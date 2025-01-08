@@ -197,7 +197,8 @@ and code snippets interleaved. Some work is therefore anticipated to extract the
 response so that it can be used as part of a project.
 
 <details>
-<summary>Response 1</summary>
+<summary>Response</summary>
+
 
 Creating a .NET MAUI application for a conference attendee app involves several steps, 
 including setting up the project, designing the user interface, and implementing the necessary 
@@ -302,7 +303,7 @@ extract the code; however, the code is not divided into separate files. Some add
 is therefore needed.
 
 <details>
-<summary>Response 1</summary>
+<summary>Response</summary>
 
 #### Text response
 
