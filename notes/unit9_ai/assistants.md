@@ -120,7 +120,7 @@ significantly enhance the accuracy and relevance of the generated code, ensuring
 and functionality within the target codebase.
 
 {: .tip-title }
-> [<i class="fa-regular fa-lightbulb"></i> Techniques in prompt engineering for software development
+> <i class="fa-regular fa-lightbulb"></i> Techniques in prompt engineering for software development
 > 
 > * Contextual Detailing:
 >
@@ -153,7 +153,7 @@ and functionality within the target codebase.
 >   on diverse text data, they are adept at parsing and responding to prompts written in 
 >   natural language.
 
-A a practical example, consider a developer working in C# who needs to create a function 
+As a practical example, consider a developer working in C# who needs to create a function 
 to calculate the sum of an array of integers. A simple prompt might be:
 
 > Write a C# function to sum an array.
@@ -198,7 +198,6 @@ response so that it can be used as part of a project.
 
 <details markdown=1>
 <summary>Response</summary>
-
 
 Creating a .NET MAUI application for a conference attendee app involves several steps, 
 including setting up the project, designing the user interface, and implementing the necessary 
@@ -538,7 +537,7 @@ the project root. The contents of each code file is also duplicated in the text 
 only the text response is shown below.
 
 <details markdown=1>
-<summary>Response 1</summary>
+<summary>Response</summary>
 
 I'll help you create a .NET MAUI conference attendee app. Let's break this down into key 
 features and create the initial structure.
