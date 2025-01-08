@@ -44,7 +44,7 @@
     function closeSlide() {
         var slideOverlay = document.getElementById("slide-overlay");
         if (slideOverlay != null) {
-            slideOverlay.classList.toggle("show");
+            slideOverlay.classList.remove("show");
         }
     }
 
@@ -184,12 +184,9 @@
         else {
             slideTitle.innerHTML = extractChildByTagName(this, "figCaption").innerHTML;
         }
-        slideOverlay.classList.toggle("show");
+        slideOverlay.classList.add("show");
         document.onkeydown = function (e) {
             closeSlide();
-            // e = e || window.event;
-            // var slideOverlay = document.getElementById("slide-overlay");
-            // slideOverlay.classList.toggle("show");
             document.onkeydown = null;
         };
     }

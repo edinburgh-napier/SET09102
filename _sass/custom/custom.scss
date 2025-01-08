@@ -359,18 +359,20 @@ table.quadrants tr:first-child th:first-child {
   top: 0;
   right: 0;
   display: inline;
-  width: 2rem;
-  height: 2rem;
+  width: 2.4rem;
+  height: 2.4rem;
   padding: 0.2rem;
-  background-color: #ddd;
+  background-color: #fff;
+  border: 1px solid grey;
   color: white;
   font-size: 1.6rem;
   font-weight: bold;
   cursor: pointer;
+  text-align: center;
 }
 
 #slide-close:hover {
-  background-color: #aaa;
+  background-color: #ddd;
 }
 
 /* Appears at the top of the slide */
