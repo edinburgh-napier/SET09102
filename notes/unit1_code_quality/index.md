@@ -2,7 +2,7 @@
 title: Code Quality
 parent: Notes
 has_children: true
-nav_order: 2
+nav_order: 1
 ---
 
 # Code Quality and Maintainability

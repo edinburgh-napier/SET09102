@@ -17,6 +17,8 @@
 
     const slideClose = document.createElement("div");
     slideClose.id = "slide-close";
+    slideClose.innerHTML = "X";
+    slideClose.onclick = closeSlide();
     slideOverlay.appendChild(slideClose);
 
     const slideTitle = document.createElement("div");
@@ -177,11 +179,18 @@
         }
         slideOverlay.classList.toggle("show");
         document.onkeydown = function (e) {
-            e = e || window.event;
-            var slideOverlay = document.getElementById("slide-overlay");
-            slideOverlay.classList.toggle("show");
+            closeSlide();
+            // e = e || window.event;
+            // var slideOverlay = document.getElementById("slide-overlay");
+            // slideOverlay.classList.toggle("show");
             document.onkeydown = null;
         };
+    }
+
+    function closeSlide() {
+        e = e || window.event;
+        var slideOverlay = document.getElementById("slide-overlay");
+        slideOverlay.classList.toggle("show");
     }
 
 

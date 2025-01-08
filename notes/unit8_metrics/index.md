@@ -2,7 +2,7 @@
 title: Metrics
 parent: Notes
 has_children: true
-nav_order: 9
+nav_order: 8
 ---
 
 # Software Metrics and Code Analysis Tools

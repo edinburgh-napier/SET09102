@@ -2,7 +2,7 @@
 title: Agile
 parent: Notes
 has_children: true
-nav_order: 5
+nav_order: 4
 ---
 
 # Agile methodologies

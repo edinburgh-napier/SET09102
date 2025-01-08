@@ -2,7 +2,7 @@
 title: AI in Software Engineering
 parent: Notes
 has_children: true
-nav_order: 10
+nav_order: 9
 ---
 
 # AI in Software Development
