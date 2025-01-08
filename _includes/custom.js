@@ -41,6 +41,11 @@
         }
     }
 
+    function closeSlide() {
+        var slideOverlay = document.getElementById("slide-overlay");
+        slideOverlay.classList.toggle("show");
+    }
+
     function getTargetClass(element) {
         if (element.tagName == "FIGURE") {
             return "figure";
@@ -185,11 +190,6 @@
             // slideOverlay.classList.toggle("show");
             document.onkeydown = null;
         };
-    }
-
-    function closeSlide() {
-        var slideOverlay = document.getElementById("slide-overlay");
-        slideOverlay.classList.toggle("show");
     }
 
 
