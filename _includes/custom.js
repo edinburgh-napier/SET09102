@@ -18,7 +18,7 @@
     const slideClose = document.createElement("div");
     slideClose.id = "slide-close";
     slideClose.textContent = "X";
-    slideClose.onclick = closeSlide();
+    slideClose.onclick = closeSlide;
     slideOverlay.appendChild(slideClose);
 
     const slideTitle = document.createElement("div");
