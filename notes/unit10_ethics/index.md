@@ -17,7 +17,7 @@ A professional is someone who can do his best work <br/>when he doesn't feel lik
 {: .attribution}
 [Alistair Cooke](https://en.wikipedia.org/wiki/Alistair_Cooke)
 
-<hr class="splash">
+<hr class="splash-bottom">
 
 Ethical considerations guide professionals in making responsible and conscientious decisions when 
 designing, developing, and deploying software. Ethical considerations in software engineering involve 

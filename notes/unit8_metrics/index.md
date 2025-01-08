@@ -16,7 +16,7 @@ The problem with quick and dirty...is that dirty remains long after quick has be
 </span></blockquote>
 <p class="attribution"><a href="https://stevemcconnell.com/">Steve McConnell</a></p>
 
-<hr class="splash">
+<hr class="splash-bottom">
 
 Code quality is a vital aspect of software development, but it is impossible to measure without 
 some kind of definition. That also turns out to be difficult because *quality* is such a generic term.

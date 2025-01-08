@@ -16,7 +16,7 @@ Agile is an attitude, not a technique with boundaries. An attitude has no bounda
 </span></blockquote>
 <p class="attribution"><a href="https://alistaircockburn.com/Bio">Alistair Cockburn</a></p>
 
-<hr class="splash">
+<hr class="splash-bottom">
 
 Agile software development is an iterative and flexible approach to building software, designed to 
 adapt to changing requirements and encourage collaboration between cross-functional teams. Unlike 

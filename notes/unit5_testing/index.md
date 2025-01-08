@@ -16,7 +16,7 @@ Code without tests is bad code. It doesn't matter how well written it is; it doe
 </span></blockquote>
 <p class="attribution"><a href="https://www.youtube.com/watch?v=y64abWxhWqo">Michael Feathers</a></p>
 
-<hr class="splash">
+<hr class="splash-bottom">
 
 In Agile development, testing plays a crucial role in ensuring the quality, reliability, and 
 continuous improvement of software. Unlike traditional development models where testing is conducted 

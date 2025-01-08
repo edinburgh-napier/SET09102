@@ -16,7 +16,7 @@ Deployment celebrations should be about the value of the new features, not joyfu
 </span></blockquote>
 <p class="attribution"><a href="https://www.thoughtworks.com/en-gb/profiles/leaders/rebecca-parsons">Rebecca Parsons</a></p>
 
-<hr class="splash">
+<hr class="splash-bottom">
 
 Because an agile project is delivering working software in a continuous series of increments, it then
 becomes possible to automate some of the essential steps in the process. The current term for this

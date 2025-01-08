@@ -14,7 +14,7 @@ nav_order: 9
 <blockquote class="pretty"><span>
 Maybe we want to constrain the computation, the AI, to only do things we consider ethical. But somehow we have to find a way to describe what we mean by that.
 </span></blockquote>
-<p class="attribution">Stephen Wolfram</p>
+<p class="attribution"><a href="https://www.stephenwolfram.com/index.php.en">Stephen Wolfram</a></p>
 
 <hr class="splash-bottom">
 

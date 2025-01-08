@@ -28,6 +28,8 @@ When you see **USERNAME** in a variable value, replace it with your username on 
 ## 1. Install the .NET SDK
 
 Follow the instructions for your operating system on the [Microsoft website](https://learn.microsoft.com/en-us/dotnet/core/install/){:target="_blank"}
+You should install .NET 8 for the purposes of this module. Although .NET 9 is available, there may be 
+some incompatibilities with other software tools.
 
 Check that .NET is installed correctly by executing the command:
 
