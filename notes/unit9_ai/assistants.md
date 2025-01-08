@@ -204,14 +204,14 @@ including setting up the project, designing the user interface, and implementing
 functionalities such as viewing the agenda, and facilitating interactions among speakers and 
 attendees. Below, I'll outline a basic approach to get you started on this project:
 
-#### 1. Set Up Your Development Environment
+### 1. Set Up Your Development Environment
 
 First, ensure you have the necessary tools:
 
 * **Visual Studio 2022** or later with the **Mobile development with .NET** workload installed.
 * **.NET 6** or higher.
 
-#### 2. Create a New .NET MAUI Application
+### 2. Create a New .NET MAUI Application
 
 Open Visual Studio and create a new project:
 
@@ -220,7 +220,7 @@ Open Visual Studio and create a new project:
 * Name your project (e.g., `ConferenceApp`).
 * Click **Create**.
 
-#### 3. Define the App Structure
+### 3. Define the App Structure
 
 Consider the main features of your app. For a conference app, typical features might include:
 
@@ -244,7 +244,7 @@ public AppShell()
 }
 ```
 
-#### 4. Implement the Agenda Page
+### 4. Implement the Agenda Page
 
 The agenda page can use a `CollectionView` or `ListView` to display the schedule:
 
@@ -267,23 +267,23 @@ The agenda page can use a `CollectionView` or `ListView` to display the schedule
 </ContentPage>
 ```
 
-#### 5. Implement the Speakers and Networking Pages
+### 5. Implement the Speakers and Networking Pages
 
 Similarly, create UI and backend logic for other pages using MVVM pattern for clean architecture.
 
-#### 6. Add Networking Features
+### 6. Add Networking Features
 
 For real-time chat or Q&A sessions, consider using **SignalR** for real-time communication:
 
 * Integrate a SignalR client in your .NET MAUI application to connect to a backend server.
 * Implement a hub on the server to handle connections and messaging.
 
-#### 7. Test the Application
+### 7. Test the Application
 
 Utilize the Visual Studio emulator or connect a physical device to test the application across 
 different platforms like Android and iOS.
 
-#### 8. Publish the Application
+### 8. Publish the Application
 
 Once testing is complete and the application is stable, you can publish it on various app stores 
 using the distribution tools provided by Visual Studio.
@@ -304,7 +304,7 @@ is therefore needed.
 <details markdown=1>
 <summary>Response</summary>
 
-#### Text response
+### Text response
 
 Key features:
 
@@ -321,7 +321,7 @@ Add these NuGet packages:
 
 Would you like me to add any specific features or modify the existing ones?
 
-#### Code response
+### Code response
 
 ```
 // MainPage.xaml
