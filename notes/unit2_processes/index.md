@@ -14,7 +14,7 @@ nav_order: 2
 <blockquote class="pretty"><span>
 Workflow is understanding your job, understanding your tools, and then not thinking about it any more.
 </span></blockquote>
-<p class="attribution"><a href="https://en.wikipedia.org/wiki/Merlin_Mann">"Merlin Mann</a></p>
+<p class="attribution"><a href="https://en.wikipedia.org/wiki/Merlin_Mann">Merlin Mann</a></p>
 <p class="credit">Photo: <a href="https://www.flickr.com/photos/thomashawk/2298694177">Thomas Hawk</a></p>
 
 <hr class="splash">
