@@ -614,7 +614,7 @@ public interface IMaintainable
 }
 
 // Interface for workers that perform automation tasks
-public interface IAutomationWorker
+public interface IAutomatable
 {
     void PerformAutomationTask();
 }
@@ -629,7 +629,7 @@ public class HumanWorker : IWorker, IRestable
     public void TakeBreak() { Console.WriteLine("Human is taking a break."); }
 }
 
-public class RobotWorker : IWorker, IMaintainable, IAutomationWorker
+public class RobotWorker : IWorker, IMaintainable, IAutomatable
 {
     public void Work() { Console.WriteLine("Robot is working."); }
     public void StartMaintenance() { Console.WriteLine("Robot is undergoing maintenance."); }
