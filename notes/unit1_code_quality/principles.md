@@ -22,7 +22,7 @@ and create software that is easier to maintain and extend over time. They underp
 other rules and approaches to engineering high-quality code, and you will see them
 referred to many times in these notes.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/SLDWfGbCElM?si=pjkgFM-7m9Iv_10w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/SLDWfGbCElM?si=pjkgFM-7m9Iv_10w?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## Why Principles Matter
 
