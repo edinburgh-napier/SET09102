@@ -15,6 +15,8 @@ following coding standards plays a vital role in fostering inclusive engineering
 practices, effective teamwork, and clear communication with both technical and 
 non-technical stakeholders.
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/rYwsi0ooQxA?si=U8dB337unx97Tp2H" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ## Why coding standards matter
 
 * **Readability**: Clear, consistent code is easier to understand, which benefits all team 
