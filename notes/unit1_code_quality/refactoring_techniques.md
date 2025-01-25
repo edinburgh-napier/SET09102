@@ -183,11 +183,11 @@ the KISS or DRY principles.
     After:
     
     ``` c#
-    public const double DiscountRate = 0.05;
+    public const double discountRate = 0.05;
     
     public void ApplyDiscount(Order order)
     {
-        order.Amount -= order.Amount * DiscountRate;  // Clear intent
+        order.Amount -= order.Amount * discountRate;  // Clear intent
     }
     ```
     
