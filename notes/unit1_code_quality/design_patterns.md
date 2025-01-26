@@ -18,6 +18,8 @@ encapsulate best practices in areas like object creation, structure, and behavio
 design patterns enables engineers to write cleaner, more modular code that is easier to extend 
 and adapt to future needs.
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/WoSN0uRBQWw?si=cmOVPnm46H1u3UW8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 The concept of software engineering design patterns originated from the work of architect 
 Christopher Alexander in the 1970s, who introduced the idea of patterns in architecture. This 
 concept was later adapted to software development by the Gang of Four—Erich Gamma, Richard Helm, 
@@ -454,3 +456,4 @@ your software solutions.
 ## Further reading
 
 * Design patterns : elements of reusable object-oriented software ([Gamma et al., 1995](https://napier.primo.exlibrisgroup.com/permalink/44NAP_INST/n96pef/alma9923574391402111))
+* [Refactoring Guru: Design Patterns](https://refactoring.guru/design-patterns)
