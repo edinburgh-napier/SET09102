@@ -19,6 +19,8 @@ complex logic that might not be immediately obvious from the code itself. Togeth
 readability and documentation form the foundation of a well-structured and maintainable 
 software system, ensuring long-term project success and smooth handover between team members.
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/tGsX7LVROlw?si=89CSR5VgXbzMVO-O" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ## Clean Code
 
 In software engineering, **_clean code_** refers to writing code that is easy to understand, 
