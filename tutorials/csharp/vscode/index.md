@@ -152,7 +152,22 @@ When you are done, you should have at least the extensions shown below.
 
 ![Fig. 4. VSCode extensions](images/vscode_extensions.png){: standalone #fig4 .h30 data-title="VSCode extensions"}
 
-## 5. Install Android dependencies
+## 5. Create a new project
+
+Open the command palette in VSCode (`CTRL+SHIFT+P` in Windows or `CMD+SHIFT+P` on Mac)
+and select the `.NET: New Project...` option. VSCode will then prompt you for several
+pieces of information. Enter or select the values shown below.
+
+| Prompt                 | Response                                                                |
+|------------------------|-------------------------------------------------------------------------|
+| Project type           | `.NET MAUI App Android, iOS, Mac Catalyst, macOS, MAUI, Tizen, Windows` |
+| Project root directory | Create a folder on your computer called `Notes`                         |
+| Project name           | `Notes`                                                                 |
+| Options confirmation   | Press ENTER to confirm your choices in this final step                  |
+
+VSCode will generate a complete default application for you.
+
+## 6. Install Android dependencies
 
 .NET 8 has a build target that installs the Android dependencies using the environment variables that you defined earlier. However, the command must be run from the root directory of a .NET project. Change into the root directory of your cloned repo (created in step 3 above) - that is the one containing the *.sln* file.
 
@@ -168,7 +183,7 @@ Run the following command to configure your machine:
 
 {% highlight shell %}dotnet build -t:InstallAndroidDependencies -f:net8.0-android -p:AndroidSdkDirectory="${ANDROID_HOME}" -p:JavaSdkDirectory="${JAVA_HOME}" -p:AcceptAndroidSDKLicenses=True {% endhighlight %}
 
-## 6. Update Android SDK
+## 7. Update Android SDK
 
 The Android SDK installed in the previous step may not be completely up to date. Update the contents with
 
@@ -177,7 +192,7 @@ The Android SDK installed in the previous step may not be completely up to date.
 
 {% highlight shell %}sdkmanager --update {% endhighlight %}
 
-## 7. Build project
+## 8. Build project
 
 The purpose of this step is to check that everything is working so far. If all of the steps up to this point have been successful, it should be possible to build the app.
 
@@ -200,7 +215,7 @@ To build the project, right-click the project name in the *Solution Explorer *se
 
 If there are any other error messages in the output, they will need to be investigated and resolved before moving on.
 
-## 8. Install Android emulator
+## 9. Install Android emulator
 
 To build and test your apps for the Android platform, you need either an Android phone or a software emulator. For consistency, we are planning to use an emulator by default, but if you want to use your Adroid device that is fine. You will just need to follow the appropriate instructions.
 
@@ -223,7 +238,7 @@ The emulator can be installed using one of the following commands:
 > corresponds to the version of the emulator that you downloaded
 
 
-## 9. Install AVD image
+## 10. Install AVD image
 
 The emulator is an application for playing virtual machines that represent different types of 
 phone with different software configurations. On its own, it does nothing, so we need to create a 
@@ -243,7 +258,7 @@ For Apple Silicon Macs, use
 
 {% highlight shell %}sdkmanager --install "system-images;android-34;google_apis;arm64-v8a" {% endhighlight %}
 
-## 10. Configure AVD manager
+## 11. Configure AVD manager
 
 The AVD Manager extension in VSCode allows you to create Android Virtual Devices (AVDs) based on the images that you have installed.
 
@@ -271,7 +286,7 @@ Once the AVD Manager is correctly configured, information about the installed an
 
 ![Fig. 7. SDK details](images/sdk_details.png){: standalone #fig7 data-title="SDK details"}
 
-## 11. Create AVD
+## 12. Create AVD
 
 Creating an API is simply a question of pairing an Android platform with a device file. We will 
 be using the Google Pixel Pro 7 which can be installed using one of the commands below.
@@ -289,21 +304,6 @@ For Apple silicon Macs use
 Clicking the refresh icon in the *Android Virtual Device* panel will reveal the newly-created AVD. 
 Start it by clicking the *Run* icon next to its name. If everything is set up correctly, you should 
 see a virtual Android device appear on your screen.
-
-## 12 Create a new project
-
-Open the command palette in VSCode (`CTRL+SHIFT+P` in Windows or `CMD+SHIFT+P` on Mac)
-and select the `.NET: New Project...` option. VSCode will then prompt you for several
-pieces of information. Enter or select the values shown below.
-
-| Prompt                 | Response                                                                |
-|------------------------|-------------------------------------------------------------------------|
-| Project type           | `.NET MAUI App Android, iOS, Mac Catalyst, macOS, MAUI, Tizen, Windows` |
-| Project root directory | Create a folder on your computer called `Notes`                         |
-| Project name           | `Notes`                                                                 |
-| Options confirmation   | Press ENTER to confirm your choices in this final step                  |
-
-VSCode will generate a complete default application for you.
 
 ## 13. Run the default app
 
