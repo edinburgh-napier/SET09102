@@ -20,7 +20,7 @@ that has been put together with little care and attention. A code smell does not
 always indicate that there is a problem. For example, long methods are best avoided
 but occasionally a method with more that a dozen lines or so is actually needed.
 
-![Fig. 1. Smelly Code (<a href="https://xkcd.com/1513">xkcd</a>)](https://imgs.xkcd.com/comics/code_quality.png#figure){: standalone #fig1 data-title="Smelly Code" }
+<iframe width="560" height="315" src="https://www.youtube.com/embed/x-_ns8xcrlw?si=YH6hT1g_ivhxNpB1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 Beck and Fowler describe 24 smells which they tabulate for reference at the end of the
 book. The table is reproduced below - the various refactoring strategies are described
@@ -69,6 +69,8 @@ ultimately leads to cleaner, more robust, and scalable code. By identifying and
 eliminating code smells, developers can ensure that their code aligns with the core 
 tenets of software engineering, such as **DRY** (Don't Repeat Yourself) and **KISS** (Keep It 
 Simple, Stupid), resulting in higher-quality, more maintainable software systems.
+
+![Fig. 1. Smelly Code (<a href="https://xkcd.com/1513">xkcd</a>)](https://imgs.xkcd.com/comics/code_quality.png#figure){: standalone #fig1 data-title="Smelly Code" }
 
 The next few sections provide some examples of code smells with slightly opaque names.
 This is not to suggest these are the most important ones to know about - you should make
