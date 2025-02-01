@@ -12,7 +12,7 @@ has_toc: false
 ![Grady Booch](../images/people/grady_booch.png)
 
 <blockquote class="pretty"><span>
-The function of good software is to make the complex appear to be simple.
+The function of good software is <br/>to make the complex appear to be simple.
 </span></blockquote>
 <p class="attribution"><a href="https://research.ibm.com/people/grady-booch">Grady Booch</a></p>
 

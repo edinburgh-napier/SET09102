@@ -13,6 +13,8 @@ by the Consortium for Information and Software Quality (CISQ), the overall annua
 industry of poor quality code was $2.41 trillion. Of this overall total, about
 $1.52 trillion was attributed to *technical debt* (TD).
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/4i2KLNLt4fk?si=yBN0ReXY4Jic0hT6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 TD arises when short-term priorities are allowed to take precedence over known best
 practices which would ensure a higher quality product. The name comes from an analogy
 with financial debt where money that is borrowed has to be paid off in the long term.
