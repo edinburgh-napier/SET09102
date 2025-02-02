@@ -19,7 +19,7 @@ The most widely used version control systems today, such as [Git](https://git-sc
 [Subversion](https://subversion.apache.org/) (SVN), and 
 [Mercurial](https://www.mercurial-scm.org/), allow for distributed collaboration, where 
 each developer works independently on their own copy of the project. With tools like 
-[GitHub](https://github.com),[GitLab](https://about.gitlab.com/), and 
+[GitHub](https://github.com), [GitLab](https://about.gitlab.com/), and 
 [Bitbucket](https://bitbucket.org/product/), teams can easily manage branches, pull 
 requests, and code reviews, ensuring that changes are properly reviewed and integrated 
 into the main codebase.

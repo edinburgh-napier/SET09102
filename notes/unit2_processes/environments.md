@@ -70,6 +70,52 @@ a regular basis. Typically, this is done just before starting a new development 
 work on a task, it is important that developer's working environment remains stable. Changes
 from other developers are only introduced between one task and the next.
 
+## Other types of environment
+
+Having a clear understanding of the way environments are used within a project is vital to
+ensure that things continue to run smoothly. Many steps in the process of code deployment 
+and synchronisation of environments can be automated and in the majority of cases there will
+be no problems. However, no system is perfect and when things go wrong, it is up to the team
+to sort them out. Some steps such as the synchronisation of the development environment remain
+the responsibility of the individual developer. A good familiarity with some basic concepts is
+therefore required. The remained of this section recaps on some concepts that have almost certainly
+come across before. They bear repeating here though because they are fundamental to the
+way software systems are developed and managed, and having a clear picture of what is going on
+behind the scenes helps to understand processes more clearly and gives you greater control over
+them. If you are comfortable working at the command line, you will have no difficulty with the
+ideas summarised here. Although the majority of our interactions with computers now take place 
+via a graphical user interface (GUI), the files that make up an application are still arranged 
+in a hierarchical tree structure. This has been a constant feature of operating system design since 
+the introduction of [Multics](https://en.wikipedia.org/wiki/Hierarchical_file_system) in 1967.
+While a GUI is convenient, it is much less efficient that using the command line, provides
+limited control and has its own learning curve.
+
+In a complex or sensitive context, it may be advantageous to differentiate between a test
+environment and a _staging_ environment. A staging environment is a controlled, production-like 
+environment used to test software just before it is released to production. It closely mimics 
+the configuration, data, dependencies, and infrastructure of the live production environment, 
+providing a space to validate that the application will function correctly for end users. In 
+staging, teams can conduct final tests, such as end-to-end testing, performance testing, and 
+user acceptance testing (UAT), to confirm the software’s stability, functionality, and 
+readiness for release. The purpose of the staging environment is to simulate real-world 
+conditions as closely as possible, allowing teams to catch and address any last-minute issues 
+that might arise when the software is deployed to actual users.
+
+An integration testing environment, in cointrast, is used earlier in the development process 
+to test how different components of an application work together. It allows developers to 
+verify that various modules, services, and external dependencies (like databases or APIs) 
+integrate properly. Integration testing environments may not always match the full 
+configuration of production; they may lack certain data, security settings, or infrastructure 
+setups that are present in staging. The goal of integration testing is to ensure that each 
+part of the application communicates and functions correctly within the system as a whole.
+
+While both staging and integration testing environments are used to validate the application, 
+they serve different purposes and occur at different stages in the pipeline. The integration 
+testing environment is used to verify that components work together correctly, often as a step 
+within a continuous integration pipeline, whereas the staging environment is typically the last 
+testing environment before production, providing a final check under conditions that closely 
+replicate those in production.
+
 ## Deployment
 
 Deployment in the context of software product development and maintenance refers to the process 

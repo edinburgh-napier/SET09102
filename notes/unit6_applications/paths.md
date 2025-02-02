@@ -1,5 +1,5 @@
 ---
-title: Environments
+title: Paths and roots
 parent: Building Applications
 has_children: true
 has_toc: false
@@ -7,78 +7,16 @@ nav_order: 3
 mermaid: true
 ---
 
-# Environments
+# Knowing the landscape
 
-An *environment* is the working context of a software system. The term is widely used and it
-is important to understand its full implications. The major distinction is between the *production*
-environment (also referred to as the *live* environment) where a system is in actual use, 
-and the *development* environment where software developers are making changes. As the software 
-system evolves over time, code changes will be introduced into the production environment, but this has 
-to be done very carefully to avoid any disruption to the users. The development environment 
-replicates the production environment including code and supporting infrastructure such as databases. 
-Because each member of the development team will be working on different changes to the codebase, 
-each one will have their own development environment. This is an important detail: the development 
-environment is not shared - each member of the team has their own copy which includes the last known 
-good configuration of the codebase, plus the changes they are currently working on.
-
-![Fig. 1: System environments](images/environments.png){: standalone #fig1 data-title="System environments" }
-
-Code repositories such as GitHub are excellent tools for managing the synchronisation of the
-various environments in use. Once developers have completed the changes they are working on, 
-they *push* the code to the repository. Once any quality assurance procedures have been 
-completed, the code can then be *deployed* to the production environment. Fig. 1 illustrates this
-and also includes a test environment where integrated code can be tested before deployment.
-Like the live environment, the test environment is a shared instance of the code that is
-hosted on a server or on the cloud. Development environments, in contrast, are located on 
-the workstation belonging to the individual developer. In order for their personal development
-environment to be kept up to date, developers need to *fetch* changes from the repository on
-a regular basis. Typically, this is done just before starting a new development task. During
-work on a task, it is important that developer's working environment remains stable. Changes
-from other developers are only introduced between one task and the next.
-
-Having a clear understanding of the way environments are used within a project is vital to
-ensure that things continue to run smoothly. Many steps in the process of code deployment 
-and synchronisation of environments can be automated and in the majority of cases there will
-be no problems. However, no system is perfect and when things go wrong, it is up to the team
-to sort them out. Some steps such as the synchronisation of the development environment remain
-the responsibility of the individual developer. A good familiarity with some basic concepts is
-therefore required. The remained of this section recaps on some concepts that have almost certainly
-come across before. They bear repeating here though because they are fundamental to the
-way software systems are developed and managed, and having a clear picture of what is going on
-behind the scenes helps to understand processes more clearly and gives you greater control over
-them. If you are comfortable working at the command line, you will have no difficulty with the
-ideas summarised here. Although the majority of our interactions with computers now take place 
-via a graphical user interface (GUI), the files that make up an application are still arranged 
-in a hierarchical tree structure. This has been a constant feature of operating system design since 
-the introduction of [Multics](https://en.wikipedia.org/wiki/Hierarchical_file_system) in 1967.
-While a GUI is convenient, it is much less efficient that using the command line, provides
-limited control and has its own learning curve.
-
-In a complex or sensitive context, it may be advantageous to differentiate between a test
-environment and a _staging_ environment. A staging environment is a controlled, production-like 
-environment used to test software just before it is released to production. It closely mimics 
-the configuration, data, dependencies, and infrastructure of the live production environment, 
-providing a space to validate that the application will function correctly for end users. In 
-staging, teams can conduct final tests, such as end-to-end testing, performance testing, and 
-user acceptance testing (UAT), to confirm the software’s stability, functionality, and 
-readiness for release. The purpose of the staging environment is to simulate real-world 
-conditions as closely as possible, allowing teams to catch and address any last-minute issues 
-that might arise when the software is deployed to actual users.
-
-An integration testing environment, in cointrast, is used earlier in the development process 
-to test how different components of an application work together. It allows developers to 
-verify that various modules, services, and external dependencies (like databases or APIs) 
-integrate properly. Integration testing environments may not always match the full 
-configuration of production; they may lack certain data, security settings, or infrastructure 
-setups that are present in staging. The goal of integration testing is to ensure that each 
-part of the application communicates and functions correctly within the system as a whole.
-
-While both staging and integration testing environments are used to validate the application, 
-they serve different purposes and occur at different stages in the pipeline. The integration 
-testing environment is used to verify that components work together correctly, often as a step 
-within a continuous integration pipeline, whereas the staging environment is typically the last 
-testing environment before production, providing a final check under conditions that closely 
-replicate those in production.
+Managing paths, root directories, and environment variables is essential for maintaining control 
+over a software project, but to work effectively, a developer must also maintain a clear mental 
+map of all the environments in use. Whether switching between development, staging, and 
+production, or handling different configurations across operating systems, understanding how 
+paths resolve and where dependencies are stored prevents errors and inconsistencies. Environment 
+variables further abstract critical settings, ensuring flexibility without hardcoding sensitive 
+data. A strong grasp of these concepts minimises deployment issues and enhances project 
+maintainability.
 
 ## The path
 
@@ -262,7 +200,7 @@ mapper (ORM) tool. Running the change scripts on an instance of the database in 
 the required changes is known as *migration*.
 
 {: .tip-title }
-> [<i class="fa-regular fa-lightbulb"></i> Tips for working with multiple environments](environments_tips)
+> [<i class="fa-regular fa-lightbulb"></i> Tips for working with multiple environments](paths_tips)
 
 ## Further reading
 
