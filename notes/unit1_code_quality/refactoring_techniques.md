@@ -897,3 +897,6 @@ clean, readable, and maintainable over time.
 {: .tip-title }
 > [<i class="fa-regular fa-lightbulb"></i> Tips for refactoring](refactoring_techniques_tips)
 
+## Further reading
+
+* [Refactoring techniques](https://refactoring.guru/refactoring/techniques)
