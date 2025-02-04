@@ -1,6 +1,6 @@
 ---
 title: CI/CD
-parent: Tools
+parent: C# practice
 grand_parent: Tutorials
 nav_order: 5
 ---
