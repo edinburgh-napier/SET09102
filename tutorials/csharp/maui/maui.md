@@ -294,7 +294,7 @@ markup the following markup:
                 Placeholder="Enter your note"
                 HeightRequest="100" />
 
-        <Grid ColumnDefinitions="\*,\*" ColumnSpacing="4">
+        <Grid ColumnDefinitions="*,*" ColumnSpacing="4">
             <Button Text="Save"
                     Clicked="SaveButton_Clicked" />
 
