@@ -185,5 +185,7 @@ testing and integration process. They notify developers of conflicts, allowing t
 issues before merging the code into the main branch. See the [CI/CD notes](../unit6_ci_cd) for
 more details on this.
 
-## Best practices
+{: .tip-title }
+> [<i class="fa-regular fa-lightbulb"></i> Tips for conflict resolution](conflict_resolution_tips.md)
+
 
