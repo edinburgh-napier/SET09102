@@ -371,9 +371,11 @@ and saving notes.
     file is represented by the `_fileName` variable. Add the following `string`
     variable declaration to the `NotePage` class:
 
+    ```c#
     public partial class NotePage : ContentPage
     {
         string _fileName = Path.Combine(FileSystem.AppDataDirectory, "notes.txt");
+    ```
 
     The code above constructs a path to the file, storing it in the app's local data directory. The file name is notes.txt.
 
