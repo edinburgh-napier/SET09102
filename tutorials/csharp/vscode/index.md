@@ -13,8 +13,15 @@ Follow the instructions below carefully.
 
 Where you are asked to execute a command, you should do this in a command window. On a Mac,
 that means in a [terminal](https://support.apple.com/en-gb/guide/terminal/welcome/mac){:target="_blank"},
-and on Windows it means using a command prompt. Please avoid using the Windows PowerShell
-unless you are confident with it.
+and on Windows it means using a command prompt. 
+
+{: .warning-title }
+> <i class="fa-solid fa-triangle-exclamation"></i> Warning
+> 
+> Please avoid using the Windows PowerShell unless you are confident with it.
+> You can configure the default terminal tool to be CMD in your
+> <a href="https://code.visualstudio.com/docs/terminal/profiles" target="_blank">VSCode profile</a>
+
 
 Where the format of a command is operating system specific, it will be labelled with either
 <i class="fa-brands fa-windows icon"></i> or <i class="fa-brands fa-apple icon"></i>
