@@ -6,7 +6,7 @@ nav_exclude: true
 nav_order: 1
 ---
 
-# Practical tips for using atructured aoftware development methods
+# Practical tips for using structured software development methods
 
 1. Clear and Stable Requirements
 

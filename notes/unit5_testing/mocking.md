@@ -313,9 +313,9 @@ class UserServiceTest {
 }
 ```
 
-In this example, Mockito is used to mock the UserRepository interface. The when method allows us 
-to specify that getUserById(1) should return a User object with the name "Alice". The verify 
-method checks that getUserById was called exactly once. Mockito’s syntax is clean and makes 
+In this example, Mockito is used to mock the `UserRepository` interface. The when method allows us 
+to specify that `getUserById(1)` should return a User object with the name "Alice". The verify 
+method checks that `getUserById` was called exactly once. Mockito’s syntax is clean and makes 
 setting up expectations and verifications straightforward.
 
 ### unittest.mock (Python)
@@ -354,9 +354,9 @@ class TestUserService(TestCase):
         mock_repository.get_user_by_id.assert_called_once_with(1)
 ```
 
-In this example, unittest.mock is used to create a mock repository. The return_value attribute of 
-get_user_by_id specifies the return data for this method. assert_called_once_with is used to verify 
-that get_user_by_id was called with the expected argument.
+In this example, `unittest.mock` is used to create a mock repository. The `return_value` attribute of 
+`get_user_by_id` specifies the return data for this method. `assert_called_once_with` is used to verify 
+that `get_user_by_id` was called with the expected argument.
 
 Mocking frameworks are powerful tools that make unit testing more efficient and effective. By 
 isolating dependencies, simplifying configuration, and providing verification capabilities, these 
