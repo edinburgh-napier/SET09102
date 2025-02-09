@@ -386,7 +386,7 @@ two files. They are
 * _20240713135445\_InitialCreate.cs_: This is the migration script - note that the number at the start of the filename is a timestamp and so your file will be named slightly differently.
 
 {: .note-title }
-> <i class="fa-solid fa-circle-question"></i> Note
+> <i class="fa-solid fa-circle-info"></i> Note
 > 
 > The name _InitialCreate_ is commonly used, but is not mandatory. In general, you should give 
 > migrations a descriptive name like commit comments so that it is clear what changes are being made.
@@ -488,7 +488,7 @@ the database.
     ```
         
     {: .note-title }
-    > <i class="fa-solid fa-circle-question"></i> Note
+    > <i class="fa-solid fa-circle-info"></i> Note
     > 
     > As currently defined, the new properties will generate non-nullable columns in the database 
     > table. That means that a note must be associated with a project. If there are existing notes 
