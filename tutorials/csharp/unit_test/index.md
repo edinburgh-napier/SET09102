@@ -264,7 +264,7 @@ tests for the Notes app.
 The purpose of this step is just to test that the framework is properly configured.
 
 {: .note-title }
-> <i class="fa-solid fa-triangle-exclamation"></i> Note
+> <i class="fa-solid fa-circle-info"></i> Note
 > 
 > xUnit supports two different types of unit test:
 >
@@ -315,7 +315,8 @@ The purpose of this step is just to test that the framework is properly configur
 To see what happens when a test fails, change the Assert.True(false) and run the test again.
 
 {: .note-title }
-> <i class="fa-solid fa-triangle-exclamation"></i> Note
+> <i class="fa-solid fa-circle-info"></i> Note
+> 
 > The `Assert` class provides many options for testing the results of a test. Please refer to the 
 > [xUnit documentation](https://csharp-tokyo.github.io/xUnit-Hands-on/class_xunit_1_1_assert.html) 
 > for details.
@@ -727,7 +728,7 @@ Data Studio to check that the database, the tables and the data have been create
 Resolve any issues before continuing.
 
 {: .note-title }
-> <i class="fa-solid fa-circle-question"></i> Information
+> <i class="fa-solid fa-circle-info"></i> Information
 >
 > The [xUnit documentation](https://xunit.net/docs/shared-context#class-fixture) recommends 
 > that the test class implements the `IDisposable` interface so that the database can be dropped 
