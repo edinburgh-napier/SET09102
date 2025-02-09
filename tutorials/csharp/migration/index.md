@@ -94,7 +94,7 @@ This step creates a project to contain the new shared library.
     ![Fig. 3. New database project](images/database_project.png){: standalone #fig3 .w20 data-title="New database project"}
     
 
-#### Update the project content
+### Update the project content
 
 First, remove the default file `Class1.cs`.
 
