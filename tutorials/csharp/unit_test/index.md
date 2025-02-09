@@ -152,14 +152,14 @@ to bear in mind.
     using Xunit;
     using...
     
-    # Arrange
-            ### Setup actions here
+    // Arrange
+            // Setup actions here
     
-    # Act
-            ### Test here
+    // Act
+            // Test here
     
-    # Assert
-            ### Verification checks here
+    // Assert
+            // Verification checks here
     ```
     
 *   **Do not embed logic in unit tests**
