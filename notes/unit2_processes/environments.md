@@ -12,6 +12,8 @@ We have already discussed distributed version control where each developer has t
 of the shared repository. Here, we introduce a related concept that also involves multiple
 copies of the codebase.
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/YopLok0FJ3w?si=aA6gB2IMGEzs8EFx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 An *environment* is the working context of a software system. The term is widely used and it
 is important to understand its full implications. The major distinction is between the *production*
 environment (also referred to as the *live* environment) where a system is in actual use,
