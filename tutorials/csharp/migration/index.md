@@ -91,7 +91,7 @@ This step creates a project to contain the new shared library.
     
     The new project should appear as shown in Fig. 3.
     
-    ![Fig. 3. New database project](images/database_project.png){: standalone #fig3 data-title="New database project"}
+    ![Fig. 3. New database project](images/database_project.png){: standalone #fig3 .w20 data-title="New database project"}
     
 
 #### Update the project content
