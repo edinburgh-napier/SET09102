@@ -131,7 +131,7 @@ a development state to an operational state, making it accessible to users or te
 includes installing the software, configuring the environment, updating databases, ensuring 
 compatibility, and preparing the system for user access. These operations can be performed manually
 or they can be automated using 
-[continuous integration/continuous deployment](../unit6_ci_cd/index.md) (CI/CD). Both strategies
+[continuous integration/continuous deployment](../unit7_devops/overview.md) (CI/CD). Both strategies
 have their advantages and disadvantages:
 
 **Manual Deployment**
