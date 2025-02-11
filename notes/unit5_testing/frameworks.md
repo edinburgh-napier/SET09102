@@ -17,7 +17,7 @@ automate repetitive testing tasks, significantly reducing manual effort and mini
 
 Testing frameworks are essential for implementing different types of tests, such as unit, 
 integration, end-to-end, and regression tests. They offer features like test case management, 
-assertions to verify expected behavior, test data handling, and reporting. Most frameworks also 
+assertions to verify expected behaviour, test data handling, and reporting. Most frameworks also 
 support integration with Continuous Integration (CI) tools, making it possible to run tests 
 automatically with every code change, thus helping to catch issues early in the development process.
 

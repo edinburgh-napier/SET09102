@@ -156,7 +156,7 @@ Some examples of development metaphors are listed below.
   bookings as “reservations,” helping simplify how users interact with the system.
 
 The metaphor acts as a high-level mental model that supports communication, simplifies complexity, 
-and guides design. By offering a relatable analogy for the system’s structure and behavior, the 
+and guides design. By offering a relatable analogy for the system’s structure and behaviour, the 
 metaphor helps all team members maintain a consistent understanding of the project, ultimately 
 leading to more cohesive development and collaborative alignment. However, they can sometimes 
 oversimplify or fail to represent complex systems accurately. In cases where the system requires 

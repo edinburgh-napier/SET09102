@@ -17,8 +17,8 @@ nav_order: 1
 
     > Follow object-oriented principles like encapsulation, inheritance, polymorphism, and abstraction. 
     > Design classes to represent real-world entities or logical constructs within your system, grouping 
-    > related properties and behaviors. For example, create classes that reflect the entities of your 
-    > system, like `User`, `Order`, or `Product`, each with their own attributes and behaviors.
+    > related properties and behaviours. For example, create classes that reflect the entities of your 
+    > system, like `User`, `Order`, or `Product`, each with their own attributes and behaviours.
 
 3. Consider the User Journey in Your UX Design
 

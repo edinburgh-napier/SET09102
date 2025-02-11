@@ -50,7 +50,7 @@ In TDD, tests act as a safety net, alerting developers if changes break existing
 This makes TDD ideal for complex or evolving projects, as it ensures each feature or function is 
 thoroughly verified and provides immediate feedback if regressions occur. The test-first approach 
 also enforces simpler, more modular designs since developers are required to think carefully about 
-the behavior of each unit of code.
+the behaviour of each unit of code.
 
 ## The Red-Green-Refactor Cycle
 
@@ -64,7 +64,7 @@ TDD follows a simple, iterative process known as the Red-Green-Refactor cycle:
   you know the functionality works as specified.
 * **Refactor**: With a passing test, you can now refactor the code to improve its structure, 
   readability, or performance while ensuring the test still passes. Refactoring at this stage 
-  helps you write clean, maintainable code without altering behavior, as the test will confirm 
+  helps you write clean, maintainable code without altering behaviour, as the test will confirm 
   if any issues arise from the changes.
 
 This cycle repeats for each new piece of functionality, allowing developers to build features 
@@ -123,7 +123,7 @@ public class Calculator
 With this simple code, the `Add` method adds two integers and returns the result. When we run the 
 test now, it should pass because the `Add` method returns the correct sum.
 
-**Step 3: Refactor - Improve Code Without Changing Behavior**
+**Step 3: Refactor - Improve Code Without Changing Behaviour**
 
 At this stage, we examine the code to see if any improvements are needed. In this case, the code 
 is already simple and meets the requirement, so no refactoring may be necessary. However, in a 
@@ -140,7 +140,7 @@ needed.
 Test-Driven Development (TDD) offers several significant benefits for developers and teams. First, 
 TDD creates built-in documentation for the codebase. Each test serves as a form of documentation, 
 demonstrating how each piece of functionality is supposed to work and allowing future developers 
-to understand the intended behavior without needing extensive external documentation. Additionally, 
+to understand the intended behaviour without needing extensive external documentation. Additionally, 
 TDD enables early bug detection by ensuring that tests are in place before code is written. This 
 approach helps developers identify and fix bugs early in the development process, reducing the 
 risk of costly errors in production.

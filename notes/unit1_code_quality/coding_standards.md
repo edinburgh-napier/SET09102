@@ -280,7 +280,7 @@ mutual support.
 
 Standards play a critical role in how we communicate complex engineering concepts, both 
 within the team and to external stakeholders. Well-commented and structured code helps 
-technical and non-technical audiences understand the purpose and behavior of the software. 
+technical and non-technical audiences understand the purpose and behaviour of the software. 
 By adhering to standards, developers ensure that their code "speaks the same language," 
 making communication smoother and more effective across different audiences.
 

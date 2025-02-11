@@ -24,7 +24,7 @@ integration testing focuses on verifying that different components or modules of
 work together as intended. Unlike unit tests, which isolate and test individual functions or 
 classes, integration tests assess the interactions and data flow between multiple parts of the 
 system as illustrated in Fig. 2. The goal of integration testing is to identify issues that may 
-arise when components are combined, such as data mismatches, unexpected behaviors, or failures due 
+arise when components are combined, such as data mismatches, unexpected behaviours, or failures due 
 to complex dependencies.
 
 ![Fig. 2. Integration testing](images/testing2.png){: standalone #fig2 data-title="Integration testing" }
@@ -32,7 +32,7 @@ to complex dependencies.
 When developing an application, it’s common to divide code into smaller units that handle specific 
 tasks, such as managing database queries, processing user input, or handling API requests. Each of 
 these units may work correctly on its own, as verified by unit tests, but when integrated with other 
-components, unexpected behaviors can occur. Integration testing identifies these issues early by 
+components, unexpected behaviours can occur. Integration testing identifies these issues early by 
 verifying that components interact smoothly, produce the correct results, and handle data exchanges 
 properly. For example, an integration test might verify that the user authentication system interacts
 correctly with the database, or that a payment processing service communicates successfully with an 
@@ -108,7 +108,7 @@ the process of re-running tests — often a comprehensive suite of tests as illu
 including unit tests, integration tests, and end-to-end tests — to ensure that recent code changes 
 have not inadvertently affected existing functionality. In an active development environment, each 
 of changes to the codebase carries the risk of introducing unintended side effects, especially in 
-larger, interconnected systems where components rely on each other’s behavior.
+larger, interconnected systems where components rely on each other’s behaviour.
 
 ![Fig. 3. Regression testing](images/testing3.png){: standalone #fig3 data-title="Regression testing" }
 

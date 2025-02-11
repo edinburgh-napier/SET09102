@@ -12,7 +12,7 @@ nav_order: 5
 ![Michael Feathers](../../images/people/michael_feathers.png)
 
 <blockquote class="pretty"><span>
-Code without tests is bad code. It doesn't matter how well written it is; it doesn't matter how pretty or object-oriented or well-encapsulated it is. With tests, we can change the behavior of our code quickly and verifiably. Without them, we really don't know if our code is getting better or worse.
+Code without tests is bad code. It doesn't matter how well written it is; it doesn't matter how pretty or object-oriented or well-encapsulated it is. With tests, we can change the behaviour of our code quickly and verifiably. Without them, we really don't know if our code is getting better or worse.
 </span></blockquote>
 <p class="attribution"><a href="https://www.youtube.com/watch?v=y64abWxhWqo">Michael Feathers</a></p>
 
@@ -26,7 +26,7 @@ alignment with rapidly evolving requirements. This iterative, collaborative appr
 helps Agile teams maintain a steady pace of delivery without sacrificing quality, as each feature 
 or function is verified immediately after development.
 
-Agile testing practices, such as Test-Driven Development (TDD), Behavior-Driven Development (BDD), 
+Agile testing practices, such as Test-Driven Development (TDD), Behaviour-Driven Development (BDD), 
 and automated regression testing, support the agile goal of delivering functional, high-quality 
 increments in short cycles. By testing early and often, Agile teams can respond quickly to changes, 
 fix issues before they compound, and ensure that the product remains stable and usable as it 

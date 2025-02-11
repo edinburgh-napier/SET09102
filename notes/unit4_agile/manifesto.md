@@ -242,7 +242,7 @@ changes and find creative solutions that fit the project’s unique challenges.
 
 <details markdown=1 class="blue-bar">
 <summary>12. At regular intervals, the team reflects on how to become more effective, then tunes 
-and adjusts its behavior accordingly.</summary>
+and adjusts its behaviour accordingly.</summary>
 
 <p>
 Agile values continuous improvement through regular reflection. In collaborative projects, teams 

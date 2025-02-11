@@ -98,7 +98,7 @@ stress and failure scenario tests to confirm that the system can recover gracefu
 Identifying and addressing reliability issues early in the project reduces the risk of system downtime after 
 release and provides greater confidence that the system will function consistently in production.
 
-Several methods are commonly used to assess reliability, each targeting different aspects of system behavior 
+Several methods are commonly used to assess reliability, each targeting different aspects of system behaviour 
 to confirm that the software is robust and dependable before release.
 
 One primary method for testing reliability is load testing, which assesses how the system performs under 
