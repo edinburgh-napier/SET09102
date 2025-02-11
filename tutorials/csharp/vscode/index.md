@@ -176,7 +176,10 @@ VSCode will generate a complete default application for you.
 
 ## 6. Install Android dependencies
 
-.NET 8 has a build target that installs the Android dependencies using the environment variables that you defined earlier. However, the command must be run from the root directory of a .NET project. Change into the root directory of your cloned repo (created in step 3 above) - that is the one containing the *.sln* file.
+.NET 8 has a build target that installs the Android dependencies using the environment variables 
+that you defined earlier. However, the command must be run from the root directory of a .NET 
+project. Change into the root directory of your project (created in step 3 above) - that is the 
+one containing the *.sln* file.
 
 Run the following command to configure your machine:
 
@@ -184,6 +187,13 @@ Run the following command to configure your machine:
 <hr class="icon-prefix">
 
 {% highlight shell %}dotnet build -t:InstallAndroidDependencies -f:net8.0-android -p:AndroidSdkDirectory="%ANDROID_HOME%" -p:JavaSdkDirectory="%JAVA_HOME%" -p:AcceptAndroidSDKLicenses=True {% endhighlight %}
+
+{: .warning-title }
+> <i class="fa-solid fa-triangle-exclamation"></i> Warning
+> 
+> This command will only work in the CMD window and not the Windows PowerShell.
+> You can configure the default terminal tool to be CMD in your
+> <a href="https://code.visualstudio.com/docs/terminal/profiles" target="_blank">VSCode profile</a>
 
 <i class="fa-brands fa-apple icon"></i>
 <hr class="icon-prefix">
