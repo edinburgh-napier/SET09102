@@ -154,10 +154,10 @@ Fig. 2 shows the merge step as the developer's responsibility; however, either t
 the reviewer can be responsible depending on the project's workflow and team preferences. Both 
 approaches have advantages, and the decision often depends on the specific context of the project.
 
-| Who Merges | Advantages                                                                                                                                                                                            |
-|------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Developer  | <ul><li>Greater control and accountability</li><li>Can handle last-minute changes or conflicts</li><li>Faster, smoother development flow once the code is approved</li></ul>                          |
-| Reviewer	  | <ul><li>Final quality assurance before the merge</li><li>Clear separation of duties between coding and codebase maintenance</li><li>More objective decision-making regarding merge readiness</li></ul |
+| Who Merges | Advantages                                                                                                                                                                                                               |
+|------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Developer  | {::nomarkdown}<ul><li>Greater control and accountability</li><li>Can handle last-minute changes or conflicts</li><li>Faster, smoother development flow once the code is approved</li></ul>{:/}                           |
+| Reviewer	  | {::nomarkdown}<ul><li>Final quality assurance before the merge</li><li>Clear separation of duties between coding and codebase maintenance</li><li>More objective decision-making regarding merge readiness</li></ul>{:/} |
 
 In smaller or more agile teams where the developer owns the process it is more common for the
 developer to perform the merge as shown in Fig. 2. The reviewer approves the changes, and the 
