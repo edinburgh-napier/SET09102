@@ -963,7 +963,7 @@ internal class NotesViewModel : IQueryAttributable
             await Shell.Current.GoToAsync($"{nameof(Views.NotePage)}?load={note.Identifier}");
     }
 
-    void IQueryAttributable.ApplyQueryAttributes(IDictionary query)
+    void IQueryAttributable.ApplyQueryAttributes(IDictionary<string, object> query)
     {
         if (query.ContainsKey("deleted"))
         {
@@ -1227,7 +1227,7 @@ the selected item from the `CollectionView`.
                  xmlns:viewModels="clr-namespace:Notes.ViewModels"
                  x:Class="Notes.Views.AllNotesPage"
                  Title="Your Notes"
-                 NavigatedTo="ContentPage\_NavigatedTo">
+                 NavigatedTo="ContentPage_NavigatedTo">
         <ContentPage.BindingContext>
             <viewModels:NotesViewModel />
         </ContentPage.BindingContext>
