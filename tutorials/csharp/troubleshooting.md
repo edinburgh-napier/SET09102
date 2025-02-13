@@ -114,3 +114,17 @@ StreamJsonRpc.RemoteInvocationException: Request nominateProject failed with mes
 </div>
 <p>The best solution seems to be to restart your computer to kill any unnecessary processes.</p>
 </details>
+
+<details class="blue-bar">
+<summary>Exception -532462766</summary>
+<p>When trying to start the Android emulator, this exception is reported accompanied by the additional messages below.</p>
+<div class="callout codeblock">
+<pre>C:\Users\133423866\MAUI>sdkmanager --install "system-images;android-34;google_apis;x86_64"
+Warning: Errors during XML parse:
+Warning: Additionally, the fallback loader failed to parse the XML.
+Warning: Errors during XML parse:
+Warning: Additionally, the fallback loader failed to parse the XML.
+[=======================================] 100% Computing updates...</pre>
+</div>
+<p>The reason for this error is unknown, but it can be ignored - it should not affect the emulator.</p>
+</details>
