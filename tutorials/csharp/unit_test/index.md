@@ -605,7 +605,7 @@ create database testdb;
 
 Check that the database has been created with reference to Fig. 3.
 
-![Fig. 3. Checking that the notesapp user can create a database](images/create_db.png){: standalone #fig3 data-title="Checking that the notesapp user can create a database"}
+![Fig. 3. Checking that the notesapp user can create a database](images/create_db.png){: standalone .w50 #fig3 data-title="Checking that the notesapp user can create a database"}
 
 *   Note of the user that is connected
 *   Right-click the connection and select _Manage_ from the context menu
@@ -775,7 +775,7 @@ Run the test in the usual way.
 
 If you have been following the instructions exactly as written, you should see the message in Fig. 4:
 
-![Fig. 4. Error message when trying to insert a new note](images/fk_error.png){: standalone #fig4 data-title="Error message when trying to insert a new note"}
+![Fig. 4. Error message when trying to insert a new note](images/fk_error.png){: standalone .w50 #fig4 data-title="Error message when trying to insert a new note"}
 
 What has gone wrong?
 
