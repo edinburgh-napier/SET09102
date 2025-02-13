@@ -1212,12 +1212,12 @@ Register the `NotesPage` with the navigation system:
     ```c#
     namespace Notes;
 
-    public partial class AppShell : Shell
+    public partial class App : Application
     {
-        public AppShell()
+        public App()
         {
             InitializeComponent();
-
+    
             Routing.RegisterRoute(nameof(Views.NotePage), typeof(Views.NotePage));
 
             MainPage = new AppShell();
