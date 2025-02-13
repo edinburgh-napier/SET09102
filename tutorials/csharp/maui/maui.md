@@ -948,7 +948,7 @@ adds an item, the control is automatically updated with a new item.
             IEnumerable<Note> notes = Directory
 
                                         // Select the file names from the directory
-                                        .EnumerateFiles(appDataPath, "\*.notes.txt")
+                                        .EnumerateFiles(appDataPath, "*.notes.txt")
 
                                         // Each file name is used to create a new Note
                                         .Select(filename => new Note()
