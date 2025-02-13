@@ -383,7 +383,7 @@ The steps above create a new directory _Migrations_ in the `Notes.Database` proj
 two files. They are
 
 * _NotesDbContextModelSnapshot.cs_: This file records the current state of the data model for reference. 
-* _20240713135445\_InitialCreate.cs_: This is the migration script - note that the number at the start of the filename is a timestamp and so your file will be named slightly differently.
+* _20240713135445_InitialCreate.cs_: This is the migration script - note that the number at the start of the filename is a timestamp and so your file will be named slightly differently.
 
 {: .note-title }
 > <i class="fa-solid fa-circle-info"></i> Note

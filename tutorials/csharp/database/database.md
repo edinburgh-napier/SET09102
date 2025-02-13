@@ -97,7 +97,7 @@ between environments where possible.
 2.  Still at the command line, execute the following command to run the Docker container.
     
     ``` bash
-    docker run -e "ACCEPT\_EULA=Y" -e "MSSQL\_SA\_PASSWORD=<YourPassw0rd>" -p 1433:1433 --name sql1 --hostname sql1 -d mcr.microsoft.com/mssql/server:2022-latest --platform=linux/arm64
+    docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=<YourPassw0rd>" -p 1433:1433 --name sql1 --hostname sql1 -d mcr.microsoft.com/mssql/server:2022-latest --platform=linux/arm64
     ```
     
 {: .note-title}
