@@ -698,7 +698,7 @@ internal class NoteViewModel : ObservableObject, IQueryAttributable
 
     public void Reload()
     {
-        \_note = Models.Note.Load(\_note.Filename);
+        _note = Models.Note.Load(_note.Filename);
         RefreshProperties();
     }
 
