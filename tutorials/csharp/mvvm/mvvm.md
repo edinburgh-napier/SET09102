@@ -476,14 +476,9 @@ Create the **Note viewmodel**:
     }
     ```
     
-    This code is the blank `Note` viewmodel where you'll add properties and commands to support 
-3. the **Note view**. Notice that the `CommunityToolkit.Mvvm.ComponentModel` namespace is being 
-4. imported. This namespace provides the `ObservableObject` used as the base class. You'll learn 
-5. more about `ObservableObject` in the next step. The `CommunityToolkit.Mvvm.Input` namespace 
-6. is also imported. This namespace provides some command-types that invoke methods asynchronously.
+    This code is the blank `Note` viewmodel where you'll add properties and commands to support the **Note view**. Notice that the `CommunityToolkit.Mvvm.ComponentModel` namespace is being imported. This namespace provides the `ObservableObject` used as the base class. You'll learn more about `ObservableObject` in the next step. The `CommunityToolkit.Mvvm.Input` namespace is also imported. This namespace provides some command-types that invoke methods asynchronously.
     
-    The `Models.Note` model is being stored as a private field. The properties and methods of 
-7. this class will use this field.
+    The `Models.Note` model is being stored as a private field. The properties and methods of this class will use this field.
     
 3.  Add the following properties to the class:
 
