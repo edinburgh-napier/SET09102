@@ -825,7 +825,7 @@ the next few steps.
                     Text="{Binding Text}"
                     HeightRequest="100" />
 
-            <Grid ColumnDefinitions="\*,\*" ColumnSpacing="4">
+            <Grid ColumnDefinitions="*,*" ColumnSpacing="4">
                 <Button Text="Save"
                         Clicked="SaveButton_Clicked" />
 
