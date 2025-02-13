@@ -121,7 +121,7 @@ Open Azure Data Studio (ADS) and create a new connection. You can use the parame
 Fig. 1. to connect to your SQL Server container. The password is the one you specified when you 
 started the container.
 
-![Fig. 1. Creating a local database connection in Azure Data Studio](images/local_connection.png){: standalone #fig1 data-title="Creating a local database connection in Azure Data Studio" }
+![Fig. 1. Creating a local database connection in Azure Data Studio](images/local_connection.png){: standalone .w30 #fig1 data-title="Creating a local database connection in Azure Data Studio" }
 
 SQL Server is a database _server_. That is, it provides for multiple databases, each of which has its 
 own purpose and permissions. After connecting, you can see that only system databases currently exist. 
@@ -141,7 +141,7 @@ the server.
 
    In ADS, right-click on the master database as shown in Fig. 2 and select _New Query_.
 
-   ![Fig. 2. Starting a new query in Azure Data Studio](images/new_query.png){: standalone #fig2 data-title="Starting a new query in Azure Data Studio" }
+   ![Fig. 2. Starting a new query in Azure Data Studio](images/new_query.png){: standalone .w30 #fig2 data-title="Starting a new query in Azure Data Studio" }
 
    The next page provides a field where you can type in 
    [Transact-SQL](https://learn.microsoft.com/en-us/sql/t-sql/language-reference?view=sql-server-ver16) 
@@ -154,13 +154,13 @@ the server.
    CREATE LOGIN notesapp WITH PASSWORD='N0tesApp$';
    ```
 
-   ![Fig. 3. Creating a server-level login in Azure Data Studio](images/create_login.png){: standalone #fig3 data-title="Creating a server-level login in Azure Data Studio" }
+   ![Fig. 3. Creating a server-level login in Azure Data Studio](images/create_login.png){: standalone .w30 #fig3 data-title="Creating a server-level login in Azure Data Studio" }
 
 2. **Create a new database**
 
    In the explorer sidebar of ADS, click on the plus sign next to _Databases_ as shown in Fig. 4.
 
-   ![Fig. 4. Creating a new database in Azure Data Studio](images/new_database.png){: standalone #fig4 data-title="Creating a new database in Azure Data Studio" }
+   ![Fig. 4. Creating a new database in Azure Data Studio](images/new_database.png){: standalone .w30 #fig4 data-title="Creating a new database in Azure Data Studio" }
 
    Call the new database _notesdb_, and leave all the other options with their default values.
 
@@ -173,7 +173,7 @@ the server.
    CREATE user notesapp for login notesapp;
    ```
 
-   ![Fig. 5. Creating a new user for the notesapp login in Azure Data Studio](images/create_user.png){: standalone #fig5 data-title="Creating a new user for the notesapp login in Azure Data Studio" }
+   ![Fig. 5. Creating a new user for the notesapp login in Azure Data Studio](images/create_user.png){: standalone .w30 #fig5 data-title="Creating a new user for the notesapp login in Azure Data Studio" }
 
 4. **Grant permissions to the new user**
 
@@ -193,7 +193,7 @@ the server.
    Here we recreate the NOTE table as shown in Fig. 6. Use the T-SQL script below to set the table up 
    using ADS.
 
-   ![Fig. 6. The NOTE table](images/note_table.png){: standalone #fig6 data-title="The NOTE table" }
+   ![Fig. 6. The NOTE table](images/note_table.png){: standalone .w10 #fig6 data-title="The NOTE table" }
 
    ```sql
    -- Create NOTE table
