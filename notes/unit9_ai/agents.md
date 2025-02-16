@@ -235,4 +235,3 @@ AI will not replace you, people who use AI will
 * [AI Agents: A Comprehensive Introduction for Developers](https://thenewstack.io/ai-agents-a-comprehensive-introduction-for-developers/)
 * [Enhancing AI Systems with Agentic Workflows Patterns in Large Language Model (Singh et al., 2024)](10.1109/AIIoT61789.2024.10578990)
 * [Exploring Agentic Workflow Patterns](https://dev.to/dpaluy/exploring-agentic-workflow-patterns-312a)
-* 
