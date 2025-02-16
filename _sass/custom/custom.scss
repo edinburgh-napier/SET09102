@@ -40,6 +40,13 @@ blockquote.warning-title {
   margin: 3rem 0;
 }
 
+blockquote.note-title i,
+blockquote.tip-title i,
+blockquote.information-title i,
+blockquote.warning-title i {
+  margin-right: 1rem;
+}
+
 
 .side-by-side {
   display: inline-block;
