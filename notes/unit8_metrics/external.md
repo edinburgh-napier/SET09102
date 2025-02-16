@@ -413,7 +413,7 @@ ensure that applications are intuitive, efficient, and user-friendly.
 
 * **Accessibility Testing**: [Accessibility testing](https://accessibe.com/glossary/accessibility-testing) 
   is a subset of usability testing that ensures the application is usable for people with disabilities. This 
-  may include checking screen reader compatibility, testing keyboard navigation, and evaluating color 
+  may include checking screen reader compatibility, testing keyboard navigation, and evaluating colour 
   contrast. Engineers can use tools like WAVE or Axe to identify accessibility issues and improve usability 
   for a broader audience.
 

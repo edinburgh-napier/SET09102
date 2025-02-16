@@ -202,7 +202,7 @@ main aspects and provides links to additional material.
 > **Consistency and Familiarity**
 > 
 > [Consistency in design](https://www.interaction-design.org/literature/article/principle-of-consistency-and-standards-in-user-interface-design?srsltid=AfmBOopRwYCF2KdEdsf-nMpjtl9825UtTN9NBG0nbZBqpNAJZGP7Viu6) 
-> — across layouts, navigation, buttons, colors, and terminology — helps users feel 
+> — across layouts, navigation, buttons, colours, and terminology — helps users feel 
 > comfortable and reduces their learning curve. Reusing familiar design patterns and conventions 
 > (e.g., using a magnifying glass icon for search, a gear for settings) helps users recognise features 
 > and functionality quickly, improving the overall experience. Engineers can work closely with UX 
@@ -223,7 +223,7 @@ main aspects and provides links to additional material.
 > Accessible design ensures that the software is usable by people with varying abilities. Engineers 
 > should follow [accessibility guidelines](https://www.wcag.com/resource/what-is-wcag/), such as 
 > providing alternative text for images, supporting 
-> keyboard navigation, and ensuring color contrast is adequate. Accessibility improves inclusivity, 
+> keyboard navigation, and ensuring colour contrast is adequate. Accessibility improves inclusivity, 
 > allowing a wider audience to use and benefit from the software and is not to be confused with 
 > *availability* which is a measure of how consistently a system is available to be accessed when 
 > needed. The accessibility of web applications can be tested automatically using a range of [cloud

@@ -82,8 +82,8 @@ nav_order: 1
     > environment-specific values. Verifying configurations can prevent issues such as pointing to the wrong 
     > database or API endpoint after deployment.
 
-13. Use Color-Coding or Clear Labels in the UI
+13. Use Colour-Coding or Clear Labels in the UI
 
-    > For applications that you interact with in multiple environments, add color-coded labels (e.g., green 
+    > For applications that you interact with in multiple environments, add colour-coded labels (e.g., green 
     > for development, yellow for test, red for production) to clearly distinguish which environment you’re 
     > working in. This helps avoid accidental changes in the wrong environment.
