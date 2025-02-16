@@ -228,6 +228,8 @@ developers and software companies.
 AI will not replace you, people who use AI will
 </span></blockquote>
 
+{: .tip-title }
+> [<i class="fa-regular fa-lightbulb"></i>Tips for working with AI agents](agents_tips.md)
 
 ## Further reading
 
