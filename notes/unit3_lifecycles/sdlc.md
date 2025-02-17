@@ -50,14 +50,14 @@ are, or indeed what they should be called. The international standard
 [ISO24748-1](https://doi-org.napier.idm.oclc.org/10.1109/IEEESTD.2018.8526560)
 defines six standard lifecycle phases as shown in the table below.
 
-| Stage       | Description                                                                                                                              |
-|-------------|------------------------------------------------------------------------------------------------------------------------------------------|
-| Concept     | <ul><li>Identify stakeholders' needs</li><li>Explore concepts</li><li>Propose viable solutions</li></ul>                                 |
-| Development | <ul><li>Refine system requirements</li><li>Create solution description</li><li>Build system</li><li>Verify and validate system</li></ul> |
-| Production  | <ul><li>Produce system</li><li>Inspect and test</li></ul>                                                                                |
-| Utilisation | <ul><li>Operate system to satisfy users' needs</li></ul>                                                                                 |
-| Support     | <ul><li>Provide sustained system capability</li></ul>                                                                                    |
-| Retirement  | <ul><li>Store, archive or dispose of system</li></ul>                                                                                    |
+| Stage       | Description                                                                                                                                                |
+|-------------|------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Concept     | {::nomarkdown}<ul><li>Identify stakeholders' needs</li><li>Explore concepts</li><li>Propose viable solutions</li></ul>{:/}                                 |
+| Development | {::nomarkdown}<ul><li>Refine system requirements</li><li>Create solution description</li><li>Build system</li><li>Verify and validate system</li></ul>{:/} |
+| Production  | {::nomarkdown}<ul><li>Produce system</li><li>Inspect and test</li></ul>{:/}                                                                                |
+| Utilisation | {::nomarkdown}<ul><li>Operate system to satisfy users' needs</li></ul>{:/}                                                                                 |
+| Support     | {::nomarkdown}<ul><li>Provide sustained system capability</li></ul>{:/}                                                                                    |
+| Retirement  | {::nomarkdown}<ul><li>Store, archive or dispose of system</li></ul>{:/}                                                                                    |
 
 The terminology in the table is rarely used exactly as shown. The main reasons are that the
 term used in the standard is too broad and needs to be further divided, that the distinction between
@@ -158,7 +158,7 @@ iterative prototyping by following a repeating pattern of four stages:
 2. Evaluate alternatives and identify and resolve risks
 3. Develop and verify next-level product
 4. Plan next phase
-[images](images)
+
 However, it also inherited extensive testing towards the end of the project from the traditional 
 waterfall approach.
 
