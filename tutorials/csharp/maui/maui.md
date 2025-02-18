@@ -371,9 +371,11 @@ and saving notes.
     file is represented by the `_fileName` variable. Add the following `string`
     variable declaration to the `NotePage` class:
 
+    ```c#
     public partial class NotePage : ContentPage
     {
         string _fileName = Path.Combine(FileSystem.AppDataDirectory, "notes.txt");
+    ```
 
     The code above constructs a path to the file, storing it in the app's local data directory. The file name is notes.txt.
 
@@ -823,7 +825,7 @@ the next few steps.
                     Text="{Binding Text}"
                     HeightRequest="100" />
 
-            <Grid ColumnDefinitions="\*,\*" ColumnSpacing="4">
+            <Grid ColumnDefinitions="*,*" ColumnSpacing="4">
                 <Button Text="Save"
                         Clicked="SaveButton_Clicked" />
 
@@ -946,7 +948,7 @@ adds an item, the control is automatically updated with a new item.
             IEnumerable<Note> notes = Directory
 
                                         // Select the file names from the directory
-                                        .EnumerateFiles(appDataPath, "\*.notes.txt")
+                                        .EnumerateFiles(appDataPath, "*.notes.txt")
 
                                         // Each file name is used to create a new Note
                                         .Select(filename => new Note()
