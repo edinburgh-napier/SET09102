@@ -164,7 +164,6 @@ shared project.
     ```xml
     <ItemGroup>
         <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
-        <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="8.0.0" />
         <PackageReference Include="Microsoft.Maui.Controls" Version="8.0.70" />
         <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="8.0.70" />
         <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
@@ -207,6 +206,25 @@ the necessary elements. Follow the steps below.
             <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </None>
     </ItemGroup>
+    ```
+4. Edit the file `Data/NotesDbContext.cs` and add the `OnConfiguring()` method after the 
+   constructors:
+
+    ```c#
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    {
+        var a = Assembly.GetExecutingAssembly();
+        var resources = a.GetManifestResourceNames();
+        using var stream = a.GetManifestResourceStream("Notes.Database.appsettings.json");
+    
+        var config = new ConfigurationBuilder()
+            .AddJsonStream(stream)
+            .Build();
+    
+        optionsBuilder.UseSqlServer(
+            config.GetConnectionString("DevelopmentConnection")
+        );
+    }
     ```
 
 ### Update other files
