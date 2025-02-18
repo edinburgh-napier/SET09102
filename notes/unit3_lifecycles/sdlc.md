@@ -69,7 +69,7 @@ phase for documentation. Different models are shown with between
 [ten](https://ndtechdock.wordpress.com/2012/04/06/the-ten-phases-of-systems-development-life-cycle-sdlc/) 
 phases with six being the most popular number as exemplified in Fig 2.
 
-![Fig. 2: Six-phase SDLC](images/sdlc.png){: standalone #fig2 data-title="Six-phase SDLC"}
+![Fig. 2: Six-phase SDLC](images/sdlc.png){: standalone .w30 #fig2 data-title="Six-phase SDLC"}
 
 As you can see, the typical model ignore the retirement or disposal stage which can be important in
 long-term planning.

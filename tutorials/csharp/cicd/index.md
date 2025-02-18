@@ -43,7 +43,7 @@ additional costs.
 You can check that your repository for this project is public by going to its main page in 
 GitHub. If it is, a "Public" badge will be displayed next to the repository's name.
 
-![Checking whether a repository is public](images/public-repo.png)
+![Fig. 1: Checking whether a repository is public](images/public-repo.png){: standalone #fig1 data-title="Checking whether a repository is public"}
 
 ### Workflow File
 Creating a standard workflow in GitHub Actions is easy. GitHub provides a wide array of templates 
@@ -51,7 +51,7 @@ for creating a new workflow. It can even suggest the most suitable template base
 you use in your project.  In every GitHub repository, there is an **Actions** tab where you can 
 set up a new workflow or monitor your current ones. 
 
-![Actions tab in GitHub](images/actions-tab.png)
+![Fig. 2: Actions tab in GitHub](images/actions-tab.png){: standalone #fig2 data-title="Actions tab in GitHub"}
 
 In this tutorial, you will write your own workflow file from scratch to get an in-depth 
 understanding of what each line does. If you decide you want to know a bit more about Actions, 
@@ -140,7 +140,7 @@ a file named `build.yml` which will store all instructions for your pipeline. An
 `.yaml` file in this folder will be interpreted as a workflow in GitHub Actions. Your file 
 structure should look like this:
 
-![File structure for workflow](images/file-structure.png)
+![Fig. 3: File structure for workflow](images/file-structure.png){: standalone #fig3 data-title="File structure for workflow"}
 
 The first step in creating pipelines is deciding what events will trigger the runs. It could run 
 anytime something is pushed to any of the branches, or only to some selected branches. Another 
@@ -220,19 +220,19 @@ You might notice that you are reusing certain values throughout your pipeline, s
 
 To add a variable, navigate to the Settings tab in the repository 
 
-![Settings tab in GitHub](images/settings-tab.png)
+![Fig. 4: Settings tab in GitHub](images/settings-tab.png){: standalone #fig4 data-title="Settings tab in GitHub"}
 
 In the menu on the left, navigate to `Secrets and variables` > `Actions`
 
-![Actions settings](images/actions-menu.png)
+![Fig. 5: Actions settings](images/actions-menu.png){: standalone #fig5 data-title="Actions settings"}
 
 Switch to the `Variables` tab and select `New repository variable`.
 
-![Variables tab](images/variables.png)
+![Fig. 6: Variables tab](images/variables.png){: standalone #fig6 data-title="Variables tab"}
 
 This will take you to a page where you give a name to your variable, e.g. `CSPROJ_PATH`, and the value, which is the path to your `.csproj` file in this example.
 
-![Adding a variable](images/add-variable.png)
+![Fig. 7: Adding a variable](images/add-variable.png){: standalone #fig7 data-title="Adding a variable"}
 
 After you add the variable in GitHub, you can use it in your workflow file like this:
 
@@ -258,11 +258,11 @@ At this point, you can commit your changes and push them to the remote repositor
 
 If your workflow is set up correctly, you should be able to see it on the pull request page after a few seconds. If you click on `Details`, it will take you to the summary of the run in the Actions tab.
 
-![alt text](images/actions-in-pr.png)
+![Fig. 8: Action details in pull request](images/actions-in-pr.png){: standalone #fig8 data-title="Action details in pull request"}
 
 You will see a screen similar to this: 
 
-![alt text](images/actions-summary.png)
+![Fig. 9: Action summary](images/actions-summary.png){: standalone #fig9 data-title="Action summary"}
 
 In the panel on the left, from the top, you can see:
 - the name of the workflow, 
@@ -285,7 +285,7 @@ Static code analysis can tell us a lot about the quality of the code written. So
 #### Setting up a SonarCloud account, organization and project
 To use the cloud version of Sonar, you have to create an account on their website. You can find it here: [SonarQube Cloud signup](https://www.sonarsource.com/products/sonarcloud/signup/). Since we are using GitHub to store the repository, you should sign up using GitHub. If you do that, you will be asked to authorize SonarCloud to gain access to certain details of your GitHub account, which you should accept by pressing the `Authorize SonarCloud` button. 
 
-![Fig. 1. Sonar Cloud Signup Page](images/sonar-signup.png)
+![Fig. 10: Sonar Cloud Signup Page](images/sonar-signup.png){: standalone #fig10 data-title="Sonar Cloud Signup Page"}
 
 Once your account is ready, you will be taken to the getting started screen, where you can import the organization that owns your repository from GitHub. You should have that set up if you worked through the first tutorial. If not, you can manually create an organization in Sonar by clicking on the underlined `create a project manually`. 
 
@@ -293,21 +293,21 @@ Once your account is ready, you will be taken to the getting started screen, whe
 
 We're going to assume you have an organisation in GitHub so select `Import an organization`.
 
-![Import organization in Sonar](images/import-org-sonar.png)
+![Fig. 11: Import organisation in Sonar](images/import-org-sonar.png){: standalone #fig11 data-title="Import organisation in Sonar"}
 
-On the next page, select which organisation you want to use. Then, you will be asked for permission to intall Sonar on your organisation. Since we only need the analysis on one repository, choose the `Only select repositories` option and select the correct repository, then proceed by pressing `Install`.
+On the next page, select which organisation you want to use. Then, you will be asked for permission to install Sonar on your organisation. Since we only need the analysis on one repository, choose the `Only select repositories` option and select the correct repository, then proceed by pressing `Install`.
 
-![alt text](images/select-repo-sonar.png)
+![Fig. 12: Selecting a repository](images/select-repo-sonar.png){: standalone #fig12 data-title="Selecting a repository"}
 
 On the next page, you will be asked for the name and the key of the project - keep them as is. You also need to choose the payment plan so make sure to select the free one to avoid any extra costs. Proceed by pressing `Create organization`.
 
 Now that your Sonar organization is set up, you have to select the repositories that will be included in the Sonar project you are creating. Select the correct one and continue by pressing `Set up`. 
 
-![Choosing the project](images/choose-project-sonar.png)
+![Fig. 13: Choosing the project](images/choose-project-sonar.png){: standalone #fig13 data-title="Choosing the project"}
 
 Finally, you need to choose what Sonar considers new code in the repository. You have two choices which are explained in the screenshot below. You should proceed with the `Previous version` one. Then, you can finally create the project.
 
-![Selecting what is new code](images/new-code.png)
+![Fig. 14: Selecting what is new code](images/new-code.png){: standalone #fig14 data-title="Selecting what is new code"}
 
 #### Adding Sonar Token as a repository secret
 SonarCloud can be integrated with your workflow so that anytime the workflow runs, it will trigger a static code analysis by Sonar. 
@@ -316,15 +316,15 @@ The first step to setting this up is adding a secret in GitHub that contains an 
 
 In your main project page in Sonar, go to `Administration` and then select `Analysis Method`.
 
-![Analysis method](images/analysis-method-sonar.png)
+![Fig. 15: Analysis method](images/analysis-method-sonar.png){: standalone #fig15 data-title="Analysis method"}
 
 At the bottom of the page, select `With GitHub Actions`.
 
-![Setup GitHub in Sonar](images/setup-github-sonar.png)
+![Fig. 16: Setup GitHub in Sonar](images/setup-github-sonar.png){: standalone #fig16 data-title="Setup GitHub in Sonar"}
 
 On the final page, make sure you disable automatic analysis and then copy the value of SONAR_TOKEN. 
 
-![Secret in Sonar](images/secret-sonar.png)
+![Fig. 17: Secret in Sonar](images/secret-sonar.png){: standalone #fig17 data-title="Secret in Sonar"}
 
 You can now add the secret in GitHub Actions, in a similar way as you previously added the environement variable. Go to the `Actions secrets and variables` tab in the repository settings. Make sure you are in the `Secrets` tab and then add a new secret with the name `SONAR_TOKEN` and the value copied from Sonar. Without this, your workflow will fail as it won't be able to connect to Sonar properly. 
 
@@ -406,7 +406,7 @@ These are all the steps needed to set up SonarCloud. Now you can move on to sett
 
 Make sure that you replace `<organisation>` with Sonar organisation key and `<key>` with your Sonar project key (keep the double quotes around these values). You can find them in the Information tab:
 
-![Organisation and project keys in Sonar](images/keys.png)
+![Fig. 18: Organisation and project keys in Sonar](images/keys.png){: standalone #fig18 data-title="Organisation and project keys in Sonar"}
 
 Also, note the use of the `SONAR_TOKEN` secret in the code. Using this notation you can use any other secrets you add to the repository. 
 
@@ -421,7 +421,7 @@ Doxygen is a tool that generates a web-based representation of your project's do
 
 Here is an example of documentation generated by Doxygen:
 
-![Fig. 2. Example Doxygen Output](images/Doxygen_Example.png)
+![Fig. 19: Example Doxygen Output](images/Doxygen_Example.png){: standalone #fig19 data-title="Example Doxygen Output"}
 
 Since documentation should be stable and reflect the stable version of the code, it might be a good idea to include documentation generation in a workflow that runs only when changes are pushed to the master/main branch, which we suggest in this tutorial. 
 
@@ -512,6 +512,6 @@ Now that GitHub Pages has access to the generated documentation, you can add a n
 
 The last step to make sure everything works is enabling GitHub Pages in your repository. Navigate to repository Settings and select Pages in the menu on the left. Then, make sure that `GitHub Actions` is selected as the source in the dropdown menu.
 
-![Enabling GitHub Pages in the repo](images/pages-enable.png)
+![Fig. 20: Enabling GitHub Pages in the repo](images/pages-enable.png){: standalone #fig20 data-title="Enabling GitHub Pages in the repo"}
 
 Go ahead and commit and push the changes now. If you still have that pull request from before open, the basic build workflow will be triggered. Then, when you decide to merge it into the master branch, the documentation workflow will be triggered and will deploy the docs to GitHub Pages. Try it out yourself and make sure if your workflows ran successfully in the `Actions` tab. 
