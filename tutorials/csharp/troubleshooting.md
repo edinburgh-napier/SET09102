@@ -78,8 +78,8 @@ PublicKeyToken=adb9793829ddae60' does not have an implementation.' was thrown wh
 to create an instance. For the different patterns supported at design time, see 
 https://go.microsoft.com/fwlink/?linkid=851728</pre>
 </div>
-<p>Check the `Notes.Migrations` `.csproj` file. remove any reference to EntityFramework version 9.*.</p>
-<p>For example, if you see the following `ItemGroup`, delete the whole thing and try the initial migration again:</p>
+<p>Check the <code>Notes.Migrations</code> <code>.csproj</code> file. remove any reference to EntityFramework version 9.*.</p>
+<p>For example, if you see the following <code>ItemGroup</code>, delete the whole thing and try the initial migration again:</p>
 <div class="callout codeblock">
 <pre>&lt;ItemGroup&gt;
 &lt;PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.2"&gt;
