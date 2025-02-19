@@ -53,6 +53,44 @@ CMD command window instead. You can configure your VSCode
 </details>
 
 <details class="blue-bar">
+<summary>Exception -532462766</summary>
+<p>When trying to start the Android emulator, this exception is reported accompanied by the additional messages below.</p>
+<div class="callout codeblock">
+<pre>C:\Users\133423866\MAUI>sdkmanager --install "system-images;android-34;google_apis;x86_64"
+Warning: Errors during XML parse:
+Warning: Additionally, the fallback loader failed to parse the XML.
+Warning: Errors during XML parse:
+Warning: Additionally, the fallback loader failed to parse the XML.
+[=======================================] 100% Computing updates...</pre>
+</div>
+<p>The reason for this error is unknown, but it can be ignored - it should not affect the emulator.</p>
+</details>
+
+<details class="blue-bar">
+<summary>Initial migration fails - unable to create DbContext</summary>
+<p>The following error message appears when trying to create the initial migration:</p>
+<div class="callout codeblock">
+<pre>Unable to create a 'DbContext' of type 'NotesDbContext'. The exception 'Method 
+'get_LockReleaseBehavior' in type 
+'Microsoft.EntityFrameworkCore.SqlServer.Migrations.Internal.SqlServerHistoryRepository' 
+from assembly 'Microsoft.EntityFrameworkCore.SqlServer, Version=8.0.7.0, Culture=neutral, 
+PublicKeyToken=adb9793829ddae60' does not have an implementation.' was thrown while attempting 
+to create an instance. For the different patterns supported at design time, see 
+https://go.microsoft.com/fwlink/?linkid=851728</pre>
+</div>
+<p>Check the `Notes.Migrations` `.csproj` file. remove any reference to EntityFramework version 9.*.</p>
+<p>For example, if you see the following `ItemGroup`, delete the whole thing and try the initial migration again:</p>
+<div class="callout codeblock">
+<pre>&lt;ItemGroup&gt;
+&lt;PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.2"&gt;
+  &lt;IncludeAssets&gt;runtime; build; native; contentfiles; analyzers; buildtransitive&lt;/IncludeAssets&gt;
+  &lt;PrivateAssets&gt;all&lt;/PrivateAssets&gt;
+&lt;/PackageReference&gt;
+&lt;/ItemGroup&gt;</pre>
+</div>
+</details>
+
+<details class="blue-bar">
 <summary>
     Missing workloads
 </summary>
@@ -115,40 +153,3 @@ StreamJsonRpc.RemoteInvocationException: Request nominateProject failed with mes
 <p>The best solution seems to be to restart your computer to kill any unnecessary processes.</p>
 </details>
 
-<details class="blue-bar">
-<summary>Exception -532462766</summary>
-<p>When trying to start the Android emulator, this exception is reported accompanied by the additional messages below.</p>
-<div class="callout codeblock">
-<pre>C:\Users\133423866\MAUI>sdkmanager --install "system-images;android-34;google_apis;x86_64"
-Warning: Errors during XML parse:
-Warning: Additionally, the fallback loader failed to parse the XML.
-Warning: Errors during XML parse:
-Warning: Additionally, the fallback loader failed to parse the XML.
-[=======================================] 100% Computing updates...</pre>
-</div>
-<p>The reason for this error is unknown, but it can be ignored - it should not affect the emulator.</p>
-</details>
-
-<details class="blue-bar">
-<summary>Initial migration fails - unable to create DbContext</summary>
-<p>The following error message appears when trying to create the initial migration:</p>
-<div class="callout codeblock">
-<pre>Unable to create a 'DbContext' of type 'NotesDbContext'. The exception 'Method 
-'get_LockReleaseBehavior' in type 
-'Microsoft.EntityFrameworkCore.SqlServer.Migrations.Internal.SqlServerHistoryRepository' 
-from assembly 'Microsoft.EntityFrameworkCore.SqlServer, Version=8.0.7.0, Culture=neutral, 
-PublicKeyToken=adb9793829ddae60' does not have an implementation.' was thrown while attempting 
-to create an instance. For the different patterns supported at design time, see 
-https://go.microsoft.com/fwlink/?linkid=851728</pre>
-</div>
-<p>Check the `Notes.Migrations` `.csproj` file. remove any reference to EntityFramework version 9.*.</p>
-<p>For example, if you see the following `ItemGroup`, delete the whole thing and try the initial migration again:</p>
-<div class="callout codeblock">
-<pre>&lt;ItemGroup&gt;
-&lt;PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.7"&gt;
-  &lt;IncludeAssets&gt;runtime; build; native; contentfiles; analyzers; buildtransitive&lt;/IncludeAssets&gt;
-  &lt;PrivateAssets&gt;all&lt;/PrivateAssets&gt;
-&lt;/PackageReference&gt;
-&lt;/ItemGroup&gt;</pre>
-</div>
-</details>
