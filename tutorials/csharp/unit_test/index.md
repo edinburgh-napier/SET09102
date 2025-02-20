@@ -693,7 +693,7 @@ the `Notes.Test` project file.
     ```xml
     <ItemGroup>
         <ProjectReference Include="../Notes/Notes.csproj" />
-        <ProjectReference Include="../Notes.migrations/Notes.Migrations.csproj" />
+        <ProjectReference Include="../Notes.Migrations/Notes.Migrations.csproj" />
     </ItemGroup>
     ```
 
@@ -713,6 +713,7 @@ class to trigger the fixture as intended.
         DatabaseFixture _fixture;
         public NoteViewModelTests(DatabaseFixture fixture) {
             _fixture = fixture;
+            _fixture.Seed();
         }
     ```
     
