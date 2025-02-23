@@ -18,7 +18,6 @@ In this tutorial, you will learn how to:
 *   Add useful external tools:
     *   Sonar static analysis
     *   Doxygen documentation
-    *   Automated database migration using Microsoft Entity Framework
 
 ## Before you start
 Before you start working through this tutorial, it might be useful to take a look at the notes 
@@ -119,7 +118,10 @@ workflow files that will be used in this tutorial. A full list is available in t
 | **permissions** | Specifies what resources the job can access within the repository.                                                                                                            |
 | **needs**       | Specifies job dependencies, which means that the job after the keyword must run first in order for this job to run successfully. Essentially declares the order of execution. |
 
-> Note: When you specify multiple events after the `on` keyword, all jobs contained in the same 
+{: .note-title }
+> <i class="fa-solid fa-triangle-exclamation"></i> Note
+>
+> When you specify multiple events after the `on` keyword, all jobs contained in the same 
 > workflow file will run whenever any of those events occur. If you need different workflows to 
 > run on occurrence of different events, you will need to include multiple workflow files.
 
@@ -165,92 +167,162 @@ this for this project.
 Now that you understand the syntax used in workflow files, you can move on to implementing your 
 own workflow. 
 
-> It might be a good idea to create a new branch before you start making any changes, e.g. 
-> `feature/workflow`. 
+{: .warning-title }
+> <i class="fa-solid fa-triangle-exclamation"></i> Important
+>
+> Before you start making any changes, create a new branch e.g. `feature/workflow`. 
 
 ### Setting up your workflow file
-To set up your first GitHub Actions workflow manually, create a `.github` directory in the root 
-folder of your project (note the leading dot) and a `workflows` directory inside it. Then, create 
-a file named `build.yml` which will store all instructions for your pipeline. Any `.yml` or 
-`.yaml` file in this folder will be interpreted as a workflow in GitHub Actions. Your file 
-structure should look like this:
+To set up your first GitHub Actions workflow manually:
+1. Create a `.github` directory in the root folder of your repository (note the leading dot) 
+2. Then, create a `workflows` directory inside the `.github` folder. 
+3. Finally, create a file named `build.yml` which will store all instructions for your pipeline. **Any `.yml` or 
+`.yaml` file in this folder will be interpreted as a workflow in GitHub Actions.** This file structure is defined by GitHub and must be followed to trigger automatic runs.
+
+Your file structure should look like this:
 
 ![Fig. 3: File structure for workflow](images/file-structure.png){: standalone #fig3 data-title="File structure for workflow"}
+
 
 The first step in creating pipelines is deciding what events will trigger the runs. It could run 
 anytime something is pushed to any of the branches, or only to some selected branches. Another 
 option is to run the workflow on pull requests, which we will use as an example in this tutorial. 
 A full breakdown can be found in the documentation: [Triggering a workflow](https://docs.github.com/en/actions/writing-workflows/choosing-when-your-workflow-runs/triggering-a-workflow). 
 
-Start defining you workflow by putting the following code in the `build.yml` file:
+**Start defining you workflow by putting the following code in the `build.yml` file:**
 
 ```yml
-name: Build & Test # Name can be anything else you want
+name: Build & Test Workflow
 
 on: 
   [pull_request]
 ```
 
+The name of your workflow can be anything you want so feel free to replace **Build & Test Workflow** with something else of your choosing.
+
+{: .warning-title }
+> <i class="fa-solid fa-triangle-exclamation"></i> Important
+>
+> Indentation plays an important role in `.yaml/.yml` files so make sure you copy the code correctly.
+
+
 ### Setting up the environment
-You can now move on to defining what jobs and actions will be executed in the workflow. You also need to decide what operating system will be used for the runner. For this project, we will use the lastest version of Windows. Add this code to your workflow file:
+1. Now that you have defined when the workflow will be triggered, you can move on to defining what **jobs** and **actions** will be executed in the workflow. You also need to decide what operating system will be used for the runner. For this project, we will use the lastest version of Windows. 
 
-```yml
-jobs:
-  build: # This is just the name of the job, it can be changed to something else if you wish
-    
-    runs-on: windows-latest
-```
+    Add this code to your workflow file:
 
-Now you can start defining the order of the steps in the job. Usually, the starting point is ensuring that the workflow can access the source code. In GitHub Actions, you can use a standard action that checks out the code from the repository. You can do this by using this code:
+    ```yml
+      name: Build & Test Workflow
 
-```yml
-jobs:
-  build:
+      on: 
+        [pull_request]
 
-    runs-on: windows-latest
+      jobs:
+        build:
+          
+          runs-on: windows-latest
+    ```
 
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
-```
+      {: .note-title }
+      > <i class="fa-solid fa-triangle-exclamation"></i> Note
+      >
+      > Even though it may seem that **build** is a keyword in the code above, it is not. It is just a name of a job. As we've explained, you can have many jobs in your workflow file, and each needs a name, which can be anything, so feel free to change it to experiment. Since this job's primary function is to build the code, we have chosen **build** as the name.
+
+
+2. You can start defining the order of the steps in the job. Usually, the starting point is ensuring that the workflow can access the source code. In GitHub Actions, you can use a **standard action** that checks out the code from the repository. 
+
+    Update your code to look like this:
+
+    ```yml
+    name: Build & Test Workflow
+
+    on: 
+          [pull_request]
+    jobs:
+      build:
+
+        runs-on: windows-latest
+
+        steps:
+        - name: Checkout code
+          uses: actions/checkout@v4
+    ```
 
 The next step is ensuring that the environment is set up properly and all tools needed to build the code are installed. In .NET projects, this involves setting up the .NET SDK, and restoring workloads and dependencies. 
 
-To set up the SDK, you can use a standard action and provide it with the version of .NET that you require, in this case 8.0:
+3. To set up the SDK, you can use a standard action and provide it with the version of .NET that you require, in this case 8.0. Add this code below the previous step:
 
-``` yml
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v4
-      with:
-        dotnet-version: 8.0
-```
+    ``` yml
+        - name: Setup .NET
+          uses: actions/setup-dotnet@v4
+          with:
+            dotnet-version: 8.0
+    ```
 
-Workloads in .NET projects are various additional tools, libraries or features that are not included in the SDK by default, for example, MAUI. They are defined in the `.csproj` file so the command needs a correct path to that file. 
+4. To restore .NET workloads, add this step, making sure you provide the path to the Notes.csproj file:
 
-> It's important to remember that all commands in the workflow will be executed from the root of your project, so you must supply a relative path to your `.csproj` file, e.g. `./Project/Project.csproj`. Make sure the paths are relative to the root of the project, not the workflows folder. 
+    ```yml
+        - name: Restore workloads
+          run: dotnet workload restore <Path to .csproj>
+    ```
 
-```yml
-    - name: Restore workloads
-      run: dotnet workload restore <Path to .csproj>
-```
+    Workloads in .NET projects are various additional tools, libraries or features that are not included in the SDK by default, for example, MAUI. They are defined in the `.csproj` file so the command needs a correct path to that file. 
 
-Apart from restoring workloads, you must also restore dependencies to ensure the project works properly. This can be done by adding this step:
+    {: .note-title }
+    > <i class="fa-solid fa-triangle-exclamation"></i> Note
+    >
+    > It's important to remember that all commands in the workflow will be executed from the root of your project, so you must supply a relative path to your `.csproj` file, e.g. `./Notes/Notes.csproj`. Make sure the paths are relative to the root of the project, not the workflows folder. 
 
-```yml
-    - name: Restore dependencies
-      run: dotnet restore <Path to .csproj>
-```
+
+5. Apart from restoring workloads, you must also restore dependencies to ensure the project works properly. Add this step and again make sure the path to the main `.csproj` file is correct
+
+    ```yml
+        - name: Restore dependencies
+          run: dotnet restore <Path to .csproj>
+    ```
 
 ### Building the project
-Now that you've got the source code checked out and the environment set up, you can move on to building the project. This is done by running `dotnet build` like so:
+1. Now that you've got the source code checked out and the environment set up, you can move on to building the project. Add the following build step to your workflow:
 
-``` yml
-    - name: Build project
-      run: dotnet build <path to .csproj file>
+    ``` yml
+        - name: Build project
+          run: dotnet build <path to .csproj file> --framework net8.0
+    ```
+**Checkpoint:** At this point, your workflow file should look like this (the paths to the `.csproj` file might be different):
+```yml
+name: Build & Test Workflow
+
+on: [pull_request]
+    
+jobs:
+    build:
+        runs-on: windows-latest
+        
+        steps:
+        - name: Checkout code
+          uses: actions/checkout@v4
+          
+        - name: Setup .NET
+          uses: actions/setup-dotnet@v4
+          with: 
+            dotnet-version: 8.0
+            
+        - name: Restore workloads
+          run: dotnet workload restore ./Notes/Notes.csproj
+          
+        - name: Restore dependencies
+          run: dotnet restore ./Notes/Notes.csproj
+             
+        - name: Build project
+          run: dotnet build ./Notes/Notes.csproj --framework net8.0
 ```
-> Note: When building a MAUI app, you might need to specify what framework to use for the build. You can do this by appending the `--framework` argument to the command above like so: `--framework net8.0`
 
 ### Optional: Adding environment variables to GitHub
+{: .note-title }
+> <i class="fa-solid fa-triangle-exclamation"></i> Note
+>
+> This part of the tutorial is optional, therefore can be skipped. Follow along if you want to make your workflow file more flexible and less error-prone.
+
 You might notice that you are reusing certain values throughout your pipeline, such as the path to your project file. To encourage reuse, you can set up a variable in GitHub to make future modifications more efficient.
 
 To add a variable, navigate to the Settings tab in the repository 
@@ -265,28 +337,201 @@ Switch to the `Variables` tab and select `New repository variable`.
 
 ![Fig. 6: Variables tab](images/variables.png){: standalone #fig6 data-title="Variables tab"}
 
-This will take you to a page where you give a name to your variable, e.g. `CSPROJ_PATH`, and the value, which is the path to your `.csproj` file in this example.
+This will take you to a page where you give a name to your variable, e.g. `CSPROJ_PATH`, and the value, which is the path to your `.csproj` file in this example. **Note: the path in the screenshot is just an example.**
 
 ![Fig. 7: Adding a variable](images/add-variable.png){: standalone #fig7 data-title="Adding a variable"}
 
 After you add the variable in GitHub, you can use it in your workflow file like this:
 
-```yml
-- name: Build
-  run: dotnet build ${{ vars.CSPROJ_PATH }}
 ```
+${{ vars.CSPROJ_PATH }}
+```
+
+So if you wish to replace your paths with the environment variable, you can replace them with the syntax above, for example, your build step could look like this:
+```yml
+ - name: Build project
+   run: dotnet build ${{ vars.CSPROJ_PATH }} --framework net8.0
+```
+
+**This is the end of the optional part of the tutorial**
 
 ### Testing the code
 Testing is a critical element of any CI/CD pipeline. Automatically running a suite of tests speeds up development significantly, while ensuring that the application remains fully functional and the recent changes have not introduced any bugs (or at least the bugs covered by tests).
 
-In GitHub Actions, you can run tests as part of the workflow. Usually, you'll want to have a separate step for this after the build step. To test a .NET project, you can use this command, which will run all tests included in the entire solution. 
+In GitHub Actions, you can run tests as part of the workflow. Usually, you'll want to have a separate step for this after the build step. To test a .NET project, you can use the following command, which will run all tests included in the entire solution. 
 
+{: .warning-title }
+> <i class="fa-solid fa-triangle-exclamation"></i> Important
+>
 > Note: in all previous steps, you needed a path to the `.csproj` file, but in this case, it's the `.sln` file because tests will usually be defined in a separate project that makes use of the base project. The solution file brings them both together so they can communicate. 
+
+Add this code to the bottom of your workflow (remember about proper indentation): 
 
 ``` yml
     - name: test
       run: dotnet test <path to .sln>
 ```
+
+### Adding database support to the workflow
+In this application, the notes are saved to a database running inside a Docker container deployed on your local machine. Some of the tests that are defined in the *Notes.Test* project rely on the connection to that database. In order to properly run the tests, the workflow also needs connection to a database. In real-world projects, a database can be accessed from remote connections using certain protocols, e.g. SSH. Since we only have a local database that is not configured for that, we cannot do that.
+
+In this tutorial, we will set up a dummy database on the workflow runner that will mimick the local database. In the local setup, we use a separate *testdb* that gets pre-populated with some seed data before running the tests so we can replicate that in the remote setup.
+
+#### Setting up SQL Server
+
+1. First, we need to install SQL Server on the workflow runner. Paste this code **between the *Checkout code* step and the *Setup .NET* step**:
+    ```yml
+    - name: Download SqlServer
+      uses: potatoqualitee/mssqlsuite@v1.7
+      with:
+        install: sqlengine, sqlpackage
+    ``` 
+
+2. Once the runner installs SQL Server, it must start the SQL Client and create the database. Paste the following code below the **Download SQLServer** step:
+    ```yml
+    - name: Run sqlclient
+      run: |
+        sqlcmd -S localhost -U sa -P dbatools.I0 -Q "CREATE DATABASE TestDb;"
+        sqlcmd -S localhost -U sa -P dbatools.I0 -d TestDb -Q "SELECT @@version;"
+    ```
+#### Connecting to the database for tests
+
+Now your database will be running on the workflow runner and will be ready for connections. However, your projects don't know how to connect to it yet. Locally, we use ConnectionStrings stored in the `appsettings.json` file but it is very bad practice to commit them to the repository as they contain sensitive data, such as your IP address. GitHub addresses this by introducing repository secrets and supporting environment variables in their workflows.
+
+To add a repository secret:
+
+1. navigate to the **Settings** tab of the repository. In the menu on the  left, expand **Secrets and variables** and select **Actions**. 
+
+    ![alt text](images/actions-menu.png)
+
+2. Ensure that the **Secrets** tab is highlighted and press **New repository secret**
+
+    ![alt text](images/secrets.png)
+
+3. Put `TestConnection_CONNECTION_STRING` as the name and `Server=localhost;Database=TestDb;User ID=sa;Password=dbatools.I0;TrustServerCertificate=True;` as the Secret. Select **Add secret**.
+
+To use the secret in the workflow, you can use the following syntax:
+
+```
+${{ secrets.TestConnection_CONNECTION_STRING }}
+```
+
+To make the .NET projects aware of the connection string stored in a secret, it needs to be added as an environment variable to all steps that need it. In the local setup, the C# code looks in the `appsettings.json` file under `ConnectionString -> TestConnection`, so we will stick to the same naming.
+
+1. Update your **Build project** step to look like this:
+    ```yml
+    - name: Build project
+      env: 
+        ConnectionStrings__TestConnection: ${{ secrets.TestConnection_CONNECTION_STRING }}
+      run: dotnet build ./Notes/Notes.csproj --framework net8.0
+    ```
+
+2. Update your **Test** step to look like this:
+    ```yml
+    - name: Test
+      env: 
+        ConnectionStrings__TestConnection: ${{ secrets.TestConnection_CONNECTION_STRING }}
+      run: dotnet test ./notes.sln --framework net8.0
+    ```
+
+{: .note-title }
+> <i class="fa-solid fa-triangle-exclamation"></i> Important
+>
+> Remeber to use correct paths to the `.csproj` and `.sln` files.
+
+**Checkpoint:** Your workflow file should look like this now:
+```yml
+name: Build & Test Workflow
+
+on: [pull_request]
+    
+jobs:
+    build:
+        runs-on: windows-latest
+        
+        steps:
+        - name: Checkout code
+          uses: actions/checkout@v4
+
+        - name: Download SqlServer
+          uses: potatoqualitee/mssqlsuite@v1.7
+          with:
+            install: sqlengine, sqlpackage
+    
+        - name: Run sqlclient
+          run: |
+            sqlcmd -S localhost -U sa -P dbatools.I0 -Q "CREATE DATABASE TestDb;"
+            sqlcmd -S localhost -U sa -P dbatools.I0 -d TestDb -Q "SELECT @@version;"
+          
+        - name: Setup .NET
+          uses: actions/setup-dotnet@v4
+          with: 
+            dotnet-version: 8.0
+            
+        - name: Restore workloads
+          run: dotnet workload restore ./Notes/Notes.csproj
+          
+        - name: Restore dependencies
+          run: dotnet restore ./Notes/Notes.csproj
+                 
+        - name: Build project
+          env: 
+            ConnectionStrings__TestConnection: ${{ secrets.TestConnection_CONNECTION_STRING }}
+          run: dotnet build ./Notes/Notes.csproj --framework net8.0
+          
+        - name: Test
+          env: 
+            ConnectionStrings__TestConnection: ${{ secrets.TestConnection_CONNECTION_STRING }}
+          run: dotnet test ./notes.sln --framework net8.0
+```
+
+Lastly, we need to make a couple of changes in the code to ensure that the environment variable is picked up and used correctly. 
+
+1. Open the *Notes.Database/Notes.Database.csproj* file. Update the ItemGroup at the bottom of the file to look like this: 
+    ```xml
+    <ItemGroup>
+        <EmbeddedResource Include="appsettings.json" Condition="Exists('appsettings.json')" />
+        <None Update="appsettings.json" Condition="Exists('appsettings.json')">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+    </ItemGroup>
+    ```
+
+    The change will ensure that there are no errors in the workflow due to the absence of the `appsettings.json` file in your remote repository.
+
+2. Open the *NotesDbContext.cs* file. Update the `OnConfiguring` method to look like this:
+    ```c#
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            var connectionString = Environment.GetEnvironmentVariable($"ConnectionStrings__{ConnectionName}");
+
+            if (string.IsNullOrEmpty(connectionString))
+            {
+                var assembly = Assembly.GetExecutingAssembly();
+                using var stream = assembly.GetManifestResourceStream("Notes.Database.appsettings.json");
+
+                if (stream != null)
+                {
+                    var config = new ConfigurationBuilder()
+                        .AddJsonStream(stream)
+                        .Build();
+
+                    connectionString = config.GetConnectionString(ConnectionName);
+                }
+            }
+
+            if (string.IsNullOrEmpty(connectionString))
+            {
+                throw new InvalidOperationException("Database connection string is not configured.");
+            }
+
+            optionsBuilder.UseSqlServer(
+                connectionString,
+                m => m.MigrationsAssembly("Notes.Migrations"));
+        }
+    ```
+
+      This will first try to retrieve the connection string from the environment variable that is added to the project from the workflow, and if that fails, it will fallback to the original method of getting the connection string from the `appsettings.json` file.
 
 ### Checking whether your pipeline works
 At this point, you can commit your changes and push them to the remote repository. Then, when you open a pull request to merge your changes to another branch, you will trigger your workflow run. You should know how to open a pull request from previous tutorials. 
