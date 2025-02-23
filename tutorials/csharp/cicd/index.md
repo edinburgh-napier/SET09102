@@ -17,19 +17,54 @@ In this tutorial, you will learn how to:
 *   Set up automated builds and testing.
 *   Add useful external tools:
     *   Sonar static analysis
-    *   Doxygen
-    *   Database migration using Microsoft Entity Framework
+    *   Doxygen documentation
+    *   Automated database migration using Microsoft Entity Framework
 
 ## Before you start
 Before you start working through this tutorial, it might be useful to take a look at the notes 
 about Continuous Integration/Deployment, and DevOps in general. This will explain the concepts we 
-use in this tutorial. You can find these here: [DevOps notes](https://edinburgh-napier.github.io/remote_test/notes/unit7_devops/).
+use in this tutorial.
 
-To work through the steps outlined in this document, you need to have a dotnet project. This 
-pipeline should work with any dotnet project, but for this module, make sure you have completed 
-the first tutorial on setting up a MAUI project, which you can find here: 
-[Getting started with MAUI](https://edinburgh-napier.github.io/remote_test/tutorials/csharp/maui/maui.html).
+{: .note-title }
+> <i class="fa-solid fa-triangle-exclamation"></i> Important
+> 
+> The steps in this tutorial have been tested on the version of the project that includes database migrations and unit testing. If you haven't worked through these tutorials, the pipeline might not work as expected. You are therefore encouraged to go back and worked through them first. 
 
+### GitHub organisation
+
+Certain parts of the tutorial require your repository to be a part of a GitHub organisation. Follow the steps below to move your current repository to a new organisation. 
+
+First, you need to create your new organisation.
+
+1. In GitHub, click on your profile picture in the top right corner
+![alt text](images/settings.png)
+
+2. In the side menu, select **Your organisations**
+![alt text](images/organisations.png)
+
+3. On the next page, select **New organisation**
+![alt text](images/new-org.png)
+
+4. Next, make sure you select **Create a free organisation** so you don't incure any additional costs.
+![alt text](images/free-org.png)
+
+5. On the next page, give your organisation a name (**this must be unique across all GitHub organisations so might be a bit tricky**), provide an email address (this can be your university email) and make sure to select **My personal account** as the owner. Then, you might have to verify you are not a robot and accept the terms and conditions at the bottom. When you have all the details, select **Next** at the bottom of the page. 
+![alt text](images/org-name.png)
+
+6. After that, you will be given an option to invite other collaborators but for the purpose of this tutorial, select **Skip this step**
+
+Now that you have set up a new organisation, you can move your existing repository to the organisation. To do this, follow the steps below:
+
+1. Navigate to your repository homepage and select Settings from the tabs
+![alt text](images/settings-tab.png)
+
+2. Scroll down to the bottom, where you will see the red **Danger Zone**. Select the **Transfer** option to move the repository.
+![alt text](images/danger-zone.png)
+
+3. On the next page, pick **Select one of my own organisations** and choose the one you have just created from the drop-down menu. You will have to type in your username and repository name before continuing to confirm you are sure of the operation. Once you've done this, select **I understand, transfer repository** to continue.
+![alt text](images/transfer-owner.png)
+
+Now you should be ready to proceed with setting up your CI/CD workflow. 
 ## 1. GitHub Actions
 GitHub Actions is a powerful CI/CD solution integrated into GitHub repositories. It allows 
 developers to create workflows that run when certain events occur within a repository. A workflow 
@@ -37,7 +72,7 @@ is GitHub's name for a pipeline. For example, you can have a workflow that runs 
 is pushed to the master branch and checks whether the code builds and runs correctly. 
 
 GitHub Actions can be used for free by anyone as long as the project is open-source. That means 
-that the repository that hosts your code must be public. Otherwise, every workflow run incurs 
+that the repository that hosts your code must be **public**. Otherwise, every workflow run incurs 
 additional costs.
 
 You can check that your repository for this project is public by going to its main page in 
