@@ -369,7 +369,7 @@ Add this code to the bottom of your workflow (remember about proper indentation)
 
 ``` yml
     - name: test
-      run: dotnet test <path to .sln>
+      run: dotnet test <path to your notes.sln>
 ```
 
 ### Adding database support to the workflow
@@ -423,7 +423,7 @@ To make the .NET projects aware of the connection string stored in a secret, it 
     - name: Build project
       env: 
         ConnectionStrings__TestConnection: ${{ secrets.TestConnection_CONNECTION_STRING }}
-      run: dotnet build ./Notes/Notes.csproj --framework net8.0
+      run: dotnet build <Path to your Notes.csproj> --framework net8.0
     ```
 
 2. Update your **Test** step to look like this:
@@ -431,7 +431,7 @@ To make the .NET projects aware of the connection string stored in a secret, it 
     - name: Test
       env: 
         ConnectionStrings__TestConnection: ${{ secrets.TestConnection_CONNECTION_STRING }}
-      run: dotnet test ./notes.sln --framework net8.0
+      run: dotnet test <Path to your notes.sln> --framework net8.0
     ```
 
 {: .note-title }
@@ -439,7 +439,7 @@ To make the .NET projects aware of the connection string stored in a secret, it 
 >
 > Remeber to use correct paths to the `.csproj` and `.sln` files.
 
-**Checkpoint:** Your workflow file should look like this now:
+**Checkpoint:** Your workflow file should look like this now (the paths might be different):
 ```yml
 name: Build & Test Workflow
 
@@ -534,101 +534,121 @@ Lastly, we need to make a couple of changes in the code to ensure that the envir
       This will first try to retrieve the connection string from the environment variable that is added to the project from the workflow, and if that fails, it will fallback to the original method of getting the connection string from the `appsettings.json` file.
 
 ### Checking whether your pipeline works
-At this point, you can commit your changes and push them to the remote repository. Then, when you open a pull request to merge your changes to another branch, you will trigger your workflow run. You should know how to open a pull request from previous tutorials. 
+At this point, your workflow should be set up to successfuly build and test the project. 
 
-If your workflow is set up correctly, you should be able to see it on the pull request page after a few seconds. If you click on `Details`, it will take you to the summary of the run in the Actions tab.
+1. Commit your changes and push them to the remote repository. 
 
-![Fig. 8: Action details in pull request](images/actions-in-pr.png){: standalone #fig8 data-title="Action details in pull request"}
+    {: .warning-title }
+    > <i class="fa-solid fa-triangle-exclamation"></i> Important
+    >
+    > Make sure you commit the changes to a new branch, **not the main branch**. Since the workflow is set up to be triggered on a pull request, this is necessary. 
 
-You will see a screen similar to this: 
+2. Open a pull request to merge your changes to the main branch. If you don't know how to do this, check this [tutorial](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) or ask for help.
 
-![Fig. 9: Action summary](images/actions-summary.png){: standalone #fig9 data-title="Action summary"}
+3. If your workflow is set up correctly, you should be able to see the newly trigerred workflow on the pull request page after a few seconds. If you click on `Details`, it will take you to the summary of the run in the Actions tab.
 
-In the panel on the left, from the top, you can see:
-- the name of the workflow, 
-- the name of the pull request the run is part of and the status of the entire workflow
-- Summary tab
-- list of jobs with their statuses
-- Run details such as resource usage and the workflow file that was used for the run
+    ![Fig. 8: Action details in pull request](images/actions-in-pr.png){: standalone #fig8 data-title="Action details in pull request"}
 
-If all statuses are green, that means your pipeline ran successfully. 
+4. You should see a screen similar to this: 
 
-In the bigger panel on the right, you can see a list of steps that were executed in the run. Have a look at it to verify that all steps you expect to see are there. You can expand each step to see what its output was by pressing the `>` next to the step's name.
+    ![Fig. 9: Action summary](images/actions-summary.png){: standalone #fig9 data-title="Action summary"}
+
+    In the panel on the left, from the top, you can see:
+    - the name of the workflow, 
+    - the name of the pull request the run is part of and the status of the entire workflow
+    - Summary tab
+    - list of jobs with their statuses
+    - Run details such as resource usage and the workflow file that was used for the run
+
+    If all statuses are green, that means your pipeline ran successfully. 
+
+    In the bigger panel on the right, you can see a list of steps that were executed in the run. Have a look at it to verify that all steps you expect to see are there. You can expand each step to see what its output was by pressing the `>` next to the step's name.
+
+    {: .note-title }
+    > <i class="fa-solid fa-triangle-exclamation"></i> Note
+    >
+    > Note that it takes a long time for the workflow to run due many setup steps, e.g. installing the SQL Server or restoring workloads. Expect that it might take around 15 mins.
+
+ {: .warning-title }
+  > <i class="fa-solid fa-triangle-exclamation"></i> Checkpoint
+  >
+  > Please make sure that your workflow completes without any errors before proceeding with the rest of the tutorial. This is the basic workflow that will set up a database, build the project and run any tests.
 
 
 ## 3. Extending your pipeline with external tools
-You now know how to create a basic pipeline that builds and tests your code. You can expand the pipeline by adding external tools for static code analysis, database migrations, documentation generation or many other things that will add value to the automatic runs.
+You now know how to create a basic pipeline that builds and tests your code. You can expand the pipeline by adding external tools for static code analysis, database migrations, documentation generation or many other things that will add value to the automatic runs. We will add support for SonarCloud static code analysis and automatic documentation generation using Doxygen. 
 
 ### Static code analysis with SonarQube Cloud
 Static code analysis can tell us a lot about the quality of the code written. SonarQube Cloud is a cloud-based version of the SonarQube code analyser. You can find information about the local usage of SonarQube in this tutorial: [SonarQube](https://edinburgh-napier.github.io/remote_test/tutorials/tools/sonarqube/).
 
 #### Setting up a SonarCloud account, organization and project
-To use the cloud version of Sonar, you have to create an account on their website. You can find it here: [SonarQube Cloud signup](https://www.sonarsource.com/products/sonarcloud/signup/). Since we are using GitHub to store the repository, you should sign up using GitHub. If you do that, you will be asked to authorize SonarCloud to gain access to certain details of your GitHub account, which you should accept by pressing the `Authorize SonarCloud` button. 
+1. To use the cloud version of Sonar, you have to create an account on their website. You can find it here: [SonarQube Cloud signup](https://www.sonarsource.com/products/sonarcloud/signup/). Since we are using GitHub to store the repository, you should sign up using GitHub. If you do that, you will be asked to authorize SonarCloud to gain access to certain details of your GitHub account, which you should **accept** by pressing the `Authorize SonarCloud` button. 
 
-![Fig. 10: Sonar Cloud Signup Page](images/sonar-signup.png){: standalone #fig10 data-title="Sonar Cloud Signup Page"}
+    ![Fig. 10: Sonar Cloud Signup Page](images/sonar-signup.png){: standalone #fig10 data-title="Sonar Cloud Signup Page"}
 
-Once your account is ready, you will be taken to the getting started screen, where you can import the organization that owns your repository from GitHub. You should have that set up if you worked through the first tutorial. If not, you can manually create an organization in Sonar by clicking on the underlined `create a project manually`. 
+2. Once your account is ready, you will be taken to the getting started screen, where you can import the organization that owns your repository from GitHub. You should have created this earlier. We're going to assume you have an organisation in GitHub so **select** `Import an organization`.
 
-> Setting up a project manually in SonarQube is not recommended as it leads to missing features like analysis feedback in the Pull Request. We recommend you go back and setup an organization in GitHub to host your code. If you still decide against it, you can follow the on-screen instructions to create a manual organisation. 
+    ![Fig. 11: Import organisation in Sonar](images/import-org-sonar.png){: standalone #fig11 data-title="Import organisation in Sonar"}
 
-We're going to assume you have an organisation in GitHub so select `Import an organization`.
+3. On the next page, select which organisation you want to use. Then, you will be asked for permission to install Sonar on your organisation. Since we only need the analysis on one repository, choose the `Only select repositories` option and select the correct repository, then proceed by pressing `Install`.
 
-![Fig. 11: Import organisation in Sonar](images/import-org-sonar.png){: standalone #fig11 data-title="Import organisation in Sonar"}
+    ![Fig. 12: Selecting a repository](images/select-repo-sonar.png){: standalone #fig12 data-title="Selecting a repository"}
 
-On the next page, select which organisation you want to use. Then, you will be asked for permission to install Sonar on your organisation. Since we only need the analysis on one repository, choose the `Only select repositories` option and select the correct repository, then proceed by pressing `Install`.
+4. On the next page, you will be asked for the name and the key of the project - keep them as is. You also need to choose the payment plan so make sure to select the free one to avoid any extra costs. Proceed by pressing `Create organization`.
 
-![Fig. 12: Selecting a repository](images/select-repo-sonar.png){: standalone #fig12 data-title="Selecting a repository"}
+5. Now that your Sonar organization is set up, you have to select the repositories that will be included in the Sonar project you are creating. Select the correct one and continue by pressing `Set up`. 
 
-On the next page, you will be asked for the name and the key of the project - keep them as is. You also need to choose the payment plan so make sure to select the free one to avoid any extra costs. Proceed by pressing `Create organization`.
+    ![Fig. 13: Choosing the project](images/choose-project-sonar.png){: standalone #fig13 data-title="Choosing the project"}
 
-Now that your Sonar organization is set up, you have to select the repositories that will be included in the Sonar project you are creating. Select the correct one and continue by pressing `Set up`. 
-
-![Fig. 13: Choosing the project](images/choose-project-sonar.png){: standalone #fig13 data-title="Choosing the project"}
-
-Finally, you need to choose what Sonar considers new code in the repository. You have two choices which are explained in the screenshot below. You should proceed with the `Previous version` one. Then, you can finally create the project.
+6. Finally, you need to choose what Sonar considers new code in the repository. You have two choices which are explained in the screenshot below. You should proceed with the `Previous version` one. Then, you can finally create the project.
 
 ![Fig. 14: Selecting what is new code](images/new-code.png){: standalone #fig14 data-title="Selecting what is new code"}
 
 #### Adding Sonar Token as a repository secret
 SonarCloud can be integrated with your workflow so that anytime the workflow runs, it will trigger a static code analysis by Sonar. 
 
-The first step to setting this up is adding a secret in GitHub that contains an access token for Sonar. To find out what the token is, follow the steps below:
+The first step to setting this up is adding a secret in GitHub that contains an access token for Sonar. The token is provided by Sonar and can be found following the steps below:
 
-In your main project page in Sonar, go to `Administration` and then select `Analysis Method`.
+1. In your main project page in Sonar, go to `Administration` and then select `Analysis Method`.
 
-![Fig. 15: Analysis method](images/analysis-method-sonar.png){: standalone #fig15 data-title="Analysis method"}
+    ![Fig. 15: Analysis method](images/analysis-method-sonar.png){: standalone #fig15 data-title="Analysis method"}
 
-At the bottom of the page, select `With GitHub Actions`.
+2. At the bottom of the page, select `With GitHub Actions`.
 
-![Fig. 16: Setup GitHub in Sonar](images/setup-github-sonar.png){: standalone #fig16 data-title="Setup GitHub in Sonar"}
+    ![Fig. 16: Setup GitHub in Sonar](images/setup-github-sonar.png){: standalone #fig16 data-title="Setup GitHub in Sonar"}
 
-On the final page, make sure you disable automatic analysis and then copy the value of SONAR_TOKEN. 
+3. On the final page, make sure you disable automatic analysis and then copy the value of SONAR_TOKEN. 
 
-![Fig. 17: Secret in Sonar](images/secret-sonar.png){: standalone #fig17 data-title="Secret in Sonar"}
+    ![Fig. 17: Secret in Sonar](images/secret-sonar.png){: standalone #fig17 data-title="Secret in Sonar"}
 
-You can now add the secret in GitHub Actions, in a similar way as you previously added the environement variable. Go to the `Actions secrets and variables` tab in the repository settings. Make sure you are in the `Secrets` tab and then add a new secret with the name `SONAR_TOKEN` and the value copied from Sonar. Without this, your workflow will fail as it won't be able to connect to Sonar properly. 
+You can now add the secret in GitHub Actions, the same way you added the secret for the connection string. Go to the `Actions secrets and variables` tab in the repository settings. Make sure you are in the `Secrets` tab and then add a new secret with the name `SONAR_TOKEN` and the value copied from Sonar. Without this, your workflow will fail as it won't be able to connect to Sonar properly. 
 
+{: .warning-title }
+> 
 > Don't proceed with adding the steps if you don't have the token as a repository secret.
 
 #### Adding Sonar steps to the workflow
 Now it's time to modify the workflow file to include static analysis by SonarCloud. Unfortunately, the setup required before running the scanner is a bit lengthy because Sonar carries its own dependencies and needs to be installed before it can be used. Fortunately, SonarCloud provides all the configuration in their documentation: [SonarQube docs](https://docs.sonarsource.com/sonarqube/10.6/devops-platform-integration/github-integration/adding-analysis-to-github-actions-workflow/)
 
-> **Important!!** In the workflow file, you should set up Sonar at the same stage you are setting up the environment for the project itself. So the following Sonar setup steps should be placed after the `Restore dependencies` step but before the `Build` step. 
-
-The SonarCloud Scanner internally requires a Java runtime environment to execute. Without it, the scanner won't run, even for non-Java projects so the first step in Sonar's environment setup is setting up the JDK, which is done through a standard action. Place the following code in the right place in your workflow file:
+1. Modify your workflow file to insert the Sonar setup steps **between the *Restore dependencies* and the *Build* steps**, like shown below.
 
 ``` yml
+    ...
+
+    - name: Restore dependencies
+      run: dotnet restore <Path to your Notes.csproj>
+
+    # Command-line tools from .NET
+    - name: Install Tools
+      run: dotnet tool install --global dotnet-coverage
+
     #Setup a Java JDK
     - name: Set up JDK 17
       uses: actions/setup-java@v4
       with:
         java-version: 17
         distribution: 'zulu'
-```
 
-The next step is to get the cached dependencies. If no dependencies are cached, this step will simply do nothing and all necessary dependencies will need to be installed later. If there are some cached dependencies, they will be restored to speed up the process. Paste the following code below the JDK setup:
-
-```yml
     # Get the SonarCloud dependencies from cache
     - name: Cache SonarCloud packages
       uses: actions/cache@v4
@@ -636,13 +656,7 @@ The next step is to get the cached dependencies. If no dependencies are cached, 
         path: ~/sonar/cache
         key: ${{ runner.os }}-sonar
         restore-keys: ${{ runner.os }}-sonar
-```
 
-In the next two steps, the first one will try to get the SonarCloud scanner from cache but if it's not found, the second one will install it. Paste the following code below the `Cache SonarCloud packages` step. Note that you must provide the path to your project folder in the second step. 
-
-> Your project folder is the one where you have your `.sln` file. 
-
-```yml
     # Get the SonarCloud scanner from cache
     - name: Cache SonarCloud scanner
       id: cache-sonar-scanner
@@ -656,27 +670,58 @@ In the next two steps, the first one will try to get the SonarCloud scanner from
     - name: Install SonarCloud scanner
       if: steps.cache-sonar-scanner.outputs.cache-hit != 'true'
       run: |
-        mkdir -p ./.sonar/scanner
-        cd <Path to your project folder>
-        dotnet tool update dotnet-sonarscanner --tool-path ../.sonar/scanner
+        mkdir -p .sonar/scanner
+        dotnet tool update dotnet-sonarscanner --tool-path ./.sonar/scanner
+        echo "$(Resolve-Path ./.sonar/scanner)" >> $env:GITHUB_PATH
+
+    - name: Build project
+      env: 
+        ConnectionStrings__TestConnection: ${{ secrets.TestConnection_CONNECTION_STRING }}
+      run: dotnet build <Path to your Notes.csproj> --framework net8.0
+
+    ...
 ```
 
-These are all the steps needed to set up SonarCloud. Now you can move on to setting up the analysis. The way it works is you start the scanner, build and test your project, and then stop the scanner. This means that the build and test steps need to be encapsulated by the sonar start and end steps, like in the code below.
+What each step does:
 
-> Make sure the build and test steps are between the Sonar start and Sonar end steps. Also make sure to replace the organisation and project keys with your own (see steps below).
+- To properly collect test coverage from the Notes.Test project, Sonar needs the command-line tool from .NET. The first step installs that tool.
 
+- The SonarCloud Scanner internally requires a Java runtime environment to execute. Without it, the scanner won't run, even for non-Java projects so the first step in Sonar's environment setup is setting up the JDK, which is done through a standard action.
+
+- The next step is to get the cached dependencies. If no dependencies are cached, this step will simply do nothing and all necessary dependencies will need to be installed later. If there are some cached dependencies, they will be restored to speed up the process.
+
+- In the next two steps, the first one will try to get the SonarCloud scanner from cache but if it's not found, the second one will install it. Paste the following code below the `Cache SonarCloud packages` step. Note that you must provide the path to your project folder in the second step. 
+
+These are all the steps needed to set up SonarCloud. Now you can move on to setting up the analysis. The way it works is you start the scanner, build and test your project, and then stop the scanner. This means that the build and test steps need to be encapsulated by the sonar start and end steps.
+
+1. Modify your code to include the *Start Sonar analysis* step before the *Build* step and *End Sonar analysis* step after the *Test* step, like in the code below. Also note that the ***Test*** step was updated to make use of the coverage collection required by Sonar.
 
 ```yml
+...
+
+    # Install the SonarCloud Scanner
+    - name: Install SonarCloud scanner
+      if: steps.cache-sonar-scanner.outputs.cache-hit != 'true'
+      run: |
+        mkdir -p .sonar/scanner
+        dotnet tool update dotnet-sonarscanner --tool-path ./.sonar/scanner
+        echo "$(Resolve-Path ./.sonar/scanner)" >> $env:GITHUB_PATH
+
     - name: Start Sonar Analysis
       env:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
       run: |
         ./.sonar/scanner/dotnet-sonarscanner begin /k:"<key>" /o:"<organisation>" /d:sonar.token="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.scanner.scanAll=false /d:sonar.cs.vscoveragexml.reportsPaths=coverage.xml
 
-    #Build and test steps here
-    #
-    #
-    #
+    - name: Build project
+      env: 
+        ConnectionStrings__TestConnection: ${{ secrets.TestConnection_CONNECTION_STRING }}
+      run: dotnet build <Path to your Notes.csproj file> --framework net8.0
+          
+    - name: Test
+      env: 
+        ConnectionStrings__TestConnection: ${{ secrets.TestConnection_CONNECTION_STRING }}
+      run: dotnet-coverage collect "dotnet test <Path to you notes.sln file> --framework net8.0" -f xml -o "coverage.xml"
 
     - name: End Sonar Analysis
       env:
@@ -684,15 +729,111 @@ These are all the steps needed to set up SonarCloud. Now you can move on to sett
       run: ./.sonar/scanner/dotnet-sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
 ```
 
-Make sure that you replace `<organisation>` with Sonar organisation key and `<key>` with your Sonar project key (keep the double quotes around these values). You can find them in the Information tab:
+2. Make sure that you replace `<organisation>` with Sonar organisation key and `<key>` with your Sonar project key (**keep the double quotes around these values**). You can find them in the Information tab:
 
-![Fig. 18: Organisation and project keys in Sonar](images/keys.png){: standalone #fig18 data-title="Organisation and project keys in Sonar"}
+    ![Fig. 18: Organisation and project keys in Sonar](images/keys.png){: standalone #fig18 data-title="Organisation and project keys in Sonar"}
 
-Also, note the use of the `SONAR_TOKEN` secret in the code. Using this notation you can use any other secrets you add to the repository. 
+{: .warning-title }
+> 
+> Go through the Sonar steps carefully and double check all paths were replaced with ones that are correct for your project. Also make sure you have correctly replaced the `<organisation>` and `<key>` placeholders.
+
+**Checkpoint:** Your entire workflow file should look like this now (The paths and placeholders will be different):
+```yml
+name: Build & Test Workflow
+
+on: [pull_request]
+    
+jobs:
+    build:
+        runs-on: windows-latest
+        
+        steps:
+        - name: Checkout code
+          uses: actions/checkout@v4
+
+        - name: Download SqlServer
+          uses: potatoqualitee/mssqlsuite@v1.7
+          with:
+            install: sqlengine, sqlpackage
+    
+        - name: Run sqlclient
+          run: |
+            sqlcmd -S localhost -U sa -P dbatools.I0 -Q "CREATE DATABASE TestDb;"
+            sqlcmd -S localhost -U sa -P dbatools.I0 -d TestDb -Q "SELECT @@version;"
+          
+        - name: Setup .NET
+          uses: actions/setup-dotnet@v4
+          with: 
+            dotnet-version: 8.0
+            
+        - name: Restore workloads
+          run: dotnet workload restore ./Notes/Notes.csproj
+          
+        - name: Restore dependencies
+          run: dotnet restore ./Notes/Notes.csproj
+
+        - name: Install Tools
+          run: dotnet tool install --global dotnet-coverage
+
+            #Setup a Java JDK
+        - name: Set up JDK 17
+          uses: actions/setup-java@v4
+          with:
+            java-version: 17
+            distribution: 'zulu'
+
+        # Get the SonarCloud dependencies from cache
+        - name: Cache SonarCloud packages
+          uses: actions/cache@v4
+          with:
+            path: ~/sonar/cache
+            key: ${{ runner.os }}-sonar
+            restore-keys: ${{ runner.os }}-sonar
+
+        # Get the SonarCloud scanner from cache
+        - name: Cache SonarCloud scanner
+          id: cache-sonar-scanner
+          uses: actions/cache@v4
+          with:
+            path: ./.sonar/scanner
+            key: ${{ runner.os }}-sonar-scanner
+            restore-keys: ${{ runner.os }}-sonar-scanner
+
+        # Install the SonarCloud Scanner
+        - name: Install SonarCloud scanner
+          if: steps.cache-sonar-scanner.outputs.cache-hit != 'true'
+          run: |
+            mkdir -p .sonar/scanner
+            dotnet tool update dotnet-sonarscanner --tool-path ./.sonar/scanner
+            echo "$(Resolve-Path ./.sonar/scanner)" >> $env:GITHUB_PATH
+            
+        - name: Start Sonar Analysis
+          env:
+            SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          run: |
+            ./.sonar/scanner/dotnet-sonarscanner begin /k:"PipelineTest123_notes" /o:"pipelinetest123" /d:sonar.token="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.scanner.scanAll=false /d:sonar.cs.vscoveragexml.reportsPaths=coverage.xml    
+
+        - name: Build project
+          env: 
+            ConnectionStrings__TestConnection: ${{ secrets.TestConnection_CONNECTION_STRING }}
+          run: dotnet build ./Notes/Notes.csproj --framework net8.0
+          
+        - name: Test
+          env: 
+            ConnectionStrings__TestConnection: ${{ secrets.TestConnection_CONNECTION_STRING }}
+          run: dotnet-coverage collect "dotnet test ./notes.sln --framework net8.0" -f xml -o "coverage.xml"
+
+        - name: End Sonar Analysis
+          env:
+            SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          run: ./.sonar/scanner/dotnet-sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
+```
 
 Your workflow should now be set up to automatically run Sonar analysis. Go ahead and commit and push your changes. Then, if you still have a pull request open on the same branch, the workflow will be triggered automatically. If not, you can open a new PR. Make sure to check whether your pipeline ran successfully in the `Actions` tab in GitHub.
 
-The results of the analysis will be available in the SonarCloud interface. 
+The results of the analysis will be available in the SonarCloud interface. The *End Sonar analysis* step will generate a link which can take you directly there like in the screenshot below. Alternatively, you can go to the SonarCloud dashboard manually. 
+
+![alt text](images/analysis-result.png)
 
 ### Automatic documentation generation with Doxygen
 Documentation is important, especially in larger projects with multiple contributors. Doing this manually can be time-consuming but fortunately, it can be sped up by using automatic documentation generators like Doxygen. 
