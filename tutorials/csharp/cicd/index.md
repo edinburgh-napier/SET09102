@@ -24,7 +24,7 @@ Before you start working through this tutorial, it might be useful to take a loo
 about Continuous Integration/Deployment, and DevOps in general. This will explain the concepts we 
 use in this tutorial.
 
-{: .note-title }
+{: .warning-title }
 > <i class="fa-solid fa-triangle-exclamation"></i> Important
 > 
 > The steps in this tutorial have been tested on the version of the project that includes database migrations and unit testing. If you haven't worked through these tutorials, the pipeline might not work as expected. You are therefore encouraged to go back and worked through them first. 
@@ -37,23 +37,23 @@ First, you need to create your new organisation.
 
 1. In GitHub, click on your profile picture in the top right corner
 
-![alt text](images/settings.png)
+    ![alt text](images/settings.png)
 
 2. In the side menu, select **Your organisations**
 
-![alt text](images/organisations.png)
+    ![alt text](images/organisations.png)
 
 3. On the next page, select **New organisation**
 
-![alt text](images/new-org.png)
+    ![alt text](images/new-org.png)
 
 4. Next, make sure you select **Create a free organisation** so you don't incure any additional costs.
 
-![alt text](images/free-org.png)
+    ![alt text](images/free-org.png)
 
 5. On the next page, give your organisation a name (**this must be unique across all GitHub organisations so might be a bit tricky**), provide an email address (this can be your university email) and make sure to select **My personal account** as the owner. Then, you might have to verify you are not a robot and accept the terms and conditions at the bottom. When you have all the details, select **Next** at the bottom of the page. 
 
-![alt text](images/org-name.png)
+    ![alt text](images/org-name.png)
 
 6. After that, you will be given an option to invite other collaborators but for the purpose of this tutorial, select **Skip this step**
 
@@ -61,17 +61,18 @@ Now that you have set up a new organisation, you can move your existing reposito
 
 1. Navigate to your repository homepage and select Settings from the tabs
 
-![alt text](images/settings-tab.png)
+    ![alt text](images/settings-tab.png)
 
 2. Scroll down to the bottom, where you will see the red **Danger Zone**. Select the **Transfer** option to move the repository.
 
-![alt text](images/danger-zone.png)
+    ![alt text](images/danger-zone.png)
 
 3. On the next page, pick **Select one of my own organisations** and choose the one you have just created from the drop-down menu. You will have to type in your username and repository name before continuing to confirm you are sure of the operation. Once you've done this, select **I understand, transfer repository** to continue.
 
-![alt text](images/transfer-owner.png)
+    ![alt text](images/transfer-owner.png)
 
 Now you should be ready to proceed with setting up your CI/CD workflow. 
+
 ## 1. GitHub Actions
 GitHub Actions is a powerful CI/CD solution integrated into GitHub repositories. It allows 
 developers to create workflows that run when certain events occur within a repository. A workflow 
@@ -297,6 +298,7 @@ The next step is ensuring that the environment is set up properly and all tools 
           run: dotnet build <path to .csproj file> --framework net8.0
     ```
 **Checkpoint:** At this point, your workflow file should look like this (the paths to the `.csproj` file might be different):
+
 ```yml
 name: Build & Test Workflow
 
@@ -334,21 +336,21 @@ jobs:
 
 You might notice that you are reusing certain values throughout your pipeline, such as the path to your project file. To encourage reuse, you can set up a variable in GitHub to make future modifications more efficient.
 
-To add a variable, navigate to the Settings tab in the repository 
+1. To add a variable, navigate to the Settings tab in the repository 
 
-![Fig. 4: Settings tab in GitHub](images/settings-tab.png){: standalone #fig4 data-title="Settings tab in GitHub"}
+    ![Fig. 4: Settings tab in GitHub](images/settings-tab.png){: standalone #fig4 data-title="Settings tab in GitHub"}
 
-In the menu on the left, navigate to `Secrets and variables` > `Actions`
+2. In the menu on the left, navigate to `Secrets and variables` > `Actions`
 
-![Fig. 5: Actions settings](images/actions-menu.png){: standalone #fig5 data-title="Actions settings"}
+    ![Fig. 5: Actions settings](images/actions-menu.png){: standalone #fig5 data-title="Actions settings"}
 
-Switch to the `Variables` tab and select `New repository variable`.
+3. Switch to the `Variables` tab and select `New repository variable`.
 
-![Fig. 6: Variables tab](images/variables.png){: standalone #fig6 data-title="Variables tab"}
+    ![Fig. 6: Variables tab](images/variables.png){: standalone #fig6 data-title="Variables tab"}
 
-This will take you to a page where you give a name to your variable, e.g. `CSPROJ_PATH`, and the value, which is the path to your `.csproj` file in this example. **Note: the path in the screenshot is just an example.**
+4. This will take you to a page where you give a name to your variable, e.g. `CSPROJ_PATH`, and the value, which is the path to your `.csproj` file in this example. **Note: the path in the screenshot is just an example.**
 
-![Fig. 7: Adding a variable](images/add-variable.png){: standalone #fig7 data-title="Adding a variable"}
+    ![Fig. 7: Adding a variable](images/add-variable.png){: standalone #fig7 data-title="Adding a variable"}
 
 After you add the variable in GitHub, you can use it in your workflow file like this:
 
@@ -648,7 +650,7 @@ The first step to setting this up is adding a secret in GitHub that contains an 
 
     ![Fig. 17: Secret in Sonar](images/secret-sonar.png){: standalone #fig17 data-title="Secret in Sonar"}
 
-You can now add the secret in GitHub Actions, the same way you added the secret for the connection string. Go to the `Actions secrets and variables` tab in the repository settings. Make sure you are in the `Secrets` tab and then add a new secret with the name `SONAR_TOKEN` and the value copied from Sonar. Without this, your workflow will fail as it won't be able to connect to Sonar properly. 
+4. You can now add the secret in GitHub Actions, the same way you added the secret for the connection string. Go to the `Actions secrets and variables` tab in the repository settings. Make sure you are in the `Secrets` tab and then add a new secret with the name `SONAR_TOKEN` and the value copied from Sonar. Without this, your workflow will fail as it won't be able to connect to Sonar properly. 
 
 {: .warning-title }
 > <i class="fa-solid fa-triangle-exclamation"></i> Important
@@ -878,7 +880,7 @@ Doxygen is a tool that generates a web-based representation of your project's do
 
 Here is an example of documentation generated by Doxygen:
 
-    ![Fig. 19: Example Doxygen Output](images/Doxygen_Example.png){: standalone #fig19 data-title="Example Doxygen Output"}
+  ![Fig. 19: Example Doxygen Output](images/Doxygen_Example.png){: standalone #fig19 data-title="Example Doxygen Output"}
 
 Since documentation should be stable and reflect the stable version of the code, it might be a good idea to include documentation generation in a workflow that runs only when changes are pushed to the master/main branch, which we suggest in this tutorial. 
 
@@ -918,6 +920,7 @@ The current workflow runs on any pull requests, so we'll need to create a new on
     ```
 
 5. Now that everything is set up, the documentation can be generated using data included in the Doxyfile. Add this step to the workflow:
+
     ```yml
     - name: Generate Doxygen Documentation
       run: doxygen .
@@ -939,19 +942,18 @@ The steps above generate the documentation but it would be better if we could ac
 
     ```yml
     name: Documentation 
+      on:
+        push:
+          branches:
+            - master # or main depending on your setup 
 
-        on:
-          push:
-            branches:
-              - master # or main depending on your setup 
+      jobs:
+        generate:
+          runs-on: ubuntu-latest 
 
-        jobs:
-          generate:
-            runs-on: ubuntu-latest 
-
-        permissions:
-          pages: write
-          id-token: write 
+      permissions:
+        pages: write
+        id-token: write 
 
     ...
 
@@ -1012,10 +1014,10 @@ Explanation of the code above:
 >
 > The deployment can also be bundled with the generation. That would simplify things and remove the need for the step where you upload the static files as artefacts since the deploy step could see them without it. However, to keep things modular, we decided to separate them into two jobs.
 
-4. The last step to make sure everything works is enabling GitHub Pages in your repository. Navigate to repository Settings and select Pages in the menu on the left. Then, make sure that `GitHub Actions` is selected as the source in the dropdown menu.
+The last step to make sure everything works is enabling GitHub Pages in your repository. Navigate to repository Settings and select Pages in the menu on the left. Then, make sure that `GitHub Actions` is selected as the source in the dropdown menu.
 
-    ![Fig. 20: Enabling GitHub Pages in the repo](images/pages-enable.png){: standalone #fig20 data-title="Enabling GitHub Pages in the repo"}
+  ![Fig. 20: Enabling GitHub Pages in the repo](images/pages-enable.png){: standalone #fig20 data-title="Enabling GitHub Pages in the repo"}
 
-5. Go ahead and commit and push the changes now. If you still have that pull request from before open, the basic build workflow will be triggered. 
+Go ahead and commit and push the changes now. If you still have that pull request from before open, the basic build workflow will be triggered. 
 
-6. Then, when you decide to merge it into the master branch, the documentation workflow will be triggered and will deploy the docs to GitHub Pages. Try it out yourself and make sure if your workflows ran successfully in the `Actions` tab. The last step should output the address of your deployed documentation for your convenience.
+Then, when you decide to merge it into the master branch, the documentation workflow will be triggered and will deploy the docs to GitHub Pages. Try it out yourself and make sure if your workflows ran successfully in the `Actions` tab. The last step should output the address of your deployed documentation for your convenience.
