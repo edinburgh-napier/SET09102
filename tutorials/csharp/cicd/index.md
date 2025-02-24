@@ -17,19 +17,61 @@ In this tutorial, you will learn how to:
 *   Set up automated builds and testing.
 *   Add useful external tools:
     *   Sonar static analysis
-    *   Doxygen
-    *   Database migration using Microsoft Entity Framework
+    *   Doxygen documentation
 
 ## Before you start
 Before you start working through this tutorial, it might be useful to take a look at the notes 
 about Continuous Integration/Deployment, and DevOps in general. This will explain the concepts we 
-use in this tutorial. You can find these here: [DevOps notes](https://edinburgh-napier.github.io/remote_test/notes/unit7_devops/).
+use in this tutorial.
 
-To work through the steps outlined in this document, you need to have a dotnet project. This 
-pipeline should work with any dotnet project, but for this module, make sure you have completed 
-the first tutorial on setting up a MAUI project, which you can find here: 
-[Getting started with MAUI](https://edinburgh-napier.github.io/remote_test/tutorials/csharp/maui/maui.html).
+{: .note-title }
+> <i class="fa-solid fa-triangle-exclamation"></i> Important
+> 
+> The steps in this tutorial have been tested on the version of the project that includes database migrations and unit testing. If you haven't worked through these tutorials, the pipeline might not work as expected. You are therefore encouraged to go back and worked through them first. 
 
+### GitHub organisation
+
+Certain parts of the tutorial require your repository to be a part of a GitHub organisation. Follow the steps below to move your current repository to a new organisation. 
+
+First, you need to create your new organisation.
+
+1. In GitHub, click on your profile picture in the top right corner
+
+![alt text](images/settings.png)
+
+2. In the side menu, select **Your organisations**
+
+![alt text](images/organisations.png)
+
+3. On the next page, select **New organisation**
+
+![alt text](images/new-org.png)
+
+4. Next, make sure you select **Create a free organisation** so you don't incure any additional costs.
+
+![alt text](images/free-org.png)
+
+5. On the next page, give your organisation a name (**this must be unique across all GitHub organisations so might be a bit tricky**), provide an email address (this can be your university email) and make sure to select **My personal account** as the owner. Then, you might have to verify you are not a robot and accept the terms and conditions at the bottom. When you have all the details, select **Next** at the bottom of the page. 
+
+![alt text](images/org-name.png)
+
+6. After that, you will be given an option to invite other collaborators but for the purpose of this tutorial, select **Skip this step**
+
+Now that you have set up a new organisation, you can move your existing repository to the organisation. To do this, follow the steps below:
+
+1. Navigate to your repository homepage and select Settings from the tabs
+
+![alt text](images/settings-tab.png)
+
+2. Scroll down to the bottom, where you will see the red **Danger Zone**. Select the **Transfer** option to move the repository.
+
+![alt text](images/danger-zone.png)
+
+3. On the next page, pick **Select one of my own organisations** and choose the one you have just created from the drop-down menu. You will have to type in your username and repository name before continuing to confirm you are sure of the operation. Once you've done this, select **I understand, transfer repository** to continue.
+
+![alt text](images/transfer-owner.png)
+
+Now you should be ready to proceed with setting up your CI/CD workflow. 
 ## 1. GitHub Actions
 GitHub Actions is a powerful CI/CD solution integrated into GitHub repositories. It allows 
 developers to create workflows that run when certain events occur within a repository. A workflow 
@@ -37,7 +79,7 @@ is GitHub's name for a pipeline. For example, you can have a workflow that runs 
 is pushed to the master branch and checks whether the code builds and runs correctly. 
 
 GitHub Actions can be used for free by anyone as long as the project is open-source. That means 
-that the repository that hosts your code must be public. Otherwise, every workflow run incurs 
+that the repository that hosts your code must be **public**. Otherwise, every workflow run incurs 
 additional costs.
 
 You can check that your repository for this project is public by going to its main page in 
@@ -84,7 +126,10 @@ workflow files that will be used in this tutorial. A full list is available in t
 | **permissions** | Specifies what resources the job can access within the repository.                                                                                                            |
 | **needs**       | Specifies job dependencies, which means that the job after the keyword must run first in order for this job to run successfully. Essentially declares the order of execution. |
 
-> Note: When you specify multiple events after the `on` keyword, all jobs contained in the same 
+{: .note-title }
+> <i class="fa-solid fa-triangle-exclamation"></i> Note
+>
+> When you specify multiple events after the `on` keyword, all jobs contained in the same 
 > workflow file will run whenever any of those events occur. If you need different workflows to 
 > run on occurrence of different events, you will need to include multiple workflow files.
 
@@ -130,92 +175,162 @@ this for this project.
 Now that you understand the syntax used in workflow files, you can move on to implementing your 
 own workflow. 
 
-> It might be a good idea to create a new branch before you start making any changes, e.g. 
-> `feature/workflow`. 
+{: .warning-title }
+> <i class="fa-solid fa-triangle-exclamation"></i> Important
+>
+> Before you start making any changes, create a new branch e.g. `feature/workflow`. 
 
 ### Setting up your workflow file
-To set up your first GitHub Actions workflow manually, create a `.github` directory in the root 
-folder of your project (note the leading dot) and a `workflows` directory inside it. Then, create 
-a file named `build.yml` which will store all instructions for your pipeline. Any `.yml` or 
-`.yaml` file in this folder will be interpreted as a workflow in GitHub Actions. Your file 
-structure should look like this:
+To set up your first GitHub Actions workflow manually:
+1. Create a `.github` directory in the root folder of your repository (note the leading dot) 
+2. Then, create a `workflows` directory inside the `.github` folder. 
+3. Finally, create a file named `build.yml` which will store all instructions for your pipeline. **Any `.yml` or 
+`.yaml` file in this folder will be interpreted as a workflow in GitHub Actions.** This file structure is defined by GitHub and must be followed to trigger automatic runs.
+
+Your file structure should look like this:
 
 ![Fig. 3: File structure for workflow](images/file-structure.png){: standalone #fig3 data-title="File structure for workflow"}
+
 
 The first step in creating pipelines is deciding what events will trigger the runs. It could run 
 anytime something is pushed to any of the branches, or only to some selected branches. Another 
 option is to run the workflow on pull requests, which we will use as an example in this tutorial. 
 A full breakdown can be found in the documentation: [Triggering a workflow](https://docs.github.com/en/actions/writing-workflows/choosing-when-your-workflow-runs/triggering-a-workflow). 
 
-Start defining you workflow by putting the following code in the `build.yml` file:
+**Start defining you workflow by putting the following code in the `build.yml` file:**
 
 ```yml
-name: Build & Test # Name can be anything else you want
+name: Build & Test Workflow
 
 on: 
   [pull_request]
 ```
 
+The name of your workflow can be anything you want so feel free to replace **Build & Test Workflow** with something else of your choosing.
+
+{: .warning-title }
+> <i class="fa-solid fa-triangle-exclamation"></i> Important
+>
+> Indentation plays an important role in `.yaml/.yml` files so make sure you copy the code correctly.
+
+
 ### Setting up the environment
-You can now move on to defining what jobs and actions will be executed in the workflow. You also need to decide what operating system will be used for the runner. For this project, we will use the lastest version of Windows. Add this code to your workflow file:
+1. Now that you have defined when the workflow will be triggered, you can move on to defining what **jobs** and **actions** will be executed in the workflow. You also need to decide what operating system will be used for the runner. For this project, we will use the lastest version of Windows. 
 
-```yml
-jobs:
-  build: # This is just the name of the job, it can be changed to something else if you wish
-    
-    runs-on: windows-latest
-```
+    Add this code to your workflow file:
 
-Now you can start defining the order of the steps in the job. Usually, the starting point is ensuring that the workflow can access the source code. In GitHub Actions, you can use a standard action that checks out the code from the repository. You can do this by using this code:
+    ```yml
+      name: Build & Test Workflow
 
-```yml
-jobs:
-  build:
+      on: 
+        [pull_request]
 
-    runs-on: windows-latest
+      jobs:
+        build:
+          
+          runs-on: windows-latest
+    ```
 
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
-```
+      {: .note-title }
+      > <i class="fa-solid fa-triangle-exclamation"></i> Note
+      >
+      > Even though it may seem that **build** is a keyword in the code above, it is not. It is just a name of a job. As we've explained, you can have many jobs in your workflow file, and each needs a name, which can be anything, so feel free to change it to experiment. Since this job's primary function is to build the code, we have chosen **build** as the name.
+
+
+2. You can start defining the order of the steps in the job. Usually, the starting point is ensuring that the workflow can access the source code. In GitHub Actions, you can use a **standard action** that checks out the code from the repository. 
+
+    Update your code to look like this:
+
+    ```yml
+    name: Build & Test Workflow
+
+    on: 
+          [pull_request]
+    jobs:
+      build:
+
+        runs-on: windows-latest
+
+        steps:
+        - name: Checkout code
+          uses: actions/checkout@v4
+    ```
 
 The next step is ensuring that the environment is set up properly and all tools needed to build the code are installed. In .NET projects, this involves setting up the .NET SDK, and restoring workloads and dependencies. 
 
-To set up the SDK, you can use a standard action and provide it with the version of .NET that you require, in this case 8.0:
+3. To set up the SDK, you can use a standard action and provide it with the version of .NET that you require, in this case 8.0. Add this code below the previous step:
 
-``` yml
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v4
-      with:
-        dotnet-version: 8.0
-```
+    ``` yml
+        - name: Setup .NET
+          uses: actions/setup-dotnet@v4
+          with:
+            dotnet-version: 8.0
+    ```
 
-Workloads in .NET projects are various additional tools, libraries or features that are not included in the SDK by default, for example, MAUI. They are defined in the `.csproj` file so the command needs a correct path to that file. 
+4. To restore .NET workloads, add this step, making sure you provide the path to the Notes.csproj file:
 
-> It's important to remember that all commands in the workflow will be executed from the root of your project, so you must supply a relative path to your `.csproj` file, e.g. `./Project/Project.csproj`. Make sure the paths are relative to the root of the project, not the workflows folder. 
+    ```yml
+        - name: Restore workloads
+          run: dotnet workload restore <Path to .csproj>
+    ```
 
-```yml
-    - name: Restore workloads
-      run: dotnet workload restore <Path to .csproj>
-```
+    Workloads in .NET projects are various additional tools, libraries or features that are not included in the SDK by default, for example, MAUI. They are defined in the `.csproj` file so the command needs a correct path to that file. 
 
-Apart from restoring workloads, you must also restore dependencies to ensure the project works properly. This can be done by adding this step:
+    {: .note-title }
+    > <i class="fa-solid fa-triangle-exclamation"></i> Note
+    >
+    > It's important to remember that all commands in the workflow will be executed from the root of your project, so you must supply a relative path to your `.csproj` file, e.g. `./Notes/Notes.csproj`. Make sure the paths are relative to the root of the project, not the workflows folder. 
 
-```yml
-    - name: Restore dependencies
-      run: dotnet restore <Path to .csproj>
-```
+
+5. Apart from restoring workloads, you must also restore dependencies to ensure the project works properly. Add this step and again make sure the path to the main `.csproj` file is correct
+
+    ```yml
+        - name: Restore dependencies
+          run: dotnet restore <Path to .csproj>
+    ```
 
 ### Building the project
-Now that you've got the source code checked out and the environment set up, you can move on to building the project. This is done by running `dotnet build` like so:
+1. Now that you've got the source code checked out and the environment set up, you can move on to building the project. Add the following build step to your workflow:
 
-``` yml
-    - name: Build project
-      run: dotnet build <path to .csproj file>
+    ``` yml
+        - name: Build project
+          run: dotnet build <path to .csproj file> --framework net8.0
+    ```
+**Checkpoint:** At this point, your workflow file should look like this (the paths to the `.csproj` file might be different):
+```yml
+name: Build & Test Workflow
+
+on: [pull_request]
+    
+jobs:
+    build:
+        runs-on: windows-latest
+        
+        steps:
+        - name: Checkout code
+          uses: actions/checkout@v4
+          
+        - name: Setup .NET
+          uses: actions/setup-dotnet@v4
+          with: 
+            dotnet-version: 8.0
+            
+        - name: Restore workloads
+          run: dotnet workload restore ./Notes/Notes.csproj
+          
+        - name: Restore dependencies
+          run: dotnet restore ./Notes/Notes.csproj
+             
+        - name: Build project
+          run: dotnet build ./Notes/Notes.csproj --framework net8.0
 ```
-> Note: When building a MAUI app, you might need to specify what framework to use for the build. You can do this by appending the `--framework` argument to the command above like so: `--framework net8.0`
 
 ### Optional: Adding environment variables to GitHub
+{: .note-title }
+> <i class="fa-solid fa-triangle-exclamation"></i> Note
+>
+> This part of the tutorial is optional, therefore can be skipped. Follow along if you want to make your workflow file more flexible and less error-prone.
+
 You might notice that you are reusing certain values throughout your pipeline, such as the path to your project file. To encourage reuse, you can set up a variable in GitHub to make future modifications more efficient.
 
 To add a variable, navigate to the Settings tab in the repository 
@@ -230,125 +345,327 @@ Switch to the `Variables` tab and select `New repository variable`.
 
 ![Fig. 6: Variables tab](images/variables.png){: standalone #fig6 data-title="Variables tab"}
 
-This will take you to a page where you give a name to your variable, e.g. `CSPROJ_PATH`, and the value, which is the path to your `.csproj` file in this example.
+This will take you to a page where you give a name to your variable, e.g. `CSPROJ_PATH`, and the value, which is the path to your `.csproj` file in this example. **Note: the path in the screenshot is just an example.**
 
 ![Fig. 7: Adding a variable](images/add-variable.png){: standalone #fig7 data-title="Adding a variable"}
 
 After you add the variable in GitHub, you can use it in your workflow file like this:
 
-```yml
-- name: Build
-  run: dotnet build ${{ vars.CSPROJ_PATH }}
 ```
+${{ vars.CSPROJ_PATH }}
+```
+
+So if you wish to replace your paths with the environment variable, you can replace them with the syntax above, for example, your build step could look like this:
+
+```yml
+ - name: Build project
+   run: dotnet build ${{ vars.CSPROJ_PATH }} --framework net8.0
+```
+
+**This is the end of the optional part of the tutorial**
 
 ### Testing the code
 Testing is a critical element of any CI/CD pipeline. Automatically running a suite of tests speeds up development significantly, while ensuring that the application remains fully functional and the recent changes have not introduced any bugs (or at least the bugs covered by tests).
 
-In GitHub Actions, you can run tests as part of the workflow. Usually, you'll want to have a separate step for this after the build step. To test a .NET project, you can use this command, which will run all tests included in the entire solution. 
+In GitHub Actions, you can run tests as part of the workflow. Usually, you'll want to have a separate step for this after the build step. To test a .NET project, you can use the following command, which will run all tests included in the entire solution. 
 
+{: .warning-title }
+> <i class="fa-solid fa-triangle-exclamation"></i> Important
+>
 > Note: in all previous steps, you needed a path to the `.csproj` file, but in this case, it's the `.sln` file because tests will usually be defined in a separate project that makes use of the base project. The solution file brings them both together so they can communicate. 
+
+Add this code to the bottom of your workflow (remember about proper indentation): 
 
 ``` yml
     - name: test
-      run: dotnet test <path to .sln>
+      run: dotnet test <path to your notes.sln>
 ```
 
+### Adding database support to the workflow
+In this application, the notes are saved to a database running inside a Docker container deployed on your local machine. Some of the tests that are defined in the *Notes.Test* project rely on the connection to that database. In order to properly run the tests, the workflow also needs connection to a database. In real-world projects, a database can be accessed from remote connections using certain protocols, e.g. SSH. Since we only have a local database that is not configured for that, we cannot do that.
+
+In this tutorial, we will set up a dummy database on the workflow runner that will mimick the local database. In the local setup, we use a separate *testdb* that gets pre-populated with some seed data before running the tests so we can replicate that in the remote setup.
+
+#### Setting up SQL Server
+
+1. First, we need to install SQL Server on the workflow runner. Paste this code **between the *Checkout code* step and the *Setup .NET* step**:
+
+    ```yml
+    - name: Download SqlServer
+      uses: potatoqualitee/mssqlsuite@v1.7
+      with:
+        install: sqlengine, sqlpackage
+    ``` 
+
+2. Once the runner installs SQL Server, it must start the SQL Client and create the database. Paste the following code below the **Download SQLServer** step:
+
+    ```yml
+    - name: Run sqlclient
+      run: |
+        sqlcmd -S localhost -U sa -P dbatools.I0 -Q "CREATE DATABASE TestDb;"
+        sqlcmd -S localhost -U sa -P dbatools.I0 -d TestDb -Q "SELECT @@version;"
+    ```
+#### Connecting to the database for tests
+
+Now your database will be running on the workflow runner and will be ready for connections. However, your projects don't know how to connect to it yet. Locally, we use ConnectionStrings stored in the `appsettings.json` file but it is very bad practice to commit them to the repository as they contain sensitive data, such as your IP address. GitHub addresses this by introducing repository secrets and supporting environment variables in their workflows.
+
+To add a repository secret:
+
+1. navigate to the **Settings** tab of the repository. In the menu on the  left, expand **Secrets and variables** and select **Actions**. 
+
+    ![alt text](images/actions-menu.png)
+
+2. Ensure that the **Secrets** tab is highlighted and press **New repository secret**
+
+    ![alt text](images/secrets.png)
+
+3. Put `TestConnection_CONNECTION_STRING` as the name and `Server=localhost;Database=TestDb;User ID=sa;Password=dbatools.I0;TrustServerCertificate=True;` as the Secret. Select **Add secret**.
+
+To use the secret in the workflow, you can use the following syntax:
+
+```
+${{ secrets.TestConnection_CONNECTION_STRING }}
+```
+
+To make the .NET projects aware of the connection string stored in a secret, it needs to be added as an environment variable to all steps that need it. In the local setup, the C# code looks in the `appsettings.json` file under `ConnectionString -> TestConnection`, so we will stick to the same naming.
+
+1. Update your **Build project** step to look like this:
+
+    ```yml
+    - name: Build project
+      env: 
+        ConnectionStrings__TestConnection: ${{ secrets.TestConnection_CONNECTION_STRING }}
+      run: dotnet build <Path to your Notes.csproj> --framework net8.0
+    ```
+
+2. Update your **Test** step to look like this:
+
+    ```yml
+    - name: Test
+      env: 
+        ConnectionStrings__TestConnection: ${{ secrets.TestConnection_CONNECTION_STRING }}
+      run: dotnet test <Path to your notes.sln> --framework net8.0
+    ```
+
+{: .note-title }
+> <i class="fa-solid fa-triangle-exclamation"></i> Important
+>
+> Remeber to use correct paths to the `.csproj` and `.sln` files.
+
+**Checkpoint:** Your workflow file should look like this now (the paths might be different):
+
+```yml
+name: Build & Test Workflow
+
+on: [pull_request]
+    
+jobs:
+    build:
+        runs-on: windows-latest
+        
+        steps:
+        - name: Checkout code
+          uses: actions/checkout@v4
+
+        - name: Download SqlServer
+          uses: potatoqualitee/mssqlsuite@v1.7
+          with:
+            install: sqlengine, sqlpackage
+    
+        - name: Run sqlclient
+          run: |
+            sqlcmd -S localhost -U sa -P dbatools.I0 -Q "CREATE DATABASE TestDb;"
+            sqlcmd -S localhost -U sa -P dbatools.I0 -d TestDb -Q "SELECT @@version;"
+          
+        - name: Setup .NET
+          uses: actions/setup-dotnet@v4
+          with: 
+            dotnet-version: 8.0
+            
+        - name: Restore workloads
+          run: dotnet workload restore ./Notes/Notes.csproj
+          
+        - name: Restore dependencies
+          run: dotnet restore ./Notes/Notes.csproj
+                 
+        - name: Build project
+          env: 
+            ConnectionStrings__TestConnection: ${{ secrets.TestConnection_CONNECTION_STRING }}
+          run: dotnet build ./Notes/Notes.csproj --framework net8.0
+          
+        - name: Test
+          env: 
+            ConnectionStrings__TestConnection: ${{ secrets.TestConnection_CONNECTION_STRING }}
+          run: dotnet test ./notes.sln --framework net8.0
+```
+
+Lastly, we need to make a couple of changes in the code to ensure that the environment variable is picked up and used correctly. 
+
+1. Open the *Notes.Database/Notes.Database.csproj* file. Update the ItemGroup at the bottom of the file to look like this:
+
+    ```xml
+    <ItemGroup>
+        <EmbeddedResource Include="appsettings.json" Condition="Exists('appsettings.json')" />
+        <None Update="appsettings.json" Condition="Exists('appsettings.json')">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+    </ItemGroup>
+    ```
+
+    The change will ensure that there are no errors in the workflow due to the absence of the `appsettings.json` file in your remote repository.
+
+2. Open the *NotesDbContext.cs* file. Update the `OnConfiguring` method to look like this:
+
+    ```c#
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            var connectionString = Environment.GetEnvironmentVariable($"ConnectionStrings__{ConnectionName}");
+
+            if (string.IsNullOrEmpty(connectionString))
+            {
+                var assembly = Assembly.GetExecutingAssembly();
+                using var stream = assembly.GetManifestResourceStream("Notes.Database.appsettings.json");
+
+                if (stream != null)
+                {
+                    var config = new ConfigurationBuilder()
+                        .AddJsonStream(stream)
+                        .Build();
+
+                    connectionString = config.GetConnectionString(ConnectionName);
+                }
+            }
+
+            if (string.IsNullOrEmpty(connectionString))
+            {
+                throw new InvalidOperationException("Database connection string is not configured.");
+            }
+
+            optionsBuilder.UseSqlServer(
+                connectionString,
+                m => m.MigrationsAssembly("Notes.Migrations"));
+        }
+    ```
+
+      This will first try to retrieve the connection string from the environment variable that is added to the project from the workflow, and if that fails, it will fallback to the original method of getting the connection string from the `appsettings.json` file.
+
 ### Checking whether your pipeline works
-At this point, you can commit your changes and push them to the remote repository. Then, when you open a pull request to merge your changes to another branch, you will trigger your workflow run. You should know how to open a pull request from previous tutorials. 
+At this point, your workflow should be set up to successfuly build and test the project. 
 
-If your workflow is set up correctly, you should be able to see it on the pull request page after a few seconds. If you click on `Details`, it will take you to the summary of the run in the Actions tab.
+1. Commit your changes and push them to the remote repository. 
 
-![Fig. 8: Action details in pull request](images/actions-in-pr.png){: standalone #fig8 data-title="Action details in pull request"}
+    {: .warning-title }
+    > <i class="fa-solid fa-triangle-exclamation"></i> Important
+    >
+    > Make sure you commit the changes to a new branch, **not the main branch**. Since the workflow is set up to be triggered on a pull request, this is necessary. 
 
-You will see a screen similar to this: 
+2. Open a pull request to merge your changes to the main branch. If you don't know how to do this, check this [tutorial](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) or ask for help.
 
-![Fig. 9: Action summary](images/actions-summary.png){: standalone #fig9 data-title="Action summary"}
+3. If your workflow is set up correctly, you should be able to see the newly trigerred workflow on the pull request page after a few seconds. If you click on `Details`, it will take you to the summary of the run in the Actions tab.
 
-In the panel on the left, from the top, you can see:
-- the name of the workflow, 
-- the name of the pull request the run is part of and the status of the entire workflow
-- Summary tab
-- list of jobs with their statuses
-- Run details such as resource usage and the workflow file that was used for the run
+    ![Fig. 8: Action details in pull request](images/actions-in-pr.png){: standalone #fig8 data-title="Action details in pull request"}
 
-If all statuses are green, that means your pipeline ran successfully. 
+4. You should see a screen similar to this: 
 
-In the bigger panel on the right, you can see a list of steps that were executed in the run. Have a look at it to verify that all steps you expect to see are there. You can expand each step to see what its output was by pressing the `>` next to the step's name.
+    ![Fig. 9: Action summary](images/actions-summary.png){: standalone #fig9 data-title="Action summary"}
+
+    In the panel on the left, from the top, you can see:
+    - the name of the workflow, 
+    - the name of the pull request the run is part of and the status of the entire workflow
+    - Summary tab
+    - list of jobs with their statuses
+    - Run details such as resource usage and the workflow file that was used for the run
+
+    If all statuses are green, that means your pipeline ran successfully. 
+
+    In the bigger panel on the right, you can see a list of steps that were executed in the run. Have a look at it to verify that all steps you expect to see are there. You can expand each step to see what its output was by pressing the `>` next to the step's name.
+
+    {: .note-title }
+    > <i class="fa-solid fa-triangle-exclamation"></i> Note
+    >
+    > Note that it takes a long time for the workflow to run due many setup steps, e.g. installing the SQL Server or restoring workloads. Expect that it might take around 15 mins.
+
+  {: .warning-title }
+  > <i class="fa-solid fa-triangle-exclamation"></i> Checkpoint
+  >
+  > Please make sure that your workflow completes without any errors before proceeding with the rest of the tutorial. This is the basic workflow that will set up a database, build the project and run any tests.
 
 
 ## 3. Extending your pipeline with external tools
-You now know how to create a basic pipeline that builds and tests your code. You can expand the pipeline by adding external tools for static code analysis, database migrations, documentation generation or many other things that will add value to the automatic runs.
+You now know how to create a basic pipeline that builds and tests your code. You can expand the pipeline by adding external tools for static code analysis, database migrations, documentation generation or many other things that will add value to the automatic runs. We will add support for SonarCloud static code analysis and automatic documentation generation using Doxygen. 
 
 ### Static code analysis with SonarQube Cloud
 Static code analysis can tell us a lot about the quality of the code written. SonarQube Cloud is a cloud-based version of the SonarQube code analyser. You can find information about the local usage of SonarQube in this tutorial: [SonarQube](https://edinburgh-napier.github.io/remote_test/tutorials/tools/sonarqube/).
 
 #### Setting up a SonarCloud account, organization and project
-To use the cloud version of Sonar, you have to create an account on their website. You can find it here: [SonarQube Cloud signup](https://www.sonarsource.com/products/sonarcloud/signup/). Since we are using GitHub to store the repository, you should sign up using GitHub. If you do that, you will be asked to authorize SonarCloud to gain access to certain details of your GitHub account, which you should accept by pressing the `Authorize SonarCloud` button. 
+1. To use the cloud version of Sonar, you have to create an account on their website. You can find it here: [SonarQube Cloud signup](https://www.sonarsource.com/products/sonarcloud/signup/). Since we are using GitHub to store the repository, you should sign up using GitHub. If you do that, you will be asked to authorize SonarCloud to gain access to certain details of your GitHub account, which you should **accept** by pressing the `Authorize SonarCloud` button. 
 
-![Fig. 10: Sonar Cloud Signup Page](images/sonar-signup.png){: standalone #fig10 data-title="Sonar Cloud Signup Page"}
+    ![Fig. 10: Sonar Cloud Signup Page](images/sonar-signup.png){: standalone #fig10 data-title="Sonar Cloud Signup Page"}
 
-Once your account is ready, you will be taken to the getting started screen, where you can import the organization that owns your repository from GitHub. You should have that set up if you worked through the first tutorial. If not, you can manually create an organization in Sonar by clicking on the underlined `create a project manually`. 
+2. Once your account is ready, you will be taken to the getting started screen, where you can import the organization that owns your repository from GitHub. You should have created this earlier. We're going to assume you have an organisation in GitHub so **select** `Import an organization`.
 
-> Setting up a project manually in SonarQube is not recommended as it leads to missing features like analysis feedback in the Pull Request. We recommend you go back and setup an organization in GitHub to host your code. If you still decide against it, you can follow the on-screen instructions to create a manual organisation. 
+    ![Fig. 11: Import organisation in Sonar](images/import-org-sonar.png){: standalone #fig11 data-title="Import organisation in Sonar"}
 
-We're going to assume you have an organisation in GitHub so select `Import an organization`.
+3. On the next page, select which organisation you want to use. Then, you will be asked for permission to install Sonar on your organisation. Since we only need the analysis on one repository, choose the `Only select repositories` option and select the correct repository, then proceed by pressing `Install`.
 
-![Fig. 11: Import organisation in Sonar](images/import-org-sonar.png){: standalone #fig11 data-title="Import organisation in Sonar"}
+    ![Fig. 12: Selecting a repository](images/select-repo-sonar.png){: standalone #fig12 data-title="Selecting a repository"}
 
-On the next page, select which organisation you want to use. Then, you will be asked for permission to install Sonar on your organisation. Since we only need the analysis on one repository, choose the `Only select repositories` option and select the correct repository, then proceed by pressing `Install`.
+4. On the next page, you will be asked for the name and the key of the project - keep them as is. You also need to choose the payment plan so make sure to select the free one to avoid any extra costs. Proceed by pressing `Create organization`.
 
-![Fig. 12: Selecting a repository](images/select-repo-sonar.png){: standalone #fig12 data-title="Selecting a repository"}
+5. Now that your Sonar organization is set up, you have to select the repositories that will be included in the Sonar project you are creating. Select the correct one and continue by pressing `Set up`. 
 
-On the next page, you will be asked for the name and the key of the project - keep them as is. You also need to choose the payment plan so make sure to select the free one to avoid any extra costs. Proceed by pressing `Create organization`.
+    ![Fig. 13: Choosing the project](images/choose-project-sonar.png){: standalone #fig13 data-title="Choosing the project"}
 
-Now that your Sonar organization is set up, you have to select the repositories that will be included in the Sonar project you are creating. Select the correct one and continue by pressing `Set up`. 
+6. Finally, you need to choose what Sonar considers new code in the repository. You have two choices which are explained in the screenshot below. You should proceed with the `Previous version` one. Then, you can finally create the project.
 
-![Fig. 13: Choosing the project](images/choose-project-sonar.png){: standalone #fig13 data-title="Choosing the project"}
-
-Finally, you need to choose what Sonar considers new code in the repository. You have two choices which are explained in the screenshot below. You should proceed with the `Previous version` one. Then, you can finally create the project.
-
-![Fig. 14: Selecting what is new code](images/new-code.png){: standalone #fig14 data-title="Selecting what is new code"}
+    ![Fig. 14: Selecting what is new code](images/new-code.png){: standalone #fig14 data-title="Selecting what is new code"}
 
 #### Adding Sonar Token as a repository secret
 SonarCloud can be integrated with your workflow so that anytime the workflow runs, it will trigger a static code analysis by Sonar. 
 
-The first step to setting this up is adding a secret in GitHub that contains an access token for Sonar. To find out what the token is, follow the steps below:
+The first step to setting this up is adding a secret in GitHub that contains an access token for Sonar. The token is provided by Sonar and can be found following the steps below:
 
-In your main project page in Sonar, go to `Administration` and then select `Analysis Method`.
+1. In your main project page in Sonar, go to `Administration` and then select `Analysis Method`.
 
-![Fig. 15: Analysis method](images/analysis-method-sonar.png){: standalone #fig15 data-title="Analysis method"}
+    ![Fig. 15: Analysis method](images/analysis-method-sonar.png){: standalone #fig15 data-title="Analysis method"}
 
-At the bottom of the page, select `With GitHub Actions`.
+2. At the bottom of the page, select `With GitHub Actions`.
 
-![Fig. 16: Setup GitHub in Sonar](images/setup-github-sonar.png){: standalone #fig16 data-title="Setup GitHub in Sonar"}
+    ![Fig. 16: Setup GitHub in Sonar](images/setup-github-sonar.png){: standalone #fig16 data-title="Setup GitHub in Sonar"}
 
-On the final page, make sure you disable automatic analysis and then copy the value of SONAR_TOKEN. 
+3. On the final page, make sure you disable automatic analysis and then copy the value of SONAR_TOKEN. 
 
-![Fig. 17: Secret in Sonar](images/secret-sonar.png){: standalone #fig17 data-title="Secret in Sonar"}
+    ![Fig. 17: Secret in Sonar](images/secret-sonar.png){: standalone #fig17 data-title="Secret in Sonar"}
 
-You can now add the secret in GitHub Actions, in a similar way as you previously added the environement variable. Go to the `Actions secrets and variables` tab in the repository settings. Make sure you are in the `Secrets` tab and then add a new secret with the name `SONAR_TOKEN` and the value copied from Sonar. Without this, your workflow will fail as it won't be able to connect to Sonar properly. 
+You can now add the secret in GitHub Actions, the same way you added the secret for the connection string. Go to the `Actions secrets and variables` tab in the repository settings. Make sure you are in the `Secrets` tab and then add a new secret with the name `SONAR_TOKEN` and the value copied from Sonar. Without this, your workflow will fail as it won't be able to connect to Sonar properly. 
 
+{: .warning-title }
+> <i class="fa-solid fa-triangle-exclamation"></i> Important
+>
 > Don't proceed with adding the steps if you don't have the token as a repository secret.
 
 #### Adding Sonar steps to the workflow
 Now it's time to modify the workflow file to include static analysis by SonarCloud. Unfortunately, the setup required before running the scanner is a bit lengthy because Sonar carries its own dependencies and needs to be installed before it can be used. Fortunately, SonarCloud provides all the configuration in their documentation: [SonarQube docs](https://docs.sonarsource.com/sonarqube/10.6/devops-platform-integration/github-integration/adding-analysis-to-github-actions-workflow/)
 
-> **Important!!** In the workflow file, you should set up Sonar at the same stage you are setting up the environment for the project itself. So the following Sonar setup steps should be placed after the `Restore dependencies` step but before the `Build` step. 
-
-The SonarCloud Scanner internally requires a Java runtime environment to execute. Without it, the scanner won't run, even for non-Java projects so the first step in Sonar's environment setup is setting up the JDK, which is done through a standard action. Place the following code in the right place in your workflow file:
+1. Modify your workflow file to insert the Sonar setup steps **between the *Restore dependencies* and the *Build* steps**, like shown below.
 
 ``` yml
+    ...
+
+    - name: Restore dependencies
+      run: dotnet restore <Path to your Notes.csproj>
+
+    # Command-line tools from .NET
+    - name: Install Tools
+      run: dotnet tool install --global dotnet-coverage
+
     #Setup a Java JDK
     - name: Set up JDK 17
       uses: actions/setup-java@v4
       with:
         java-version: 17
         distribution: 'zulu'
-```
 
-The next step is to get the cached dependencies. If no dependencies are cached, this step will simply do nothing and all necessary dependencies will need to be installed later. If there are some cached dependencies, they will be restored to speed up the process. Paste the following code below the JDK setup:
-
-```yml
     # Get the SonarCloud dependencies from cache
     - name: Cache SonarCloud packages
       uses: actions/cache@v4
@@ -356,13 +673,7 @@ The next step is to get the cached dependencies. If no dependencies are cached, 
         path: ~/sonar/cache
         key: ${{ runner.os }}-sonar
         restore-keys: ${{ runner.os }}-sonar
-```
 
-In the next two steps, the first one will try to get the SonarCloud scanner from cache but if it's not found, the second one will install it. Paste the following code below the `Cache SonarCloud packages` step. Note that you must provide the path to your project folder in the second step. 
-
-> Your project folder is the one where you have your `.sln` file. 
-
-```yml
     # Get the SonarCloud scanner from cache
     - name: Cache SonarCloud scanner
       id: cache-sonar-scanner
@@ -376,27 +687,58 @@ In the next two steps, the first one will try to get the SonarCloud scanner from
     - name: Install SonarCloud scanner
       if: steps.cache-sonar-scanner.outputs.cache-hit != 'true'
       run: |
-        mkdir -p ./.sonar/scanner
-        cd <Path to your project folder>
-        dotnet tool update dotnet-sonarscanner --tool-path ../.sonar/scanner
+        mkdir -p .sonar/scanner
+        dotnet tool update dotnet-sonarscanner --tool-path ./.sonar/scanner
+        echo "$(Resolve-Path ./.sonar/scanner)" >> $env:GITHUB_PATH
+
+    - name: Build project
+      env: 
+        ConnectionStrings__TestConnection: ${{ secrets.TestConnection_CONNECTION_STRING }}
+      run: dotnet build <Path to your Notes.csproj> --framework net8.0
+
+    ...
 ```
 
-These are all the steps needed to set up SonarCloud. Now you can move on to setting up the analysis. The way it works is you start the scanner, build and test your project, and then stop the scanner. This means that the build and test steps need to be encapsulated by the sonar start and end steps, like in the code below.
+What each step does:
 
-> Make sure the build and test steps are between the Sonar start and Sonar end steps. Also make sure to replace the organisation and project keys with your own (see steps below).
+- To properly collect test coverage from the Notes.Test project, Sonar needs the command-line tool from .NET. The first step installs that tool.
 
+- The SonarCloud Scanner internally requires a Java runtime environment to execute. Without it, the scanner won't run, even for non-Java projects so the first step in Sonar's environment setup is setting up the JDK, which is done through a standard action.
+
+- The next step is to get the cached dependencies. If no dependencies are cached, this step will simply do nothing and all necessary dependencies will need to be installed later. If there are some cached dependencies, they will be restored to speed up the process.
+
+- In the next two steps, the first one will try to get the SonarCloud scanner from cache but if it's not found, the second one will install it. Paste the following code below the `Cache SonarCloud packages` step. Note that you must provide the path to your project folder in the second step. 
+
+These are all the steps needed to set up SonarCloud. Now you can move on to setting up the analysis. The way it works is you start the scanner, build and test your project, and then stop the scanner. This means that the build and test steps need to be encapsulated by the sonar start and end steps.
+
+1. Modify your code to include the *Start Sonar analysis* step before the *Build* step and *End Sonar analysis* step after the *Test* step, like in the code below. Also note that the ***Test*** step was updated to make use of the coverage collection required by Sonar.
 
 ```yml
+...
+
+    # Install the SonarCloud Scanner
+    - name: Install SonarCloud scanner
+      if: steps.cache-sonar-scanner.outputs.cache-hit != 'true'
+      run: |
+        mkdir -p .sonar/scanner
+        dotnet tool update dotnet-sonarscanner --tool-path ./.sonar/scanner
+        echo "$(Resolve-Path ./.sonar/scanner)" >> $env:GITHUB_PATH
+
     - name: Start Sonar Analysis
       env:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
       run: |
         ./.sonar/scanner/dotnet-sonarscanner begin /k:"<key>" /o:"<organisation>" /d:sonar.token="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.scanner.scanAll=false /d:sonar.cs.vscoveragexml.reportsPaths=coverage.xml
 
-    #Build and test steps here
-    #
-    #
-    #
+    - name: Build project
+      env: 
+        ConnectionStrings__TestConnection: ${{ secrets.TestConnection_CONNECTION_STRING }}
+      run: dotnet build <Path to your Notes.csproj file> --framework net8.0
+          
+    - name: Test
+      env: 
+        ConnectionStrings__TestConnection: ${{ secrets.TestConnection_CONNECTION_STRING }}
+      run: dotnet-coverage collect "dotnet test <Path to you notes.sln file> --framework net8.0" -f xml -o "coverage.xml"
 
     - name: End Sonar Analysis
       env:
@@ -404,15 +746,113 @@ These are all the steps needed to set up SonarCloud. Now you can move on to sett
       run: ./.sonar/scanner/dotnet-sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
 ```
 
-Make sure that you replace `<organisation>` with Sonar organisation key and `<key>` with your Sonar project key (keep the double quotes around these values). You can find them in the Information tab:
+2. Make sure that you replace `<organisation>` with Sonar organisation key and `<key>` with your Sonar project key (**keep the double quotes around these values**). You can find them in the Information tab:
 
-![Fig. 18: Organisation and project keys in Sonar](images/keys.png){: standalone #fig18 data-title="Organisation and project keys in Sonar"}
+    ![Fig. 18: Organisation and project keys in Sonar](images/keys.png){: standalone #fig18 data-title="Organisation and project keys in Sonar"}
 
-Also, note the use of the `SONAR_TOKEN` secret in the code. Using this notation you can use any other secrets you add to the repository. 
+{: .warning-title }
+> <i class="fa-solid fa-triangle-exclamation"></i> Important
+> 
+> Go through the Sonar steps carefully and double check all paths were replaced with ones that are correct for your project. Also make sure you have correctly replaced the `<organisation>` and `<key>` placeholders.
+
+**Checkpoint:** Your entire workflow file should look like this now (The paths and placeholders will be different):
+
+```yml
+name: Build & Test Workflow
+
+on: [pull_request]
+    
+jobs:
+    build:
+        runs-on: windows-latest
+        
+        steps:
+        - name: Checkout code
+          uses: actions/checkout@v4
+
+        - name: Download SqlServer
+          uses: potatoqualitee/mssqlsuite@v1.7
+          with:
+            install: sqlengine, sqlpackage
+    
+        - name: Run sqlclient
+          run: |
+            sqlcmd -S localhost -U sa -P dbatools.I0 -Q "CREATE DATABASE TestDb;"
+            sqlcmd -S localhost -U sa -P dbatools.I0 -d TestDb -Q "SELECT @@version;"
+          
+        - name: Setup .NET
+          uses: actions/setup-dotnet@v4
+          with: 
+            dotnet-version: 8.0
+            
+        - name: Restore workloads
+          run: dotnet workload restore ./Notes/Notes.csproj
+          
+        - name: Restore dependencies
+          run: dotnet restore ./Notes/Notes.csproj
+
+        - name: Install Tools
+          run: dotnet tool install --global dotnet-coverage
+
+            #Setup a Java JDK
+        - name: Set up JDK 17
+          uses: actions/setup-java@v4
+          with:
+            java-version: 17
+            distribution: 'zulu'
+
+        # Get the SonarCloud dependencies from cache
+        - name: Cache SonarCloud packages
+          uses: actions/cache@v4
+          with:
+            path: ~/sonar/cache
+            key: ${{ runner.os }}-sonar
+            restore-keys: ${{ runner.os }}-sonar
+
+        # Get the SonarCloud scanner from cache
+        - name: Cache SonarCloud scanner
+          id: cache-sonar-scanner
+          uses: actions/cache@v4
+          with:
+            path: ./.sonar/scanner
+            key: ${{ runner.os }}-sonar-scanner
+            restore-keys: ${{ runner.os }}-sonar-scanner
+
+        # Install the SonarCloud Scanner
+        - name: Install SonarCloud scanner
+          if: steps.cache-sonar-scanner.outputs.cache-hit != 'true'
+          run: |
+            mkdir -p .sonar/scanner
+            dotnet tool update dotnet-sonarscanner --tool-path ./.sonar/scanner
+            echo "$(Resolve-Path ./.sonar/scanner)" >> $env:GITHUB_PATH
+            
+        - name: Start Sonar Analysis
+          env:
+            SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          run: |
+            ./.sonar/scanner/dotnet-sonarscanner begin /k:"PipelineTest123_notes" /o:"pipelinetest123" /d:sonar.token="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.scanner.scanAll=false /d:sonar.cs.vscoveragexml.reportsPaths=coverage.xml    
+
+        - name: Build project
+          env: 
+            ConnectionStrings__TestConnection: ${{ secrets.TestConnection_CONNECTION_STRING }}
+          run: dotnet build ./Notes/Notes.csproj --framework net8.0
+          
+        - name: Test
+          env: 
+            ConnectionStrings__TestConnection: ${{ secrets.TestConnection_CONNECTION_STRING }}
+          run: dotnet-coverage collect "dotnet test ./notes.sln --framework net8.0" -f xml -o "coverage.xml"
+
+        - name: End Sonar Analysis
+          env:
+            SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          run: ./.sonar/scanner/dotnet-sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
+```
 
 Your workflow should now be set up to automatically run Sonar analysis. Go ahead and commit and push your changes. Then, if you still have a pull request open on the same branch, the workflow will be triggered automatically. If not, you can open a new PR. Make sure to check whether your pipeline ran successfully in the `Actions` tab in GitHub.
 
-The results of the analysis will be available in the SonarCloud interface. 
+The results of the analysis will be available in the SonarCloud interface. The *End Sonar analysis* step will generate a link which can take you directly there like in the screenshot below. Alternatively, you can go to the SonarCloud dashboard manually. 
+
+![alt text](images/analysis-result.png)
 
 ### Automatic documentation generation with Doxygen
 Documentation is important, especially in larger projects with multiple contributors. Doing this manually can be time-consuming but fortunately, it can be sped up by using automatic documentation generators like Doxygen. 
@@ -421,97 +861,142 @@ Doxygen is a tool that generates a web-based representation of your project's do
 
 Here is an example of documentation generated by Doxygen:
 
-![Fig. 19: Example Doxygen Output](images/Doxygen_Example.png){: standalone #fig19 data-title="Example Doxygen Output"}
+    ![Fig. 19: Example Doxygen Output](images/Doxygen_Example.png){: standalone #fig19 data-title="Example Doxygen Output"}
 
 Since documentation should be stable and reflect the stable version of the code, it might be a good idea to include documentation generation in a workflow that runs only when changes are pushed to the master/main branch, which we suggest in this tutorial. 
 
-The current workflow runs on any pull requests, so you need to create a new file in the `workflows` folder. Here is the initial code that checks out code from the repository:
+The current workflow runs on any pull requests, so we'll need to create a new one.
 
-``` yml
-name: Documentation 
+1. Create a new file in the `workflows` folder called `documentation.yml`. 
+2. Paste the initial code that checks out code from the repository into that file:
 
-on:
-  push:
-    branches:
-      - master
+    ``` yml
+    name: Documentation 
 
-jobs:
-  generate:
-    runs-on: ubuntu-latest 
+    on:
+      push:
+        branches:
+          - master
 
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
-```
+    jobs:
+      generate:
+        runs-on: ubuntu-latest 
 
-Doxygen must be installed on the workflow runner, which can be done with this step:
+        steps:
+        - name: Checkout code
+          uses: actions/checkout@v4
+    ```
 
-```yml
+3. Doxygen must be installed on the workflow runner so add the following step to the end of your file. Remember about proper indentation:
+
+    ```yml
     - name: Install Doxygen
       run: sudo apt-get install doxygen -y
-```
-Doxygen requires the presence of a configuration file called Doxyfile. It defines rules about how the final documentation should be generated, e.g. formatting. You should have a Doxyfile in the project folder, but if you don't, then you can generate the default one by running `doxygen -g`.
+    ```
+4. Doxygen requires the presence of a configuration file called Doxyfile. It defines rules about how the final documentation should be generated, e.g. formatting. This can be generated locally and customised but for this tutorial, the workflow will generate a default one. Add this step to your file:
 
-Once you are sure you have the Doxyfile, you can generate documentation using the command below. 
+    ```yml
+    - name: Generate Doxyfile
+      run: doxygen -g
+    ```
 
-> Once again, remember that workflows run in the root folder of your repository so you must provide a path relative to that folder. 
-
-```yml
+5. Now that everything is set up, the documentation can be generated using data included in the Doxyfile. Add this step to the workflow:
+    ```yml
     - name: Generate Doxygen Documentation
-      run: doxygen <path to Doxygen file>
-```
+      run: doxygen .
+    ```
 
 #### Automatic deployment of the documentation
 The steps above generate the documentation but it would be better if we could access it from the web. You can use GitHub Pages to do this. The generated artefacts can be uploaded and used to deploy the documentation to GitHub Pages.
 
-First you must add a step which will upload the artifacts generated in the previous step to Github Pages. This uses a pre-defined action:
+1. First add a step to the end of your file which will upload the artifacts generated in the previous step to Github Pages:
 
-``` yml
-    - name: Upload static files as artifact
-      uses: actions/upload-pages-artifact@v3 
-      with:
-        path: html
-```
+    ``` yml
+        - name: Upload static files as artifact
+          uses: actions/upload-pages-artifact@v3 
+          with:
+            path: html
+    ```
 
-You will need to grant write permissions to the job so it can access Github Pages. To declare this, you can add these lines to the `generate` job like so:
+2. You will need to grant write permissions to `generate` the job so it can access Github Pages. Modify the beginning of your workflow file to add the permissions:
 
-```yml
-jobs:
-  generate:
-    runs-on: ubuntu-latest 
+    ```yml
+    name: Documentation 
 
-    permissions:
-      pages: write
-      id-token: write 
-```
-> The job also needs permissions to generate an OIDC token (`id-token: write`). If you want to learn more about what they are, you can check out this article: [ID Token vs Access Token](https://auth0.com/blog/id-token-access-token-what-is-the-difference/).
+        on:
+          push:
+            branches:
+              - master # or main depending on your setup 
+
+        jobs:
+          generate:
+            runs-on: ubuntu-latest 
+
+        permissions:
+          pages: write
+          id-token: write 
+
+    ...
+
+    ```
+
+    {: .warning-title }
+    > <i class="fa-solid fa-triangle-exclamation"></i> Important
+    >
+    > Check the name of your branch in GitHub. It might be `master` or it might be `main`. Use the correct on in your workflow file.
+
+    {: .note-title } 
+    > <i class="fa-solid fa-triangle-exclamation"></i> Note
+    >
+    > The job also needs permissions to generate an OIDC token (`id-token: write`). If you want to learn more about what they are, you can check out this article: [ID Token vs Access Token](https://auth0.com/blog/id-token-access-token-what-is-the-difference/).
  
-Now that GitHub Pages has access to the generated documentation, you can add a new job that deploys the documentation. The job also needs the write permissions. Additionally, you should specify the environment to integrate with GitHub Pages and store the URL of the deployed site so you can access it easily. 
+3. Now we will add a new job that deploys the documentation. Add these lines to the end of your file. **Make sure the indentation is correct.** The `deploy` job should start at the same indentation level as the `generate` job.
 
-> The `needs` keyword specifies that this job requires the `generate` job to run. If the `generate` job fails, the `deploy` job will not run, so the documentation will not be deployed.
+      ``` yml
+      ...
 
-``` yml
-  deploy:
-    needs: generate # will only run after the generate job completes
-    runs-on: ubuntu-latest
+        deploy:
+          needs: generate
+          runs-on: ubuntu-latest
 
-    permissions:
-      pages: write
-      id-token: write
+          permissions:
+            pages: write
+            id-token: write
 
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+          environment:
+            name: github-pages
+            url: ${{ steps.deployment.outputs.page_url }}
 
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
-```
+          steps:
+            - name: Deploy to GitHub Pages
+              id: deployment
+              uses: actions/deploy-pages@v4
+
+            - name: Output Page URL
+              run: echo "GitHub Pages URL: ${{ steps.deployment.outputs.page_url }}"
+
+      ```
+
+Explanation of the code above:
+- We define a new job called `deploy`. Again, this is not a keyword and can be called anything else. The job will run on the latest version of Ubuntu.
+
+- The job also needs the write permissions to access GitHub Pages.
+
+- The environment integrates with GitHub Pages and stores the URL of the deployed site so you can access it easily. 
+
+- The first step deploys the documentation to GitHub Pages
+
+- The second step displays the URL of the Pages in the Action output so you can access it easily.
+
+{: .note-title } 
+> <i class="fa-solid fa-triangle-exclamation"></i> Note
+>
 > The deployment can also be bundled with the generation. That would simplify things and remove the need for the step where you upload the static files as artefacts since the deploy step could see them without it. However, to keep things modular, we decided to separate them into two jobs.
 
-The last step to make sure everything works is enabling GitHub Pages in your repository. Navigate to repository Settings and select Pages in the menu on the left. Then, make sure that `GitHub Actions` is selected as the source in the dropdown menu.
+4. The last step to make sure everything works is enabling GitHub Pages in your repository. Navigate to repository Settings and select Pages in the menu on the left. Then, make sure that `GitHub Actions` is selected as the source in the dropdown menu.
 
-![Fig. 20: Enabling GitHub Pages in the repo](images/pages-enable.png){: standalone #fig20 data-title="Enabling GitHub Pages in the repo"}
+    ![Fig. 20: Enabling GitHub Pages in the repo](images/pages-enable.png){: standalone #fig20 data-title="Enabling GitHub Pages in the repo"}
 
-Go ahead and commit and push the changes now. If you still have that pull request from before open, the basic build workflow will be triggered. Then, when you decide to merge it into the master branch, the documentation workflow will be triggered and will deploy the docs to GitHub Pages. Try it out yourself and make sure if your workflows ran successfully in the `Actions` tab. 
+5. Go ahead and commit and push the changes now. If you still have that pull request from before open, the basic build workflow will be triggered. 
+
+6. Then, when you decide to merge it into the master branch, the documentation workflow will be triggered and will deploy the docs to GitHub Pages. Try it out yourself and make sure if your workflows ran successfully in the `Actions` tab. The last step should output the address of your deployed documentation for your convenience.
