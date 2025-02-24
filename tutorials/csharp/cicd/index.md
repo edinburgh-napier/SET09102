@@ -36,18 +36,23 @@ Certain parts of the tutorial require your repository to be a part of a GitHub o
 First, you need to create your new organisation.
 
 1. In GitHub, click on your profile picture in the top right corner
+
 ![alt text](images/settings.png)
 
 2. In the side menu, select **Your organisations**
+
 ![alt text](images/organisations.png)
 
 3. On the next page, select **New organisation**
+
 ![alt text](images/new-org.png)
 
 4. Next, make sure you select **Create a free organisation** so you don't incure any additional costs.
+
 ![alt text](images/free-org.png)
 
 5. On the next page, give your organisation a name (**this must be unique across all GitHub organisations so might be a bit tricky**), provide an email address (this can be your university email) and make sure to select **My personal account** as the owner. Then, you might have to verify you are not a robot and accept the terms and conditions at the bottom. When you have all the details, select **Next** at the bottom of the page. 
+
 ![alt text](images/org-name.png)
 
 6. After that, you will be given an option to invite other collaborators but for the purpose of this tutorial, select **Skip this step**
@@ -55,12 +60,15 @@ First, you need to create your new organisation.
 Now that you have set up a new organisation, you can move your existing repository to the organisation. To do this, follow the steps below:
 
 1. Navigate to your repository homepage and select Settings from the tabs
+
 ![alt text](images/settings-tab.png)
 
 2. Scroll down to the bottom, where you will see the red **Danger Zone**. Select the **Transfer** option to move the repository.
+
 ![alt text](images/danger-zone.png)
 
 3. On the next page, pick **Select one of my own organisations** and choose the one you have just created from the drop-down menu. You will have to type in your username and repository name before continuing to confirm you are sure of the operation. Once you've done this, select **I understand, transfer repository** to continue.
+
 ![alt text](images/transfer-owner.png)
 
 Now you should be ready to proceed with setting up your CI/CD workflow. 
@@ -348,6 +356,7 @@ ${{ vars.CSPROJ_PATH }}
 ```
 
 So if you wish to replace your paths with the environment variable, you can replace them with the syntax above, for example, your build step could look like this:
+
 ```yml
  - name: Build project
    run: dotnet build ${{ vars.CSPROJ_PATH }} --framework net8.0
@@ -380,6 +389,7 @@ In this tutorial, we will set up a dummy database on the workflow runner that wi
 #### Setting up SQL Server
 
 1. First, we need to install SQL Server on the workflow runner. Paste this code **between the *Checkout code* step and the *Setup .NET* step**:
+
     ```yml
     - name: Download SqlServer
       uses: potatoqualitee/mssqlsuite@v1.7
@@ -388,6 +398,7 @@ In this tutorial, we will set up a dummy database on the workflow runner that wi
     ``` 
 
 2. Once the runner installs SQL Server, it must start the SQL Client and create the database. Paste the following code below the **Download SQLServer** step:
+
     ```yml
     - name: Run sqlclient
       run: |
@@ -419,6 +430,7 @@ ${{ secrets.TestConnection_CONNECTION_STRING }}
 To make the .NET projects aware of the connection string stored in a secret, it needs to be added as an environment variable to all steps that need it. In the local setup, the C# code looks in the `appsettings.json` file under `ConnectionString -> TestConnection`, so we will stick to the same naming.
 
 1. Update your **Build project** step to look like this:
+
     ```yml
     - name: Build project
       env: 
@@ -427,6 +439,7 @@ To make the .NET projects aware of the connection string stored in a secret, it 
     ```
 
 2. Update your **Test** step to look like this:
+
     ```yml
     - name: Test
       env: 
@@ -440,6 +453,7 @@ To make the .NET projects aware of the connection string stored in a secret, it 
 > Remeber to use correct paths to the `.csproj` and `.sln` files.
 
 **Checkpoint:** Your workflow file should look like this now (the paths might be different):
+
 ```yml
 name: Build & Test Workflow
 
@@ -487,7 +501,8 @@ jobs:
 
 Lastly, we need to make a couple of changes in the code to ensure that the environment variable is picked up and used correctly. 
 
-1. Open the *Notes.Database/Notes.Database.csproj* file. Update the ItemGroup at the bottom of the file to look like this: 
+1. Open the *Notes.Database/Notes.Database.csproj* file. Update the ItemGroup at the bottom of the file to look like this:
+
     ```xml
     <ItemGroup>
         <EmbeddedResource Include="appsettings.json" Condition="Exists('appsettings.json')" />
@@ -500,6 +515,7 @@ Lastly, we need to make a couple of changes in the code to ensure that the envir
     The change will ensure that there are no errors in the workflow due to the absence of the `appsettings.json` file in your remote repository.
 
 2. Open the *NotesDbContext.cs* file. Update the `OnConfiguring` method to look like this:
+
     ```c#
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -569,7 +585,7 @@ At this point, your workflow should be set up to successfuly build and test the 
     >
     > Note that it takes a long time for the workflow to run due many setup steps, e.g. installing the SQL Server or restoring workloads. Expect that it might take around 15 mins.
 
- {: .warning-title }
+  {: .warning-title }
   > <i class="fa-solid fa-triangle-exclamation"></i> Checkpoint
   >
   > Please make sure that your workflow completes without any errors before proceeding with the rest of the tutorial. This is the basic workflow that will set up a database, build the project and run any tests.
@@ -602,7 +618,7 @@ Static code analysis can tell us a lot about the quality of the code written. So
 
 6. Finally, you need to choose what Sonar considers new code in the repository. You have two choices which are explained in the screenshot below. You should proceed with the `Previous version` one. Then, you can finally create the project.
 
-![Fig. 14: Selecting what is new code](images/new-code.png){: standalone #fig14 data-title="Selecting what is new code"}
+    ![Fig. 14: Selecting what is new code](images/new-code.png){: standalone #fig14 data-title="Selecting what is new code"}
 
 #### Adding Sonar Token as a repository secret
 SonarCloud can be integrated with your workflow so that anytime the workflow runs, it will trigger a static code analysis by Sonar. 
@@ -624,7 +640,8 @@ The first step to setting this up is adding a secret in GitHub that contains an 
 You can now add the secret in GitHub Actions, the same way you added the secret for the connection string. Go to the `Actions secrets and variables` tab in the repository settings. Make sure you are in the `Secrets` tab and then add a new secret with the name `SONAR_TOKEN` and the value copied from Sonar. Without this, your workflow will fail as it won't be able to connect to Sonar properly. 
 
 {: .warning-title }
-> 
+> <i class="fa-solid fa-triangle-exclamation"></i> Important
+>
 > Don't proceed with adding the steps if you don't have the token as a repository secret.
 
 #### Adding Sonar steps to the workflow
@@ -734,10 +751,12 @@ These are all the steps needed to set up SonarCloud. Now you can move on to sett
     ![Fig. 18: Organisation and project keys in Sonar](images/keys.png){: standalone #fig18 data-title="Organisation and project keys in Sonar"}
 
 {: .warning-title }
+> <i class="fa-solid fa-triangle-exclamation"></i> Important
 > 
 > Go through the Sonar steps carefully and double check all paths were replaced with ones that are correct for your project. Also make sure you have correctly replaced the `<organisation>` and `<key>` placeholders.
 
 **Checkpoint:** Your entire workflow file should look like this now (The paths and placeholders will be different):
+
 ```yml
 name: Build & Test Workflow
 
@@ -842,13 +861,13 @@ Doxygen is a tool that generates a web-based representation of your project's do
 
 Here is an example of documentation generated by Doxygen:
 
-![Fig. 19: Example Doxygen Output](images/Doxygen_Example.png){: standalone #fig19 data-title="Example Doxygen Output"}
+    ![Fig. 19: Example Doxygen Output](images/Doxygen_Example.png){: standalone #fig19 data-title="Example Doxygen Output"}
 
 Since documentation should be stable and reflect the stable version of the code, it might be a good idea to include documentation generation in a workflow that runs only when changes are pushed to the master/main branch, which we suggest in this tutorial. 
 
 The current workflow runs on any pull requests, so we'll need to create a new one.
 
-1. create a new file in the `workflows` folder called `documentation.yml`. 
+1. Create a new file in the `workflows` folder called `documentation.yml`. 
 2. Paste the initial code that checks out code from the repository into that file:
 
     ``` yml
@@ -921,11 +940,13 @@ The steps above generate the documentation but it would be better if we could ac
 
     ```
 
-    {: .warning-title } Important
+    {: .warning-title }
+    > <i class="fa-solid fa-triangle-exclamation"></i> Important
     >
     > Check the name of your branch in GitHub. It might be `master` or it might be `main`. Use the correct on in your workflow file.
 
-    {: .note-title } Note
+    {: .note-title } 
+    > <i class="fa-solid fa-triangle-exclamation"></i> Note
     >
     > The job also needs permissions to generate an OIDC token (`id-token: write`). If you want to learn more about what they are, you can check out this article: [ID Token vs Access Token](https://auth0.com/blog/id-token-access-token-what-is-the-difference/).
  
@@ -967,8 +988,9 @@ Explanation of the code above:
 
 - The second step displays the URL of the Pages in the Action output so you can access it easily.
 
-{: .note-title } Note
-> 
+{: .note-title } 
+> <i class="fa-solid fa-triangle-exclamation"></i> Note
+>
 > The deployment can also be bundled with the generation. That would simplify things and remove the need for the step where you upload the static files as artefacts since the deploy step could see them without it. However, to keep things modular, we decided to separate them into two jobs.
 
 4. The last step to make sure everything works is enabling GitHub Pages in your repository. Navigate to repository Settings and select Pages in the menu on the left. Then, make sure that `GitHub Actions` is selected as the source in the dropdown menu.
