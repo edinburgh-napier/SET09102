@@ -352,7 +352,7 @@ This will take you to a page where you give a name to your variable, e.g. `CSPRO
 After you add the variable in GitHub, you can use it in your workflow file like this:
 
 ```
-\${{ vars.CSPROJ_PATH }}
+\$\{\{ vars.CSPROJ_PATH \}\}
 ```
 
 So if you wish to replace your paths with the environment variable, you can replace them with the syntax above, for example, your build step could look like this:
