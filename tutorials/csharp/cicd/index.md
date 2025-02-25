@@ -326,6 +326,7 @@ jobs:
 ```
 
 ### Optional: Adding environment variables to GitHub
+
 {: .note-title }
 > <i class="fa-solid fa-triangle-exclamation"></i> Note
 >
@@ -359,10 +360,12 @@ ${{ vars.CSPROJ_PATH }}
 
 So if you wish to replace your paths with the environment variable, you can replace them with the syntax above, for example, your build step could look like this:
 
+{% raw %}
 ```yml
  - name: Build project
    run: dotnet build ${{ vars.CSPROJ_PATH }} --framework net8.0
 ```
+{% endraw %}
 
 **This is the end of the optional part of the tutorial**
 
@@ -433,21 +436,25 @@ To make the .NET projects aware of the connection string stored in a secret, it 
 
 1. Update your **Build project** step to look like this:
 
+{% raw %}
     ```yml
     - name: Build project
       env: 
         ConnectionStrings__TestConnection: ${{ secrets.TestConnection_CONNECTION_STRING }}
       run: dotnet build <Path to your Notes.csproj> --framework net8.0
     ```
+{% endraw %}
 
 2. Update your **Test** step to look like this:
 
+{% raw %}
     ```yml
     - name: Test
       env: 
         ConnectionStrings__TestConnection: ${{ secrets.TestConnection_CONNECTION_STRING }}
       run: dotnet test <Path to your notes.sln> --framework net8.0
     ```
+{% endraw %}
 
 {: .note-title }
 > <i class="fa-solid fa-triangle-exclamation"></i> Important
@@ -456,6 +463,7 @@ To make the .NET projects aware of the connection string stored in a secret, it 
 
 **Checkpoint:** Your workflow file should look like this now (the paths might be different):
 
+{% raw %}
 ```yml
 name: Build & Test Workflow
 
@@ -500,6 +508,7 @@ jobs:
             ConnectionStrings__TestConnection: ${{ secrets.TestConnection_CONNECTION_STRING }}
           run: dotnet test ./notes.sln --framework net8.0
 ```
+{% endraw %}
 
 Lastly, we need to make a couple of changes in the code to ensure that the environment variable is picked up and used correctly. 
 
@@ -651,6 +660,7 @@ Now it's time to modify the workflow file to include static analysis by SonarClo
 
 1. Modify your workflow file to insert the Sonar setup steps **between the *Restore dependencies* and the *Build* steps**, like shown below.
 
+{% raw %}
 ``` yml
     ...
 
@@ -700,6 +710,7 @@ Now it's time to modify the workflow file to include static analysis by SonarClo
 
     ...
 ```
+{% endraw %}
 
 What each step does:
 
@@ -715,6 +726,7 @@ These are all the steps needed to set up SonarCloud. Now you can move on to sett
 
 1. Modify your code to include the *Start Sonar analysis* step before the *Build* step and *End Sonar analysis* step after the *Test* step, like in the code below. Also note that the ***Test*** step was updated to make use of the coverage collection required by Sonar.
 
+{% raw %}
 ```yml
 ...
 
@@ -747,6 +759,7 @@ These are all the steps needed to set up SonarCloud. Now you can move on to sett
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
       run: ./.sonar/scanner/dotnet-sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
 ```
+{% endraw %}
 
 2. Make sure that you replace `<organisation>` with Sonar organisation key and `<key>` with your Sonar project key (**keep the double quotes around these values**). You can find them in the Information tab:
 
@@ -759,6 +772,7 @@ These are all the steps needed to set up SonarCloud. Now you can move on to sett
 
 **Checkpoint:** Your entire workflow file should look like this now (The paths and placeholders will be different):
 
+{% raw %}
 ```yml
 name: Build & Test Workflow
 
@@ -849,6 +863,7 @@ jobs:
             SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           run: ./.sonar/scanner/dotnet-sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
 ```
+{% endraw %}
 
 Your workflow should now be set up to automatically run Sonar analysis. Go ahead and commit and push your changes. Then, if you still have a pull request open on the same branch, the workflow will be triggered automatically. If not, you can open a new PR. Make sure to check whether your pipeline ran successfully in the `Actions` tab in GitHub.
 
@@ -954,6 +969,7 @@ The steps above generate the documentation but it would be better if we could ac
  
 3. Now we will add a new job that deploys the documentation. Add these lines to the end of your file. **Make sure the indentation is correct.** The `deploy` job should start at the same indentation level as the `generate` job.
 
+{% raw %}
       ``` yml
       ...
 
@@ -978,6 +994,7 @@ The steps above generate the documentation but it would be better if we could ac
               run: echo "GitHub Pages URL: ${{ steps.deployment.outputs.page_url }}"
 
       ```
+{% endraw %}
 
 Explanation of the code above:
 - We define a new job called `deploy`. Again, this is not a keyword and can be called anything else. The job will run on the latest version of Ubuntu.
