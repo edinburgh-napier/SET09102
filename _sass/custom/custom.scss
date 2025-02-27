@@ -19,6 +19,12 @@
   }
 }
 
+h4, .text-delta {
+  font-size: 1rem !important;
+  font-weight: bold !important;
+  text-transform: none;
+}
+
 p.warning-title>p:first-child,
 blockquote.warning-title>p:first-child,
 p.note-title>p:first-child,
