@@ -733,36 +733,36 @@ These are all the steps needed to set up SonarCloud. Now you can move on to sett
 
     {% raw %}
     ```yml
-    ...
+    #...
 
-        # Install the SonarCloud Scanner
-        - name: Install SonarCloud scanner
-          if: steps.cache-sonar-scanner.outputs.cache-hit != 'true'
-          run: |
-            mkdir -p .sonar/scanner
-            dotnet tool update dotnet-sonarscanner --tool-path ./.sonar/scanner
-            echo "$(Resolve-Path ./.sonar/scanner)" >> $env:GITHUB_PATH
+     # Install the SonarCloud Scanner
+     - name: Install SonarCloud scanner
+       if: steps.cache-sonar-scanner.outputs.cache-hit != 'true'
+       run: |
+         mkdir -p .sonar/scanner
+         dotnet tool update dotnet-sonarscanner --tool-path ./.sonar/scanner
+         echo "$(Resolve-Path ./.sonar/scanner)" >> $env:GITHUB_PATH
 
-        - name: Start Sonar Analysis
-          env:
-            SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-          run: |
-            ./.sonar/scanner/dotnet-sonarscanner begin /k:"<key>" /o:"<organisation>" /d:sonar.token="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.scanner.scanAll=false /d:sonar.cs.vscoveragexml.reportsPaths=coverage.xml
+     - name: Start Sonar Analysis
+       env:
+         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+       run: |
+         ./.sonar/scanner/dotnet-sonarscanner begin /k:"<key>" /o:"<organisation>" /d:sonar.token="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.scanner.scanAll=false /d:sonar.cs.vscoveragexml.reportsPaths=coverage.xml
 
-        - name: Build project
-          env: 
-            ConnectionStrings__TestConnection: ${{ secrets.TestConnection_CONNECTION_STRING }}
-          run: dotnet build <Path to your Notes.csproj file> --framework net8.0
-              
-        - name: Test
-          env: 
-            ConnectionStrings__TestConnection: ${{ secrets.TestConnection_CONNECTION_STRING }}
-          run: dotnet-coverage collect "dotnet test <Path to you notes.sln file> --framework net8.0" -f xml -o "coverage.xml"
+     - name: Build project
+       env: 
+         ConnectionStrings__TestConnection: ${{ secrets.TestConnection_CONNECTION_STRING }}
+       run: dotnet build <Path to your Notes.csproj file> --framework net8.0
+           
+     - name: Test
+       env: 
+         ConnectionStrings__TestConnection: ${{ secrets.TestConnection_CONNECTION_STRING }}
+       run: dotnet-coverage collect "dotnet test <Path to you notes.sln file> --framework net8.0" -f xml -o "coverage.xml"
 
-        - name: End Sonar Analysis
-          env:
-            SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-          run: ./.sonar/scanner/dotnet-sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
+     - name: End Sonar Analysis
+       env:
+         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+       run: ./.sonar/scanner/dotnet-sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
     ```
     {% endraw %}
 
