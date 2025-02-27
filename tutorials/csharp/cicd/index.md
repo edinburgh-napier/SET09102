@@ -430,33 +430,35 @@ To add a repository secret:
 
 To use the secret in the workflow, you can use the following syntax:
 
+{% raw %}
 ```
 ${{ secrets.TestConnection_CONNECTION_STRING }}
 ```
+{% endraw %}
 
 To make the .NET projects aware of the connection string stored in a secret, it needs to be added as an environment variable to all steps that need it. In the local setup, the C# code looks in the `appsettings.json` file under `ConnectionString -> TestConnection`, so we will stick to the same naming.
 
 1. Update your **Build project** step to look like this:
 
-{% raw %}
+    {% raw %}
     ```yml
     - name: Build project
       env: 
         ConnectionStrings__TestConnection: ${{ secrets.TestConnection_CONNECTION_STRING }}
       run: dotnet build <Path to your Notes.csproj> --framework net8.0
     ```
-{% endraw %}
+    {% endraw %}
 
 2. Update your **Test** step to look like this:
 
-{% raw %}
+    {% raw %}
     ```yml
     - name: Test
       env: 
         ConnectionStrings__TestConnection: ${{ secrets.TestConnection_CONNECTION_STRING }}
       run: dotnet test <Path to your notes.sln> --framework net8.0
     ```
-{% endraw %}
+    {% endraw %}
 
 {: .note-title }
 > <i class="fa-solid fa-triangle-exclamation"></i> Important
@@ -662,57 +664,57 @@ Now it's time to modify the workflow file to include static analysis by SonarClo
 
 1. Modify your workflow file to insert the Sonar setup steps **between the *Restore dependencies* and the *Build* steps**, like shown below.
 
-{% raw %}
-``` yml
-    ...
+    {% raw %}
+    ``` yml
+        ...
 
-    - name: Restore dependencies
-      run: dotnet restore <Path to your Notes.csproj>
+        - name: Restore dependencies
+          run: dotnet restore <Path to your Notes.csproj>
 
-    # Command-line tools from .NET
-    - name: Install Tools
-      run: dotnet tool install --global dotnet-coverage
+        # Command-line tools from .NET
+        - name: Install Tools
+          run: dotnet tool install --global dotnet-coverage
 
-    #Setup a Java JDK
-    - name: Set up JDK 17
-      uses: actions/setup-java@v4
-      with:
-        java-version: 17
-        distribution: 'zulu'
+        #Setup a Java JDK
+        - name: Set up JDK 17
+          uses: actions/setup-java@v4
+          with:
+            java-version: 17
+            distribution: 'zulu'
 
-    # Get the SonarCloud dependencies from cache
-    - name: Cache SonarCloud packages
-      uses: actions/cache@v4
-      with:
-        path: ~/sonar/cache
-        key: ${{ runner.os }}-sonar
-        restore-keys: ${{ runner.os }}-sonar
+        # Get the SonarCloud dependencies from cache
+        - name: Cache SonarCloud packages
+          uses: actions/cache@v4
+          with:
+            path: ~/sonar/cache
+            key: ${{ runner.os }}-sonar
+            restore-keys: ${{ runner.os }}-sonar
 
-    # Get the SonarCloud scanner from cache
-    - name: Cache SonarCloud scanner
-      id: cache-sonar-scanner
-      uses: actions/cache@v4
-      with:
-        path: ./.sonar/scanner
-        key: ${{ runner.os }}-sonar-scanner
-        restore-keys: ${{ runner.os }}-sonar-scanner
+        # Get the SonarCloud scanner from cache
+        - name: Cache SonarCloud scanner
+          id: cache-sonar-scanner
+          uses: actions/cache@v4
+          with:
+            path: ./.sonar/scanner
+            key: ${{ runner.os }}-sonar-scanner
+            restore-keys: ${{ runner.os }}-sonar-scanner
 
-    # Install the SonarCloud Scanner
-    - name: Install SonarCloud scanner
-      if: steps.cache-sonar-scanner.outputs.cache-hit != 'true'
-      run: |
-        mkdir -p .sonar/scanner
-        dotnet tool update dotnet-sonarscanner --tool-path ./.sonar/scanner
-        echo "$(Resolve-Path ./.sonar/scanner)" >> $env:GITHUB_PATH
+        # Install the SonarCloud Scanner
+        - name: Install SonarCloud scanner
+          if: steps.cache-sonar-scanner.outputs.cache-hit != 'true'
+          run: |
+            mkdir -p .sonar/scanner
+            dotnet tool update dotnet-sonarscanner --tool-path ./.sonar/scanner
+            echo "$(Resolve-Path ./.sonar/scanner)" >> $env:GITHUB_PATH
 
-    - name: Build project
-      env: 
-        ConnectionStrings__TestConnection: ${{ secrets.TestConnection_CONNECTION_STRING }}
-      run: dotnet build <Path to your Notes.csproj> --framework net8.0
+        - name: Build project
+          env: 
+            ConnectionStrings__TestConnection: ${{ secrets.TestConnection_CONNECTION_STRING }}
+          run: dotnet build <Path to your Notes.csproj> --framework net8.0
 
-    ...
-```
-{% endraw %}
+        ...
+    ```
+    {% endraw %}
 
 What each step does:
 
@@ -728,40 +730,40 @@ These are all the steps needed to set up SonarCloud. Now you can move on to sett
 
 1. Modify your code to include the *Start Sonar analysis* step before the *Build* step and *End Sonar analysis* step after the *Test* step, like in the code below. Also note that the ***Test*** step was updated to make use of the coverage collection required by Sonar.
 
-{% raw %}
-```yml
-...
+    {% raw %}
+    ```yml
+    ...
 
-    # Install the SonarCloud Scanner
-    - name: Install SonarCloud scanner
-      if: steps.cache-sonar-scanner.outputs.cache-hit != 'true'
-      run: |
-        mkdir -p .sonar/scanner
-        dotnet tool update dotnet-sonarscanner --tool-path ./.sonar/scanner
-        echo "$(Resolve-Path ./.sonar/scanner)" >> $env:GITHUB_PATH
+        # Install the SonarCloud Scanner
+        - name: Install SonarCloud scanner
+          if: steps.cache-sonar-scanner.outputs.cache-hit != 'true'
+          run: |
+            mkdir -p .sonar/scanner
+            dotnet tool update dotnet-sonarscanner --tool-path ./.sonar/scanner
+            echo "$(Resolve-Path ./.sonar/scanner)" >> $env:GITHUB_PATH
 
-    - name: Start Sonar Analysis
-      env:
-        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-      run: |
-        ./.sonar/scanner/dotnet-sonarscanner begin /k:"<key>" /o:"<organisation>" /d:sonar.token="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.scanner.scanAll=false /d:sonar.cs.vscoveragexml.reportsPaths=coverage.xml
+        - name: Start Sonar Analysis
+          env:
+            SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          run: |
+            ./.sonar/scanner/dotnet-sonarscanner begin /k:"<key>" /o:"<organisation>" /d:sonar.token="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.scanner.scanAll=false /d:sonar.cs.vscoveragexml.reportsPaths=coverage.xml
 
-    - name: Build project
-      env: 
-        ConnectionStrings__TestConnection: ${{ secrets.TestConnection_CONNECTION_STRING }}
-      run: dotnet build <Path to your Notes.csproj file> --framework net8.0
-          
-    - name: Test
-      env: 
-        ConnectionStrings__TestConnection: ${{ secrets.TestConnection_CONNECTION_STRING }}
-      run: dotnet-coverage collect "dotnet test <Path to you notes.sln file> --framework net8.0" -f xml -o "coverage.xml"
+        - name: Build project
+          env: 
+            ConnectionStrings__TestConnection: ${{ secrets.TestConnection_CONNECTION_STRING }}
+          run: dotnet build <Path to your Notes.csproj file> --framework net8.0
+              
+        - name: Test
+          env: 
+            ConnectionStrings__TestConnection: ${{ secrets.TestConnection_CONNECTION_STRING }}
+          run: dotnet-coverage collect "dotnet test <Path to you notes.sln file> --framework net8.0" -f xml -o "coverage.xml"
 
-    - name: End Sonar Analysis
-      env:
-        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-      run: ./.sonar/scanner/dotnet-sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
-```
-{% endraw %}
+        - name: End Sonar Analysis
+          env:
+            SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          run: ./.sonar/scanner/dotnet-sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
+    ```
+    {% endraw %}
 
 2. Make sure that you replace `<organisation>` with Sonar organisation key and `<key>` with your Sonar project key (**keep the double quotes around these values**). You can find them in the Information tab:
 
@@ -971,8 +973,8 @@ The steps above generate the documentation but it would be better if we could ac
  
 3. Now we will add a new job that deploys the documentation. Add these lines to the end of your file. **Make sure the indentation is correct.** The `deploy` job should start at the same indentation level as the `generate` job.
 
-{% raw %}
-      ``` yml
+    {% raw %}
+    ``` yml
       ...
 
         deploy:
@@ -995,8 +997,8 @@ The steps above generate the documentation but it would be better if we could ac
             - name: Output Page URL
               run: echo "GitHub Pages URL: ${{ steps.deployment.outputs.page_url }}"
 
-      ```
-{% endraw %}
+    ```
+    {% endraw %}
 
 Explanation of the code above:
 - We define a new job called `deploy`. Again, this is not a keyword and can be called anything else. The job will run on the latest version of Ubuntu.
