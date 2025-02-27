@@ -349,7 +349,7 @@ You might notice that you are reusing certain values throughout your pipeline, s
 
     ![Fig. 14: Variables tab](images/variables.png){: standalone #fig14 data-title="Variables tab"}
 
-4. This will take you to a page where you give a name to your variable, e.g. `CSPROJ_PATH`, and the value, which is the path to your `.csproj` file in this example. **Note: the path in the screenshot is just an example.**
+4. This will take you to a page where you give a name to your variable, e.g. `CSPROJ_PATH`, and the value, which is the path to your `.csproj` file in this example. **Note: the path in Fig. 15 is just an example.**
 
     ![Fig. 15: Adding a variable](images/add-variable.png){: standalone #fig15 data-title="Adding a variable"}
 
@@ -632,7 +632,7 @@ Static code analysis can tell us a lot about the quality of the code written. So
 
     ![Fig. 23: Choosing the project](images/choose-project-sonar.png){: standalone #fig23 data-title="Choosing the project"}
 
-6. Finally, you need to choose what Sonar considers new code in the repository. You have two choices which are explained in the screenshot below. You should proceed with the `Previous version` one. Then, you can finally create the project.
+6. Finally, you need to choose what Sonar considers new code in the repository. You have two choices which are explained in Fig. 24. You should proceed with the `Previous version` one. Then, you can finally create the project.
 
     ![Fig. 24: Selecting what is new code](images/new-code.png){: standalone #fig24 data-title="Selecting what is new code"}
 
@@ -729,7 +729,7 @@ What each step does:
 
 These are all the steps needed to set up SonarCloud. Now you can move on to setting up the analysis. The way it works is you start the scanner, build and test your project, and then stop the scanner. This means that the build and test steps need to be encapsulated by the sonar start and end steps.
 
-1. Modify your code to include the *Start Sonar analysis* step before the *Build* step and *End Sonar analysis* step after the *Test* step, like in the code below. Also note that the ***Test*** step was updated to make use of the coverage collection required by Sonar.
+1. Modify your code to include the *Start Sonar analysis* step before the *Build* step and *End Sonar analysis* step after the *Test* step, as in the code below. Also note that the ***Test*** step was updated to make use of the coverage collection required by Sonar.
 
     {% raw %}
     ```yml
@@ -872,7 +872,7 @@ jobs:
 
 Your workflow should now be set up to automatically run Sonar analysis. Go ahead and commit and push your changes. Then, if you still have a pull request open on the same branch, the workflow will be triggered automatically. If not, you can open a new PR. Make sure to check whether your pipeline ran successfully in the `Actions` tab in GitHub.
 
-The results of the analysis will be available in the SonarCloud interface. The *End Sonar analysis* step will generate a link which can take you directly there like in the screenshot below. Alternatively, you can go to the SonarCloud dashboard manually. 
+The results of the analysis will be available in the SonarCloud interface. The *End Sonar analysis* step will generate a link which can take you directly there as in Fig. 29. Alternatively, you can go to the SonarCloud dashboard manually. 
 
 ![Fig. 29: Analysis result](images/analysis-result.png){: standalone #fig29 data-title="Analysis result"}
 
@@ -976,27 +976,27 @@ The steps above generate the documentation but it would be better if we could ac
 
     {% raw %}
     ``` yml
-      ...
-
-        deploy:
-          needs: generate
-          runs-on: ubuntu-latest
-
-          permissions:
-            pages: write
-            id-token: write
-
-          environment:
-            name: github-pages
-            url: ${{ steps.deployment.outputs.page_url }}
-
-          steps:
-            - name: Deploy to GitHub Pages
-              id: deployment
-              uses: actions/deploy-pages@v4
-
-            - name: Output Page URL
-              run: echo "GitHub Pages URL: ${{ steps.deployment.outputs.page_url }}"
+    # ...
+    
+    deploy:
+      needs: generate
+      runs-on: ubuntu-latest
+    
+      permissions:
+        pages: write
+        id-token: write
+    
+      environment:
+        name: github-pages
+        url: ${{ steps.deployment.outputs.page_url }}
+    
+      steps:
+        - name: Deploy to GitHub Pages
+          id: deployment
+          uses: actions/deploy-pages@v4
+    
+        - name: Output Page URL
+          run: echo "GitHub Pages URL: ${{ steps.deployment.outputs.page_url }}"
 
     ```
     {% endraw %}
