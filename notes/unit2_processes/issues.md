@@ -14,6 +14,8 @@ help you stay organised and contribute effectively to your team. Understanding h
 link work, and participate in discussions about issues is essential for any developer working in 
 a collaborative environment.
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/OfZc0qW2MYw?si=6w3JceEaI_mD8qsJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ## Issue creation
 
 The lifecycle of an issue tends to follow the pattern shown in Fig. 1. 
