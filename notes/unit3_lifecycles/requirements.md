@@ -19,6 +19,8 @@ potential issues early, reducing the risk of costly rework and delays and stream
 development process by ensuring that requirements are clear, feasible, and well-understood by 
 all team members.
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/7fYuT2A8Z18?si=S2KMb9BFEAi7YqsE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ## Requirements elicitation and analysis
 
 To fully understand the complexities involved, it is important to break the concept down in 
@@ -87,7 +89,7 @@ detailing these requirements to guide the development process. Both are essentia
 that the final product meets stakeholder needs and aligns with business goals. Their relationship, 
 especially at the outset of the project, can be visualised as shown in Fig. 11.
 
-![Fig. 11: Requirements engineering divided into elicitation and analysis](images/requirement_engineering.png){: standalone #fig11 data-title="The four activities of continuous deployment"}
+![Fig. 1: Requirements engineering divided into elicitation and analysis](images/requirement_engineering.png){: standalone #fig1 data-title="The four activities of continuous deployment"}
 
 Requirements analysis in the context of agile software development is the process of refining, 
 prioritising, and detailing the requirements gathered from stakeholders to ensure they are 

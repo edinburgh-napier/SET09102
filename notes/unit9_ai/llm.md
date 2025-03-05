@@ -321,3 +321,7 @@ LLMs and ANNs.
 
 {: .tip-title }
 > [<i class="fa-regular fa-lightbulb"></i> Practical tips on using LLMs](llm_tips)
+
+## Further reading
+
+* [Emerging Patterns in Building GenAI Products](https://martinfowler.com/articles/gen-ai-patterns)
