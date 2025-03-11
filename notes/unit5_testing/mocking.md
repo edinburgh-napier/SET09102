@@ -67,7 +67,7 @@ from the rest of the system to allow for multiple implementations. Constructor i
 is used to provide the appropriate gamepad implementation to the `GamePad` class at
 instantiation.
 
-```C#
+``` c#
 using System;
 
 namespace VideoGame;
@@ -152,7 +152,7 @@ We assume that we are going to test a method `DisplayCurrentGamepadSettings()` b
 do not want to be tied to using a physical gamepad. We therefore need a mock gamepad
 object.
 
-```C#
+``` c#
 public void DisplayGamepadSettings_updates_ui_correctly()
 {
     var mockGamepad = new Mock<IGamepadFunctionality>();
@@ -230,7 +230,7 @@ it a preferred choice for developers working with C#.
 
 **Example**
 
-```c#
+``` c#
 using Moq;
 using Xunit;
 
