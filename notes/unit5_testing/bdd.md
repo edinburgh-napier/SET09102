@@ -52,7 +52,7 @@ as executable tests.
 Consider a login feature for a user portal. Using SpecFlow and the Given-When-Then structure, we 
 can write a BDD scenario for this behaviour in a Gherkin file, such as `Login.feature`.
 
-```gherkin
+``` gherkin
 Feature: User Login
   As a user of the portal
   I want to be able to log in to my account
@@ -68,7 +68,7 @@ This scenario describes the behaviour in a language that both developers and sta
 understand. The developer then implements step definitions in C# to link this specification with 
 the application logic:
 
-```c#
+``` c#
 [Binding]
 public class LoginSteps
 {
