@@ -97,7 +97,7 @@ between environments where possible.
 2.  Still at the command line, execute the following command to run the Docker container.
     
     ``` bash
-    docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=<YourPassw0rd>" -p 1433:1433 --name sql1 --hostname sql1 -d mcr.microsoft.com/mssql/server:2022-latest --platform=linux/arm64
+    docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=<YourPassw0rd>" -p 1433:1433 --name sql1 --hostname sql1 -d mcr.microsoft.com/mssql/server:2022-latest
     ```
     
 {: .note-title}
@@ -107,7 +107,7 @@ between environments where possible.
 > * The -p switch maps the default TCP port (1433) to a local port. In this case the same one is used.
 > * The --name and --hostname parameters set the name and hostname of the container.
 > * The -d switch specifies which image file to use.
-> * The --platform parameter is only needed if you are running on an Apple Silicon Mac.
+> * <i class="fa-brands fa-apple icon"></i> If you are running on an Apple Silicon Mac, you will need to add the additional parameter `--platform=linux/arm64`
 
 The return value from a successful container launch is a long hexadecimal string. Examine any error 
 messages and resolve the issues before continuing. For more information, see the 
