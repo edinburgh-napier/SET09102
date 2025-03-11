@@ -147,8 +147,7 @@ or manual [penetration testing](https://www.ncsc.gov.uk/guidance/penetration-tes
 carried out by security professionals. Although this type
 of test is not carried out by software engineers, they are again the ones who will be
 required to fix any issues. In general, it is better to avoid security issues by adopting
-secure development practices from the outset as discussed in the
-[secure software developmentsection](../unit7_ethics/Week11b_secure_software_development.md).
+secure development practices from the outset by adopting sound development practices.
 
 ## Usability testing
 
