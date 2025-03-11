@@ -4,6 +4,7 @@ parent: Testing
 has_children: true
 has_toc: false
 nav_order: 1
+mermaid: true
 ---
 
 ## Unit testing
@@ -102,7 +103,7 @@ test. Unit testing frameworks provides various types of assertion statement, but
 common is the assertion of equality between the returned value and the expected value.
 The example C# code in Fig. 2 illustrates the use of the `Assert.AreEqual()` test.
 
-``` C#
+``` c#
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.IO;
 using System;
