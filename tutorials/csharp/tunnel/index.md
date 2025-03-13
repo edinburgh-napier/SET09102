@@ -12,7 +12,7 @@ To connect a .NET MAUI application to a database using an SSH tunnel, you'll nee
 SSH connection to the server hosting the database, then configure your MAUI app to connect to the 
 database through that tunnel.
     
-![What is an SSH tunnel?](images/ssh_tunnel.gif) 
+![Fig. 1. What is an SSH tunnel?](images/ssh_tunnel.gif){: standalone #fig1 data-title="What is an SSH tunnel?" }
 
 You would usually connect to a local database using a connection string like the following:
 
