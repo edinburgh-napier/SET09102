@@ -49,13 +49,14 @@ fosters a modular, testable architecture that is easier to maintain and adapt ov
 
 Fig. 1 illustrates the concept of dependency injection. Instead of creating a local instance
 of a dependency, a class makes use of an object such as a database connection that already exists 
-in the context. The three main types of dependency injection are:
+in the context. The four main types of dependency injection are:
 
 1. **Constructor injection**: The service is provided as an argument to the client's
    constructor.
-2. **Setter injection**: The client defines a setter function that can be used to set
+2. **Method injection**: The service is passed as a parameter into the method that requires it.
+3. **Setter injection**: The client defines a setter function that can be used to set
    the value of an internal variable to an instance of the service
-3. **Interface injection**: The system context provides a framework for constructing
+4. **Interface injection**: The system context provides a framework for constructing
    service objects as needed and the client only needs a reference to the service's
    interface. This is the most complex variation, but provides some additional benefits
    if the service needs to do additional work such as keeping track of the number of
