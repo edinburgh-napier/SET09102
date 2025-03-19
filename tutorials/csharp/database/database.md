@@ -533,7 +533,8 @@ Note that the last two lines of the file could be eliminated by using annotation
 methods. This is left as an exercise. If you decide to do this, you must remember that the name of 
 the command generated is related to the name of the method. `NewNoteAsync()`, for example, will 
 generate a command called `NewNoteCommand`. You will therefore need to update the reference to the 
-command in _AllNotesPage.xaml_ so that it matches.
+command in _AllNotesPage.xaml_ so that it matches. You will also need to make sure that the class
+is declared as `partial`.
 
 The remaining errors refer to the `Identifier` property of the note object  which was previously set 
 to the note filename and now replaced by the `Id` property. To resolve these issues, you need to 
