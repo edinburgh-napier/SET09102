@@ -18,13 +18,6 @@ The code that you end up with after the MVVM tutorial provides the starting poin
 Here, we will take advantage of the dependency injection framework built into .NET MAUI to manage 
 access to the database.
 
-{: .warning-title}
-> <i class="fa-solid fa-triangle-exclamation"></i> Warning
->
-> This tutorial has not been fully tested. If you find anything that is unclear or does not work as 
-> expected, please try to work around the problem. If you find a solution, please let me know. 
-
-
 ## 1. Preparation
 
 Open the solution in Visual Studio and check that you have the following viewmodels:  
@@ -251,7 +244,7 @@ conventions.
     ```c#
     {
         "ConnectionStrings": {
-            "DevelopmentConnection": "Server=IP_ADDRESS;Database=notesdb;User Id=notesapp;Password=N0tesApp$;"
+            "DevelopmentConnection": "Server=IP_ADDRESS;Database=notesdb;User Id=notesapp;Password=N0tesApp$;TrustServerCertificate=True;Encrypt=True;"
         }
     }
     ```
@@ -338,7 +331,7 @@ file after thr line that loads the configuration. There are three sections relat
 viewmodels and views respectively. Add `using` statements at the top of the file as needed.
 
 ```c#    
-var connectionString = builder.Configuration.GetConnectionString("LocalConnection");
+var connectionString = builder.Configuration.GetConnectionString("DevelopmentConnection");
 builder.Services.AddDbContext<NotesDbContext>(options => options.UseSqlServer(connectionString));
 
 builder.Services.AddSingleton<AllNotesViewModel>();
@@ -493,21 +486,24 @@ as well.
 The [`IQueryAttributable.ApplyQueryAttributes()`](https://learn.microsoft.com/en-us/dotnet/maui/fundamentals/shell/navigation target=) 
 method provides a mechanism for passing data between the elements of a Maui application.
 
-Note the use of the `[RelayCommand]` annotations. These are provided by the _CommunityToolkitMvvm_ 
-NuGet package and trigger the generation of standard code for assigning methods to commands. To use 
-annotations, the class must be declared as `partial`. The annotations take the place of the lines 
-shown below which can be removed.
+Note the use of the `Shell.Current.GoToAsync()` command to go back to the list page after a save 
+or delete operation.
 
-```c#
-public ICommand SaveCommand { get; private set; }
-public ICommand DeleteCommand { get; private set; }
-
-SaveCommand = new AsyncRelayCommand(Save);
-DeleteCommand = new AsyncRelayCommand(Delete);
-```
-
-Another notable change in this version is the use of the `Shell.Current.GoToAsync()` command to go 
-back to the list page after a save or delete operation.
+{: .note-title}
+> <i class="fa-solid fa-triangle-exclamation"></i> Note
+>
+> The `[RelayCommand]` annotations are provided by the _CommunityToolkitMvvm_ 
+> NuGet package and trigger the generation of standard code for assigning methods to commands. 
+> To use annotations, the class must be declared as `partial`. The annotations take the place of 
+> the lines shown below which can be removed.
+>
+> ```c#
+> public ICommand SaveCommand { get; private set; }
+> public ICommand DeleteCommand { get; private set; }
+>
+> SaveCommand = new AsyncRelayCommand(Save);
+> DeleteCommand = new AsyncRelayCommand(Delete);
+> ```
 
 ## 8. Update the AllNotes ViewModel
 

@@ -19,7 +19,7 @@ You would usually connect to a local database using a connection string like the
 ``` c#
  {
      "ConnectionStrings": {
-         "DevelopmentConnection": "Server=IP_ADDRESS;Database=notesdb;User Id=notesapp;Password=N0tesApp$;"
+         "DevelopmentConnection": "Server=IP_ADDRESS;Database=notesdb;User Id=notesapp;Password=N0tesApp$;TrustServerCertificate=True;Encrypt=True;"
      }
  }
 ```
@@ -34,8 +34,8 @@ credentials, but it will look a lot like a local connection as shown below.
 ``` c#
  {
      "ConnectionStrings": {
-         "DevelopmentConnection": "Server=IP_ADDRESS;Database=notesdb;User Id=notesapp;Password=N0tesApp$;"
-         "RemoteConnection": "Server=localhost,1433;Database=REMOTE_DB_NAME;User Id=REMOTE_USER_NAME;Password=REMOTE_PASSWORD"
+         "DevelopmentConnection": "Server=IP_ADDRESS;Database=notesdb;User Id=notesapp;Password=N0tesApp$;TrustServerCertificate=True;Encrypt=True;"
+         "RemoteConnection": "Server=localhost,1433;Database=REMOTE_DB_NAME;User Id=REMOTE_USER_NAME;Password=REMOTE_PASSWORD;TrustServerCertificate=True;Encrypt=True;"
      }
  }
 ```
