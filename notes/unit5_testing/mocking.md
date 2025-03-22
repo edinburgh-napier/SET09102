@@ -31,6 +31,8 @@ complex systems. Some of the main disadvantages of tight coupling include:
   depends on a specific instance of a service, it’s difficult to repurpose that class without also 
   including the dependency.
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/doSc8GkNZQc?si=uYD2NuhELbAD2Pws" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 To address these issues, _Dependency Injection_ (DI) is introduced as a design pattern that helps 
 decouple classes from their dependencies, improving flexibility, testability, and maintainability. 
 With DI, instead of a class creating its own dependencies, those dependencies are provided to the 
