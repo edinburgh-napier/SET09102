@@ -10,7 +10,11 @@ mermaid: true
 # Data-driven applications
 
 All applications have to deal with data in one way or another and most of them need data that 
-persists from one execution of the application to the next. Choosing the right option for persistent 
+persists from one execution of the application to the next. 
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Yg-xRYc9q6k?si=QNy4SXFlFIUfFeFR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+Choosing the right option for persistent 
 data storage depends on various factors including data structure, access patterns, scalability 
 requirements, transaction needs, and so on. The main choices are between file system storage or a 
 database, and whether the data is stored locally or on a remote server as illustrated in Fig. 1.
