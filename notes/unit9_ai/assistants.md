@@ -13,6 +13,11 @@ technologies, specifically large language models (LLMs), to aid software develop
 coding tasks. This support ranges from code completion to bug detection and automated 
 documentation. 
 
+<audio controls>
+  <source src="audio/ai_coding_assistants.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+
 AI code completion and code generation tools have become essential for boosting productivity and 
 improving code quality in software development. 
 A [survey](https://codesignal.com/report-developers-and-ai-coding-assistant-trends/)
