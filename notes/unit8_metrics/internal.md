@@ -18,6 +18,8 @@ to coding standards. These are best assessed through code reviews and developer 
 how intuitive and well-organised the code appears to be for others on the team. Combining quantitative 
 and qualitative assessments provides a well-rounded view of internal code quality. 
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/oXAA1Ha6i30?si=NmUhD1WBZwD-ITBQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ## Cyclomatic complexity
 
 Cyclomatic complexity is a quantitative software metric based on the number of independent paths through 
