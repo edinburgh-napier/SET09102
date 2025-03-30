@@ -14,7 +14,14 @@ their lifecycle. Designed to support developers, quality assurance teams, and st
 quality into measurable characteristics — such as functionality, performance, security, and maintainability — 
 that align with both technical standards and end-user needs. This standard enables organisations to set clear 
 quality objectives, establish metrics, and conduct systematic assessments, ensuring that their software meets 
-consistent and high-quality benchmarks. By adopting ISO 25000, teams can benefit from a standardised approach 
+consistent and high-quality benchmarks. 
+
+<audio controls>
+  <source src="audio/quality_standards.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+
+By adopting ISO 25000, teams can benefit from a standardised approach 
 to defining and evaluating software quality, which helps maintain quality assurance rigour and supports informed 
 decision-making throughout development and maintenance. The relationships between quality measures defined in
 ISO25000 are illustrated in Fig. 1.
@@ -150,3 +157,4 @@ reordering abbreviates to MORSE):
 
 * Trends and Findings in Measuring Software Quality Metrics in the Industry
   [Falco & Rabiolo, 2022](https://doi.org/10.1109/ARGENCON55245.2022.9939935)
+* [CISQ webcast 2019](https://youtu.be/6jAfc2QF4oU?si=tBrfKQRDmqosDWz0): Comparing quality metrics from real systems. 
