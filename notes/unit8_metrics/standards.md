@@ -26,7 +26,7 @@ to defining and evaluating software quality, which helps maintain quality assura
 decision-making throughout development and maintenance. The relationships between quality measures defined in
 ISO25000 are illustrated in Fig. 1.
 
-![Fig. 1: Relationship between types of quality measures (<a href="https://napier.primo.exlibrisgroup.com/permalink/44NAP_INST/19n0mho/cdi_bsi_primary_000000000030280200">ISO 25023</a>](images/iso25023_quality.png){: standalone #fig1 data-title="Relationship between types of quality measures" }
+![Fig. 1: Relationship between types of quality measures (<a href="https://napier.primo.exlibrisgroup.com/permalink/44NAP_INST/19n0mho/cdi_bsi_primary_000000000030280200">ISO 25023</a>)](images/iso25023_quality.png){: standalone #fig1 data-title="Relationship between types of quality measures" }
 
 ISO 25000 can provide a structured, standardised approach to defining, measuring, and evaluating software 
 quality. By implementing the ISO 25000 framework, teams can ensure that quality objectives are set clearly from 

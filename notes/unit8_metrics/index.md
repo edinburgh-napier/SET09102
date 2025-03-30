@@ -12,7 +12,7 @@ nav_order: 8
 ![Steve McConnell](../../images/people/steve_mcconnell.png)
 
 <blockquote class="pretty"><span>
-The problem with quick and dirty...</br>
+The problem with quick and dirty...<br/>
 is that dirty remains long after quick has been forgotten.
 </span></blockquote>
 <p class="attribution"><a href="https://stevemcconnell.com/">Steve McConnell</a></p>
