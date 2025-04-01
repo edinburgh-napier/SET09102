@@ -24,11 +24,6 @@ definitions of *quality* from different sources:
 > (3) the degree to which a set of inherent characteristics fulfils the requirements
 > ([PMBOK](https://napier.primo.exlibrisgroup.com/permalink/44NAP_INST/n96pef/alma9923796446002111))
 
-<audio controls>
-  <source src="audio/external_quality.mp3" type="audio/mpeg">
-Your browser does not support the audio element.
-</audio>
-
 All of these definitions focus on the final product from the point of view of the
 customer. In that sense, quality can only be evaluated with reference to the
 *external properties* of the system which include, for example:
@@ -60,6 +55,11 @@ This system-level testing is explicitly captured in the
 [V life cycle model](../unit3_lifecycles/sdlc.md#fig4) where it is paired with the
 analysis phase of the waterfall. This type of quality testing is relevant for any
 software development project including those that use an agile approach. 
+
+<audio controls>
+  <source src="audio/external_quality.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
 
 ## Relationship with non-functional requirements
 
