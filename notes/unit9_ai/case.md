@@ -22,6 +22,11 @@ functionality of older CASE tools is now available in common IDEs. However, it s
 highlight some aspects of software engineering that are aimed at a slightly higher level of
 abstraction.
 
+<audio controls>
+  <source src="audio/case.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+
 ## Early Adoption
 
 ![Early CASE adoption](images/case_1980.png)
