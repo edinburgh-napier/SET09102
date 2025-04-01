@@ -20,6 +20,11 @@ The introduction of the transformer architecture by Google in 2017, through thei
 advance. Transformer models, which use mechanisms called attention and self-attention, proved highly 
 effective for a range of language processing tasks and became the backbone of modern LLMs.
 
+<audio controls>
+  <source src="audio/llm.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+
 OpenAI's release of GPT (Generative Pre-trained Transformer) models started with GPT in 2018. 
 These models demonstrated remarkable language generation capabilities, including generating 
 coherent code snippets and understanding programming queries. Then in 2021, GitHub introduced 
