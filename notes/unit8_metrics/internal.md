@@ -350,7 +350,7 @@ Measuring programming progress by lines of code is like <br/>measuring aircraft 
 
 ## Qualitative metrics
 
-While quantitative metrics can be calculated through static code analysis, quantitative metrics require
+While quantitative metrics can be calculated through static code analysis, qualitative metrics require
 human judgement. They are best evaluated through code reviews and should be treated as part of the
 culture of the development team. Automated linters and formatting tools, like 
 [Prettier](https://prettier.io/) (JavaScript) or 
