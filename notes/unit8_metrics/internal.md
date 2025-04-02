@@ -374,7 +374,7 @@ Some examples of qualitative metrics are summarised in the following table.
 | Code Documentation            | Well-documented code makes it easier for others to understand the purpose and context of each component. Documentation completeness can be assessed by checking that public methods, classes, and modules have clear descriptions. Documentation tools like Javadoc (Java) or Doxygen (C++) enforce consistency by generating documentation directly from comments.                                                                                       |
 | Error Handling and Resilience | Code should anticipate and handle potential issues gracefully, ensuring that exceptions are managed effectively and the system fails safely. Error handling can be assessed by reviewing the code to confirm that critical operations include appropriate error management. Static analysis and code reviews help ensure that the code is robust and resilient to unexpected inputs or conditions.                                                        |
 
-Dependency Management is a metric that can be considered both quantitative an qualitative. Minimising 
+Dependency Management is a metric that can be considered both quantitative and qualitative. Minimising 
 dependencies between unrelated modules or components reduces code coupling, making the code easier to 
 modify or extend. Excessive dependencies are usually flagged by dependency analysis tools (like SonarQube 
 or npm’s [depcheck](https://www.npmjs.com/package/depcheck)), which identify unused or redundant 
