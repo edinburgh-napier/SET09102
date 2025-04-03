@@ -14,6 +14,11 @@ can enhance software development workflows by automating complex tasks, from cod
 testing, significantly speeding up the development process and reducing errors 
 [(Acharya et al. 2025)](https://doi.org/10.1109/ACCESS.2025.3532853). 
 
+<audio controls>
+  <source src="audio/agentic_ai.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+
 This section explores the concept of agentic AI and how it integrates into software engineering, 
 discussing its potential to transform traditional practices, impact the roles of software 
 engineers, and drive efficiency. We will explore the implications of deploying AI agents, 
