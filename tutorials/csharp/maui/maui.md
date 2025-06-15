@@ -188,15 +188,15 @@ tutorial.
 
 iOS images:
 
-[![Icon: About (iOS)](https://raw.githubusercontent.com/dotnet/docs-maui/main/docs/tutorials/notes-app/snippets/shell/Resources/Images/icon_about_ios.png)](https://raw.githubusercontent.com/dotnet/docs-maui/main/docs/tutorials/notes-app/snippets/shell/Resources/Images/icon_about_ios.png){:target="_blank"}
+[![Icon: About (iOS)](images/icon_about_ios.png)](images/icon_about_ios.png){:target="_blank"}
 
-[![Icon: Notes (iOS)](https://raw.githubusercontent.com/dotnet/docs-maui/main/docs/tutorials/notes-app/snippets/shell/Resources/Images/icon_notes_ios.png)](https://raw.githubusercontent.com/dotnet/docs-maui/main/docs/tutorials/notes-app/snippets/shell/Resources/Images/icon_notes_ios.png){:target="_blank"}
+[![Icon: Notes (iOS)](images/icon_notes_ios.png)](images/icon_notes_ios.png){:target="_blank"}
 
 Images for other plaforms:
 
-[![Icon: About](https://raw.githubusercontent.com/dotnet/docs-maui/main/docs/tutorials/notes-app/snippets/shell/Resources/Images/icon_about.png)](https://raw.githubusercontent.com/dotnet/docs-maui/main/docs/tutorials/notes-app/snippets/shell/Resources/Images/icon_about.png){:target="_blank"}
+[![Icon: About](images/icon_about.png)](images/icon_about.png){:target="_blank"}
 
-[![Icon: Notes](https://raw.githubusercontent.com/dotnet/docs-maui/main/docs/tutorials/notes-app/snippets/shell/Resources/Images/icon_notes.png)](https://raw.githubusercontent.com/dotnet/docs-maui/main/docs/tutorials/notes-app/snippets/shell/Resources/Images/icon_notes.png){:target="_blank"}
+[![Icon: Notes](images/icon_notes.png)](images/icon_notes.png){:target="_blank"}
 
 After you've downloaded the images, you can move them with File Explorer or
 Finder to the _Resources\Images_ folder of the project. Any file in this
