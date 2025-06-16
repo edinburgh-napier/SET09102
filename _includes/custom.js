@@ -221,6 +221,30 @@
         e.preventDefault()
 
         alert(e.target.dataset.seq);
+        var elements = document.getElementsByClassName("tab-control");
+        for (var i=0; i<elements.length; i++) {
+            var tabControl = elements[i];
+            if (tabControl.dataset.tabset = e.target.dataset.tabset) {
+                if (tabControl.dataset.seq = e.target.dataset.seq) {
+                    tabControl.classList.add("btn-blue");
+                }
+                else {
+                    tabControl.classList.remove("btn-blue");
+                }
+            }
+        }
+        var elements = document.getElementsByClassName("tab");
+        for (var i=0; i<elements.length; i++) {
+            var tab = elements[i];
+            if (tab.dataset.tabset == e.target.dataset.tabset) {
+                if (tab.dataset.seq == e.target.dataset.seq) {
+                    tab.style.visibility = "visible"
+                }
+                else {
+                    tab.style.visibility = "hidden"
+                }
+            }
+        }
     }
     var elements = document.getElementsByClassName('tab-control');
     for (var i =0; i < elements.length; i++) {
