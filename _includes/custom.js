@@ -217,9 +217,9 @@
 
     // Functions for tabs
 
-    function openTab() {
+    function openTab(e) {
+        e.preventDefault()
         alert("I'm a tab");
-        return(false);
     }
     var elements = document.getElementsByClassName('tab');
     for (var i =0; i < elements.length; i++) {
