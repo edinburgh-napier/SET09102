@@ -114,11 +114,11 @@ messages and resolve the issues before continuing. For more information, see the
 [DataGrip](){: .btn .btn-blue .tab-control data-tabset="tools" data-seq="1" }
 [Azure Data Studio](){: .btn .tab-control data-tabset="tools" data-seq="2" }
 
-> dataGrip and create a new connection. You can use the parameter values shown in 
+> Open DataGrip and create a new connection. You can use the parameter values shown in 
 > Fig. 1. to connect to your SQL Server container. The password is the one you specified when you 
 > started the container.
 > 
-> ![Fig. 1. Creating a local database connection in Azure Data Studio](images/local_connection.png){: standalone .w30 #fig1 data-title="Creating a local database connection in Azure Data Studio" }
+> ![Fig. 1. Creating a local database connection in dataGrip](images/datagrip_connection.png){: standalone .w30 #fig1 data-title="Creating a local database connection in DataGrip" }
 > 
 > SQL Server is a database _server_. That is, it provides for multiple databases, each of which has its 
 > own purpose and permissions. After connecting, you can see that only system databases currently exist. 
@@ -138,7 +138,7 @@ messages and resolve the issues before continuing. For more information, see the
 > 
 >    In ADS, right-click on the master database as shown in Fig. 2 and select _New Query_.
 > 
->    ![Fig. 2. Starting a new query in Azure Data Studio](images/new_query.png){: standalone .w30 #fig2 data-title="Starting a new query in Azure Data Studio" }
+>    ![Fig. 2. Starting a new query in DataGrip](images/datagrip_new_query.png){: standalone .w30 #fig2 data-title="Starting a new query in dataGrip" }
 > 
 >    The next page provides a field where you can type in 
 >    [Transact-SQL](https://learn.microsoft.com/en-us/sql/t-sql/language-reference?view=sql-server-ver16) 
@@ -151,13 +151,13 @@ messages and resolve the issues before continuing. For more information, see the
 >    CREATE LOGIN notesapp WITH PASSWORD='N0tesApp$';
 >    ```
 > 
->    ![Fig. 3. Creating a server-level login in Azure Data Studio](images/create_login.png){: standalone .w30 #fig3 data-title="Creating a server-level login in Azure Data Studio" }
+>    ![Fig. 3. Creating a server-level login in DataGrip](images/datagrip_new_login.png){: standalone .w30 #fig3 data-title="Creating a server-level login in DataGrip" }
 > 
 > 2. **Create a new database**
 > 
->    In the explorer sidebar of ADS, click on the plus sign next to _Databases_ as shown in Fig. 4.
+>    In the explorer sidebar, right-click on the datasource as shown in Fig. 4 and select _New > Database_.
 > 
->    ![Fig. 4. Creating a new database in Azure Data Studio](images/new_database.png){: standalone .w30 #fig4 data-title="Creating a new database in Azure Data Studio" }
+>    ![Fig. 4. Creating a new database in DataGrip](images/datagrip_new_database.png){: standalone .w30 #fig4 data-title="Creating a new database in DataGrip" }
 > 
 >    Call the new database _notesdb_, and leave all the other options with their default values.
 > 
@@ -170,7 +170,7 @@ messages and resolve the issues before continuing. For more information, see the
 >    CREATE user notesapp for login notesapp;
 >    ```
 > 
->    ![Fig. 5. Creating a new user for the notesapp login in Azure Data Studio](images/create_user.png){: standalone .w30 #fig5 data-title="Creating a new user for the notesapp login in Azure Data Studio" }
+>    ![Fig. 5. Creating a new user for the notesapp login in DataGrip](images/datagrip_new_user.png){: standalone .w30 #fig5 data-title="Creating a new user for the notesapp login in DataGrip" }
 > 
 > 4. **Grant permissions to the new user**
 > 
