@@ -46,6 +46,7 @@ Run the application to check that it behaves as it should.
 
 To complete this exercise you will need to install two new tools if you do not yet have them:
 
+{: #Docker data-title="Docker" }
 * [Docker](https://www.docker.com/): A virtualisation tool that allows you to run software 
   applications in containers rather than install them natively on your computer.
 * [Azure Data Studio](https://learn.microsoft.com/en-us/azure-data-studio/): A Microsoft database 
