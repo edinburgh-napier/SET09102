@@ -114,17 +114,13 @@ messages and resolve the issues before continuing. For more information, see the
 [Azure Data Studio](){: .btn .btn-blue .tab-control data-tabset="tools" data-seq="1" }
 [DataGrip](){: .btn .tab-control data-tabset="tools" data-seq="2" }
 
-<div>
-This is the first tab
-
-    Can I still use markdown?
-
-</div>
+> This is the first tab
+>
+>    Can I still use markdown?
 {: .tab data-tabset="tools" data-seq="1" }
 
-<div>
-This is the second tab
-</div>
+> This is the second tab
+>
 {: .tab data-tabset="tools" data-seq="2" }
 
 Open Azure Data Studio (ADS) and create a new connection. You can use the parameter values shown in 
