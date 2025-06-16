@@ -111,105 +111,187 @@ messages and resolve the issues before continuing. For more information, see the
 
 ### Connect to the database server
 
-[Azure Data Studio](){: .btn .btn-blue .tab-control data-tabset="tools" data-seq="1" }
-[DataGrip](){: .btn .tab-control data-tabset="tools" data-seq="2" }
+[DataGrip](){: .btn .btn-blue .tab-control data-tabset="tools" data-seq="1" }
+[Azure Data Studio](){: .btn .tab-control data-tabset="tools" data-seq="2" }
 
-> This is the first tab
->
->    * Can I still use markdown?
+> dataGrip and create a new connection. You can use the parameter values shown in 
+> Fig. 1. to connect to your SQL Server container. The password is the one you specified when you 
+> started the container.
 > 
+> ![Fig. 1. Creating a local database connection in Azure Data Studio](images/local_connection.png){: standalone .w30 #fig1 data-title="Creating a local database connection in Azure Data Studio" }
+> 
+> SQL Server is a database _server_. That is, it provides for multiple databases, each of which has its 
+> own purpose and permissions. After connecting, you can see that only system databases currently exist. 
+> These are used to manage the server itself and must not be modified. Note too that you are logged in 
+> as the `sa` user - this is the default system administration account which should not be used for 
+> routine database tasks.
+> 
+> In the next step, we will set up a user account and database for the Notes app.
+> 
+> ### Database setup
+> 
+> Access permissions can be enforced at both the server level and the level of an individual database. 
+> For this reason, two steps are required to create a database user account with permission to log into 
+> the server.
+> 
+> 1. **Create a new login**
+> 
+>    In ADS, right-click on the master database as shown in Fig. 2 and select _New Query_.
+> 
+>    ![Fig. 2. Starting a new query in Azure Data Studio](images/new_query.png){: standalone .w30 #fig2 data-title="Starting a new query in Azure Data Studio" }
+> 
+>    The next page provides a field where you can type in 
+>    [Transact-SQL](https://learn.microsoft.com/en-us/sql/t-sql/language-reference?view=sql-server-ver16) 
+>    (T-SQL) commands. Enter the following command to create a new server-level login and then click 
+>    _Run_ as shown in Fig. 3. Note that the password must meet the strength that SQL Server requires by 
+>    being at least 8 characters long and containing characters from three of the following four sets: 
+>    Uppercase letters, Lowercase letters, Base 10 digits, and Symbols.
+> 
+>    ``` sql
+>    CREATE LOGIN notesapp WITH PASSWORD='N0tesApp$';
+>    ```
+> 
+>    ![Fig. 3. Creating a server-level login in Azure Data Studio](images/create_login.png){: standalone .w30 #fig3 data-title="Creating a server-level login in Azure Data Studio" }
+> 
+> 2. **Create a new database**
+> 
+>    In the explorer sidebar of ADS, click on the plus sign next to _Databases_ as shown in Fig. 4.
+> 
+>    ![Fig. 4. Creating a new database in Azure Data Studio](images/new_database.png){: standalone .w30 #fig4 data-title="Creating a new database in Azure Data Studio" }
+> 
+>    Call the new database _notesdb_, and leave all the other options with their default values.
+> 
+> 3. **Create a user in the new database**
+> 
+>    A _user_ is defined at the level of an individual database. The first step is therefore to change 
+>    to the _notesdb_ database as shown in Fig. 5. Then execute the following command
+> 
+>    ```sql
+>    CREATE user notesapp for login notesapp;
+>    ```
+> 
+>    ![Fig. 5. Creating a new user for the notesapp login in Azure Data Studio](images/create_user.png){: standalone .w30 #fig5 data-title="Creating a new user for the notesapp login in Azure Data Studio" }
+> 
+> 4. **Grant permissions to the new user**
+> 
+>    With the notesdb database still active, execute the following T-SQL command to grant all 
+>    permission to the notesapp user:
+> 
+>    ```sql
+>    GRANT control on DATABASE::notesdb to notesapp;
+>    ```
+> 
+>    Next, disconnect from SQL Server using the icon in the explorer pane and edit the details of the 
+>    connection. Replace `sa` with `notesapp`, and the sa password with `N0tesApp$`. When you reconnect, 
+>    you are using the new user account that you set up.
+> 
+> 5. **Create the NOTE table**
+> 
+>    Here we recreate the NOTE table as shown in Fig. 6. Use the T-SQL script below to set the table up 
+>    using ADS.
+> 
+>    ![Fig. 6. The NOTE table](images/note_table.png){: standalone .w10 #fig6 data-title="The NOTE table" }
+> 
+>    ```sql
+>    -- Create NOTE table
+>    CREATE TABLE note (
+>        id INT IDENTITY(1,1) PRIMARY KEY,
+>        text NVARCHAR(MAX) NOT NULL,
+>        date DATETIME2 DEFAULT SYSDATETIME()
+>   );
+>    ```
+>
 {: .tab data-tabset="tools" data-seq="1" }
 
-> This is the second tab
+> Open Azure Data Studio (ADS) and create a new connection. You can use the parameter values shown in 
+> Fig. 1. to connect to your SQL Server container. The password is the one you specified when you 
+> started the container.
+> 
+> ![Fig. 1. Creating a local database connection in Azure Data Studio](images/local_connection.png){: standalone .w30 #fig1 data-title="Creating a local database connection in Azure Data Studio" }
+> 
+> SQL Server is a database _server_. That is, it provides for multiple databases, each of which has its 
+> own purpose and permissions. After connecting, you can see that only system databases currently exist. 
+> These are used to manage the server itself and must not be modified. Note too that you are logged in 
+> as the `sa` user - this is the default system administration account which should not be used for 
+> routine database tasks.
+> 
+> In the next step, we will set up a user account and database for the Notes app.
+> 
+> ### Database setup
+> 
+> Access permissions can be enforced at both the server level and the level of an individual database. 
+> For this reason, two steps are required to create a database user account with permission to log into 
+> the server.
+> 
+> 1. **Create a new login**
+> 
+>    In ADS, right-click on the master database as shown in Fig. 2 and select _New Query_.
+> 
+>    ![Fig. 2. Starting a new query in Azure Data Studio](images/new_query.png){: standalone .w30 #fig2 data-title="Starting a new query in Azure Data Studio" }
+> 
+>    The next page provides a field where you can type in 
+>    [Transact-SQL](https://learn.microsoft.com/en-us/sql/t-sql/language-reference?view=sql-server-ver16) 
+>    (T-SQL) commands. Enter the following command to create a new server-level login and then click 
+>    _Run_ as shown in Fig. 3. Note that the password must meet the strength that SQL Server requires by 
+>    being at least 8 characters long and containing characters from three of the following four sets: 
+>    Uppercase letters, Lowercase letters, Base 10 digits, and Symbols.
+> 
+>    ``` sql
+>    CREATE LOGIN notesapp WITH PASSWORD='N0tesApp$';
+>    ```
+> 
+>    ![Fig. 3. Creating a server-level login in Azure Data Studio](images/create_login.png){: standalone .w30 #fig3 data-title="Creating a server-level login in Azure Data Studio" }
+> 
+> 2. **Create a new database**
+> 
+>    In the explorer sidebar of ADS, click on the plus sign next to _Databases_ as shown in Fig. 4.
+> 
+>    ![Fig. 4. Creating a new database in Azure Data Studio](images/new_database.png){: standalone .w30 #fig4 data-title="Creating a new database in Azure Data Studio" }
+> 
+>    Call the new database _notesdb_, and leave all the other options with their default values.
+> 
+> 3. **Create a user in the new database**
+> 
+>    A _user_ is defined at the level of an individual database. The first step is therefore to change 
+>    to the _notesdb_ database as shown in Fig. 5. Then execute the following command
+> 
+>    ```sql
+>    CREATE user notesapp for login notesapp;
+>    ```
+> 
+>    ![Fig. 5. Creating a new user for the notesapp login in Azure Data Studio](images/create_user.png){: standalone .w30 #fig5 data-title="Creating a new user for the notesapp login in Azure Data Studio" }
+> 
+> 4. **Grant permissions to the new user**
+> 
+>    With the notesdb database still active, execute the following T-SQL command to grant all 
+>    permission to the notesapp user:
+> 
+>    ```sql
+>    GRANT control on DATABASE::notesdb to notesapp;
+>    ```
+> 
+>    Next, disconnect from SQL Server using the icon in the explorer pane and edit the details of the 
+>    connection. Replace `sa` with `notesapp`, and the sa password with `N0tesApp$`. When you reconnect, 
+>    you are using the new user account that you set up.
+> 
+> 5. **Create the NOTE table**
+> 
+>    Here we recreate the NOTE table as shown in Fig. 6. Use the T-SQL script below to set the table up 
+>    using ADS.
+> 
+>    ![Fig. 6. The NOTE table](images/note_table.png){: standalone .w10 #fig6 data-title="The NOTE table" }
+> 
+>    ```sql
+>    -- Create NOTE table
+>    CREATE TABLE note (
+>        id INT IDENTITY(1,1) PRIMARY KEY,
+>        text NVARCHAR(MAX) NOT NULL,
+>        date DATETIME2 DEFAULT SYSDATETIME()
+>   );
+>    ```
 >
 {: .tab data-tabset="tools" data-seq="2" }
 
-Open Azure Data Studio (ADS) and create a new connection. You can use the parameter values shown in 
-Fig. 1. to connect to your SQL Server container. The password is the one you specified when you 
-started the container.
-
-![Fig. 1. Creating a local database connection in Azure Data Studio](images/local_connection.png){: standalone .w30 #fig1 data-title="Creating a local database connection in Azure Data Studio" }
-
-SQL Server is a database _server_. That is, it provides for multiple databases, each of which has its 
-own purpose and permissions. After connecting, you can see that only system databases currently exist. 
-These are used to manage the server itself and must not be modified. Note too that you are logged in 
-as the `sa` user - this is the default system administration account which should not be used for 
-routine database tasks.
-
-In the next step, we will set up a user account and database for the Notes app.
-
-### Database setup
-
-Access permissions can be enforced at both the server level and the level of an individual database. 
-For this reason, two steps are required to create a database user account with permission to log into 
-the server.
-
-1. **Create a new login**
-
-   In ADS, right-click on the master database as shown in Fig. 2 and select _New Query_.
-
-   ![Fig. 2. Starting a new query in Azure Data Studio](images/new_query.png){: standalone .w30 #fig2 data-title="Starting a new query in Azure Data Studio" }
-
-   The next page provides a field where you can type in 
-   [Transact-SQL](https://learn.microsoft.com/en-us/sql/t-sql/language-reference?view=sql-server-ver16) 
-   (T-SQL) commands. Enter the following command to create a new server-level login and then click 
-   _Run_ as shown in Fig. 3. Note that the password must meet the strength that SQL Server requires by 
-   being at least 8 characters long and containing characters from three of the following four sets: 
-   Uppercase letters, Lowercase letters, Base 10 digits, and Symbols.
-
-   ``` sql
-   CREATE LOGIN notesapp WITH PASSWORD='N0tesApp$';
-   ```
-
-   ![Fig. 3. Creating a server-level login in Azure Data Studio](images/create_login.png){: standalone .w30 #fig3 data-title="Creating a server-level login in Azure Data Studio" }
-
-2. **Create a new database**
-
-   In the explorer sidebar of ADS, click on the plus sign next to _Databases_ as shown in Fig. 4.
-
-   ![Fig. 4. Creating a new database in Azure Data Studio](images/new_database.png){: standalone .w30 #fig4 data-title="Creating a new database in Azure Data Studio" }
-
-   Call the new database _notesdb_, and leave all the other options with their default values.
-
-3. **Create a user in the new database**
-
-   A _user_ is defined at the level of an individual database. The first step is therefore to change 
-   to the _notesdb_ database as shown in Fig. 5. Then execute the following command
-
-   ```sql
-   CREATE user notesapp for login notesapp;
-   ```
-
-   ![Fig. 5. Creating a new user for the notesapp login in Azure Data Studio](images/create_user.png){: standalone .w30 #fig5 data-title="Creating a new user for the notesapp login in Azure Data Studio" }
-
-4. **Grant permissions to the new user**
-
-   With the notesdb database still active, execute the following T-SQL command to grant all 
-   permission to the notesapp user:
-
-   ```sql
-   GRANT control on DATABASE::notesdb to notesapp;
-   ```
-
-   Next, disconnect from SQL Server using the icon in the explorer pane and edit the details of the 
-   connection. Replace `sa` with `notesapp`, and the sa password with `N0tesApp$`. When you reconnect, 
-   you are using the new user account that you set up.
-
-5. **Create the NOTE table**
-
-   Here we recreate the NOTE table as shown in Fig. 6. Use the T-SQL script below to set the table up 
-   using ADS.
-
-   ![Fig. 6. The NOTE table](images/note_table.png){: standalone .w10 #fig6 data-title="The NOTE table" }
-
-   ```sql
-   -- Create NOTE table
-   CREATE TABLE note (
-       id INT IDENTITY(1,1) PRIMARY KEY,
-       text NVARCHAR(MAX) NOT NULL,
-       date DATETIME2 DEFAULT SYSDATETIME()
-   );
-   ```
 
 ## 3. Change the way the binding context is set
 
