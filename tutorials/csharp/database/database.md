@@ -46,12 +46,11 @@ Run the application to check that it behaves as it should.
 
 To complete this exercise you will need to install two new tools if you do not yet have them:
 
-* [Docker](https://www.docker.com/){: #Docker data-title="Docker" }: A virtualisation tool that allows you to run software 
+* [Docker](https://www.docker.com/): A virtualisation tool that allows you to run software 
   applications in containers rather than install them natively on your computer. 
 * [Azure Data Studio](https://learn.microsoft.com/en-us/azure-data-studio/): A Microsoft database 
   management tool.
 * [DataGrip](https://www.jetbrains.com/help/datagrip/getting-started.html): A database management tool.
-{: #tools .tabset}
 
 Please follow the instructions provided on the respective websites to install these two tools for 
 your operating system
@@ -111,6 +110,10 @@ messages and resolve the issues before continuing. For more information, see the
 ## 2. Set up the database
 
 ### Connect to the database server
+
+* [tab1](#){: #Azure data-title="Azure Data Studio" }
+* [tab2](#) {: #DataGrip data-title="DataGrip" }
+{: #tools .tabset}
 
 Open Azure Data Studio (ADS) and create a new connection. You can use the parameter values shown in 
 Fig. 1. to connect to your SQL Server container. The password is the one you specified when you 
