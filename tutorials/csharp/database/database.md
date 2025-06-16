@@ -111,9 +111,12 @@ messages and resolve the issues before continuing. For more information, see the
 
 ### Connect to the database server
 
-* [tab1](#){: #Azure .tab data-title="Azure Data Studio" }
+* [tab1](){: #Azure .tab data-title="Azure Data Studio" }
+
     This is the first tab
-* [tab2](#){: #DataGrip .tab data-title="DataGrip" }
+
+* [tab2](){: #DataGrip .tab data-title="DataGrip" }
+
     This is the second tab
 {: #tools .tabset}
 
