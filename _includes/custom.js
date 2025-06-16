@@ -215,9 +215,14 @@
         el.onclick = enableSlide;
     }
 
+    // Functions for tabs
+
+    function openTab() {
+        alert("I'm a tab");
+    }
     var elements = document.getElementsByClassName('tab');
     for (var i =0; i < elements.length; i++) {
         var el = elements[i];
-        el.onclick = alert("I'm a tab");
+        el.onclick = openTab;
     }
 })();
