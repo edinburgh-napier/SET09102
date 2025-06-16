@@ -249,8 +249,8 @@
 
     function openTab(e) {
         e.preventDefault()
-        showTabControl(e.target.data.tabset, e.target.dataset.seq);
-        showTab(e.target.data.tabset, e.target.dataset.seq);
+        showTabControl(e.target.dataset.tabset, e.target.dataset.seq);
+        showTab(e.target.dataset.tabset, e.target.dataset.seq);
     }
 
     var elements = document.getElementsByClassName('tab-control');
