@@ -222,10 +222,10 @@
 
         alert(e.target.dataset.seq);
         var elements = document.getElementsByClassName("tab-control");
-        for (var i=0; i<elements.length; i++) {
+        for (var i= 0; i<elements.length; i++) {
             var tabControl = elements[i];
-            if (tabControl.dataset.tabset = e.target.dataset.tabset) {
-                if (tabControl.dataset.seq = e.target.dataset.seq) {
+            if (tabControl.dataset.tabset === e.target.dataset.tabset) {
+                if (tabControl.dataset.seq == e.target.dataset.seq) {
                     tabControl.classList.add("btn-blue");
                 }
                 else {
@@ -250,5 +250,24 @@
     for (var i =0; i < elements.length; i++) {
         var el = elements[i];
         el.onclick = openTab;
+    }
+    var elements = document.getElementsByClassName("tab-control");
+    for (var i = 0; i<elements.length; i++) {
+        var tabControl = elements[i];
+        if (tabControl.dataset.seq == 1) {
+            tabControl.classList.add("btn-blue");
+        } else {
+            tabControl.classList.remove("btn-blue");
+        }
+    }
+    var elements = document.getElementsByClassName("tab");
+    for (var i = 0; i<elements.length; i++) {
+        var tab = elements[i];
+        if (tab.dataset.seq == 1) {
+            tab.style.visibility = "visible";
+        }
+        else {
+            tab.style.visibility = "hidden";
+        }
     }
 })();
