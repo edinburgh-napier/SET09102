@@ -50,6 +50,8 @@ To complete this exercise you will need to install two new tools if you do not y
   applications in containers rather than install them natively on your computer.
 * [Azure Data Studio](https://learn.microsoft.com/en-us/azure-data-studio/): A Microsoft database 
   management tool.
+* [DataGrip](https://www.jetbrains.com/help/datagrip/getting-started.html): A database management tool.
+{: class=tabset}
 
 Please follow the instructions provided on the respective websites to install these two tools for 
 your operating system
@@ -84,13 +86,13 @@ between environments where possible.
 1.  Pull the SQL Server Express Linux Docker container using the command below at the command line
     
     ``` bash
-    docker pull mcr.microsoft.com/mssql/server:2022-latest
+    docker pull mcr.microsoft.com/mssql/server:2025-latest
     ```
     
 2.  Still at the command line, execute the following command to run the Docker container.
     
     ``` bash
-    docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=<YourPassw0rd>" -p 1433:1433 --name sql1 --hostname sql1 -d mcr.microsoft.com/mssql/server:2022-latest
+    docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=<YourPassw0rd>" -p 1433:1433 --name sql1 --hostname sql1 -d mcr.microsoft.com/mssql/server:2025-latest
     ```
     
 {: .note-title}
