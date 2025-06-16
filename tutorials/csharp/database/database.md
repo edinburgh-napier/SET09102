@@ -111,12 +111,14 @@ messages and resolve the issues before continuing. For more information, see the
 
 ### Connect to the database server
 
-[Azure Data Studio](){: .btn .btn-blue .tab-control data-tabset="tools" data-seq="1" }
-[DataGrip](){: .btn .tab-control data-tabset="tools" data-seq="2" }
+Azure Data Studio]{: .btn .btn-blue .tab-control data-tabset="tools" data-seq="1" }
+
+DataGrip{: .btn .tab-control data-tabset="tools" data-seq="2" }
 
 > This is the first tab
 >
->    Can I still use markdown?
+>    * Can I still use markdown?
+> 
 {: .tab data-tabset="tools" data-seq="1" }
 
 > This is the second tab
