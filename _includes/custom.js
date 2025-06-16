@@ -238,10 +238,10 @@
             var tab = elements[i];
             if (tabset == "" || tab.dataset.tabset == tabset) {
                 if (tab.dataset.seq == seq) {
-                    tab.style.display = "none";
+                    tab.style.display = "block";
                 }
                 else {
-                    tab.style.display = "block";
+                    tab.style.display = "none";
                 }
             }
         }

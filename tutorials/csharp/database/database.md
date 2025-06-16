@@ -114,8 +114,6 @@ messages and resolve the issues before continuing. For more information, see the
 [Azure Data Studio](){: .btn .btn-blue .tab-control data-tabset="tools" data-seq="1" }
 [DataGrip](){: .btn .tab-control data-tabset="tools" data-seq="2" }
 
----
-
 > This is the first tab
 >
 >    * Can I still use markdown?
