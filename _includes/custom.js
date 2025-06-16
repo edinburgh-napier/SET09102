@@ -259,6 +259,6 @@
         el.onclick = openTab;
     }
 
-    showTabControl();
-    showTab();
+    // showTabControl();
+    // showTab();
 })();
