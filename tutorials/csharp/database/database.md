@@ -112,7 +112,9 @@ messages and resolve the issues before continuing. For more information, see the
 ### Connect to the database server
 
 * [tab1](#){: #Azure data-title="Azure Data Studio" }
+    This is the first tab
 * [tab2](#) {: #DataGrip data-title="DataGrip" }
+    This is the second tab
 {: #tools .tabset}
 
 Open Azure Data Studio (ADS) and create a new connection. You can use the parameter values shown in 

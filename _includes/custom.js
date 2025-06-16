@@ -6,7 +6,7 @@
 // {:/}
 //
 // Replace XXX with the tagName to be turned into a slide. The script selects the next tag of this type which must
-// be a sibling of the sapn element.
+// be a sibling of the span element.
 //
 // Replace TITLE with the required slide title
 
@@ -213,5 +213,11 @@
     for(var i = 0; i < elements.length; i++) {
         var el = elements[i];
         el.onclick = enableSlide;
+    }
+
+    var elements = document.getElementsByClassName('tab');
+    for (var i =0; i < elements.length; i++) {
+        var el = elements[i];
+        el.onclick = alert("I'm a tab");
     }
 })();
