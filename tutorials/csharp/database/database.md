@@ -51,7 +51,7 @@ To complete this exercise you will need to install two new tools if you do not y
 * [Azure Data Studio](https://learn.microsoft.com/en-us/azure-data-studio/): A Microsoft database 
   management tool.
 * [DataGrip](https://www.jetbrains.com/help/datagrip/getting-started.html): A database management tool.
-{: .tabset}
+{: #tools-tabs .tabset}
 
 Please follow the instructions provided on the respective websites to install these two tools for 
 your operating system
