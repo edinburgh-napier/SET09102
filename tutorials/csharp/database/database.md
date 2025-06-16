@@ -111,15 +111,15 @@ messages and resolve the issues before continuing. For more information, see the
 
 ### Connect to the database server
 
-* [tab1](){: .btn .btn-blue .tab data-tabset="tools" data-title="Azure Data Studio" }
-* [tab2](){: .btn .tab data-tabset="tools" data-title="DataGrip" }
+* [Azure Data Studio](){: .btn .btn-blue .tab-control data-tabset="tools" data-seq="1" }
+* [DataGrip](){: .btn .tab-control data-tabset="tools" data-seq="2" }
 {: #tools .tabset}
 
-This is the first tab
-{: #Azure }
+    This is the first tab
+{: .tab data-tabset="tools" data-seq="1" }
 
-This is the second tab
-{: #DataGrip }
+    This is the second tab
+{: .tab data-tabset="tools" data-seq="2" }
 
 Open Azure Data Studio (ADS) and create a new connection. You can use the parameter values shown in 
 Fig. 1. to connect to your SQL Server container. The password is the one you specified when you 
