@@ -217,15 +217,12 @@
 
     // Functions for tabs
 
-    function openTab(e) {
-        e.preventDefault()
-
-        alert(e.target.dataset.seq);
+    function showTabControl(tabset="", seq=1) {
         var elements = document.getElementsByClassName("tab-control");
         for (var i= 0; i<elements.length; i++) {
             var tabControl = elements[i];
-            if (tabControl.dataset.tabset === e.target.dataset.tabset) {
-                if (tabControl.dataset.seq == e.target.dataset.seq) {
+            if (tabset == "" || tabControl.dataset.tabset == tabset) {
+                if (tabControl.dataset.seq == seq) {
                     tabControl.classList.add("btn-blue");
                 }
                 else {
@@ -233,41 +230,35 @@
                 }
             }
         }
+    }
+
+    function showTab(tabset="", seq=1) {
         var elements = document.getElementsByClassName("tab");
-        for (var i=0; i<elements.length; i++) {
+        for (var i= 0; i<elements.length; i++) {
             var tab = elements[i];
-            if (tab.dataset.tabset == e.target.dataset.tabset) {
-                if (tab.dataset.seq == e.target.dataset.seq) {
-                    tab.style.visibility = "visible"
+            if (tabset == "" || tab.dataset.tabset == tabset) {
+                if (tab.dataset.seq == seq) {
+                    tab.style.display = "none";
                 }
                 else {
-                    tab.style.visibility = "hidden"
+                    tab.style.display = "block";
                 }
             }
         }
     }
+
+    function openTab(e) {
+        e.preventDefault()
+        showTabControl(e.target.data.tabset, e.target.dataset.seq);
+        showTab(e.target.data.tabset, e.target.dataset.seq);
+    }
+
     var elements = document.getElementsByClassName('tab-control');
-    for (var i =0; i < elements.length; i++) {
+    for (var i = 0; i < elements.length; i++) {
         var el = elements[i];
         el.onclick = openTab;
     }
-    var elements = document.getElementsByClassName("tab-control");
-    for (var i = 0; i<elements.length; i++) {
-        var tabControl = elements[i];
-        if (tabControl.dataset.seq == 1) {
-            tabControl.classList.add("btn-blue");
-        } else {
-            tabControl.classList.remove("btn-blue");
-        }
-    }
-    var elements = document.getElementsByClassName("tab");
-    for (var i = 0; i<elements.length; i++) {
-        var tab = elements[i];
-        if (tab.dataset.seq == 1) {
-            tab.style.visibility = "visible";
-        }
-        else {
-            tab.style.visibility = "hidden";
-        }
-    }
+
+    showTabControl();
+    showTab();
 })();
