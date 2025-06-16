@@ -221,7 +221,7 @@
         e.preventDefault()
         alert("I'm a tab");
     }
-    var elements = document.getElementsByClassName('tab');
+    var elements = document.getElementsByClassName('tab-control');
     for (var i =0; i < elements.length; i++) {
         var el = elements[i];
         el.onclick = openTab;
