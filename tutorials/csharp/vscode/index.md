@@ -35,14 +35,13 @@ When you see **USERNAME** in a variable value, replace it with your username on 
 ## 1. Install the .NET SDK
 
 Follow the instructions for your operating system on the [Microsoft website](https://learn.microsoft.com/en-us/dotnet/core/install/){:target="_blank"}
-You should install .NET 8 for the purposes of this module. Although .NET 9 is available, there may be 
-some incompatibilities with other software tools.
+You should install .NET 9 for the purposes of this exercise. 
 
 Check that .NET is installed correctly by executing the command:
 
 {% highlight shell %}dotnet --version {% endhighlight %}
 
-You should see that your .NET version is 8.0.300
+You should see that your .NET version is 9.0.6 (or higher).
 
 ## 2. Install MAUI workloads
 
@@ -176,7 +175,7 @@ VSCode will generate a complete default application for you.
 
 ## 6. Install Android dependencies
 
-.NET 8 has a build target that installs the Android dependencies using the environment variables 
+.NET 9 has a build target that installs the Android dependencies using the environment variables 
 that you defined earlier. However, the command must be run from the root directory of a .NET 
 project. Change into the root directory of your project (created in step 3 above) - that is the 
 one containing the *.sln* file.
@@ -186,7 +185,7 @@ Run the following command to configure your machine:
 <i class="fa-brands fa-windows icon"></i>
 <hr class="icon-prefix">
 
-{% highlight shell %}dotnet build -t:InstallAndroidDependencies -f:net8.0-android -p:AndroidSdkDirectory="%ANDROID_HOME%" -p:JavaSdkDirectory="%JAVA_HOME%" -p:AcceptAndroidSDKLicenses=True {% endhighlight %}
+{% highlight shell %}dotnet build -t:InstallAndroidDependencies -f:net9.0-android -p:AndroidSdkDirectory="%ANDROID_HOME%" -p:JavaSdkDirectory="%JAVA_HOME%" -p:AcceptAndroidSDKLicenses=True {% endhighlight %}
 
 {: .warning-title }
 > <i class="fa-solid fa-triangle-exclamation"></i> Warning
@@ -198,7 +197,7 @@ Run the following command to configure your machine:
 <i class="fa-brands fa-apple icon"></i>
 <hr class="icon-prefix">
 
-{% highlight shell %}dotnet build -t:InstallAndroidDependencies -f:net8.0-android -p:AndroidSdkDirectory="${ANDROID_HOME}" -p:JavaSdkDirectory="${JAVA_HOME}" -p:AcceptAndroidSDKLicenses=True {% endhighlight %}
+{% highlight shell %}dotnet build -t:InstallAndroidDependencies -f:net9.0-android -p:AndroidSdkDirectory="${ANDROID_HOME}" -p:JavaSdkDirectory="${JAVA_HOME}" -p:AcceptAndroidSDKLicenses=True {% endhighlight %}
 
 ## 7. Update Android SDK
 
