@@ -15,8 +15,9 @@ You need to have completed the initial
 [notes app tutorial](../maui/maui.md) **and** the follow-on [MVVM tutorial](../mvvm/mvvm.md). 
 The code that you end up with after the MVVM tutorial provides the starting point for this one.
 
-Here, we will take advantage of the dependency injection framework built into .NET MAUI to manage 
-access to the database.
+Here, we will take advantage of the 
+[dependency injection framework](https://learn.microsoft.com/en-us/dotnet/maui/fundamentals/dependency-injection?view=net-maui-9.0) 
+built into .NET MAUI to manage access to the database.
 
 ## 1. Preparation
 

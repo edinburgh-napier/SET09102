@@ -343,15 +343,6 @@ To use migrations in VSCode we need to install the .NET Core
 This can be done by executing the commands below at the terminal prompt in VSCode. Make sure 
 that you are in the project directory.
 
-{: .warning-title}
-> <i class="fa-solid fa-triangle-exclamation"></i> Warning!
->
-> Because of a current [known conflict](https://github.com/dotnet/efcore/issues/32496) between 
-> MAUI and EF Core, migrations will only work on certain platforms. The steps below have been 
-> tested using an Android emulator but installing the EF Core tools will prevent the app from 
-> running on a Mac. Windows and Linux have not been tested. From this point onwards, you will be 
-> restricted to working on Android only.
-
 ```shell
 dotnet tool install --global dotnet-ef
 dotnet add package Microsoft.EntityFrameworkCore.Design
