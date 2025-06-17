@@ -201,10 +201,9 @@ the necessary elements. Follow the steps below.
     
     ```xml
     <ItemGroup>
-        <EmbeddedResource Include="appsettings.json" />
-        <None Update="appsettings.json">
+        <EmbeddedResource Include="appsettings.json">
             <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-        </None>
+        </EmbeddedResource>
     </ItemGroup>
     ```
 4. Edit the file `Data/NotesDbContext.cs` and add the `OnConfiguring()` method after the 
@@ -259,7 +258,7 @@ the `Notes` project. Follow the steps below to make the necessary changes.
 4.  Update the line that creates the `DbContext` to remove the reference to the connection string. This is now handled in `Notes.Database`:
     
     ```c#
-    builder.Services.AddDbContext();
+    builder.Services.AddDbContext<NotesDbContext>();
     ```
     
 5.  Edit the `NoteViewModel.cs` file.
@@ -373,11 +372,12 @@ If all is well, you will see the output below along with some additional version
         | _| | _|   \_/ |  //|\\ 
         |___||_|       /   \\\/\\
 
-    Entity Framework Core .NET Command-line Tools 8.0.7
+    Entity Framework Core .NET Command-line Tools 9.0.6
 
 ### Create the initial migration
 
-EF Core makes the following distinction between projects used for migrations:
+In the long term, we want to store database migrations in the _Notes.Migrations_ project; however, there
+is a bootstrapping problem. EF Core makes the following distinction between projects used for migrations:
 
 * The _target project_ is the one where the migration files will be generated.
 * The _startup project_ is the one that will be built and run in order to perform the migrations.
@@ -385,8 +385,8 @@ EF Core makes the following distinction between projects used for migrations:
 You might think that since `Notes.Database` is included in `Notes.Migrations`, we could use 
 `Notes.Migrations` for both the target and startup projects. However, if no migrations exist - 
 as is the case with the initial migration - the command to add a new migration is unable to find 
-the `DbContext`. We therefore have to create the initial migration using `Notes.Database` as the 
-target project. Follow the steps below to do this.
+the `DbContext`. The simplest way around the dilemma is to create the initial migration in the
+_Notes.Database_ project and then move it to _Notes.Migrations_. Follow the steps below to do this.
 
 1.  In a terminal window, make sure that you are in the solution root directory - i.e. the one 
     that contains all of the project directories.
@@ -394,7 +394,7 @@ target project. Follow the steps below to do this.
 2.  Create the initial migration by executing the command below:
     
     ```shell
-    dotnet ef migrations add InitialCreate --project Notes.Database --startup-project Notes.Migrations
+    dotnet ef migrations add InitialCreate --project Notes.Database
     ```
 
 The steps above create a new directory _Migrations_ in the `Notes.Database` project which contains 
@@ -417,22 +417,21 @@ example.
 
 If we tried to apply this migration it would fail because we already have a NOTE table in the 
 database. Although it is possible to work around that, the simplest approach is simply to drop 
-the table from the database using Azure Data Studio. The steps below take you through the process 
-of applying the initial migration.
+the table from the database using your chosen database management tool (DataGrip or ADS). The steps 
+below take you through the process of applying the initial migration.
 
-1.  Open ADS and drop the NOTE table.
+1.  Use your database management tool to drop the NOTE table.
 2.  In a terminal window, make sure that you are in the solution root directory.
 3.  Execute the command below.
     
     ```shell
-    dotnet ef database update --project Notes.Database --startup-project Notes.Migrations
+    dotnet ef database update --project Notes.Database
     ```
 
-Notice that we are using the same definitions of the target and startup projects as before.
-
-After the migration operation completes, go back to ADS and check the contents of the database. 
-You should see two new tables, the NOTE table and another called `_EFMigrationsHistory_`. You can 
-examine the contents of the migrations history by executing the following query in ADS:
+After the migration operation completes, check the contents of the database in your database management 
+tool (you may need to refresh the view). You should see two new tables, the NOTE table and another 
+called `_EFMigrationsHistory_`. You can examine the contents of the migrations history by executing the 
+following query:
 
 ```sql
 select * from __EFMigrationsHistory;
@@ -445,10 +444,9 @@ You should see a message that says the database is already up to date.
 ### Move the Migrations directory
 
 Now that the supporting infrastructure for migrations exists, EF Core will be able to access the 
-`DbContext` from the `Notes.Migrations` project. This will simplify future migrations because we 
-will no longer need to specify the startup and target projects. Two steps are required:
+`DbContext` from the `Notes.Migrations` project. Two steps are required to make the change:
 
-1.  Use a file manager to move the _Migrations_ directory from `Notes.Database` to `Notes.Migrations`.
+1. Use a file manager to move the _Migrations_ directory from `Notes.Database` to `Notes.Migrations`.
 2. Update the `NotesDbContext.cs` file to add a reference to the `Notes.Migrations` project in the 
    `optionsBuilder`:
 
@@ -532,7 +530,7 @@ the database.
     dotnet ef database update
     ```
     
-    Once both commands have completed, check the results in ADS.
+    Once both commands have completed, check the results in your database management tool.
 
 You now have sufficient information to get started with database migrations. However, it is 
 important to note that there are many options available and many problems that can arise. For 

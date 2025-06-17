@@ -48,12 +48,11 @@ To complete this exercise you will need to install two new tools if you do not y
 
 * [Docker](https://www.docker.com/): A virtualisation tool that allows you to run software 
   applications in containers rather than install them natively on your computer. 
-* [Azure Data Studio](https://learn.microsoft.com/en-us/azure-data-studio/): A Microsoft database 
-  management tool.
 * [DataGrip](https://www.jetbrains.com/help/datagrip/getting-started.html): A database management tool.
 
 Please follow the instructions provided on the respective websites to install these two tools for 
-your operating system
+your operating system. An alternative to DataGrip is Microsoft's 
+[Azure Data Studio](https://azure.microsoft.com/en-us/products/data-studio).
 
 ### Install some new NuGet packages
 
@@ -110,6 +109,8 @@ messages and resolve the issues before continuing. For more information, see the
 ## 2. Set up the database
 
 ### Connect to the database server
+
+Select the instructions that correspond to the database access tool you are using.
 
 [DataGrip](){: .btn .btn-blue .tab-control data-tabset="tools" data-seq="1" }
 [Azure Data Studio](){: .btn .tab-control data-tabset="tools" data-seq="2" }
@@ -331,6 +332,14 @@ Run the app to check that it behaves as expected.
 
 In this step, we create an application configuration file in JSON format using common naming 
 conventions.
+
+{: .note-title}
+> <i class="fa-solid fa-circle-info"></i> Note
+>
+> Because the configuration file will contain values that are only relevant to the local setup
+> on your computer, it should not be checked into source control. Excluse it by adding it to the
+> _.gitignore_ file. Saving configuration settings may also constitute a security risk - another
+> reason they are not saved to source control.
 
 1. Add a new file `appsettings.json` under the project directory 
 2. Paste the code below into the new file replacing `IP_ADDRESS` with the IP address of your computer. 
