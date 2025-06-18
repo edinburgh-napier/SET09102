@@ -21,6 +21,24 @@ nav_order: 9
             <li>Example: `MyMauiApp` to `NewMauiApp`.</li>
         </ul>
     </li>
+    <li>Update the Solution File (`.sln`) (Text Editor):
+        <ul>
+            <li>Open your `.sln` file (e.g., `MySolution.sln`) in a text editor (like Notepad++, VS Code itself, etc.).</li>
+            <li>Find the line that references your project and update the path to reflect the new folder name and 
+            project name. e.g:
+                <p>Before: `Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyMauiApp", "MyMauiApp\MyMauiApp.csproj", "{YOUR-PROJECT-GUID}"`</p>
+                <p>After: `Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NewMauiApp", "NewMauiApp\NewMauiApp.csproj", "{YOUR-PROJECT-GUID}"`</p>
+            </li>
+        </ul>
+    </li>
+    <li>Save and close the `.sln` file.</li>
+    <li>Rename the `.csproj` file (File System):
+        <ul>
+            <li>Inside the newly renamed project folder, rename the .csproj file to your new project name.
+                <p>Example: MyMauiApp.csproj to NewMauiApp.csproj.</p>
+            </li>
+        </ul>
+    </li>
     <li>Open the Project in VS Code:
         <ul>
             <li>Open the root folder of your solution in VS Code.</li>
