@@ -552,7 +552,7 @@ blockquote.tab {
 }
 
 .codeblock {
-    background-color: var(--code-background);
+    background-color: $code-background;
     font-family: "SFMono-Regular", menlo, consolas, monospace;
     font-size: 0.75em;
     line-height: 1.4;}
