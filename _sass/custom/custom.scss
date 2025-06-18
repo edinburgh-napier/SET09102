@@ -521,3 +521,35 @@ blockquote.tab {
   border: 1px solid lightgray;
   margin-top: -24px;
 }
+
+// Styles for raw html
+
+.callout {
+    display: block;
+    width: 80%;
+    margin: 1em 1em 1em 5em;
+    padding: 1em;
+}
+.callout .label {
+    display: inline-block;
+    height: 2em;
+}
+.callout .title {
+    display: inline-block;
+    vertical-align: top;
+    margin-top: -0.2em;
+    font-size: large;
+    margin-left: 0.5em;
+}
+.callout pre {
+    margin: 0;
+}
+.callout p,
+.callout ul,
+.callout ol {
+    margin-left: 2em;
+}
+
+.codeblock {
+    background-color: var(--code-background);
+}

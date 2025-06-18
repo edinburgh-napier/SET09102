@@ -51,7 +51,7 @@ nav_order: 9
                 <ul>
                     <li><strong>Case Sensitivity</strong>: Be mindful of casing. You might need to perform multiple passes (e.g.,<code>MyMauiApp</code> to <code>NewMauiApp</code>, <code>mymauiapp</code> to <code>newmauiapp</code>, <code>MYMUIAPP</code> to <code>NEWMAUIAPP</code>).</li>
                     <li><strong>Word Boundaries</strong>: Be careful not to accidentally replace parts of other words. Use regex for more precise control if needed.</li>
-                    <li><strong>Files to Include/Exclude</strong>: Make sure to include all relevant C# (<code>.cs</code>), XAML (<code>.xaml</code>), <code>.csproj</code>, and <code>MauiProgram.cs</code> files. Exclude <code>bin</code> and <code>obj</code> folders from your search to avoid issues. You might want to temporarily delete them before starting.</li>
+                    <li><strong>Files to Include/Exclude</strong>: Make sure to include all relevant C# (<code>.cs</code>), XAML (<code>.xaml</code>), <code>.csproj</code>, and <code>MauiProgram.cs</code> files.</li>
                     <li><strong>Common Places to Update</strong>:
                         <ul>
                             <li><strong>Namespaces</strong>: namespace <code>OldProjectName.Maui;</code> to namespace <code>NewProjectName.Maui;</code></li>
