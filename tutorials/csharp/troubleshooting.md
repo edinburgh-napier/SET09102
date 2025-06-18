@@ -17,22 +17,22 @@ nav_order: 9
     <li>Rename the Project Folder (File System):
         <ul>
             <li>Navigate to your solution's root directory in your file explorer.</li>
-            <li>Rename the folder that contains your project's `.csproj` file.</li>
-            <li>Example: `MyMauiApp` to `NewMauiApp`.</li>
+            <li>Rename the folder that contains your project's<code>.csproj</code> file.</li>
+            <li>Example:<code>MyMauiApp</code> to<code>NewMauiApp</code>.</li>
         </ul>
     </li>
-    <li>Update the Solution File (`.sln`) (Text Editor):
+    <li>Update the Solution File (</code>.sln</code>) (Text Editor):
         <ul>
-            <li>Open your `.sln` file (e.g., `MySolution.sln`) in a text editor (like Notepad++, VS Code itself, etc.).</li>
+            <li>Open your<code>.sln</code> file (e.g.,<code>MySolution.sln</code>) in a text editor (like Notepad++, VS Code itself, etc.).</li>
             <li>Find the line that references your project and update the path to reflect the new folder name and 
             project name. e.g:
-                <p>Before: `Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyMauiApp", "MyMauiApp\MyMauiApp.csproj", "{YOUR-PROJECT-GUID}"`</p>
-                <p>After: `Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NewMauiApp", "NewMauiApp\NewMauiApp.csproj", "{YOUR-PROJECT-GUID}"`</p>
+                <p>Before:<code>Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyMauiApp", "MyMauiApp\MyMauiApp.csproj", "{YOUR-PROJECT-GUID}"</code></p>
+                <p>After:<code>Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NewMauiApp", "NewMauiApp\NewMauiApp.csproj", "{YOUR-PROJECT-GUID}"</code></p>
             </li>
         </ul>
     </li>
-    <li>Save and close the `.sln` file.</li>
-    <li>Rename the `.csproj` file (File System):
+    <li>Save and close the<code>.sln</code> file.</li>
+    <li>Rename the<code>.csproj</code> file (File System):
         <ul>
             <li>Inside the newly renamed project folder, rename the .csproj file to your new project name.
                 <p>Example: MyMauiApp.csproj to NewMauiApp.csproj.</p>
@@ -47,21 +47,21 @@ nav_order: 9
     <li>Perform a Global Find and Replace:
         <p>This is where the bulk of the work happens.</p>
         <ul>
-            <li>Use VS Code's global search and replace functionality (**Ctrl+Shift+H** or **Cmd+Shift+H** on macOS).</li>
-            <li>Search for the old project name (e.g., `MyMauiApp`).</li>
-            <li>Replace with the new project name (e.g., `NewMauiApp`).</li>
+            <li>Use VS Code's global search and replace functionality (</strong>Ctrl+Shift+H</strong> or </strong>Cmd+Shift+H</strong> on macOS).</li>
+            <li>Search for the old project name (e.g.,<code>MyMauiApp</code>).</li>
+            <li>Replace with the new project name (e.g.,<code>NewMauiApp</code>).</li>
             <li>Important considerations for Find and Replace:
                 <ul>
-                    <li>**Case Sensitivity**: Be mindful of casing. You might need to perform multiple passes (e.g., `MyMauiApp` to `NewMauiApp`, `mymauiapp` to `newmauiapp`, `MYMUIAPP` to `NEWMAUIAPP`).</li>
-                    <li>**Word Boundaries**: Be careful not to accidentally replace parts of other words. Use regex for more precise control if needed.</li>
-                    <li>**Files to Include/Exclude**: Make sure to include all relevant C# (`.cs`), XAML (`.xaml`), `.csproj`, and `MauiProgram.cs` files. Exclude `bin` and `obj` folders from your search to avoid issues. You might want to temporarily delete them before starting.</li>
-                    <li>**Common Places to Update**:
+                    <li><strong>Case Sensitivity</strong>: Be mindful of casing. You might need to perform multiple passes (e.g.,<code>MyMauiApp</code> to<code>NewMauiApp</code>,<code>mymauiapp</code> to<code>newmauiapp</code>,<code>MYMUIAPP</code> to<code>NEWMAUIAPP</code>).</li>
+                    <li><strong>Word Boundaries</strong>: Be careful not to accidentally replace parts of other words. Use regex for more precise control if needed.</li>
+                    <li><strong>Files to Include/Exclude</strong>: Make sure to include all relevant C# (</code>.cs</code>), XAML (</code>.xaml</code>),<code>.csproj</code>, and<code>MauiProgram.cs</code> files. Exclude<code>bin</code> and<code>obj</code> folders from your search to avoid issues. You might want to temporarily delete them before starting.</li>
+                    <li><strong>Common Places to Update</strong>:
                         <ul>
-                            <li>**Namespaces**: namespace `OldProjectName.Maui;` to namespace `NewProjectName.Maui;`</li>
-                            <li>**Class references**: E.g., if you have public partial class `MainPage : ContentPage { /* ... */ }` and your old project name was used in partial class generation.</li>
-                            <li>**`MauiProgram.cs`**: The `CreateMauiApp()` method might have references to the old project name, especially if you customized it.</li>
-                            <li>**`pp.xaml` and `App.xaml.cs`**: Similarly, check these files for namespace references.</li>
-                            <li>**`csproj file`**: Although you renamed it, there might be internal references to the old project name. Double-check `RootNamespace` and `AssemblyName` in the `.csproj` file directly.</li>
+                            <li><strong>Namespaces</strong>: namespace<code>OldProjectName.Maui;</code> to namespace<code>NewProjectName.Maui;</code></li>
+                            <li><strong>Class references</strong>: E.g., if you have public partial class<code>MainPage : ContentPage { /* ... */ }</code> and your old project name was used in partial class generation.</li>
+                            <li><strong><code>MauiProgram.cs</code></strong>: The<code>CreateMauiApp()</code> method might have references to the old project name, especially if you customized it.</li>
+                            <li><strong><code>pp.xaml</code> and<code>App.xaml.cs</code></strong>: Similarly, check these files for namespace references.</li>
+                            <li><strong><code>csproj file</code></strong>: Although you renamed it, there might be internal references to the old project name. Double-check<code>RootNamespace</code> and<code>AssemblyName</code> in the<code>.csproj</code> file directly.</li>
                         </ul>
                     </li>
                 </ul>
@@ -70,22 +70,22 @@ nav_order: 9
     </li>
     <li>Manually Check Specific Files:
         <ul>
-            <li>**`MauiProgram.cs`**: Verify using statements and any configuration that might have explicitly used the old namespace/name.</li>
-            <li>**`App.xaml` and `App.xaml.cs`**: Check `x:Class` and `xmlns` attributes for old namespace references.</li>
-            <li>**`Properties/launchSettings.json`** (if applicable): While not directly the project name, ensure any paths or configurations are correct.</li>
-            <li>**Platforms folders**: Check `AndroidManifest.xml` (Android), `Info.plist` (iOS/MacCatalyst), `Package.appxmanifest` (Windows) for display names or package names that might contain the old project name. You'll probably need to update these manually.</li>
+            <li><strong><code>MauiProgram.cs</code></strong>: Verify using statements and any configuration that might have explicitly used the old namespace/name.</li>
+            <li><strong><code>App.xaml</code> and<code>App.xaml.cs</code></strong>: Check<code>x:Class</code> and<code>xmlns</code> attributes for old namespace references.</li>
+            <li><strong><code>Properties/launchSettings.json</code></strong> (if applicable): While not directly the project name, ensure any paths or configurations are correct.</li>
+            <li><strong>Platforms folders</strong>: Check<code>AndroidManifest.xml</code> (Android),<code>Info.plist</code> (iOS/MacCatalyst),<code>Package.appxmanifest</code> (Windows) for display names or package names that might contain the old project name. You'll probably need to update these manually.</li>
         </ul>
     </li>
-    <li>Clean `bin` and `obj` folders:
+    <li>Clean<code>bin</code> and<code>obj</code> folders:
         <ul>
-            <li>Delete the `bin` and `obj` folders from your project directory. This removes all compiled artifacts and ensures a clean build.</li>
+            <li>Delete the<code>bin</code> and<code>obj</code> folders from your project directory. This removes all compiled artifacts and ensures a clean build.</li>
         </ul>
     </li>
     <li>Build the Project:
         <ul>
             <li>Open the terminal in VS Code.</li>
             <li>Navigate to your project directory.</li>
-            <li>Run: `dotnet build`</li>
+            <li>Run:<code>dotnet build</code></li>
         </ul>
     </li>
     <li>Run the Project</li>
@@ -102,7 +102,7 @@ nav_order: 9
 <div class="callout codeblock">
 <pre class="red">/.../Microsoft.Android.Sdk.Darwin/34.0.113/tools/Xamarin.Android.Tooling.targets(100,5): error XA5207: Could not find android.jar for 
 API level 34. This means the Android SDK platform for API level 34 is not installed; it was expected to be in
-`/PATH_TO_SDK/platforms/android-34/android.jar`.</pre>
+<code>/PATH_TO_SDK/platforms/android-34/android.jar</code>.</pre>
 </div>
 <p>Install the missing dependencies by executing the following commands in a terminal window. Make sure that you are in the project directory. You also need to use the correct path for your Android SDK. The path you need is shown in the error message.</p>
 <div class="callout codeblock">
