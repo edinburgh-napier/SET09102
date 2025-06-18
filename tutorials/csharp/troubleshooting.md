@@ -13,15 +13,15 @@ nav_order: 9
     Rename a project in VS Code
 </summary>
 <ol>
-    <li>Close VS Code (Optional, but recommended for critical file changes).</li>
-    <li>Rename the Project Folder (File System):
+    <li>Close VS Code.</li>
+    <li>Rename the Project Folder:
         <ul>
             <li>Navigate to your solution's root directory in your file explorer.</li>
             <li>Rename the folder that contains your project's<code>.csproj</code> file.</li>
             <li>Example:<code>MyMauiApp</code> to<code>NewMauiApp</code>.</li>
         </ul>
     </li>
-    <li>Update the Solution File (</code>.sln</code>) (Text Editor):
+    <li>Update the Solution File (<code>.sln</code>) (Text Editor):
         <ul>
             <li>Open your<code>.sln</code> file (e.g.,<code>MySolution.sln</code>) in a text editor (like Notepad++, VS Code itself, etc.).</li>
             <li>Find the line that references your project and update the path to reflect the new folder name and 
@@ -34,16 +34,13 @@ nav_order: 9
     <li>Save and close the<code>.sln</code> file.</li>
     <li>Rename the<code>.csproj</code> file (File System):
         <ul>
-            <li>Inside the newly renamed project folder, rename the .csproj file to your new project name.
-                <p>Example: MyMauiApp.csproj to NewMauiApp.csproj.</p>
+            <li>Inside the newly renamed project folder, rename the <code>.csproj</code> file to your new project name.
+                <p>Example: <code>MyMauiApp.csproj</code> to <code>NewMauiApp.csproj</code>.</p>
             </li>
         </ul>
     </li>
-    <li>Open the Project in VS Code:
-        <ul>
-            <li>Open the root folder of your solution in VS Code.</li>
-        </ul>
-    </li>
+    <li>Delete <code>bin</code> and<code>obj</code> folders to remove all compiled artifacts and ensure a clean build.</li>
+    <li>Open the Project in VS Code</li>
     <li>Perform a Global Find and Replace:
         <p>This is where the bulk of the work happens.</p>
         <ul>
@@ -74,11 +71,6 @@ nav_order: 9
             <li><strong><code>App.xaml</code> and<code>App.xaml.cs</code></strong>: Check<code>x:Class</code> and<code>xmlns</code> attributes for old namespace references.</li>
             <li><strong><code>Properties/launchSettings.json</code></strong> (if applicable): While not directly the project name, ensure any paths or configurations are correct.</li>
             <li><strong>Platforms folders</strong>: Check<code>AndroidManifest.xml</code> (Android),<code>Info.plist</code> (iOS/MacCatalyst),<code>Package.appxmanifest</code> (Windows) for display names or package names that might contain the old project name. You'll probably need to update these manually.</li>
-        </ul>
-    </li>
-    <li>Clean<code>bin</code> and<code>obj</code> folders:
-        <ul>
-            <li>Delete the<code>bin</code> and<code>obj</code> folders from your project directory. This removes all compiled artifacts and ensures a clean build.</li>
         </ul>
     </li>
     <li>Build the Project:
