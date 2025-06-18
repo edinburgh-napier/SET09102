@@ -341,7 +341,7 @@ Notes.Migrations/bin/
 To use migrations in VSCode we need to install the .NET Core 
 [CLI tools](https://learn.microsoft.com/en-gb/ef/core/cli/dotnet) and the EF Design package. 
 This can be done by executing the commands below at the terminal prompt in VSCode. Make sure 
-that you are in the project directory.
+that you are in the _Notes.Migrations_ project directory.
 
 ```shell
 dotnet tool install --global dotnet-ef
