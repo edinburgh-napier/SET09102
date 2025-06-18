@@ -14,6 +14,13 @@ nav_order: 9
 </summary>
 <ol>
     <li>Close VS Code (Optional, but recommended for critical file changes).</li>
+    <li>Rename the Project Folder (File System):
+        <ul>
+            <li>Navigate to your solution's root directory in your file explorer.</li>
+            <li>Rename the folder that contains your project's `.csproj` file.</li>
+            <li>Example: `MyMauiApp` to `NewMauiApp`.</li>
+        </ul>
+    </li>
     <li>Open the Project in VS Code:
         <ul>
             <li>Open the root folder of your solution in VS Code.</li>
