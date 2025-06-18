@@ -529,6 +529,7 @@ blockquote.tab {
     width: 80%;
     margin: 1em 1em 1em 5em;
     padding: 1em;
+    overflow: scroll hidden;
 }
 .callout .label {
     display: inline-block;
@@ -552,4 +553,6 @@ blockquote.tab {
 
 .codeblock {
     background-color: var(--code-background);
-}
+    font-family: "SFMono-Regular", menlo, consolas, monospace;
+    font-size: 0.75em;
+    line-height: 1.4;}
