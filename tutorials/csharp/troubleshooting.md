@@ -94,7 +94,7 @@ nav_order: 9
 <div class="callout codeblock">
 <pre class="red">/.../Microsoft.Android.Sdk.Darwin/34.0.113/tools/Xamarin.Android.Tooling.targets(100,5): error XA5207: Could not find android.jar for 
 API level 34. This means the Android SDK platform for API level 34 is not installed; it was expected to be in
-<code>/PATH_TO_SDK/platforms/android-34/android.jar</code>.</pre>
+/PATH_TO_SDK/platforms/android-34/android.jar.</pre>
 </div>
 <p>Install the missing dependencies by executing the following commands in a terminal window. Make sure that you are in the project directory. You also need to use the correct path for your Android SDK. The path you need is shown in the error message.</p>
 <div class="callout codeblock">
@@ -144,30 +144,6 @@ Warning: Additionally, the fallback loader failed to parse the XML.
 [=======================================] 100% Computing updates...</pre>
 </div>
 <p>The reason for this error is unknown, but it can be ignored - it should not affect the emulator.</p>
-</details>
-
-<details class="blue-bar">
-<summary>Initial migration fails - unable to create DbContext</summary>
-<p>The following error message appears when trying to create the initial migration:</p>
-<div class="callout codeblock">
-<pre>Unable to create a 'DbContext' of type 'NotesDbContext'. The exception 'Method 
-'get_LockReleaseBehavior' in type 
-'Microsoft.EntityFrameworkCore.SqlServer.Migrations.Internal.SqlServerHistoryRepository' 
-from assembly 'Microsoft.EntityFrameworkCore.SqlServer, Version=8.0.7.0, Culture=neutral, 
-PublicKeyToken=adb9793829ddae60' does not have an implementation.' was thrown while attempting 
-to create an instance. For the different patterns supported at design time, see 
-https://go.microsoft.com/fwlink/?linkid=851728</pre>
-</div>
-<p>Check the <code>Notes.Migrations</code> <code>.csproj</code> file. remove any reference to EntityFramework version 9.*.</p>
-<p>For example, if you see the following <code>ItemGroup</code>, delete the whole thing and try the initial migration again:</p>
-<div class="callout codeblock">
-<pre>&lt;ItemGroup&gt;
-&lt;PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.2"&gt;
-  &lt;IncludeAssets&gt;runtime; build; native; contentfiles; analyzers; buildtransitive&lt;/IncludeAssets&gt;
-  &lt;PrivateAssets&gt;all&lt;/PrivateAssets&gt;
-&lt;/PackageReference&gt;
-&lt;/ItemGroup&gt;</pre>
-</div>
 </details>
 
 <details class="blue-bar">
