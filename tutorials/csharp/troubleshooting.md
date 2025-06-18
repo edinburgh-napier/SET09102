@@ -44,19 +44,19 @@ nav_order: 9
     <li>Perform a Global Find and Replace:
         <p>This is where the bulk of the work happens.</p>
         <ul>
-            <li>Use VS Code's global search and replace functionality (</strong>Ctrl+Shift+H</strong> or </strong>Cmd+Shift+H</strong> on macOS).</li>
+            <li>Use VS Code's global search and replace functionality (<strong>Ctrl+Shift+H</strong> or <strong>Cmd+Shift+H</strong> on macOS).</li>
             <li>Search for the old project name (e.g.,<code>MyMauiApp</code>).</li>
             <li>Replace with the new project name (e.g.,<code>NewMauiApp</code>).</li>
             <li>Important considerations for Find and Replace:
                 <ul>
                     <li><strong>Case Sensitivity</strong>: Be mindful of casing. You might need to perform multiple passes (e.g.,<code>MyMauiApp</code> to<code>NewMauiApp</code>,<code>mymauiapp</code> to<code>newmauiapp</code>,<code>MYMUIAPP</code> to<code>NEWMAUIAPP</code>).</li>
                     <li><strong>Word Boundaries</strong>: Be careful not to accidentally replace parts of other words. Use regex for more precise control if needed.</li>
-                    <li><strong>Files to Include/Exclude</strong>: Make sure to include all relevant C# (</code>.cs</code>), XAML (</code>.xaml</code>),<code>.csproj</code>, and<code>MauiProgram.cs</code> files. Exclude<code>bin</code> and<code>obj</code> folders from your search to avoid issues. You might want to temporarily delete them before starting.</li>
+                    <li><strong>Files to Include/Exclude</strong>: Make sure to include all relevant C# (<code>.cs</code>), XAML (<code>.xaml</code>),<code>.csproj</code>, and<code>MauiProgram.cs</code> files. Exclude<code>bin</code> and<code>obj</code> folders from your search to avoid issues. You might want to temporarily delete them before starting.</li>
                     <li><strong>Common Places to Update</strong>:
                         <ul>
                             <li><strong>Namespaces</strong>: namespace<code>OldProjectName.Maui;</code> to namespace<code>NewProjectName.Maui;</code></li>
                             <li><strong>Class references</strong>: E.g., if you have public partial class<code>MainPage : ContentPage { /* ... */ }</code> and your old project name was used in partial class generation.</li>
-                            <li><strong><code>MauiProgram.cs</code></strong>: The<code>CreateMauiApp()</code> method might have references to the old project name, especially if you customized it.</li>
+                            <li><code><strong>MauiProgram.cs</strong></code>: The <code>CreateMauiApp()</code> method might have references to the old project name, especially if you customized it.</li>
                             <li><strong><code>pp.xaml</code> and<code>App.xaml.cs</code></strong>: Similarly, check these files for namespace references.</li>
                             <li><strong><code>csproj file</code></strong>: Although you renamed it, there might be internal references to the old project name. Double-check<code>RootNamespace</code> and<code>AssemblyName</code> in the<code>.csproj</code> file directly.</li>
                         </ul>
