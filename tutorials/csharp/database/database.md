@@ -21,7 +21,7 @@ built into .NET MAUI to manage access to the database.
 
 ## 1. Preparation
 
-Open the solution in Visual Studio and check that you have the following viewmodels:  
+Open the solution in Visual Studio Code and check that you have the following viewmodels:  
 
 * `AboutViewModel.cs`
 * `AllNotesViewModel.cs`
@@ -43,17 +43,9 @@ Go through each of the viewmodels and make sure that the accessibility level of 
 
 Run the application to check that it behaves as it should.
 
-### Install some new tools
+### Install SQL Server
 
-To complete this exercise you will need to install two new tools if you do not yet have them:
-
-* [Docker](https://www.docker.com/): A virtualisation tool that allows you to run software 
-  applications in containers rather than install them natively on your computer. 
-* [DataGrip](https://www.jetbrains.com/help/datagrip/getting-started.html): A database management tool.
-
-Please follow the instructions provided on the respective websites to install these two tools for 
-your operating system. An alternative to DataGrip is Microsoft's 
-[Azure Data Studio](https://azure.microsoft.com/en-us/products/data-studio).
+Follow the instructions [here](sqlserver.md) to get SQL Server working on your computer.
 
 ### Install some new NuGet packages
 
