@@ -6,13 +6,14 @@ nav_order: 3
 mermaid: true
 ---
 
-# 🔐 Local Authentication in StarterApp
+# Local Authentication in StarterApp
 
-This document explains how user authentication and role-based security are implemented in StarterApp.
+This document explains how user authentication and role-based security are implemented in 
+StarterApp.
 
 ---
 
-## 🔍 1. Overview
+## 1. Overview
 
 StarterApp uses a **local authentication system** backed by an SQL Server database running in a 
 Docker container. User credentials and roles are stored locally, and authentication is performed 
@@ -20,14 +21,14 @@ through the `AuthenticationService`.
 
 ---
 
-## 🔑 2. How Login Works
+## 2. How Login Works
 
 1. User enters email and password in the **LoginPage**.
 2. `LoginViewModel` calls `AuthenticationService.LoginAsync(...)`.
 3. The service verifies the credentials and stores the authenticated user and their roles.
 4. `AuthenticationStateChanged` event is raised.
 
-### 🔧 Code Snippet: Login Flow
+### Code Snippet: Login Flow
 
 ```csharp
 var result = await _authService.LoginAsync(Email, Password);
@@ -40,7 +41,7 @@ if (result.IsSuccessful)
 
 ---
 
-## 👤 3. Current User & Roles
+## 3. Current User & Roles
 
 After login, the current user and their roles can be accessed from the service:
 
@@ -51,11 +52,11 @@ var roles = _authService.CurrentUserRoles;
 
 ---
 
-## 🧩 4. Role-Based UI Logic
+## 4. Role-Based UI Logic
 
 Role-based logic is handled in ViewModels to show/hide UI elements or enable/disable actions.
 
-### ✅ Example
+### Example
 
 ```csharp
 public bool IsAdmin => _authService.CurrentUserRoles.Contains("Admin");
@@ -65,7 +66,7 @@ You can use `IsAdmin` in XAML bindings to control visibility or interactivity.
 
 ---
 
-## 🛠️ 5. Adding New Roles
+## 5. Adding New Roles
 
 To create new roles and assign them:
 
@@ -75,7 +76,7 @@ To create new roles and assign them:
 
 ---
 
-## 📊 6. Diagram: Authentication and Role Flow
+## 6. Diagram: Authentication and Role Flow
 
 ```mermaid
 sequenceDiagram
@@ -103,14 +104,13 @@ sequenceDiagram
 
 This diagram shows the process from login to role-based UI rendering.
 
-
 ---
 
-## 🚪 7. Logout and Session Handling
+## 7. Logout and Session Handling
 
 To log out a user, clear the session state and navigate back to the login screen.
 
-### ✅ Logout Method in AuthenticationService
+### Logout Method in AuthenticationService
 
 ```csharp
 public void Logout()
@@ -121,7 +121,7 @@ public void Logout()
 }
 ```
 
-### ✅ Calling Logout from a ViewModel
+### Calling Logout from a ViewModel
 
 ```csharp
 _authService.Logout();
@@ -132,28 +132,30 @@ await Shell.Current.GoToAsync("LoginPage");
 
 ---
 
-## 🎨 8. XAML UI Bindings for Role-Based Access
+## 8. XAML UI Bindings for Role-Based Access
 
-Once you've exposed role-specific properties in your ViewModel (e.g., `IsAdmin`), you can use them in 
-your XAML.
+Once you've exposed role-specific properties in your ViewModel (e.g., `IsAdmin`), you can 
+use them in your XAML.
 
-### ✅ Example: Showing a Button Only for Admins
+### Example: Showing a Button Only for Admins
 
 ```xml
 <Button Text="Delete User"
         IsVisible="{Binding IsAdmin}" />
 ```
 
-### ✅ Example: Disabling a Control Based on Role
+### Example: Disabling a Control Based on Role
 
 ```xml
 <Entry Placeholder="Enter data"
        IsEnabled="{Binding IsEditor}" />
 ```
 
-### 🔐 Tip
-
-Make sure your ViewModel updates role-bound properties after login/logout using `OnPropertyChanged`.
+{: .tip-title }
+> <i class="fa-regular fa-lightbulb"></i> Tip
+>
+> Make sure your ViewModel updates role-bound properties after login/logout using 
+> `OnPropertyChanged`.
 
 ```csharp
 _authService.AuthenticationStateChanged += (s, isLoggedIn) =>

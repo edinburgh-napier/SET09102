@@ -6,14 +6,14 @@ nav_order: 2
 mermaid: true
 ---
 
-# 📄 Navigation in StarterApp (.NET MAUI)
+# Navigation in StarterApp
 
 This document explains how navigation works in the `StarterApp` project and provides 
 step-by-step guidance for making common modifications like adding a new page.
 
 ---
 
-## 🔍 1. Overview: How Navigation Works
+## 1. Overview: How Navigation Works
 
 StarterApp uses **.NET MAUI Shell navigation**, which simplifies routing between pages in an app.
 
@@ -27,7 +27,7 @@ await Shell.Current.GoToAsync(nameof(RegisterPage));
 
 ---
 
-## 🧭 2. AppShell.xaml
+## 2. AppShell.xaml
 
 This file defines the app's navigation structure:
 
@@ -45,7 +45,7 @@ This file defines the app's navigation structure:
 
 ---
 
-## 📈 3. Navigation Flow Diagram
+## 3. Navigation Flow Diagram
 
 ```mermaid
 sequenceDiagram
@@ -71,14 +71,14 @@ This diagram illustrates how users navigate between pages in StarterApp.
 
 ---
 
-## 🛠️ 4. How to Add a New Page
+## 4. How to Add a New Page
 
-### ✅ Step 1: Create the Page
+### Step 1: Create the Page
 
 1. Right-click on the `Views` folder → Add → New Item → ContentPage (XAML).
 2. Name it `MyNewPage.xaml`.
 
-### ✅ Step 2: Add the ViewModel
+### Step 2: Add the ViewModel
 
 ```csharp
 public partial class MyNewPage : ContentPage
@@ -91,7 +91,7 @@ public partial class MyNewPage : ContentPage
 }
 ```
 
-### ✅ Step 3: Register the Route
+### Step 3: Register the Route
 
 In `AppShell.xaml.cs`:
 
@@ -99,7 +99,7 @@ In `AppShell.xaml.cs`:
 Routing.RegisterRoute(nameof(MyNewPage), typeof(MyNewPage));
 ```
 
-### ✅ Step 4: Navigate to the Page
+### Step 4: Navigate to the Page
 
 ```csharp
 await Shell.Current.GoToAsync(nameof(MyNewPage));
@@ -107,7 +107,7 @@ await Shell.Current.GoToAsync(nameof(MyNewPage));
 
 ---
 
-## 🔄 5. Navigate Back
+## 5. Navigate Back
 
 ```csharp
 await Shell.Current.GoToAsync("..");
@@ -115,20 +115,21 @@ await Shell.Current.GoToAsync("..");
 
 ---
 
-## 🧠 Tips for Beginners
-
-- Always register routes for pages you want to navigate to using `GoToAsync`.
-- Use `nameof(PageName)` instead of hardcoding strings.
-- You can pass parameters to pages via query strings or navigation context.
+{: .tip-title }
+> <i class="fa-regular fa-lightbulb"></i> Tips
+>
+> - Always register routes for pages you want to navigate to using `GoToAsync`.
+> - Use `nameof(PageName)` instead of hardcoding strings.
+> - You can pass parameters to pages via query strings or navigation context.
 
 
 ---
 
-## 📦 6. Passing Parameters Between Pages
+## 6. Passing Parameters Between Pages
 
 You can pass data between pages using **query parameters** with `.GoToAsync(...)`.
 
-### ✅ Step 1: Add `[QueryProperty]` to the Target Page
+### Step 1: Add `[QueryProperty]` to the Target Page
 
 In the ViewModel of the target page, add a property and decorate it with `[QueryProperty]`.
 
@@ -147,7 +148,7 @@ public partial class UserDetailPage : ContentPage
 }
 ```
 
-### ✅ Step 2: Navigate with Parameters
+### Step 2: Navigate with Parameters
 
 From another ViewModel, navigate like this:
 
@@ -157,19 +158,20 @@ await Shell.Current.GoToAsync($"{nameof(UserDetailPage)}?userId=123");
 
 This passes the value `123` to the `UserId` property on `UserDetailPage`.
 
-### 🔁 Notes
-
-- The parameter name in the query string must match the alias given in `[QueryProperty]`.
-- The type must be convertible from string (for example: `int`, `Guid`, `string`).
+{: .note-title }
+> <i class="fa-solid fa-triangle-exclamation"></i> Notes
+>
+> - The parameter name in the query string must match the alias given in `[QueryProperty]`.
+> - The type must be convertible from string (for example: `int`, `Guid`, `string`).
 
 ---
 
-## 🧩 7. Passing Complex Objects Between Pages
+## 7. Passing Complex Objects Between Pages
 
 Passing complex objects directly via Shell navigation is not supported by default. However, you can 
 work around this by using a **shared service** or a **singleton** to temporarily store the object.
 
-### ✅ Option 1: Use a Shared Service
+### Option 1: Use a Shared Service
 
 1. Create a service class to hold navigation state:
 
@@ -199,9 +201,9 @@ await Shell.Current.GoToAsync(nameof(UserDetailPage));
 var user = _navigationDataService.NavigationParameter as User;
 ```
 
-> 🧠 This method is ideal for passing view models, user objects, or more structured data types.
+> This method is ideal for passing view models, user objects, or more structured data types.
 
-### ✅ Option 2: Serialise to JSON (for simple objects)
+### Option 2: Serialise to JSON (for simple objects)
 
 You can serialise objects to JSON and pass them as strings, but be mindful of size and encoding:
 
@@ -230,12 +232,14 @@ public partial class UserDetailPage : ContentPage
 }
 ```
 
-> ⚠️ This approach is more complex and should be used with caution due to potential encoding issues.
-
+{: .warning-title }
+> <i class="fa-solid fa-triangle-exclamation"></i> Warning
+>
+>This approach is more complex and should be used with caution due to potential encoding issues.
 
 ---
 
-### 📊 Diagram: Passing Complex Objects
+### Diagram: Passing Complex Objects
 
 The diagram below illustrates how a complex object (e.g., a user model) is passed using a shared service.
 
