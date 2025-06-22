@@ -12,7 +12,13 @@ all previous tutorials (the recommended approach), you may be able to skip some 
 Please make sure that you are using the required software versions to avoid errors due
 to incompatibility.
 
-1. Prepare the database
-2. Install the tools
-3. Configure the application
+## 1. Prepare the database
+
+Setting up a local Docker image of SQL Server is covered in the [Adding a database](../database/sqlserver.md) tutorial.
+
+## 2. Install the tools
+
+
+
+## 3. Configure the application
 
