@@ -67,7 +67,9 @@ to executable or configuration files.
 
 > You can see the environment variables you currently have set with the command:
 >
-> {% highlight shell %}set {% endhighlight %}
+> ```
+> set
+> ```
 > 
 > The following variables are required for building and testing Android versions of your app.
 >
@@ -81,7 +83,9 @@ to executable or configuration files.
 
 > You can see the environment variables you currently have set with the command:
 >
-> {% highlight shell %}env {% endhighlight %}
+> ```
+> env
+> ```
 > 
 > The following variables are required for building and testing Android versions of your app.
 >
