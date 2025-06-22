@@ -1,3 +1,10 @@
+---
+title: SQL Server
+parent: Adding a database
+grand_parent: C# practice
+nav_order: 1
+---
+
 # Install the SQL Server Docker image
 
 These instructions take you through the installation of an instance of SQL Server as a
