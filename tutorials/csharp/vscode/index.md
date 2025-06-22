@@ -263,12 +263,14 @@ If there are any other error messages in the output, they will need to be invest
 
 To build and test your apps for the Android platform, you need either an Android phone or a software emulator. For consistency, we are planning to use an emulator by default, but if you want to use your Adroid device that is fine. You will just need to follow the appropriate instructions.
 
-The emulator can be installed using one of the following commands:
+The emulator can be installed using the following command:
 
 [<i class="fa-solid fa-circle-info icon"></i>](https://developer.android.com/tools/sdkmanager){:target="_blank"}
 <hr class="icon-prefix">
 
-{% highlight shell %}sdkmanager --install emulator {% endhighlight %}
+```
+sdkmanager --install emulator
+```
 
 {: .warning-title }
 > <i class="fa-solid fa-triangle-exclamation"></i> Warning
@@ -294,13 +296,20 @@ of all available system images by using the command
 By default, we will be using Android 34; however, Apple Silicon Macs require a different image 
 because of their architecture.
 
-For Windows machines and Intel Macs, use the command
+[Windows and Intel Mac](){: .btn .btn-blue .tab-control data-tabset="avd" data-seq="1" }
+[Apple Silicon Mac](){: .btn .tab-control data-tabset="avd" data-seq="2" }
 
-{% highlight shell %}sdkmanager --install "system-images;android-34;google_apis;x86_64" {% endhighlight %}
+> ```
+> sdkmanager --install "system-images;android-34;google_apis;x86_64"
+> ```
+> 
+{: .tab data-tabset="avd" data-seq="1" }
 
-For Apple Silicon Macs, use
-
-{% highlight shell %}sdkmanager --install "system-images;android-34;google_apis;arm64-v8a" {% endhighlight %}
+> ```
+> sdkmanager --install "system-images;android-34;google_apis;arm64-v8a"
+> ```
+> 
+{: .tab data-tabset="avd" data-seq="2" }
 
 ## 11. Configure AVD manager
 
@@ -319,14 +328,29 @@ You may see some prompts appear in the bottom right-hand corner of the window as
 
 The values you need are shown below
 
-| Variable | Description | Windows value | Mac value |
-| --- | --- | --- | --- |
-| SDK Manager path | Path to the sdkmanager executable | C:\\Users\\USERNAME\\MAUI\\android\\cmdline-tools\\11.0\\bin\\sdkmanager | /Users/USERNAME/MAUI/android/cmdline-tools/11.0/bin/sdkmanager |
-| SDK root path | Same as the ANDROID\_HOME environment variable | C:\\Users\\USERNAME\\MAUI\\android | /Users/USERNAME/MAUI/android |
-| AVD Manager path | Path to the avdmanager executable | C:\\Users\\USERNAME\\MAUI\\android\\cmdline-tools\\11.0\\bin\\avdmanager | /Users/USERNAME/MAUI\\android\\cmdline-tools\\11.0\\bin\\avdmanager |
-| Emulator path | Path to the emulator executable | C:\\Users\\USERNAME\\MAUI\\android\\emulator\\emulator.exe | /Users/USERNAME/MAUI/android/emulator/emulator |
+[Windows and Intel Mac](){: .btn .btn-blue .tab-control data-tabset="paths" data-seq="1" }
+[Apple Silicon Mac](){: .btn .tab-control data-tabset="paths" data-seq="2" }
 
-Once the AVD Manager is correctly configured, information about the installed and available SDK components will be displayed as shown below. The image shows the Android SDK Platform 34 installed, but no AVDs yet.
+> | Variable         | Description                                    | Value                                                            |
+> |------------------|------------------------------------------------|------------------------------------------------------------------|
+> | SDK Manager path | Path to the sdkmanager executable              | C:\Users\USERNAME\MAUI\android\cmdline-tools\11.0\bin\sdkmanager |
+> | SDK root path    | Same as the ANDROID\_HOME environment variable | C:\Users\USERNAME\MAUI\android                                   |
+> | AVD Manager path | Path to the avdmanager executable              | C:\Users\USERNAME\MAUI\android\cmdline-tools\11.0\bin\avdmanager |
+> | Emulator path    | Path to the emulator executable                | C:\Users\USERNAME\MAUI\android\emulator\emulator.exe             |
+>
+{: .tab data-tabset="paths" data-seq="1" }
+
+> | Variable         | Description                                    | Value                                                          |
+> |------------------|------------------------------------------------|----------------------------------------------------------------|
+> | SDK Manager path | Path to the sdkmanager executable              | /Users/USERNAME/MAUI/android/cmdline-tools/11.0/bin/sdkmanager |
+> | SDK root path    | Same as the ANDROID\_HOME environment variable | /Users/USERNAME/MAUI/android                                   |
+> | AVD Manager path | Path to the avdmanager executable              | /Users/USERNAME/MAUI/android/cmdline-tools/11.0/bin/avdmanager |
+> | Emulator path    | Path to the emulator executable                | /Users/USERNAME/MAUI/android/emulator/emulator                 |
+>
+{: .tab data-tabset="paths" data-seq="2" }
+
+Once the AVD Manager is correctly configured, information about the installed and available SDK components 
+will be displayed as shown below. The image shows the Android SDK Platform 34 installed, but no AVDs yet.
 
 ![Fig. 7. SDK details](images/sdk_details.png){: standalone #fig7 data-title="SDK details"}
 
@@ -335,15 +359,20 @@ Once the AVD Manager is correctly configured, information about the installed an
 Creating an API is simply a question of pairing an Android platform with a device file. We will 
 be using the Google Pixel Pro 7 which can be installed using one of the commands below.
 
-For Windows and Intel Macs use
-<br/>
+[Windows](){: .btn .btn-blue .tab-control data-tabset="avd2" data-seq="1" }
+[Mac](){: .btn .tab-control data-tabset="avd2" data-seq="2" }
 
-{% highlight shell %}avdmanager create avd -d 30 --name Pixel_7_Pro -k "system-images;android-34;google_apis;x86_64" {% endhighlight %}
+> ```
+> avdmanager create avd -d 30 --name Pixel_7_Pro -k "system-images;android-34;google_apis;x86_64"
+> ```
+> 
+{: .tab data-tabset="avd2" data-seq="1" }
 
-For Apple silicon Macs use
-<br/>
-
-{% highlight shell %}avdmanager create avd -d 30 --name Pixel_7_Pro -k "system-images;android-34;google_apis;arm64-v8a" {% endhighlight %}
+> ```
+> avdmanager create avd -d 30 --name Pixel_7_Pro -k "system-images;android-34;google_apis;arm64-v8a"
+> ```
+> 
+{: .tab data-tabset="avd2" data-seq="2" }
 
 Clicking the refresh icon in the *Android Virtual Device* panel will reveal the newly-created AVD. 
 Start it by clicking the *Run* icon next to its name. If everything is set up correctly, you should 
