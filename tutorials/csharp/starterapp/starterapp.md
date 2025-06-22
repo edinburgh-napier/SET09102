@@ -36,7 +36,6 @@ This app is built using the following tool versions.
 ## Documentation
 
 1. [Quickstart](quickstart.md)
-2. [Migrations](migrations.md)
-3. [Authentication](authentication.md)
-4. [Navigation](navigation.md)
+2. [Authentication](authentication.md)
+3. [Navigation](navigation.md)
 

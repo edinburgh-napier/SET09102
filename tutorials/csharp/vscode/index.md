@@ -22,14 +22,6 @@ and on Windows it means using a command prompt.
 > You can configure the default terminal tool to be CMD in your
 > <a href="https://code.visualstudio.com/docs/terminal/profiles" target="_blank">VSCode profile</a>
 
-
-Where the format of a command is operating system specific, it will be labelled with either
-<i class="fa-brands fa-windows icon"></i> or <i class="fa-brands fa-apple icon"></i>
-
-You can click the relevant icon for more information. For links relevant to either operating
-system, you can click <i class="fa-solid fa-circle-info icon"></i>
-for more information.
-
 When you see **USERNAME** in a variable value, replace it with your username on your computer.
 
 ## 1. Install the .NET SDK
@@ -268,9 +260,7 @@ The emulator can be installed using the following command:
 [<i class="fa-solid fa-circle-info icon"></i>](https://developer.android.com/tools/sdkmanager){:target="_blank"}
 <hr class="icon-prefix">
 
-```
-sdkmanager --install emulator
-```
+{% highlight shell %}sdkmanager --install emulator {% endhighlight %}
 
 {: .warning-title }
 > <i class="fa-solid fa-triangle-exclamation"></i> Warning
