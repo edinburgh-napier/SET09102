@@ -74,11 +74,11 @@ to executable or configuration files.
 > 
 > The following variables are required for building and testing Android versions of your app.
 >
-> | Variable         | Description                                                            | Windows value                              |
-> |------------------|------------------------------------------------------------------------|--------------------------------------------|
-> | JAVA_HOME        | Stores the root directory of a Java SDK                                | C:\\Users\\\*\*USERNAME\*\*\\MAUI\\java    |
-> | ANDROID_HOME     | Stores the root of an Android SDK                                      | C:\\Users\\\*\*USERNAME\*\*\\MAUI\\android |
-> | ANDROID_SDK_HOME | Stores the directory that contains user-specific settings such as ADVs | C:\\Users\\\*\*USERNAME\*\*\\.android      |
+> | Variable         | Description                                                            | Windows value                  |
+> |------------------|------------------------------------------------------------------------|--------------------------------|
+> | JAVA_HOME        | Stores the root directory of a Java SDK                                | C:\Users\USERNAME\MAUI\java    |
+> | ANDROID_HOME     | Stores the root of an Android SDK                                      | C:\Users\USERNAME\MAUI\android |
+> | ANDROID_SDK_HOME | Stores the directory that contains user-specific settings such as ADVs | C:\Users\USERNAME\.android     |
 >
 > The best approach is to create a folder in your home directory and let .NET install the appropriate versions there specifically for use with .NET. Instructions for this are given later. For now, it is enough to create the relevant directories and set the environment variables.
 
@@ -99,11 +99,11 @@ to executable or configuration files.
 > 
 > The following variables are required for building and testing Android versions of your app.
 >
-> | Variable           | Description                                                            | Mac value                            |
-> |--------------------|------------------------------------------------------------------------|--------------------------------------|
-> | JAVA\_HOME         | Stores the root directory of a Java SDK                                | /Users/\*\*USERNAME\*\*/MAUI/java    |
-> | ANDROID\_HOME      | Stores the root of an Android SDK                                      | /Users/\*\*USERNAME\*\*/MAUI/android |
-> | ANDROID\_SDK\_HOME | Stores the directory that contains user-specific settings such as ADVs | /Users/\*\*USERNAME\*\*/.android     |
+> | Variable         | Description                                                            | Mac value                    |
+> |------------------|------------------------------------------------------------------------|------------------------------|
+> | JAVA_HOME        | Stores the root directory of a Java SDK                                | /Users/USERNAME/MAUI/java    |
+> | ANDROID_HOME     | Stores the root of an Android SDK                                      | /Users/USERNAME/MAUI/android |
+> | ANDROID_SDK_HOME | Stores the directory that contains user-specific settings such as ADVs | /Users/USERNAME/.android     |
 >
 > The best approach is to create a folder in your home directory and let .NET install the appropriate versions there specifically for use with .NET. Instructions for this are given later. For now, it is enough to create the relevant directories and set the environment variables.
 >
