@@ -77,8 +77,6 @@ To create new roles and assign them:
 
 ## 📊 6. Diagram: Authentication and Role Flow
 
-![Authentication Flow](images/authentication-flow.png)
-
 ```mermaid
 sequenceDiagram
     participant User

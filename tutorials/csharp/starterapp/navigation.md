@@ -47,8 +47,6 @@ This file defines the app's navigation structure:
 
 ## 📈 3. Navigation Flow Diagram
 
-![Navigation Flow](images/navigation-flow.png)
-
 ```mermaid
 sequenceDiagram
     participant LoginPage
@@ -240,8 +238,6 @@ public partial class UserDetailPage : ContentPage
 ### 📊 Diagram: Passing Complex Objects
 
 The diagram below illustrates how a complex object (e.g., a user model) is passed using a shared service.
-
-![Passing Complex Objects](images/navigation-complex-object.png)
 
 ```mermaid
 sequenceDiagram
