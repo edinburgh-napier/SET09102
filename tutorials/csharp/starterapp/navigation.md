@@ -1,6 +1,15 @@
+---
+title: Navigation
+parent: StarterApp
+grand_parent: C# practice
+nav_order: 2
+mermaid: true
+---
+
 # 📄 Navigation in StarterApp (.NET MAUI)
 
-This document explains how navigation works in the `StarterApp` project and provides **step-by-step guidance** for making common modifications like adding a new page.
+This document explains how navigation works in the `StarterApp` project and provides 
+step-by-step guidance for making common modifications like adding a new page.
 
 ---
 
@@ -38,7 +47,7 @@ This file defines the app's navigation structure:
 
 ## 📈 3. Navigation Flow Diagram
 
-![Navigation Flow](../images/navigation-flow.png)
+![Navigation Flow](images/navigation-flow.png)
 
 This diagram illustrates how users navigate between pages in StarterApp.
 
@@ -51,9 +60,7 @@ This diagram illustrates how users navigate between pages in StarterApp.
 1. Right-click on the `Views` folder → Add → New Item → ContentPage (XAML).
 2. Name it `MyNewPage.xaml`.
 
-### ✅ Step 2: Add the ViewModel (optional)
-
-If you're using MVVM:
+### ✅ Step 2: Add the ViewModel
 
 ```csharp
 public partial class MyNewPage : ContentPage
@@ -105,7 +112,7 @@ You can pass data between pages using **query parameters** with `.GoToAsync(...)
 
 ### ✅ Step 1: Add `[QueryProperty]` to the Target Page
 
-In the code-behind of the target page (or its ViewModel), add a property and decorate it with `[QueryProperty]`.
+In the ViewModel of the target page, add a property and decorate it with `[QueryProperty]`.
 
 **Example:**
 
@@ -124,7 +131,7 @@ public partial class UserDetailPage : ContentPage
 
 ### ✅ Step 2: Navigate with Parameters
 
-From another page or ViewModel, navigate like this:
+From another ViewModel, navigate like this:
 
 ```csharp
 await Shell.Current.GoToAsync($"{nameof(UserDetailPage)}?userId=123");
@@ -141,7 +148,8 @@ This passes the value `123` to the `UserId` property on `UserDetailPage`.
 
 ## 🧩 7. Passing Complex Objects Between Pages
 
-Passing complex objects directly via Shell navigation is not supported by default. However, you can work around this by using a **shared service** or a **singleton** to temporarily store the object.
+Passing complex objects directly via Shell navigation is not supported by default. However, you can 
+work around this by using a **shared service** or a **singleton** to temporarily store the object.
 
 ### ✅ Option 1: Use a Shared Service
 
@@ -175,16 +183,16 @@ var user = _navigationDataService.NavigationParameter as User;
 
 > 🧠 This method is ideal for passing view models, user objects, or more structured data types.
 
-### ✅ Option 2: Serialize to JSON (for simple objects)
+### ✅ Option 2: Serialise to JSON (for simple objects)
 
-You can serialize objects to JSON and pass them as strings, but be mindful of size and encoding:
+You can serialise objects to JSON and pass them as strings, but be mindful of size and encoding:
 
 ```csharp
 string json = JsonSerializer.Serialize(user);
 await Shell.Current.GoToAsync($"{nameof(UserDetailPage)}?userJson={Uri.EscapeDataString(json)}");
 ```
 
-Then decode and deserialize on the receiving page:
+Then decode and deserialise on the receiving page:
 
 ```csharp
 [QueryProperty(nameof(UserJson), "userJson")]
@@ -213,4 +221,4 @@ public partial class UserDetailPage : ContentPage
 
 The diagram below illustrates how a complex object (e.g., a user model) is passed using a shared service.
 
-![Passing Complex Objects](../images/navigation-complex-object.png)
+![Passing Complex Objects](images/navigation-complex-object.png)
