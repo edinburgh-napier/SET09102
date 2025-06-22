@@ -49,6 +49,26 @@ This file defines the app's navigation structure:
 
 ![Navigation Flow](images/navigation-flow.png)
 
+```mermaid
+sequenceDiagram
+    participant LoginPage
+    participant LoginViewModel
+    participant Shell
+    participant UserListPage
+    participant UserDetailPage
+    participant AboutPage
+
+    LoginPage->>LoginViewModel: Login command
+    LoginViewModel->>Shell: GoToAsync("UserListPage")
+    Shell->>UserListPage: Navigate
+
+    UserListPage->>Shell: GoToAsync("UserDetailPage?userId=123")
+    Shell->>UserDetailPage: Navigate with parameter
+
+    UserListPage->>Shell: GoToAsync("AboutPage")
+    Shell->>AboutPage: Navigate
+```
+
 This diagram illustrates how users navigate between pages in StarterApp.
 
 ---
@@ -222,3 +242,16 @@ public partial class UserDetailPage : ContentPage
 The diagram below illustrates how a complex object (e.g., a user model) is passed using a shared service.
 
 ![Passing Complex Objects](images/navigation-complex-object.png)
+
+```mermaid
+sequenceDiagram
+    participant UserListPage
+    participant NavigationDataService
+    participant Shell
+    participant UserDetailPage
+
+    UserListPage->>NavigationDataService: Store object (e.g. selectedUser)
+    UserListPage->>Shell: GoToAsync("UserDetailPage")
+    Shell->>UserDetailPage: Navigate
+    UserDetailPage->>NavigationDataService: Retrieve object (selectedUser)
+```
