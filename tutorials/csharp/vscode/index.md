@@ -202,24 +202,30 @@ that you defined earlier. However, the command must be run from the root directo
 project. Change into the root directory of your project (created in step 3 above) - that is the 
 one containing the *.sln* file.
 
-Run the following command to configure your machine:
+[Windows](){: .btn .btn-blue .tab-control data-tabset="android" data-seq="1" }
+[Mac](){: .btn .tab-control data-tabset="android" data-seq="2" }
 
-<i class="fa-brands fa-windows icon"></i>
-<hr class="icon-prefix">
+> Run the following command to configure your machine:
+>
+> ```
+> dotnet build -t:InstallAndroidDependencies -f:net9.0-android -p:AndroidSdkDirectory="%ANDROID_HOME%" -p:JavaSdkDirectory="%JAVA_HOME%" -p:AcceptAndroidSDKLicenses=True
+> ```
+>
+> {: .warning-title }
+> > <i class="fa-solid fa-triangle-exclamation"></i> Warning
+> > 
+> > This command will only work in the CMD window and not the Windows PowerShell.
+> > You can configure the default terminal tool to be CMD in your
+> > <a href="https://code.visualstudio.com/docs/terminal/profiles" target="_blank">VSCode profile</a>
+>
+{: .tab data-tabset="android" data-seq="1" }
 
-{% highlight shell %}dotnet build -t:InstallAndroidDependencies -f:net9.0-android -p:AndroidSdkDirectory="%ANDROID_HOME%" -p:JavaSdkDirectory="%JAVA_HOME%" -p:AcceptAndroidSDKLicenses=True {% endhighlight %}
-
-{: .warning-title }
-> <i class="fa-solid fa-triangle-exclamation"></i> Warning
-> 
-> This command will only work in the CMD window and not the Windows PowerShell.
-> You can configure the default terminal tool to be CMD in your
-> <a href="https://code.visualstudio.com/docs/terminal/profiles" target="_blank">VSCode profile</a>
-
-<i class="fa-brands fa-apple icon"></i>
-<hr class="icon-prefix">
-
-{% highlight shell %}dotnet build -t:InstallAndroidDependencies -f:net9.0-android -p:AndroidSdkDirectory="${ANDROID_HOME}" -p:JavaSdkDirectory="${JAVA_HOME}" -p:AcceptAndroidSDKLicenses=True {% endhighlight %}
+> Run the following command to configure your machine:
+>
+> ```
+> dotnet build -t:InstallAndroidDependencies -f:net9.0-android -p:AndroidSdkDirectory="${ANDROID_HOME}" -p:JavaSdkDirectory="${JAVA_HOME}" -p:AcceptAndroidSDKLicenses=True
+> ```
+{: .tab data-tabset="android" data-seq="2" }
 
 ## 7. Update Android SDK
 
