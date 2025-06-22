@@ -1,3 +1,10 @@
+---
+title: Migrations
+parent: StarterApp
+grand_parent: C# practice
+nav_order: 2
+---
+
 12. For subsequent migrations
 
 Move Migrations folder from Database project toe Migrations project

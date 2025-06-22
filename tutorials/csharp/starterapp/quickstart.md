@@ -1,3 +1,10 @@
+---
+title: Quickstart
+parent: StarterApp
+grand_parent: C# practice
+nav_order: 1
+---
+
 # Quickstart
 
 There are three main stages to getting started with the StarterApp. If you have followed
