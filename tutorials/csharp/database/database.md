@@ -59,235 +59,7 @@ the _Notes_ project in the **Solution Explorer**.
 Entity Framework (EF) is an object-relational mapper (ORM) that takes care of translating the 
 object-oriented structures in the C# code to relational ones and vice versa.
 
-### Pull and run the SQL Server Docker image
-
-Using Docker ensures consistency across different platforms. If you are working on Windows or Linux, a 
-native installation of SQL Server is possible. However, later on, we will move to an architecture that 
-uses a shared SQL Server database hosted on a Linux machine and using Docker replicates that 
-environment locally. Theoretically, it should make no difference to our C# code whether we are using 
-a native installation or a containerised one. However, a good rule of thumb is to minimise differences 
-between environments where possible.
-
-{: .note-title}
-> <i class="fa-solid fa-circle-info"></i> Note
->
-> The format of Docker commands is the same on all platforms; however, on Mac or Linux, commands 
-> should be prefixed with `sudo`
-
-1.  Pull the SQL Server Express Linux Docker container using the command below at the command line
-    
-    ``` bash
-    docker pull mcr.microsoft.com/mssql/server:2025-latest
-    ```
-    
-2.  Still at the command line, execute the following command to run the Docker container.
-    
-    ``` bash
-    docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=<YourPassw0rd>" -p 1433:1433 --name sql1 --hostname sql1 -d mcr.microsoft.com/mssql/server:2025-latest
-    ```
-    
-{: .note-title}
-> <i class="fa-solid fa-circle-info"></i> Notes
->
-> * The -e switch sets an environment variable. The first accepts the EULA and the second sets the password for the `sa` user - replace `<YourPassw0rd>` with the password that you want to use.
-> * The -p switch maps the default TCP port (1433) to a local port. In this case the same one is used.
-> * The --name and --hostname parameters set the name and hostname of the container.
-> * The -d switch specifies which image file to use.
-> * <i class="fa-brands fa-apple icon"></i> If you are running on an Apple Silicon Mac, you will need to add the additional parameter `--platform=linux/arm64`
-
-The return value from a successful container launch is a long hexadecimal string. Examine any error 
-messages and resolve the issues before continuing. For more information, see the 
-[Microsoft documentation](https://learn.microsoft.com/en-gb/sql/linux/quickstart-install-connect-docker?view=sql-server-ver16&tabs=cli&pivots=cs1-bash).
-
-## 2. Set up the database
-
-### Connect to the database server
-
-Select the instructions that correspond to the database access tool you are using.
-
-[DataGrip](){: .btn .btn-blue .tab-control data-tabset="tools" data-seq="1" }
-[Azure Data Studio](){: .btn .tab-control data-tabset="tools" data-seq="2" }
-
-> Open DataGrip and create a new connection. You can use the parameter values shown in 
-> Fig. 1. to connect to your SQL Server container. The password is the one you specified when you 
-> started the container.
-> 
-> ![Fig. 1. Creating a local database connection in dataGrip](images/datagrip_connection.png){: standalone .w30 #fig1 data-title="Creating a local database connection in DataGrip" }
-> 
-> SQL Server is a database _server_. That is, it provides for multiple databases, each of which has its 
-> own purpose and permissions. After connecting, you can see that only system databases currently exist. 
-> These are used to manage the server itself and must not be modified. Note too that you are logged in 
-> as the `sa` user - this is the default system administration account which should not be used for 
-> routine database tasks.
-> 
-> In the next step, we will set up a user account and database for the Notes app.
-> 
-> ### Database setup
-> 
-> Access permissions can be enforced at both the server level and the level of an individual database. 
-> For this reason, two steps are required to create a database user account with permission to log into 
-> the server.
-> 
-> 1. **Create a new login**
-> 
->    In ADS, right-click on the master database as shown in Fig. 2 and select _New Query_.
-> 
->    ![Fig. 2. Starting a new query in DataGrip](images/datagrip_new_query.png){: standalone .w30 #fig2 data-title="Starting a new query in dataGrip" }
-> 
->    The next page provides a field where you can type in 
->    [Transact-SQL](https://learn.microsoft.com/en-us/sql/t-sql/language-reference?view=sql-server-ver16) 
->    (T-SQL) commands. Enter the following command to create a new server-level login and then click 
->    _Run_ as shown in Fig. 3. Note that the password must meet the strength that SQL Server requires by 
->    being at least 8 characters long and containing characters from three of the following four sets: 
->    Uppercase letters, Lowercase letters, Base 10 digits, and Symbols.
-> 
->    ``` sql
->    CREATE LOGIN notesapp WITH PASSWORD='N0tesApp$';
->    ```
-> 
->    ![Fig. 3. Creating a server-level login in DataGrip](images/datagrip_new_login.png){: standalone .w30 #fig3 data-title="Creating a server-level login in DataGrip" }
-> 
-> 2. **Create a new database**
-> 
->    In the explorer sidebar, right-click on the datasource as shown in Fig. 4 and select _New > Database_.
-> 
->    ![Fig. 4. Creating a new database in DataGrip](images/datagrip_new_database.png){: standalone .w30 #fig4 data-title="Creating a new database in DataGrip" }
-> 
->    Call the new database _notesdb_, and leave all the other options with their default values.
-> 
-> 3. **Create a user in the new database**
-> 
->    A _user_ is defined at the level of an individual database. The first step is therefore to change 
->    to the _notesdb_ database as shown in Fig. 5. Then execute the following command
-> 
->    ```sql
->    CREATE user notesapp for login notesapp;
->    ```
-> 
->    ![Fig. 5. Creating a new user for the notesapp login in DataGrip](images/datagrip_new_user.png){: standalone .w30 #fig5 data-title="Creating a new user for the notesapp login in DataGrip" }
-> 
-> 4. **Grant permissions to the new user**
-> 
->    With the notesdb database still active, execute the following T-SQL command to grant all 
->    permission to the notesapp user:
-> 
->    ```sql
->    GRANT control on DATABASE::notesdb to notesapp;
->    ```
-> 
->    Next, disconnect from SQL Server using the icon in the explorer pane and edit the details of the 
->    connection. Replace `sa` with `notesapp`, and the sa password with `N0tesApp$`. When you reconnect, 
->    you are using the new user account that you set up.
-> 
-> 5. **Create the NOTE table**
-> 
->    Here we recreate the NOTE table as shown in Fig. 6. Use the T-SQL script below to set the table up 
->    using ADS.
-> 
->    ![Fig. 6. The NOTE table](images/note_table.png){: standalone .w10 #fig6 data-title="The NOTE table" }
-> 
->    ```sql
->    -- Create NOTE table
->    CREATE TABLE note (
->        id INT IDENTITY(1,1) PRIMARY KEY,
->        text NVARCHAR(MAX) NOT NULL,
->        date DATETIME2 DEFAULT SYSDATETIME()
->   );
->    ```
->
-{: .tab data-tabset="tools" data-seq="1" }
-
-> Open Azure Data Studio (ADS) and create a new connection. You can use the parameter values shown in 
-> Fig. 1. to connect to your SQL Server container. The password is the one you specified when you 
-> started the container.
-> 
-> ![Fig. 1. Creating a local database connection in Azure Data Studio](images/local_connection.png){: standalone .w30 #fig1 data-title="Creating a local database connection in Azure Data Studio" }
-> 
-> SQL Server is a database _server_. That is, it provides for multiple databases, each of which has its 
-> own purpose and permissions. After connecting, you can see that only system databases currently exist. 
-> These are used to manage the server itself and must not be modified. Note too that you are logged in 
-> as the `sa` user - this is the default system administration account which should not be used for 
-> routine database tasks.
-> 
-> In the next step, we will set up a user account and database for the Notes app.
-> 
-> ### Database setup
-> 
-> Access permissions can be enforced at both the server level and the level of an individual database. 
-> For this reason, two steps are required to create a database user account with permission to log into 
-> the server.
-> 
-> 1. **Create a new login**
-> 
->    In ADS, right-click on the master database as shown in Fig. 2 and select _New Query_.
-> 
->    ![Fig. 2. Starting a new query in Azure Data Studio](images/new_query.png){: standalone .w30 #fig2 data-title="Starting a new query in Azure Data Studio" }
-> 
->    The next page provides a field where you can type in 
->    [Transact-SQL](https://learn.microsoft.com/en-us/sql/t-sql/language-reference?view=sql-server-ver16) 
->    (T-SQL) commands. Enter the following command to create a new server-level login and then click 
->    _Run_ as shown in Fig. 3. Note that the password must meet the strength that SQL Server requires by 
->    being at least 8 characters long and containing characters from three of the following four sets: 
->    Uppercase letters, Lowercase letters, Base 10 digits, and Symbols.
-> 
->    ``` sql
->    CREATE LOGIN notesapp WITH PASSWORD='N0tesApp$';
->    ```
-> 
->    ![Fig. 3. Creating a server-level login in Azure Data Studio](images/create_login.png){: standalone .w30 #fig3 data-title="Creating a server-level login in Azure Data Studio" }
-> 
-> 2. **Create a new database**
-> 
->    In the explorer sidebar of ADS, click on the plus sign next to _Databases_ as shown in Fig. 4.
-> 
->    ![Fig. 4. Creating a new database in Azure Data Studio](images/new_database.png){: standalone .w30 #fig4 data-title="Creating a new database in Azure Data Studio" }
-> 
->    Call the new database _notesdb_, and leave all the other options with their default values.
-> 
-> 3. **Create a user in the new database**
-> 
->    A _user_ is defined at the level of an individual database. The first step is therefore to change 
->    to the _notesdb_ database as shown in Fig. 5. Then execute the following command
-> 
->    ```sql
->    CREATE user notesapp for login notesapp;
->    ```
-> 
->    ![Fig. 5. Creating a new user for the notesapp login in Azure Data Studio](images/create_user.png){: standalone .w30 #fig5 data-title="Creating a new user for the notesapp login in Azure Data Studio" }
-> 
-> 4. **Grant permissions to the new user**
-> 
->    With the notesdb database still active, execute the following T-SQL command to grant all 
->    permission to the notesapp user:
-> 
->    ```sql
->    GRANT control on DATABASE::notesdb to notesapp;
->    ```
-> 
->    Next, disconnect from SQL Server using the icon in the explorer pane and edit the details of the 
->    connection. Replace `sa` with `notesapp`, and the sa password with `N0tesApp$`. When you reconnect, 
->    you are using the new user account that you set up.
-> 
-> 5. **Create the NOTE table**
-> 
->    Here we recreate the NOTE table as shown in Fig. 6. Use the T-SQL script below to set the table up 
->    using ADS.
-> 
->    ![Fig. 6. The NOTE table](images/note_table.png){: standalone .w10 #fig6 data-title="The NOTE table" }
-> 
->    ```sql
->    -- Create NOTE table
->    CREATE TABLE note (
->        id INT IDENTITY(1,1) PRIMARY KEY,
->        text NVARCHAR(MAX) NOT NULL,
->        date DATETIME2 DEFAULT SYSDATETIME()
->   );
->    ```
->
-{: .tab data-tabset="tools" data-seq="2" }
-
-
-## 3. Change the way the binding context is set
+## 2. Change the way the binding context is set
 
 Now that the database is ready we can turn our attention to the application code. Currently, the 
 binding context for a content page is set using a xaml element. For reasons that will become clear 
@@ -321,7 +93,7 @@ _AboutPage_ because it does not need to access the database.
 
 Run the app to check that it behaves as expected.
 
-## 4. Create a configuration file
+## 3. Create a configuration file
 
 In this step, we create an application configuration file in JSON format using common naming 
 conventions.
@@ -382,7 +154,7 @@ conventions.
 Up to this point, your app should still run as it did before. We have made some preparatory changes, 
 but we have not changed the way the notes are stored and retrieved.
 
-## 5. Create a database context
+## 4. Create a database context
 
 A database wrapper class abstracts the data access layer from the rest of the app. This class 
 centralises query logic and simplifies the management of database initialization, making it easier 
@@ -444,7 +216,7 @@ takes care of the majority of service relationships without you having to write 
 the services as shown above makes them available for injection automatically. We will see this in 
 action in the section on viewmodels below.
 
-## 6. Update the Note model
+## 5. Update the Note model
 
 The _Note_ model needs to be changed to represent a database item rather than a text file. The 
 existing methods that are used to manipulate notes can all be removed because database operations 
@@ -486,7 +258,7 @@ attributes.
 The changes to the _**Note**_ model will create errors in the existing viewmodels. These will need 
 to be fixed before we can run the app again.
 
-## 7. Update the Note viewmodel
+## 6. Update the Note viewmodel
 
 Our goal is to remove references to the old approach of storing notes in a text file and replace 
 them with references to our new _NotesDbContext_ that will store them in a database instead. Open the 
@@ -603,7 +375,7 @@ or delete operation.
 > DeleteCommand = new AsyncRelayCommand(Delete);
 > ```
 
-## 8. Update the AllNotes ViewModel
+## 7. Update the AllNotes ViewModel
 
 The _AllNotes_ ViewModel requires similar changes to the _Note_ ViewModel.
 
@@ -653,7 +425,7 @@ NoteViewModel matchedNote = AllNotes.Where((n) => n.Id == int.Parse(noteId)).Fir
 The changes to the viewmodels will create some new errors in the views that refer to them. These 
 will need to be fixed before the app will run.
 
-## 9. Updating the views
+## 8. Updating the views
 
 In an early conversion step, we changed the way the binding context was set for a page by moving 
 the operation from the xaml to the C# code. That created a tight dependency between the view and the 
@@ -682,7 +454,7 @@ public NotePage(NoteViewModel viewModel)
 }
 ```
 
-## 10. Conclusion
+## 9. Conclusion
 
 You should now be able to run the app. When it is first started, any notes that you had created will 
 have disappeared because the app is now looking for them in the database. You should be able to 
