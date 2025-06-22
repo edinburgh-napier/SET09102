@@ -67,52 +67,38 @@ to executable or configuration files.
 
 > You can see the environment variables you currently have set with the command:
 >
-> [<i class="fa-brands fa-windows icon"></i>](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/set_1){:target="_blank"}
-> <hr class="icon-prefix">
->
 > {% highlight shell %}set {% endhighlight %}
 > 
 > The following variables are required for building and testing Android versions of your app.
 >
-> | Variable         | Description                                                            | Windows value                  |
+> | Variable         | Description                                                            | Value                          |
 > |------------------|------------------------------------------------------------------------|--------------------------------|
 > | JAVA_HOME        | Stores the root directory of a Java SDK                                | C:\Users\USERNAME\MAUI\java    |
 > | ANDROID_HOME     | Stores the root of an Android SDK                                      | C:\Users\USERNAME\MAUI\android |
 > | ANDROID_SDK_HOME | Stores the directory that contains user-specific settings such as ADVs | C:\Users\USERNAME\.android     |
 >
-> The best approach is to create a folder in your home directory and let .NET install the appropriate versions there specifically for use with .NET. Instructions for this are given later. For now, it is enough to create the relevant directories and set the environment variables.
-
-> {: .warning-title }
-> > <i class="fa-solid fa-triangle-exclamation"></i> Warning
-> > 
-> > Please check whether you already have these environment variables defined. If so, changing them may affect other applications that you use.
->
->
 {: .tab data-tabset="env" data-seq="1" }
 
 > You can see the environment variables you currently have set with the command:
->
-> [<i class="fa-brands fa-apple icon"></i>](https://support.apple.com/en-gb/guide/terminal/apd382cc5fa-4f58-4449-b20a-41c53c006f8f/mac){:target="_blank"}
-> <hr class="icon-prefix">
 >
 > {% highlight shell %}env {% endhighlight %}
 > 
 > The following variables are required for building and testing Android versions of your app.
 >
-> | Variable         | Description                                                            | Mac value                    |
+> | Variable         | Description                                                            | Value                        |
 > |------------------|------------------------------------------------------------------------|------------------------------|
 > | JAVA_HOME        | Stores the root directory of a Java SDK                                | /Users/USERNAME/MAUI/java    |
 > | ANDROID_HOME     | Stores the root of an Android SDK                                      | /Users/USERNAME/MAUI/android |
 > | ANDROID_SDK_HOME | Stores the directory that contains user-specific settings such as ADVs | /Users/USERNAME/.android     |
 >
-> The best approach is to create a folder in your home directory and let .NET install the appropriate versions there specifically for use with .NET. Instructions for this are given later. For now, it is enough to create the relevant directories and set the environment variables.
->
-> {: .warning-title }
-> > <i class="fa-solid fa-triangle-exclamation"></i> Warning
-> > 
-> > Please check whether you already have these environment variables defined. If so, changing them may affect other applications that you use.
->
 {: .tab data-tabset="env" data-seq="2" }
+
+The best approach is to create a folder in your home directory and let .NET install the appropriate versions there specifically for use with .NET. Instructions for this are given later. For now, it is enough to create the relevant directories and set the environment variables.
+
+{: .warning-title }
+> <i class="fa-solid fa-triangle-exclamation"></i> Warning
+> 
+> Please check whether you already have these environment variables defined. If so, changing them may affect other applications that you use.
 
 ### Create the new directory
 
