@@ -79,6 +79,41 @@ to executable or configuration files.
 > | ANDROID_HOME     | Stores the root of an Android SDK                                      | C:\Users\USERNAME\MAUI\android |
 > | ANDROID_SDK_HOME | Stores the directory that contains user-specific settings such as ADVs | C:\Users\USERNAME\.android     |
 >
+> The best approach is to create a folder in your home directory and let .NET install the appropriate versions there specifically for use with .NET. Instructions for this are given later. For now, it is enough to create the relevant directories and set the environment variables.
+>
+> {: .warning-title }
+> > <i class="fa-solid fa-triangle-exclamation"></i> Warning
+> > 
+> > Please check whether you already have these environment variables defined. If so, changing them may affect other applications that you use.
+>
+> ### Create the new directory
+>
+> ```
+> mkdir C:\Users\USERNAME\MAUI
+> ```
+> 
+> ### Create the variables
+>
+> In the Start menu panel, start typing *Environment variables* and choose the option to edit them when it
+> appears. You will be taken to the system control panel as shown below where you should click the
+> *Environment Variables* button.
+>
+> ![Fig. 1. Creating environment variables on Windows](images/env_var_win_1.png){: standalone #fig1 .h20 data-title="Creating environment variables on Windows"}
+>
+> In the next dialog, there are two panels. Click *New...* in the top panel for a new user variable and
+> fill in the details.
+>
+> ![Fig. 2. New variable](images/env_var_win_2.png){: standalone #fig2 data-title="New variable"}
+>
+> To make the Android SDK command-line tools available from any directory, you also need to update the
+> *PATH* environment variable. Specifically, you need to add the directory
+> *%ANDROID_HOME%\cmdline-tools\11.0\bin* to the PATH - follow the steps indicated in the image below.
+>
+> ![Fig. 3. Updating the PATH on Windows](images/env_var_win_3.png){: standalone #fig4 data-title="Updating the PATH on Windows"}
+>
+> The changes will not be visible in any CMD or PowerShell windows that are currently open. 
+> You will need to close and re-open them to pick up the new variables.
+>
 {: .tab data-tabset="env" data-seq="1" }
 
 > You can see the environment variables you currently have set with the command:
@@ -95,64 +130,38 @@ to executable or configuration files.
 > | ANDROID_HOME     | Stores the root of an Android SDK                                      | /Users/USERNAME/MAUI/android |
 > | ANDROID_SDK_HOME | Stores the directory that contains user-specific settings such as ADVs | /Users/USERNAME/.android     |
 >
+> The best approach is to create a folder in your home directory and let .NET install the appropriate versions there specifically for use with .NET. Instructions for this are given later. For now, it is enough to create the relevant directories and set the environment variables.
+>
+> {: .warning-title }
+> > <i class="fa-solid fa-triangle-exclamation"></i> Warning
+> > 
+> > Please check whether you already have these environment variables defined. If so, changing them may 
+> > affect other applications that you use.
+>
+> ### Create the new directory
+>
+> ```
+> mkdir ~/MAUI
+> ```
+>  
+> ### Create the variables
+>
+> The simplest way to define environment variables is in the .zshrc file in your home 
+> directory. This file is run automatically whenever a new terminal is opened and when an 
+> application starts. Edit the file and add the following lines at the end.
+>
+> ```sh
+>     # Environment variables for .NET MAUI development <br>
+>     export JAVA_HOME=${HOME}/MAUI/java <br>
+>     export ANDROID_HOME=${HOME}/MAUI/android <br>
+>     export ANDROID_SDK_HOME=${HOME}/MAUI <br>
+>     export PATH=${PATH}:${ANDROID_HOME}/cmdline-tools/11.0/bin <br>
+> ```
+>
+> The new settings will not affect any currently running terminal windows. You will need to restart 
+> them or alternatively type the same commands at the prompt.
+>
 {: .tab data-tabset="env" data-seq="2" }
-
-The best approach is to create a folder in your home directory and let .NET install the appropriate versions there specifically for use with .NET. Instructions for this are given later. For now, it is enough to create the relevant directories and set the environment variables.
-
-{: .warning-title }
-> <i class="fa-solid fa-triangle-exclamation"></i> Warning
-> 
-> Please check whether you already have these environment variables defined. If so, changing them may affect other applications that you use.
-
-### Create the new directory
-
-[<i class="fa-brands fa-windows icon"></i>](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/mkdir){:target="_blank"} 
-<hr class="icon-prefix">
-
-{% highlight shell %}mkdir C:\Users\USERNAME\MAUI {% endhighlight %}
-
-[<i class="fa-brands fa-apple icon"></i>](https://ss64.com/mac/mkdir.html){:target="_blank"}
-<hr class="icon-prefix">
-
-{% highlight shell %}mkdir ~/MAUI {% endhighlight %}
-
-### Create the variables on Windows
-
-In the Start menu panel, start typing *Environment variables* and choose the option to edit them when it
-appears. You will be taken to the system control panel as shown below where you should click the
-*Environment Variables* button.
-
-![Fig. 1. Creating environment variables on Windows](images/env_var_win_1.png){: standalone #fig1 .h20 data-title="Creating environment variables on Windows"}
-
-In the next dialog, there are two panels. Click *New...* in the top panel for a new user variable and
-fill in the details.
-
-![Fig. 2. New variable](images/env_var_win_2.png){: standalone #fig2 data-title="New variable"}
-
-To make the Android SDK command-line tools available from any directory, you also need to update the
-*PATH* environment variable. Specifically, you need to add the directory
-*%ANDROID_HOME%\cmdline-tools\11.0\bin* to the PATH - follow the steps indicated in the image below.
-
-![Fig. 3. Updating the PATH on Windows](images/env_var_win_3.png){: standalone #fig4 data-title="Updating the PATH on Windows"}
-
-The changes will not be visible in any CMD or PowerShell windows that are currently open. 
-You will need to close and re-open them to pick up the new variables.
-
-### Create the variables on Mac
-
-The simplest way to define environment variables is in the .zshrc file in your home 
-directory. This file is run automatically whenever a new terminal is opened and when an 
-application starts. Edit the file and add the following lines at the end.
-
-```sh
-    # Environment variables for .NET MAUI development <br>
-    export JAVA_HOME=${HOME}/MAUI/java <br>
-    export ANDROID_HOME=${HOME}/MAUI/android <br>
-    export ANDROID_SDK_HOME=${HOME}/MAUI <br>
-    export PATH=${PATH}:${ANDROID_HOME}/cmdline-tools/11.0/bin <br>
-```
-
-The new settings will not affect any currently running terminal windows. You will need to restart them or alternatively type the same commands at the prompt.
 
 ## 4. Install VSCode
 
