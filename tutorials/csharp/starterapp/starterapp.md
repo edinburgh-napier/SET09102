@@ -1,3 +1,10 @@
+---
+title: StarterApp
+parent: C# practice
+grand_parent: Tutorials
+nav_order: 9
+---
+
 # StarterApp app
 
 The StarterApp provides a starting point for a development project. It includes

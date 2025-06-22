@@ -3,7 +3,7 @@ title: Troubleshooting
 parent: C# practice
 has_children: true
 has_toc: false
-nav_order: 9
+nav_order: 10
 ---
 
 # How-to guides
