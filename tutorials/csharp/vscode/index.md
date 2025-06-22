@@ -414,9 +414,16 @@ We will be using [git](https://git-scm.com/) in this module.
 
 Use the appropriate command below to install git on your computer if it is not installed already.
 
-<i class="fa-brands fa-windows icon"></i> [Windows git installer](https://gitforwindows.org/){:target="_blank"}
+[Windows](){: .btn .btn-blue .tab-control data-tabset="git" data-seq="1" }
+[Mac](){: .btn .tab-control data-tabset="git" data-seq="2" }
 
-<i class="fa-brands fa-apple icon"></i> git is already installed on Macs <i class="fa-regular fa-face-smile icon"></i>
+> [Windows git installer](https://gitforwindows.org/){:target="_blank"}
+> 
+{: .tab data-tabset="git" data-seq="1" }
+
+> git is already installed on Macs <i class="fa-regular fa-face-smile icon"></i>
+>
+{: .tab data-tabset="git" data-seq="2" }
 
 ## 16. Create a repository
 
