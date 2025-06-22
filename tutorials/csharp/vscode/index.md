@@ -328,8 +328,8 @@ You may see some prompts appear in the bottom right-hand corner of the window as
 
 The values you need are shown below
 
-[Windows and Intel Mac](){: .btn .btn-blue .tab-control data-tabset="paths" data-seq="1" }
-[Apple Silicon Mac](){: .btn .tab-control data-tabset="paths" data-seq="2" }
+[Windows](){: .btn .btn-blue .tab-control data-tabset="paths" data-seq="1" }
+[Mac](){: .btn .tab-control data-tabset="paths" data-seq="2" }
 
 > | Variable         | Description                                    | Value                                                            |
 > |------------------|------------------------------------------------|------------------------------------------------------------------|
@@ -359,8 +359,8 @@ will be displayed as shown below. The image shows the Android SDK Platform 34 in
 Creating an API is simply a question of pairing an Android platform with a device file. We will 
 be using the Google Pixel Pro 7 which can be installed using one of the commands below.
 
-[Windows](){: .btn .btn-blue .tab-control data-tabset="avd2" data-seq="1" }
-[Mac](){: .btn .tab-control data-tabset="avd2" data-seq="2" }
+[Windows and Intel Mac](){: .btn .btn-blue .tab-control data-tabset="avd2" data-seq="1" }
+[Apple Silicon Mac](){: .btn .tab-control data-tabset="avd2" data-seq="2" }
 
 > ```
 > avdmanager create avd -d 30 --name Pixel_7_Pro -k "system-images;android-34;google_apis;x86_64"
