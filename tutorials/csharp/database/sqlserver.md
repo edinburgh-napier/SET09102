@@ -88,14 +88,14 @@ Select the instructions that correspond to the database access tool you are usin
 >    The next page provides a field where you can type in 
 >    [Transact-SQL](https://learn.microsoft.com/en-us/sql/t-sql/language-reference?view=sql-server-ver16) 
 >    (T-SQL) commands. Enter the following command to create a new server-level login and then click 
->    _Run_ as shown in Fig. 3.  Replace `&lt;Login name&gt;` with the name you want to use (for the 
->    Notes tutorial, this could be `notesapp`, for example) and replace `&lt;Password&gt;` with an 
+>    _Run_ as shown in Fig. 3.  Replace `<Login name>` with the name you want to use (for the 
+>    Notes tutorial, this could be `notesapp`, for example) and replace `<Password>` with an 
 >    appropriate password (e.g `N0tesApp$`). Note that the password must meet the strength that SQL 
 >    Server requires by being at least 8 characters long and containing characters from three of the 
 >    following four sets: Uppercase letters, Lowercase letters, Base 10 digits, and Symbols.
 > 
 >    ``` sql
->    CREATE LOGIN &lt;Login name&gt; WITH PASSWORD='&lt;Password&gt;';
+>    CREATE LOGIN <Login name> WITH PASSWORD='<Password>';
 >    ```
 > 
 >    ![Fig. 3. Creating a server-level login in DataGrip](images/datagrip_new_login.png){: standalone .w30 #fig3 data-title="Creating a server-level login in DataGrip" }
@@ -113,11 +113,11 @@ Select the instructions that correspond to the database access tool you are usin
 > 
 >    A _user_ is defined at the level of an individual database. The first step is therefore to change 
 >    to your new database as shown in Fig. 5. Then execute the following command replacing 
->    `&lt;Username&gt;` and `&lt;Login name&gt;` with your values. Note that you can use the same name in 
+>    `<Username>` and `<Login name>` with your values. Note that you can use the same name in 
 >    both cases (e.g. `notesapp` for the Notes tutorial). 
 > 
 >    ```sql
->    CREATE user &lt;Username&gt; for login &lt;Login name&gt;;
+>    CREATE user <Username> for login <Login name>;
 >    ```
 > 
 >    ![Fig. 5. Creating a new user for the login in DataGrip](images/datagrip_new_user.png){: standalone .w30 #fig5 data-title="Creating a new user for the login in DataGrip" }
@@ -125,11 +125,11 @@ Select the instructions that correspond to the database access tool you are usin
 > 4. **Grant permissions to the new user**
 > 
 >    With the new database still active, execute the following T-SQL command to grant all 
->    permission to the user you created. Again, replace `&lt;Database name&gt;` and `&lt;Username&gt;`
+>    permission to the user you created. Again, replace `<Database name>` and `<Username>`
 >    with your values.
 > 
 >    ```sql
->    GRANT control on DATABASE::&lt;Database name&gt; to &lt;Username&gt;;
+>    GRANT control on DATABASE::<Database name> to <Username>;
 >    ```
 > 
 >    Next, disconnect from SQL Server using the icon in the explorer pane and edit the details of the 
@@ -186,14 +186,14 @@ Select the instructions that correspond to the database access tool you are usin
 >    The next page provides a field where you can type in 
 >    [Transact-SQL](https://learn.microsoft.com/en-us/sql/t-sql/language-reference?view=sql-server-ver16) 
 >    (T-SQL) commands. Enter the following command to create a new server-level login and then click 
->    _Run_ as shown in Fig. 3.  Replace `&lt;Login name&gt;` with the name you want to use (for the 
->    Notes tutorial, this could be `notesapp`, for example) and replace `&lt;Password&gt;` with an 
+>    _Run_ as shown in Fig. 3.  Replace `<Login name>` with the name you want to use (for the 
+>    Notes tutorial, this could be `notesapp`, for example) and replace `<Password>` with an 
 >    appropriate password (e.g `N0tesApp$`). Note that the password must meet the strength that SQL 
 >    Server requires by being at least 8 characters long and containing characters from three of the 
 >    following four sets: Uppercase letters, Lowercase letters, Base 10 digits, and Symbols.
 > 
 >    ``` sql
->    CREATE LOGIN &lt;Login name&gt; WITH PASSWORD='&lt;Password&gt;';
+>    CREATE LOGIN <Login name> WITH PASSWORD='<Password>';
 >    ```
 > 
 >    ![Fig. 3. Creating a server-level login in Azure Data Studio](images/create_login.png){: standalone .w30 #fig3 data-title="Creating a server-level login in Azure Data Studio" }
@@ -210,11 +210,11 @@ Select the instructions that correspond to the database access tool you are usin
 > 
 >    A _user_ is defined at the level of an individual database. The first step is therefore to change 
 >    to your new database as shown in Fig. 5. Then execute the following command replacing 
->    `&lt;Username&gt;` and `&lt;Login name&gt;` with your values. Note that you can use the same name in 
+>    `<Username>` and `<Login name>` with your values. Note that you can use the same name in 
 >    both cases (e.g. `notesapp` for the Notes tutorial). 
 > 
 >    ```sql
->    CREATE user &lt;Username&gt; for login &lt;Login name&gt;;
+>    CREATE user <Username> for login <Login name>;
 >    ```
 > 
 >    ![Fig. 5. Creating a new user for the notesapp login in Azure Data Studio](images/create_user.png){: standalone .w30 #fig5 data-title="Creating a new user for the notesapp login in Azure Data Studio" }
@@ -222,11 +222,11 @@ Select the instructions that correspond to the database access tool you are usin
 > 4. **Grant permissions to the new user**
 > 
 >    With the new database still active, execute the following T-SQL command to grant all 
->    permission to the user you created. Again, replace `&lt;Database name&gt;` and `&lt;Username&gt;`
+>    permission to the user you created. Again, replace `<Database name>` and `<Username>`
 >    with your values.
 > 
 >    ```sql
->    GRANT control on DATABASE::&lt;Database name&gt; to &lt;Username&gt;;
+>    GRANT control on DATABASE::<Database name> to <Username>;
 >    ```
 > 
 >    Next, disconnect from SQL Server using the icon in the explorer pane and edit the details of the 
