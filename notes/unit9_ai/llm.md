@@ -307,6 +307,24 @@ than natural language. Notable examples include:
 At the time of writing, these are not the only software engineering tools and services to
 make use of generative AI, and there will be many others in the near future.
 
+## Claude Code
+
+Claude Code is an AI-powered development tool that integrates LLM capabilities directly into the software development workflow. Unlike simple code completion tools, Claude Code provides comprehensive assistance throughout the development process, from planning and implementation to testing and documentation. It represents a significant evolution in how LLMs can support software engineering tasks, offering capabilities that extend far beyond line-by-line code suggestions.
+
+**Integration and accessibility** is a key strength of Claude Code. It integrates with popular development environments including VS Code, JetBrains IDEs (such as IntelliJ IDEA and PyCharm), and can be accessed through both command-line interfaces and web browsers. This flexibility allows developers to choose the interface that best suits their current task — terminal sessions for operations requiring git integration, and web sessions for cleaner review and reasoning tasks. Some developers maintain multiple parallel sessions to handle independent tasks simultaneously, maximising throughput without waiting for sequential operations to complete.
+
+A distinctive feature is **plan mode**, which encourages developers to outline their approach before writing code. In plan mode, you describe the functionality you want to implement, and Claude helps break it down into manageable steps, suggests appropriate algorithms, and generates preliminary code structures. This approach mirrors professional software engineering practices where planning precedes implementation, helping to ensure that the final solution is well-structured and addresses all requirements. Plan mode is particularly valuable for complex tasks where multiple valid approaches exist, as it allows you to evaluate options before committing to an implementation.
+
+**Customisation through project memory** is achieved using a CLAUDE.md file maintained in your project repository. This file acts as a living style guide and project memory, capturing team conventions, common mistakes to avoid, preferred coding patterns, and project-specific commands. When Claude gets something wrong or deviates from your preferences, you update CLAUDE.md to prevent similar issues in future interactions. This file typically includes sections on coding style, workflow preferences, debugging approaches, and testing requirements. By keeping this file concise and focused, you create a persistent knowledge base that improves the quality of assistance over time.
+
+An important principle when working with Claude Code is to **build verification into your workflow**. Rather than simply accepting generated code, establish ways for Claude to verify its own work. This might involve running test suites, executing specific commands to check functionality, or reviewing outputs against expected results. For example, after implementing a new feature, Claude can be instructed to run relevant tests and interpret the results, iterating on the solution if issues are discovered. This verification loop significantly improves code quality and reduces the likelihood of undetected errors. The ability to verify outputs transforms Claude from a code generator into a more reliable development partner.
+
+For recurring tasks, Claude Code supports **custom slash commands** that can be shared across your team. These commands encapsulate common workflows — such as preparing clean commits, running test suites, or generating documentation — reducing friction and ensuring consistency. Similarly, you can pre-authorise safe tools and commands through permission settings, balancing security with workflow efficiency. As you become more proficient, you might explore advanced features like subagents for specialised tasks, hooks that automatically format code after edits, or MCP (Model Context Protocol) integrations that connect Claude to external systems like issue trackers or analytics platforms.
+
+The effectiveness of Claude Code depends significantly on how it's used. Providing clear context, maintaining project memory through CLAUDE.md, incorporating verification steps, and iterating on your workflows all contribute to better outcomes. As with any AI tool, the results reflect the patterns present in training data, meaning Claude performs best on well-documented problems and established patterns. Understanding these capabilities and limitations helps you leverage Claude Code effectively while maintaining appropriate oversight of the code it generates.
+
+
+
 ## Limitations
 
 The transformer architecture faces several drawbacks, including a high computational cost. This 
