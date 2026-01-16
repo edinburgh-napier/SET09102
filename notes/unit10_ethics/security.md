@@ -100,23 +100,23 @@ Tsipenyuk, Chess and McGraw has been incorporated into the
 [Common Weakness Enumeration](https://cwe.mitre.org/data/definitions/699.html) (CWE), an open
 database of known security threats maintained by [MITRE](https://www.mitre.org/). The database
 is kept up to date by the user community, and a list of the top 25 software vulnerabilities is
-published each year. The list for 2023 is shown below.
+published each year. The list for 2025 is shown below.
 
-|                                                                                   |                                                                                                     |
-|-----------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------|
-| 1. [Out-of-bounds Write](https://cwe.mitre.org/data/definitions/787.html)         | 14. [Integer Overflow](https://cwe.mitre.org/data/definitions/190.html)                             |
-| 2. [Cross-site Scripting](https://cwe.mitre.org/data/definitions/79.html)         | 15. [Deserialization of Untrusted Data](https://cwe.mitre.org/data/definitions/502.html)            |
-| 3. [SQL Injection](https://cwe.mitre.org/data/definitions/89.html)                | 16. [Command Injection](https://cwe.mitre.org/data/definitions/77.html)                             |
-| 4. [Use After Free](https://cwe.mitre.org/data/definitions/416.html)              | 17. [Improper Use of Memory Buffer](https://cwe.mitre.org/data/definitions/119.html)                |
-| 5. [OS Command Injection](https://cwe.mitre.org/data/definitions/78.html)         | 18. [Use of Hard-coded Credentials](https://cwe.mitre.org/data/definitions/798.html)                |
-| 6. [Improper Input Validation](https://cwe.mitre.org/data/definitions/20.html)    | 19. [Server-Side Request Forgery](https://cwe.mitre.org/data/definitions/918.html)                  |
-| 7. [Out-of-bounds Read](https://cwe.mitre.org/data/definitions/125.html)          | 20. [Missing Authentication for Critical Function](https://cwe.mitre.org/data/definitions/306.html) |
-| 8. [Path Traversal](https://cwe.mitre.org/data/definitions/22.html)               | 21. [Race Condition](https://cwe.mitre.org/data/definitions/362.html)                               |
-| 9. [Cross-Site Request Forgery](https://cwe.mitre.org/data/definitions/352.html)  | 22. [Improper Privilege Management](https://cwe.mitre.org/data/definitions/269.html)                |
-| 10. [Dangerous File Type Upload](https://cwe.mitre.org/data/definitions/434.html) | 23. [Code Injection](https://cwe.mitre.org/data/definitions/94.html)                                |
-| 11. [Missing Authorization](https://cwe.mitre.org/data/definitions/862.html)      | 24. [Incorrect Authorization](https://cwe.mitre.org/data/definitions/863.html)                      |
-| 12. [NULL Pointer Dereference](https://cwe.mitre.org/data/definitions/476.html)   | 25. [Incorrect Default Permissions](https://cwe.mitre.org/data/definitions/276.html)                                                               |
-| 13. [Improper Authentication](https://cwe.mitre.org/data/definitions/287.html)                                                   |                                                                                                     |
+|                                                                                   |                                                                                                                   |
+|-----------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------|
+| 1. [Cross-site Scripting](https://cwe.mitre.org/data/definitions/79.html)         | 14. [Stack-based Buffer Overflow](https://cwe.mitre.org/data/definitions/121.html)                                |
+| 2. [SQL Injection](https://cwe.mitre.org/data/definitions/89.html)                | 15. [Deserialization of Untrusted Data](https://cwe.mitre.org/data/definitions/502.html)                          |
+| 3. [Cross-Site Request Forgery](https://cwe.mitre.org/data/definitions/352.html)  | 16. [Heap-based Buffer Overflow](https://cwe.mitre.org/data/definitions/122.html)                                 |
+| 4. [Missing Authorization](https://cwe.mitre.org/data/definitions/862.html)       | 17. [Incorrect Authorization](https://cwe.mitre.org/data/definitions/863.html)                                    |
+| 5. [Out-of-bounds Write](https://cwe.mitre.org/data/definitions/787.html)         | 18. [Improper Input Validation](https://cwe.mitre.org/data/definitions/20.html)                                   |
+| 6. [Path Traversal](https://cwe.mitre.org/data/definitions/22.html)               | 19. [Improper Access Control](Improper Access Control)                                                            |
+| 7. [Use After Free](https://cwe.mitre.org/data/definitions/416.html)              | 20. [Exposure of Sensitive Information to an Unauthorized Actor](https://cwe.mitre.org/data/definitions/200.html) |
+| 8. [Out-of-Bounds Read](https://cwe.mitre.org/data/definitions/125.html)          | 21. [Missing Authentication for Critical Function](https://cwe.mitre.org/data/definitions/306.html)               |
+| 9. [OS Command Injection](https://cwe.mitre.org/data/definitions/78.html)         | 22. [Server-Side Request Forgery](https://cwe.mitre.org/data/definitions/918.html)                                |
+| 10. [Code Injection](https://cwe.mitre.org/data/definitions/94.html)              | 23. [Command Injection](https://cwe.mitre.org/data/definitions/77.html)                                           |
+| 11. [Classic Buffer Overflow](https://cwe.mitre.org/data/definitions/120.html)    | 24. [Authorization Bypass Through User-Controlled Key](https://cwe.mitre.org/data/definitions/639.html)           |
+| 12. [Dangerous File Type Upload](https://cwe.mitre.org/data/definitions/434.html) | 25. [Allocation of Resources Without Limits or Throttling](https://cwe.mitre.org/data/definitions/770.html)       |
+| 13. [NULL Pointer Dereference](https://cwe.mitre.org/data/definitions/476.html)   |                                                                                                                   |
 
 Other organisations, such as the
 [Open Worldwide Application Security Project](https://owasp.org/) (OWASP) also produce updated
