@@ -665,7 +665,91 @@ emulator-5554	device
 
 If the emulator appears in the list, you're ready to deploy apps from the container.
 
-## 12. Managing Your Development Environment
+## 12. Create and Run a MAUI Application
+
+With the development container running and the emulator connected, you can create and deploy
+a .NET MAUI application.
+
+### Create a new MAUI project
+
+Inside the container terminal, create a new MAUI project:
+
+```bash
+cd /workspace
+dotnet new maui -n HelloMaui
+```
+
+This creates a new directory called `HelloMaui` containing a default MAUI application with
+a simple counter interface.
+
+### Build for Android
+
+Navigate to the project directory and build for Android:
+
+```bash
+cd HelloMaui
+dotnet build -f net9.0-android
+```
+
+{: .note-title }
+> <i class="fa-solid fa-circle-info"></i> Target Framework
+>
+> The `-f net9.0-android` flag specifies the Android target framework. MAUI projects can
+> target multiple platforms (Android, iOS, Windows, Mac), and this flag ensures you build
+> specifically for Android.
+
+The first build downloads additional dependencies and may take a few minutes. Subsequent
+builds will be faster.
+
+### Deploy to the Emulator
+
+Ensure your emulator is running and the ADB connection is established (check with `adb devices`),
+then deploy and run the application:
+
+```bash
+dotnet build -f net9.0-android -t:Install
+```
+
+The `-t:Install` target builds the app and installs it on the connected emulator. After
+installation completes, you can find the app in the emulator's app drawer.
+
+Alternatively, to build, install, and automatically launch the app:
+
+```bash
+dotnet build -f net9.0-android -t:Run
+```
+
+{: .warning-title }
+> <i class="fa-solid fa-triangle-exclamation"></i> Warning
+>
+> If the deployment fails with "no devices/emulators found", verify that:
+> - The emulator is running on your host machine
+> - The ADB server is started with `adb -a -P 5037 nodaemon server start` on the host
+> - The container has `ADB_SERVER_SOCKET` set correctly
+> - `adb devices` shows the emulator in the container
+
+### Verify the Application
+
+The default MAUI app displays a "Hello, World!" message and a button that counts clicks.
+Tap the button to verify the app is running correctly.
+
+![Fig. 12. Default MAUI application running on the Android emulator](images/maui_default_app.png){: standalone #fig12 data-title="Default MAUI application running on the Android emulator" }
+
+### Hot Reload (Optional)
+
+For faster development iteration, you can use Hot Reload to see changes without rebuilding:
+
+```bash
+dotnet watch run -f net9.0-android
+```
+
+{: .note-title }
+> <i class="fa-solid fa-circle-info"></i> Note
+>
+> Hot Reload works best for XAML and minor code changes. Structural changes to your app
+> may still require a full rebuild.
+
+## 13. Managing Your Development Environment
 
 ### Starting and stopping
 
