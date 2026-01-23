@@ -6,64 +6,29 @@ nav_order: 1
 ---
 # Getting started with Visual Studio Code
 
-The purpose of this exercise is to install and configure the software tools required for the
-rest of the module.
+This tutorial covers setting up the Android emulator on your host machine and creating .NET MAUI
+projects inside the containerised development environment.
 
-Follow the instructions below carefully.
+{: .note-title }
+> <i class="fa-solid fa-circle-info"></i> Prerequisites
+>
+> Before starting this tutorial, complete the [Development Environment Setup](../../tools/dev-environment/)
+> tutorial to set up your Docker-based development container with .NET SDK, MAUI workloads, and
+> Android SDK tools.
 
-Where you are asked to execute a command, you should do this in a command window. On a Mac,
-that means in a [terminal](https://support.apple.com/en-gb/guide/terminal/welcome/mac){:target="_blank"},
-and on Windows it means using a command prompt. 
+## 1. Set Up Android SDK on Host (for Emulator)
 
-{: .warning-title }
-> <i class="fa-solid fa-triangle-exclamation"></i> Warning
-> 
-> Please avoid using the Windows PowerShell unless you are confident with it.
-> You can configure the default terminal tool to be CMD in your
-> <a href="https://code.visualstudio.com/docs/terminal/profiles" target="_blank">VSCode profile</a>
+The Android emulator runs on your host machine for better performance and GPU acceleration.
+You need to install the Android SDK tools locally to manage the emulator.
 
-When you see **USERNAME** in a variable value, replace it with your username on your computer.
+### Create environment variables
 
-## 1. Install the .NET SDK
-
-Follow the instructions for your operating system on the [Microsoft website](https://learn.microsoft.com/en-us/dotnet/core/install/){:target="_blank"}
-You should install .NET 9 for the purposes of this exercise. 
-
-Check that .NET is installed correctly by executing the command:
-
-{% highlight shell %}dotnet --version {% endhighlight %}
-
-You should see that your .NET version is 9.0.6 (or higher).
-
-## 2. Install MAUI workloads
-
-A workload is a set of software files that provide support functionality for a .NET feature.
-For example, the MAUI workloads add options to the VSCode command palette for creating a new
-MAUI project, configuring the development environment and choosing a target device for mobile
-development.
-
-Install the MAUI workloads by executing the command:
-
-{% highlight shell %}dotnet workload install maui{% endhighlight %}
-
-The command is the same for both Mac and Windows
-
-## 3. Set environment variables
-
-Environment variables are values that are set centrally at the operating system level and
-are used by software applications and command windows. They hold values such as the path
-to executable or configuration files.
+Environment variables tell the Android tools where to find their components.
 
 [Windows](){: .btn .btn-blue .tab-control data-tabset="env" data-seq="1" }
 [Mac](){: .btn .tab-control data-tabset="env" data-seq="2" }
 
-> You can see the environment variables you currently have set with the command:
->
-> ```
-> set
-> ```
-> 
-> The following variables are required for building and testing Android versions of your app.
+> The following variables are required for the Android emulator.
 >
 > | Variable         | Description                                                            | Value                          |
 > |------------------|------------------------------------------------------------------------|--------------------------------|
@@ -71,19 +36,16 @@ to executable or configuration files.
 > | ANDROID_HOME     | Stores the root of an Android SDK                                      | C:\Users\USERNAME\MAUI\android |
 > | ANDROID_SDK_HOME | Stores the directory that contains user-specific settings such as ADVs | C:\Users\USERNAME\.android     |
 >
-> The best approach is to create a folder in your home directory and let .NET install the appropriate versions there specifically for use with .NET. Instructions for this are given later. For now, it is enough to create the relevant directories and set the environment variables.
+> Replace **USERNAME** with your Windows username.
 >
-> {: .warning-title }
-> > <i class="fa-solid fa-triangle-exclamation"></i> Warning
-> > 
-> > Please check whether you already have these environment variables defined. If so, changing them may affect other applications that you use.
->
-> ### Create the new directory
+> ### Create the directories
 >
 > ```
 > mkdir C:\Users\USERNAME\MAUI
+> mkdir C:\Users\USERNAME\MAUI\android
+> mkdir C:\Users\USERNAME\MAUI\java
 > ```
-> 
+>
 > ### Create the variables
 >
 > In the Start menu panel, start typing *Environment variables* and choose the option to edit them when it
@@ -103,18 +65,12 @@ to executable or configuration files.
 >
 > ![Fig. 3. Updating the PATH on Windows](images/env_var_win_3.png){: standalone #fig4 data-title="Updating the PATH on Windows"}
 >
-> The changes will not be visible in any CMD or PowerShell windows that are currently open. 
+> The changes will not be visible in any CMD or PowerShell windows that are currently open.
 > You will need to close and re-open them to pick up the new variables.
 >
 {: .tab data-tabset="env" data-seq="1" }
 
-> You can see the environment variables you currently have set with the command:
->
-> ```
-> env
-> ```
-> 
-> The following variables are required for building and testing Android versions of your app.
+> The following variables are required for the Android emulator.
 >
 > | Variable         | Description                                                            | Value                        |
 > |------------------|------------------------------------------------------------------------|------------------------------|
@@ -122,140 +78,67 @@ to executable or configuration files.
 > | ANDROID_HOME     | Stores the root of an Android SDK                                      | /Users/USERNAME/MAUI/android |
 > | ANDROID_SDK_HOME | Stores the directory that contains user-specific settings such as ADVs | /Users/USERNAME/.android     |
 >
-> The best approach is to create a folder in your home directory and let .NET install the appropriate versions there specifically for use with .NET. Instructions for this are given later. For now, it is enough to create the relevant directories and set the environment variables.
+> Replace **USERNAME** with your Mac username.
 >
-> {: .warning-title }
-> > <i class="fa-solid fa-triangle-exclamation"></i> Warning
-> > 
-> > Please check whether you already have these environment variables defined. If so, changing them may 
-> > affect other applications that you use.
+> ### Create the directories
 >
-> ### Create the new directory
->
+> ```bash
+> mkdir -p ~/MAUI/android ~/MAUI/java
 > ```
-> mkdir ~/MAUI
-> ```
->  
+>
 > ### Create the variables
 >
-> The simplest way to define environment variables is in the .zshrc file in your home 
-> directory. This file is run automatically whenever a new terminal is opened and when an 
-> application starts. Edit the file and add the following lines at the end.
+> Edit the `.zshrc` file in your home directory and add the following lines at the end:
 >
 > ```sh
->     # Environment variables for .NET MAUI development <br>
->     export JAVA_HOME=${HOME}/MAUI/java <br>
->     export ANDROID_HOME=${HOME}/MAUI/android <br>
->     export ANDROID_SDK_HOME=${HOME}/MAUI <br>
->     export PATH=${PATH}:${ANDROID_HOME}/cmdline-tools/11.0/bin <br>
+> # Environment variables for Android emulator
+> export JAVA_HOME=${HOME}/MAUI/java
+> export ANDROID_HOME=${HOME}/MAUI/android
+> export ANDROID_SDK_HOME=${HOME}/MAUI
+> export PATH=${PATH}:${ANDROID_HOME}/cmdline-tools/11.0/bin
+> export PATH=${PATH}:${ANDROID_HOME}/emulator
+> export PATH=${PATH}:${ANDROID_HOME}/platform-tools
 > ```
 >
-> The new settings will not affect any currently running terminal windows. You will need to restart 
-> them or alternatively type the same commands at the prompt.
+> The new settings will not affect any currently running terminal windows. Restart your terminal
+> or run `source ~/.zshrc` to apply the changes.
 >
 {: .tab data-tabset="env" data-seq="2" }
 
-## 4. Install VSCode
+### Install Android SDK command-line tools
 
-Follow the installation instructions for your operating system on the [VSCode website](https://code.visualstudio.com/download){:target="_blank"}
+Download the Android SDK command-line tools from the
+[Android developer website](https://developer.android.com/studio#command-tools){:target="_blank"}.
 
-Once the installation is finished, open the application and install the following extensions:
+Extract the downloaded archive and copy the `cmdline-tools` folder to your ANDROID_HOME directory,
+renaming it to include a version number:
 
-* .NET MAUI (dotnettools.dotnet-maui)
-* AVD Manager (toroxx.vscode-avdmanager)
+[Windows](){: .btn .btn-blue .tab-control data-tabset="cmdline" data-seq="1" }
+[Mac](){: .btn .tab-control data-tabset="cmdline" data-seq="2" }
 
-The first one requires some other extensions as dependencies and these will be added automatically.
-
-Note that you will need to sign in with your University username and password to use the .NET extension. Some error messages may appear but they can be ignored once you have signed in.
-
-When you are done, you should have at least the extensions shown below.
-
-![Fig. 4. VSCode extensions](images/vscode_extensions.png){: standalone #fig4 .h30 data-title="VSCode extensions"}
-
-## 5. Create a new project
-
-Open the command palette in VSCode (`CTRL+SHIFT+P` in Windows or `CMD+SHIFT+P` on Mac)
-and select the `.NET: New Project...` option. VSCode will then prompt you for several
-pieces of information. Enter or select the values shown below.
-
-| Prompt                 | Response                                                                |
-|------------------------|-------------------------------------------------------------------------|
-| Project type           | `.NET MAUI App Android, iOS, Mac Catalyst, macOS, MAUI, Tizen, Windows` |
-| Project root directory | Create a folder on your computer called `Notes`                         |
-| Project name           | `Notes`                                                                 |
-| Options confirmation   | Press ENTER to confirm your choices in this final step                  |
-
-VSCode will generate a complete default application for you.
-
-## 6. Install Android dependencies
-
-.NET 9 has a build target that installs the Android dependencies using the environment variables 
-that you defined earlier. However, the command must be run from the root directory of a .NET 
-project. Change into the root directory of your project (created in step 3 above) - that is the 
-one containing the *.sln* file.
-
-[Windows](){: .btn .btn-blue .tab-control data-tabset="android" data-seq="1" }
-[Mac](){: .btn .tab-control data-tabset="android" data-seq="2" }
-
-> Run the following command to configure your machine:
->
 > ```
-> dotnet build -t:InstallAndroidDependencies -f:net9.0-android -p:AndroidSdkDirectory="%ANDROID_HOME%" -p:JavaSdkDirectory="%JAVA_HOME%" -p:AcceptAndroidSDKLicenses=True
+> mkdir %ANDROID_HOME%\cmdline-tools\11.0
+> :: Copy contents of extracted cmdline-tools folder to %ANDROID_HOME%\cmdline-tools\11.0
 > ```
 >
-> {: .warning-title }
-> > <i class="fa-solid fa-triangle-exclamation"></i> Warning
-> > 
-> > This command will only work in the CMD window and not the Windows PowerShell.
-> > You can configure the default terminal tool to be CMD in your
-> > <a href="https://code.visualstudio.com/docs/terminal/profiles" target="_blank">VSCode profile</a>
+{: .tab data-tabset="cmdline" data-seq="1" }
+
+> ```bash
+> mkdir -p $ANDROID_HOME/cmdline-tools/11.0
+> # Copy contents of extracted cmdline-tools folder to $ANDROID_HOME/cmdline-tools/11.0
+> ```
 >
-{: .tab data-tabset="android" data-seq="1" }
+{: .tab data-tabset="cmdline" data-seq="2" }
 
-> Run the following command to configure your machine:
->
-> ```
-> dotnet build -t:InstallAndroidDependencies -f:net9.0-android -p:AndroidSdkDirectory="${ANDROID_HOME}" -p:JavaSdkDirectory="${JAVA_HOME}" -p:AcceptAndroidSDKLicenses=True
-> ```
-{: .tab data-tabset="android" data-seq="2" }
+Verify the installation by running:
 
-## 7. Update Android SDK
+```
+sdkmanager --version
+```
 
-The Android SDK installed in the previous step may not be completely up to date. Update the contents with
+## 2. Install Android Emulator
 
-[<i class="fa-solid fa-circle-info icon"></i> ](https://developer.android.com/tools/sdkmanager){:target="_blank"}
-<hr class="icon-prefix">
-
-{% highlight shell %}sdkmanager --update {% endhighlight %}
-
-## 8. Build project
-
-The purpose of this step is to check that everything is working so far. If all of the steps up to this point have been successful, it should be possible to build the app.
-
-First, restart VSCode to pick up any environment changes since it was last opened.
-
-Next, open the project root folder using the *File -&gt; Open Folder... *option on the menu.
-
-To build the project, right-click the project name in the *Solution Explorer *section of the files panel as shown.
-
-![Fig. 5. Building the project](images/vscode_build.png){: standalone #fig5 .h30 data-title="Building the project"}
-
-{: .warning-title }
-> <i class="fa-solid fa-triangle-exclamation"></i> Warning
-> 
-> If you see the error message **error XA5300: The Android SDK directory could not be found** with a recommendation to set the **AndroidSdkDirectory** MSBuild property, add the following line to the *Haulage.cproj* file replacing ANDROID_HOME with the value of the environment variable you set earlier.
-> 
-> ``` shell
-> <AndroidSdkDirectory>ANDROID_HOME</AndroidSdkDirectory>
-> ```
-
-If there are any other error messages in the output, they will need to be investigated and resolved before moving on.
-
-## 9. Install Android emulator
-
-To build and test your apps for the Android platform, you need either an Android phone or a software emulator. For consistency, we are planning to use an emulator by default, but if you want to use your Adroid device that is fine. You will just need to follow the appropriate instructions.
-
-The emulator can be installed using the following command:
+The emulator is a separate component that hosts Android virtual devices.
 
 [<i class="fa-solid fa-circle-info icon"></i>](https://developer.android.com/tools/sdkmanager){:target="_blank"}
 <hr class="icon-prefix">
@@ -264,27 +147,18 @@ The emulator can be installed using the following command:
 
 {: .warning-title }
 > <i class="fa-solid fa-triangle-exclamation"></i> Warning
-> 
+>
 > If the command above fails with the message *Failed to find package 'emulator'*, you can
 > install an emulator manually. [Download the latest version](https://developer.android.com/studio/emulator_archive),
 > unzip it and copy the *emulator* directory into the *ANDROID_HOME* directory.
 >
 > Copy the file *package.xml* from the *setup* directory in your cloned repo into the
 > *emulator* directory. Edit the last line of the file so that the revision number
-> corresponds to the version of the emulator that you downloaded
+> corresponds to the version of the emulator that you downloaded.
 
+## 3. Install AVD Image
 
-## 10. Install AVD image
-
-The emulator is an application for playing virtual machines that represent different types of 
-phone with different software configurations. On its own, it does nothing, so we need to create a 
-virtual device for it to host. The first step is to choose which image to use. You can get a list 
-of all available system images by using the command
-
-{% highlight shell %}sdkmanager --list {% endhighlight %}
-
-By default, we will be using Android 34; however, Apple Silicon Macs require a different image 
-because of their architecture.
+The emulator needs a system image to run. Choose the appropriate image for your platform:
 
 [Windows and Intel Mac](){: .btn .btn-blue .tab-control data-tabset="avd" data-seq="1" }
 [Apple Silicon Mac](){: .btn .tab-control data-tabset="avd" data-seq="2" }
@@ -292,31 +166,31 @@ because of their architecture.
 > ```
 > sdkmanager --install "system-images;android-34;google_apis;x86_64"
 > ```
-> 
+>
 {: .tab data-tabset="avd" data-seq="1" }
 
 > ```
 > sdkmanager --install "system-images;android-34;google_apis;arm64-v8a"
 > ```
-> 
+>
 {: .tab data-tabset="avd" data-seq="2" }
 
-## 11. Configure AVD manager
+You can see all available images with:
 
-The AVD Manager extension in VSCode allows you to create Android Virtual Devices (AVDs) based on the images that you have installed.
+{% highlight shell %}sdkmanager --list {% endhighlight %}
+
+## 4. Configure AVD Manager in VSCode
+
+The AVD Manager extension in VSCode allows you to create and manage Android Virtual Devices.
 
 Activate the AVD Manager panel by clicking the Android icon in the left-hand menu.
 
-You may see some prompts appear in the bottom right-hand corner of the window asking you to configure the required paths. If so, click the button to update the value and navigate to the appropriate executable if needed.
+You may see prompts to configure the required paths. If not, open the VSCode command palette
+(`Ctrl+Shift+P` on Windows or `Cmd+Shift+P` on Mac) and type *AVD* to find the settings.
 
-{: .warning-title }
-> <i class="fa-solid fa-triangle-exclamation"></i> Warning
-> 
->  If the prompts do not appear, you may need to update the values manually. Call up the VSCode command palette by pressing Shift+Ctrl+P on Windows or Shift+Cmd+P on Mac. Then type *AVD* into the search box. There are four settings that need to be updated as shown below. When prompted, make each setting global.
+![Fig. 4. Updating AVD Manager paths](images/avd_update_paths.png){: standalone #fig6 data-title="Updating AVD Manager paths"}
 
-![Fig. 6. Updating AVD Manager paths](images/avd_update_paths.png){: standalone #fig6 data-title="Updating AVD Manager paths"}
-
-The values you need are shown below
+The values you need are:
 
 [Windows](){: .btn .btn-blue .tab-control data-tabset="paths" data-seq="1" }
 [Mac](){: .btn .tab-control data-tabset="paths" data-seq="2" }
@@ -339,15 +213,13 @@ The values you need are shown below
 >
 {: .tab data-tabset="paths" data-seq="2" }
 
-Once the AVD Manager is correctly configured, information about the installed and available SDK components 
-will be displayed as shown below. The image shows the Android SDK Platform 34 installed, but no AVDs yet.
+Once configured, the AVD Manager will display information about installed SDK components.
 
-![Fig. 7. SDK details](images/sdk_details.png){: standalone #fig7 data-title="SDK details"}
+![Fig. 5. SDK details](images/sdk_details.png){: standalone #fig7 data-title="SDK details"}
 
-## 12. Create AVD
+## 5. Create an Android Virtual Device (AVD)
 
-Creating an API is simply a question of pairing an Android platform with a device file. We will 
-be using the Google Pixel Pro 7 which can be installed using one of the commands below.
+Create an AVD using the Google Pixel 7 Pro device profile:
 
 [Windows and Intel Mac](){: .btn .btn-blue .tab-control data-tabset="avd2" data-seq="1" }
 [Apple Silicon Mac](){: .btn .tab-control data-tabset="avd2" data-seq="2" }
@@ -355,164 +227,148 @@ be using the Google Pixel Pro 7 which can be installed using one of the commands
 > ```
 > avdmanager create avd -d 30 --name Pixel_7_Pro -k "system-images;android-34;google_apis;x86_64"
 > ```
-> 
+>
 {: .tab data-tabset="avd2" data-seq="1" }
 
 > ```
 > avdmanager create avd -d 30 --name Pixel_7_Pro -k "system-images;android-34;google_apis;arm64-v8a"
 > ```
-> 
+>
 {: .tab data-tabset="avd2" data-seq="2" }
 
-Clicking the refresh icon in the *Android Virtual Device* panel will reveal the newly-created AVD. 
-Start it by clicking the *Run* icon next to its name. If everything is set up correctly, you should 
-see a virtual Android device appear on your screen.
+Click the refresh icon in the *Android Virtual Device* panel to see the newly-created AVD.
+Start it by clicking the *Run* icon next to its name.
 
-## 13. Run the default app
+## 6. Create a New MAUI Project (in Container)
 
-While the Android emulator is running, it can be used as a debug target so that the application is 
-loaded and run on the emulator.
+With the development container running, create a new .NET MAUI project.
 
-To select the debug target for a project, click the curly brackets in the lower tray of the VSCode 
-window as shown below. Click *Debug Target* and some options will appear at the top of the window. 
-Choose the emulator from the ist.
+Open the command palette in VSCode (`Ctrl+Shift+P` in Windows or `Cmd+Shift+P` on Mac)
+and select the `.NET: New Project...` option. Enter the values shown below:
 
-![Fig. 8. Selecting a debug target in VSCode](images/vscode_debug_target.png){: standalone #fig8 data-title="Selecting a debug target in VSCode"}
+| Prompt                 | Response                                                                |
+|------------------------|-------------------------------------------------------------------------|
+| Project type           | `.NET MAUI App Android, iOS, Mac Catalyst, macOS, MAUI, Tizen, Windows` |
+| Project root directory | Create a folder in `/workspace` called `Notes`                          |
+| Project name           | `Notes`                                                                 |
+| Options confirmation   | Press ENTER to confirm your choices                                     |
 
-With the target selected, click the *Run* icon in the control panel on the left. Then, follow 
-through the prompts to select the debugger and the run configuration.
+VSCode will generate a complete default application for you.
 
-![Fig. 9. Debugging in VSCode](images/vscode_debug.png){: standalone #fig9 data-title="Debugging in VSCode"}
+## 7. Build the Project (in Container)
 
-After a few moments, a .NET icon should appear on the screen of the virtual phone.
+Open a terminal inside the container and build the project:
 
-Clicking it should launch the default app:
-
-![Fig. 10. Default MAUI app running on the Android emulator](images/default_app.png){: standalone #fig10 data-title="Default MAUI app running on the Android emulator"}
-
-## 15. Install git
-
-Good practice dictates that you should always use a version control system to manage your code.
-We will be using [git](https://git-scm.com/) in this module. 
-
-{: .note-title }
-> <i class="fa-solid fa-triangle-exclamation"></i> Note
-> 
-> _Git_ is a distributed command-line version control tool. When you install it on your computer,
-> it creates a local repository. GitHub, on the other hand, is a cloud platform where you can set
-> up and share remote repositories. Make sure that you clearly understand the difference.
-
-Use the appropriate command below to install git on your computer if it is not installed already.
-
-[Windows](){: .btn .btn-blue .tab-control data-tabset="git" data-seq="1" }
-[Mac](){: .btn .tab-control data-tabset="git" data-seq="2" }
-
-> [Windows git installer](https://gitforwindows.org/){:target="_blank"}
-> 
-{: .tab data-tabset="git" data-seq="1" }
-
-> git is already installed on Macs <i class="fa-regular fa-face-smile icon"></i>
->
-{: .tab data-tabset="git" data-seq="2" }
-
-## 16. Create a repository
-
-VSCode provides git and GitHub integration so that you do not have to use git at the command line.
-Click the version control icon in the vertical menu bar as shown in Fig. 11 to reveal the 
-initialisation options.
-
-![Fig. 11. Initialising git for your project](images/vscode_git.png){: standalone #fig11 .h30 data-title="Initialising git for your project"}
-
-Click the repository initialisation button (2) but **do not click the commit button in the next 
-dialog!** The number next to the version control icon shows that you are about to commit more than 
-2000 files! Take a look at the file list and you will see that most of them are configuration or
-cache file, or just part of the standard .NET framework. Before committing the small number of 
-files that actually constitute your app, we need to add a `.gitignore` file that will filter out
-all the ones we are not interested in. There are several ways you could do this. The simplest
-is to create the file manually. You could copy the content below and paste it into a file called 
-`.gitignore`in the project root directory. Make sure that you do not omit the leading dot in the 
-filename.
-
-A more interesting way to create the `.gitignore` file is to use Copilot. Make sure you have
-Copilot enabled, open the secondary sidebar to the right of the main editor panel. You will be
-prompted to authenticate with GitHub to use Copilot. Once connected, enter the prompt:
-
-> Generate a gitignore file for this .NET MAUI project
-
-Because this is such a common action, Copilot can do this quite easily without help. Once the file
-is ready, you are prompted to create it by clicking a button labelled _Create File..._. A file
-dialog appears which already has the correct filename and is offering to save it into the project 
-root directory. This dialog simply acts as a confirmation step: all you need to do is click the
-`Save` button.
-
-```shell
-# User-specific files
-*.rsuser
-*.suo
-*.user
-*.userosscache
-*.sln.docstates
-
-# User-specific files (Mono)
-mono_crash.*
-
-# Mono auto generated files
-mono_crash.*
-
-# Build results
-[Dd]ebug/
-[Dd]ebugPublic/
-[Rr]elease/
-[Rr]eleases/
-x64/
-x86/
-[Aa][Rr][Mm]/
-[Aa][Rr][Mm]64/
-bld/
-[Bb]in/
-[Oo]bj/
-[Ll]og/
-[Ll]ogs/
-
-# Visual Studio 2019
-.vscode/
-.vs/
-.vscode/
-
-# Windows image file caches
-Thumbs.db
-ehthumbs.db
-
-# Folder config file
-Desktop.ini
-
-# Recycle Bin used on file shares
-$RECYCLE.BIN/
-
-# VS Code directories
-.vscode/
-
-# Windows Installer files
-*.cab
-*.msi
-*.msm
-*.msp
-
-# Windows shortcuts
-*.lnk
-
-# JetBrains Rider
-.idea/
-*.sln.iml
+```bash
+cd /workspace/Notes
+dotnet build -f net9.0-android
 ```
 
-With your `.gitignore` file in place you can go ahead and make your initial commit. Be sure to
-add a descriptive commit comment.
+Alternatively, right-click the project name in the *Solution Explorer* and select *Build*.
 
-## Publish your repository
+![Fig. 6. Building the project](images/vscode_build.png){: standalone #fig5 .h30 data-title="Building the project"}
 
-Creating a remote copy of your repository on GitHub is very simple. Just click the _Publish Branch_
-button labelled (1) in Fig. 12. Then, select whether you want the repository to be private or
-public (2). 
+If the build succeeds, you're ready to connect to the emulator.
 
-Congratulations! You can now create a default .NET MAUI project and publish it to GitHub.
+## 8. Connect Container to Host Emulator via ADB
+
+To deploy apps from the container to the emulator running on your host, you need to set up
+ADB (Android Debug Bridge) networking.
+
+### Start ADB server on host (one-time per session)
+
+On your **host machine** (outside the container), open a terminal and run:
+
+[Windows](){: .btn .btn-blue .tab-control data-tabset="adb" data-seq="1" }
+[Mac/Linux](){: .btn .tab-control data-tabset="adb" data-seq="2" }
+
+> ```
+> adb kill-server
+> adb -a -P 5037 nodaemon server start
+> ```
+>
+> Leave this terminal window open while developing.
+>
+{: .tab data-tabset="adb" data-seq="1" }
+
+> ```bash
+> adb kill-server
+> adb -a -P 5037 nodaemon server start
+> ```
+>
+> Leave this terminal window open while developing.
+>
+{: .tab data-tabset="adb" data-seq="2" }
+
+### Configure ADB in container
+
+In the **container terminal** inside VSCode, set the ADB server address:
+
+```bash
+export ADB_SERVER_SOCKET=tcp:host.docker.internal:5037
+```
+
+{: .note-title }
+> <i class="fa-solid fa-circle-info"></i> Note
+>
+> Add this export command to your container's shell profile (e.g., `~/.bashrc`) to make it
+> persistent across terminal sessions.
+
+### Verify the connection
+
+With the emulator running on your host, verify the container can see it:
+
+```bash
+adb devices
+```
+
+You should see your emulator listed, something like:
+
+```
+List of devices attached
+emulator-5554	device
+```
+
+## 9. Run the App on the Emulator
+
+With the ADB connection established:
+
+1. Make sure the Android emulator is running on your host machine
+2. In VSCode (inside the container), click the curly brackets in the status bar
+3. Select *Debug Target* and choose the emulator from the list
+
+![Fig. 7. Selecting a debug target in VSCode](images/vscode_debug_target.png){: standalone #fig8 data-title="Selecting a debug target in VSCode"}
+
+4. Click the *Run* icon in the control panel on the left
+5. Follow the prompts to select the debugger and run configuration
+
+![Fig. 8. Debugging in VSCode](images/vscode_debug.png){: standalone #fig9 data-title="Debugging in VSCode"}
+
+After a few moments, your app should appear on the emulator:
+
+![Fig. 9. Default MAUI app running on the Android emulator](images/default_app.png){: standalone #fig10 data-title="Default MAUI app running on the Android emulator"}
+
+## Troubleshooting
+
+| Problem | Solution |
+|---------|----------|
+| ADB cannot find devices | Ensure ADB server is running on host with `-a` flag for network access |
+| "Connection refused" from container | Check that `host.docker.internal` resolves correctly; restart Docker if needed |
+| Emulator not appearing in debug targets | Verify `adb devices` shows the emulator; restart the ADB server |
+| Build fails with SDK not found | Rebuild the dev container to ensure Android SDK installed correctly |
+| Emulator runs slowly | Enable hardware acceleration (HAXM on Intel, Hypervisor on Apple Silicon) |
+
+## Using a Physical Android Device
+
+Instead of the emulator, you can use a physical Android device:
+
+1. Enable Developer Options on your Android device (tap Build Number 7 times in Settings > About)
+2. Enable USB Debugging in Developer Options
+3. Connect the device to your computer via USB
+4. The device should appear in `adb devices` on the host
+5. The container will see it through the ADB server connection
+
+## Next Steps
+
+- Learn about [Git and GitHub](../../tools/github/) for version control
+- Explore the MAUI documentation for building your app's UI
