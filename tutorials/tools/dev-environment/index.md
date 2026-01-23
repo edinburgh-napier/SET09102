@@ -18,24 +18,7 @@ The development environment uses Docker to provide a consistent build environmen
 platforms. The Android emulator runs on your host machine (for performance and GPU access),
 while the container handles building and deploying your app.
 
-```
-┌─────────────────────────────────────┐
-│         Host Machine                │
-│  ┌─────────────────────────────┐    │
-│  │   Android Emulator (GUI)    │    │
-│  │   or Physical Device        │    │
-│  └──────────────▲──────────────┘    │
-│                 │ ADB connection    │
-│  ┌──────────────┴──────────────┐    │
-│  │      Docker Container       │    │
-│  │  • .NET SDK 9               │    │
-│  │  • MAUI workloads           │    │
-│  │  • Java JDK                 │    │
-│  │  • Android SDK/cmdline-tools│    │
-│  │  • PostgreSQL client        │    │
-│  └─────────────────────────────┘    │
-└─────────────────────────────────────┘
-```
+![Fig. 1. Architecture overview](images/architecture_overview.png){: standalone #fig1 data-title="Architecture overview" }
 
 ## 1. Install Docker Desktop
 
@@ -59,7 +42,7 @@ needed to run containerised applications on your computer.
 > After installation, Docker Desktop should start automatically. You can verify it's running by
 > looking for the Docker whale icon in your system tray.
 >
-> ![Fig. 1. Docker Desktop running on Windows](images/docker_desktop_windows.png){: standalone #fig1 data-title="Docker Desktop running on Windows" }
+> ![Fig. 2. Docker Desktop running on Windows](images/docker_desktop_windows.png){: standalone #fig2 data-title="Docker Desktop running on Windows" }
 >
 {: .tab data-tabset="docker" data-seq="1" }
 
@@ -77,7 +60,7 @@ needed to run containerised applications on your computer.
 > Open the downloaded `.dmg` file and drag the Docker icon to your Applications folder.
 > Launch Docker from your Applications folder.
 >
-> ![Fig. 2. Docker Desktop running on Mac](images/docker_desktop_mac.png){: standalone #fig2 data-title="Docker Desktop running on Mac" }
+> ![Fig. 3. Docker Desktop running on Mac](images/docker_desktop_mac.png){: standalone #fig3 data-title="Docker Desktop running on Mac" }
 >
 {: .tab data-tabset="docker" data-seq="2" }
 
@@ -122,7 +105,7 @@ Once VSCode is installed, you need to add the following extensions:
 To install an extension, open VSCode and press `Ctrl+Shift+X` (Windows/Linux) or `Cmd+Shift+X` (Mac)
 to open the Extensions panel. Search for each extension by name and click Install.
 
-![Fig. 3. Required VSCode extensions installed](images/vscode_extensions.png){: standalone #fig3 data-title="Required VSCode extensions installed" }
+![Fig. 4. Required VSCode extensions installed](images/vscode_extensions.png){: standalone #fig4 data-title="Required VSCode extensions installed" }
 
 ## 3. Create the Project Structure
 
@@ -262,7 +245,7 @@ volumes:
 >   even when containers are stopped or removed.
 > - `command: sleep infinity` - This keeps the app container running so VSCode can connect to it.
 
-![Fig. 4. Docker Compose architecture diagram](images/docker_compose_diagram.png){: standalone #fig4 data-title="Docker Compose architecture diagram" }
+![Fig. 5. Docker Compose architecture diagram](images/docker_compose_diagram.png){: standalone #fig5 data-title="Docker Compose architecture diagram" }
 
 ## 6. Configure the Dev Container
 
@@ -363,7 +346,7 @@ Now you can open the project inside the development container.
 1. Press `Ctrl+Shift+P` (Windows/Linux) or `Cmd+Shift+P` (Mac) to open the command palette.
 2. Type "Reopen in Container" and select **Dev Containers: Reopen in Container**.
 
-![Fig. 5. Building the container](images/building_container.png){: standalone #fig5 data-title="Building the container in VSCode" }
+![Fig. 6. Building the container](images/building_container.png){: standalone #fig6 data-title="Building the container in VSCode" }
 
 {: .warning-title }
 > <i class="fa-solid fa-triangle-exclamation"></i> Warning
@@ -376,7 +359,7 @@ Now you can open the project inside the development container.
 Once the container is ready, you will see the project files in the Explorer panel, and the
 bottom-left corner of VSCode will show "Dev Container: MAUI Dev Environment".
 
-![Fig. 6. VSCode running inside the container](images/vscode_container_running.png){: standalone #fig6 data-title="VSCode running inside the container" }
+![Fig. 7. VSCode running inside the container](images/vscode_container_running.png){: standalone #fig7 data-title="VSCode running inside the container" }
 
 ### Verify the Development Tools
 
@@ -395,7 +378,7 @@ sdkmanager --version
 
 You should see .NET 9.x, the MAUI workloads listed, and the Android SDK manager version.
 
-![Fig. 7. Terminal inside container showing configuration details](images/vscode_terminal_container.png){: standalone #fig7 data-title="Terminal inside container showing configuration details" }
+![Fig. 8. Terminal inside container showing configuration details](images/vscode_terminal_container.png){: standalone #fig8 data-title="Terminal inside container showing configuration details" }
 
 ## 9. Connect to PostgreSQL from VSCode
 
@@ -416,7 +399,7 @@ The Database Client extension allows you to browse and query your database direc
 | Database | devdb |
 | Use SSL | No |
 
-![Fig. 8. PostgreSQL connection configuration](images/postgres_connection.png){: standalone #fig8 data-title="PostgreSQL connection configuration" }
+![Fig. 9. PostgreSQL connection configuration](images/postgres_connection.png){: standalone #fig9 data-title="PostgreSQL connection configuration" }
 
 {: .note-title }
 > <i class="fa-solid fa-circle-info"></i> Note
@@ -446,7 +429,7 @@ CREATE TABLE students (
 );
 ```
 
-![Fig. 9. Creating a test table in PostgreSQL](images/postgres_create_table.png){: standalone #fig9 data-title="Creating a test table in PostgreSQL" }
+![Fig. 10. Creating a test table in PostgreSQL](images/postgres_create_table.png){: standalone #fig10 data-title="Creating a test table in PostgreSQL" }
 
 ### Insert sample data
 
@@ -467,7 +450,7 @@ Run a SELECT query to verify the data was inserted:
 SELECT * FROM students;
 ```
 
-![Fig. 10. Query results showing test data](images/postgres_query_result.png){: standalone #fig10 data-title="Query results showing test data" }
+![Fig. 11. Query results showing test data](images/postgres_query_result.png){: standalone #fig11 data-title="Query results showing test data" }
 
 You should see three rows returned with the student data you inserted.
 
