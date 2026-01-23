@@ -474,168 +474,69 @@ better performance and access to hardware acceleration.
 > [Android Studio](../android-studio/) instead of following the command-line approach below.
 > Android Studio includes the SDK Manager and AVD Manager with a GUI.
 
-### Install Java JDK
+### Install Android SDK Command-Line Tools
 
-The Android SDK tools require Java. Install OpenJDK 17:
+Download the "Command line tools only" package from the
+[Android developer website](https://developer.android.com/studio#command-tools){:target="_blank"}
+and extract it.
 
-[Windows](){: .btn .btn-blue .tab-control data-tabset="java" data-seq="1" }
-[Mac](){: .btn .tab-control data-tabset="java" data-seq="2" }
-[Linux](){: .btn .tab-control data-tabset="java" data-seq="3" }
+[Windows](){: .btn .btn-blue .tab-control data-tabset="cmdtools" data-seq="1" }
+[Mac/Linux](){: .btn .tab-control data-tabset="cmdtools" data-seq="2" }
 
-> Download and install [Eclipse Temurin JDK 17](https://adoptium.net/temurin/releases/?version=17){:target="_blank"}
-> (select Windows x64 .msi installer).
+> 1. Create the directory structure: `C:\Android\cmdline-tools\latest`
+> 2. Extract the downloaded zip and move the `bin` and `lib` folders into `latest`
 >
-> During installation, ensure "Set JAVA_HOME variable" is enabled.
->
-{: .tab data-tabset="java" data-seq="1" }
-
-> Install using Homebrew:
->
-> ```bash
-> brew install openjdk@17
-> ```
->
-> Then add to your shell profile (`~/.zshrc`):
->
-> ```bash
-> export JAVA_HOME=$(/usr/libexec/java_home -v 17)
-> ```
->
-{: .tab data-tabset="java" data-seq="2" }
-
-> Install using your package manager:
->
-> ```bash
-> sudo apt update
-> sudo apt install openjdk-17-jdk
-> ```
->
-> Set JAVA_HOME in `~/.bashrc`:
->
-> ```bash
-> export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
-> ```
->
-{: .tab data-tabset="java" data-seq="3" }
-
-### Set Up Android SDK Directory
-
-Create a directory structure for the Android SDK and set environment variables:
-
-[Windows](){: .btn .btn-blue .tab-control data-tabset="sdkdir" data-seq="1" }
-[Mac](){: .btn .tab-control data-tabset="sdkdir" data-seq="2" }
-[Linux](){: .btn .tab-control data-tabset="sdkdir" data-seq="3" }
-
-> Create the SDK directory:
->
-> ```
-> mkdir %USERPROFILE%\Android\sdk
-> ```
+> {: .warning-title }
+> > <i class="fa-solid fa-triangle-exclamation"></i> Warning
+> >
+> > You must create the folder named `latest` and put the `bin` and `lib` folders inside it,
+> > or the tools will error out.
 >
 > Set environment variables (search for "Environment Variables" in the Start menu):
 >
 > | Variable | Value |
 > |----------|-------|
-> | ANDROID_HOME | `%USERPROFILE%\Android\sdk` |
-> | ANDROID_SDK_ROOT | `%USERPROFILE%\Android\sdk` |
+> | ANDROID_HOME | `C:\Android` |
 >
 > Add to your PATH:
-> - `%ANDROID_HOME%\cmdline-tools\latest\bin`
-> - `%ANDROID_HOME%\platform-tools`
-> - `%ANDROID_HOME%\emulator`
+> - `C:\Android\cmdline-tools\latest\bin`
+> - `C:\Android\emulator`
+> - `C:\Android\platform-tools`
 >
 > Close and reopen any terminal windows for changes to take effect.
 >
-{: .tab data-tabset="sdkdir" data-seq="1" }
-
-> Create the SDK directory and add to `~/.zshrc`:
->
-> ```bash
-> mkdir -p ~/Android/sdk
-> ```
->
-> Add these lines to `~/.zshrc`:
->
-> ```bash
-> export ANDROID_HOME=$HOME/Android/sdk
-> export ANDROID_SDK_ROOT=$ANDROID_HOME
-> export PATH=$PATH:$ANDROID_HOME/cmdline-tools/latest/bin
-> export PATH=$PATH:$ANDROID_HOME/platform-tools
-> export PATH=$PATH:$ANDROID_HOME/emulator
-> ```
->
-> Apply the changes:
->
-> ```bash
-> source ~/.zshrc
-> ```
->
-{: .tab data-tabset="sdkdir" data-seq="2" }
-
-> Create the SDK directory and add to `~/.bashrc`:
->
-> ```bash
-> mkdir -p ~/Android/sdk
-> ```
->
-> Add these lines to `~/.bashrc`:
->
-> ```bash
-> export ANDROID_HOME=$HOME/Android/sdk
-> export ANDROID_SDK_ROOT=$ANDROID_HOME
-> export PATH=$PATH:$ANDROID_HOME/cmdline-tools/latest/bin
-> export PATH=$PATH:$ANDROID_HOME/platform-tools
-> export PATH=$PATH:$ANDROID_HOME/emulator
-> ```
->
-> Apply the changes:
->
-> ```bash
-> source ~/.bashrc
-> ```
->
-{: .tab data-tabset="sdkdir" data-seq="3" }
-
-### Install Android SDK Command-Line Tools
-
-Download the command-line tools from the
-[Android developer website](https://developer.android.com/studio#command-tools){:target="_blank"}.
-
-[Windows](){: .btn .btn-blue .tab-control data-tabset="cmdtools" data-seq="1" }
-[Mac](){: .btn .tab-control data-tabset="cmdtools" data-seq="2" }
-[Linux](){: .btn .tab-control data-tabset="cmdtools" data-seq="3" }
-
-> 1. Download the Windows zip file
-> 2. Extract the contents
-> 3. Move the `cmdline-tools` folder to `%ANDROID_HOME%\cmdline-tools\latest`
->
-> The final path should be: `%ANDROID_HOME%\cmdline-tools\latest\bin\sdkmanager.bat`
->
 {: .tab data-tabset="cmdtools" data-seq="1" }
 
-> 1. Download the Mac zip file
-> 2. Extract and install:
+> 1. Create the directory structure: `~/Android/cmdline-tools/latest`
+> 2. Extract the downloaded zip and move the `bin` and `lib` folders into `latest`
 >
 > ```bash
+> mkdir -p ~/Android/cmdline-tools/latest
 > cd ~/Downloads
-> unzip commandlinetools-mac-*_latest.zip
-> mkdir -p $ANDROID_HOME/cmdline-tools/latest
-> mv cmdline-tools/* $ANDROID_HOME/cmdline-tools/latest/
+> unzip commandlinetools-*_latest.zip
+> mv cmdline-tools/* ~/Android/cmdline-tools/latest/
+> ```
+>
+> {: .warning-title }
+> > <i class="fa-solid fa-triangle-exclamation"></i> Warning
+> >
+> > You must create the folder named `latest` and put the `bin` and `lib` folders inside it,
+> > or the tools will error out.
+>
+> Add these lines to your shell profile (`~/.zshrc` for Mac, `~/.bashrc` for Linux):
+>
+> ```bash
+> export ANDROID_HOME=$HOME/Android
+> export PATH=$PATH:$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/emulator:$ANDROID_HOME/platform-tools
+> ```
+>
+> Apply the changes:
+>
+> ```bash
+> source ~/.zshrc  # or source ~/.bashrc on Linux
 > ```
 >
 {: .tab data-tabset="cmdtools" data-seq="2" }
-
-> 1. Download the Linux zip file
-> 2. Extract and install:
->
-> ```bash
-> cd ~/Downloads
-> unzip commandlinetools-linux-*_latest.zip
-> mkdir -p $ANDROID_HOME/cmdline-tools/latest
-> mv cmdline-tools/* $ANDROID_HOME/cmdline-tools/latest/
-> ```
->
-{: .tab data-tabset="cmdtools" data-seq="3" }
 
 Verify the installation:
 
@@ -643,7 +544,7 @@ Verify the installation:
 sdkmanager --version
 ```
 
-### Accept Licenses and Install SDK Components
+### Install Emulator and System Image
 
 Accept the Android SDK licenses:
 
@@ -653,63 +554,36 @@ sdkmanager --licenses
 
 Type `y` to accept each license when prompted.
 
-Install the required SDK components:
+Install the emulator, platform tools, and a system image. Choose the appropriate image
+for your machine's architecture:
 
-```bash
-sdkmanager "platform-tools" "platforms;android-34" "emulator"
-```
+[Windows / Intel Mac / Linux](){: .btn .btn-blue .tab-control data-tabset="install" data-seq="1" }
+[Apple Silicon Mac](){: .btn .tab-control data-tabset="install" data-seq="2" }
 
-### Install a System Image
-
-Choose the appropriate system image for your machine's architecture:
-
-[Windows / Intel Mac](){: .btn .btn-blue .tab-control data-tabset="sysimage" data-seq="1" }
-[Apple Silicon Mac](){: .btn .tab-control data-tabset="sysimage" data-seq="2" }
-[Linux (Intel/AMD)](){: .btn .tab-control data-tabset="sysimage" data-seq="3" }
-
-> Install the x86_64 system image:
->
 > ```bash
-> sdkmanager "system-images;android-34;google_apis;x86_64"
+> sdkmanager "emulator" "platform-tools" "platforms;android-34" "system-images;android-34;google_apis;x86_64"
 > ```
 >
-{: .tab data-tabset="sysimage" data-seq="1" }
+{: .tab data-tabset="install" data-seq="1" }
 
-> Install the ARM64 system image (runs natively without emulation):
->
 > ```bash
-> sdkmanager "system-images;android-34;google_apis;arm64-v8a"
+> sdkmanager "emulator" "platform-tools" "platforms;android-34" "system-images;android-34;google_apis;arm64-v8a"
 > ```
 >
 > {: .note-title }
 > > <i class="fa-solid fa-circle-info"></i> Note
 > >
-> > On Apple Silicon Macs, the ARM64 image provides significantly better performance
-> > as it runs natively rather than through x86 emulation.
+> > On Apple Silicon Macs, the ARM64 image runs natively without emulation,
+> > providing significantly better performance.
 >
-{: .tab data-tabset="sysimage" data-seq="2" }
-
-> Install the x86_64 system image:
->
-> ```bash
-> sdkmanager "system-images;android-34;google_apis;x86_64"
-> ```
->
-> {: .note-title }
-> > <i class="fa-solid fa-circle-info"></i> Note
-> >
-> > For best performance, ensure KVM is enabled. Check with: `kvm-ok`
-> > If not available, install it with: `sudo apt install qemu-kvm`
->
-{: .tab data-tabset="sysimage" data-seq="3" }
+{: .tab data-tabset="install" data-seq="2" }
 
 ### Create an Android Virtual Device (AVD)
 
-Create an AVD using the Pixel 9 Pro device profile (device ID 37):
+Create an AVD using the Pixel 9 Pro device profile:
 
-[Windows / Intel Mac](){: .btn .btn-blue .tab-control data-tabset="createavd" data-seq="1" }
+[Windows / Intel Mac / Linux](){: .btn .btn-blue .tab-control data-tabset="createavd" data-seq="1" }
 [Apple Silicon Mac](){: .btn .tab-control data-tabset="createavd" data-seq="2" }
-[Linux](){: .btn .tab-control data-tabset="createavd" data-seq="3" }
 
 > ```bash
 > avdmanager create avd -n Pixel_9_Pro -k "system-images;android-34;google_apis;x86_64" -d 37
@@ -723,21 +597,11 @@ Create an AVD using the Pixel 9 Pro device profile (device ID 37):
 >
 {: .tab data-tabset="createavd" data-seq="2" }
 
-> ```bash
-> avdmanager create avd -n Pixel_9_Pro -k "system-images;android-34;google_apis;x86_64" -d 37
-> ```
->
-{: .tab data-tabset="createavd" data-seq="3" }
-
 {: .note-title }
 > <i class="fa-solid fa-circle-info"></i> Device IDs
 >
-> To see all available device profiles, run: `avdmanager list device`
->
-> Common device IDs:
-> - 37: Pixel 9 Pro
-> - 30: Pixel 7 Pro
-> - 17: Pixel 4
+> The `-d 37` flag specifies the Pixel 9 Pro device profile. To see all available
+> device profiles, run: `avdmanager list device`
 
 Verify the AVD was created:
 
