@@ -2,7 +2,7 @@
 title: Getting started with MAUI
 parent: C# practice
 grand_parent: Tutorials
-nav_order: 2
+nav_order: 3
 ---
 
 # Getting started with MAUI

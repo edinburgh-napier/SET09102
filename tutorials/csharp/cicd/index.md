@@ -2,7 +2,7 @@
 title: CI/CD
 parent: C# practice
 grand_parent: Tutorials
-nav_order: 7
+nav_order: 8
 ---
 
 # CI/CD with GitHub Actions

@@ -2,7 +2,7 @@
 title: Migrating to MVVM
 parent: C# practice
 grand_parent: Tutorials
-nav_order: 3
+nav_order: 4
 ---
 
 # Migrating the notes application to MVVM

@@ -1,9 +1,9 @@
 ---
 title: Development Environment Setup
-parent: Tools
+parent: C# practice
 has_children: false
 has_toc: false
-nav_order: 5
+nav_order: 1
 ---
 
 # Development Environment Setup
