@@ -15,8 +15,8 @@ StarterApp.
 
 ## 1. Overview
 
-StarterApp uses a **local authentication system** backed by an SQL Server database running in a 
-Docker container. User credentials and roles are stored locally, and authentication is performed 
+StarterApp uses a **local authentication system** backed by a PostgreSQL database running in a
+Docker container. User credentials and roles are stored locally, and authentication is performed
 through the `AuthenticationService`.
 
 ---

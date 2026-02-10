@@ -63,7 +63,6 @@ The following tutorials are maintained for reference but have been superseded by
 - [MVVM Pattern](deprecated/mvvm/mvvm.md) - MVVM architecture (now covered in combined tutorial)
 - [Database Integration](deprecated/database/database.md) - SQL Server database integration (now uses PostgreSQL in combined tutorial)
 - [Database Migration](deprecated/migration/) - Schema migration strategies (now covered in combined tutorial)
-- [StarterApp Quickstart](starterapp/quickstart.md) - Quick setup guide (replaced by combined tutorial Part 1)
 
 ## Troubleshooting
 
