@@ -3,3 +3,20 @@ _site/
 .jekyll-cache/
 .jekyll-metadata
 .idea/
+.codegraph/
+.claude/settings.local.json
+
+# Local development and assessment files
+ASSESSMENT/
+
+# .NET / C# build artifacts
+**/bin/
+**/obj/
+**/.vs/
+*.user
+*.suo
+
+# Application settings (may contain secrets)
+**/appsettings.json
+**/appsettings.*.json
+!**/appsettings.json.template

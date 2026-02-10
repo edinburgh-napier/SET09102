@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Code Quality Challenge</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/scorm-wrapper.js"></script>
+    <script src="js/app.js"></script>
+</head>
+<body onload="ScormProcess.init()" onunload="ScormProcess.finish()">
+
+    <!-- Loading Spinner -->
+    <div id="loading-overlay" class="loading-overlay">
+        <div class="spinner"></div>
+        <div class="loading-text">Generating challenge...</div>
+    </div>
+
+    <h2>Code Quality Challenge</h2>
+    <label>Select Difficulty (1-5):</label>
+    <select id="difficulty-select">
+        <option value="1">Level 1</option>
+        <option value="2">Level 2</option>
+        <option value="3">Level 3</option>
+        <option value="4">Level 4</option>
+        <option value="5">Level 5</option>
+    </select>
+    <button onclick="fetchChallenge()">Get Challenge</button>
+
+    <div id="challenge-container">
+        <h3>Problem Code:</h3>
+        <pre id="problem-code"></pre>
+
+        <h3>What issues can you identify?</h3>
+        <div id="options-container"></div>
+
+        <button id="submit-btn" onclick="checkAnswers()" style="display:none;">Submit Answer</button>
+    </div>
+
+    <div id="result-section" style="margin-top:20px; display:none;">
+        <div id="feedback-msg"></div>
+        <h4>Corrected Code:</h4>
+        <pre id="fixed-code-area"></pre>
+    </div>
+
+</body>
+</html>

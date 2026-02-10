@@ -1,0 +1,5 @@
+{
+  "ConnectionStrings": {
+    "DevelopmentConnection": "Host=YOUR_POSTGRES_HOST;Username=YOUR_USERNAME;Password=YOUR_PASSWORD;Database=YOUR_DATABASE_NAME"
+  }
+}

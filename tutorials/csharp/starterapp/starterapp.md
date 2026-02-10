@@ -7,29 +7,55 @@ nav_order: 10
 
 # StarterApp
 
-The StarterApp provides a starting point for a development project. It includes
-basic features such as:
+The StarterApp provides a production-quality starting point for MAUI development projects. It demonstrates best practices for multi-project architecture and includes:
 
-* Database integration and migrations
-* Role-based security
-* Local authentication
-* Example navigation
+* **Multi-project solution** (UI, Database, Migrations)
+* **Database integration** with Entity Framework Core and migrations
+* **Role-based security** and authorization
+* **Local authentication** with BCrypt password hashing
+* **MVVM architecture** using CommunityToolkit.Mvvm
+* **Dependency injection** throughout the application
+* **Example navigation** with Shell
 
-The current version of the app uses SQL Server for data storage and Entity Framework Core for 
-object-relational mapping and migrations.
+{: .important }
+**PostgreSQL Version Available**: A PostgreSQL-ready version of StarterApp is available in the [SET09102 repository](https://github.com/edinburgh-napier/SET09102/tree/main/code/StarterApp). This version is used in the **[MAUI + MVVM + Database Tutorial](../maui-mvvm-database/)**, which is the recommended learning path.
 
-To fully understand how it works, you should complete all the practice tutorials provided.
-However, if you want to jump straight in and work out any problems as you go along, that will 
-also work but you may spend a lot of time troubleshooting. The code uses structured comments for 
-use with the [Doxygen](https://www.doxygen.nl/) documentation generator tool and one of the first 
-things you should do is generate that documentation for your own reference.
+## Versions
+
+There are two versions of StarterApp:
+
+1. **Original StarterApp** - Uses SQL Server for data storage (available at [original repository](https://github.com/coillarach/StarterApp))
+2. **PostgreSQL StarterApp** - Uses PostgreSQL for data storage (available in this repository's `code/StarterApp/` directory)
+
+The tutorials on this site use the **PostgreSQL version** to align with the [dev-environment tutorial](../dev-environment/) setup.
+
+## Learning Path
+
+**New to MAUI?** Start with the comprehensive **[MAUI + MVVM + Database Tutorial](../maui-mvvm-database/)**, which uses StarterApp as the foundation and teaches you to:
+- Download and explore the StarterApp architecture
+- Refactor it into a note-taking application
+- Understand MVVM, services, and repository patterns
+- Master database migrations and schema evolution
+
+**Already familiar with MAUI?** Use the supplementary resources below to understand specific aspects of the StarterApp architecture.
+
+## Understanding StarterApp
+
+This documentation provides supplementary material for understanding specific aspects of the StarterApp architecture. These are referenced by the main tutorial but can also be used as standalone references.
 
 ## Compatibility
 
-This app is built using the following tool versions.
+### Original StarterApp (SQL Server)
 
-| Name                                                                                      | Version     | 
+| Name                                                                                      | Version     |
 |-------------------------------------------------------------------------------------------|-------------|
-| [.NET](https://dotnet.microsoft.com/en-us/)                                               | 9.0         |
+| [.NET](https://dotnet.microsoft.com/en-us/)                                               | 8.0 / 9.0   |
 | [SQL Server Docker image](https://mcr.microsoft.com/en-us/artifact/mar/mssql/server/tags) | 2025-latest |
+
+### PostgreSQL StarterApp (Recommended)
+
+| Name                                                     | Version   |
+|----------------------------------------------------------|-----------|
+| [.NET](https://dotnet.microsoft.com/en-us/)              | 8.0 / 9.0 |
+| [PostgreSQL Docker image](https://hub.docker.com/_/postgres) | 16        |
 
