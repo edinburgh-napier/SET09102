@@ -1,4 +1,12 @@
-# StarterApp app
+---
+title: "StarterApp readme"
+parent: StarterApp
+grand_parent: C# practice
+nav_order: 5
+mermaid: true
+---
+
+# StarterApp
 
 The purpose of this app is to act as a starting point for further development. It provides some
 basic features including:
