@@ -468,7 +468,7 @@ we need to
 
 *   Add a new database connection string
 *   Add a second database context
-*   Alter the user's SQL Server permissions to allow them to create and drop databases
+*   Alter the user's database permissions to allow them to create and drop databases
 *   Create a fixture class
 *   Make the fixture class accessible from our tests
 *   Make the `Notes.Migrations` project accessible from the `Notes.Test` project
@@ -488,26 +488,35 @@ by following these steps:
 
 The file should look similar to the following snippet:
 
-```c#
+```json
 {
     "ConnectionStrings": {
-        "DevelopmentConnection": "Server=YOUR-IP-ADDRESS;Database=notesdb;User Id=notesapp;Password=N0tesApp$;TrustServerCertificate=True;",
-        "TestConnection": "Server=YOUR-IP-ADDRESS;Database=testdb;User Id=notesapp;Password=N0tesApp$;TrustServerCertificate=True;"
+        "DevelopmentConnection": "Host=localhost;Database=notesdb;Username=student_user;Password=password123;",
+        "TestConnection": "Host=localhost;Database=testdb;Username=student_user;Password=password123;"
     }
 }
 ```
 
 ### Add a second database context
 
-The simplest way to create a second `DbContext` would be to copy the existing one and update the 
-relevant names. However, that would be a violation of the DRY principle. Instead, we will convert 
+{: .note-title }
+> <i class="fa-solid fa-circle-info"></i> Note
+>
+> This tutorial assumes you have already installed the `Npgsql.EntityFrameworkCore.PostgreSQL`
+> NuGet package in your `Notes.Database` project from previous tutorials. If not, add it now:
+> ```bash
+> dotnet add package Npgsql.EntityFrameworkCore.PostgreSQL
+> ```
+
+The simplest way to create a second `DbContext` would be to copy the existing one and update the
+relevant names. However, that would be a violation of the DRY principle. Instead, we will convert
 the existing code into an abstract class that we can subclass for the two contexts that we need.
 
 1.  Edit the file `NotesDbContext.cs` in the `Notes.Database` project.
 2.  Add the `abstract` modifier to the class definition.
 3.  Change the class name to `GenericDbContext` and update the constructors to match.
 4.  Add an abstract property `connectionString` to hold the name of the connection string.
-5.  In the call to `optionsBuilder.UseSqlServer()`, change the hard-coded connection string name 
+5.  In the call to `optionsBuilder.UseNpgsql()`, change the hard-coded connection string name
     to `connectionString`
 
 At this stage, the code should look like this:
@@ -531,7 +540,7 @@ public abstract class GenericDbContext : DbContext
             .AddJsonStream(stream)
             .Build();
 
-        optionsBuilder.UseSqlServer(
+        optionsBuilder.UseNpgsql(
             config.GetConnectionString(connectionName),
             m => m.MigrationsAssembly("Notes.Migrations")
             );
@@ -568,55 +577,41 @@ dotnet ef database update
 
 You should see the connection details and a message to say that the database is already up to date.
 
-#### Alter the user's SQL Server permissions
+#### Verify PostgreSQL user permissions
 
-Our strategy is to create the `tempdb` database when needed. We therefore need to ensure that 
-the _notesapp_ user has the necessary privilege.
+Our strategy is to create the `testdb` database when needed. If you followed the
+[dev-environment tutorial](../dev-environment/), the `student_user` already has the necessary
+`CREATEDB` privilege to create databases.
 
-1.  Open Azure Data Studio.
-2.  Connect to your local database as the _sa_ user. Remember that you set the password for the 
-    _sa_ user in the [SQL Server tutorial](https://moodle.napier.ac.uk/mod/page/view.php?id=2450161).
-3.  Open a _New Query_ view and select the `master` database. 
-4.  Create the _notesapp_user with the command below.
-    
-    ```shell
-     user notesapp;
-    ```
-    
-    {: .note-title }
-    > <i class="fa-solid fa-circle-question"></i> Why?
-    > 
-    > Currently, the _notesapp_ user only exists in the `notesdb` database, but only users of the 
-    > `master` database are allowed to create new databases.
-    
-5.  Grant the required permission to the new user using the command below.
-    
+{: .note-title }
+> <i class="fa-solid fa-circle-info"></i> Note
+>
+> The `student_user` was created with CREATEDB privilege in the dev-environment tutorial, which
+> allows it to create and drop databases as needed for testing.
+
+To verify that the permissions are correct, you can test creating a database:
+
+1.  Connect to PostgreSQL using your preferred database tool (e.g., pgAdmin, DBeaver, or psql)
+2.  Connect as `student_user` with password `password123`
+3.  Execute the following command:
+
     ```sql
-    grant create any database to notesapp;
+    CREATE DATABASE testdb;
     ```
 
-To check that the new permission works, you can connect to your local server as the user and try 
-to create a new database. In a _New Query_ view, make sure that the `master` database is active 
-and use the command
+4.  Verify the database was created by listing all databases:
 
-```sql
-create database testdb;
-```
+    ```sql
+    SELECT datname FROM pg_database WHERE datname = 'testdb';
+    ```
 
-Check that the database has been created with reference to Fig. 3.
+5.  Remove the test database:
 
-![Fig. 3. Checking that the notesapp user can create a database](images/create_db.png){: standalone .w50 #fig3 data-title="Checking that the notesapp user can create a database"}
+    ```sql
+    DROP DATABASE testdb;
+    ```
 
-*   Note of the user that is connected
-*   Right-click the connection and select _Manage_ from the context menu
-*   Select the _Databases_ view
-*   The new `testdb` should appear in the list
-
-Remove the database again with the following SQL statement:
-
-```sql
-drop database testdb;
-```
+If you can successfully create and drop the database, the permissions are configured correctly and you can proceed with the tutorial.
 
 #### Create a fixture class
 
