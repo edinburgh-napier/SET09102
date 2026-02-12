@@ -50,19 +50,9 @@ with other software tools.
 
 ### Advanced Topics
 
-7. **[Unit Testing](unit_test/)** - Writing and running unit tests for MAUI applications
+7. **[Unit Testing](unit_test/)** - Writing and running unit tests for MAUI applications with PostgreSQL
 8. **[CI/CD Pipeline](cicd/)** - Continuous integration and deployment setup
 9. **[Cloudflare Tunnel](tunnel/)** - Exposing local services securely
-
-### Legacy Tutorials (Archived)
-
-{: .note }
-The following tutorials are maintained for reference but have been superseded by the **MAUI + MVVM + Database** combined tutorial, which teaches these concepts together from the start.
-
-- [MAUI Basics](deprecated/maui/maui.md) - Basic MAUI concepts (now covered in combined tutorial)
-- [MVVM Pattern](deprecated/mvvm/mvvm.md) - MVVM architecture (now covered in combined tutorial)
-- [Database Integration](deprecated/database/database.md) - SQL Server database integration (now uses PostgreSQL in combined tutorial)
-- [Database Migration](deprecated/migration/) - Schema migration strategies (now covered in combined tutorial)
 
 ## Troubleshooting
 
