@@ -28,44 +28,12 @@ By the end of this part, you will:
 
 The StarterApp is a production-quality MAUI application that demonstrates best practices for mobile development. It has been pre-configured to use PostgreSQL instead of SQL Server, matching the database from your dev-environment tutorial.
 
-### Download Options
-
-Choose one of the following methods:
-
-#### Option A: Download from Tutorial (Recommended for beginners)
-
 {: .note }
 This option requires the tutorial to be hosted on GitHub Pages with a direct download link. If not available, use Option B or C.
 
-1. Click **[Download StarterApp ZIP](https://edinburgh-napier.github.io/SET09102/downloads/starterapp.zip)
+1. Click **[Download StarterApp ZIP](https://edinburgh-napier.github.io/SET09102/downloads/starterapp.zip)**
 2. Extract the ZIP file to your desired location (e.g., `~/Projects/StarterApp`)
 3. Skip to Section 1.2
-
-#### Option B: Clone Full Repository
-
-```bash
-# Clone the entire SET09102 repository
-git clone https://github.com/edinburgh-napier/SET09102.git
-
-# Navigate to StarterApp
-cd SET09102/code/StarterApp
-```
-
-#### Option C: Sparse Checkout (Advanced)
-
-For those who only want the StarterApp code without the entire repository:
-
-```bash
-# Initialize sparse checkout
-git clone --filter=blob:none --sparse https://github.com/edinburgh-napier/SET09102.git
-cd SET09102
-
-# Checkout only the StarterApp directory
-git sparse-checkout set code/StarterApp
-
-# Navigate to StarterApp
-cd code/StarterApp
-```
 
 ### Verify Download
 
@@ -122,26 +90,26 @@ Open the solution in VS Code and explore the multi-project architecture:
 ```
 StarterApp.sln
 │
-├── StarterApp/                              # 🎨 MAUI Application (UI Layer)
+├── StarterApp/                             # PROJECT: MAUI Application (UI Layer)
 │   ├── Platforms/                          # Platform-specific code (Android, iOS, Windows)
 │   ├── Properties/                         # Launch settings
 │   ├── Resources/                          # Images, fonts, styles
 │   ├── ViewModels/                         # Presentation logic
-│   │   ├── BaseViewModel.cs               # Common ViewModel functionality
-│   │   ├── LoginViewModel.cs              # Login page logic
-│   │   ├── RegisterViewModel.cs           # Registration logic
+│   │   ├── BaseViewModel.cs                # Common ViewModel functionality
+│   │   ├── LoginViewModel.cs               # Login page logic
+│   │   ├── RegisterViewModel.cs            # Registration logic
 │   │   └── ...
 │   ├── Views/                              # XAML pages
-│   │   ├── LoginPage.xaml                 # Login UI
-│   │   ├── AppShell.xaml                  # Navigation structure
+│   │   ├── LoginPage.xaml                  # Login UI
+│   │   ├── AppShell.xaml                   # Navigation structure
 │   │   └── ...
 │   ├── App.xaml                            # Application resources
-│   ├── MauiProgram.cs                      # ⭐ Dependency Injection setup
+│   ├── MauiProgram.cs                      # Dependency Injection setup
 │   └── StarterApp.csproj                   # Project file
 │
-├── StarterApp.Database/                     # 💾 Data Layer (Business Logic + Persistence)
+├── StarterApp.Database/                    # PROJECT: Data Layer (Business Logic + Persistence)
 │   ├── Data/
-│   │   └── AppDbContext.cs                 # ⭐ EF Core DbContext (PostgreSQL config)
+│   │   └── AppDbContext.cs                 # EF Core DbContext (PostgreSQL config)
 │   ├── Models/                             # Database entities
 │   │   ├── User.cs                         # User entity
 │   │   ├── Role.cs                         # Role entity
@@ -149,10 +117,10 @@ StarterApp.sln
 │   ├── Services/                           # Business logic
 │   │   ├── IAuthenticationService.cs       # Interface
 │   │   └── AuthenticationService.cs        # Implementation
-│   ├── appsettings.json                    # ⭐ Database connection string
+│   ├── appsettings.json                    # Database connection string
 │   └── StarterApp.Database.csproj          # Project file
 │
-└── StarterApp.Migrations/                   # 🔄 Database Migrations
+└── StarterApp.Migrations/                  # PROJECT: Database Migrations
     ├── Program.cs                          # Console app entry point
     ├── Migrations/                         # Migration files (generated)
     └── StarterApp.Migrations.csproj        # Project file
@@ -420,7 +388,7 @@ If you seeded the database with sample users (check migrations), try logging in 
 
 ---
 
-## 1.6: Understanding MVVM Architecture ⭐
+## 1.6: Understanding MVVM Architecture 
 
 {: .important-title }
 > Critical Learning Section
@@ -713,7 +681,7 @@ private async void LoginButton_Clicked(object sender, EventArgs e)
 
 #### Benefits of MVVM + Services
 
-✅ **Testability**
+**Testability**
 ```csharp
 // Easy to unit test ViewModels
 var mockAuthService = new Mock<IAuthenticationService>();
@@ -726,18 +694,18 @@ await viewModel.LoginCommand.ExecuteAsync(null);
 Assert.IsTrue(viewModel.IsAuthenticated);
 ```
 
-✅ **Reusability**
+**Reusability**
 - `AuthenticationService` used by multiple ViewModels
 - ViewModels shared across iOS, Android, Windows (same code!)
 - Login logic written once, used everywhere
 
-✅ **Maintainability**
+**Maintainability**
 - Change database? Update service implementation only
 - Change UI? Update XAML only
 - Add feature? Clear place for each concern
 - Code reviews easier (each layer reviewed separately)
 
-✅ **Flexibility**
+**Flexibility**
 - Swap implementations (local DB → API)
 - A/B test different UIs with same logic
 - Support multiple platforms with shared code
@@ -936,12 +904,12 @@ public class LoginViewModel : BaseViewModel
 
 In this part, you:
 
-✅ Downloaded and set up the PostgreSQL-ready StarterApp
-✅ Explored the multi-project solution architecture
-✅ Reviewed key files: MauiProgram.cs, AppDbContext.cs, models, ViewModels
-✅ Applied database migrations to create schema
-✅ **Mastered the MVVM pattern and services layer**
-✅ Traced a request through all architectural layers
+- Downloaded and set up the PostgreSQL-ready StarterApp
+- Explored the multi-project solution architecture
+- Reviewed key files: MauiProgram.cs, AppDbContext.cs, models, ViewModels
+- Applied database migrations to create schema
+- **Mastered the MVVM pattern and services layer**
+- Traced a request through all architectural layers
 
 ### Teaching Moments Recap
 
