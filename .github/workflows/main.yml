@@ -1,0 +1,28 @@
+name: Zip Subdirectory
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch: # Allows you to run this manually from the Actions tab
+
+jobs:
+  build-and-zip:
+    runs-on: ubuntu-latest
+    steps:
+      # 1. Check out the code from your repository
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      # 2. Run the zip command on your specific folder
+      # Syntax: zip -r <archive_name>.zip <folder_path>
+      - name: Create Zip Archive
+        run: |
+          zip -r starterapp.zip code/StarterApp
+          
+      # 3. Upload the zip as a "GitHub Artefact" so you can download it
+      - name: Upload Zip Artefact
+        uses: actions/upload-artifact@v4
+        with:
+          name: zipped-subdirectory
+          path: code/StarterApp.zip
+          retention-days: 5
