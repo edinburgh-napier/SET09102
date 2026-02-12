@@ -3,7 +3,7 @@ title: Android Studio and Emulator
 parent: Tools
 has_children: false
 has_toc: false
-nav_order: 6
+nav_order: 2
 ---
 
 # Android Studio and Emulator

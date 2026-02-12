@@ -1,9 +1,10 @@
 ---
 title: Using an SSH tunnel
-parent: C# practice
+parent: Tools
+grand_parent: Tutorials
 has_children: true
 has_toc: false
-nav_order: 13
+nav_order: 3
 ---
 
 # Connecting to a shared database over an SSH tunnel

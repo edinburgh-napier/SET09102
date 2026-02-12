@@ -67,7 +67,6 @@ These supplementary resources provide deeper understanding of specific concepts 
 
 11. **[Unit Testing](unit_test/)** - Writing and running unit tests for MAUI applications with PostgreSQL
 12. **[CI/CD Pipeline](cicd/)** - Continuous integration and deployment setup
-13. **[Cloudflare Tunnel](tunnel/)** - Exposing local services securely
 
 ## Troubleshooting
 
