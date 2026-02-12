@@ -20,18 +20,15 @@ jobs:
       # Syntax: zip -r <archive_name>.zip <folder_path>
       - name: Create Zip Archive
         run: |
-          zip -r starterapp.zip code/StarterApp
+          mkdir -p downloads
+          zip -r downloads/starterapp.zip code/StarterApp
 
-      # 3. Enable downloading direct from repo
-      - name: Prevent Jekyll Processing
-        run: touch .nojekyll
-        
-      # 4. Upload the zip to the gh-pages branch
-      - name: Deploy to GitHub Pages Branch
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: .
-          publish_branch: gh-pages
-          # Keep only the zip file in the gh-pages branch to save space
-          destination_dir: downloads
+      # 3. Commit zip to repo
+      - name: Commit and Push Zip
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add downloads/starterapp.zip
+          git commit -m "Update starterapp.zip" || echo "No changes to commit"
+          git push
+          
