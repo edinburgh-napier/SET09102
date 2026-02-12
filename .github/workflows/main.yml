@@ -24,5 +24,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: zipped-subdirectory
-          path: code/StarterApp.zip
+          path: code/starterapp.zip
           retention-days: 5
