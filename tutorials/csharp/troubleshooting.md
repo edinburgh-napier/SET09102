@@ -99,7 +99,7 @@ API level 34. This means the Android SDK platform for API level 34 is not instal
 <p>Install the missing dependencies by executing the following commands in a terminal window. Make sure that you are in the project directory. You also need to use the correct path for your Android SDK. The path you need is shown in the error message.</p>
 <div class="callout codeblock">
 <pre>export AcceptAndroidSDKLicenses=true
-dotnet build -t:InstallAndroidDependencies -f net8.0-android "-p:AndroidSdkDirectory=/PATH_TO_SDK"</pre>
+dotnet build -t:InstallAndroidDependencies -f net9.0-android "-p:AndroidSdkDirectory=/PATH_TO_SDK"</pre>
 </div>
 </details>
 
@@ -154,9 +154,9 @@ Warning: Additionally, the fallback loader failed to parse the XML.
 <div class="callout codeblock">
 <pre>  Determining projects to restore...
 /.../Microsoft.NET.Sdk/targets/Microsoft.NET.Sdk.ImportWorkloads.targets(38,5): error NETSDK1147: To build this
-project, the following workloads must be installed: wasi-experimental [/.../Notes/Notes.csproj::TargetFramework=net8.0-android]
+project, the following workloads must be installed: wasi-experimental [/.../Notes/Notes.csproj::TargetFramework=net9.0-android]
 /.../Microsoft.NET.Sdk/targets/Microsoft.NET.Sdk.ImportWorkloads.targets(38,5): error NETSDK1147: To install these workloads, 
-run the following command: dotnet workload restore [/.../Notes/Notes.csproj::TargetFramework=net8.0-android]</pre>
+run the following command: dotnet workload restore [/.../Notes/Notes.csproj::TargetFramework=net9.0-android]</pre>
 </div>
 <p>The command shown in the error message may not work if the restoration requires elevated privileges. On Mac or Linux, use the following command at a terminal prompt ensuring that you are in the project directory:</p>
 <div class="callout codeblock">
@@ -186,17 +186,17 @@ the project to select a different version.  [/.../Notes.sln]</pre>
 <summary>Platform simulator not found</summary>
 <p>If you see an error like the following when building your code, your project file includes the iOS platform, but you do not have a simulator installed. </p>
 <div class="callout codeblock">
-<pre class="red">/.../Notes/obj/Debug/net8.0-ios/iossimulator-arm64/actool/cloned-assets/Assets.xcassets : actool error : The operation 
-couldn’t be completed. Failed to locate any simulator runtime matching options: { [/.../Notes/Notes.csproj::TargetFramework=net8.0-ios]</pre>
+<pre class="red">/.../Notes/obj/Debug/net9.0-ios/iossimulator-arm64/actool/cloned-assets/Assets.xcassets : actool error : The operation 
+couldn’t be completed. Failed to locate any simulator runtime matching options: { [/.../Notes/Notes.csproj::TargetFramework=net9.0-ios]</pre>
 </div>
 <p>The simplest solution is to remove the reference to iOS from the project file. Locate the <code>TargetFrameworks</code> entry near the start of the file and remove iOS as a target. The example below shows the line before and after the change.</p>
 <div class="callout codeblock">
 <pre>&lt;!-- BEFORE -->
-&lt;TargetFrameworks>net8.0-android;net8.0-ios;net8.0-maccatalyst</TargetFrameworks>
+&lt;TargetFrameworks>net9.0-android;net9.0-ios;net9.0-maccatalyst</TargetFrameworks>
 &lt;!-- AFTER -->
-&lt;TargetFrameworks>net8.0-android;net8.0-maccatalyst</TargetFrameworks></pre>
+&lt;TargetFrameworks>net9.0-android;net9.0-maccatalyst</TargetFrameworks></pre>
 </div>
-<p>If you prefer to install a simulator so that you can keep the iOS target, please refer to the <a href="https://learn.microsoft.com/en-us/dotnet/maui/ios/cli?view=net-maui-8.0" target="_blank">Microsoft documentation.</a></p>
+<p>If you prefer to install a simulator so that you can keep the iOS target, please refer to the <a href="https://learn.microsoft.com/en-us/dotnet/maui/ios/cli?view=net-maui-9.0" target="_blank">Microsoft documentation.</a></p>
 </details>
 
 <details class="blue-bar">

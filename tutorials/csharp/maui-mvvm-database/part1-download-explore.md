@@ -26,10 +26,7 @@ By the end of this part, you will:
 
 ## 1.1: Download StarterApp
 
-The StarterApp is a production-quality MAUI application that demonstrates best practices for mobile development. It has been pre-configured to use PostgreSQL instead of SQL Server, matching the database from your dev-environment tutorial.
-
-{: .note }
-This option requires the tutorial to be hosted on GitHub Pages with a direct download link. If not available, use Option B or C.
+The StarterApp is a production-quality MAUI application that demonstrates best practices for mobile development. It has been pre-configured to use PostgreSQL matching the database from your dev-environment tutorial.
 
 1. Click **[Download StarterApp ZIP](https://edinburgh-napier.github.io/SET09102/downloads/starterapp.zip)**
 2. Extract the ZIP file to your desired location (e.g., `~/Projects/StarterApp`)
@@ -209,7 +206,7 @@ public DbSet<UserRole> UserRoles { get; set; }
 ```
 
 **Key observations**:
-- **`UseNpgsql`**: PostgreSQL provider (vs. `UseSqlServer` for SQL Server)
+- **`UseNpgsql`**: PostgreSQL provider
 - **`DbSet<T>`**: Each DbSet becomes a table in the database
 - **Connection string** loaded from `appsettings.json`
 
@@ -376,7 +373,7 @@ dotnet build
 dotnet run
 
 # OR run on Android emulator (requires emulator running)
-dotnet build -t:Run -f net8.0-android
+dotnet build -t:Run -f net9.0-android
 ```
 
 {: .note }
@@ -915,7 +912,6 @@ In this part, you:
 
 - **Multi-project architecture** separates concerns (UI, data, migrations)
 - **CommunityToolkit.Mvvm** reduces MVVM boilerplate with source generators (`[ObservableProperty]`, `[RelayCommand]`)
-- **PostgreSQL** uses `Host` in connection string (vs. `Server` for SQL Server)
 - **Service abstractions** (`IAuthenticationService`) enable testing and flexibility
 - **Migrations** track schema evolution over time
 - **MVVM pattern** provides clear separation between UI, logic, and data

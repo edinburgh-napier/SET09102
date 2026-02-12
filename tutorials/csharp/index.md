@@ -30,29 +30,44 @@ are available such as [Visual Studio](https://visualstudio.microsoft.com/) and
 [Rider](https://www.jetbrains.com/rider/). If you want to use an alternative IDE/editor, you 
 need to be prepared to adapt the instructions provided in the tutorials.
 
-You should install [.NET 8](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)
-for the purposes of this module. Although .NET 9 is available, there may be some incompatibilities
-with other software tools.
+You should install [.NET 9](https://dotnet.microsoft.com/en-us/download/dotnet/9.0)
+for the purposes of this module. The dev-environment tutorial will set up a containerized
+development environment with .NET 9 SDK, PostgreSQL, and Android tooling pre-configured.
 
 ## Recommended Learning Path
 
 ### Core Tutorials (Start Here)
 
-1. **[Development Environment Setup](dev-environment/)** - Set up Docker, PostgreSQL, VS Code, and dev containers
-2. **[Visual Studio Code Configuration](vscode/)** - Configure VS Code for C# development
-3. **[MAUI + MVVM + Database](maui-mvvm-database/)** ⭐ **NEW!** - Comprehensive tutorial combining MAUI, MVVM architecture, and PostgreSQL database integration. This is the primary learning path that teaches you to build production-quality cross-platform applications.
+Follow these tutorials in order to build a complete cross-platform MAUI application:
+
+1. **[Development Environment Setup](dev-environment/)** - Set up Docker, PostgreSQL, VS Code with .NET 9, and dev containers
+
+#### MAUI + MVVM + Database Tutorial Series
+
+This comprehensive tutorial series teaches you to build production-quality cross-platform applications:
+
+2. **[Getting Started](maui-mvvm-database/)** - Overview of what you'll build and prerequisites
+3. **[Download StarterApp](maui-mvvm-database/part1-download-explore.md)** - Download and explore the PostgreSQL-ready StarterApp architecture
+4. **[Simplify the Default Code](maui-mvvm-database/part2-simplify-notes.md)** - Transform authentication app into note-taking app
+5. **[Add Repository Pattern](maui-mvvm-database/part3-repository-pattern.md)** - Abstract data access for future API integration
+6. **[Advanced Migrations](maui-mvvm-database/part4-advanced-migrations.md)** - Master database schema evolution
+7. **[Testing and Verification](maui-mvvm-database/part5-testing-verification.md)** - Complete end-to-end testing
+
+**Estimated completion time**: 6-9 hours total
 
 ### StarterApp Resources
 
-4. **[StarterApp Overview](starterapp/starterapp.md)** - Introduction to the StarterApp architecture
-5. **[Authentication Deep Dive](starterapp/authentication.md)** - Detailed explanation of authentication implementation
-6. **[Navigation Patterns](starterapp/navigation.md)** - Advanced navigation techniques in MAUI
+These supplementary resources provide deeper understanding of specific concepts from the main tutorial:
+
+8. **[StarterApp Overview](starterapp/starterapp.md)** - Introduction to the StarterApp architecture
+9. **[Authentication Deep Dive](starterapp/authentication.md)** - Detailed explanation of authentication implementation
+10. **[Navigation Patterns](starterapp/navigation.md)** - Advanced navigation techniques in MAUI
 
 ### Advanced Topics
 
-7. **[Unit Testing](unit_test/)** - Writing and running unit tests for MAUI applications with PostgreSQL
-8. **[CI/CD Pipeline](cicd/)** - Continuous integration and deployment setup
-9. **[Cloudflare Tunnel](tunnel/)** - Exposing local services securely
+11. **[Unit Testing](unit_test/)** - Writing and running unit tests for MAUI applications with PostgreSQL
+12. **[CI/CD Pipeline](cicd/)** - Continuous integration and deployment setup
+13. **[Cloudflare Tunnel](tunnel/)** - Exposing local services securely
 
 ## Troubleshooting
 

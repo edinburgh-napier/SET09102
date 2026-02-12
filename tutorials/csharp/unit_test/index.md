@@ -3,7 +3,7 @@ title: Unit tests
 parent: C# practice
 has_children: true
 has_toc: false
-nav_order: 7
+nav_order: 11
 ---
 
 # Unit tests
@@ -221,10 +221,10 @@ tests for the Notes app.
 1.  Click on the `Notes` project in the **Solution Explorer** to open the project file in the 
     editor pane.
     
-2.  Add `net8.0` to the `TargetFrameworks` element as shown below.
+2.  Add `net9.0` to the `TargetFrameworks` element as shown below.
     
     ```xml
-    <TargetFrameworks>net8.0;net8.0-android;net8.0-maccatalyst</TargetFrameworks>
+    <TargetFrameworks>net9.0;net9.0-android;net9.0-maccatalyst</TargetFrameworks>
     ```
     
 3.  Prevent the build process from attempting to output an executable for the test project.
@@ -232,7 +232,7 @@ tests for the Notes app.
     Update the `OutputType` item to add the condition shown below.
     
     ```xml
-    <OutputType Condition="'$(TargetFramework)' != 'net8.0'">Exe</OutputType>
+    <OutputType Condition="'$(TargetFramework)' != 'net9.0'">Exe</OutputType>
     ```
 
 ### Update the test project file

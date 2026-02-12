@@ -8,29 +8,18 @@ nav_order: 4
 
 # Part 2: Simplify to Note-Taking App
 
-{: .no_toc }
-
-<details open markdown="block">
-  <summary>
-    Table of contents
-  </summary>
-  {: .text-delta }
-1. TOC
-{:toc}
-</details>
-
 ## Learning Objectives
 
 By the end of this part, you will:
 
-- ✅ Remove authentication complexity from StarterApp
-- ✅ Design new domain models (Note, Category)
-- ✅ Configure Entity Framework relationships
-- ✅ Create and apply database migrations for schema changes
-- ✅ Build ViewModels using CommunityToolkit.Mvvm
-- ✅ Create XAML views with data binding
-- ✅ Update Shell navigation for the new application
-- ✅ **Master the refactoring process for real-world applications**
+-  Remove authentication complexity from StarterApp
+-  Design new domain models (Note, Category)
+-  Configure Entity Framework relationships
+-  Create and apply database migrations for schema changes
+-  Build ViewModels using CommunityToolkit.Mvvm
+-  Create XAML views with data binding
+-  Update Shell navigation for the new application
+-  **Master the refactoring process for real-world applications**
 
 **Estimated time**: 120-150 minutes
 
@@ -1641,7 +1630,7 @@ dotnet build
 dotnet run
 
 # OR run on Android emulator
-dotnet build -t:Run -f net8.0-android
+dotnet build -t:Run -f net9.0-android
 ```
 
 ### Verification Steps
@@ -1897,15 +1886,15 @@ Assert.IsTrue(mockContext.Verify(x => x.SaveChangesAsync()));
 
 In this part, you:
 
-✅ Removed authentication complexity from StarterApp
-✅ Designed new domain models (`Note`, `Category`) with proper relationships
-✅ Configured Entity Framework with constraints, indexes, and delete behavior
-✅ Created and applied database migrations, including data seeding
-✅ Built ViewModels using CommunityToolkit.Mvvm source generators
-✅ Created XAML views with data binding, CollectionView, SwipeView
-✅ Updated Shell navigation with routes and flyout menu
-✅ Registered services in dependency injection container
-✅ **Tested complete CRUD functionality end-to-end**
+- Removed authentication complexity from StarterApp
+- Designed new domain models (`Note`, `Category`) with proper relationships
+- Configured Entity Framework with constraints, indexes, and delete behavior
+- Created and applied database migrations, including data seeding
+- Built ViewModels using CommunityToolkit.Mvvm source generators
+- Created XAML views with data binding, CollectionView, SwipeView
+- Updated Shell navigation with routes and flyout menu
+- Registered services in dependency injection container
+- **Tested complete CRUD functionality end-to-end**
 
 ### Teaching Moments Recap
 

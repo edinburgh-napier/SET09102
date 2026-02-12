@@ -2,7 +2,7 @@
 title: StarterApp
 parent: C# practice
 grand_parent: Tutorials
-nav_order: 10
+nav_order: 8
 ---
 
 # StarterApp
@@ -20,15 +20,6 @@ The StarterApp provides a production-quality starting point for MAUI development
 {: .important }
 **PostgreSQL Version Available**: A PostgreSQL-ready version of StarterApp is available in the [SET09102 repository](https://github.com/edinburgh-napier/SET09102/tree/main/code/StarterApp). This version is used in the **[MAUI + MVVM + Database Tutorial](../maui-mvvm-database/)**, which is the recommended learning path.
 
-## Versions
-
-There are two versions of StarterApp:
-
-1. **Original StarterApp** - Uses SQL Server for data storage (available at [original repository](https://github.com/coillarach/StarterApp))
-2. **PostgreSQL StarterApp** - Uses PostgreSQL for data storage (available in this repository's `code/StarterApp/` directory)
-
-The tutorials on this site use the **PostgreSQL version** to align with the [dev-environment tutorial](../dev-environment/) setup.
-
 ## Learning Path
 
 **New to MAUI?** Start with the comprehensive **[MAUI + MVVM + Database Tutorial](../maui-mvvm-database/)**, which uses StarterApp as the foundation and teaches you to:
@@ -45,17 +36,8 @@ This documentation provides supplementary material for understanding specific as
 
 ## Compatibility
 
-### Original StarterApp (SQL Server)
-
-| Name                                                                                      | Version     |
-|-------------------------------------------------------------------------------------------|-------------|
-| [.NET](https://dotnet.microsoft.com/en-us/)                                               | 8.0 / 9.0   |
-| [SQL Server Docker image](https://mcr.microsoft.com/en-us/artifact/mar/mssql/server/tags) | 2025-latest |
-
-### PostgreSQL StarterApp (Recommended)
-
 | Name                                                     | Version   |
 |----------------------------------------------------------|-----------|
-| [.NET](https://dotnet.microsoft.com/en-us/)              | 8.0 / 9.0 |
+| [.NET](https://dotnet.microsoft.com/en-us/)              | 9.0 |
 | [PostgreSQL Docker image](https://hub.docker.com/_/postgres) | 16        |
 

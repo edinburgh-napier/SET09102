@@ -2,7 +2,7 @@
 title: CI/CD
 parent: C# practice
 grand_parent: Tutorials
-nav_order: 8
+nav_order: 12
 ---
 
 # CI/CD with GitHub Actions
@@ -265,7 +265,7 @@ The next step is ensuring that the environment is set up properly and all tools 
         - name: Setup .NET
           uses: actions/setup-dotnet@v4
           with:
-            dotnet-version: 8.0
+            dotnet-version: 9.0
     ```
 
 4. To restore .NET workloads, add this step, making sure you provide the path to the Notes.csproj file:
@@ -295,7 +295,7 @@ The next step is ensuring that the environment is set up properly and all tools 
 
     ``` yml
         - name: Build project
-          run: dotnet build <path to .csproj file> --framework net8.0
+          run: dotnet build <path to .csproj file> --framework net9.0
     ```
 **Checkpoint:** At this point, your workflow file should look like this (the paths to the `.csproj` file might be different):
 
@@ -315,7 +315,7 @@ jobs:
         - name: Setup .NET
           uses: actions/setup-dotnet@v4
           with: 
-            dotnet-version: 8.0
+            dotnet-version: 9.0
             
         - name: Restore workloads
           run: dotnet workload restore ./Notes/Notes.csproj
@@ -324,7 +324,7 @@ jobs:
           run: dotnet restore ./Notes/Notes.csproj
              
         - name: Build project
-          run: dotnet build ./Notes/Notes.csproj --framework net8.0
+          run: dotnet build ./Notes/Notes.csproj --framework net9.0
 ```
 
 ### Optional: Adding environment variables to GitHub
@@ -366,7 +366,7 @@ So if you wish to replace your paths with the environment variable, you can repl
 {% raw %}
 ```yml
  - name: Build project
-   run: dotnet build ${{ vars.CSPROJ_PATH }} --framework net8.0
+   run: dotnet build ${{ vars.CSPROJ_PATH }} --framework net9.0
 ```
 {% endraw %}
 
@@ -446,7 +446,7 @@ To make the .NET projects aware of the connection string stored in a secret, it 
     - name: Build project
       env: 
         ConnectionStrings__TestConnection: ${{ secrets.TestConnection_CONNECTION_STRING }}
-      run: dotnet build <Path to your Notes.csproj> --framework net8.0
+      run: dotnet build <Path to your Notes.csproj> --framework net9.0
     ```
     {% endraw %}
 
@@ -457,7 +457,7 @@ To make the .NET projects aware of the connection string stored in a secret, it 
     - name: Test
       env: 
         ConnectionStrings__TestConnection: ${{ secrets.TestConnection_CONNECTION_STRING }}
-      run: dotnet test <Path to your notes.sln> --framework net8.0
+      run: dotnet test <Path to your notes.sln> --framework net9.0
     ```
     {% endraw %}
 
@@ -495,7 +495,7 @@ jobs:
         - name: Setup .NET
           uses: actions/setup-dotnet@v4
           with: 
-            dotnet-version: 8.0
+            dotnet-version: 9.0
             
         - name: Restore workloads
           run: dotnet workload restore ./Notes/Notes.csproj
@@ -506,12 +506,12 @@ jobs:
         - name: Build project
           env: 
             ConnectionStrings__TestConnection: ${{ secrets.TestConnection_CONNECTION_STRING }}
-          run: dotnet build ./Notes/Notes.csproj --framework net8.0
+          run: dotnet build ./Notes/Notes.csproj --framework net9.0
           
         - name: Test
           env: 
             ConnectionStrings__TestConnection: ${{ secrets.TestConnection_CONNECTION_STRING }}
-          run: dotnet test ./notes.sln --framework net8.0
+          run: dotnet test ./notes.sln --framework net9.0
 ```
 {% endraw %}
 
@@ -711,7 +711,7 @@ Now it's time to modify the workflow file to include static analysis by SonarClo
     - name: Build project
       env: 
         ConnectionStrings__TestConnection: ${{ secrets.TestConnection_CONNECTION_STRING }}
-      run: dotnet build <Path to your Notes.csproj> --framework net8.0
+      run: dotnet build <Path to your Notes.csproj> --framework net9.0
 
     ...
     ```
@@ -752,12 +752,12 @@ These are all the steps needed to set up SonarCloud. Now you can move on to sett
      - name: Build project
        env: 
          ConnectionStrings__TestConnection: ${{ secrets.TestConnection_CONNECTION_STRING }}
-       run: dotnet build <Path to your Notes.csproj file> --framework net8.0
+       run: dotnet build <Path to your Notes.csproj file> --framework net9.0
            
      - name: Test
        env: 
          ConnectionStrings__TestConnection: ${{ secrets.TestConnection_CONNECTION_STRING }}
-       run: dotnet-coverage collect "dotnet test <Path to you notes.sln file> --framework net8.0" -f xml -o "coverage.xml"
+       run: dotnet-coverage collect "dotnet test <Path to you notes.sln file> --framework net9.0" -f xml -o "coverage.xml"
 
      - name: End Sonar Analysis
        env:
@@ -804,7 +804,7 @@ jobs:
         - name: Setup .NET
           uses: actions/setup-dotnet@v4
           with: 
-            dotnet-version: 8.0
+            dotnet-version: 9.0
             
         - name: Restore workloads
           run: dotnet workload restore ./Notes/Notes.csproj
@@ -856,12 +856,12 @@ jobs:
         - name: Build project
           env: 
             ConnectionStrings__TestConnection: ${{ secrets.TestConnection_CONNECTION_STRING }}
-          run: dotnet build ./Notes/Notes.csproj --framework net8.0
+          run: dotnet build ./Notes/Notes.csproj --framework net9.0
           
         - name: Test
           env: 
             ConnectionStrings__TestConnection: ${{ secrets.TestConnection_CONNECTION_STRING }}
-          run: dotnet-coverage collect "dotnet test ./notes.sln --framework net8.0" -f xml -o "coverage.xml"
+          run: dotnet-coverage collect "dotnet test ./notes.sln --framework net9.0" -f xml -o "coverage.xml"
 
         - name: End Sonar Analysis
           env:

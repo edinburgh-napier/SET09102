@@ -2,7 +2,7 @@
 title: Navigation
 parent: StarterApp
 grand_parent: C# practice
-nav_order: 2
+nav_order: 10
 mermaid: true
 ---
 

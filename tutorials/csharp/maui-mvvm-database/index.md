@@ -52,7 +52,7 @@ Before starting this tutorial, you must have:
 3. **Git basics**: clone, commit, push
 4. **Development environment**:
    - Visual Studio Code with Dev Containers extension
-   - .NET 8 SDK installed
+   - .NET 9 SDK (installed automatically in dev container)
    - Docker Desktop running
    - PostgreSQL container from dev-environment tutorial
 

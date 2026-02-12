@@ -3,7 +3,7 @@ title: Using an SSH tunnel
 parent: C# practice
 has_children: true
 has_toc: false
-nav_order: 9
+nav_order: 13
 ---
 
 # Connecting to a shared database over an SSH tunnel
@@ -25,7 +25,7 @@ You would usually connect to a local database using a connection string like the
 ```
 
 The example assumes that we are using the default port of 1433 and the IP address is included
-so that we can access an SQL Server instance running inside a Docker container.
+so that we can access a database instance running inside a Docker container.
 
 Once an SSH tunnel is set up, it effectively redirects traffic on the relevant port to the 
 remote host. You may need to use the name of the remote database and the associated user 
@@ -45,7 +45,7 @@ credentials, but it will look a lot like a local connection as shown below.
 1. Use a tool like PuTTY (on Windows) or the built-in SSH client on MacOS/Linux. 
 2. Connect to the SSH server where the database resides.
 3. Navigate to the "Connection" > "SSH" > "Tunnels" settings in your SSH client.
-4. Enter the source port (e.g., 1433 for SQL Server) and the destination hostname and port 
+4. Enter the source port (e.g. 1433 for SQL Server) and the destination hostname and port 
    (e.g. localhost:1433, soc-app-liv-17.napier.ac.uk:1433). 
 5. Click "Add" and then "Open" to establish the tunnel. 
 6. Ensure the tunnel is working by attempting to connect to the database using a database client 
