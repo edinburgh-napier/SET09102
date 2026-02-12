@@ -1,9 +1,11 @@
 ---
-layout: default
-title: "Part 3: Add Repository Pattern"
-parent: C# Tutorials
+title: Add Repository Pattern
+parent: C# practice
+has_children: false
+has_toc: false
 nav_order: 5
 ---
+
 
 # Part 3: Add Repository Pattern
 

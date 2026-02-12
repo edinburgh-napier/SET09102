@@ -1,7 +1,8 @@
 ---
-layout: default
-title: "Part 1: Download and Explore"
-parent: C# Tutorials
+title: Download StarterApp
+parent: C# practice
+has_children: false
+has_toc: false
 nav_order: 3
 ---
 

@@ -1,7 +1,8 @@
 ---
-layout: default
-title: "Part 5: Testing and Verification"
-parent: C# Tutorials
+title: Testing and Verification
+parent: C# practice
+has_children: false
+has_toc: false
 nav_order: 7
 ---
 

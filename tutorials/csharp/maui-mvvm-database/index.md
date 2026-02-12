@@ -6,8 +6,6 @@ has_toc: false
 nav_order: 2
 ---
 
-
-
 # Getting Started with MAUI + MVVM + Database
 
 <hr class="splash">

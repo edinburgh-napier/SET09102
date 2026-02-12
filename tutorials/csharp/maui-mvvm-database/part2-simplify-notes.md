@@ -1,7 +1,8 @@
 ---
-layout: default
-title: "Part 2: Simplify to Note-Taking App"
-parent: C# Tutorials
+title: Simplify the Default Code
+parent: C# practice
+has_children: false
+has_toc: false
 nav_order: 4
 ---
 

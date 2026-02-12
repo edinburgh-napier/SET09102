@@ -1,7 +1,8 @@
 ---
-layout: default
-title: "Part 4: Advanced Migrations"
-parent: C# Tutorials
+title: Advanced Migrations
+parent: C# practice
+has_children: false
+has_toc: false
 nav_order: 6
 ---
 
