@@ -1,10 +1,12 @@
 ---
-layout: default
 title: Getting Started
-parent: C# Tutorials
+parent: C# practice
+has_children: false
+has_toc: false
 nav_order: 2
-has_children: true
 ---
+
+
 
 # Getting Started with MAUI + MVVM + Database
 
