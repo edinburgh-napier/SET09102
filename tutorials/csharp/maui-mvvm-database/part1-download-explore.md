@@ -1,9 +1,8 @@
 ---
 layout: default
 title: "Part 1: Download and Explore"
-parent: MAUI + MVVM + Database
-grand_parent: C# Tutorials
-nav_order: 1
+parent: C# Tutorials
+nav_order: 3
 ---
 
 # Part 1: Download and Explore StarterApp

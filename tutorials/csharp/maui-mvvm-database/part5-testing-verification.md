@@ -1,9 +1,8 @@
 ---
 layout: default
 title: "Part 5: Testing and Verification"
-parent: MAUI + MVVM + Database
-grand_parent: C# Tutorials
-nav_order: 5
+parent: C# Tutorials
+nav_order: 7
 ---
 
 # Part 5: Testing and Verification

@@ -1,9 +1,8 @@
 ---
 layout: default
 title: "Part 3: Add Repository Pattern"
-parent: MAUI + MVVM + Database
-grand_parent: C# Tutorials
-nav_order: 3
+parent: C# Tutorials
+nav_order: 5
 ---
 
 # Part 3: Add Repository Pattern

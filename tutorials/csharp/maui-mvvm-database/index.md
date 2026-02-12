@@ -1,12 +1,12 @@
 ---
 layout: default
-title: MAUI + MVVM + Database
+title: Getting Started
 parent: C# Tutorials
-nav_order: 3
+nav_order: 2
 has_children: true
 ---
 
-# MAUI + MVVM + Database Tutorial
+# Getting Started with MAUI + MVVM + Database
 
 <hr class="splash">
 

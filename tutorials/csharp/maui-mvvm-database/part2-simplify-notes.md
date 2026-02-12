@@ -1,9 +1,8 @@
 ---
 layout: default
 title: "Part 2: Simplify to Note-Taking App"
-parent: MAUI + MVVM + Database
-grand_parent: C# Tutorials
-nav_order: 2
+parent: C# Tutorials
+nav_order: 4
 ---
 
 # Part 2: Simplify to Note-Taking App

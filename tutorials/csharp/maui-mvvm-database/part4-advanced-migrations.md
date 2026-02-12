@@ -1,9 +1,8 @@
 ---
 layout: default
 title: "Part 4: Advanced Migrations"
-parent: MAUI + MVVM + Database
-grand_parent: C# Tutorials
-nav_order: 4
+parent: C# Tutorials
+nav_order: 6
 ---
 
 # Part 4: Advanced Migrations
