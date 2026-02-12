@@ -1,12 +1,15 @@
-name: Zip Subdirectory
+name: Zip Subdirectory and Deploy to Persistent URL
 
 on:
   push:
     branches: [ main ]
   workflow_dispatch: # Allows you to run this manually from the Actions tab
 
+permissions:
+  contents: write # Required to push to the gh-pages branch
+  
 jobs:
-  build-and-zip:
+  deploy-zip:
     runs-on: ubuntu-latest
     steps:
       # 1. Check out the code from your repository
@@ -19,10 +22,12 @@ jobs:
         run: |
           zip -r starterapp.zip code/StarterApp
           
-      # 3. Upload the zip as a "GitHub Artefact" so you can download it
-      - name: Upload Zip Artefact
-        uses: actions/upload-artifact@v4
+      # 3. Upload the zip to the gh-pages branch
+      - name: Deploy to GitHub Pages Branch
+        uses: peaceiris/actions-gh-pages@v4
         with:
-          name: starterapp
-          path: starterapp.zip
-          retention-days: 5
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: .
+          publish_branch: gh-pages
+          # Keep only the zip file in the gh-pages branch to save space
+          destination_dir: downloads
