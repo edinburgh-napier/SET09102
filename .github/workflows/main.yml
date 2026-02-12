@@ -21,8 +21,12 @@ jobs:
       - name: Create Zip Archive
         run: |
           zip -r starterapp.zip code/StarterApp
-          
-      # 3. Upload the zip to the gh-pages branch
+
+      # 3. Enable downloading direct from repo
+      - name: Prevent Jekyll Processing
+        run: touch .nojekyll
+        
+      # 4. Upload the zip to the gh-pages branch
       - name: Deploy to GitHub Pages Branch
         uses: peaceiris/actions-gh-pages@v4
         with:
