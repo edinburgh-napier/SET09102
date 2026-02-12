@@ -174,7 +174,8 @@ Resources:
     Type: AWS::RDS::DBInstance
     Properties:
       DBInstanceClass: db.t2.micro
-      Engine: MySQL  # or SQL Server for C# compatibility
+      Engine: postgres
+      EngineVersion: "16.1" # It is best practice to specify a version (e.g., 16)
       MasterUsername: admin
       MasterUserPassword: Password1234  # Use AWS Secrets Manager in production
       AllocatedStorage: 20
@@ -202,8 +203,8 @@ Resources:
    setup script (such as commands to install the .NET runtime and run the C# application). It ensures that 
    each instance launched by the ASG is configured correctly.
 
-6. **RDS Database**: Provisions a MySQL database (or other compatible databases such as SQL Server for 
-   .NET applications), providing a persistent data storage layer for the application. The database is not 
+6. **RDS Database**: Provisions a Postgres database (or other compatible databases such as SQL Server for 
+   providing a persistent data storage layer for the application. The database is not 
    publicly accessible to improve security, and it has automated backups for resilience.
 
 Using AWS CloudFormation as IaC enables a consistent, repeatable setup for infrastructure. The entire 

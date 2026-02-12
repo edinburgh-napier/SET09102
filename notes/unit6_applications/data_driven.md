@@ -127,8 +127,8 @@ known as a _surrogate_ or _synthetic_ key. Using integers as identifiers is so c
 all relational database platforms provide a means of automatically generating a new primary key 
 value when a row is inserted into a table. In MySQL, for example, the primary key column can be 
 defined with the [AUTO-INCREMENT](https://dev.mysql.com/doc/refman/8.0/en/example-auto-increment.html) 
-property while in SQL Server, the column is defined with the 
-[IDENTITY](https://learn.microsoft.com/en-us/sql/t-sql/statements/create-table-transact-sql-identity-property?view=sql-server-ver16) 
+property while in Postgres, the column is defined with the 
+[IDENTITY](https://www.postgresql.org/docs/current/ddl-identity-columns.html) 
 property. Either way, the effect is the same - when entering the data for a new row in the table, 
 the primary key value is supplied by the database engine.
 
