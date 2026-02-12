@@ -48,7 +48,7 @@ Choose one of the following methods:
 {: .note }
 This option requires the tutorial to be hosted on GitHub Pages with a direct download link. If not available, use Option B or C.
 
-1. Click **[Download StarterApp ZIP](#)** (link to be added when deployed)
+1. Click **[Download StarterApp ZIP](https://github.com/edinburgh-napier/SET09102/blob/gh-pages/downloads/starterapp.zip)
 2. Extract the ZIP file to your desired location (e.g., `~/Projects/StarterApp`)
 3. Skip to Section 1.2
 
