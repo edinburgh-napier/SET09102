@@ -10,12 +10,14 @@ nav_order: 2
 
 <hr class="splash">
 
-![Building Blocks](../../../images/icons/building-blocks.png)
+![Edsger Dijkstra](../../../images/people/edsger_dijkstra.jpg)
 
 <blockquote class="pretty"><span>
 The art of programming is the art of organizing complexity.
-</span></blockquote>
+and then not thinking about it any more.
 <p class="attribution">Edsger W. Dijkstra</p>
+</span></blockquote>
+
 <hr class="splash">
 
 ## Overview
