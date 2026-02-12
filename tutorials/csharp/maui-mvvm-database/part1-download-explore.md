@@ -8,28 +8,17 @@ nav_order: 3
 
 # Part 1: Download and Explore StarterApp
 
-{: .no_toc }
-
-<details open markdown="block">
-  <summary>
-    Table of contents
-  </summary>
-  {: .text-delta }
-1. TOC
-{:toc}
-</details>
-
 ## Learning Objectives
 
 By the end of this part, you will:
 
-- ✅ Download and set up the PostgreSQL-ready StarterApp
-- ✅ Understand multi-project solution architecture
-- ✅ Explore existing MVVM implementation with CommunityToolkit
-- ✅ Review Entity Framework Core with PostgreSQL configuration
-- ✅ Understand authentication/authorization patterns
-- ✅ Apply database migrations to create schema
-- ✅ **Master the MVVM pattern and services layer architecture**
+-  Download and set up the PostgreSQL-ready StarterApp
+-  Understand multi-project solution architecture
+-  Explore existing MVVM implementation with CommunityToolkit
+-  Review Entity Framework Core with PostgreSQL configuration
+-  Understand authentication/authorization patterns
+-  Apply database migrations to create schema
+-  **Master the MVVM pattern and services layer architecture**
 
 **Estimated time**: 60-90 minutes
 
@@ -48,7 +37,7 @@ Choose one of the following methods:
 {: .note }
 This option requires the tutorial to be hosted on GitHub Pages with a direct download link. If not available, use Option B or C.
 
-1. Click **[Download StarterApp ZIP](https://github.com/edinburgh-napier/SET09102/blob/gh-pages/downloads/starterapp.zip)
+1. Click **[Download StarterApp ZIP](https://edinburgh-napier.github.io/SET09102/downloads/starterapp.zip)
 2. Extract the ZIP file to your desired location (e.g., `~/Projects/StarterApp`)
 3. Skip to Section 1.2
 

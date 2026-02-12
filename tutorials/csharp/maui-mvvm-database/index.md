@@ -62,16 +62,16 @@ Before starting this tutorial, you must have:
 
 By completing this tutorial, you will be able to:
 
-✅ Understand and work with multi-project MAUI solutions
-✅ Implement MVVM pattern using CommunityToolkit.Mvvm
-✅ Design and implement database models with Entity Framework Core
-✅ Use PostgreSQL with .NET applications via Npgsql
-✅ Create and apply database migrations for schema changes
-✅ Implement repository pattern for data access abstraction
-✅ Use dependency injection throughout an application
-✅ Build complete CRUD functionality in MAUI
-✅ Navigate between views using Shell navigation
-✅ Prepare applications for future REST API integration
+- Understand and work with multi-project MAUI solutions
+- Implement MVVM pattern using CommunityToolkit.Mvvm
+- Design and implement database models with Entity Framework Core
+- Use PostgreSQL with .NET applications via Npgsql
+- Create and apply database migrations for schema changes
+- Implement repository pattern for data access abstraction
+- Use dependency injection throughout an application
+- Build complete CRUD functionality in MAUI
+- Navigate between views using Shell navigation
+- Prepare applications for future REST API integration
 
 ## Tutorial Structure
 
