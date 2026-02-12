@@ -137,7 +137,7 @@ workflow files that will be used in this tutorial. A full list is available in t
 Here is a template for a basic workflow file:
 
 ``` yml
-name: <Name of your pipeline> 
+name: <Name of your pipeline>
 
 # What events cause the pipeline to run
 on:
@@ -149,12 +149,12 @@ jobs:
   <Name of job>:
 
     # The OS that the runner will use
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     # A list of steps to run
     steps:
       - name: <Name of step>
-        run: echo "Some command" 
+        run: echo "Some command"
 ```
 
 ### Secrets and environment variables
@@ -216,20 +216,20 @@ The name of your workflow can be anything you want so feel free to replace **Bui
 
 
 ### Setting up the environment
-1. Now that you have defined when the workflow will be triggered, you can move on to defining what **jobs** and **actions** will be executed in the workflow. You also need to decide what operating system will be used for the runner. For this project, we will use the lastest version of Windows. 
+1. Now that you have defined when the workflow will be triggered, you can move on to defining what **jobs** and **actions** will be executed in the workflow. You also need to decide what operating system will be used for the runner. For this project, we will use the lastest version of Ubuntu Linux.
 
     Add this code to your workflow file:
 
     ```yml
       name: Build & Test Workflow
 
-      on: 
+      on:
         [pull_request]
 
       jobs:
         build:
-          
-          runs-on: windows-latest
+
+          runs-on: ubuntu-latest
     ```
 
       {: .note-title }
@@ -303,26 +303,26 @@ The next step is ensuring that the environment is set up properly and all tools 
 name: Build & Test Workflow
 
 on: [pull_request]
-    
+
 jobs:
     build:
-        runs-on: windows-latest
-        
+        runs-on: ubuntu-latest
+
         steps:
         - name: Checkout code
           uses: actions/checkout@v4
-          
+
         - name: Setup .NET
           uses: actions/setup-dotnet@v4
-          with: 
+          with:
             dotnet-version: 9.0
-            
+
         - name: Restore workloads
           run: dotnet workload restore ./Notes/Notes.csproj
-          
+
         - name: Restore dependencies
           run: dotnet restore ./Notes/Notes.csproj
-             
+
         - name: Build project
           run: dotnet build ./Notes/Notes.csproj --framework net9.0
 ```
@@ -390,36 +390,56 @@ Add this code to the bottom of your workflow (remember about proper indentation)
 ```
 
 ### Adding database support to the workflow
-In this application, the notes are saved to a database running inside a Docker container deployed on your local machine. Some of the tests that are defined in the *Notes.Test* project rely on the connection to that database. In order to properly run the tests, the workflow also needs connection to a database. In real-world projects, a database can be accessed from remote connections using certain protocols, e.g. SSH. Since we only have a local database that is not configured for that, we cannot do that.
+In this application, the notes are saved to a database running inside a Docker container deployed on your local machine. Some of the tests that are defined in the *Notes.Test* project rely on the connection to that database. In order to properly run the tests, the workflow also needs connection to a database.
 
-In this tutorial, we will set up a dummy database on the workflow runner that will mimic the local database. In the local setup, we use a separate *testdb* that gets pre-populated with some seed data before running the tests so we can replicate that in the remote setup.
+Just like in your dev-environment tutorial where you set up PostgreSQL using Docker Compose, GitHub Actions provides **service containers** that work in the same way. We'll use a PostgreSQL 16 service container to create a test database for the workflow - this matches the PostgreSQL setup you're already using locally.
 
-#### Setting up SQL Server
+#### Setting up PostgreSQL with Service Containers
 
-1. First, we need to install SQL Server on the workflow runner. Paste this code **between the *Checkout code* step and the *Setup .NET* step**:
-
-    ```yml
-    - name: Download SqlServer
-      uses: potatoqualitee/mssqlsuite@v1.7
-      with:
-        install: sqlengine, sqlpackage
-    ``` 
-
-2. Once the runner installs SQL Server, it must start the SQL Client and create the database. Paste the following code below the **Download SQLServer** step:
+1. Add a PostgreSQL service container to your workflow. Modify your workflow file to add the `services` section **between the `runs-on` line and the `steps` section**:
 
     ```yml
-    - name: Run sqlclient
-      run: |
-        sqlcmd -S localhost -U sa -P dbatools.I0 -Q "CREATE DATABASE TestDb;"
-        sqlcmd -S localhost -U sa -P dbatools.I0 -d TestDb -Q "SELECT @@version;"
+    jobs:
+      build:
+        runs-on: ubuntu-latest
+
+        services:
+          postgres:
+            image: postgres:16
+            env:
+              POSTGRES_USER: test_user
+              POSTGRES_PASSWORD: test_password
+              POSTGRES_DB: testdb
+            options: >-
+              --health-cmd pg_isready
+              --health-interval 10s
+              --health-timeout 5s
+              --health-retries 5
+            ports:
+              - 5432:5432
+
+        steps:
+          # Your steps go here...
     ```
+
+    This service container:
+    - Uses PostgreSQL 16 (same version as your dev-environment)
+    - Creates a database named `testdb` automatically
+    - Uses `test_user` and `test_password` for credentials
+    - Includes health checks to ensure PostgreSQL is ready before tests run
+    - Exposes the database on port 5432
+
+    {: .note-title }
+    > <i class="fa-solid fa-triangle-exclamation"></i> Note
+    >
+    > Unlike SQL Server which required separate installation steps, the PostgreSQL service container handles everything automatically - the database is created and ready to use as soon as the workflow starts. This is the same pattern you used with Docker Compose in the dev-environment tutorial.
 #### Connecting to the database for tests
 
-Now your database will be running on the workflow runner and will be ready for connections. However, your projects don't know how to connect to it yet. Locally, we use ConnectionStrings stored in the `appsettings.json` file but it is very bad practice to commit them to the repository as they contain sensitive data, such as your IP address. GitHub addresses this by introducing repository secrets and supporting environment variables in their workflows.
+Now your PostgreSQL database will be running on the workflow runner and will be ready for connections. However, your projects don't know how to connect to it yet. Locally, we use ConnectionStrings stored in the `appsettings.json` file but it is very bad practice to commit them to the repository as they contain sensitive data, such as your IP address. GitHub addresses this by introducing repository secrets and supporting environment variables in their workflows.
 
 To add a repository secret:
 
-1. Navigate to the **Settings** tab of the repository. In the menu on the  left, expand **Secrets and variables** and select **Actions**. 
+1. Navigate to the **Settings** tab of the repository. In the menu on the  left, expand **Secrets and variables** and select **Actions**.
 
     ![Fig. 16: Adding secrets in settings](images/actions-menu.png){: standalone #fig16 data-title="Adding secrets in settings"}
 
@@ -427,7 +447,12 @@ To add a repository secret:
 
     ![Fig. 17: Repository secrets](images/secrets.png){: standalone #fig17 data-title="Repository secrets"}
 
-3. Put `TestConnection_CONNECTION_STRING` as the name and `Server=localhost;Database=TestDb;User ID=sa;Password=dbatools.I0;TrustServerCertificate=True;` as the Secret. Select **Add secret**.
+3. Put `TestConnection_CONNECTION_STRING` as the name and `Host=localhost;Port=5432;Username=test_user;Password=test_password;Database=testdb;` as the Secret. Select **Add secret**.
+
+    {: .note-title }
+    > <i class="fa-solid fa-triangle-exclamation"></i> Note
+    >
+    > This connection string format matches the PostgreSQL pattern used in StarterApp. The credentials match the service container configuration we defined earlier (`test_user`, `test_password`, `testdb`).
 
 To use the secret in the workflow, you can use the following syntax:
 
@@ -473,51 +498,70 @@ To make the .NET projects aware of the connection string stored in a secret, it 
 name: Build & Test Workflow
 
 on: [pull_request]
-    
+
 jobs:
     build:
-        runs-on: windows-latest
-        
+        runs-on: ubuntu-latest
+
+        services:
+          postgres:
+            image: postgres:16
+            env:
+              POSTGRES_USER: test_user
+              POSTGRES_PASSWORD: test_password
+              POSTGRES_DB: testdb
+            options: >-
+              --health-cmd pg_isready
+              --health-interval 10s
+              --health-timeout 5s
+              --health-retries 5
+            ports:
+              - 5432:5432
+
         steps:
         - name: Checkout code
           uses: actions/checkout@v4
 
-        - name: Download SqlServer
-          uses: potatoqualitee/mssqlsuite@v1.7
-          with:
-            install: sqlengine, sqlpackage
-    
-        - name: Run sqlclient
-          run: |
-            sqlcmd -S localhost -U sa -P dbatools.I0 -Q "CREATE DATABASE TestDb;"
-            sqlcmd -S localhost -U sa -P dbatools.I0 -d TestDb -Q "SELECT @@version;"
-          
         - name: Setup .NET
           uses: actions/setup-dotnet@v4
-          with: 
+          with:
             dotnet-version: 9.0
-            
+
         - name: Restore workloads
           run: dotnet workload restore ./Notes/Notes.csproj
-          
+
         - name: Restore dependencies
           run: dotnet restore ./Notes/Notes.csproj
-                 
+
         - name: Build project
-          env: 
+          env:
             ConnectionStrings__TestConnection: ${{ secrets.TestConnection_CONNECTION_STRING }}
           run: dotnet build ./Notes/Notes.csproj --framework net9.0
-          
+
         - name: Test
-          env: 
+          env:
             ConnectionStrings__TestConnection: ${{ secrets.TestConnection_CONNECTION_STRING }}
           run: dotnet test ./notes.sln --framework net9.0
 ```
 {% endraw %}
 
-Lastly, we need to make a couple of changes in the code to ensure that the environment variable is picked up and used correctly. 
+Lastly, we need to make a couple of changes in the code to ensure that the environment variable is picked up and used correctly, and to update the database provider from SQL Server to PostgreSQL.
 
-1. Open the *Notes.Database/Notes.Database.csproj* file. Update the ItemGroup at the bottom of the file to look like this:
+1. Update the database provider package in *Notes.Database/Notes.Database.csproj*. Find the package reference for the SQL Server provider and replace it with the PostgreSQL provider:
+
+    Replace:
+    ```xml
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.0" />
+    ```
+
+    With:
+    ```xml
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="9.0.0" />
+    ```
+
+    This changes the Entity Framework provider from SQL Server to PostgreSQL, matching the database setup in your dev-environment and StarterApp.
+
+2. Open the *Notes.Database/Notes.Database.csproj* file. Update the ItemGroup at the bottom of the file to look like this:
 
     ```xml
     <ItemGroup>
@@ -530,7 +574,7 @@ Lastly, we need to make a couple of changes in the code to ensure that the envir
 
     The change will ensure that there are no errors in the workflow due to the absence of the `appsettings.json` file in your remote repository.
 
-2. Open the *NotesDbContext.cs* file. Update the `OnConfiguring` method to look like this:
+3. Open the *NotesDbContext.cs* file. Update the `OnConfiguring` method to look like this:
 
     ```c#
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -557,13 +601,13 @@ Lastly, we need to make a couple of changes in the code to ensure that the envir
                 throw new InvalidOperationException("Database connection string is not configured.");
             }
 
-            optionsBuilder.UseSqlServer(
+            optionsBuilder.UseNpgsql(
                 connectionString,
-                m => m.MigrationsAssembly("Notes.Migrations"));
+                o => o.MigrationsAssembly("Notes.Migrations"));
         }
     ```
 
-      This will first try to retrieve the connection string from the environment variable that is added to the project from the workflow, and if that fails, it will fallback to the original method of getting the connection string from the `appsettings.json` file.
+      This will first try to retrieve the connection string from the environment variable that is added to the project from the workflow, and if that fails, it will fallback to the original method of getting the connection string from the `appsettings.json` file. Note that we've changed from `UseSqlServer()` to `UseNpgsql()` to match the PostgreSQL database provider.
 
 ### Checking whether your pipeline works
 At this point, your workflow should be set up to successfuly build and test the project. 
@@ -599,12 +643,74 @@ At this point, your workflow should be set up to successfuly build and test the 
     {: .note-title }
     > <i class="fa-solid fa-triangle-exclamation"></i> Note
     >
-    > Note that it takes a long time for the workflow to run due many setup steps, e.g. installing the SQL Server or restoring workloads. Expect that it might take around 15 mins.
+    > The workflow takes some time to run due to setup steps like restoring workloads and running static analysis. The PostgreSQL service container starts quickly (thanks to health checks), but expect the full workflow to take 5-10 minutes depending on the number of tests and Sonar analysis complexity.
 
   {: .warning-title }
   > <i class="fa-solid fa-triangle-exclamation"></i> Checkpoint
   >
   > Please make sure that your workflow completes without any errors before proceeding with the rest of the tutorial. This is the basic workflow that will set up a database, build the project and run any tests.
+
+### Why PostgreSQL in CI/CD?
+
+Using PostgreSQL in your CI/CD pipeline mirrors your local development environment and prepares you for real-world deployment scenarios. Understanding the difference between development/testing environments and production deployment is crucial for professional software development.
+
+#### Development & Testing Workflow (What You're Doing Now)
+
+In local development and CI/CD testing, you have **direct control** over the database:
+
+1. **Local Development**:
+   - Run PostgreSQL in Docker containers locally
+   - Run database migrations on your local database using Entity Framework
+   - Test your application against your local database
+   - You manage the database schema, data, and configuration
+
+2. **CI/CD Pipeline** (This Tutorial):
+   - GitHub Actions creates a PostgreSQL service container
+   - The workflow runs database migrations automatically
+   - Tests execute against the test database
+   - Each workflow run gets a clean database instance
+
+This approach works because you control the environment and can safely run migrations, reset data, and modify the schema as needed.
+
+#### Production Deployment (What Happens Later)
+
+In real-world production environments, the architecture is very different:
+
+1. **Remote Database Access via API**:
+   - Your application connects to a **pre-defined API** that accesses a centralized PostgreSQL database
+   - The API runs on a server (e.g., Azure App Service, AWS Elastic Beanstalk)
+   - The database runs on a managed service (e.g., Azure Database for PostgreSQL, AWS RDS)
+   - **You do NOT run migrations from your application** - the API team controls database schema changes
+   - Your app makes HTTP requests to API endpoints instead of direct database connections
+
+2. **Why This Separation Matters**:
+   - **Security**: Client applications cannot access database credentials or connection strings
+   - **Scalability**: The API can serve many clients without overwhelming the database
+   - **Versioning**: The API provides a stable interface even if the database schema changes
+   - **Control**: Database administrators control migrations and schema changes, not every developer
+   - **Reliability**: Centralized database management prevents conflicts from multiple apps trying to modify the schema
+
+3. **Real-World Example**:
+
+   **Development (Now)**:
+   ```
+   Your App → Direct Connection → Your Local PostgreSQL Database
+   (You run migrations, you control schema)
+   ```
+
+   **Production (Later in Module)**:
+   ```
+   Your App → HTTP Requests → University API → Shared PostgreSQL Database
+   (API team controls migrations, you only read/write data via endpoints)
+   ```
+
+#### Summary: Your Workflow in This Module
+
+- ✅ **Dev**: Run migrations locally → Test directly against PostgreSQL in Docker
+- ✅ **CI/CD**: Run migrations in pipeline → Test against PostgreSQL service container
+- ✅ **Production**: Use pre-defined API → No direct database access, no migrations from your app
+
+This progression mirrors professional software development practices where developers work with full database control locally, automated testing runs in CI/CD pipelines, and production environments use managed services with API layers for security and scalability.
 
 
 ## 3. Extending your pipeline with external tools
@@ -706,7 +812,7 @@ Now it's time to modify the workflow file to include static analysis by SonarClo
       run: |
         mkdir -p .sonar/scanner
         dotnet tool update dotnet-sonarscanner --tool-path ./.sonar/scanner
-        echo "$(Resolve-Path ./.sonar/scanner)" >> $env:GITHUB_PATH
+        echo "$PWD/.sonar/scanner" >> $GITHUB_PATH
 
     - name: Build project
       env: 
@@ -741,7 +847,7 @@ These are all the steps needed to set up SonarCloud. Now you can move on to sett
        run: |
          mkdir -p .sonar/scanner
          dotnet tool update dotnet-sonarscanner --tool-path ./.sonar/scanner
-         echo "$(Resolve-Path ./.sonar/scanner)" >> $env:GITHUB_PATH
+         echo "$PWD/.sonar/scanner" >> $GITHUB_PATH
 
      - name: Start Sonar Analysis
        env:
@@ -782,40 +888,45 @@ These are all the steps needed to set up SonarCloud. Now you can move on to sett
 name: Build & Test Workflow
 
 on: [pull_request]
-    
+
 jobs:
     build:
-        runs-on: windows-latest
-        
+        runs-on: ubuntu-latest
+
+        services:
+          postgres:
+            image: postgres:16
+            env:
+              POSTGRES_USER: test_user
+              POSTGRES_PASSWORD: test_password
+              POSTGRES_DB: testdb
+            options: >-
+              --health-cmd pg_isready
+              --health-interval 10s
+              --health-timeout 5s
+              --health-retries 5
+            ports:
+              - 5432:5432
+
         steps:
         - name: Checkout code
           uses: actions/checkout@v4
 
-        - name: Download SqlServer
-          uses: potatoqualitee/mssqlsuite@v1.7
-          with:
-            install: sqlengine, sqlpackage
-    
-        - name: Run sqlclient
-          run: |
-            sqlcmd -S localhost -U sa -P dbatools.I0 -Q "CREATE DATABASE TestDb;"
-            sqlcmd -S localhost -U sa -P dbatools.I0 -d TestDb -Q "SELECT @@version;"
-          
         - name: Setup .NET
           uses: actions/setup-dotnet@v4
-          with: 
+          with:
             dotnet-version: 9.0
-            
+
         - name: Restore workloads
           run: dotnet workload restore ./Notes/Notes.csproj
-          
+
         - name: Restore dependencies
           run: dotnet restore ./Notes/Notes.csproj
 
         - name: Install Tools
           run: dotnet tool install --global dotnet-coverage
 
-            #Setup a Java JDK
+        #Setup a Java JDK
         - name: Set up JDK 17
           uses: actions/setup-java@v4
           with:
@@ -845,21 +956,21 @@ jobs:
           run: |
             mkdir -p .sonar/scanner
             dotnet tool update dotnet-sonarscanner --tool-path ./.sonar/scanner
-            echo "$(Resolve-Path ./.sonar/scanner)" >> $env:GITHUB_PATH
-            
+            echo "$PWD/.sonar/scanner" >> $GITHUB_PATH
+
         - name: Start Sonar Analysis
           env:
             SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           run: |
-            ./.sonar/scanner/dotnet-sonarscanner begin /k:"PipelineTest123_notes" /o:"pipelinetest123" /d:sonar.token="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.scanner.scanAll=false /d:sonar.cs.vscoveragexml.reportsPaths=coverage.xml    
+            ./.sonar/scanner/dotnet-sonarscanner begin /k:"PipelineTest123_notes" /o:"pipelinetest123" /d:sonar.token="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.scanner.scanAll=false /d:sonar.cs.vscoveragexml.reportsPaths=coverage.xml
 
         - name: Build project
-          env: 
+          env:
             ConnectionStrings__TestConnection: ${{ secrets.TestConnection_CONNECTION_STRING }}
           run: dotnet build ./Notes/Notes.csproj --framework net9.0
-          
+
         - name: Test
-          env: 
+          env:
             ConnectionStrings__TestConnection: ${{ secrets.TestConnection_CONNECTION_STRING }}
           run: dotnet-coverage collect "dotnet test ./notes.sln --framework net9.0" -f xml -o "coverage.xml"
 
