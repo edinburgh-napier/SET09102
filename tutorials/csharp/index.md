@@ -77,3 +77,4 @@ Having issues? See the **[Troubleshooting Guide](troubleshooting.md)** for commo
 * [Learn C# with CSharpFritz](https://dotnet.microsoft.com/en-us/live/csharpfritz)
 * [James Montemagno: .NET MAUI](https://montemagno.com/tag/net-maui/)
 * [James Montemagno: Video course](https://youtu.be/DuNLR_NJv8U?si=eeDP3j2mBNbHXe-O)
+
