@@ -160,24 +160,30 @@ RUN wget https://dot.net/v1/dotnet-install.sh -O dotnet-install.sh \
     && ln -s /usr/share/dotnet/dotnet /usr/bin/dotnet \
     && rm dotnet-install.sh
 
-# Install MAUI workloads
-RUN dotnet workload install maui
+# Install Java JDK (required for Android SDK) and unzip
+# Create a fixed symlink so JAVA_HOME works on both amd64 and arm64
+RUN apt-get update && apt-get install -y openjdk-17-jdk unzip \
+    && ln -sfn "$(dirname $(dirname $(readlink -f $(which javac))))" /usr/lib/jvm/java-17
 
-# Install Java JDK (required for Android SDK)
-RUN apt-get update && apt-get install -y openjdk-17-jdk
+# Install MAUI workloads (maui-android only — iOS/macOS targets cannot install on Linux)
+RUN dotnet workload install maui-android
 
 # Install Android SDK command-line tools
 ENV ANDROID_HOME=/opt/android-sdk
-ENV JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
+ENV JAVA_HOME=/usr/lib/jvm/java-17
 RUN mkdir -p ${ANDROID_HOME}/cmdline-tools \
     && wget https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip \
     && unzip commandlinetools-linux-*.zip -d ${ANDROID_HOME}/cmdline-tools \
     && mv ${ANDROID_HOME}/cmdline-tools/cmdline-tools ${ANDROID_HOME}/cmdline-tools/latest \
     && rm commandlinetools-linux-*.zip
 
+
 # Accept licenses and install platform tools
-RUN yes | ${ANDROID_HOME}/cmdline-tools/latest/bin/sdkmanager --licenses \
-    && ${ANDROID_HOME}/cmdline-tools/latest/bin/sdkmanager "platform-tools" "platforms;android-34"
+RUN yes | ${ANDROID_HOME}/cmdline-tools/latest/bin/sdkmanager --licenses && \
+    ${ANDROID_HOME}/cmdline-tools/latest/bin/sdkmanager \
+      "platform-tools" \
+      "platforms;android-35" \
+      "build-tools;35.0.0"
 
 ENV PATH="${PATH}:${ANDROID_HOME}/cmdline-tools/latest/bin:${ANDROID_HOME}/platform-tools"
 ```
@@ -188,8 +194,12 @@ ENV PATH="${PATH}:${ANDROID_HOME}/cmdline-tools/latest/bin:${ANDROID_HOME}/platf
 > **Understanding the Dockerfile:**
 >
 > - **.NET SDK 9** - The latest .NET SDK for building MAUI applications
-> - **MAUI workloads** - Required components for cross-platform mobile development
-> - **Java JDK 17** - Required by the Android SDK tools
+> - **MAUI Android workload** - Only the `maui-android` workload is installed. The full `maui`
+>   workload includes iOS, macOS, and Windows targets that cannot be installed on a Linux
+>   container, so installing it would fail.
+> - **Java JDK 17** - Required by the Android SDK tools. A symlink is created at a fixed path
+>   so that `JAVA_HOME` resolves correctly on both x86_64 (Windows/Intel) and ARM64
+>   (Apple Silicon) architectures.
 > - **Android SDK** - Command-line tools for building and deploying Android apps
 > - **Platform tools** - ADB and other utilities for communicating with Android devices
 
@@ -211,8 +221,9 @@ services:
       - .:/workspace:cached
     network_mode: service:db
     command: sleep infinity
-    extra_hosts:
-      - "host.docker.internal:host-gateway"
+    depends_on:
+      db:
+        condition: service_healthy
 
   db:
     image: postgres:16
@@ -225,6 +236,11 @@ services:
       - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U dev_user -d devdb"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
 
 volumes:
   postgres_data:
@@ -236,14 +252,21 @@ volumes:
 > **Understanding the configuration:**
 >
 > - `build` - Builds the container using our custom Dockerfile instead of a base image
-> - `network_mode: service:db` - This connects the app container directly to the database
->   container's network. This means you can connect to PostgreSQL using `localhost:5432` from
->   within the app container.
-> - `extra_hosts` - Allows the container to connect to services running on the host machine
->   (such as the Android emulator) using the hostname `host.docker.internal`
-> - `volumes: postgres_data` - This creates a named volume that persists your database data
->   even when containers are stopped or removed.
-> - `command: sleep infinity` - This keeps the app container running so VSCode can connect to it.
+> - `network_mode: service:db` - The app container shares the database container's network
+>   namespace entirely. This means you can connect to PostgreSQL using `localhost:5432` from
+>   within the app container. It also means `extra_hosts` cannot be used on the app service,
+>   as these two options conflict.
+> - `depends_on: condition: service_healthy` - Ensures the app container does not start until
+>   PostgreSQL is genuinely ready to accept connections, not merely running.
+> - `healthcheck` - Runs `pg_isready` every 5 seconds so Docker Compose knows when the
+>   database is ready. This is what `service_healthy` above waits for.
+> - `ports: "5432:5432"` - Exposes the database on the host machine. The Android emulator
+>   (which runs on the host, not inside the container) connects to PostgreSQL using
+>   `10.0.2.2:5432`, where `10.0.2.2` is the special address that the Android emulator uses
+>   to reach the host machine.
+> - `volumes: postgres_data` - A named volume that persists your database data even when
+>   containers are stopped or removed.
+> - `command: sleep infinity` - Keeps the app container running so VSCode can connect to it.
 
 ![Fig. 5. Docker Compose architecture diagram](images/docker_compose_diagram.png){: standalone #fig5 data-title="Docker Compose architecture diagram" }
 
@@ -290,7 +313,8 @@ MauiDevProject/
 ├── .devcontainer/
 │   └── devcontainer.json
 ├── docker-compose.yml
-└── Dockerfile
+├── Dockerfile
+└── .gitattributes
 ```
 
 ## 7. Create a .gitignore File
@@ -338,6 +362,29 @@ postgres_data/
 >
 > Never commit database credentials or `.env` files containing passwords to version control.
 > The credentials in this tutorial are for local development only.
+
+### Create a .gitattributes File
+
+Create a file called `.gitattributes` in the project root directory:
+
+```
+* text=auto eol=lf
+*.sh text eol=lf
+Dockerfile text eol=lf
+docker-compose.yml text eol=lf
+```
+
+{: .note-title }
+> <i class="fa-solid fa-circle-info"></i> Note
+>
+> Windows uses `CRLF` line endings by default, while Linux and macOS use `LF`. If a Windows
+> user edits the `Dockerfile` or shell scripts and saves them with `CRLF` endings, the Docker
+> build will fail with confusing errors because the extra `\r` character corrupts the shell
+> commands inside `RUN` instructions.
+>
+> The `.gitattributes` file instructs Git to normalise line endings to `LF` on checkout
+> regardless of the operating system or editor settings. This ensures the project builds
+> correctly for all students.
 
 ## 8. Open the Project in the Container
 

@@ -88,6 +88,55 @@ nav_order: 11
 
 <details class="blue-bar">
 <summary>
+    At least one invalid signature was encountered
+</summary>
+
+<p>This is a Docker Desktop clock drift issue, not a code problem. When a Mac sleeps and wakes, Docker Desktop's
+  internal VM clock can fall out of sync, causing GPG signature validation to fail for apt repositories.</p>
+
+<p>Fix: Restart Docker Desktop</p>
+<ol>                                                                                                                 
+  <li>Click the Docker icon in the menu bar</li>                                                                     
+  <li>Select Restart</li>
+  <li>Wait for it to fully restart</li>
+  <li>Then retry the build:<br>
+  <code>docker build --no-cache --progress=plain -t maui-dev-test "/Users/briandavison/VSCode projects/MauiDevProject"</code></li>
+</ol>
+
+<p>The clock resync happens automatically on restart. This is a well-known Docker Desktop on macOS issue — the
+lightweight Linux VM Docker uses doesn't always keep its clock in sync after the host sleeps.</p>
+
+<p>If it happens again after future builds, the quick fix is just restarting Docker Desktop. There's nothing wrong
+with your Dockerfile.</p>
+</details>
+
+<details class="blue-bar">
+<summary>
+    'No space left on device' when running docker-compose
+</summary>
+
+<p>Multiple failed --no-cache builds have filled Docker's virtual disk with abandoned image layers and build      
+  cache. You need to reclaim that space.</p>
+
+<p>Run this to purge all unused Docker data (stopped containers, dangling images, build cache):</p>
+<p><code>docker system prune -a --volumes</code></p>
+<p>Docker will show you how much space will be freed and ask for confirmation. Type y to proceed.</p>
+<p>After that completes, retry the build:</p>
+<p><code>docker build --no-cache --progress=plain -t maui-dev-test "/Path/To/Project"</code></p>
+
+<p>If you want to see how much disk Docker is currently using before/after:</p>
+<p><code>docker system df</code></p>
+
+<p>If the prune isn't enough and you're still tight on space, you can also increase Docker Desktop's virtual disk
+  limit:</p>
+<ol>
+  <li>Open Docker Desktop → Settings → Resources → Virtual disk limit</li>
+  <li>Increase it (default is usually 64 GB) and click Apply & Restart</li>
+</ol>
+</details>
+
+<details class="blue-bar">
+<summary>
     Android API level missing
 </summary>
 <p>If you see an error like the following, some Android dependencies are missing.</p>
