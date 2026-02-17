@@ -13,10 +13,10 @@ nav_order: 2
 ![Edsger Dijkstra](../../../images/people/edsger_dijkstra.jpg)
 
 <blockquote class="pretty"><span>
-The art of programming is the art of organizing complexity.
+The art of programming is the art of organising complexity
 and then not thinking about it any more.
-<p class="attribution">Edsger W. Dijkstra</p>
 </span></blockquote>
+<p class="attribution">Edsger W. Dijkstra</p>
 
 <hr class="splash">
 
@@ -37,7 +37,7 @@ This comprehensive tutorial teaches you to build cross-platform mobile applicati
 Starting with the **StarterApp** (a multi-project MAUI application with authentication, roles, and PostgreSQL), you'll transform it into a complete **Note-Taking Application** with:
 
 - Note creation, editing, and deletion (CRUD operations)
-- Category organization with color coding
+- Category organisation with color coding
 - Database persistence with Entity Framework Core
 - MVVM architecture using CommunityToolkit
 - Repository pattern for data abstraction (ready for API integration)
@@ -83,10 +83,10 @@ Download the PostgreSQL-ready StarterApp and explore its architecture:
 - Multi-project solution structure
 - Existing MVVM implementation with CommunityToolkit
 - Entity Framework Core with PostgreSQL
-- Authentication and authorization patterns (before simplifying)
+- Authentication and authorisation patterns (before simplifying)
 - Apply existing migrations to local database
 
-**Key learning**: Understanding production-quality code organization
+**Key learning**: Understanding production-quality code organisation
 
 ### [Part 2: Simplify to Note-Taking App](part2-simplify-notes.md) (120-150 minutes)
 
@@ -147,45 +147,8 @@ Validate your complete application:
 
 ## Architecture Overview
 
-```
-┌─────────────────────────────────────────────┐
-│              MAUI Application               │
-│  ┌───────────────────────────────────────┐  │
-│  │           Views (XAML)                │  │
-│  │  - NotesPage, NotePage, AboutPage    │  │
-│  └───────────────┬───────────────────────┘  │
-│                  │ Data Binding              │
-│  ┌───────────────▼───────────────────────┐  │
-│  │        ViewModels                     │  │
-│  │  - NotesViewModel, NoteViewModel     │  │
-│  └───────────────┬───────────────────────┘  │
-│                  │ Dependency Injection      │
-└──────────────────┼───────────────────────────┘
-                   │
-┌──────────────────▼───────────────────────────┐
-│        StarterApp.Database Library           │
-│  ┌───────────────────────────────────────┐  │
-│  │      INoteRepository (Interface)      │  │
-│  └───────────────┬───────────────────────┘  │
-│                  │                           │
-│    ┌─────────────┴──────────────┐           │
-│    │                            │           │
-│  ┌─▼────────────────┐  ┌────────▼────────┐ │
-│  │ NoteRepository   │  │ ApiNoteRepo     │ │
-│  │ (Local DB)       │  │ (Future)        │ │
-│  └─┬────────────────┘  └─────────────────┘ │
-│    │                                        │
-│  ┌─▼────────────────────────────────────┐  │
-│  │        AppDbContext (EF Core)        │  │
-│  └─┬────────────────────────────────────┘  │
-└────┼───────────────────────────────────────┘
-     │ Npgsql Provider
-┌────▼────────────────────────────────────────┐
-│       PostgreSQL 16 (Docker)                │
-│  - Host: localhost                          │
-│  - Database: starterapp                     │
-└─────────────────────────────────────────────┘
-```
+![Architecture Overview](../../../images/architecture.png)
+
 
 ## Why This Approach?
 
