@@ -513,6 +513,22 @@ DROP TABLE students;
 The Android emulator runs on your host machine rather than inside the container. This provides
 better performance and access to hardware acceleration.
 
+{: .warning-title }
+> <i class="fa-solid fa-triangle-exclamation"></i> Windows: Enable Hardware Acceleration
+>
+> The Android emulator requires hardware virtualisation to run at acceptable speed. On Windows,
+> this must be enabled in your BIOS/UEFI settings before the emulator will work.
+>
+> 1. Restart your computer and enter the BIOS/UEFI setup (typically by pressing `F2`, `F10`,
+>    `Del`, or `Esc` during startup — the key is usually shown briefly on screen)
+> 2. Look for a setting named **Intel VT-x**, **Intel Virtualization Technology**, **AMD-V**,
+>    or **SVM Mode** (the exact name depends on your motherboard manufacturer)
+> 3. Enable it, save, and restart
+>
+> If you are unsure whether it is already enabled, you can check in Windows:
+> open **Task Manager**, go to the **Performance** tab, select **CPU**, and look for
+> **Virtualization: Enabled**.
+
 {: .note-title }
 > <i class="fa-solid fa-circle-info"></i> Alternative: Android Studio
 >
