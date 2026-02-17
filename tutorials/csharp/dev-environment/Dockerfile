@@ -7,15 +7,17 @@ RUN wget https://dot.net/v1/dotnet-install.sh -O dotnet-install.sh \
     && ln -s /usr/share/dotnet/dotnet /usr/bin/dotnet \
     && rm dotnet-install.sh
 
-# Install MAUI workloads
-RUN dotnet workload install maui
+# Install Java JDK (required for Android SDK) and unzip
+# Create a fixed symlink so JAVA_HOME works on both amd64 and arm64
+RUN apt-get update && apt-get install -y openjdk-17-jdk unzip \
+    && ln -sfn "$(dirname $(dirname $(readlink -f $(which javac))))" /usr/lib/jvm/java-17
 
-# Install Java JDK (required for Android SDK)
-RUN apt-get update && apt-get install -y openjdk-17-jdk
+# Install MAUI workloads (maui-android only — iOS/macOS targets cannot install on Linux)
+RUN dotnet workload install maui-android
 
 # Install Android SDK command-line tools
 ENV ANDROID_HOME=/opt/android-sdk
-ENV JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
+ENV JAVA_HOME=/usr/lib/jvm/java-17
 RUN mkdir -p ${ANDROID_HOME}/cmdline-tools \
     && wget https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip \
     && unzip commandlinetools-linux-*.zip -d ${ANDROID_HOME}/cmdline-tools \
@@ -23,7 +25,10 @@ RUN mkdir -p ${ANDROID_HOME}/cmdline-tools \
     && rm commandlinetools-linux-*.zip
 
 # Accept licenses and install platform tools
-RUN yes | ${ANDROID_HOME}/cmdline-tools/latest/bin/sdkmanager --licenses \
-    && ${ANDROID_HOME}/cmdline-tools/latest/bin/sdkmanager "platform-tools" "platforms;android-34"
+RUN yes | ${ANDROID_HOME}/cmdline-tools/latest/bin/sdkmanager --licenses && \
+    ${ANDROID_HOME}/cmdline-tools/latest/bin/sdkmanager \
+      "platform-tools" \
+      "platforms;android-35" \
+      "build-tools;35.0.0"
 
 ENV PATH="${PATH}:${ANDROID_HOME}/cmdline-tools/latest/bin:${ANDROID_HOME}/platform-tools"

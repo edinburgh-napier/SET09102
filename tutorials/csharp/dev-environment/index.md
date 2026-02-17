@@ -177,7 +177,6 @@ RUN mkdir -p ${ANDROID_HOME}/cmdline-tools \
     && mv ${ANDROID_HOME}/cmdline-tools/cmdline-tools ${ANDROID_HOME}/cmdline-tools/latest \
     && rm commandlinetools-linux-*.zip
 
-
 # Accept licenses and install platform tools
 RUN yes | ${ANDROID_HOME}/cmdline-tools/latest/bin/sdkmanager --licenses && \
     ${ANDROID_HOME}/cmdline-tools/latest/bin/sdkmanager \
