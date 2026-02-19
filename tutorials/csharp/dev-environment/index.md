@@ -648,13 +648,13 @@ Create an AVD using the Pixel 9 Pro device profile:
 [Apple Silicon Mac](){: .btn .tab-control data-tabset="createavd" data-seq="2" }
 
 > ```bash
-> avdmanager create avd -n Pixel_9_Pro -k "system-images;android-34;google_apis;x86_64" -d 37
+> avdmanager create avd -n Pixel_9_Pro -k "system-images;android-34;google_apis;x86_64" -d 47
 > ```
 >
 {: .tab data-tabset="createavd" data-seq="1" }
 
 > ```bash
-> avdmanager create avd -n Pixel_9_Pro -k "system-images;android-34;google_apis;arm64-v8a" -d 37
+> avdmanager create avd -n Pixel_9_Pro -k "system-images;android-34;google_apis;arm64-v8a" -d 47
 > ```
 >
 {: .tab data-tabset="createavd" data-seq="2" }
@@ -662,7 +662,7 @@ Create an AVD using the Pixel 9 Pro device profile:
 {: .note-title }
 > <i class="fa-solid fa-circle-info"></i> Device IDs
 >
-> The `-d 37` flag specifies the Pixel 9 Pro device profile. To see all available
+> The `-d 47` flag specifies the Pixel 9 Pro device profile. To see all available
 > device profiles, run: `avdmanager list device`
 
 Verify the AVD was created:

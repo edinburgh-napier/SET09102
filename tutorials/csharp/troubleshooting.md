@@ -137,6 +137,15 @@ with your Dockerfile.</p>
 
 <details class="blue-bar">
 <summary>
+    Unable to connect to adb daemon on port: 5037
+</summary>
+<p>Control C from the terminal and run the following command:</p>
+<p><code>adb kill-server<br>
+&nbsp;adb -a -P 5037 nodaemon server start</code></p>
+</details>
+
+<details class="blue-bar">
+<summary>
     Android API level missing
 </summary>
 <p>If you see an error like the following, some Android dependencies are missing.</p>
