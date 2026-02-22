@@ -1,7 +1,7 @@
 import { OpenAPIRoute } from "chanfana";
 import { z } from "zod";
 import { getDb } from "../../db";
-import { authMiddleware } from "../../auth/middleware";
+import { requireAuth } from "../../auth/middleware";
 import type { Env, RentalStatus } from "../../types";
 
 type Actor = "owner" | "borrower";
@@ -16,8 +16,6 @@ const TRANSITIONS: Array<[RentalStatus, RentalStatus, Actor]> = [
   ["Overdue", "Returned", "borrower"],
   ["Returned", "Completed", "owner"],
 ];
-
-const VALID_TO_STATUSES = new Set(TRANSITIONS.map(([, to]) => to));
 
 export class RentalUpdateStatusEndpoint extends OpenAPIRoute {
   schema = {
@@ -43,8 +41,8 @@ export class RentalUpdateStatusEndpoint extends OpenAPIRoute {
           },
         },
       },
-      "400": {
-        description: "Invalid transition",
+      "401": {
+        description: "Unauthorized",
         content: {
           "application/json": {
             schema: z.object({ error: z.string(), message: z.string() }),
@@ -60,7 +58,7 @@ export class RentalUpdateStatusEndpoint extends OpenAPIRoute {
         },
       },
       "409": {
-        description: "Conflict — invalid state transition",
+        description: "Invalid state transition",
         content: {
           "application/json": {
             schema: z.object({ error: z.string(), message: z.string() }),
@@ -70,12 +68,13 @@ export class RentalUpdateStatusEndpoint extends OpenAPIRoute {
     },
   };
 
-  middleware = [authMiddleware];
-
   async handle(c: any) {
+    const auth = await requireAuth(c);
+    if (auth instanceof Response) return auth;
+    const userId = auth;
+
     const { id } = c.req.param();
     const rentalId = Number(id);
-    const userId = c.get("userId") as number;
     const data = await this.getValidatedData<typeof this.schema>();
     const { status: newStatus } = data.body as { status: string };
     const sql = getDb(c.env as Env);
@@ -125,7 +124,7 @@ export class RentalUpdateStatusEndpoint extends OpenAPIRoute {
     if (newStatus === "Completed") {
       await sql`UPDATE Items SET IsAvailable = true WHERE Id = (SELECT ItemId FROM Rentals WHERE Id = ${rentalId})`;
     }
-    // When approved, optionally mark item as unavailable
+    // When approved, mark item as unavailable
     if (newStatus === "Approved") {
       await sql`UPDATE Items SET IsAvailable = false WHERE Id = (SELECT ItemId FROM Rentals WHERE Id = ${rentalId})`;
     }

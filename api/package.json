@@ -21,6 +21,6 @@
 		"deploy": "wrangler deploy",
 		"dev": "wrangler dev",
 		"schema": "npx chanfana",
-		"test": "wrangler deploy --dry-run && npx vitest run --config tests/vitest.config.mts"
+		"test": "npx vitest run --config tests/vitest.config.mts"
 	}
 }

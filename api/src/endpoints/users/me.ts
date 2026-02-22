@@ -1,7 +1,7 @@
 import { OpenAPIRoute } from "chanfana";
 import { z } from "zod";
 import { getDb } from "../../db";
-import { authMiddleware } from "../../auth/middleware";
+import { requireAuth } from "../../auth/middleware";
 import type { Env } from "../../types";
 
 export class MeEndpoint extends OpenAPIRoute {
@@ -38,10 +38,11 @@ export class MeEndpoint extends OpenAPIRoute {
     },
   };
 
-  middleware = [authMiddleware];
-
   async handle(c: any) {
-    const userId = c.get("userId") as number;
+    const auth = await requireAuth(c);
+    if (auth instanceof Response) return auth;
+    const userId = auth;
+
     const sql = getDb(c.env as Env);
 
     const [user] = await sql`

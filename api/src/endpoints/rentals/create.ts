@@ -1,7 +1,7 @@
 import { OpenAPIRoute } from "chanfana";
 import { z } from "zod";
 import { getDb } from "../../db";
-import { authMiddleware } from "../../auth/middleware";
+import { requireAuth } from "../../auth/middleware";
 import type { Env } from "../../types";
 
 const createRentalSchema = z.object({
@@ -50,6 +50,14 @@ export class RentalCreateEndpoint extends OpenAPIRoute {
           },
         },
       },
+      "401": {
+        description: "Unauthorized",
+        content: {
+          "application/json": {
+            schema: z.object({ error: z.string(), message: z.string() }),
+          },
+        },
+      },
       "409": {
         description: "Conflict",
         content: {
@@ -61,12 +69,13 @@ export class RentalCreateEndpoint extends OpenAPIRoute {
     },
   };
 
-  middleware = [authMiddleware];
-
   async handle(c: any) {
+    const auth = await requireAuth(c);
+    if (auth instanceof Response) return auth;
+    const borrowerId = auth;
+
     const data = await this.getValidatedData<typeof this.schema>();
     const body = data.body as z.infer<typeof createRentalSchema>;
-    const borrowerId = c.get("userId") as number;
     const sql = getDb(c.env as Env);
 
     const start = new Date(body.startDate);

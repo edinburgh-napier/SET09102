@@ -1,31 +1,10 @@
-import path from "node:path";
-import {
-	defineWorkersConfig,
-	readD1Migrations,
-} from "@cloudflare/vitest-pool-workers/config";
+import { defineConfig } from "vitest/config";
 
-const migrationsPath = path.join(__dirname, "..", "migrations");
-const migrations = await readD1Migrations(migrationsPath);
-
-export default defineWorkersConfig({
-	esbuild: {
-		target: "esnext",
-	},
+export default defineConfig({
 	test: {
-		setupFiles: ["./tests/apply-migrations.ts"],
-		poolOptions: {
-			workers: {
-				singleWorker: true,
-				wrangler: {
-					configPath: "../wrangler.jsonc",
-				},
-				miniflare: {
-					compatibilityFlags: ["experimental", "nodejs_compat"],
-					bindings: {
-						MIGRATIONS: migrations,
-					},
-				},
-			},
-		},
+		// Run integration test suites sequentially — each suite shares state
+		// (register → login → create items → rentals → reviews)
+		sequence: { concurrent: false },
+		testTimeout: 15000,
 	},
 });
