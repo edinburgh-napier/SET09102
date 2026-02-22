@@ -1,0 +1,12 @@
+{
+	"name": "set09102-api",
+	"main": "src/index.ts",
+	"compatibility_date": "2025-10-08",
+	"upload_source_maps": true,
+	"observability": {
+		"enabled": true
+	},
+	"vars": {
+		"JWT_EXPIRY_DAYS": "7"
+	}
+}
