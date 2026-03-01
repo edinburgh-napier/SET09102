@@ -318,6 +318,12 @@ Create a file called `devcontainer.json` inside the `.devcontainer` directory wi
 > - `workspaceFolder` - The folder inside the container where your project files appear
 > - `customizations.vscode.extensions` - Extensions to install automatically inside the container,
 >   including the PostgreSQL client, .NET MAUI tools, and AVD Manager
+> - `portsAttributes` - Controls how VSCode handles port forwarding for specific ports detected
+>   inside the container. Port `5037` (the ADB server) is set to `ignore` so VSCode does not
+>   attempt to forward it — the container already reaches the host ADB server via the
+>   `ADB_SERVER_SOCKET` environment variable rather than a forwarded port. Ports `5554` and
+>   `5555` (the Android emulator's console and ADB ports) are set to `silent` so that if VSCode
+>   detects them it forwards them without showing a notification pop-up.
 
 Your project structure should now look like this:
 
@@ -713,17 +719,9 @@ adb -a -P 5037 nodaemon server start
 
 Leave this terminal open while developing.
 
-**Inside the container** (in the VSCode terminal), configure ADB to connect to the host:
+There are several elements to the setup. Fig. 13 provides a visualisation.
 
-```bash
-export ADB_SERVER_SOCKET=tcp:host.docker.internal:5037
-```
-
-{: .note-title }
-> <i class="fa-solid fa-circle-info"></i> Persistent Configuration
->
-> To make this setting persistent, add the export command to `~/.bashrc` inside the container,
-> or add it to your `devcontainer.json` post-start command.
+![Fig. 13. Android Emulator Setup Visualisation](images/emulator_setup.png){: standalone #fig13 data-title="Android Emulator Setup Visualisation" }
 
 Verify the connection:
 
@@ -808,16 +806,7 @@ Ensure your emulator is running and the ADB connection is established (check wit
 then deploy and run the application:
 
 ```bash
-dotnet build -f net9.0-android -t:Install
-```
-
-The `-t:Install` target builds the app and installs it on the connected emulator. After
-installation completes, you can find the app in the emulator's app drawer.
-
-Alternatively, to build, install, and automatically launch the app:
-
-```bash
-dotnet build -f net9.0-android -t:Run
+adb install -r HelloMaui/bin/Debug/net9.0-android/com.companyname.hellomaui-Signed.apk
 ```
 
 {: .warning-title }
@@ -831,18 +820,13 @@ dotnet build -f net9.0-android -t:Run
 
 ### Verify the Application
 
+You should now see a .NET app icon on the home screen of the emulator. You can
+tap it to launch the app.
+
 The default MAUI app displays a "Hello, World!" message and a button that counts clicks.
 Tap the button to verify the app is running correctly.
 
-![Fig. 13. Default MAUI application running on the Android emulator](images/maui_default_app.png){: standalone #fig13 data-title="Default MAUI application running on the Android emulator" }
-
-### Hot Reload (Optional)
-
-For faster development iteration, you can use Hot Reload to see changes without rebuilding:
-
-```bash
-dotnet watch run -f net9.0-android
-```
+![Fig. 14. Default MAUI application running on the Android emulator](images/maui_default_app.png){: standalone #fig14 data-title="Default MAUI application running on the Android emulator" }
 
 {: .note-title }
 > <i class="fa-solid fa-circle-info"></i> Note
