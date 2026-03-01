@@ -143,3 +143,17 @@ with your Dockerfile.</p>
    Sometimes it is killed during the build process.</p>
 </details>
 
+<details class="blue-bar">
+<summary>
+    Signatures do not match
+</summary>
+<p>If you see a message like the following:</p>
+<pre>adb: failed to install StarterApp/bin/Debug/net9.0-android/com.companyname.starterapp-Signed.apk:</pre>
+<p>
+    the version of the app you are trying to install is signed differently from
+    the one currently installed on the emulator/device. The solutions is to uninstall
+    the existing one with the following command:
+</p>
+<pre>adb uninstall com.companyname.starterapp</pre>
+<p>Modify the name of the app if necessary.</p>
+</details>

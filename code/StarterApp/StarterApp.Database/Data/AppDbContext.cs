@@ -15,17 +15,23 @@ public class AppDbContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        var a = Assembly.GetExecutingAssembly();
-        // var resources = a.GetManifestResourceNames();
-        using var stream = a.GetManifestResourceStream("StarterApp.Database.appsettings.json");
+        if (optionsBuilder.IsConfigured) return;
 
-        var config = new ConfigurationBuilder()
-            .AddJsonStream(stream)
-            .Build();
+        var connectionString = Environment.GetEnvironmentVariable("CONNECTION_STRING");
 
-        optionsBuilder.UseNpgsql(
-            config.GetConnectionString("DevelopmentConnection")
-        );
+        if (string.IsNullOrEmpty(connectionString))
+        {
+            var a = Assembly.GetExecutingAssembly();
+            using var stream = a.GetManifestResourceStream("StarterApp.Database.appsettings.json");
+
+            var config = new ConfigurationBuilder()
+                .AddJsonStream(stream)
+                .Build();
+
+            connectionString = config.GetConnectionString("DevelopmentConnection");
+        }
+
+        optionsBuilder.UseNpgsql(connectionString);
     }
 
     public DbSet<Role> Roles { get; set; }

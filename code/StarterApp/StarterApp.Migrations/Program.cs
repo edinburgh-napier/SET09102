@@ -1,2 +1,7 @@
-// See https://aka.ms/new-console-template for more information
+using Microsoft.EntityFrameworkCore;
+using StarterApp.Database.Data;
+
 Console.WriteLine("Running migrations...");
+using var context = new AppDbContext();
+context.Database.Migrate();
+Console.WriteLine("Migrations complete.");
