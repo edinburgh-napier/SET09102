@@ -62,6 +62,12 @@ needed to run containerised applications on your computer.
 >
 > ![Fig. 3. Docker Desktop running on Mac](images/docker_desktop_mac.png){: standalone #fig3 data-title="Docker Desktop running on Mac" }
 >
+> If you are using an Apple Silicon Mac, make sure that Docker is configured to use 
+> Rosetta for x86_64 emulation. Open the Settings and check the box as shown in Fig. 4.
+> 
+> ![Fig. 4. Enabling Rosetta](images/rosetta.png){: standalone #fig4 data-title="Enabling Rosetta" }
+>
+>
 {: .tab data-tabset="docker" data-seq="2" }
 
 > On most Linux distributions, you can install Docker Engine using your package manager.
@@ -105,7 +111,7 @@ Once VSCode is installed, you need to add the following extensions:
 To install an extension, open VSCode and press `Ctrl+Shift+X` (Windows/Linux) or `Cmd+Shift+X` (Mac)
 to open the Extensions panel. Search for each extension by name and click Install.
 
-![Fig. 4. Required VSCode extensions installed](images/vscode_extensions.png){: standalone #fig4 data-title="Required VSCode extensions installed" }
+![Fig. 5. Required VSCode extensions installed](images/vscode_extensions.png){: standalone #fig5 data-title="Required VSCode extensions installed" }
 
 ## 3. Create the Project Structure
 
@@ -216,9 +222,12 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+      platform: linux/amd64 
     volumes:
       - .:/workspace:cached
     network_mode: service:db
+    environment:
+      - ADB_SERVER_SOCKET=tcp:host.docker.internal:5037
     command: sleep infinity
     depends_on:
       db:
@@ -267,7 +276,7 @@ volumes:
 >   containers are stopped or removed.
 > - `command: sleep infinity` - Keeps the app container running so VSCode can connect to it.
 
-![Fig. 5. Docker Compose architecture diagram](images/docker_compose_diagram.png){: standalone #fig5 data-title="Docker Compose architecture diagram" }
+![Fig. 6. Docker Compose architecture diagram](images/docker_compose_diagram.png){: standalone #fig6 data-title="Docker Compose architecture diagram" }
 
 ## 6. Configure the Dev Container
 
@@ -290,7 +299,12 @@ Create a file called `devcontainer.json` inside the `.devcontainer` directory wi
             ]
         }
     },
-    "remoteUser": "root"
+    "remoteUser": "root",
+    "portsAttributes": {
+        "5037": { "onAutoForward": "ignore" },
+        "5554": { "onAutoForward": "silent" },
+        "5555": { "onAutoForward": "silent" }
+    }
 }
 ```
 
@@ -312,8 +326,7 @@ MauiDevProject/
 ├── .devcontainer/
 │   └── devcontainer.json
 ├── docker-compose.yml
-├── Dockerfile
-└── .gitattributes
+└── Dockerfile
 ```
 
 ## 7. Create a .gitignore File
@@ -392,7 +405,7 @@ Now you can open the project inside the development container.
 1. Press `Ctrl+Shift+P` (Windows/Linux) or `Cmd+Shift+P` (Mac) to open the command palette.
 2. Type "Reopen in Container" and select **Dev Containers: Reopen in Container**.
 
-![Fig. 6. Building the container](images/building_container.png){: standalone #fig6 data-title="Building the container in VSCode" }
+![Fig. 7. Building the container](images/building_container.png){: standalone #fig7 data-title="Building the container in VSCode" }
 
 {: .warning-title }
 > <i class="fa-solid fa-triangle-exclamation"></i> Warning
@@ -405,11 +418,11 @@ Now you can open the project inside the development container.
 Once the container is ready, you will see the project files in the Explorer panel, and the
 bottom-left corner of VSCode will show "Dev Container: MAUI Dev Environment".
 
-![Fig. 7. VSCode running inside the container](images/vscode_container_running.png){: standalone #fig7 data-title="VSCode running inside the container" }
+![Fig. 8. VSCode running inside the container](images/vscode_container_running.png){: standalone #fig8 data-title="VSCode running inside the container" }
 
 ### Verify the Development Tools
 
-Open a terminal (`Ctrl+`` ` or `Cmd+`` `) and verify the development tools are installed:
+Open a terminal (`Ctrl+ `` ` or `Cmd+ `` `) and verify the development tools are installed:
 
 ```bash
 # Check .NET version
@@ -424,7 +437,7 @@ sdkmanager --version
 
 You should see .NET 9.x, the MAUI workloads listed, and the Android SDK manager version.
 
-![Fig. 8. Terminal inside container showing configuration details](images/vscode_terminal_container.png){: standalone #fig8 data-title="Terminal inside container showing configuration details" }
+![Fig. 9. Terminal inside container showing configuration details](images/vscode_terminal_container.png){: standalone #fig9 data-title="Terminal inside container showing configuration details" }
 
 ## 9. Connect to PostgreSQL from VSCode
 
@@ -445,7 +458,7 @@ The Database Client extension allows you to browse and query your database direc
 | Database | devdb |
 | Use SSL | No |
 
-![Fig. 9. PostgreSQL connection configuration](images/postgres_connection.png){: standalone #fig9 data-title="PostgreSQL connection configuration" }
+![Fig. 10. PostgreSQL connection configuration](images/postgres_connection.png){: standalone #fig10 data-title="PostgreSQL connection configuration" }
 
 {: .note-title }
 > <i class="fa-solid fa-circle-info"></i> Note
@@ -475,7 +488,7 @@ CREATE TABLE students (
 );
 ```
 
-![Fig. 10. Creating a test table in PostgreSQL](images/postgres_create_table.png){: standalone #fig10 data-title="Creating a test table in PostgreSQL" }
+![Fig. 11. Creating a test table in PostgreSQL](images/postgres_create_table.png){: standalone #fig11 data-title="Creating a test table in PostgreSQL" }
 
 ### Insert sample data
 
@@ -496,7 +509,7 @@ Run a SELECT query to verify the data was inserted:
 SELECT * FROM students;
 ```
 
-![Fig. 11. Query results showing test data](images/postgres_query_result.png){: standalone #fig11 data-title="Query results showing test data" }
+![Fig. 12. Query results showing test data](images/postgres_query_result.png){: standalone #fig12 data-title="Query results showing test data" }
 
 You should see three rows returned with the student data you inserted.
 
@@ -744,6 +757,32 @@ dotnet new maui -n HelloMaui
 This creates a new directory called `HelloMaui` containing a default MAUI application with
 a simple counter interface.
 
+### Update the default HelloMaui.csproj file
+
+When we are working inside a Docker container, VSCode needs to communicate with the
+ADB server process on the host rather than starting a new one inside the container.
+This is partially handled by the `devcontainer.json` file, but we need to add a
+line to the `HelloMaui.csproj` file to prevent the build from killing/restarting the
+host ADB server. Place the following line immediately before the final `</Project>` tag:`
+
+```xml
+<Target Name="_StartAdbServer" />
+```
+
+{: .note-title }
+> <i class="fa-solid fa-circle-info"></i> dotnet restore
+>
+> If you see an error message that suggests some libraries may be missing and that
+> `dotnet restore` can fix it, ignore it for the time being. We will change the
+> target platform in the next step.
+
+### Update the Target Platform
+
+Locate the file `HelloMaui.csproj` in the `HelloMaui` directory and update the target platform
+to `net9.0-android`:
+
+    <TargetFrameworks>net9.0-android</TargetFrameworks> 
+
 ### Build for Android
 
 Navigate to the project directory and build for Android:
@@ -795,7 +834,7 @@ dotnet build -f net9.0-android -t:Run
 The default MAUI app displays a "Hello, World!" message and a button that counts clicks.
 Tap the button to verify the app is running correctly.
 
-![Fig. 12. Default MAUI application running on the Android emulator](images/maui_default_app.png){: standalone #fig12 data-title="Default MAUI application running on the Android emulator" }
+![Fig. 13. Default MAUI application running on the Android emulator](images/maui_default_app.png){: standalone #fig13 data-title="Default MAUI application running on the Android emulator" }
 
 ### Hot Reload (Optional)
 

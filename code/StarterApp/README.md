@@ -37,10 +37,10 @@ The instructions assume you will be using VSCode since that is a lowest-common-d
 
 This app is built using the following tool versions.
 
-| Name                                                                                      | Version     |
-|-------------------------------------------------------------------------------------------|-------------|
-| [.NET](https://dotnet.microsoft.com/en-us/)                                               | 8.0 / 9.0   |
-| [PostgreSQL Docker image](https://hub.docker.com/_/postgres)                              | 16          |
+| Name                                                          | Version |
+|---------------------------------------------------------------|---------|
+| [.NET](https://dotnet.microsoft.com/en-us/)                   | 9.0     |
+| [PostgreSQL Docker image](https://hub.docker.com/_/postgres)  | 16      |
 
 
 ## Getting started
@@ -49,7 +49,7 @@ This app is built using the following tool versions.
 
 Before using this app, ensure you have:
 
-1. **.NET SDK 8.0** or later installed
+1. **.NET SDK 9.0** installed (this is inside the development Docker container)
 2. **Docker** installed and running
 3. **PostgreSQL container** running (see [dev-environment tutorial](https://edinburgh-napier.github.io/SET09102/tutorials/csharp/dev-environment/))
 
