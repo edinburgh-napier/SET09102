@@ -828,12 +828,6 @@ Tap the button to verify the app is running correctly.
 
 ![Fig. 14. Default MAUI application running on the Android emulator](images/maui_default_app.png){: standalone #fig14 data-title="Default MAUI application running on the Android emulator" }
 
-{: .note-title }
-> <i class="fa-solid fa-circle-info"></i> Note
->
-> Hot Reload works best for XAML and minor code changes. Structural changes to your app
-> may still require a full rebuild.
-
 ## 13. Managing Your Development Environment
 
 ### Starting and stopping
