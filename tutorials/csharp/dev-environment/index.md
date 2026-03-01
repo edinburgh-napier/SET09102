@@ -781,32 +781,25 @@ to `net9.0-android`:
 
     <TargetFrameworks>net9.0-android</TargetFrameworks> 
 
-### Build for Android
+### Build and deploy
 
-Navigate to the project directory and build for Android:
+Execute the following command in the project root directory to build the application:
 
 ```bash
 cd HelloMaui
-dotnet build -f net9.0-android
+dotnet build
 ```
-
-{: .note-title }
-> <i class="fa-solid fa-circle-info"></i> Target Framework
->
-> The `-f net9.0-android` flag specifies the Android target framework. MAUI projects can
-> target multiple platforms (Android, iOS, Windows, Mac), and this flag ensures you build
-> specifically for Android.
 
 The first build downloads additional dependencies and may take a few minutes. Subsequent
 builds will be faster.
 
-### Deploy to the Emulator
+Locate the `hellomaui.apk` file in the `bin/Debug/net9.0-android` directory.
 
 Ensure your emulator is running and the ADB connection is established (check with `adb devices`),
 then deploy and run the application:
 
 ```bash
-adb install -r HelloMaui/bin/Debug/net9.0-android/com.companyname.hellomaui-Signed.apk
+adb install -r PATH-TO-APK-FILE
 ```
 
 {: .warning-title }
