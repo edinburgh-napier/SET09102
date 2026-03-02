@@ -586,6 +586,14 @@ and extract it.
 > - `C:\Android\platform-tools`
 >
 > Close and reopen any terminal windows for changes to take effect.
+> 
+> {: .note-title }
+> > <i class="fa-solid fa-triangle-exclamation"></i> Java
+> >
+> > The Android tools need java to be installed. If you don't have it, you can install the latest version
+> > from the [Microsoft website](https://learn.microsoft.com/en-us/java/openjdk/download/){:target=_blank}.
+> >
+> > You can check if java is installed by running `java -version` in a terminal.
 >
 {: .tab data-tabset="cmdtools" data-seq="1" }
 
