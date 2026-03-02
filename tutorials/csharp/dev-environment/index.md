@@ -429,7 +429,7 @@ bottom-left corner of VSCode will show "Dev Container: MAUI Dev Environment".
 
 ### Verify the Development Tools
 
-Open a terminal (`Ctrl+ `` ` or `Cmd+ `` `) and verify the development tools are installed:
+Open a terminal (`Ctrl+&grave;` or `Cmd+&grave;`) and verify the development tools are installed:
 
 ```bash
 # Check .NET version
