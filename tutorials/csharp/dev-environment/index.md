@@ -214,7 +214,8 @@ Docker Compose allows you to define and run multi-container applications. We wil
 configuration with two services: an application container for development and a PostgreSQL
 database container.
 
-Create a file called `docker-compose.yml` in the project root directory with the following content:
+Create a file called `docker-compose.yml` in the project root directory with the following content.
+If you are running on an Apple Silicon Mac, uncomment the `platform: linux/amd64` line.
 
 ```yaml
 services:
@@ -222,7 +223,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-      platform: linux/amd64 
+#      platform: linux/amd64 
     volumes:
       - .:/workspace:cached
     network_mode: service:db
