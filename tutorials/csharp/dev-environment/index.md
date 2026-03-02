@@ -787,6 +787,8 @@ element after the first one:
     <AndroidEnableAssemblyCompression>False</AndroidEnableAssemblyCompression>
     <AndroidLinkMode>None</AndroidLinkMode>
     <RuntimeIdentifier>android-x64</RuntimeIdentifier>
+    <Nullable>enable</Nullable> 
+    <Optimize>false</Optimize>
 </PropertyGroup>
 ```
 Next, add the following line immediately before the final `</Project>` tag to prevent the build from 
@@ -811,7 +813,7 @@ Execute the following command in the project root directory to build the applica
 
 ```bash
 cd HelloMaui
-dotnet build
+dotnet build -c Debug
 ```
 
 The first build downloads additional dependencies and may take a few minutes. Subsequent
