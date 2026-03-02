@@ -429,7 +429,7 @@ bottom-left corner of VSCode will show "Dev Container: MAUI Dev Environment".
 
 ### Verify the Development Tools
 
-Open a terminal (`Ctrl+ &bprime; ` or `Cmd+ &bprime; `) and verify the development tools are installed:
+Open a terminal (`Ctrl+ &#96; ` or `Cmd+ &#96; `) and verify the development tools are installed:
 
 ```bash
 # Check .NET version
@@ -732,7 +732,7 @@ There are several elements to the setup. Fig. 13 provides a visualisation.
 
 ![Fig. 13. Android Emulator Setup Visualisation](images/emulator_setup.png){: standalone #fig13 data-title="Android Emulator Setup Visualisation" }
 
-Verify the connection:
+Verify the connection by executing the following command in a new terminal window in VS Code:
 
 ```bash
 adb devices
@@ -764,18 +764,6 @@ dotnet new maui -n HelloMaui
 This creates a new directory called `HelloMaui` containing a default MAUI application with
 a simple counter interface.
 
-### Update the default HelloMaui.csproj file
-
-When we are working inside a Docker container, VSCode needs to communicate with the
-ADB server process on the host rather than starting a new one inside the container.
-This is partially handled by the `devcontainer.json` file, but we need to add a
-line to the `HelloMaui.csproj` file to prevent the build from killing/restarting the
-host ADB server. Place the following line immediately before the final `</Project>` tag:`
-
-```xml
-<Target Name="_StartAdbServer" />
-```
-
 {: .note-title }
 > <i class="fa-solid fa-circle-info"></i> dotnet restore
 >
@@ -783,12 +771,39 @@ host ADB server. Place the following line immediately before the final `</Projec
 > `dotnet restore` can fix it, ignore it for the time being. We will change the
 > target platform in the next step.
 
+### Update the default HelloMaui.csproj file
+
+When we are working inside a Docker container, VSCode needs to communicate with the
+ADB server process on the host rather than starting a new one inside the container.
+This is partially handled by the `devcontainer.json` file, but we need to make two
+changes to the default `HelloMaui.csproj` file. First, add the following `PropertyGroup`
+element after the first one:
+
+```xml
+<PropertyGroup Condition="'$(Configuration)' == 'Debug'">
+    <AndroidFastDeployment>false</AndroidFastDeployment>
+    <EmbedAssembliesIntoApk>True</EmbedAssembliesIntoApk>
+    <AndroidUseSharedRuntime>False</AndroidUseSharedRuntime>
+    <AndroidEnableAssemblyCompression>False</AndroidEnableAssemblyCompression>
+    <AndroidLinkMode>None</AndroidLinkMode>
+    <RuntimeIdentifier>android-x64</RuntimeIdentifier>
+</PropertyGroup>
+```
+Next, add the following line immediately before the final `</Project>` tag to prevent the build from 
+killing/restarting the host ADB server:`
+
+```xml
+<Target Name="_StartAdbServer" />
+```
+
 ### Update the Target Platform
 
 Locate the file `HelloMaui.csproj` in the `HelloMaui` directory and update the target platform
 to `net9.0-android`:
 
     <TargetFrameworks>net9.0-android</TargetFrameworks> 
+
+Remember to save the file after making the change.
 
 ### Build and deploy
 
@@ -802,7 +817,7 @@ dotnet build
 The first build downloads additional dependencies and may take a few minutes. Subsequent
 builds will be faster.
 
-Locate the `hellomaui.apk` file in the `bin/Debug/net9.0-android` directory.
+Locate the `hellomaui-Signed.apk` file in the `bin/Debug/net9.0-android` directory.
 
 Ensure your emulator is running and the ADB connection is established (check with `adb devices`),
 then deploy and run the application:
