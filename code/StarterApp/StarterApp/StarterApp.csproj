@@ -46,6 +46,8 @@
 		<AndroidEnableAssemblyCompression>False</AndroidEnableAssemblyCompression>
 		<AndroidLinkMode>None</AndroidLinkMode>
 		<RuntimeIdentifier>android-x64</RuntimeIdentifier>
+	    <Nullable>enable</Nullable>
+        <Optimize>false</Optimize>
 	</PropertyGroup>
 
 	<ItemGroup>
