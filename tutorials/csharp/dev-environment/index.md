@@ -98,6 +98,11 @@ You should see output similar to `Docker version 24.0.0` or higher.
 Follow the installation instructions for your operating system on the
 [VSCode website](https://code.visualstudio.com/download){:target="_blank"}.
 
+<div class="task">
+<strong>Permissions:</strong> VS Code needs to install extensions and may run into directory permissions issues.
+To get around these, always run VSCode as an administrator.
+</div>
+
 Once VSCode is installed, you need to add the following extensions:
 
 | Extension | Extension ID | Purpose |
