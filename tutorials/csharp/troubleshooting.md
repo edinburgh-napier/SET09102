@@ -157,3 +157,11 @@ with your Dockerfile.</p>
 <pre>adb uninstall com.companyname.starterapp</pre>
 <p>Modify the name of the app if necessary.</p>
 </details>
+
+<details class="blue-bar">
+<summary>
+    Permissions errors when installing VS Code extensions
+</summary>
+<p>Always run VS Code as administrator</p>
+</details>
+
