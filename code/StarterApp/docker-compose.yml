@@ -3,7 +3,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    platform: linux/amd64
+#    platform: linux/amd64
     volumes:
       - .:/workspace:cached
     network_mode: service:db
