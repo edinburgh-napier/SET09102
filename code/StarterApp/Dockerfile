@@ -8,15 +8,15 @@ RUN wget https://dot.net/v1/dotnet-install.sh -O dotnet-install.sh \
     && rm dotnet-install.sh
 
 # Install Java JDK (required for Android SDK) and unzip
-RUN apt-get update && apt-get install -y openjdk-17-jdk unzip \
-    && ln -sfn "$(dirname $(dirname $(readlink -f $(which javac))))" /usr/lib/jvm/java-17
+RUN apt-get update && apt-get install -y openjdk-21-jdk unzip \
+    && ln -sfn "$(dirname $(dirname $(readlink -f $(which javac))))" /usr/lib/jvm/java-21
 
 # Install MAUI workloads (maui-android only — iOS/macOS targets cannot install on Linux)
 RUN dotnet workload install maui-android
 
 # Install Android SDK command-line tools
 ENV ANDROID_HOME=/opt/android-sdk
-ENV JAVA_HOME=/usr/lib/jvm/java-17
+ENV JAVA_HOME=/usr/lib/jvm/java-21
 RUN mkdir -p ${ANDROID_HOME}/cmdline-tools \
     && wget https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip \
     && unzip commandlinetools-linux-*.zip -d ${ANDROID_HOME}/cmdline-tools \
