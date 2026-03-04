@@ -9,7 +9,7 @@ services:
     network_mode: service:db
     environment:
       - CONNECTION_STRING=Host=localhost;Username=app_user;Password=app_password;Database=appdb
-    command: bash -c "cd /workspace && dotnet run --project StarterApp.Migrations/StarterApp.Migrations.csproj"
+    command: bash -c "cd /workspace && dotnet clean StarterApp.Migrations/StarterApp.Migrations.csproj && dotnet run --project StarterApp.Migrations/StarterApp.Migrations.    csproj"
     depends_on:
       db:
         condition: service_healthy

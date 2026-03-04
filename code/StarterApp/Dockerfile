@@ -12,7 +12,7 @@ RUN apt-get update && apt-get install -y openjdk-17-jdk unzip \
     && ln -sfn "$(dirname $(dirname $(readlink -f $(which javac))))" /usr/lib/jvm/java-17
 
 # Install MAUI workloads (maui-android only — iOS/macOS targets cannot install on Linux)
-RUN dotnet workload install maui-android
+RUN dotnet workload install maui-android  --skip-manifest-update
 
 # Install Android SDK command-line tools
 ENV ANDROID_HOME=/opt/android-sdk
