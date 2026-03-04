@@ -28,7 +28,8 @@ RUN mkdir -p ${ANDROID_HOME}/cmdline-tools \
 RUN yes | ${ANDROID_HOME}/cmdline-tools/latest/bin/sdkmanager --licenses && \
     ${ANDROID_HOME}/cmdline-tools/latest/bin/sdkmanager \
       "platform-tools" \
-      "platforms;android-35" \
-      "build-tools;35.0.0"
+      "platforms;android-36" \
+      "build-tools;36.0.0"
 
 ENV PATH="${PATH}:${ANDROID_HOME}/cmdline-tools/latest/bin:${ANDROID_HOME}/platform-tools"
+
