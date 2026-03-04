@@ -165,3 +165,17 @@ with your Dockerfile.</p>
 <p>Always run VS Code as administrator</p>
 </details>
 
+<details class="blue-bar">
+<summary>
+    Unexpected build errors
+</summary>
+<p>When Docker rebuilds the container, it makes use of cached files and this can sometimes cause
+errors. For example, you may see a reference to a missing file <code>System.Numerics.Vectors</code>.
+To fix this, bypass the cache when rebuilding the container:
+<ol>
+  <li>Activate the palette menu (SHIFT+CMD/CTRL+P)</li>
+  <li>Select <code>Dev Containers: Rebuild Container Without Cache</code>.</li>
+</ol>
+</p>
+</details>
+
