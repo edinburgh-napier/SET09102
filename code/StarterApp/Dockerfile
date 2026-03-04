@@ -1,9 +1,9 @@
 FROM mcr.microsoft.com/devcontainers/base:ubuntu
 
-# Install .NET SDK 9
+# Install .NET SDK 10
 RUN wget https://dot.net/v1/dotnet-install.sh -O dotnet-install.sh \
     && chmod +x dotnet-install.sh \
-    && ./dotnet-install.sh --channel 9.0 --install-dir /usr/share/dotnet \
+    && ./dotnet-install.sh --channel 10.0 --install-dir /usr/share/dotnet \
     && ln -s /usr/share/dotnet/dotnet /usr/bin/dotnet \
     && rm dotnet-install.sh
 
@@ -12,7 +12,7 @@ RUN apt-get update && apt-get install -y openjdk-17-jdk unzip \
     && ln -sfn "$(dirname $(dirname $(readlink -f $(which javac))))" /usr/lib/jvm/java-17
 
 # Install MAUI workloads (maui-android only — iOS/macOS targets cannot install on Linux)
-RUN dotnet workload install maui-android  --skip-manifest-update
+RUN dotnet workload install maui-android
 
 # Install Android SDK command-line tools
 ENV ANDROID_HOME=/opt/android-sdk
@@ -32,4 +32,3 @@ RUN yes | ${ANDROID_HOME}/cmdline-tools/latest/bin/sdkmanager --licenses && \
       "build-tools;35.0.0"
 
 ENV PATH="${PATH}:${ANDROID_HOME}/cmdline-tools/latest/bin:${ANDROID_HOME}/platform-tools"
-
