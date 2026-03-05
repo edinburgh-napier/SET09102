@@ -2,7 +2,7 @@
 title: Authentication
 parent: StarterApp
 grand_parent: C# practice
-nav_order: 9
+nav_order: 3
 mermaid: true
 ---
 

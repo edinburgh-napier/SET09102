@@ -179,3 +179,28 @@ To fix this, bypass the cache when rebuilding the container:
 </p>
 </details>
 
+<details class="blue-bar">
+<summary>
+    Android emulator starts but does not appear on the screen
+</summary>
+<p>
+    This is the result of a conflict between the Android emulator and the Windows
+    display setting. To fix it, open your Windows display setting control panel.
+    Find the <em>Svale and layout</em>em> section, and set the <em>Scale</em>
+    value ot 100%. After this, restart the emulator and it should appear on the
+    screen.
+</p>
+</details>
+
+<details class="blue-bar">
+<summary>
+    An exception has been raised that is likely due to a transient failure
+</summary>
+<p>
+    This message indicates that the app could not communicate with the database. It 
+    is probably due to an incorrectly configured database connection string in your
+    <code>appsettings.json</code> file. You can find this file in the 
+    <code>StarterApp.Database</code> project. The correct connection string is 
+    <code>Host=10.0.2.2:5432;Username=app_user;Password=;Database=appdb</code>.
+</p>
+</details>
