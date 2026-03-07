@@ -204,3 +204,17 @@ To fix this, bypass the cache when rebuilding the container:
     <code>Host=10.0.2.2:5432;Username=app_user;Password=;Database=appdb</code>.
 </p>
 </details>
+
+<details class="blue-bar">
+<summary>
+    StaticResource not found for key Gray700
+</summary>
+<p>
+    This message indicates that the colour <code>Gray700</code> is not defined in your
+    <code>StarterApp/Resources/Styles/Colors.xaml</code> file. You can fix it by adding
+    the following two lines in the appropriate place inn the file:
+</p>
+<p><pre><code><Color x:Key="Gray700">#242424</Color>
+<SolidColorBrush x:Key="Gray700Brush" Color="{StaticResource Gray700}"/></code></pre></p>
+</details>
+
