@@ -214,7 +214,7 @@ To fix this, bypass the cache when rebuilding the container:
     <code>StarterApp/Resources/Styles/Colors.xaml</code> file. You can fix it by adding
     the following two lines in the appropriate place inn the file:
 </p>
-<p><pre><code><Color x:Key="Gray700">#242424</Color>
-<SolidColorBrush x:Key="Gray700Brush" Color="{StaticResource Gray700}"/></code></pre></p>
+<p><pre><code>&lt;Color x:Key="Gray700"&gt;#242424&lt;/Color&gt;
+&lt;SolidColorBrush x:Key="Gray700Brush" Color="{StaticResource Gray700}"/&gt;</code></pre></p>
 </details>
 
