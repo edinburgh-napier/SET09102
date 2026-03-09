@@ -11,6 +11,12 @@ RUN wget https://dot.net/v1/dotnet-install.sh -O dotnet-install.sh \
 RUN apt-get update && apt-get install -y openjdk-21-jdk unzip \
     && ln -sfn "$(dirname $(dirname $(readlink -f $(which javac))))" /usr/lib/jvm/java-21
 
+# Pre-install NuGet workload packs that fail over Docker Desktop's virtualised network.
+# The script downloads each pack in 8 MB Range chunks, bypassing the connection drops
+# that occur with single large transfers, then installs them so dotnet skips the downloads.
+COPY pre_install_packs.py /tmp/pre_install_packs.py
+RUN python3 -u /tmp/pre_install_packs.py && rm /tmp/pre_install_packs.py
+
 # Install MAUI workloads (maui-android only — iOS/macOS targets cannot install on Linux)
 RUN dotnet workload install maui-android --skip-manifest-update
 
@@ -32,4 +38,3 @@ RUN yes | ${ANDROID_HOME}/cmdline-tools/latest/bin/sdkmanager --licenses && \
       "build-tools;36.0.0"
 
 ENV PATH="${PATH}:${ANDROID_HOME}/cmdline-tools/latest/bin:${ANDROID_HOME}/platform-tools"
-

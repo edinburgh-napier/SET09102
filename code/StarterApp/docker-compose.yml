@@ -3,13 +3,14 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-#    platform: linux/amd64
+    platform: linux/amd64
     volumes:
       - .:/workspace:cached
+      - nuget_cache:/root/.nuget/packages
     network_mode: service:db
     environment:
       - CONNECTION_STRING=Host=localhost;Username=app_user;Password=app_password;Database=appdb
-    command: bash -c "cd /workspace && dotnet clean StarterApp.Migrations/StarterApp.Migrations.csproj && dotnet run --project StarterApp.Migrations/StarterApp.Migrations.csproj"
+    command: bash -c "cd /workspace && dotnet run --project StarterApp.Migrations/StarterApp.Migrations.csproj"
     depends_on:
       db:
         condition: service_healthy
@@ -22,6 +23,7 @@ services:
     platform: linux/amd64
     volumes:
       - .:/workspace:cached
+      - nuget_cache:/root/.nuget/packages
     network_mode: service:db
     environment:
       - ADB_SERVER_SOCKET=tcp:host.docker.internal:5037
@@ -49,3 +51,4 @@ services:
 
 volumes:
   postgres_data:
+  nuget_cache:
